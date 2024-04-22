@@ -1,0 +1,28 @@
+#
+# Your Crowdin credentials
+#
+"project_id" : "581765"
+"api_token_env" : CROWDIN_PERSONAL_TOKEN
+"base_path" : "."
+"base_url" : "https://api.crowdin.com"
+
+#
+# Choose file structure in Crowdin
+#
+"preserve_hierarchy" : true
+
+#
+# Use YAML anchor to implement the global languages mapping
+#
+languages_mapping: &global_languages_mapping
+  locale:
+    zh-CN: zh_CN
+    zh-TW: zh_TW
+
+#
+# Files configuration
+#
+files:
+  - source: /pot/**/*.pot
+    translation: /.crowdin/%locale%/LC_MESSAGES/**/%file_name%.po
+    languages_mapping: *global_languages_mapping
