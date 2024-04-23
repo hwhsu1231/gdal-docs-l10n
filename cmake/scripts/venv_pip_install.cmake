@@ -311,23 +311,7 @@ if(EXISTS "${PREVIOUS_FREEZE_TXT_PATH}")
 endif()
 
 
-if(VERSION MATCHES "^git-master$")
-    set(SPHINX_VERSION "6.2.1")
-elseif(VERSION MATCHES "^latest$")
-    set(SPHINX_VERSION "6.2.1")
-else()
-    string(SUBSTRING "${VERSION}" 1 -1 VERSION_NO_V)
-    if(VERSION_NO_V VERSION_LESS "3.9")
-        set(SPHINX_VERSION "1.6.1")           # For v3.0~v3.8
-    elseif(VERSION_NO_V VERSION_LESS "3.19")
-        set(SPHINX_VERSION "2.4.5")           # For v3.9~v3.18
-    elseif(VERSION_NO_V VERSION_LESS "3.28")
-        set(SPHINX_VERSION "5.3.0")           # For v3.19~v3.27
-    else()
-        set(SPHINX_VERSION "6.2.1")           # For v3.28~
-    endif()
-endif()
-set(REQUIREMENTS_PATH "${PROJ_SOURCE_DIR}/requirements/sphinx-${SPHINX_VERSION}.txt")
+set(REQUIREMENTS_PATH "${PROJ_OUT_REPO_DIR}/doc/requirements.txt")
 file(READ "${REQUIREMENTS_PATH}" REQUIREMENTS_CNT)
 message(STATUS "The requirements used will be:")
 remove_cmake_message_indent()
@@ -343,7 +327,7 @@ remove_cmake_message_indent()
 message("")
 execute_process(
     COMMAND 
-        ${Python_EXECUTABLE} -m pip install 
+        ${Python_EXECUTABLE} -m pip install numpy
         --progress-bar off
         --force-reinstall
         --requirement ${REQUIREMENTS_PATH}
@@ -380,6 +364,36 @@ else()
     message("")
     message(FATAL_ERROR "Fatal error occurred.")
 endif()
+message("")
+restore_cmake_message_indent()
+
+
+message(STATUS "Installing GDAL from sources with CMake...")
+remove_cmake_message_indent()
+message("")
+execute_process(
+    COMMAND
+        ${CMAKE_COMMAND} 
+        -S ${PROJ_OUT_REPO_DIR}
+        -B ${PROJ_OUT_REPO_DIR}/build
+        -D Python_ROOT_DIR=${PROJ_VENV_DIR}
+        -D CMAKE_BUILD_TYPE=Release
+        -D BUILD_SHARED_LIBS=ON
+        -D BUILD_APPS=OFF
+        -D GDAL_BUILD_OPTIONAL_DRIVERS=OFF
+        -D OGR_BUILD_OPTIONAL_DRIVERS=OFF
+        -D CMAKE_INSTALL_PREFIX=${PROJ_VENV_DIR}
+        # -D CMAKE_INSTALL_PREFIX=${PROJ_OUT_DIR}/install
+    ECHO_OUTPUT_VARIABLE
+    ECHO_ERROR_VARIABLE)
+execute_process(
+    COMMAND ${CMAKE_COMMAND} --build ${PROJ_OUT_REPO_DIR}/build
+    ECHO_OUTPUT_VARIABLE
+    ECHO_ERROR_VARIABLE)
+execute_process(
+    COMMAND ${CMAKE_COMMAND} --install ${PROJ_OUT_REPO_DIR}/build
+    ECHO_OUTPUT_VARIABLE
+    ECHO_ERROR_VARIABLE)
 message("")
 restore_cmake_message_indent()
 

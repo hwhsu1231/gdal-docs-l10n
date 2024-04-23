@@ -18,6 +18,7 @@ include(GitUtils)
 include(JsonUtils)
 include(LogUtils)
 set(ENV{LANG} "${CONSOLE_LOCALE}")
+set(ENV{LD_LIBRARY_PATH} "${PROJ_VENV_DIR}/lib")
 
 
 message(STATUS "Determining whether it is required to update .pot files...")
@@ -142,31 +143,163 @@ message("")
 restore_cmake_message_indent()
 
 
-message(STATUS "Generating 'conf.py' file by configuring project(CMakeHelp)...")
+message(STATUS "Generating 'Doxyfile.xml' from 'Doxyfile' with the following modification...")
+file(READ "${PROJ_OUT_REPO_DIR}/Doxyfile" DOXYFILE_CNT)
+string(REGEX REPLACE "(GENERATE_HTML[ ]*=[ ]*)[^\n]*"       "\\1NO"               DOXYFILE_CNT "${DOXYFILE_CNT}")
+string(REGEX REPLACE "(GENERATE_XML[ ]*=[ ]*)[^\n]*"        "\\1YES"              DOXYFILE_CNT "${DOXYFILE_CNT}")
+string(REGEX REPLACE "(XML_OUTPUT[ ]*=[ ]*)[^\n]*"          "\\1doc/build/xml"    DOXYFILE_CNT "${DOXYFILE_CNT}")
+string(REGEX REPLACE "(XML_PROGRAMLISTING[ ]*=[ ]*)[^\n]*"  "\\1NO"               DOXYFILE_CNT "${DOXYFILE_CNT}")
+string(REGEX REPLACE "(PREDEFINED[ ]*=[ ]*)(.*)[^\n]*"      "\\1DOXYGEN_XML \\2"  DOXYFILE_CNT "${DOXYFILE_CNT}")
+file(WRITE "${PROJ_OUT_REPO_DIR}/Doxyfile.xml" "${DOXYFILE_CNT}")
+remove_cmake_message_indent()
+message("")
+message("GENERATE_HTML      is set to         NO")
+message("GENERATE_XML       is set to         YES")
+message("XML_OUTPUT         is set to         doc/build/xml")
+message("XML_PROGRAMLISTING is set to         NO")
+message("PREDEFINED         is extended with  DOXYGEN_XML")
+message("")
+restore_cmake_message_indent()
+
+
+message(STATUS "Running 'doxygen Doxyfile.xml' command to generate .xml files...")
+file(MAKE_DIRECTORY "${PROJ_OUT_REPO_DIR}/doc/build")
 remove_cmake_message_indent()
 message("")
 execute_process(
-    COMMAND 
-        ${CMAKE_COMMAND} 
-        -S ${PROJ_OUT_REPO_SPHINX_DIR}
-        -B ${PROJ_OUT_REPO_SPHINX_DIR}/build
-        -D SPHINX_HTML=ON
-        # Since find_program(SPHINX_EXECUTABLE) of CMake repo doesn't support to 
-        # find sphinx-build inside the virtual environment currently, I have to 
-        # specify it in advanced.
-        -D SPHINX_EXECUTABLE=${Sphinx_BUILD_EXECUTABLE}
+    COMMAND
+        doxygen Doxyfile.xml
+    WORKING_DIRECTORY ${PROJ_OUT_REPO_DIR}
     ECHO_OUTPUT_VARIABLE
-    ECHO_ERROR_VARIABLE
-    COMMAND_ERROR_IS_FATAL ANY)
+    RESULT_VARIABLE RES_VAR
+    OUTPUT_VARIABLE OUT_VAR
+    ERROR_VARIABLE  ERR_VAR
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+    ERROR_STRIP_TRAILING_WHITESPACE)
+if(RES_VAR EQUAL 0)
+    if(ERR_VAR)
+        # Success, but there may be some warnings.
+        message("")
+        message("---------- RES ----------")
+        message("")
+        message("${RES_VAR}")
+        message("")
+        message("---------- ERR ----------")
+        message("")
+        message("${ERR_VAR}")
+        message("")
+        message("-------------------------")
+    endif()
+else()
+    message("")
+    message("---------- RES ----------")
+    message("")
+    message("${RES_VAR}")
+    message("")
+    message("---------- ERR ----------")
+    message("")
+    message("${ERR_VAR}")
+    message("")
+    message("-------------------------")
+    message("")
+    message(FATAL_ERROR "Fatal error occurred.")
+endif()
 message("")
 restore_cmake_message_indent()
-message(STATUS "Copying the 'conf.py' file to '${PROJ_OUT_REPO_DOCS_SOURCE_DIR}/'...")
-file(COPY_FILE 
-    "${PROJ_OUT_REPO_SPHINX_DIR}/build/conf.py"
-    "${PROJ_OUT_REPO_DOCS_SOURCE_DIR}/conf.py")
+
+
+message(STATUS "Running 'build_driver_summary.py raster' command to generate .rst files...")
 remove_cmake_message_indent()
 message("")
-message("The 'conf.py' file is copied.")
+execute_process(
+    COMMAND
+        ${Python_EXECUTABLE} 
+        ${PROJ_OUT_REPO_DOCS_SOURCE_DIR}/build_driver_summary.py
+        ${PROJ_OUT_REPO_DOCS_SOURCE_DIR}/drivers/raster 
+        raster_driver_summary 
+        ${PROJ_OUT_REPO_DOCS_SOURCE_DIR}/drivers/raster/driver_summary.rst
+    ECHO_OUTPUT_VARIABLE
+    RESULT_VARIABLE RES_VAR
+    OUTPUT_VARIABLE OUT_VAR
+    ERROR_VARIABLE  ERR_VAR
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+    ERROR_STRIP_TRAILING_WHITESPACE)
+if(RES_VAR EQUAL 0)
+    if(ERR_VAR)
+        # Success, but there may be some warnings.
+        message("")
+        message("---------- RES ----------")
+        message("")
+        message("${RES_VAR}")
+        message("")
+        message("---------- ERR ----------")
+        message("")
+        message("${ERR_VAR}")
+        message("")
+        message("-------------------------")
+    endif()
+else()
+    message("")
+    message("---------- RES ----------")
+    message("")
+    message("${RES_VAR}")
+    message("")
+    message("---------- ERR ----------")
+    message("")
+    message("${ERR_VAR}")
+    message("")
+    message("-------------------------")
+    message("")
+    message(FATAL_ERROR "Fatal error occurred.")
+endif()
+message("")
+restore_cmake_message_indent()
+
+
+message(STATUS "Running 'build_driver_summary.py vector' command to generate .rst files...")
+remove_cmake_message_indent()
+message("")
+execute_process(
+    COMMAND
+        ${Python_EXECUTABLE} 
+        ${PROJ_OUT_REPO_DOCS_SOURCE_DIR}/build_driver_summary.py
+        ${PROJ_OUT_REPO_DOCS_SOURCE_DIR}/drivers/vector 
+        vector_driver_summary 
+        ${PROJ_OUT_REPO_DOCS_SOURCE_DIR}/drivers/vector/driver_summary.rst
+    ECHO_OUTPUT_VARIABLE
+    RESULT_VARIABLE RES_VAR
+    OUTPUT_VARIABLE OUT_VAR
+    ERROR_VARIABLE  ERR_VAR
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+    ERROR_STRIP_TRAILING_WHITESPACE)
+if(RES_VAR EQUAL 0)
+    if(ERR_VAR)
+        # Success, but there may be some warnings.
+        message("")
+        message("---------- RES ----------")
+        message("")
+        message("${RES_VAR}")
+        message("")
+        message("---------- ERR ----------")
+        message("")
+        message("${ERR_VAR}")
+        message("")
+        message("-------------------------")
+    endif()
+else()
+    message("")
+    message("---------- RES ----------")
+    message("")
+    message("${RES_VAR}")
+    message("")
+    message("---------- ERR ----------")
+    message("")
+    message("${ERR_VAR}")
+    message("")
+    message("-------------------------")
+    message("")
+    message(FATAL_ERROR "Fatal error occurred.")
+endif()
 message("")
 restore_cmake_message_indent()
 

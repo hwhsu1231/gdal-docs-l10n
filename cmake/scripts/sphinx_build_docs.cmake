@@ -12,11 +12,43 @@ set(CMAKE_MODULE_PATH
     "${PROJ_CMAKE_MODULES_DIR}/common")
 set(Sphinx_ROOT_DIR "${PROJ_VENV_DIR}")
 find_package(Git      MODULE ${FIND_PACKAGE_GIT_ARGS}     REQUIRED)
+find_package(Python   MODULE ${FIND_PACKAGE_PYTHON_ARGS}  REQUIRED)
 find_package(Gettext  MODULE ${FIND_PACKAGE_GETTEXT_ARGS} REQUIRED)
 find_package(Sphinx   MODULE REQUIRED)
 include(JsonUtils)
 include(LogUtils)
 set(ENV{LANG} "${CONSOLE_LOCALE}")
+set(ENV{LD_LIBRARY_PATH} "${PROJ_VENV_DIR}/lib")
+
+
+
+# set(ENV{PYTHONPATH}       ${PROJ_VENV_DIR}/lib/python3.10/site-packages)
+
+execute_process(
+    COMMAND 
+        # ${CMAKE_COMMAND} -E env
+        # PYTHONPATH=${PROJ_VENV_DIR}/lib/python3.10/site-packages
+        # LD_LIBRARY_PATH=${PROJ_VENV_DIR}/lib
+        ${Python_EXECUTABLE} -c "from osgeo import gdal"
+        #############################################
+        # env
+        # PYTHONPATH=${PROJ_SOURCE_DIR}/out/install/lib/python3.10/site-packages
+        # LD_LIBRARY_PATH=${PROJ_SOURCE_DIR}/out/install/lib
+        # # ${CMAKE_COMMAND} -E env
+        # # PYTHONPATH=${PROJ_SOURCE_DIR}/out/install/lib/python3.10/site-packages
+        # # LD_LIBRARY_PATH=${PROJ_SOURCE_DIR}/out/install/lib
+        # # ${CMAKE_COMMAND} -E env
+        # # PYTHONPATH=${PROJ_VENV_DIR}/lib/python3.10/site-packages
+        # # LD_LIBRARY_PATH=${PROJ_VENV_DIR}/lib
+        # echo "ENV{PYTHONPATH}=$ENV{PYTHONPATH}"
+    ECHO_OUTPUT_VARIABLE
+    ECHO_ERROR_VARIABLE
+    RESULT_VARIABLE RES_VAR
+    OUTPUT_VARIABLE OUT_VAR
+    ERROR_VARIABLE  ERR_VAR
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+    ERROR_STRIP_TRAILING_WHITESPACE)
+# return()
 
 
 if(NOT LANGUAGE STREQUAL "all")
@@ -46,6 +78,19 @@ message("")
 restore_cmake_message_indent()
 
 
+# set(ENV{PYTHONPATH} 
+#     "${PROJ_VENV_DIR}/lib"
+#     # "${PROJ_VENV_DIR}/lib/libgdal.so"
+#     # "${PROJ_VENV_DIR}/lib/python3.10/site-packages"
+# )
+# set(ENV{LD_LIBRARY_PATH} "${PROJ_VENV_DIR}/lib:$ENV{LD_LIBRARY_PATH}")
+
+# set(ENV{PYTHONPATH}       ${PROJ_SOURCE_DIR}/out/install/lib/python3.10/site-packages)
+# set(ENV{LD_LIBRARY_PATH}  ${PROJ_SOURCE_DIR}/out/install/lib)
+set(Python_ROOT_DIR "${PROJ_VENV_DIR}")
+find_package(Python MODULE ${FIND_PACKAGE_PYTHON_ARGS} REQUIRED)
+
+
 file(RELATIVE_PATH LOCALE_TO_SOURCE_DIR
     "${PROJ_OUT_REPO_DOCS_SOURCE_DIR}"
     "${PROJ_OUT_REPO_DOCS_LOCALE_DIR}")
@@ -57,19 +102,18 @@ foreach(_LANGUAGE ${LANGUAGES_LIST})
     remove_cmake_message_indent()
     message("")
     execute_process(
-        COMMAND 
+        COMMAND
             ${Sphinx_BUILD_EXECUTABLE}
             -b ${BUILDER}
             -D locale_dirs=${LOCALE_TO_SOURCE_DIR}            # Relative to <sourcedir>
             -D language=${_LANGUAGE}
             -D gettext_compact=0
             -D gettext_additional_targets=${GETTEXT_ADDITIONAL_TARGETS}
-            -A versionswitch=1
             -c ${PROJ_OUT_REPO_DOCS_CONFIG_DIR}               # <configdir>, where conf.py locates.
             ${PROJ_OUT_REPO_DOCS_SOURCE_DIR}                  # <sourcedir>, where index.rst locates.
             ${PROJ_OUT_BUILDER_DIR}/${_LANGUAGE}/${VERSION}   # <outputdir>, where .html generates.
         ECHO_OUTPUT_VARIABLE
-        ECHO_ERROR_VARIABLE
+        # ECHO_ERROR_VARIABLE
         RESULT_VARIABLE RES_VAR
         OUTPUT_VARIABLE OUT_VAR
         ERROR_VARIABLE  ERR_VAR
@@ -120,40 +164,6 @@ foreach(_LANGUAGE ${LANGUAGES_LIST})
     restore_cmake_message_indent()
 endforeach()
 unset(_LANGUAGE)
-
-
-if(BUILDER MATCHES "^html$")
-    message(STATUS "Coying 'version_switch.js' file to the html output directory...")
-    set(PROTOCOLS "file:///" "https://")
-    foreach(PROTOCOL ${PROTOCOLS})
-        string(REGEX REPLACE "${PROTOCOL}" "" BASEURL ${BASEURL_HREF})
-        if(NOT "${BASEURL}" STREQUAL "${BASEURL_HREF}")
-            break()
-        endif()
-    endforeach()
-    unset(PROTOCOL)
-    set(LANGURL_HREF  "${BASEURL_HREF}/${_LANGUAGE}")
-    set(LANGURL       "${BASEURL}/${_LANGUAGE}")
-    set(LANGURL_RE    "${BASEURL}/${_LANGUAGE}")
-    string(REPLACE "." "\\." LANGURL_RE "${LANGURL_RE}")
-    string(REPLACE "/" "\\/" LANGURL_RE "${LANGURL_RE}")
-    remove_cmake_message_indent()
-    message("")
-    message("From: ${PROJ_CMAKE_TEMPLATES_DIR}/version_switch.js.in")
-    message("To:   ${PROJ_OUT_BUILDER_DIR}/${_LANGUAGE}/version_switch.js")
-    message("")
-    message("BASEURL_HREF = ${BASEURL_HREF}")
-    message("BASEURL      = ${BASEURL}")
-    message("LANGURL_HREF = ${LANGURL_HREF}")
-    message("LANGURL      = ${LANGURL}")
-    message("LANGURL_RE   = ${LANGURL_RE}")
-    message("")
-    restore_cmake_message_indent()
-    configure_file(
-        "${PROJ_CMAKE_TEMPLATES_DIR}/version_switch.js.in"
-        "${PROJ_OUT_BUILDER_DIR}/${_LANGUAGE}/version_switch.js"
-        @ONLY)
-endif()
 
 
 message(STATUS "The HTML documentation is built succesfully!")

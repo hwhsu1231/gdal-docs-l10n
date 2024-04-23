@@ -2,7 +2,7 @@
 # See accompanying file LICENSE.txt for details.
 
 cmake_minimum_required(VERSION 3.23)
-project(cmake-docs-l10n NONE)
+project(gdal-docs-l10n NONE)
 
 #[================[
   Cache Variables.
@@ -13,9 +13,9 @@ set(LANGUAGE "all"
     # Possible values are "all" and languages listed in languages.json.
     # See https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language for details.
 
-set(VERSION "git-master"
-    CACHE STRING "Current version for the CMake documentation.")
-    # Possible values are "git-master", "latest", and "v3.x".
+set(VERSION "master"
+    CACHE STRING "Current version for the GDAL documentation.")
+    # Possible values are "master".
 
 set(BUILDER "html"
     CACHE STRING "Builder for the Sphinx documentation system.")
@@ -30,13 +30,13 @@ set(UPDATE_MODE "NEVER"
     # 2) COMPARE: Update .pot/.po files only if the current version is out-of-date.
     # 3) ALWAYS:  Update .pot/.po files even if the current version is up-to-date.
 
-set(INSTALL_MODE "COMPARE"
+set(INSTALL_MODE "ALWAYS"
     CACHE STRING "Mode of installing the requirements.")
     # Possible values are "COMPARE" and "ALWAYS".
     # 1) COMPARE: Install the requirements only if the current version is different than the previous one.
     # 2) ALWAYS:  Install the requirements even if the current version is the same as the previous one.
 
-set(GIT_REMOTE_URL "https://gitlab.kitware.com/cmake/cmake.git"
+set(GIT_REMOTE_URL "https://github.com/OSGeo/gdal.git"
     CACHE STRING "Remote URL of the upstream Git repository.")
 
 set(BASEURL_HREF "https://hwhsu1231.github.io/cmake-docs-l10n-draft2"
@@ -54,7 +54,7 @@ set(GETTEXT_EXACT_VERSION ""
 set(CROWDIN_EXACT_VERSION ""
     CACHE STRING "Exact version for calling find_package(Crowdin).")
 
-set(COMPENDIUM_VERSION "git-master"
+set(COMPENDIUM_VERSION "master"
     CACHE STRING "Version of compendium that the current version merges translations from.")
 
 set(CONSOLE_LOCALE "en_US.UTF-8"
@@ -81,10 +81,9 @@ set(PROJ_CMAKE_TEMPLATES_DIR        "${PROJ_SOURCE_DIR}/cmake/templates")
 set(PROJ_VENV_DIR                   "${PROJ_SOURCE_DIR}/.venv")
 set(PROJ_OUT_DIR                    "${PROJ_SOURCE_DIR}/out")
 set(PROJ_OUT_REPO_DIR               "${PROJ_OUT_DIR}/repo")
-set(PROJ_OUT_REPO_SPHINX_DIR        "${PROJ_OUT_REPO_DIR}/Utilities/Sphinx")
-set(PROJ_OUT_REPO_DOCS_CONFIG_DIR   "${PROJ_OUT_REPO_DIR}/Help")
-set(PROJ_OUT_REPO_DOCS_SOURCE_DIR   "${PROJ_OUT_REPO_DIR}/Help")
-set(PROJ_OUT_REPO_DOCS_LOCALE_DIR   "${PROJ_OUT_REPO_DIR}/Help/locale")
+set(PROJ_OUT_REPO_DOCS_CONFIG_DIR   "${PROJ_OUT_REPO_DIR}/doc/source")
+set(PROJ_OUT_REPO_DOCS_SOURCE_DIR   "${PROJ_OUT_REPO_DIR}/doc/source")
+set(PROJ_OUT_REPO_DOCS_LOCALE_DIR   "${PROJ_OUT_REPO_DIR}/doc/locale")
 set(PROJ_OUT_BUILDER_DIR            "${PROJ_OUT_DIR}/${BUILDER}")
 set(PROJ_L10N_DIR                   "${PROJ_SOURCE_DIR}/l10n")
 set(PROJ_L10N_VERSION_DIR           "${PROJ_L10N_DIR}/${VERSION}")
@@ -114,7 +113,6 @@ set(CMAKE_MODULE_PATH
     "${PROJ_CMAKE_MODULES_DIR}"
     "${PROJ_CMAKE_MODULES_DIR}/common")
 include(JsonUtils)
-file(READ "${LATEST_TXT_PATH}"      LATEST_VERSION)
 file(READ "${LANGUAGES_JSON_PATH}"  LANGUAGES_JSON_CNT)
 get_members_of_json_object(
     IN_JSON_OBJECT      "${LANGUAGES_JSON_CNT}"
@@ -122,23 +120,14 @@ get_members_of_json_object(
 
 #[====================================[
   Validate the VERSION cache variable.
-  - For "git-master":
+  - For "master":
     - set VERSION_TYPE to "branch"
-    - set BRANCH_NAME 
-  - For "latest" and "v3.x":
-    - set VERSION_TYPE to "tag"
-    - set TAG_PATTERN
+    - set BRANCH_NAME to "master"
 #]====================================]
 
-if (VERSION MATCHES     "^git-master$")
+if (VERSION MATCHES     "^master$")
     set(VERSION_TYPE    "branch")
     set(BRANCH_NAME     "master")
-elseif(VERSION MATCHES  "^latest$")
-    set(VERSION_TYPE    "tag")
-    set(TAG_PATTERN     "${LATEST_VERSION}.*")
-elseif(VERSION MATCHES  "^v([0-9]+)\\.([0-9]+)$")
-    set(VERSION_TYPE    "tag")
-    set(TAG_PATTERN     "${VERSION}.*")
 else()
     message(FATAL_ERROR "Invalid VERSION value. (${VERSION})")
 endif()
@@ -460,3 +449,72 @@ if(AUTO_DEPEND)
     add_dependencies(gettext_update_po  sphinx_update_pot)
     add_dependencies(sphinx_build_docs  gettext_update_po)
 endif()
+
+find_package(Doxygen MODULE REQUIRED)
+
+
+# file(READ "${PROJ_OUT_REPO_DIR}/Doxyfile" DOXYFILE_CNT)
+# string(REGEX REPLACE "(GENERATE_HTML[ ]*=[ ]*)[^\n]*"       "\\1NO"               DOXYFILE_CNT "${DOXYFILE_CNT}")
+# string(REGEX REPLACE "(XML_OUTPUT[ ]*=[ ]*)[^\n]*"          "\\1doc/build/xml"    DOXYFILE_CNT "${DOXYFILE_CNT}")
+# string(REGEX REPLACE "(XML_PROGRAMLISTING[ ]*=[ ]*)[^\n]*"  "\\1NO"               DOXYFILE_CNT "${DOXYFILE_CNT}")
+# string(REGEX REPLACE "(PREDEFINED[ ]*=[ ]*)(.*)[^\n]*"      "\\1DOXYGEN_XML \\2"  DOXYFILE_CNT "${DOXYFILE_CNT}")
+# file(WRITE "${PROJ_OUT_REPO_DIR}/Doxyfile.xml" "${DOXYFILE_CNT}")
+# message(STATUS "DOXYFILE_CNT:")
+# message(STATUS "${DOXYFILE_CNT}")
+
+# # 假設 original_content 變量包含了 Doxyfile 的內容
+# set(original_content "\nGENERATE_HTML          = YES\n")
+# # # 使用正則表達式替換
+# # string(REGEX REPLACE "(GENERATE_HTML[ ]*=[ ]*).*" "\\1NO" modified_content "${original_content}")
+# # 使用正则表达式替换
+# # 匹配以任意字符开始，包括换行符，直到 "GENERATE_HTML"，然后跟任意空格、等号和空格，替换等号后的所有内容为 "NO"
+# # string(REGEX REPLACE "((^|\\n)[^\\n]*GENERATE_HTML[ ]*=[ ]*).*" "\\1NO" modified_content "${original_content}")
+# string(REGEX REPLACE "(GENERATE_HTML[ ]*=[ ]*)[^\n]*" "\\1NO" modified_content "${original_content}")
+# # 輸出修改後的內容以確認更改
+# message("---------------------")
+# message("${modified_content}")
+# # message("${original_content}")
+# message("---------------------")
+
+
+# # 假设 original_content 包含了你的配置文件内容
+# set(original_content "\nPREDEFINED             = ORIGINAL_DEF \\\n")
+# # 使用正则表达式替换，确保 PREDEFINED 后面加上 DOXYGEN_XML，且保留原有定义
+# string(REGEX REPLACE "(PREDEFINED[ ]*=[ ]*)(.*)" "\\1DOXYGEN_XML \\2" modified_content "${original_content}")
+# # string(REGEX REPLACE "(PREDEFINED[ ]*=[ ]*)(.*)[^\n]*" "\\1DOXYGEN_XML \\2" modified_content "${original_content}")
+# # 输出修改后的内容以确认更改
+# message(STATUS "------------------------")
+# message(STATUS "Modified content: ${modified_content}")
+# message(STATUS "------------------------")
+
+
+# unset(Python_EXECUTABLE)
+# set(Python_ROOT_DIR "${PROJ_VENV_DIR}")
+# find_package(Python MODULE ${FIND_PACKAGE_PYTHON_ARGS} REQUIRED)
+# execute_process(
+#     COMMAND 
+#         # env
+#         # PYTHONPATH=${PROJ_SOURCE_DIR}/out/install/lib/python3.10/site-packages
+#         # LD_LIBRARY_PATH=${PROJ_SOURCE_DIR}/out/install/lib
+#         # ${CMAKE_COMMAND} -E env PYTHONPATH=${PROJ_SOURCE_DIR}/out/install/lib/python3.10/site-packages
+#         # --
+#         # LD_LIBRARY_PATH=${PROJ_SOURCE_DIR}/out/install/lib
+#         # ${CMAKE_COMMAND} -E env
+#         # PYTHONPATH=${PROJ_VENV_DIR}/lib/python3.10/site-packages
+#         # LD_LIBRARY_PATH=${PROJ_VENV_DIR}/lib
+#         # ${CMAKE_COMMAND} -E echo "ENV{PYTHONPATH}=$ENV{PYTHONPATH}"
+#         #####################
+#         # env
+#         ${CMAKE_COMMAND} -E env
+#         PYTHONPATH=${PROJ_VENV_DIR}/lib/python3.10/site-packages
+#         LD_LIBRARY_PATH=${PROJ_VENV_DIR}/lib
+#         ${Python_EXECUTABLE} -c "from osgeo import gdal"
+#         # ${CMAKE_COMMAND} -E echo "ENV{PYTHONPATH}=$ENV{PYTHONPATH}"
+#     ECHO_OUTPUT_VARIABLE
+#     ECHO_ERROR_VARIABLE
+#     RESULT_VARIABLE RES_VAR
+#     OUTPUT_VARIABLE OUT_VAR
+#     ERROR_VARIABLE  ERR_VAR
+#     OUTPUT_STRIP_TRAILING_WHITESPACE
+#     ERROR_STRIP_TRAILING_WHITESPACE)
+# return()
