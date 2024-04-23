@@ -9,11 +9,11 @@
     <th>Attribution</th>
   </tr>
   <tr>
-    <td>logo-cmake.svg</td>
-    <td><img src="./logo-cmake.svg" alt="logo-cmake" width="100"/></td>
-    <td><a href="https://commons.wikimedia.org/wiki/File:Cmake.svg">Link</a></td>
+    <td>logo-gdal.svg</td>
+    <td><img src="./logo-gdal.svg" alt="logo-gdal" width="100"/></td>
+    <td><a href="https://commons.wikimedia.org/wiki/File:GDALLogoColor.svg">Link</a></td>
     <td>
-      By <a href="https://cmake.org/">CMake Team</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+      By <a href="https://gdal.org/">GDAL Team</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
     </td>
   </tr>
   <tr>

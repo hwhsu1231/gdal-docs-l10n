@@ -1,17 +1,17 @@
 <div align="center">
   <!-- <img height="100" src="docs/img/title-logo-mark-cmake.png"> -->
   <picture>
-    <img width="100" height="100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Cmake.svg/480px-Cmake.svg.png">
+    <img width="100" height="100" src="docs/img/logo-gdal.svg">
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://support.crowdin.com/assets/logos/symbol/png/crowdin-symbol-cWhite.png">
-    <source media="(prefers-color-scheme: light)" srcset="https://support.crowdin.com/assets/logos/symbol/png/crowdin-symbol-cDark.png">
-    <img width="100" height="100" src="https://support.crowdin.com/assets/logos/symbol/png/crowdin-symbol-cDark.png">
+    <source media="(prefers-color-scheme: dark)" srcset="docs/img/logo-crowdin-white.svg">
+    <source media="(prefers-color-scheme: light)" srcset="docs/img/logo-crowdin-dark.svg">
+    <img width="100" height="100" src="docs/img/logo-crowdin-dark.svg">
   </picture>
 </div>
 
 <h1 id="localization-of-cmake-documentation">
-Localization of CMake Documentation
+Localization of GDAL Documentation
 </h1>
 
 <details><summary><strong>Switch Languages</strong></summary>
@@ -65,12 +65,12 @@ The translations are contributed in Crowdin Project and downloaded automatically
 
 Git Repository:
 
-- GitHub (main): https://github.com/hwhsu1231/cmake-docs-l10n
-- Gitee (mirror): https://gitee.com/hwhsu1231/cmake-docs-l10n
-- GitFlic (mirror): https://gitflic.ru/project/hwhsu1231/cmake-docs-l10n
-- Codeberg (mirror): https://codeberg.org/hwhsu1231/cmake-docs-l10n
+- GitHub (main): https://github.com/hwhsu1231/gdal-docs-l10n
+- Gitee (mirror): https://gitee.com/hwhsu1231/gdal-docs-l10n
+- GitFlic (mirror): https://gitflic.ru/project/hwhsu1231/gdal-docs-l10n
+- Codeberg (mirror): https://codeberg.org/hwhsu1231/gdal-docs-l10n
 
-Crowdin Project: https://crowdin.com/project/cmake-docs
+Crowdin Project: https://crowdin.com/project/gdal-docs
 
 Contributing and Maintaining Guidelines:
 
