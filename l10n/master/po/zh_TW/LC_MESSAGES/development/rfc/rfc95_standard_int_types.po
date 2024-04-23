@@ -1,0 +1,427 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:5
+msgid "RFC 95: Use standard C/C++ integer types (proposed, *NOT* adopted)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:8
+msgid "Author:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:8
+msgid "Even Rouault"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:9
+msgid "Contact:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:9
+msgid "even.rouault @ spatialys.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:10
+msgid "Started:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:10
+msgid "2023-Sep-15"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:11
+msgid "Status:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:11
+msgid "Proposed, but *not* adopted"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:12
+msgid "Target:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:12
+msgid "GDAL 4.0"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:16
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:18
+msgid ""
+"This RFC replaces the use of the custom integer types defined in cpl_port.h "
+"(G[U]Int[8/16/32/64/Big]) by their standard [u]int[8/16/32/64]_t C99/C++11 "
+"counterparts, as well as other derived integer data types. Due to the API "
+"and ABI break, this will be implemented in GDAL 4.0."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:24
+msgid "Motivation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:26
+msgid ""
+"The existing Gxxxxx typedefs have been defined at a time that predates C99 "
+"and C++11 which introduced those fixed with integer types. If GDAL would be "
+"created today, we would use C99 data types."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:30
+msgid ""
+"Using those aliases, particularly GIntBig/GUIntBig which are not self-"
+"explanatory on their actual width (64 bit), adds cognitive load to "
+"developers."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:34
+msgid ""
+"Due to their poor namespacing, those short typenames may occasionally clash "
+"with other libraries. At a time, Poppler used a ``GBool`` data type as well, "
+"which was clashing with GDAL's one."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:38
+msgid ""
+"Other projects (e.g. libtiff), have recently switched from the use of "
+"similar custom types to C99 ones."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:42
+msgid "Details"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:44
+msgid "The following data types replacement are done in the whole code base:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:46
+msgid "``GBool``     --> ``bool``  (``GBool`` was aliased to ``int``)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:47
+msgid "``GInt8``     --> ``int8_t``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:48
+msgid "``GInt16``    --> ``int16_t``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:49
+msgid "``GUInt16``   --> ``uint16_t``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:50
+msgid "``GInt32``    --> ``int32_t``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:51
+msgid "``GUInt32``   --> ``uint32_t``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:52
+msgid "``GInt64``    --> ``int64_t``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:53
+msgid "``GUInt64``   --> ``uint64_t``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:54
+msgid "``GIntBig``   --> ``int64_t``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:55
+msgid "``GUIntBig``  --> ``uint64_t``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:57
+msgid "Other changes have been done for other integer data types:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:59
+msgid "``vsi_l_offset``-->  ``uint64_t``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:60
+msgid "``GSpacing``    -->  ``int64_t``   (affects mostly C++ raster drivers)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:61
+msgid ""
+"``GPtrDiff_t``  -->  ``ptrdiff_t`` (affects the multidimensional C and C++ "
+"API)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:63
+msgid "The following macro replacement are done in the whole code base:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:65
+msgid "``CPL_FRMT_GIB``  --> ``\"%\" PRId64``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:66
+msgid "``CPL_FRMT_GUIB`` --> ``\"%\" PRIu64``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:67
+msgid "``GINT64_MAX``    --> ``std::numeric_limits<int64_t>::max()``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:68
+msgid "``GINT64_MIN``    --> ``std::numeric_limits<int64_t>::min()``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:69
+msgid "``GUINT64_MAX``   --> ``std::numeric_limits<uint64_t>::max()``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:70
+msgid "``GINTBIG_MAX``   --> ``std::numeric_limits<int64_t>::max()``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:71
+msgid "``GINTBIG_MIN``   --> ``std::numeric_limits<int64_t>::min()``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:72
+msgid "``GUINTBIG_MAX``  --> ``std::numeric_limits<uint64_t>::max()``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:74
+msgid ""
+"The old types are no longer used in the GDAL code base since their "
+"definition is protected by ``#ifdef GDAL_USE_OLD_INT_TYPES``, which external "
+"code might define to help for the migration (particularly if supporting GDAL "
+"< 4.0 and GDAL >= 4.0 is needed)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:80
+msgid "Impacts in the code base"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:82
+msgid ""
+"Significant part of the code base (735 files changed). Most changes have "
+"been done in a automated way, with manual changes specifically for the "
+"CPL_FRMT_GIB/CPL_FRMT_GUIB replacement which was harder to automate."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:88
+msgid "SWIG bindings"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:90
+msgid ""
+"While .i files are impacted to cope with the C type changes, the language "
+"specific API of SWIG bindings is not impacted."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:94
+msgid "Backward compatibility"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:96
+msgid "C and C++ API and ABI are impacted."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:98
+msgid "Main impacts are:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:100
+msgid ""
+"GBool was aliased to ``int``: changing to ``bool`` in C++ methods of the "
+"OGRStyleXXXX classes affect the API and ABI. Impact should be modest as this "
+"functionality is thought to be marginally used, and this only impacts the C+"
+"+ API (the C API for those methods uses ``int`` and not ``GBool``)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:105
+msgid ""
+"GIntBig/GInt64 was aliased to ``long long`` and GUIntBig/GUInt64 to "
+"```unsigned long long``. While ``int64_t`` and ``long long`` have in "
+"practice same width and signedness, they are formally different data types. "
+"For scalar usage of those types, compilers shouldn't warn. But for usage of "
+"those types as pointers, compilers warn in C (``-Wincompatible-pointer-"
+"types`` with gcc) and error outs in C++ (unless ``-fpermissive`` is passed), "
+"when mixing a ``int64_t`` pointer and a ``long long`` pointer (similarly for "
+"their unsigned counterparts)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:115
+msgid "C Raster API impacts (and equivalent C++ methods):"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:117
+msgid ":cpp:func:`GDALGetDefaultHistogramEx` (e.g. used by QGIS)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:118
+msgid ":cpp:func:`GDALSetDefaultHistogramEx`"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:119
+msgid ":cpp:func:`GDALGetRasterHistogramEx` (e.g. used by QGIS)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:120
+msgid ":cpp:func:`GDALGetVirtualMemAuto`"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:122
+msgid "C Vector API impacts (and equivalent C++ methods):"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:124
+msgid ":cpp:func:`OGR_F_GetFieldAsInteger64List`"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:125
+msgid ":cpp:func:`OGR_F_SetFieldInteger64List`"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:127
+msgid "C Multidimension API impacts (and equivalent C++ methods):"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:129
+msgid ":cpp:func:`GDALGroupCreateDimension`"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:130
+msgid ":cpp:func:`GDALGroupCreateAttribute`"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:131
+msgid ":cpp:func:`GDALMDArrayRead`"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:132
+msgid ":cpp:func:`GDALMDArrayWrite`"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:133
+msgid ":cpp:func:`GDALMDArrayAdviseRead`"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:134
+msgid ":cpp:func:`GDALMDArrayAdviseReadEx`"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:135
+msgid ":cpp:func:`GDALMDArrayCreateAttribute`"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:136
+msgid ":cpp:func:`GDALMDArrayResize`"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:137
+msgid ":cpp:func:`GDALMDArrayGetBlockSize`"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:138
+msgid ":cpp:func:`GDALMDArrayGetStatistics`"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:139
+msgid ":cpp:func:`GDALMDArrayComputeStatistics`"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:140
+msgid ":cpp:func:`GDALMDArrayComputeStatisticsEx`"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:141
+msgid ":cpp:func:`GDALAttributeGetDimensionsSize`"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:143
+msgid "Out-of-tree drivers are also impacted:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:145
+msgid ""
+"the vector ones that implement :cpp:func:`OGRLayer::ISetFeature`, :cpp:func:"
+"`OGRLayer::SetNextByIndex`, :cpp:func:`OGRLayer::DeleteFeature`, :cpp:func:"
+"`OGRLayer::GetFeatureCount`"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:149
+msgid ""
+"the ones that implement the multidimensional API (no publicly ones known by "
+"us)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:152
+msgid "Risks"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:154
+msgid ""
+"The changes of this RFC are somewhat risky, particularly the replacement of "
+"the formatting macros CPL_FRMT_GIB/CPL_FRMT_GUIB with the PRId64/PRIu64 "
+"ones, which requires to add a ``%`` formatting character. While compilers "
+"caught most of the mismatches, there were remaining ones undetected at "
+"compilation time. Manual corrections have been done to make the regression "
+"test suite pass. Additional \"grep\"-based searches in the code base have "
+"been done to find faulty patterns, but we cannot exclude that some might "
+"have been missed."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:163
+msgid "Documentation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:165
+msgid "MIGRATION_GUIDE.TXT will be updated to point to this RFC."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:168
+msgid "Testing"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:170
+msgid "No changes in Python tests. Updates in the C++ test suite.`"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:173
+msgid "Related issues and PRs"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:175
+msgid ""
+"https://github.com/OSGeo/gdal/issues/8288: Consider using standard C/C++ "
+"integer types"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:178
+msgid "https://github.com/OSGeo/gdal/pull/8396: candidate implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:181
+msgid "Voting history"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc95_standard_int_types.rst:183
+msgid "TBD"
+msgstr ""

@@ -1,0 +1,183 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/api/python/osgeo.osr.rst:2
+msgid "osgeo.osr module"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: of osgeo.osr.AreaOfUse:1 osgeo.osr.CRSInfo:1 osgeo.osr.ExceptionMgr:1
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: of osgeo.osr.AreaOfUse:1
+msgid "Proxy of C++ OSRAreaOfUse class."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: of osgeo.osr.AreaOfUse.east_lon_degree:1
+#: osgeo.osr.AreaOfUse.north_lat_degree:1
+#: osgeo.osr.AreaOfUse.south_lat_degree:1 osgeo.osr.AreaOfUse.west_lon_degree:1
+#: osgeo.osr.CRSInfo.east_lon_degree:1 osgeo.osr.CRSInfo.north_lat_degree:1
+#: osgeo.osr.CRSInfo.south_lat_degree:1 osgeo.osr.CRSInfo.west_lon_degree:1
+msgid "double"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: of osgeo.osr.AreaOfUse.east_lon_degree:0 osgeo.osr.AreaOfUse.name:0
+#: osgeo.osr.AreaOfUse.north_lat_degree:0
+#: osgeo.osr.AreaOfUse.south_lat_degree:0 osgeo.osr.AreaOfUse.west_lon_degree:0
+#: osgeo.osr.CRSInfo.area_name:0 osgeo.osr.CRSInfo.auth_name:0
+#: osgeo.osr.CRSInfo.bbox_valid:0 osgeo.osr.CRSInfo.code:0
+#: osgeo.osr.CRSInfo.deprecated:0 osgeo.osr.CRSInfo.east_lon_degree:0
+#: osgeo.osr.CRSInfo.name:0 osgeo.osr.CRSInfo.north_lat_degree:0
+#: osgeo.osr.CRSInfo.projection_method:0 osgeo.osr.CRSInfo.south_lat_degree:0
+#: osgeo.osr.CRSInfo.type:0 osgeo.osr.CRSInfo.type:3
+#: osgeo.osr.CRSInfo.west_lon_degree:0
+msgid "type"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: of osgeo.osr.AreaOfUse.east_lon_degree:3 osgeo.osr.CRSInfo.east_lon_degree:3
+msgid "east_lon_degree"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: of osgeo.osr.AreaOfUse.name:1 osgeo.osr.CRSInfo.area_name:1
+#: osgeo.osr.CRSInfo.auth_name:1 osgeo.osr.CRSInfo.code:1
+#: osgeo.osr.CRSInfo.name:1 osgeo.osr.CRSInfo.projection_method:1
+msgid "p.char"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: of osgeo.osr.AreaOfUse.name:3 osgeo.osr.CRSInfo.name:3
+msgid "name"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: of osgeo.osr.AreaOfUse.north_lat_degree:3
+#: osgeo.osr.CRSInfo.north_lat_degree:3
+msgid "north_lat_degree"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: of osgeo.osr.AreaOfUse.south_lat_degree:3
+#: osgeo.osr.CRSInfo.south_lat_degree:3
+msgid "south_lat_degree"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: of osgeo.osr.AreaOfUse.west_lon_degree:3 osgeo.osr.CRSInfo.west_lon_degree:3
+msgid "west_lon_degree"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: of osgeo.osr.CRSInfo:1
+msgid "Proxy of C++ OSRCRSInfo class."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: of osgeo.osr.CRSInfo.area_name:3
+msgid "area_name"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: of osgeo.osr.CRSInfo.auth_name:3
+msgid "auth_name"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: of osgeo.osr.CRSInfo.bbox_valid:1 osgeo.osr.CRSInfo.deprecated:1
+msgid "bool"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: of osgeo.osr.CRSInfo.bbox_valid:3
+msgid "bbox_valid"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: of osgeo.osr.CRSInfo.code:3
+msgid "code"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: of osgeo.osr.CRSInfo.deprecated:3
+msgid "deprecated"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: of osgeo.osr.CRSInfo.projection_method:3
+msgid "projection_method"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: of osgeo.osr.CRSInfo.type:1
+msgid "OSRCRSType"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: of osgeo.osr.DontUseExceptions:1
+msgid ""
+"Disable exceptions in all GDAL related modules (osgeo.gdal, osgeo.ogr, osgeo."
+"osr, osgeo.gnm). Note: prior to GDAL 3.7, this only affected the calling "
+"module"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: of osgeo.osr.ExceptionMgr:1
+msgid "Context manager to manage Python Exception state for GDAL/OGR/OSR/GNM."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: of osgeo.osr.ExceptionMgr:4
+msgid ""
+"Separate exception state is maintained for each module (gdal, ogr, etc), and "
+"this class appears independently in all of them. This is built in top of "
+"calls to the older UseExceptions()/DontUseExceptions() functions."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: of osgeo.osr.ExceptionMgr:9
+msgid "Example::"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: of osgeo.osr.ExceptionMgr:11
+msgid ""
+">>> print(gdal.GetUseExceptions())\n"
+"0\n"
+">>> with gdal.ExceptionMgr():\n"
+"...     # Exceptions are now in use\n"
+"...     print(gdal.GetUseExceptions())\n"
+"1\n"
+">>>\n"
+">>> # Exception state has now been restored\n"
+">>> print(gdal.GetUseExceptions())\n"
+"0"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: of osgeo.osr.UseExceptions:1
+msgid ""
+"Enable exceptions in all GDAL related modules (osgeo.gdal, osgeo.ogr, osgeo."
+"osr, osgeo.gnm). Note: prior to GDAL 3.7, this only affected the calling "
+"module"
+msgstr ""

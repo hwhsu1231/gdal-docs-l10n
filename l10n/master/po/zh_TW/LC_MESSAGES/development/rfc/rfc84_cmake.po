@@ -1,0 +1,371 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:5
+msgid "RFC 84: Migrating build systems to CMake"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:8
+msgid "Authors:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:8
+msgid "Even Rouault, Nyall Dawson, Howard Butler"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:10
+msgid "Contact:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:10
+msgid ""
+"even.rouault at spatialys.com, nyall.dawson at gmail.com, howard at hobu.co"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:13
+msgid "Started:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:13
+msgid "2021-09-22"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:14
+msgid "Updated:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:14
+msgid "2022-01-17"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:15
+msgid "Status:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:15
+msgid "Adopted (implementation in progress)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:19
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:21
+msgid "The document proposes :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:23
+msgid ""
+"to develop a CMake build system, officially integrated in the source tree."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:25
+msgid ""
+"and remove the current GNU makefiles and nmake build systems, when the CMake "
+"build system has matured enough and reached feature parity. We don't want to "
+"end up with a https://xkcd.com/927/ situation."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:30
+msgid "Motivation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:32
+msgid ""
+"A dual build system means editing twice, which increases the amount of work "
+"and the chance for bugs."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:35
+msgid ""
+"For Unix, we have a rather custom and non-idiomatic build system using "
+"autoconf, but not automake."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:38
+msgid ""
+"The makefiles in both build systems are hand-written. One of their main "
+"deficiency from the point of view of a GDAL developer is the lack of "
+"tracking of header dependencies. It is this very easy to produce a corrupted "
+"GDAL build, if forgetting to manually clean a previous build. This is a "
+"serious obstacle to embed regular or occasional GDAL developers that hit "
+"that issue, generally not found in other projects."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:45
+msgid "Neither Unix or Windows builds support out-of-tree builds."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:47
+msgid ""
+"Windows builds have poor support for parallel build: it is limited to the "
+"files in one directory."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:50
+msgid ""
+"There is generally no consistency in the naming of build options in our Unix "
+"and Windows build systems, which makes life harder for users having to build "
+"GDAL on multiple platforms."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:54
+msgid ""
+"The two existing build systems do not have the same features. For example, "
+"configure now offers the option to selectively disable drivers, including "
+"ones that do not depend on external dependencies, using a opt-out or opt-in "
+"strategies, whereas the NMake build does not."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:59
+msgid ""
+"CMake has become the defacto solution with the widest adoption for C/C++ "
+"software that want to address multiple platforms. Most of GDAL dependencies "
+"have at least a CMake build system, and some have now CMake as the only "
+"option (GEOS 3.10 will only have a CMake build system, and the same is "
+"proposed for PROJ 9 in https://github.com/OSGeo/PROJ/pull/2880), making soon "
+"CMake a de-facto requirement for a GDAL build. Looking a bit in the FOSS4G "
+"field for C/C++ project, CMake is ubiquitous, so there is a widespread "
+"knowledge of it among existing or potential contributors to GDAL."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:69
+msgid ""
+"A CMake build system has been asked repeatedly by many developers or users "
+"of GDAL over the past years. We are aware of a least two public out-of-tree "
+"CMake efforts: https://github.com/miurahr/cmake4gdal and https://github.com/"
+"nextgis-borsch/lib_gdal"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:73
+msgid ""
+"CMake has the widest industry tooling support. A number of Modern C++ IDEs "
+"offer good support for CMake: Visual Studio, qtcreator, etc. This should "
+"help reduce the barrier for contribution."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:77
+msgid ""
+"CMake development is active with regular feature releases, whereas the "
+"technologies behind our existing build systems are more in a maintenance "
+"mode."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:81
+msgid "Why not CMake?"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:83
+msgid ""
+"Other modern cross-platform build systems exist, including Meson and Bazel, "
+"which have many advantages over CMake. However, they are currently not "
+"widely familiar or used by active GDAL contributors. CMake represent the "
+"current \"least worse\" solution for multiple platform builds when comparing "
+"its capabilities and its maturity."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:89
+msgid ""
+"CMake does not address simultaneously building shared and static libraries. "
+"This can however be worked around by doing 2 builds and merging build "
+"artifacts."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:93
+msgid "Phases / Schedule"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:95
+msgid "The following is the planned schedule:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:97
+msgid ""
+"Add CMake as a new build system, and formally deprecate GNUmakefile and "
+"NMake base file systems. Users and packagers are encouraged to switch to "
+"CMake and actively report (and help fixing) issues the find in the process. "
+"GDAL 3.5.x point releases will be used to address reported issues."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:103
+msgid "==> Target: GDAL 3.5 / May 2022"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:105
+msgid ""
+"Completely remove GNUmakefile and NMake base file systems, and make CMake "
+"the only build system in GDAL source tree."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:108
+msgid "==> Target: GDAL 3.6 / November 2022"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:111
+msgid "Details"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:113
+msgid ""
+"The above mentioned cmake4gdal repository seems to us the best starting "
+"point. It respects the current tree organization of the GDAL repository and "
+"targets a not too old CMake version (3.10)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:117
+msgid ""
+"We will start by running the scripts that deploy the CMakeLists.txt and "
+"other cmake support files, and commit them into the GDAL repository."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:120
+msgid ""
+"A checklist of all features of our current build systems that will need to "
+"be ported and checked has been initiated in: https://docs.google.com/"
+"spreadsheets/d/1SsUXiZxKim6jhLjlJFCRs1zwMvNpbJbBMB6yl0ms01c/edit"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:125
+msgid "SWIG bindings"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:127
+msgid ""
+"The Python, Java and CSharp bindings will be available as options of the "
+"CMake build options."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:130
+msgid ""
+"The Perl bindings will not be available, as being planned for removal in "
+"GDAL 3.5"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:133
+msgid "Compatibility"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:135
+msgid ""
+"The addition of the CMake build system, being mostly an addition during the "
+"transient phase where it will be available alongside the existing build "
+"systems, should moderately impact existent files. However, it is likely that "
+"there will be some improvements that affect C++ files (for example, to use "
+"consistently ``#include <project/header.h>`` style of inclusion instead of "
+"the``#include <header.h>`` with ``-I${include_prefix}/project`` pattern "
+"sometimes used) and the GNUmakefile/makefile.vc files."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:142
+msgid ""
+"We may use of PRIVATE linking of vendored and intermediate libraries to hide "
+"non-public symbols. This might change a bit from existing builds that can "
+"leak them."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:146
+msgid "Minimum CMake version"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:148
+msgid ""
+"cmake4gdal uses CMake 3.10 as the minimum version. This is a reasonable "
+"choice, as it would be compatible with the cmake version provided by Ubuntu "
+"18.04 for example, the current old-stable Ubuntu LTS."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:152
+msgid ""
+"Given the mentioned schedule, CMake will become a requirement in May 2023, "
+"at a time where the new old-stable LTS will be Ubuntu 20.04. So we can't "
+"exclude we will bump this minimum version if it is found to be more "
+"practical. For example, CMake 3.12 adds an easier way for handling \"object "
+"libraries\", that can help solving issues regarding static builds and "
+"vendored dependencies (cf https://github.com/libgeos/geos/issues/463)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:160
+msgid "Supported platforms"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:162
+msgid ""
+"Our continuous integration \"only\" tests Linux (Intel/AMD, ARM64 and s390x "
+"architectures), Android (build only), MacOSX and Windows. We will welcome "
+"involvement at some point from users/developers of other environments to "
+"test and help address any outstanding issues."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:167
+msgid "General requirements"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:169
+msgid ""
+"The following lists a few requirements to consider the new build system be "
+"ready, and the existing ones can be removed:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:172
+msgid ""
+"The build system works on most environments where the build systems are "
+"known to work. For CI-tested environments, this will involve porting to them "
+"and checking that the builds are functional. For other build systems, we "
+"will depend on manual testing from users."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:177
+msgid "objdir / out-of-source builds are supported."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:179
+msgid "cross builds are supported."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:181
+msgid ""
+"Explicit testing of OSes through ``if(THIS_OS)`` should be limited, and "
+"replaced by testing of feature wherever doable."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:184
+msgid ""
+"There has been a formal release (presumably 3.6) with existing build systems "
+"and cmake where cmake meets the above requirements, as verified by packager "
+"feedback."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:188
+msgid "Funding"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:190
+msgid ""
+"Even Rouault and Nyall Dawson will use project sponsorship funding to "
+"complete that work. An estimate of 2 man-months of effort has been made "
+"recently to provide an initial build out of CMake support for GDAL."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:195
+msgid "Voting history"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc84_cmake.rst:197
+msgid "+1 from PSC members: HowardB, MateuszL, KurtS, DanielM and JukkaR"
+msgstr ""

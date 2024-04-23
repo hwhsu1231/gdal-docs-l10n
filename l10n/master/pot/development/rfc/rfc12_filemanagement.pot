@@ -1,0 +1,329 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:5
+msgid "RFC 12: Improved File Management"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:7
+msgid "Author: Frank Warmerdam"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:9
+msgid "Contact: warmerdam@pobox.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:11
+msgid "Status: Adopted / Implemented"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:14
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:16
+msgid ""
+"Some applications using GDAL have a requirement to provide file management "
+"operations through the GUI. This includes deleting, renaming, moving and "
+"packaging up datasets which often requires operations on several associated "
+"files. This RFC introduces an operation on a GDALDataset to identify all the "
+"dataset files, and operations to move or copy them."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:24
+msgid "GetFileList()"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:26
+msgid ""
+"The following new virtual method is added on the GDALDataset class, with an "
+"analygous C function."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:31
+msgid "virtual char   **GDALDataset::GetFileList(void);"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:33
+msgid ""
+"The method is intended to return a list of files associated with this open "
+"dataset. The return is a NULL terminated string list which becomes owned by "
+"the caller and should be deallocated with CSLDestroy()."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:37
+msgid ""
+"The default implementation tests the name of the datasource to see if it is "
+"a file, and if so it is returned otherwise an empty list is returned. If the "
+"default overview manager is active, and has overviews, those will also be "
+"included in the file list. The default implementation also checks for world "
+"files, but only those with extensions based on the original files extension "
+"(ie. .tfw or .tifw for .tif) but does not search for .wld since that is not "
+"very specific."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:45
+msgid ""
+"The GDALPamDataset::GetFileList() method will add the ability to find .aux "
+"and .aux.xml files associated with a dataset to the core default behavior."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:50
+msgid "pfnRename()"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:52
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:105
+msgid "The following new function is added to the GDALDriver class."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:56
+msgid ""
+"CPLErr       (*pfnRename)( const char *pszNewName, const char *pszOldName );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:58
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:111
+msgid "Also a corresponding function is added to the C API."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:62
+msgid ""
+"CPLErr        GDALRenameDataset( GDALDriverH hDriver, const char "
+"*pszNewName, const char *pszOldName );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:64
+msgid ""
+"Note that renaming is done by the driver, but the dataset to be operated on "
+"should *not* be open at the time. GDALRenameDataset() will invoke pfnRename "
+"if it is non-NULL."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:68
+msgid ""
+"If pfnRename is NULL the default implementation will be used which will open "
+"the dataset, fetch the file list, close the dataset, and then try to rename "
+"all the files (based on shared basenames). The default rename operation will "
+"fail if it is unable to establish a relationship between the files (ie. a "
+"common basename or stem) to indicate how the group of files should be rename "
+"to the new pattern."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:75
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:129
+msgid ""
+"Optionally a NULL hDriver argument may be passed in, in which case the "
+"appropriate driver will be selected by first opening the datasource."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:79
+msgid "CPLMoveFile()"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:81
+msgid ""
+"The POSIX rename() function on which VSIRename() is usually based does not "
+"normally allow renaming files between file systems or between different "
+"kinds of file systems (ie. /vsimem to C:/abc). In order to implement "
+"GDALRenameDataset() such that it works efficiently within a file system, but "
+"still works between file systems, a new operation will be added to gdal/"
+"port. This is the CPLMoveFile() function which will first try a VSIRename(). "
+"If that fails it will use CPLCopyFile() to copy the whole file and then "
+"VSIUnlink() to get rid of the old file."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:92
+msgid ""
+"int CPLMoveFile( const char *pszNewFilename, const char *pszOldFilename );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:94
+msgid ""
+"The return value will be zero on success, otherwise an errno style value."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:97
+msgid ""
+"It should be noted that in some error conditions, such as the destination "
+"file system running out of space during a copy, it may happen that some "
+"files for a dataset get renamed, and some do not leaving things in an "
+"inconsistent state."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:103
+msgid "pfnCopyFiles()"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:109
+msgid ""
+"CPLErr       (*pfnCopyFiles)( const char *pszNewName, const char "
+"*pszOldName );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:115
+msgid ""
+"CPLErr        GDALCopyDatasetFiles( GDALDriverH hDriver, const char "
+"*pszNewName, const char *pszOldName );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:117
+msgid ""
+"Note that copying is done by the driver. The dataset may be opened, but if "
+"opened in update mode it may be prudent to first do a flush to synchronize "
+"the in-process state with what is on disk. GDALCopyDatasetFiles() will "
+"invoke pfnCopyFiles if it is non-NULL."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:122
+msgid ""
+"If pfnCopy is NULL the default implementation will be used which will open "
+"the dataset, fetch the file list, close the dataset, and then try to copy "
+"all the files (based on shared basenames). The default copy operation will "
+"fail if it is unable to establish a relationship between the files (ie. a "
+"common basename or stem) to indicate how the group of files should be "
+"renamed to the new pattern."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:132
+msgid ""
+"Copy is essentially the same as Rename, but the original files are "
+"unaltered. Note that this form of copy is distinct from CreateCopy() in that "
+"it preserves the exact binary files on disk in the new location while "
+"CreateCopy() just attempts to reproduce a new dataset with essentially the "
+"same data as modelled and carried through GDAL."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:139
+msgid "pfnDelete()"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:142
+msgid ""
+"The delete operations default implementation will be extended to use the "
+"GetFileList() results."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:146
+msgid "Supporting Functions"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:148
+msgid ""
+"Some sort of supporting functions should be provided to make it easy to "
+"identify worldfiles, .aux files and .prj files associated with a file."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:152
+msgid "Drivers Updated"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:154
+msgid ""
+"It is anticipated that a majority of the commonly used drivers will be "
+"updated with custom GetFileList() methods that account for world files and "
+"other idiosyncratic files. A particular emphasis will made to handle the "
+"various formats in gdal/frmts/raw that consist of a header file and a raw "
+"binary file."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:160
+msgid ""
+"Drivers for \"one file formats\" that are not updated will still use the "
+"default logic which should work fairly well, but might neglect auxiliary "
+"world files."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:164
+msgid ""
+"VRT: I do not anticipate updating the VRT driver at this time since it gets "
+"quite complicated to collect a file list for some kinds of virtual files. It "
+"is also not exactly clear whether related files should be considered "
+"\"owned\" by the virtual dataset or not."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:168
+msgid ""
+"AIGRID: I will implement a custom rename operation in an attempt to handle "
+"this directory oriented format gracefully."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:172
+msgid "Additional Notes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:174
+msgid ""
+"Subdatasets will generally return an empty file list from GetFileList(), and "
+"will not be manageable via Rename or Delete though a very sophisticated "
+"driver could implement these operations."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:177
+msgid ""
+"There is no mechanism anticipated to ensure that files are closed before "
+"they are removed. If an application does not ensure this rename/move "
+"operations may fail on win32 since it doesn't allow rename/delete operations "
+"on open files. Things could easily be left in an inconsistent state."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:182
+msgid ""
+"Datasets without associated files in the file system will return an empty "
+"file list. This essentially identifies them as \"unmanagable\"."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:186
+msgid "Implementation Plan"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:188
+msgid ""
+"This change will be implemented by Frank Warmerdam in trunk in time for the "
+"1.5.0 release."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:192
+msgid "SWIG Implications"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:194
+msgid ""
+"The GDALRenameDataset(), and GDALCopyDatasetFiles() operations on the "
+"driver, and the GetFileList() operation on the dataset will need to be "
+"exposed through SWIG."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:199
+msgid "Testing"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:201
+msgid ""
+"Rename and CopyFiles testing will be added to the regression tests for a few "
+"representative formats. These rename operations will be between one "
+"directory and another, and will not test cross file system copying which "
+"will have to be tested manually."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc12_filemanagement.rst:206
+msgid ""
+"A small gdalmanage utility will be implemented allowing use and testing of "
+"the identify, rename, copy and delete operations from the commandline in a "
+"convenient fashion."
+msgstr ""

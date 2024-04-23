@@ -1,0 +1,418 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:5
+msgid "RFC 75: Multidimensional arrays"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:8
+msgid "Author:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:8
+msgid "Even Rouault"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:9
+msgid "Contact:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:9
+msgid "even.rouault @ spatialys.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:10
+msgid "Started:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:10
+msgid "2019-May-24"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:11
+msgid "Last updated:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:11
+msgid "2019-Jul-22"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:12
+msgid "Status:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:12
+msgid "Implemented in GDAL 3.1"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:16
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:18
+msgid ""
+"This document describes the addition of read/write support for "
+"multidimensional arrays, in particular of dimension 3 or above, in GDAL core "
+"and a few select drivers."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:22
+msgid "Motivation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:24
+msgid ""
+"Multidimensional arrays (also known as hypercubes) are a way of mоdelling "
+"spatio-temporal (time series of 2D raster) or spatio-vertical-temporal (2D + "
+"Z dimension + time dimension) data which are becoming increasingly more "
+"available. GDAL current raster model is however strongly 2D oriented. A "
+"number of drivers, such as netCDF, HDF4, HDF5, work around that limitation "
+"by using raster bands or subdatasets to expose muliple 2D slices of what is "
+"intrinsically a N>2 Multidimensional dataset. It is desirable to have a "
+"proper API, and driver support, to be able to expose those multidimensional "
+"arrays as such, and be able to perform slice and trim operations on them."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:34
+msgid ""
+"That topic had already been discussed in the past, in particular in this "
+"`mailing list thread <https://lists.osgeo.org/pipermail/gdal-dev/2017-"
+"October/047472.html>`_"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:38
+msgid "Proposed changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:40
+msgid ""
+"A lot of existing GDAL raster API are strongly 2D oriented. Rather than "
+"upgrading all those API, and driver code, to be ready for N arbitrary "
+"dimensions, which would be a enormous effort for the benefit of only a small "
+"fraction of drivers, we propose to add a new dedicated API to support "
+"multidimensional arrays. We also want to support hierarchical structure of "
+"data as found in the `HDF5 format and data model <https://portal."
+"opengeospatial.org/files/81716>`_. This model can encompass the needs of "
+"other formats/drivers that have multidimensional capabilities such as HDF4, "
+"netCDF, GRIB, WCS. Therefore the proposed API will be strongly inspired by "
+"the API of the HDF5 library itself."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:51
+msgid "Data model"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:52
+msgid ""
+"The data model is described in: https://github.com/rouault/gdal/blob/rfc75/"
+"gdal/doc/source/user/multidim_raster_data_model.rst"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:56
+msgid "C++ API"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:58
+msgid ""
+"New classes and methods will be added. See https://github.com/rouault/gdal/"
+"blob/rfc75/gdal/gcore/gdal_priv.h#L1715"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:61
+msgid ""
+"A new driver capability will be added for drivers supporting "
+"multidimensional rasters:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:66
+msgid "#define GDAL_DCAP_MULTIDIM_RASTER     \"DCAP_MULTIDIM_RASTER\""
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:69
+msgid ""
+"A new open flag, ``GDAL_OF_MULTIDIM_RASTER``, for :cpp:func:`GDALOpenEx` "
+"will be added. When this is specified, drivers supporting multidimensional "
+"raster will return a root GDALGroup. Otherwise their current traditional 2D "
+"mode will still be used."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:74
+msgid ""
+"New creation options metadata items are added to documents multidimensional "
+"dataset, group, dimension, array and attribute creation options."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:77
+msgid ""
+"/** XML snippet with multidimensional dataset creation options.\n"
+"* @since GDAL 3.1\n"
+"*/\n"
+"#define GDAL_DMD_MULTIDIM_DATASET_CREATIONOPTIONLIST "
+"\"DMD_MULTIDIM_DATASET_CREATIONOPTIONLIST\"\n"
+"\n"
+"/** XML snippet with multidimensional group creation options.\n"
+"* @since GDAL 3.1\n"
+"*/\n"
+"#define GDAL_DMD_MULTIDIM_GROUP_CREATIONOPTIONLIST "
+"\"DMD_MULTIDIM_GROUP_CREATIONOPTIONLIST\"\n"
+"\n"
+"/** XML snippet with multidimensional dimension creation options.\n"
+"* @since GDAL 3.1\n"
+"*/\n"
+"#define GDAL_DMD_MULTIDIM_DIMENSION_CREATIONOPTIONLIST "
+"\"DMD_MULTIDIM_DIMENSION_CREATIONOPTIONLIST\"\n"
+"\n"
+"/** XML snippet with multidimensional array creation options.\n"
+"* @since GDAL 3.1\n"
+"*/\n"
+"#define GDAL_DMD_MULTIDIM_ARRAY_CREATIONOPTIONLIST "
+"\"DMD_MULTIDIM_ARRAY_CREATIONOPTIONLIST\"\n"
+"\n"
+"/** XML snippet with multidimensional attribute creation options.\n"
+"* @since GDAL 3.1\n"
+"*/\n"
+"#define GDAL_DMD_MULTIDIM_ATTRIBUTE_CREATIONOPTIONLIST "
+"\"DMD_MULTIDIM_ATTRIBUTE_CREATIONOPTIONLIST\""
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:104
+msgid "Examples with the netCDF driver:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:106
+msgid ""
+"<MultiDimDatasetCreationOptionList>\n"
+"<Option name=\"FORMAT\" type=\"string-select\" default=\"NC4\">\n"
+"    <Value>NC</Value>\n"
+"    <Value>NC2</Value>\n"
+"    <Value>NC4</Value>\n"
+"    <Value>NC4C</Value>\n"
+"</Option>\n"
+"<Option name=\"CONVENTIONS\" type=\"string\" default=\"CF-1.6\" "
+"description=\"Value of the Conventions attribute\" />\n"
+"</MultiDimDatasetCreationOptionList>\n"
+"\n"
+"\n"
+"<MultiDimDimensionCreationOptionList>\n"
+"<Option name=\"UNLIMITED\" type=\"boolean\" description=\"Whether the "
+"dimension should be unlimited\" default=\"false\" />\n"
+"</MultiDimDimensionCreationOptionList>\n"
+"\n"
+"\n"
+"<MultiDimArrayCreationOptionList>\n"
+"<Option name=\"BLOCKSIZE\" type=\"int\" description=\"Block size in "
+"pixels\" />\n"
+"<Option name=\"COMPRESS\" type=\"string-select\" default=\"NONE\">\n"
+"    <Value>NONE</Value>\n"
+"    <Value>DEFLATE</Value>\n"
+"</Option>\n"
+"<Option name=\"ZLEVEL\" type=\"int\" description=\"DEFLATE compression level "
+"1-9\" default=\"1\" />\n"
+"<Option name=\"NC_TYPE\" type=\"string-select\" default=\"netCDF data "
+"type\">\n"
+"    <Value>AUTO</Value>\n"
+"    <Value>NC_BYTE</Value>\n"
+"    <Value>NC_INT64</Value>\n"
+"    <Value>NC_UINT64</Value>\n"
+"</Option>\n"
+"</MultiDimArrayCreationOptionList>\n"
+"\n"
+"\n"
+"<MultiDimAttributeCreationOptionList>\n"
+"<Option name=\"NC_TYPE\" type=\"string-select\" default=\"netCDF data "
+"type\">\n"
+"    <Value>AUTO</Value>\n"
+"    <Value>NC_BYTE</Value>\n"
+"    <Value>NC_CHAR</Value>\n"
+"    <Value>NC_INT64</Value>\n"
+"    <Value>NC_UINT64</Value>\n"
+"</Option>\n"
+"</MultiDimAttributeCreationOptionList>"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:152
+msgid "C API"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:154
+msgid ""
+"All C++ methods are mapped to the C API. See https://github.com/rouault/gdal/"
+"blob/rfc75/gdal/gcore/gdal.h#L1397"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:158
+msgid "Driver changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:160
+msgid "The MEM driver will implement read and write support."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:161
+msgid ""
+"The VRT driver will allow extraction of 2D slices from multidimensional "
+"drivers to 2D/classic drivers, as well as multidimensional->multidimensional "
+"slicing/trimming"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:164
+msgid "The netCDF driver will implement read and write support."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:165
+msgid "The HDF4 and HDF5 drivers will implement read support."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:166
+msgid ""
+"The GRIB driver will implement read support (exposing X,Y,Time arrays for "
+"GRIB messages only differing by timestamp)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:170
+msgid "New Utilities"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:172
+msgid ""
+"A new gdalmdiminfo utility is added to report the hierarchical structure and "
+"content. Its output format is JSON. See https://github.com/rouault/gdal/blob/"
+"rfc75/gdal/doc/source/programs/gdalmdiminfo.rst for its documentation."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:176
+msgid ""
+"A new gdalmdimtranslate utility is added to convert multidimensional raster "
+"between different formats, and/or can perform selective conversion of "
+"specific arrays and groups, and/or subsetting operations. It can also do "
+"extraction of 2D slices from multidimensional drivers to 2D/classic drivers. "
+"See https://github.com/rouault/gdal/blob/rfc75/gdal/doc/source/programs/"
+"gdalmdimtranslate.rst for its documentation."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:184
+msgid "SWIG binding changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:186
+msgid ""
+"The C API is mapped to the SWIG bindings. The scope is complete for the "
+"Python bindings. Other languages would need to add missing typemaps, but "
+"this is not in the scope of the work of this RFC. For Python bindings, NumPy "
+"integration is done."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:192
+msgid "Limitations"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:194
+msgid ""
+"This is intended to be a preliminary work on that topic. While the aim is "
+"for it to be be usable for the defined scope, it will probably require "
+"future enhancements to fill functional and/or performance gaps."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:198
+msgid "No block cache mechanism (not sure this is needed)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:199
+msgid "No sub-pixel requests, or non-nearest subsampling"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:200
+msgid ""
+"Upgrade of WCS driver or other drivers with potential multidimensional "
+"capabilities are not part of this RFC."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:202
+msgid "SWIG bindings: full scope only for Python bindings."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:205
+msgid "Backward compatibility"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:207
+msgid "No backward incompatibility. Only API and utility additions."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:210
+msgid "Documentation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:212
+msgid ""
+"Data model: https://github.com/rouault/gdal/blob/rfc75/gdal/doc/source/user/"
+"multidim_raster_data_model.rst"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:213
+msgid ""
+"API tutorial: https://github.com/rouault/gdal/blob/rfc75/gdal/doc/source/"
+"tutorials/multidimensional_api_tut.rst"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:214
+msgid ""
+"gdalmdiminfo: https://github.com/rouault/gdal/blob/rfc75/gdal/doc/source/"
+"programs/gdalmdiminfo.rst"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:215
+msgid ""
+"gdalmdimtranslate: https://github.com/rouault/gdal/blob/rfc75/gdal/doc/"
+"source/programs/gdalmdimtranslate.rst"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:216
+msgid ""
+"VRT driver: https://github.com/rouault/gdal/blob/rfc75/gdal/doc/source/"
+"drivers/raster/vrt_multidimensional.rst"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:219
+msgid "Testing"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:221
+msgid ""
+"The gdalautotest suite is extended to test the modified drivers and the new "
+"utilities."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:225
+msgid "Implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:227
+msgid ""
+"The implementation will be done by Even Rouault. A preliminary "
+"implementation is available at https://github.com/OSGeo/gdal/pull/1704"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:232
+msgid "Voting history"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc75_multidimensional_arrays.rst:234
+msgid "+1 from HowardB, NormanB and EvenR"
+msgstr ""

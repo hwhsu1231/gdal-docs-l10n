@@ -1,0 +1,323 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/api/python/osgeo.gdal.rst:2
+msgid "osgeo.gdal module"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.AsyncReader:1 osgeo.gdal.EDTComponent:1
+#: osgeo.gdal.GDALTransformerInfoShadow:1 osgeo.gdal.MajorObject:1
+#: osgeo.gdal.StatBuf:1 osgeo.gdal.Statistics:1 osgeo.gdal.SubdatasetInfo:1
+#: osgeo.gdal.SuggestedWarpOutputRes:1 osgeo.gdal.VSILFILE:1
+#: osgeo.gdal.VirtualMem:1
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.AsyncReader:1
+msgid "Proxy of C++ GDALAsyncReaderShadow class."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.EDTComponent:1
+msgid "Proxy of C++ GDALEDTComponentHS class."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.GDALTransformerInfoShadow:1
+msgid "Proxy of C++ GDALTransformerInfoShadow class."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.GetDataTypeByName:1
+msgid "Return the data type for a given name."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.GetDataTypeByName:0 osgeo.gdal.GetDataTypeName:0
+#: osgeo.gdal.GetDataTypeSize:0 osgeo.gdal.IsLineOfSightVisible:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.GetDataTypeByName:3
+msgid "data type name"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.GetDataTypeByName:0 osgeo.gdal.IsLineOfSightVisible:0
+msgid "Returns"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.GetDataTypeByName:6 osgeo.gdal.GetDataTypeName:3
+#: osgeo.gdal.GetDataTypeSize:3
+msgid "data type code"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.GetDataTypeByName:0 osgeo.gdal.GetDataTypeName:0
+#: osgeo.gdal.GetDataTypeSize:0 osgeo.gdal.IsLineOfSightVisible:0
+msgid "Return type"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.GetDataTypeByName:10 osgeo.gdal.GetDataTypeName:9
+#: osgeo.gdal.GetDataTypeSize:9
+msgid "Examples"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.GetDataTypeName:1
+msgid "Return the name of the data type."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.GetDataTypeSize:1
+msgid "Return the size of the data type in bits."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.IsLineOfSightVisible:1
+msgid ""
+"Check Line of Sight between two points. Both input coordinates must be "
+"within the raster coordinate bounds."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.IsLineOfSightVisible:4
+msgid "See :cpp:func:`GDALIsLineOfSightVisible`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.IsLineOfSightVisible:8
+msgid "The band to read the DEM data from. This must NOT be null."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.IsLineOfSightVisible:10
+msgid ""
+"The X location (raster column) of the first point to check on the raster."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.IsLineOfSightVisible:12
+msgid "The Y location (raster row) of the first point to check on the raster."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.IsLineOfSightVisible:14
+msgid "The Z location (height) of the first point to check."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.IsLineOfSightVisible:16
+msgid ""
+"The X location (raster column) of the second point to check on the raster."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.IsLineOfSightVisible:18
+msgid "The Y location (raster row) of the second point to check on the raster."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.IsLineOfSightVisible:20
+msgid "The Z location (height) of the second point to check."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.IsLineOfSightVisible:22
+msgid ""
+"A dict or list of name=value of options for the line of sight algorithm "
+"(currently ignored)."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.IsLineOfSightVisible:25
+msgid ""
+"**collections.namedtuple(is_visible** -- is_visible is True if the two "
+"points are within Line of Sight. col_intersection is the raster column index "
+"where the LOS line intersects with terrain (will be set in the future, "
+"currently set to -1). row_intersection is the raster row index where the LOS "
+"line intersects with terrain (will be set in the future, currently set to "
+"-1)."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.MajorObject:1
+msgid "Proxy of C++ GDALMajorObjectShadow class."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.StatBuf:1
+msgid "Proxy of C++ StatBuf class."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.StatBuf.mode:1 osgeo.gdal.SuggestedWarpOutputRes.height:1
+#: osgeo.gdal.SuggestedWarpOutputRes.width:1
+msgid "int"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.StatBuf.mode:0 osgeo.gdal.StatBuf.mtime:0
+#: osgeo.gdal.StatBuf.size:0 osgeo.gdal.Statistics.max:0
+#: osgeo.gdal.Statistics.mean:0 osgeo.gdal.Statistics.min:0
+#: osgeo.gdal.Statistics.std_dev:0 osgeo.gdal.Statistics.valid_count:0
+#: osgeo.gdal.SuggestedWarpOutputRes.geotransform:0
+#: osgeo.gdal.SuggestedWarpOutputRes.height:0
+#: osgeo.gdal.SuggestedWarpOutputRes.width:0
+#: osgeo.gdal.SuggestedWarpOutputRes.xmax:0
+#: osgeo.gdal.SuggestedWarpOutputRes.xmin:0
+#: osgeo.gdal.SuggestedWarpOutputRes.ymax:0
+#: osgeo.gdal.SuggestedWarpOutputRes.ymin:0
+msgid "type"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.StatBuf.mode:3
+msgid "mode"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.StatBuf.mtime:1 osgeo.gdal.StatBuf.size:1
+#: osgeo.gdal.Statistics.valid_count:1
+msgid "GIntBig"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.StatBuf.mtime:3
+msgid "mtime"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.StatBuf.size:3
+msgid "size"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Statistics:1
+msgid "Proxy of C++ Statistics class."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Statistics.max:1 osgeo.gdal.Statistics.mean:1
+#: osgeo.gdal.Statistics.min:1 osgeo.gdal.Statistics.std_dev:1
+#: osgeo.gdal.SuggestedWarpOutputRes.xmax:1
+#: osgeo.gdal.SuggestedWarpOutputRes.xmin:1
+#: osgeo.gdal.SuggestedWarpOutputRes.ymax:1
+#: osgeo.gdal.SuggestedWarpOutputRes.ymin:1
+msgid "double"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Statistics.max:3
+msgid "max"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Statistics.mean:3
+msgid "mean"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Statistics.min:3
+msgid "min"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Statistics.std_dev:3
+msgid "std_dev"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Statistics.valid_count:3
+msgid "valid_count"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.SubdatasetInfo:1
+msgid "Proxy of C++ GDALSubdatasetInfoShadow class."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.SuggestedWarpOutputRes:1
+msgid "Proxy of C++ SuggestedWarpOutputRes class."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.SuggestedWarpOutputRes.geotransform:1
+msgid "double[6]"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.SuggestedWarpOutputRes.geotransform:3
+msgid "geotransform"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.SuggestedWarpOutputRes.height:3
+msgid "height"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.SuggestedWarpOutputRes.width:3
+msgid "width"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.SuggestedWarpOutputRes.xmax:3
+msgid "xmax"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.SuggestedWarpOutputRes.xmin:3
+msgid "xmin"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.SuggestedWarpOutputRes.ymax:3
+msgid "ymax"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.SuggestedWarpOutputRes.ymin:3
+msgid "ymin"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.VSILFILE:1
+msgid "Proxy of C++ VSILFILE class."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.VirtualMem:1
+msgid "Proxy of C++ CPLVirtualMemShadow class."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.listdir:1
+msgid "Iterate over a directory."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.listdir:3
+msgid "recursionLevel = -1 means unlimited level of recursion."
+msgstr ""

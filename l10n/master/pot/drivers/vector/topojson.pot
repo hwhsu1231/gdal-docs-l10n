@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/topojson.rst:4
+msgid "TopoJSON driver"
+msgstr ""
+
+#: ../../../source/drivers/vector/topojson.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/topojson.rst:6
+msgid "TopoJSON"
+msgstr ""
+
+#: ../../../source/drivers/vector/topojson.rst:10
+msgid ""
+"(Note: prior to GDAL 2.3, the functionality of this driver was available in "
+"the GeoJSON driver. They are now distinct drivers)"
+msgstr ""
+
+#: ../../../source/drivers/vector/topojson.rst:13
+msgid ""
+"The driver can read the `TopoJSON format <https://github.com/topojson/"
+"topojson-specification/blob/master/README.md>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/topojson.rst:17
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/topojson.rst:24
+msgid "Datasource"
+msgstr ""
+
+#: ../../../source/drivers/vector/topojson.rst:26
+msgid "The driver accepts three types of sources of data:"
+msgstr ""
+
+#: ../../../source/drivers/vector/topojson.rst:28
+msgid ""
+"Uniform Resource Locator (`URL <http://en.wikipedia.org/wiki/URL>`__) - a "
+"Web address to perform `HTTP <http://en.wikipedia.org/wiki/HTTP>`__ request."
+msgstr ""
+
+#: ../../../source/drivers/vector/topojson.rst:31
+msgid ""
+"Plain text file with TopoJSON data - identified from the file extension ."
+"json or .topojson"
+msgstr ""
+
+#: ../../../source/drivers/vector/topojson.rst:33
+msgid "Text passed directly and encoded in Topo JSON"
+msgstr ""
+
+#: ../../../source/drivers/vector/topojson.rst:35
+msgid ""
+"Starting with GDAL 2.3, the URL/filename/text might be prefixed with "
+"TopoJSON: to avoid any ambiguity with other drivers."
+msgstr ""
+
+#: ../../../source/drivers/vector/topojson.rst:39
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/vector/topojson.rst:41
+msgid ":ref:`GeoJSON driver <vector.geojson>`"
+msgstr ""
+
+#: ../../../source/drivers/vector/topojson.rst:42
+msgid ""
+"`TopoJSON Format Specification <https://github.com/topojson/topojson-"
+"specification/blob/master/README.md>`__"
+msgstr ""

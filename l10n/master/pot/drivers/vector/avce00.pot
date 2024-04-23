@@ -1,0 +1,114 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/avce00.rst:5
+msgid "Arc/Info E00 (ASCII) Coverage"
+msgstr ""
+
+#: ../../../source/drivers/vector/avce00.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/avce00.rst:7
+msgid "AVCE00"
+msgstr ""
+
+#: ../../../source/drivers/vector/avce00.rst:11
+msgid ""
+"Arc/Info E00 Coverages (eg. Arc/Info V7 and earlier) are supported by OGR "
+"for read access."
+msgstr ""
+
+#: ../../../source/drivers/vector/avce00.rst:14
+msgid ""
+"The label, arc, polygon, centroid, region and text sections of a coverage "
+"are all supported as layers. Attributes from INFO are appended to labels, "
+"arcs, polygons or region where appropriate. When available the projection "
+"information is read and translated. Polygon geometries are collected for "
+"polygon and region layers from the composing arcs."
+msgstr ""
+
+#: ../../../source/drivers/vector/avce00.rst:20
+msgid ""
+"Text sections are represented as point layers. Display height is preserved "
+"in the HEIGHT attribute field; however, other information about text "
+"orientation is discarded."
+msgstr ""
+
+#: ../../../source/drivers/vector/avce00.rst:24
+msgid ""
+"Info tables associated with a coverage, but not specifically named to be "
+"attached to one of the existing geometric layers is currently not accessible "
+"through OGR. Note that info tables are stored in an 'info' directory at the "
+"same level as the coverage directory. If this is inaccessible or corrupt no "
+"info attributes will be appended to coverage layers, but the geometry should "
+"still be accessible."
+msgstr ""
+
+#: ../../../source/drivers/vector/avce00.rst:31
+msgid "The layers are named as follows:"
+msgstr ""
+
+#: ../../../source/drivers/vector/avce00.rst:33
+msgid ""
+"A label layer (polygon labels, or free standing points) is named LAB if "
+"present."
+msgstr ""
+
+#: ../../../source/drivers/vector/avce00.rst:35
+msgid "A centroid layer (polygon centroids) is named CNT if present."
+msgstr ""
+
+#: ../../../source/drivers/vector/avce00.rst:36
+msgid "An arc (line) layer is named ARC if present."
+msgstr ""
+
+#: ../../../source/drivers/vector/avce00.rst:37
+msgid "A polygon layer is named \"PAL\" if present."
+msgstr ""
+
+#: ../../../source/drivers/vector/avce00.rst:38
+msgid "A text section is named according to the section subclass."
+msgstr ""
+
+#: ../../../source/drivers/vector/avce00.rst:39
+msgid "A region subclass is named according to the subclass name."
+msgstr ""
+
+#: ../../../source/drivers/vector/avce00.rst:41
+msgid ""
+"Random (by FID) reads of arcs, and polygons is supported it may not be "
+"supported for other feature types. Random access to E00 files is generally "
+"slow."
+msgstr ""
+
+#: ../../../source/drivers/vector/avce00.rst:46
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/avce00.rst:53
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/vector/avce00.rst:55
+msgid "`AVCE00 Library Page <http://avce00.maptools.org/>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/avce00.rst:56
+msgid ":ref:`AVCBin OGR Driver (Binary Coverage) <vector.avcbin>`"
+msgstr ""

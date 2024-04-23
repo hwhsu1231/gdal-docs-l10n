@@ -1,0 +1,110 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/vdv.rst:4
+msgid "VDV - VDV-451/VDV-452/INTREST Data Format"
+msgstr ""
+
+#: ../../../source/drivers/vector/vdv.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/vdv.rst:8
+msgid "VDV"
+msgstr ""
+
+#: ../../../source/drivers/vector/vdv.rst:12
+msgid ""
+"This driver can read and create text files following the VDV-451 file "
+"format, which is a text format similar to CSV files, potentially containing "
+"several layers within the same file."
+msgstr ""
+
+#: ../../../source/drivers/vector/vdv.rst:16
+msgid "It supports in particular reading 2 \"profiles\" :"
+msgstr ""
+
+#: ../../../source/drivers/vector/vdv.rst:18
+msgid "(read/write) VDV-452 standard for route network / timetable"
+msgstr ""
+
+#: ../../../source/drivers/vector/vdv.rst:19
+msgid ""
+"(read/only) \"INTREST Data format\" used by the `Austrian official open "
+"government street graph <https://www.data.gv.at/katalog/"
+"dataset/3fefc838-791d-4dde-975b-a4131a54e7c5>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/vdv.rst:23
+msgid ""
+"The generic reader/writer for VDV-451/VDV-452 can support arbitrarily large "
+"files. For the INTREST data case, for combined layers in a single file, the "
+"driver ingests the whole file in memory to reconstruct the Link layer."
+msgstr ""
+
+#: ../../../source/drivers/vector/vdv.rst:28
+msgid ""
+"Interleave reading among layers is supported in files with multiple layers."
+msgstr ""
+
+#: ../../../source/drivers/vector/vdv.rst:32
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/vdv.rst:41
+msgid "Creations issues"
+msgstr ""
+
+#: ../../../source/drivers/vector/vdv.rst:43
+msgid ""
+"The driver can create new layers (either in the same file, or in separate "
+"files in the same directory). It can append a new layer into an existing "
+"file, but it cannot append/edit/delete features to an existing layer, or "
+"modify the attribute structure of an existing layer after features have been "
+"written."
+msgstr ""
+
+#: ../../../source/drivers/vector/vdv.rst:49
+msgid "The following dataset creation options are available:"
+msgstr ""
+
+#: ../../../source/drivers/vector/vdv.rst:58
+msgid "The following layer creation options are available:"
+msgstr ""
+
+#: ../../../source/drivers/vector/vdv.rst:150
+msgid "Links"
+msgstr ""
+
+#: ../../../source/drivers/vector/vdv.rst:152
+msgid ""
+"`VDV-451 file format <https://www.vdv.de/vdv-schrift-451.pdfx?"
+"forced=false>`__ (German)"
+msgstr ""
+
+#: ../../../source/drivers/vector/vdv.rst:155
+msgid ""
+"`VDV-452 data model <https://www.vdv.de/service/downloads_onp.aspx?"
+"id=4328&forced=false>`__ (German)"
+msgstr ""
+
+#: ../../../source/drivers/vector/vdv.rst:157
+msgid ""
+"`Austrian INTREST data format <https://gip.gv.at/assets/"
+"downloads/1908_dokumentation_gipat_ogd.pdf>`__ (German)"
+msgstr ""

@@ -1,0 +1,502 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/pg_advanced.rst:4
+msgid "PostgreSQL / PostGIS - Advanced Driver Information"
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:6
+msgid ""
+"The information collected in that page deal with advanced topics, not found "
+"in the :ref:`OGR PostgreSQL driver Information <vector.pg>` page."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:10
+msgid "Connection options related to schemas and tables"
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:12
+msgid ""
+"The database opening should be significantly faster than in previous "
+"versions, so using tables= or schemas= options will not bring further "
+"noticeable speed-ups."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:16
+msgid ""
+"The set of tables to be scanned can be overridden by specifying "
+"*tables=[schema.]table[(geom_column_name)][,"
+"[schema2.]table2[(geom_column_name2)],...]* within the connection string. If "
+"the parameter is found, the driver skips enumeration of the tables as "
+"described in the next paragraph."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:22
+msgid ""
+"It is possible to restrict the schemas that will be scanned while "
+"establishing the list of tables. This can be done by specifying "
+"*schemas=schema_name[,schema_name2]* within the connection string. This can "
+"also be a way of speeding up the connection to a PostgreSQL database if "
+"there are a lot of schemas. Note that if only one schema is listed, it will "
+"also be made automatically the active schema (and the schema name will not "
+"prefix the layer name). Otherwise, the active schema is still 'public', "
+"unless otherwise specified by the *active_schema=* option."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:32
+msgid ""
+"The active schema ('public' being the default) can be overridden by "
+"specifying *active_schema=schema_name* within the connection string. The "
+"active schema is the schema where tables are created or looked for when "
+"their name is not explicitly prefixed by a schema name. Note that this does "
+"not restrict the tables that will be listed (see *schemas=* option above). "
+"When getting the list of tables, the name of the tables within that active "
+"schema will not be prefixed by the schema name. For example, if you have a "
+"table 'foo' within the public schema, and a table 'foo' within the "
+"'bar_schema' schema, and that you specify active_schema=bar_schema, 2 layers "
+"will be listed : 'foo' (implicitly within 'bar_schema') and 'public.foo'."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:45
+msgid "Multiple geometry columns"
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:47
+msgid ""
+"The PostgreSQL driver supports accessing tables with multiple PostGIS "
+"geometry columns."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:50
+msgid ""
+"OGR supports reading, updating, creating tables with multiple PostGIS "
+"geometry columns (following :ref:`rfc-41`) For such a table, a single OGR "
+"layer will be reported with as many geometry fields as there are geometry "
+"columns in the table."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:55
+msgid ""
+"For backward compatibility, it is also possible to query a layer with "
+"GetLayerByName() with a name formatted like 'foo(bar)' where 'foo' is a "
+"table and 'bar' a geometry column."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:60
+msgid "Layers"
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:62
+msgid ""
+"Even when PostGIS is enabled, if the user defines the environment variable :"
+"config:`PG_LIST_ALL_TABLES=YES` (and does not specify tables=), all regular "
+"user tables and named views will be treated as layers. However, tables with "
+"multiple geometry column will only be reported once in that mode. So this "
+"variable is mainly useful when PostGIS is enabled to find out tables with no "
+"spatial data, or views without an entry in *geometry_columns* table."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:70
+msgid ""
+"In any case, all user tables can be queried explicitly with GetLayerByName()"
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:73
+msgid ""
+"Regular (non-spatial) tables can be accessed, and will return features with "
+"attributes, but not geometry. If the table has a \"wkb_geometry\" field, it "
+"will be treated as a spatial table. The type of the field is inspected to "
+"determine how to read it. It can be a PostGIS **geometry** field, which is "
+"assumed to come back in OGC WKT, or type BYTEA or OID in which case it is "
+"used as a source of OGC WKB geometry."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:80
+msgid "Tables inherited from spatial tables are supported."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:83
+msgid ""
+"If there is an \"ogc_fid\" field, it will be used to set the feature id of "
+"the features, and not treated as a regular field."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:86
+msgid ""
+"The layer name may be of the form \"schema.table\". The schema must exist, "
+"and the user needs to have write permissions for the target and the public "
+"schema."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:90
+msgid "If the user defines the environment variable"
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:94
+msgid "PG_SKIP_VIEWS=YES"
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:96
+msgid ""
+"(and does not specify tables=), only the regular user tables will be treated "
+"as layers. The default action is to include the views. This variable is "
+"particularly useful when you want to copy the data into another format while "
+"avoiding the redundant data from the views."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:102
+msgid "Named views"
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:104
+msgid ""
+"When PostGIS is enabled for the accessed database, named views are "
+"supported, provided that there is an entry in the *geometry_columns* tables. "
+"But, note that the AddGeometryColumn() SQL function doesn't accept adding an "
+"entry for a view (only for regular tables). So, that must usually be done by "
+"hand with a SQL statement like :"
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:112
+msgid ""
+"\"INSERT INTO geometry_columns VALUES ( '', 'public', 'name_of_my_view', "
+"'name_of_geometry_column', 2, 4326, 'POINT');\""
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:114
+msgid ""
+"It is also possible to use named views without inserting a row in the "
+"geometry_columns table. For that, you need to explicitly specify the name of "
+"the view in the \"tables=\" option of the connection string. See above. The "
+"drawback is that OGR will not be able to report a valid SRS and figure out "
+"the right geometry type."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:121
+msgid "Retrieving FID of newly inserted feature"
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:123
+msgid ""
+"The FID of a feature (i.e. usually the value of the OGC_FID column for the "
+"feature) inserted into a table with CreateFeature(), in non-copy mode, will "
+"be retrieved from the database and can be obtained with GetFID(). One side-"
+"effect of this new behavior is that you must be careful if you re-use the "
+"same feature object in a loop that makes insertions. After the first "
+"iteration, the FID will be set to a non-null value, so at the second "
+"iteration, CreateFeature() will try to insert the new feature with the FID "
+"of the previous feature, which will fail as you cannot insert 2 features "
+"with same FID. So in that case you must explicitly reset the FID before "
+"calling CreateFeature(), or use a fresh feature object."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:136
+msgid "Snippet example in Python :"
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:140
+msgid ""
+"feat = ogr.Feature(lyr.GetLayerDefn())\n"
+"for i in range(100):\n"
+"    feat.SetFID(-1)  # Reset FID to null value\n"
+"    lyr.CreateFeature(feat)\n"
+"    print('The feature has been assigned FID %d' % feat.GetFID())"
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:146
+msgid "or :"
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:150
+msgid ""
+"for i in range(100):\n"
+"    feat = ogr.Feature(lyr.GetLayerDefn())\n"
+"    lyr.CreateFeature(feat)\n"
+"    print('The feature has been assigned FID %d' % feat.GetFID())"
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:155
+msgid ""
+"Old GDAL behavior can be obtained by setting the configuration option :"
+"config:`OGR_PG_RETRIEVE_FID` to FALSE."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:159
+msgid "Issues with transactions"
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:161
+msgid ""
+"Efficient sequential reading in PostgreSQL requires to be done within a "
+"transaction (technically this is a CURSOR WITHOUT HOLD). So the PG driver "
+"will implicitly open such a transaction if none is currently opened as soon "
+"as a feature is retrieved. This transaction will be released if "
+"ResetReading() is called (provided that no other layer is still being read)."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:168
+msgid ""
+"If within such an implicit transaction, an explicit dataset level "
+"StartTransaction() is issued, the PG driver will use a SAVEPOINT to emulate "
+"properly the transaction behavior while making the active cursor on the read "
+"layer still opened."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:173
+msgid ""
+"If an explicit transaction is opened with dataset level StartTransaction() "
+"before reading a layer, this transaction will be used for the cursor that "
+"iterates over the layer. When explicitly committing or rolling back the "
+"transaction, the cursor will become invalid, and ResetReading() should be "
+"issued again to restart reading from the beginning."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:180
+msgid ""
+"As calling SetAttributeFilter() or SetSpatialFilter() implies an implicit "
+"ResetReading(), they have the same effect as ResetReading(). That is to say, "
+"while an implicit transaction is in progress, the transaction will be "
+"committed (if no other layer is being read), and a new one will be started "
+"again at the next GetNextFeature() call. On the contrary, if they are called "
+"within an explicit transaction, the transaction is maintained."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:188
+msgid ""
+"With the above rules, the below examples show the SQL instructions that are "
+"run when using the OGR API in different scenarios."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:194
+msgid ""
+"lyr1->GetNextFeature()             BEGIN (implicit)\n"
+"                                   DECLARE cur1 CURSOR FOR SELECT * FROM "
+"lyr1\n"
+"                                   FETCH 1 IN cur1\n"
+"\n"
+"lyr1->SetAttributeFilter('xxx')\n"
+"     --> lyr1->ResetReading()      CLOSE cur1\n"
+"                                   COMMIT (implicit)\n"
+"\n"
+"lyr1->GetNextFeature()             BEGIN (implicit)\n"
+"                                   DECLARE cur1 CURSOR  FOR SELECT * FROM "
+"lyr1 WHERE xxx\n"
+"                                   FETCH 1 IN cur1\n"
+"\n"
+"lyr2->GetNextFeature()             DECLARE cur2 CURSOR  FOR SELECT * FROM "
+"lyr2\n"
+"                                   FETCH 1 IN cur2\n"
+"\n"
+"lyr1->GetNextFeature()             FETCH 1 IN cur1\n"
+"\n"
+"lyr2->GetNextFeature()             FETCH 1 IN cur2\n"
+"\n"
+"lyr1->CreateFeature(f)             INSERT INTO cur1 ...\n"
+"\n"
+"lyr1->SetAttributeFilter('xxx')\n"
+"     --> lyr1->ResetReading()      CLOSE cur1\n"
+"                                   COMMIT (implicit)\n"
+"\n"
+"lyr1->GetNextFeature()             DECLARE cur1 CURSOR  FOR SELECT * FROM "
+"lyr1 WHERE xxx\n"
+"                                   FETCH 1 IN cur1\n"
+"\n"
+"lyr1->ResetReading()               CLOSE cur1\n"
+"\n"
+"lyr2->ResetReading()               CLOSE cur2\n"
+"                                   COMMIT (implicit)\n"
+"\n"
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+"\n"
+"ds->StartTransaction()             BEGIN\n"
+"\n"
+"lyr1->GetNextFeature()             DECLARE cur1 CURSOR FOR SELECT * FROM "
+"lyr1\n"
+"                                   FETCH 1 IN cur1\n"
+"\n"
+"lyr2->GetNextFeature()             DECLARE cur2 CURSOR FOR SELECT * FROM "
+"lyr2\n"
+"                                   FETCH 1 IN cur2\n"
+"\n"
+"lyr1->CreateFeature(f)             INSERT INTO cur1 ...\n"
+"\n"
+"lyr1->SetAttributeFilter('xxx')\n"
+"     --> lyr1->ResetReading()      CLOSE cur1\n"
+"                                   COMMIT (implicit)\n"
+"\n"
+"lyr1->GetNextFeature()             DECLARE cur1 CURSOR  FOR SELECT * FROM "
+"lyr1 WHERE xxx\n"
+"                                   FETCH 1 IN cur1\n"
+"\n"
+"lyr1->ResetReading()               CLOSE cur1\n"
+"\n"
+"lyr2->ResetReading()               CLOSE cur2\n"
+"\n"
+"ds->CommitTransaction()            COMMIT\n"
+"\n"
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+"\n"
+"ds->StartTransaction()             BEGIN\n"
+"\n"
+"lyr1->GetNextFeature()             DECLARE cur1 CURSOR FOR SELECT * FROM "
+"lyr1\n"
+"                                   FETCH 1 IN cur1\n"
+"\n"
+"lyr1->CreateFeature(f)             INSERT INTO cur1 ...\n"
+"\n"
+"ds->CommitTransaction()            CLOSE cur1 (implicit)\n"
+"                                   COMMIT\n"
+"\n"
+"lyr1->GetNextFeature()             FETCH 1 IN cur1      ==> Error since the "
+"cursor was closed with the commit. Explicit ResetReading() required before\n"
+"\n"
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+"\n"
+"lyr1->GetNextFeature()             BEGIN (implicit)\n"
+"                                   DECLARE cur1 CURSOR FOR SELECT * FROM "
+"lyr1\n"
+"                                   FETCH 1 IN cur1\n"
+"\n"
+"ds->StartTransaction()             SAVEPOINT savepoint\n"
+"\n"
+"lyr1->CreateFeature(f)             INSERT INTO cur1 ...\n"
+"\n"
+"ds->CommitTransaction()            RELEASE SAVEPOINT savepoint\n"
+"\n"
+"lyr1->ResetReading()               CLOSE cur1\n"
+"                                   COMMIT (implicit)"
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:281
+msgid ""
+"Note: in reality, the PG drivers fetches 500 features at once. The FETCH 1 "
+"is for clarity of the explanation."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:285
+msgid "Advanced Examples"
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:287
+msgid ""
+"This example shows using ogrinfo to list only the layers specified by the "
+"*tables=* options."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:292
+msgid "ogrinfo -ro PG:'dbname=warmerda tables=table1,table2'"
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:294
+msgid ""
+"This example shows using ogrinfo to query a table 'foo' with multiple "
+"geometry columns ('geom1' and 'geom2')."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:299
+msgid "ogrinfo -ro -al PG:dbname=warmerda 'foo(geom2)'"
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:301
+msgid ""
+"This example show how to list only the layers inside the schema apt200810 "
+"and apt200812. The layer names will be prefixed by the name of the schema "
+"they belong to."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:307
+msgid "ogrinfo -ro PG:'dbname=warmerda schemas=apt200810,apt200812'"
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:309
+msgid ""
+"This example shows using ogrinfo to list only the layers inside the schema "
+"named apt200810. Note that the layer names will not be prefixed by apt200810 "
+"as only one schema is listed."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:315
+msgid "ogrinfo -ro PG:'dbname=warmerda schemas=apt200810'"
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:317
+msgid ""
+"This example shows how to convert a set of shapefiles inside the apt200810 "
+"directory into an existing Postgres schema apt200810. In that example, we "
+"could have use the schemas= option instead."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:323
+msgid ""
+"ogr2ogr -f PostgreSQL \"PG:dbname=warmerda active_schema=apt200810\" "
+"apt200810"
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:325
+msgid ""
+"This example shows how to convert all the tables inside the schema apt200810 "
+"as a set of shapefiles inside the apt200810 directory. Note that the layer "
+"names will not be prefixed by apt200810 as only one schema is listed"
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:332
+msgid "ogr2ogr apt200810 PG:'dbname=warmerda schemas=apt200810'"
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:334
+msgid ""
+"This example shows how to overwrite an existing table in an existing schema. "
+"Note the use of -nln to specify the qualified layer name."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:339
+msgid ""
+"ogr2ogr -overwrite -f PostgreSQL \"PG:dbname=warmerda\" mytable.shp mytable -"
+"nln myschema.mytable"
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:341
+msgid ""
+"Note that using -lco SCHEMA=mytable instead of -nln would not have worked in "
+"that case (see `#2821 <http://trac.osgeo.org/gdal/ticket/2821>`__ for more "
+"details)."
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:345
+msgid ""
+"If you need to overwrite many tables located in a schema at once, the -nln "
+"option is not the more appropriate, so it might be more convenient to use "
+"the active_schema connection string. The following example will overwrite, "
+"if necessary, all the PostgreSQL tables corresponding to a set of shapefiles "
+"inside the apt200810 directory :"
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:354
+msgid ""
+"ogr2ogr -overwrite -f PostgreSQL \"PG:dbname=warmerda "
+"active_schema=apt200810\" apt200810"
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:357
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/vector/pg_advanced.rst:359
+msgid ":ref:`OGR PostgreSQL driver Information <vector.pg>`"
+msgstr ""

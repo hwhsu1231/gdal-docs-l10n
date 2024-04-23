@@ -1,0 +1,109 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/mapml.rst:4
+#: ../../../source/drivers/vector/mapml.rst:8
+msgid "MapML"
+msgstr ""
+
+#: ../../../source/drivers/vector/mapml.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/mapml.rst:12
+msgid ""
+"This driver implements read and write support for the `MapML specification "
+"<https://maps4html.org/MapML/spec>`_. It only implements reading and writing "
+"vector features."
+msgstr ""
+
+#: ../../../source/drivers/vector/mapml.rst:18
+msgid ""
+"This driver implements an experimental specification, and inherits its "
+"experimental status. This specification may change at a later point, or not "
+"be adopted. Files written by this driver may no longer be readable in later "
+"versions of GDAL."
+msgstr ""
+
+#: ../../../source/drivers/vector/mapml.rst:25
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/mapml.rst:34
+msgid "Read support"
+msgstr ""
+
+#: ../../../source/drivers/vector/mapml.rst:36
+msgid "Layers are identified with the ``class`` attribute of features."
+msgstr ""
+
+#: ../../../source/drivers/vector/mapml.rst:38
+msgid ""
+"Fields are retrieved from the HTML table in the ``properties`` element of "
+"features. This assumes that they are written following the exact same "
+"structure as the write side of the driver. Otherwise no fields will be "
+"retrieved. Field type is guessed from the values, and may consequently be "
+"sometimes inaccurate."
+msgstr ""
+
+#: ../../../source/drivers/vector/mapml.rst:44
+msgid "Write support"
+msgstr ""
+
+#: ../../../source/drivers/vector/mapml.rst:46
+msgid "Several layers can be written in the same MapML file."
+msgstr ""
+
+#: ../../../source/drivers/vector/mapml.rst:48
+msgid ""
+"Only the following CRS are natively supports, EPSG:4326 (WGS 84), EPSG:3857 "
+"(WebMercator), EPSG:3978 (NAD83 / Canada Atlas Lambert) and EPSG:5936 (WGS "
+"84 / EPSG Alaska Polar Stereographic). Layers in other CRS will be "
+"automatically reprojected to EPSG:4326."
+msgstr ""
+
+#: ../../../source/drivers/vector/mapml.rst:53
+msgid ""
+"Geometry types Point, LineString, Polygon, MultiPoint, MultiLineString, "
+"MultiPolygon and GeometryCollection are supported."
+msgstr ""
+
+#: ../../../source/drivers/vector/mapml.rst:56
+msgid "Attributes are written as a HTML table."
+msgstr ""
+
+#: ../../../source/drivers/vector/mapml.rst:59
+msgid "Dataset creation options"
+msgstr ""
+
+#: ../../../source/drivers/vector/mapml.rst:147
+msgid "Links"
+msgstr ""
+
+#: ../../../source/drivers/vector/mapml.rst:149
+msgid "`MapML specification <https://maps4html.org/MapML/spec>`_"
+msgstr ""
+
+#: ../../../source/drivers/vector/mapml.rst:150
+msgid ""
+"`MapML schemas <https://github.com/Maps4HTML/MapML/tree/gh-pages/schema>`_"
+msgstr ""
+
+#: ../../../source/drivers/vector/mapml.rst:151
+msgid ":ref:`gdal2tiles` mapml output"
+msgstr ""

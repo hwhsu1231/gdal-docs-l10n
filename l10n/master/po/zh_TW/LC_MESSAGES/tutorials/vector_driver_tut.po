@@ -1,0 +1,533 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/tutorials/vector_driver_tut.rst:5
+msgid "Vector driver implementation tutorial"
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:10
+msgid "Overall Approach"
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:12
+msgid ""
+"In general new formats are added to OGR by implementing format specific "
+"drivers with instantiating a :cpp:class:`GDALDriver` and subclasses of :cpp:"
+"class:`GDALDataset` and :cpp:class:`OGRLayer`.  The GDALDriver instance is "
+"registered with the :cpp:class:`GDALDriverManager` at runtime."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:17
+msgid ""
+"Before following this tutorial to implement an OGR driver, please review "
+"the :ref:`vector_data_model` document carefully."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:20
+msgid "The tutorial will be based on implementing a simple ascii point format."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:23
+msgid "Implementing GDALDriver"
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:25
+msgid ""
+"The format specific driver class is implemented as a instance of GDALDriver. "
+"One instance of the driver will normally be created, and registered with the "
+"GDALDriverManager.  The instantiation of the driver is normally handled by a "
+"global C callable registration function, similar to the following placed in "
+"the same file as the driver class."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:31
+msgid ""
+"void RegisterOGRSPF()\n"
+"{\n"
+"    if( GDALGetDriverByName(\"SPF\") != NULL )\n"
+"        return;\n"
+"\n"
+"    GDALDriver *poDriver = new GDALDriver();\n"
+"\n"
+"    poDriver->SetDescription(\"SPF\");\n"
+"    poDriver->SetMetadataItem(GDAL_DCAP_VECTOR, \"YES\");\n"
+"    poDriver->SetMetadataItem(GDAL_DMD_LONGNAME, \"Long name for SPF "
+"driver\");\n"
+"    poDriver->SetMetadataItem(GDAL_DMD_EXTENSION, \"spf\");\n"
+"    poDriver->SetMetadataItem(GDAL_DMD_HELPTOPIC, \"drv_spf.html\");\n"
+"\n"
+"    poDriver->pfnOpen = OGRSPFDriverOpen;\n"
+"    poDriver->pfnIdentify = OGRSPFDriverIdentify;\n"
+"    poDriver->pfnCreate = OGRSPFDriverCreate;\n"
+"\n"
+"    poDriver->SetMetadataItem(GDAL_DCAP_VIRTUALIO, \"YES\");\n"
+"\n"
+"    GetGDALDriverManager()->RegisterDriver(poDriver);\n"
+"}"
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:55
+msgid ""
+"The :cpp:func:`GDALDriver::SetDescription` sets the name of the driver.  "
+"This name is specified on the commandline when creating datasources so it is "
+"generally good to keep it short and without any special characters or spaces."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:59
+msgid ""
+"SetMetadataItem( GDAL_DCAP_VECTOR, \"YES\" ) is specified to indicate that "
+"the driver will handle vector data."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:62
+msgid ""
+"SetMetadataItem( GDAL_DCAP_VIRTUALIO, \"YES\" ) is specified to indicate "
+"that the driver can deal with files opened with the VSI*L GDAL API. "
+"Otherwise this metadata item should not be defined."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:66
+msgid ""
+"For a driver that can be built as a plugin (that is to say a standalone "
+"shared object, loaded at runtime by GDAL), since GDAL 3.9 and :ref:`rfc-96`, "
+"there is a way to implement the driver in a way where the plugin will be "
+"loaded only when necessary, and not immediately at :cpp:func:"
+"`GDALAllRegister` time. Consult :ref:`rfc96_example_driver` for the changes "
+"needed to make the driver compatible of deferred plugin loading."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:68
+msgid ""
+"The driver declaration generally looks something like this for a format with "
+"read or read and update access (the Open() method) and creation support (the "
+"Create() method)."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:73
+msgid ""
+"static GDALDataset* OGRSPFDriverOpen(GDALOpenInfo* poOpenInfo);\n"
+"static int          OGRSPFDriverIdentify(GDALOpenInfo* poOpenInfo);\n"
+"static GDALDataset* OGRSPFDriverCreate(const char* pszName, int nXSize, int "
+"nYSize,\n"
+"                                    int nBands, GDALDataType eDT, char** "
+"papszOptions);"
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:81
+msgid ""
+"The Open() method is called by :cpp:func:`GDALOpenEx`. It should quietly "
+"return NULL if the passed filename is not of the format supported by the "
+"driver.  If it is the target format, then a new GDALDataset object for the "
+"dataset should be returned."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:85
+msgid ""
+"It is common for the Open() method to be delegated to an Open() method on "
+"the actual format's GDALDataset class."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:88
+msgid ""
+"static GDALDataset *OGRSPFDriverOpen( GDALOpenInfo* poOpenInfo )\n"
+"{\n"
+"    if( !OGRSPFDriverIdentify(poOpenInfo) )\n"
+"        return NULL;\n"
+"\n"
+"    OGRSPFDataSource *poDS = new OGRSPFDataSource();\n"
+"    if( !poDS->Open(poOpenInfo->pszFilename, poOpenInfo->eAccess == "
+"GA_Update) )\n"
+"    {\n"
+"        delete poDS;\n"
+"        return NULL;\n"
+"    }\n"
+"\n"
+"    return poDS;\n"
+"}"
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:106
+msgid "The Identify() method is implemented as such :"
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:109
+msgid ""
+"static int OGRSPFDriverIdentify( GDALOpenInfo* poOpenInfo )\n"
+"{\n"
+"    // Does this appear to be an .spf file?\n"
+"    return EQUAL(CPLGetExtension(poOpenInfo->pszFilename), \"spf\");\n"
+"}"
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:118
+msgid ""
+"Examples of the Create() method is left for the section on creation and "
+"update."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:121
+msgid "Basic Read Only Data Source"
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:123
+msgid ""
+"We will start implementing a minimal read-only datasource.  No attempt is "
+"made to optimize operations, and default implementations of many methods "
+"inherited from GDALDataset are used."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:127
+msgid ""
+"The primary responsibility of the datasource is to manage the list of "
+"layers. In the case of the SPF format a datasource is a single file "
+"representing one layer so there is at most one layer.  The \"name\" of a "
+"datasource should generally be the name passed to the Open() method."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:132
+msgid ""
+"The Open() method below is not overriding a base class method, but we have "
+"it to implement the open operation delegated by the driver class."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:135
+msgid ""
+"For this simple case we provide a stub :cpp:func:`GDALDataset::"
+"TestCapability` that returns FALSE for all extended capabilities.  The "
+"TestCapability() method is pure virtual, so it does need to be implemented."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:139
+msgid ""
+"class OGRSPFDataSource : public GDALDataset\n"
+"{\n"
+"    OGRSPFLayer       **papoLayers;\n"
+"    int                 nLayers;\n"
+"\n"
+"public:\n"
+"                        OGRSPFDataSource();\n"
+"                        ~OGRSPFDataSource();\n"
+"\n"
+"    int                 Open( const char *pszFilename, int bUpdate );\n"
+"\n"
+"    int                 GetLayerCount() { return nLayers; }\n"
+"    OGRLayer            *GetLayer( int );\n"
+"\n"
+"    int                 TestCapability( const char * ) { return FALSE; }\n"
+"};"
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:159
+msgid ""
+"The constructor is a simple initializer to a default state.  The Open() will "
+"take care of actually attaching it to a file.  The destructor is responsible "
+"for orderly cleanup of layers."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:164
+msgid ""
+"OGRSPFDataSource::OGRSPFDataSource()\n"
+"{\n"
+"    papoLayers = NULL;\n"
+"    nLayers = 0;\n"
+"}\n"
+"\n"
+"OGRSPFDataSource::~OGRSPFDataSource()\n"
+"{\n"
+"    for( int i = 0; i < nLayers; i++ )\n"
+"        delete papoLayers[i];\n"
+"    CPLFree(papoLayers);\n"
+"}"
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:180
+msgid ""
+"The Open() method is the most important one on the datasource, though in "
+"this particular instance it passes most of its work off to the OGRSPFLayer "
+"constructor if it believes the file is of the desired format."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:184
+msgid ""
+"Note that Open() methods should try and determine that a file isn't of the "
+"identified format as efficiently as possible, since many drivers may be "
+"invoked with files of the wrong format before the correct driver is "
+"reached.  In this particular Open() we just test the file extension but this "
+"is generally a poor way of identifying a file format.  If available, "
+"checking \"magic header values\" or something similar is preferable."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:191
+msgid ""
+"In the case of the SPF format, update in place is not supported, so we "
+"always fail if bUpdate is FALSE."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:195
+msgid ""
+"int  OGRSPFDataSource::Open( const char *pszFilename, int bUpdate )\n"
+"{\n"
+"    if( bUpdate )\n"
+"    {\n"
+"        CPLError(CE_Failure, CPLE_OpenFailed,\n"
+"                \"Update access not supported by the SPF driver.\");\n"
+"        return FALSE;\n"
+"    }\n"
+"\n"
+"    // Create a corresponding layer.\n"
+"    nLayers = 1;\n"
+"    papoLayers = static_cast<OGRSPFLayer **>(CPLMalloc(sizeof(void *)));\n"
+"\n"
+"    papoLayers[0] = new OGRSPFLayer(pszFilename);\n"
+"\n"
+"    pszName = CPLStrdup(pszFilename);\n"
+"\n"
+"    return TRUE;\n"
+"}"
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:218
+msgid ""
+"A GetLayer() method also needs to be implemented.  Since the layer list is "
+"created in the Open() this is just a lookup with some safety testing."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:222
+msgid ""
+"OGRLayer *OGRSPFDataSource::GetLayer( int iLayer )\n"
+"{\n"
+"    if( iLayer < 0 || iLayer >= nLayers )\n"
+"        return NULL;\n"
+"\n"
+"    return papoLayers[iLayer];\n"
+"}"
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:234
+msgid "Read Only Layer"
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:236
+msgid ""
+"The OGRSPFLayer is implements layer semantics for an .spf file.  It provides "
+"access to a set of feature objects in a consistent coordinate system with a "
+"particular set of attribute columns.  Our class definition looks like this:"
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:242
+msgid ""
+"class OGRSPFLayer : public OGRLayer\n"
+"{\n"
+"    OGRFeatureDefn     *poFeatureDefn;\n"
+"    FILE               *fp;\n"
+"    int                 nNextFID;\n"
+"\n"
+"public:\n"
+"    OGRSPFLayer( const char *pszFilename );\n"
+"~OGRSPFLayer();\n"
+"\n"
+"    void                ResetReading();\n"
+"    OGRFeature *        GetNextFeature();\n"
+"\n"
+"    OGRFeatureDefn *    GetLayerDefn() { return poFeatureDefn; }\n"
+"\n"
+"    int                 TestCapability( const char * ) { return FALSE; }\n"
+"};"
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:263
+msgid ""
+"The layer constructor is responsible for initialization.  The most important "
+"initialization is setting up the :cpp:class:`OGRFeatureDefn` for the layer.  "
+"This defines the list of fields and their types, the geometry type and the "
+"coordinate system for the layer.  In the SPF format the set of fields is "
+"fixed - a single string field and we have no coordinate system info to set."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:269
+msgid ""
+"Pay particular attention to the reference counting of the OGRFeatureDefn. As "
+"OGRFeature's for this layer will also take a reference to this definition, "
+"it is important that we also establish a reference on behalf of the layer "
+"itself."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:275
+msgid ""
+"OGRSPFLayer::OGRSPFLayer( const char *pszFilename )\n"
+"{\n"
+"    nNextFID = 0;\n"
+"\n"
+"    poFeatureDefn = new OGRFeatureDefn(CPLGetBasename(pszFilename));\n"
+"    SetDescription(poFeatureDefn->GetName());\n"
+"    poFeatureDefn->Reference();\n"
+"    poFeatureDefn->SetGeomType(wkbPoint);\n"
+"\n"
+"    OGRFieldDefn oFieldTemplate(\"Name\", OFTString);\n"
+"\n"
+"    poFeatureDefn->AddFieldDefn(&oFieldTemplate);\n"
+"\n"
+"    fp = VSIFOpenL(pszFilename, \"r\");\n"
+"    if( fp == NULL )\n"
+"        return;\n"
+"}"
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:295
+msgid ""
+"Note that the destructor uses :cpp:func:`OGRFeatureDefn::Release` on the "
+"OGRFeatureDefn.  This will destroy the feature definition if the reference "
+"count drops to zero, but if the application is still holding onto a feature "
+"from this layer, then that feature will hold a reference to the feature "
+"definition and it will not be destroyed here (which is good!)."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:302
+msgid ""
+"OGRSPFLayer::~OGRSPFLayer()\n"
+"{\n"
+"    poFeatureDefn->Release();\n"
+"    if( fp != NULL )\n"
+"        VSIFCloseL(fp);\n"
+"}"
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:311
+msgid ""
+"The :cpp:func:`OGRLayer::GetNextFeature` method is usually the work horse of "
+"OGRLayer implementations.  It is responsible for reading the next feature "
+"according to the current spatial and attribute filters installed."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:315
+msgid ""
+"The while() loop is present to loop until we find a satisfactory feature.  "
+"The first section of code is for parsing a single line of the SPF text file "
+"and establishing the x, y and name for the line."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:320
+msgid ""
+"OGRFeature *OGRSPFLayer::GetNextFeature()\n"
+"{\n"
+"    // Loop till we find a feature matching our requirements.\n"
+"    while( true )\n"
+"    {\n"
+"        const char *pszLine = CPLReadLineL(fp);\n"
+"\n"
+"        // Are we at end of file (out of features)?\n"
+"        if( pszLine == NULL )\n"
+"            return NULL;\n"
+"\n"
+"        const double dfX = atof(pszLine);\n"
+"\n"
+"        pszLine = strstr(pszLine,\"|\");\n"
+"        if( pszLine == NULL )\n"
+"            continue; // we should issue an error!\n"
+"        else\n"
+"            pszLine++;\n"
+"\n"
+"        const double dfY = atof(pszLine);\n"
+"\n"
+"        pszLine = strstr(pszLine,\"|\");\n"
+"\n"
+"        const char *pszName = NULL;\n"
+"        if( pszLine == NULL )\n"
+"            continue; // we should issue an error!\n"
+"        else\n"
+"            pszName = pszLine + 1;"
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:351
+msgid ""
+"The next section turns the x, y and name into a feature.  Also note that we "
+"assign a linearly incremented feature id.  In our case we started at zero "
+"for the first feature, though some drivers start at 1."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:356
+msgid ""
+"OGRFeature *poFeature = new OGRFeature(poFeatureDefn);\n"
+"\n"
+"poFeature->SetGeometryDirectly(new OGRPoint(dfX, dfY));\n"
+"poFeature->SetField(0, pszName);\n"
+"poFeature->SetFID(nNextFID++);"
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:364
+msgid ""
+"Next we check if the feature matches our current attribute or spatial filter "
+"if we have them.  Methods on the OGRLayer base class support maintain "
+"filters in the OGRLayer member fields :cpp:member:`OGRLayer::m_poFilterGeom` "
+"(spatial filter) and :cpp:member:`OGRLayer::m_poAttrQuery` (attribute "
+"filter) so we can just use these values here if they are non-NULL.  The "
+"following test is essentially \"stock\" and done the same in all formats.  "
+"Some formats also do some spatial filtering ahead of time using a spatial "
+"index."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:372
+msgid ""
+"If the feature meets our criteria we return it.  Otherwise we destroy it, "
+"and return to the top of the loop to fetch another to try."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:375
+msgid ""
+"        if( (m_poFilterGeom == NULL ||\n"
+"            FilterGeometry(poFeature->GetGeometryRef())) &&\n"
+"            (m_poAttrQuery == NULL ||\n"
+"            m_poAttrQuery->Evaluate(poFeature)) )\n"
+"            return poFeature;\n"
+"\n"
+"        delete poFeature;\n"
+"    }\n"
+"}"
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:387
+msgid ""
+"While in the middle of reading a feature set from a layer, or at any other "
+"time the application can call :cpp:func:`OGRLayer::ResetReading` which is "
+"intended to restart reading at the beginning of the feature set.  We "
+"implement this by seeking back to the beginning of the file, and resetting "
+"our feature id counter."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:392
+msgid ""
+"void OGRSPFLayer::ResetReading()\n"
+"{\n"
+"    VSIFSeekL(fp, 0, SEEK_SET);\n"
+"    nNextFID = 0;\n"
+"}"
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:400
+msgid ""
+"In this implementation we do not provide a custom implementation for the "
+"GetFeature() method.  This means an attempt to read a particular feature by "
+"its feature id will result in many calls to GetNextFeature() until the "
+"desired feature is found.  However, in a sequential text format like spf "
+"there is little else we could do anyway."
+msgstr ""
+
+#: ../../../source/tutorials/vector_driver_tut.rst:406
+msgid "There! We have completed a simple read-only feature file format driver."
+msgstr ""

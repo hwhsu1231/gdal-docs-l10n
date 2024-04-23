@@ -1,0 +1,592 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:5
+msgid "RFC 68: C++11 Compilation Mode"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:8
+msgid "Author:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:8
+msgid "Kurt Schwehr"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:9
+msgid "Contact:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:9
+msgid "schwehr@google.com / schwehr@gmail.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:10
+msgid "Started:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:10
+msgid "2017-Apr-11"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:11
+msgid "Passed:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:11
+msgid "2017-Sep-11"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:12
+msgid "Status:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:12
+msgid "Adopted, implemented in GDAL 2.3"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:15
+msgid ""
+"This RFC is based on `GEOS RFC 5 <http://trac.osgeo.org/geos/wiki/RFC5>`__ "
+"by Mateusz Łoskot."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:19
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:21
+msgid ""
+"The document proposes to switch to `C++11 <http://en.wikipedia.org/wiki/"
+"C%2B%2B11>`__ compilation mode as default throughout the whole C++ source "
+"code of GDAL."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:25
+msgid ""
+"The goal of the document is to request and achieve agreement on using C++11 "
+"as the minimum required version of the C++ programming language standard."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:30
+msgid "Motivation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:32
+msgid ""
+"C++11 is the first major update of the C++ standard since 1998. (`C++03 "
+"<https://en.wikipedia.org/wiki/C%2B%2B03>`__ was a bug fix release.)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:36
+msgid ""
+"Having fewer versions of C++ to support will reduce the load on developers "
+"and testing systems."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:39
+msgid ""
+"C++11 features aim to promote writing clean, compact, type-safe and fast "
+"code. It also delivers better feature-wise compatibility with the C language "
+"(C99)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:43
+msgid ""
+"The Wikipedia article at `http://en.wikipedia.org/wiki/C++11 <http://en."
+"wikipedia.org/wiki/C++11>`__ does a great job describing all changes in C+"
+"+11 extensively."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:47
+msgid ""
+"The ``std::auto_ptr`` smart pointer, together with a bunch of other "
+"features, were deprecated and will be removed from C++17. Features like "
+"``std::unique_ptr`` provide much stronger replacements."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:51
+msgid ""
+"Enabling C++11 compilation mode will improve the programming environment "
+"making it much friendlier than C++98."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:54
+msgid ""
+"A social factor: since (many) C++ programmers no longer enjoy C++98, "
+"allowing C++11 mode may increase potential for new contributions."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:58
+msgid "Compilers Landscape"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:60
+msgid ""
+"Summary of compilers supported by GDAL with their minimal versions required "
+"to compile source code based on"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:63
+msgid ""
+"`http://en.cppreference.com/w/cpp/compiler_support <http://en.cppreference."
+"com/w/cpp/compiler_support>`__ C++11 features."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:67
+msgid "C++11"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:70
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:82
+msgid "GCC"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:70
+msgid "4.8.1+"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:70
+msgid "`C++11 status <https://gcc.gnu.org/projects/cxx-status.html#cxx11>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:70
+msgid ""
+"Debian 8 (stable), Ubuntu 15.04+, Ubuntu 14.04 ``ppa:ubuntu-toolchain-r/"
+"test``, Fedora 19+, RHEL7"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:72
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:84
+msgid "Clang"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:72
+msgid "3.3+"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:72
+msgid "`C++11 status <https://clang.llvm.org/cxx_status.html#cxx11>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:72
+msgid "Debian 8 (stable), Ubuntu 14.04+, Fedora 19+, CentOS 6(?)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:73
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:85
+msgid "MSVC"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:73
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:85
+msgid "14.0+ (2015)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:73
+msgid ""
+"`C++11 status <https://msdn.microsoft.com/en-us/library/hh567368.aspx>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:73
+msgid "n/a"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:77
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:140
+msgid "C++14"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:79
+msgid "The C++14 compilers are listed for comparison only:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:82
+msgid "4.9+"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:84
+msgid "3.4+"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:89
+msgid "Plan"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:91
+msgid ""
+"This proposal only requests agreement for the C++11 compilation mode switch "
+"in the current ``trunk`` branch only."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:94
+msgid ""
+"This proposal does not suggest any detailed roadmap of large refactoring of "
+"the GDAL C++ codebase."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:97
+msgid ""
+"The GDAL codebase is > 1.3M LOC and given the available man-power to LOCs "
+"ratio, such one-step refactoring would not be feasible."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:100
+msgid ""
+"Instead, the task will be tackled with the baby step approach gradually "
+"transforming the codebase according to priorities set along the way. Any "
+"disruptive refactoring, changes in interfaces of C++ classes, breaking "
+"changes in C++ API must be announced and discussed on the mailing list or "
+"the bug tracker."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:106
+msgid ""
+"*IMPORTANT*: C++11 refactoring must not change the C API or break C API "
+"compatibility, unless agreed upon based on prior RFC proposed."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:109
+msgid ""
+"However, if the proposal is accepted, any new C++ code written for GDAL must "
+"be C++11-compliant."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:112
+msgid ""
+"Prior acceptance of this proposal is necessary in order to start any source "
+"code refactoring using C++11 features."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:115
+msgid ""
+"Once accepted, first step will be to update the build configurations to "
+"require C++11-compliant compiler."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:119
+msgid "Issues"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:121
+msgid ""
+"This section outlines issues potentially caused by upgrade to C++11 language."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:124
+msgid ""
+"C++11 destructors, by default, have now the new exception specification of "
+"``nothrow(true)``. Destructors of GDAL classes should be reviewed and any "
+"that are allowed/expected to throw exceptions must be marked with "
+"``nothrow(false)``. Otherwise, any user of the existing GDAL codebase would "
+"find the program terminating whenever GDAL destructor throws an exception. "
+"Such review would be beneficial anyway."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:133
+msgid "Release"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:135
+msgid "First release of GDAL with C++11 compiler requirement could be 2.3.0."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:142
+msgid "This section clarifies status of C++14 support in GDAL."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:144
+msgid ""
+"Once C++11 is adopted as default compilation mode, GDAL developers and "
+"maintainers must ensure it also successfully compiles in C++14 and C++17 "
+"modes."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:148
+msgid ""
+"Are contributors allowed to add ``ifdef``'s for C++14 and C++17? No. Not at "
+"this time."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:151
+msgid ""
+"Is there a plan to upgrade to C++14 or C++17 to allow use of the C++ latest "
+"features? No, there is no plan. It is, however, recognized, such motion may "
+"be put to the vote around 2020."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:156
+msgid "References"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:158
+msgid ""
+"`http://en.cppreference.com/w/cpp/compiler_support <http://en.cppreference."
+"com/w/cpp/compiler_support>`__ C++ compiler support"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:162
+msgid "Self-assigned development constraints"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:164
+msgid ""
+"The changes should have moderate impact on the existing GDAL/OGR code base, "
+"and particularly on most of its code, that lies in drivers. Existing users "
+"of the GDAL/OGR API should also be moderately impacted by the changes, if "
+"they do not need to use the new offered capabilities."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:169
+msgid ""
+"GDAL has been working well with C++11 builds for a number of years now, so "
+"there should be no externally visible changes for the initial removal of C+"
+"+03 support."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:174
+msgid "Core changes: summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:176
+msgid ""
+"Change configure.ac to remove ``with_cpp11`` flag, always use C++11, and "
+"fail if ``AX_CXX_COMPILE_STDCXX_11`` does not find C++11"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:178
+msgid "Remove @CXX11_SUPPORT@ in GDALmake.opt.in and anywhere else it occurs"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:179
+msgid ""
+"Remove continuous build targets that do not support C++11 from Travis-CI and "
+"AppVeyor"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:181
+msgid "Remove #if HAVE_CXX11 and leave only the C++11 code"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:183
+msgid "``find . -name \\*.h -o -name \\*.cpp | xargs egrep 'HAVE_CXX11'``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:185
+msgid "CPL_STATIC_ASSERT -> ``static_assert``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:186
+msgid "``NULL`` -> ``nullptr`` (Only for C++ code)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:187
+msgid "CPL_OVERRIDE -> override and remove redundant virtual"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:188
+msgid "-MAX or -max() -> ``std::numeric_limits<T>::lowest()``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:191
+msgid "Changes in SWIG bindings"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:193
+msgid ""
+"The switch does not impact the ``C`` API used by the SWIG bindings. However, "
+"there may be some code that can be removed."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:197
+msgid "Potential changes that are *NOT* included in this RFC"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:199
+msgid ""
+"There are many C++11 features not address in this RFC. See `https://en."
+"wikipedia.org/wiki/C%2B%2B11 <https://en.wikipedia.org/wiki/C%2B%2B11>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:202
+msgid "attributes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:203
+msgid "``auto``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:204
+msgid "``consexpr``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:205
+msgid "``cstdint``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:206
+msgid "``delete`` and ``default`` for member functions"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:207
+msgid "enum classes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:208
+msgid "initializer lists and ``std::initializer_list``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:209
+msgid "lambda"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:210
+msgid "range based for loops"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:211
+msgid "std::regex"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:212
+msgid "rvalue references"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:213
+msgid "smart pointers ``std::unique_ptr`` and ``std::shared_ptr``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:214
+msgid ""
+"New string literals: u8\"An UTF-8 string\", u\"An UTF-16 str\", U\"An UTF-32 "
+"str\", R\"xml(raw content)xml\""
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:216
+msgid "``std::thread``, ``thread_local`` and related"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:217
+msgid "tuples"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:218
+msgid "And more..."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:221
+msgid "Backward compatibility"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:223
+msgid "Any code using the C++ API must use C++11 or newer."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:225
+msgid "The C API should not be impacted."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:227
+msgid "GDAL 2.2.x and older will continue to have C++03 support."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:230
+msgid "Testing"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:232
+msgid "The existing autotest suite should continue to pass."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:235
+msgid "Version numbering"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:237
+msgid ""
+"Although the above describes changes should have very few impact on existing "
+"applications of the C API, some behavior changes, C++ level changes and the "
+"conceptual changes are thought to deserve a 2.3 version number."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:243
+msgid "Implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:245
+msgid ""
+"Implementation will be done by Kurt Schwehr. Others are welcome to pitch in."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:249
+msgid "Related RFCs"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:251
+msgid "Related RFCs:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:253
+msgid ""
+"`GEOS RFC 5: C++11 Compilation Mode <http://trac.osgeo.org/geos/wiki/"
+"RFC5>`__: GEOS is switching to requiring C++11 to build."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:256
+msgid ""
+"`Move OTB to C++14 <https://wiki.orfeo-toolbox.org/index.php/"
+"Request_for_Comments-36:_Move_OTB_to_C%2B%2B14>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:260
+msgid "Amendments"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:262
+msgid "This RFC is superseded per :ref:`rfc-98`."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:265
+msgid "Voting history"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:267
+msgid ""
+"`https://lists.osgeo.org/pipermail/gdal-dev/2017-September/047139.html "
+"<https://lists.osgeo.org/pipermail/gdal-dev/2017-September/047139.html>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:269
+msgid "EvenR +1"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:270
+msgid "JukkaR +1"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:271
+msgid "DanielM +0"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:272
+msgid "HowardB +1"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc68_cplusplus11.rst:273
+msgid "KurtS +1"
+msgstr ""

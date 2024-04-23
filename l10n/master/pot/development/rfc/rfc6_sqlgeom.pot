@@ -1,0 +1,693 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:5
+msgid "RFC 6: Geometry and Feature Style as OGR Special Fields"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:7
+msgid "Author: Tamas Szekeres"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:9
+msgid "Contact: szekerest@gmail.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:11
+msgid "Status: Adopted"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:14
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:16
+msgid ""
+"This proposal addresses and issue have been discovered long ago, and OGR "
+"provides no equivalent solution so far."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:19
+msgid ""
+"Some of the supported formats like Mapinfo.tab may contain multiple geometry "
+"types and style information. In order to handle this kind of data sources "
+"properly a support for selecting the layers by geometry type or by the style "
+"info would be highly required. For more details see the following MapServer "
+"related bugs later in this document."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:25
+msgid ""
+"All of the proposed changes can be found at the tracking bug of this RFC "
+"referenced later in this document."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:29
+msgid "Main concepts"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:31
+msgid ""
+"The most reasonable way to support this feature is to extend the currently "
+"existing 'special field' approach to allow specifying more than one fields. "
+"Along with the already defined 'FID' field we will add the following ones:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:36
+msgid "'OGR_GEOMETRY' containing the geometry type like 'POINT' or 'POLYGON'."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:38
+msgid "'OGR_STYLE' containing the style string."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:39
+msgid "'OGR_GEOM_WKT' containing the full WKT of the geometry."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:41
+msgid ""
+"By providing the aforementioned fields one can make for example the "
+"following selections:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:44
+msgid ""
+"select FID, OGR_GEOMETRY, OGR_STYLE, OGR_GEOM_WKT, \\* from MyTable where "
+"OGR_GEOMETRY='POINT' OR OGR_GEOMETRY='POLYGON'"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:46
+msgid ""
+"select FID, OGR_GEOMETRY, OGR_STYLE, OGR_GEOM_WKT, \\* from MyTable where "
+"OGR_STYLE LIKE '%BRUSH%'"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:48
+msgid ""
+"select FID, OGR_GEOMETRY, OGR_STYLE, OGR_GEOM_WKT, \\* from MyTable where "
+"OGR_GEOM_WKT LIKE 'POLYGON%'"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:50
+msgid "select distinct OGR_GEOMETRY from MyTable order by OGR_GEOMETRY desc"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:53
+msgid "Implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:55
+msgid "There are two distinct areas where this feature plays a role"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:57
+msgid "Feature query implemented at ogrfeaturequery.cpp"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:59
+msgid "SQL based selection implemented at ogr_gensql.cpp and ogrdatasource.cpp"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:62
+msgid ""
+"To specify arbitrary number of special fields we will declare an array for "
+"the field names and types in ogrfeaturequery.cpp as"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:67
+msgid ""
+"char* SpecialFieldNames[SPECIAL_FIELD_COUNT]\n"
+"    = {\"FID\", \"OGR_GEOMETRY\", \"OGR_STYLE\", \"OGR_GEOM_WKT\"};\n"
+"swq_field_type SpecialFieldTypes[SPECIAL_FIELD_COUNT]\n"
+"    = {SWQ_INTEGER, SWQ_STRING, SWQ_STRING, SWQ_STRING};"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:72
+msgid ""
+"So as to make this array accessible to the other files the followings will "
+"be added to ogr_p.h"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:77
+msgid ""
+"CPL_C_START\n"
+"#include \"ogr_swq.h\"\n"
+"CPL_C_END\n"
+"\n"
+"#define SPF_FID 0\n"
+"#define SPF_OGR_GEOMETRY 1\n"
+"#define SPF_OGR_STYLE 2\n"
+"#define SPF_OGR_GEOM_WKT 3\n"
+"#define SPECIAL_FIELD_COUNT 4\n"
+"\n"
+"extern char* SpecialFieldNames[SPECIAL_FIELD_COUNT];\n"
+"extern swq_field_type SpecialFieldTypes[SPECIAL_FIELD_COUNT];"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:90
+msgid ""
+"In ogrfeature.cpp the field accessor functions (GetFieldAsString, "
+"GetFieldAsInteger, GetFieldAsDouble) will be modified providing the values "
+"of the special fields by the field index"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:94
+msgid ""
+"The following code will be added to the beginning of OGRFeature::"
+"GetFieldAsInteger:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:99
+msgid ""
+"int iSpecialField = iField - poDefn->GetFieldCount();\n"
+"if (iSpecialField >= 0)\n"
+"{\n"
+"// special field value accessors\n"
+"    switch (iSpecialField)\n"
+"    {\n"
+"    case SPF_FID:\n"
+"        return GetFID();\n"
+"    default:\n"
+"        return 0;\n"
+"    }\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:112
+msgid ""
+"The following code will be added to the beginning of OGRFeature::"
+"GetFieldAsDouble:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:117
+msgid ""
+"int iSpecialField = iField - poDefn->GetFieldCount();\n"
+"if (iSpecialField >= 0)\n"
+"{\n"
+"// special field value accessors\n"
+"    switch (iSpecialField)\n"
+"    {\n"
+"    case SPF_FID:\n"
+"        return GetFID();\n"
+"    default:\n"
+"        return 0.0;\n"
+"    }\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:130
+msgid ""
+"The following code will be added to the beginning of OGRFeature::"
+"GetFieldAsString:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:135
+msgid ""
+"int iSpecialField = iField - poDefn->GetFieldCount();\n"
+"if (iSpecialField >= 0)\n"
+"{\n"
+"// special field value accessors\n"
+"    switch (iSpecialField)\n"
+"    {\n"
+"    case SPF_FID:\n"
+"        sprintf( szTempBuffer, \"%d\", GetFID() );\n"
+"        return m_pszTmpFieldValue = CPLStrdup( szTempBuffer );\n"
+"    case SPF_OGR_GEOMETRY:\n"
+"        return poGeometry->getGeometryName();\n"
+"    case SPF_OGR_STYLE:\n"
+"        return GetStyleString();\n"
+"    case SPF_OGR_GEOM_WKT:\n"
+"        {\n"
+"            if (poGeometry->exportToWkt( &m_pszTmpFieldValue ) == "
+"OGRERR_NONE )\n"
+"                return m_pszTmpFieldValue;\n"
+"            else\n"
+"                return \"\";\n"
+"        }\n"
+"    default:\n"
+"        return \"\";\n"
+"    }\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:160
+msgid ""
+"The current implementation of OGRFeature::GetFieldAsString uses a static "
+"string to hold the const char\\* return value that is highly avoidable and "
+"makes the code thread unsafe. In this regard the 'static char "
+"szTempBuffer[80]' will be changed to non static and a new member will be "
+"added to OGRFeature in ogrfeature.h as:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:168
+msgid "char * m_pszTmpFieldValue;"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:170
+msgid ""
+"This member will be initialized to NULL at the constructor, and will be "
+"freed using CPLFree() at the destructor of OGRFeature."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:173
+msgid ""
+"In OGRFeature::GetFieldAsString all of the occurrences of 'return "
+"szTempBuffer;' will be changed to 'return m_pszTmpFieldValue = "
+"CPLStrdup( szTempBuffer );'"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:177
+msgid ""
+"OGRFeature::GetFieldAsString is responsible to destroy the old value of "
+"m_pszTmpFieldValue at the beginning of the function:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:182
+msgid ""
+"CPLFree(m_pszTmpFieldValue);\n"
+"m_pszTmpFieldValue = NULL;"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:185
+msgid ""
+"In ogrfeaturequery.cpp we should change OGRFeatureQuery::Compile to add the "
+"special fields like:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:190
+msgid ""
+"iField = 0;\n"
+"while (iField < SPECIAL_FIELD_COUNT)\n"
+"{\n"
+"    papszFieldNames[poDefn->GetFieldCount() + iField] = "
+"SpecialFieldNames[iField];\n"
+"    paeFieldTypes[poDefn->GetFieldCount() + iField] = "
+"SpecialFieldTypes[iField];\n"
+"    ++iField;\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:198
+msgid ""
+"In ogrfeaturequery.cpp OGRFeatureQueryEvaluator() should be modifyed "
+"according to the field specific actions like"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:203
+msgid ""
+"int iSpecialField = op->field_index - poFeature->GetDefnRef()-"
+">GetFieldCount();\n"
+"if( iSpecialField >= 0 )\n"
+"{\n"
+"    if ( iSpecialField < SPECIAL_FIELD_COUNT )\n"
+"    {\n"
+"        switch ( SpecialFieldTypes[iSpecialField] )\n"
+"        {\n"
+"        case SWQ_INTEGER:\n"
+"            sField.Integer = poFeature->GetFieldAsInteger( op-"
+">field_index );\n"
+"        case SWQ_STRING:\n"
+"            sField.String = (char*) poFeature->GetFieldAsString( op-"
+">field_index );\n"
+"        }\n"
+"    }\n"
+"    else\n"
+"    {\n"
+"        CPLDebug( \"OGRFeatureQuery\", \"Illegal special field index.\");\n"
+"        return FALSE;\n"
+"    }\n"
+"    psField = &sField;\n"
+"}\n"
+"else\n"
+"    psField = poFeature->GetRawFieldRef( op->field_index );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:226
+msgid ""
+"In ogrfeaturequery.cpp OGRFeatureQuery::FieldCollector should be modifyed to "
+"add the field names like:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:231
+msgid ""
+"if( op->field_index >= poTargetDefn->GetFieldCount()\n"
+"        && op->field_index < poTargetDefn->GetFieldCount() + "
+"SPECIAL_FIELD_COUNT)\n"
+"        pszFieldName = SpecialFieldNames[op->field_index];"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:235
+msgid ""
+"In ogrdatasource.cpp ExecuteSQL() will allocate the arrays according to the "
+"number of the special fields:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:240
+msgid ""
+"sFieldList.names = (char **)\n"
+"        CPLMalloc( sizeof(char *) * (nFieldCount+SPECIAL_FIELD_COUNT) );\n"
+"sFieldList.types = (swq_field_type *)\n"
+"        CPLMalloc( sizeof(swq_field_type) * "
+"(nFieldCount+SPECIAL_FIELD_COUNT) );\n"
+"sFieldList.table_ids = (int *)\n"
+"        CPLMalloc( sizeof(int) * (nFieldCount+SPECIAL_FIELD_COUNT) );\n"
+"sFieldList.ids = (int *)\n"
+"        CPLMalloc( sizeof(int) * (nFieldCount+SPECIAL_FIELD_COUNT) );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:249
+msgid "And the fields will be added as"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:253
+msgid ""
+"for (iField = 0; iField < SPECIAL_FIELD_COUNT; iField++)\n"
+"{\n"
+"    sFieldList.names[sFieldList.count] = SpecialFieldNames[iField];\n"
+"    sFieldList.types[sFieldList.count] = SpecialFieldTypes[iField];\n"
+"    sFieldList.table_ids[sFieldList.count] = 0;\n"
+"    sFieldList.ids[sFieldList.count] = nFIDIndex + iField;\n"
+"    sFieldList.count++;\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:262
+msgid ""
+"For supporting the SQL based queries we should also modify the constructor "
+"of OGRGenSQLResultsLayer in ogr_gensql.cpp and set the field type properly:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:268
+msgid ""
+"else if ( psColDef->field_index >= iFIDFieldIndex )\n"
+"{\n"
+"    switch ( SpecialFieldTypes[psColDef->field_index - iFIDFieldIndex] )\n"
+"    {\n"
+"    case SWQ_INTEGER:\n"
+"        oFDefn.SetType( OFTInteger );\n"
+"        break;\n"
+"    case SWQ_STRING:\n"
+"        oFDefn.SetType( OFTString );\n"
+"        break;\n"
+"    case SWQ_FLOAT:\n"
+"        oFDefn.SetType( OFTReal );\n"
+"        break;\n"
+"    }\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:284
+msgid ""
+"Some of the queries will require to modify OGRGenSQLResultsLayer::"
+"PrepareSummary in ogr_gensql.cpp will be simplified (GetFieldAsString will "
+"be used in all cases to access the field values):"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:291
+msgid ""
+"pszError = swq_select_summarize( psSelectInfo, iField,\n"
+"poSrcFeature->GetFieldAsString( psColDef->field_index ) );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:294
+msgid ""
+"OGRGenSQLResultsLayer::TranslateFeature should also be modifyed when copying "
+"the fields from primary record to the destination feature"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:299
+msgid ""
+" if ( psColDef->field_index >= iFIDFieldIndex &&\n"
+"            psColDef->field_index < iFIDFieldIndex + SPECIAL_FIELD_COUNT )\n"
+"{\n"
+"    switch (SpecialFieldTypes[psColDef->field_index - iFIDFieldIndex])\n"
+"    {\n"
+"    case SWQ_INTEGER:\n"
+"        poDstFeat->SetField( iField, poSrcFeat->GetFieldAsInteger(psColDef-"
+">field_index) );\n"
+"    case SWQ_STRING:\n"
+"        poDstFeat->SetField( iField, poSrcFeat->GetFieldAsString(psColDef-"
+">field_index) );\n"
+"    }\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:311
+msgid ""
+"For supporting the 'order by' queries we should also modify "
+"OGRGenSQLResultsLayer::CreateOrderByIndex() as:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:317
+msgid ""
+"if ( psKeyDef->field_index >= iFIDFieldIndex)\n"
+"{\n"
+"    if ( psKeyDef->field_index < iFIDFieldIndex + SPECIAL_FIELD_COUNT )\n"
+"    {\n"
+"        switch (SpecialFieldTypes[psKeyDef->field_index - iFIDFieldIndex])\n"
+"        {\n"
+"        case SWQ_INTEGER:\n"
+"            psDstField->Integer = poSrcFeat->GetFieldAsInteger(psKeyDef-"
+">field_index);\n"
+"        case SWQ_STRING:\n"
+"            psDstField->String = CPLStrdup( poSrcFeat-"
+">GetFieldAsString(psKeyDef->field_index) );\n"
+"        }\n"
+"    }\n"
+"    continue;\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:332
+msgid ""
+"All of the strings allocated previously should be deallocated later in the "
+"same function as:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:338
+msgid ""
+"if ( psKeyDef->field_index >= iFIDFieldIndex )\n"
+"{\n"
+"    /* warning: only special fields of type string should be deallocated */\n"
+"    if (SpecialFieldTypes[psKeyDef->field_index - iFIDFieldIndex] == "
+"SWQ_STRING)\n"
+"    {\n"
+"        for( i = 0; i < nIndexSize; i++ )\n"
+"        {\n"
+"            OGRField *psField = pasIndexFields + iKey + i * nOrderItems;\n"
+"            CPLFree( psField->String );\n"
+"        }\n"
+"    }\n"
+"    continue;\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:352
+msgid ""
+"When ordering by the field values the OGRGenSQLResultsLayer::Compare should "
+"also be modifyed:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:357
+msgid ""
+"if( psKeyDef->field_index >= iFIDFieldIndex )\n"
+"    poFDefn = NULL;\n"
+"else\n"
+"    poFDefn = poSrcLayer->GetLayerDefn()->GetFieldDefn(\n"
+"        psKeyDef->field_index );\n"
+"\n"
+"if( (pasFirstTuple[iKey].Set.nMarker1 == OGRUnsetMarker\n"
+"        && pasFirstTuple[iKey].Set.nMarker2 == OGRUnsetMarker)\n"
+"    || (pasSecondTuple[iKey].Set.nMarker1 == OGRUnsetMarker\n"
+"        && pasSecondTuple[iKey].Set.nMarker2 == OGRUnsetMarker) )\n"
+"    nResult = 0;\n"
+"else if ( poFDefn == NULL )\n"
+"{\n"
+"    switch (SpecialFieldTypes[psKeyDef->field_index - iFIDFieldIndex])\n"
+"    {\n"
+"    case SWQ_INTEGER:\n"
+"        if( pasFirstTuple[iKey].Integer < pasSecondTuple[iKey].Integer )\n"
+"            nResult = -1;\n"
+"        else if( pasFirstTuple[iKey].Integer > pasSecondTuple[iKey]."
+"Integer )\n"
+"            nResult = 1;\n"
+"        break;\n"
+"    case SWQ_STRING:\n"
+"        nResult = strcmp(pasFirstTuple[iKey].String,\n"
+"                        pasSecondTuple[iKey].String);\n"
+"        break;\n"
+"    }\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:386
+msgid "Adding New Special Fields"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:388
+msgid ""
+"Adding a new special field in a subsequent development phase is fairly "
+"straightforward and the following steps should be made:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:391
+msgid ""
+"In ogr_p.h a new constant should be added with the value of the "
+"SPECIAL_FIELD_COUNT and SPECIAL_FIELD_COUNT should be incremented by one."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:395
+msgid ""
+"In ogrfeaturequery.cpp the special field string and the type should be added "
+"to SpecialFieldNames and SpecialFieldTypes respectively"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:398
+msgid ""
+"The field value accessors (OGRFeature::GetFieldAsString, OGRFeature::"
+"GetFieldAsInteger, OGRFeature::GetFieldAsDouble) should be modifyed to "
+"provide the value of the new special field. All of these functions provide "
+"const return values so GetFieldAsString should retain the value in the "
+"m_pszTmpFieldValue member."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:404
+msgid ""
+"When adding a new value with a type other than SWQ_INTEGER and SWQ_STRING "
+"the following functions might also be modified accordingly:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:408
+msgid "OGRGenSQLResultsLayer::OGRGenSQLResultsLayer"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:409
+msgid "OGRGenSQLResultsLayer::TranslateFeature"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:410
+msgid "OGRGenSQLResultsLayer::CreateOrderByIndex"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:411
+msgid "OGRGenSQLResultsLayer::Compare"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:412
+msgid "OGRFeatureQueryEvaluator"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:415
+msgid "Backward Compatibility"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:417
+msgid ""
+"In most cases the backward compatibility of the OGR library will be "
+"retained. However the special fields will potentially conflict with regard "
+"fields with the given names. When accessing the field values the special "
+"fields will take pecedence over the other fields with the same names."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:423
+msgid ""
+"When using OGRFeature::GetFieldAsString the returned value will be stored as "
+"a member variable instead of a static variable. The string will be "
+"deallocated and will no longer be usable after the destruction of the "
+"feature."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:429
+msgid "Regression Testing"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:431
+msgid ""
+"A new gdalautotest/ogr/ogr_sqlspecials.py script to test support for all "
+"special fields in the ExecuteSQL() call and with WHERE clauses."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:435
+msgid "Documentation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:437
+msgid ""
+"The OGR SQL document will be updated to reflect the support for special "
+"fields."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:441
+msgid "Implementation Staffing"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:443
+msgid ""
+"Tamas Szekeres will implement the bulk of the RFC in time for GDAL/OGR 1.4.0."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:446
+msgid ""
+"Frank Warmerdam will consider how the backward compatibility issues (with "
+"special regard to the modified lifespan of the GetFieldAsString returned "
+"value) will affect the other parts of the OGR project and will write the "
+"Python regression testing script."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:452
+msgid "References"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:454
+msgid ""
+"Tracking bug for this feature (containing all of the proposed code changes): "
+"#1333"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:457
+msgid "MapServer related bugs:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:459
+msgid "`1129 <http://trac.osgeo.org/mapserver/ticket/1129>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:460
+msgid "`1438 <http://trac.osgeo.org/mapserver/ticket/1438>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:463
+msgid "Voting History"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:465
+msgid "Frank Warmerdam +1"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:467
+msgid "Daniel Morissette +1"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:469
+msgid "Howard Butler +0"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc6_sqlgeom.rst:471
+msgid "Andrey Kiselev +1"
+msgstr ""

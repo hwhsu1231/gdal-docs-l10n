@@ -1,0 +1,176 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:5
+msgid "RFC 9: GDAL Paid Maintainer Guidelines"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:7
+msgid "Author: Frank Warmerdam"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:9
+msgid "Contact: warmerdam@pobox.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:11
+msgid "Status: Approved, but superseded per :ref:`rfc-83`"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:14
+msgid "Purpose"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:16
+msgid ""
+"To formalize guidelines for the work of maintainers paid out of GDAL project "
+"sponsorship funds."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:20
+msgid "Responsibilities"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:22
+msgid "Analyse and where possible fix bugs reported against GDAL."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:23
+msgid "Run, review and extend the test suite (via buildbot, etc)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:24
+msgid "Maintain and extend documentation."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:25
+msgid "Assist integrating new contributed features."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:26
+msgid ""
+"Help maintain project infrastructure (mailing lists, buildbot, source "
+"control, etc)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:28
+msgid "Provide user support on the project mailing lists, and in other venues."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:30
+msgid "Develop new capabilities."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:32
+msgid ""
+"Bug fixing and maintenance should be focused on GDAL/OGR, but as needed will "
+"extend into sub-projects such as libtiff, libgeotiff, Shapelib and MITAB as "
+"long it is to serve a need of the GDAL/OGR project."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:36
+msgid ""
+"In order to provide reasonable response times the maintainer is expected "
+"spend some time each week addressing new bugs and user support. If the "
+"maintainer will be unavailable for an extended period of time (vacation, "
+"etc) then the supervisor should be notified."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:42
+msgid "Direction"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:44
+msgid ""
+"The maintainer is generally subject to the project PSC. However, for day to "
+"day decisions one PSC member will be designated as the supervisor for the "
+"maintainer. This supervisor will prioritize work via email, bug assignments, "
+"and IRC discussions."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:49
+msgid ""
+"The supervisor will try to keep the following in mind when prioritizing "
+"tasks."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:52
+msgid ""
+"Bug reports, and support needs of Sponsors should be given higher priority "
+"than other tasks."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:54
+msgid ""
+"Areas of focus identified by the PSC (ie. multi-threading, SWIG scripting) "
+"should be given higher priority than other tasks."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:56
+msgid "Bugs or needs that affect many users should have higher priority."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:57
+msgid ""
+"The maintainer should be used to take care of work that no one else is "
+"willing and able to do (ie. fill the holes, rather than displacing "
+"volunteers)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:60
+msgid ""
+"Try to avoid tying up the maintainer on one big task for many weeks unless "
+"directed by the PSC."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:62
+msgid ""
+"The maintainer should not be directed to do work for which someone else is "
+"getting paid."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:65
+msgid ""
+"Substantial new development projects will only be taken on by the maintainer "
+"with the direction of a PSC motion (or possibly an RFC designating the "
+"maintainer to work on a change)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:69
+msgid ""
+"Note that the maintainer and the maintainer supervisor are subject to the "
+"normal RFC process for any substantial change to GDAL."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:73
+msgid "Reporting"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:75
+msgid ""
+"The maintainer will produce a brief bi-weekly report to the gdal-dev list "
+"indicating tasks worked on, and a more detailed timesheet for the supervisor."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc9_maintainer.rst:79
+msgid ""
+"This is intended to provide visibility into status, accomplishments, and "
+"time allocation. It also gives an opportunity for the PSC to request a "
+"\"course correction\" fairly promptly."
+msgstr ""

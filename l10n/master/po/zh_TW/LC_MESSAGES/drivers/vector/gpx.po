@@ -1,0 +1,520 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/gpx.rst:4
+msgid "GPX - GPS Exchange Format"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:6
+msgid "GPX"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:8
+msgid "(read support needs libexpat)"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:10
+msgid ""
+"GPX (the GPS Exchange Format) is a light-weight XML data format for the "
+"interchange of GPS data (waypoints, routes, and tracks) between applications "
+"and Web services on the Internet."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:14
+msgid ""
+"OGR has support for GPX reading (if GDAL is build with *expat* library "
+"support) and writing."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:17
+msgid "Version supported are GPX 1.0 and 1.1 for reading, GPX 1.1 for writing."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:19
+msgid ""
+"The OGR driver supports reading and writing of all the GPX feature types:"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:21
+msgid "*waypoints* : layer of features of OGR type wkbPoint"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:22
+msgid "*routes* : layer of features of OGR type wkbLineString"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:23
+msgid "*tracks* : layer of features of OGR type wkbMultiLineString"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:25
+msgid ""
+"It also supports reading of route points and track points in standalone "
+"layers (*route_points* and *track_points*), so that their own attributes can "
+"be used by OGR."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:31
+msgid ""
+"In addition to its GPX attributes, each route point of a route has a "
+"*route_fid* (foreign key to the FID of its belonging route) and a "
+"*route_point_id* which is its sequence number in the route."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:34
+msgid ""
+"The same applies for track points with *track_fid*, *track_seg_id* and "
+"*track_seg_point_id*. All coordinates are relative to the WGS84 datum "
+"(EPSG:4326)."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:36
+msgid ""
+"The OGR GPX driver reads and writes the GPX attributes for the waypoints, "
+"routes and tracks."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:39
+msgid ""
+"Starting with GDAL 3.7, metadata from the top <metadata> element is reported "
+"at dataset level."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:43
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:52
+msgid "Configuration options"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:54
+msgid ""
+"The following :ref:`configuration options <configoptions>` are available:"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:67
+#: ../../../source/drivers/vector/gpx.rst:101
+msgid "\"track_seg_id\" to \"trksegid\""
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:68
+#: ../../../source/drivers/vector/gpx.rst:102
+msgid "\"track_seg_point_id\" to  \"trksegptid\""
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:69
+#: ../../../source/drivers/vector/gpx.rst:103
+msgid "\"route_point_id\" to \"rteptid\""
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:71
+#: ../../../source/drivers/vector/gpx.rst:105
+msgid ""
+"But note that no particular processing will be done for any extension field "
+"names."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:89
+msgid "Open options"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:93
+msgid "The following open options are available:"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:123
+msgid "Encoding issues"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:125
+msgid "Expat library supports reading the following built-in encodings :"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:127
+msgid "US-ASCII"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:128
+msgid "UTF-8"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:129
+msgid "UTF-16"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:130
+msgid "ISO-8859-1"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:131
+msgid "Windows-1252"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:133
+msgid ""
+"The content returned by OGR will be encoded in UTF-8, after the conversion "
+"from the encoding mentioned in the file header is."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:139
+msgid ""
+"If your GPX file is not encoded in one of the previous encodings, it will "
+"not be parsed by the GPX driver. You may convert it into one of the "
+"supported encoding with the *iconv* utility for example and change "
+"accordingly the *encoding* parameter value in the XML header."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:141
+msgid ""
+"When writing a GPX file, the driver expects UTF-8 content to be passed in."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:145
+msgid "Extensions element reading"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:147
+msgid ""
+"If the *<extensions>* element is detected in a GPX file, OGR will expose the "
+"content of its sub elements as fields. Complex content of sub elements will "
+"be exposed as an XML blob."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:151
+msgid "The following sequence GPX content :"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:155
+msgid ""
+"<extensions>\n"
+"    <navaid:name>TOTAL RF</navaid:name>\n"
+"    <navaid:address>BENSALEM</navaid:address>\n"
+"    <navaid:state>PA</navaid:state>\n"
+"    <navaid:country>US</navaid:country>\n"
+"    <navaid:frequencies>\n"
+"    <navaid:frequency type=\"CTAF\" frequency=\"122.900\" name=\"CTAF\"/>\n"
+"    </navaid:frequencies>\n"
+"    <navaid:runways>\n"
+"    <navaid:runway designation=\"H1\" length=\"80\" width=\"80\" "
+"surface=\"ASPH-G\">\n"
+"    </navaid:runway>\n"
+"    </navaid:runways>\n"
+"    <navaid:magvar>12</navaid:magvar>\n"
+"</extensions>"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:170
+msgid "will be interpreted in the OGR SF model as :"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:174
+msgid ""
+"navaid_name (String) = TOTAL RF\n"
+"navaid_address (String) = BENSALEM\n"
+"navaid_state (String) = PA\n"
+"navaid_country (String) = US\n"
+"navaid_frequencies (String) = <navaid:frequency type=\"CTAF\" "
+"frequency=\"122.900\" name=\"CTAF\" ></navaid:frequency>\n"
+"navaid_runways (String) = <navaid:runway designation=\"H1\" length=\"80\" "
+"width=\"80\" surface=\"ASPH-G\" ></navaid:runway>\n"
+"navaid_magvar (Integer) = 12"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:187
+msgid ""
+"Note : the GPX driver will output content of the extensions element only if "
+"it is found in the first records of the GPX file. If extensions appear "
+"later, you can force an explicit parsing of the whole file with the :config:"
+"`GPX_USE_EXTENSIONS` configuration option."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:191
+msgid "Creation Issues"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:193
+msgid ""
+"On export all layers are written to a single GPX file. Update of existing "
+"files is not currently supported."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:196
+msgid ""
+"If the output file already exits, the writing will not occur. You have to "
+"delete the existing file first."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:199
+msgid "Supported geometries :"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:201
+msgid "Features of type wkbPoint/wkbPoint25D are written in the *wpt* element."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:203
+msgid ""
+"Features of type wkbLineString/wkbLineString25D are written in the *rte* "
+"element."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:205
+msgid ""
+"Features of type wkbMultiLineString/wkbMultiLineString25D are written in the "
+"*trk* element."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:207
+msgid "Other type of geometries are not supported."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:209
+msgid ""
+"For route points and tracks points, if there is a Z coordinate, it is used "
+"to fill the elevation element of the corresponding points."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:212
+msgid ""
+"If a layer is named \"track_points\" with wkbPoint/wkbPoint25D geometries, "
+"the tracks in the GPX file will be built from the sequence of features in "
+"that layer. This is the way of setting GPX attributes for each track point, "
+"in addition to the raw coordinates. Points belonging to the same track are "
+"identified thanks to the same value of the 'track_fid' field (and it will be "
+"broken into track segments according to the value of the 'track_seg_id' "
+"field). They must be written in sequence so that track objects are properly "
+"reconstructed. The 'track_name' field can be set on the first track point to "
+"fill the <name> element of the track. Similarly, if a layer is named "
+"\"route_points\" with wkbPoint/wkbPoint25D geometries, the routes in the GPX "
+"file will be built from the sequence of points with the same value of the "
+"'route_fid' field. The 'route_name' field can be set on the first track "
+"point to fill the <name> element of the route."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:228
+msgid "Layer creation options"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:249
+msgid "Dataset creation options"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:289
+msgid ""
+"Dataset creation options to fill the top <metadata> element have been added "
+"in GDAL 3.7:"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:332
+msgid ""
+"Waypoints, routes and tracks must be written into that order to be valid "
+"against the XML Schema."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:335
+msgid ""
+"When translating from a source dataset, it may be necessary to rename the "
+"field names from the source dataset to the expected GPX attribute names, "
+"such as <name>, <desc>, etc... This can be done with a :ref:`OGR VRT <vector."
+"vrt>` dataset, or by using the \"-sql\" option of the ogr2ogr utility."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:342
+msgid "Issues when translating to Shapefile"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:344
+msgid ""
+"When translating the *track_points* layer to a Shapefile, the field names "
+"\"track_seg_id\" and \"track_seg_point_id\" are truncated to 10 characters "
+"in the .DBF file, thus leading to duplicate names."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:348
+msgid ""
+"To avoid this, you can define the :config:`GPX_SHORT_NAMES` configuration "
+"option to TRUE."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:351
+msgid ""
+"To translate the track_points layer of a GPX file to a set of shapefiles :"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:356
+msgid "ogr2ogr --config GPX_SHORT_NAMES YES out input.gpx track_points"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:358
+msgid ""
+"Shapefile does not support fields of type DateTime. It only supports fields "
+"of type Date. So by default, you will lose the hour:minute:second part of "
+"the *Time* elements of a GPX file."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:362
+msgid ""
+"You can use the OGR SQL CAST operator to convert the *time* field to a "
+"string :"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:367
+msgid ""
+"ogr2ogr out input.gpx -sql \"SELECT ele, CAST(time AS character(32)) FROM "
+"waypoints\""
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:369
+msgid ""
+"There is a more convenient way to select all fields and ask for the "
+"conversion of the ones of a given type to strings:"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:375
+msgid "ogr2ogr out input.gpx -fieldTypeToString DateTime"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:378
+msgid "VSI Virtual File System API support"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:380
+msgid ""
+"The driver supports reading and writing to files managed by VSI Virtual File "
+"System API, which include \"regular\" files, as well as files in the /"
+"vsizip/ (read-write) , /vsigzip/ (read-write) , /vsicurl/ (read-only) "
+"domains."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:385
+msgid "Writing to /dev/stdout or /vsistdout/ is also supported."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:388
+msgid "Example"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:390
+msgid "The ogrinfo utility can be used to dump the content of a GPX datafile :"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:394
+msgid "ogrinfo -ro -al input.gpx"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:396
+msgid "The ogr2ogr utility can be used to do GPX to GPX translation :"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:400
+msgid "ogr2ogr -f GPX output.gpx input.gpx waypoints routes tracks"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:405
+msgid ""
+"Note : in the case of GPX to GPX translation, you need to specify the layer "
+"names, in order to discard the route_points and track_points layers."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:409
+msgid "Use of the *<extensions>* tag for output :"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:413
+msgid "ogr2ogr -f GPX  -dsco GPX_USE_EXTENSIONS=YES output.gpx input"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:415
+msgid "which will give an output like the following one :"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:417
+msgid ""
+"<?xml version=\"1.0\"?>\n"
+"<gpx version=\"1.1\" creator=\"GDAL 1.5dev\"\n"
+"xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n"
+"xmlns:ogr=\"http://osgeo.org/gdal\"\n"
+"xmlns=\"http://www.topografix.com/GPX/1/1\"\n"
+"xsi:schemaLocation=\"http://www.topografix.com/GPX/1/1 http://www.topografix."
+"com/GPX/1/1/gpx.xsd\">\n"
+"<wpt lat=\"1\" lon=\"2\">\n"
+"<extensions>\n"
+"    <ogr:Primary_ID>PID5</ogr:Primary_ID>\n"
+"    <ogr:Secondary_ID>SID5</ogr:Secondary_ID>\n"
+"</extensions>\n"
+"</wpt>\n"
+"<wpt lat=\"3\" lon=\"4\">\n"
+"<extensions>\n"
+"    <ogr:Primary_ID>PID4</ogr:Primary_ID>\n"
+"    <ogr:Secondary_ID>SID4</ogr:Secondary_ID>\n"
+"</extensions>\n"
+"</wpt>\n"
+"</gpx>"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:439
+msgid ""
+"Use of -sql option to remap field names to the ones allowed by the GPX "
+"schema:"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:444
+msgid ""
+"ogr2ogr -f GPX output.gpx input.shp -sql \"SELECT field1 AS name, field2 AS "
+"desc FROM input\""
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:447
+msgid "FAQ"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:449
+msgid ""
+"How to solve \"ERROR 6: Cannot create GPX layer XXXXXX with unknown geometry "
+"type\" ?"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:452
+msgid ""
+"This error happens when the layer to create does not expose a precise "
+"geometry type, but just a generic wkbUnknown type. This is for example the "
+"case when using ogr2ogr with a SQL request to a PostgreSQL datasource. You "
+"must then explicitly specify -nlt POINT (or LINESTRING or MULTILINESTRING)."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:459
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:461
+msgid "`Home page for GPX format <http://www.topografix.com/gpx.asp>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpx.rst:462
+msgid "`GPX 1.1 format documentation <http://www.topografix.com/GPX/1/1/>`__"
+msgstr ""

@@ -1,0 +1,264 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:5
+msgid "RFC 89: SQL logging callback"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:8
+msgid "Author:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:8
+msgid "Alessandro Pasotti"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:9
+msgid "Contact:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:9
+msgid "elpaso @ itopen.it"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:10
+msgid "Started:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:10
+msgid "2022-Nov-30"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:11
+msgid "Status:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:11
+msgid "Adopted, implemented"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:12
+msgid "Target:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:12
+msgid "GDAL 3.7"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:16
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:18
+msgid ""
+"The document proposes and describes the introduction of a new callback "
+"function to allow applications that use the GDAL library to monitor the SQL "
+"queries actually sent from GDAL to the database."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:23
+msgid "Motivation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:25
+msgid ""
+"Applications (for example QGIS) may provide a debugging panel that allow "
+"users to monitor the SQL command that are sent to the layers stored on "
+"databases."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:29
+msgid ""
+"This panel implemented in QGIS is very useful to identify erroneous or "
+"inefficient queries and also made the users more conscious about what is "
+"going on in the application when layers are loaded and features are fetched."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:36
+msgid "Technical details"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:38
+msgid ""
+"The implementation details are still to be defined, a possible "
+"implementation would provide a method to `GDALDataset` that allows client "
+"code to set the callback function (with some opaque context to be passed "
+"back to client code)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:43
+msgid ""
+"The callback function will then be called from the drivers that make "
+"database calls each time a SQL command is sent to the backend, in case of "
+"prepared queries the actual SQL after parameter substitutions should be sent."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:48
+msgid ""
+"The callback will provide additional information about the executed query "
+"(if available):"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:51
+msgid "error string message"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:52
+msgid "number of affected/retrieved records"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:53
+msgid "time taken to execute the query"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:56
+msgid "Example API:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:58
+msgid ""
+"// Function signature\n"
+"typedef void (*GDALQueryLoggerFunc)(const char *pszSQL, const char "
+"*pszError, int64_t lNumRecords, int64_t lExecutionTimeMilliseconds, void "
+"*pQueryLoggerArg);\n"
+"\n"
+"bool CPL_DLL GDALDatasetSetQueryLoggerFunc(GDALDatasetH hDS, "
+"GDALQueryLoggerFunc pfnQueryLoggerFunc, void* poQueryLoggerArg );\n"
+"\n"
+"// C-API\n"
+"bool CPL_DLL GDALDatasetSetQueryLoggerFunc(GDALDatasetH hDS, "
+"GDALQueryLoggerFunc pfnQueryLoggerFunc, void* poQueryLoggerArg );\n"
+"    GDALQueryLoggerFunc GDALDatasetQueryLoggerFunc( GDALDatasetH hDS );\n"
+"\n"
+"// Function call from the driver\n"
+"if ( m_poDS->pfQueryLoggerFunc )\n"
+"{\n"
+"    // -1 for time and num records means no information available\n"
+"    m_poDS->pfQueryLoggerFunc( soSQL.c_str(), nullptr, elapsedTime, "
+"numAffectedRecords, m_poDS->QueryLoggerArg() );\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:77
+msgid ""
+"The callback function will be initially used by the SQLite-based drivers "
+"only (GPKG included)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:79
+msgid ""
+"The callback may be called by multiple threads in a concurrent way, for this "
+"reason the implementation of the callback should be robust to that (use of "
+"lock typically). That problem may arise in drivers that use multi-threading "
+"as an optimization implementation detail. And this is typically the case of "
+"the GeoPackage driver in its Arrow stream interface."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:87
+msgid "Efficiency considerations"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:89
+msgid ""
+"Drivers that support the query logger callback function would need to check "
+"if the function pointer is `nullptr` and call the function if it is not. The "
+"cost of thish check is probably negligible on most architectures."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:93
+msgid ""
+"In order to catch SQLite prepare errors, a prepare function wrapper will be "
+"called instead of the sqlite3 API C function, this implies the cost of a "
+"function call (which might be inlined if necessary)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:97
+msgid ""
+"Comparison of current master release build with the proposed implementation "
+"on a 145665553 feature 15GB GPKG Point layer stored on fast SSD:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:101
+msgid "Benchmark"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:101
+msgid "Master"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:101
+msgid "Proposed implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:103
+msgid "bench_ogr_batch"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:103
+msgid "0.13m"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:103
+msgid "0.12m"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:105
+msgid "bench_ogr_c_capi"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:105
+msgid "2.57m"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:113
+msgid "Backward compatibility"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:115
+msgid "None."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:117
+msgid ""
+"The callback would be set from a new method, no changes to the class "
+"constructor would be needed."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:121
+msgid "SWIG Bindings"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:123
+msgid "This implementation will not be exposed to bindings."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:126
+msgid "Testing"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:128
+msgid "A C++ test will be added to the test suite."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:132
+msgid "Voting history"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc89_sql_logging_callback.rst:134
+msgid "+1 from PSC members MateuszL, JukkaR, TamasS and EvenR"
+msgstr ""

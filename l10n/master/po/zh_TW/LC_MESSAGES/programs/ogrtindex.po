@@ -1,0 +1,155 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/programs/ogrtindex.rst:5
+#: ../../../source/programs/ogrtindex.rst:11
+msgid "ogrtindex"
+msgstr ""
+
+#: ../../../source/programs/ogrtindex.rst:9
+msgid "Creates a tileindex."
+msgstr ""
+
+#: ../../../source/programs/ogrtindex.rst:14
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../source/programs/ogrtindex.rst:16
+msgid ""
+"ogrtindex [--help] [--help-general]\n"
+"          [-lnum <n>]... [-lname <name>]... [-f <output_format>]\n"
+"          [-write_absolute_path] [-skip_different_projection]\n"
+"          [-t_srs <target_srs>]\n"
+"          [-src_srs_name <field_name>] [-src_srs_format {AUTO|WKT|EPSG|"
+"PROJ}]\n"
+"          [-accept_different_schemas]\n"
+"          <output_dataset> <src_dataset> <src_dataset>..."
+msgstr ""
+
+#: ../../../source/programs/ogrtindex.rst:28
+msgid "Description"
+msgstr ""
+
+#: ../../../source/programs/ogrtindex.rst:30
+msgid ""
+":program:`ogrtindex` program can be used to create a tileindex - a file "
+"containing a list of the identities of a bunch of other files along with "
+"their spatial extents. This is primarily intended to be used with `MapServer "
+"<http://mapserver.org/>`__ for tiled access to layers using the OGR "
+"connection type."
+msgstr ""
+
+#: ../../../source/programs/options/help.rst:3
+msgid "Show this help message and exit"
+msgstr ""
+
+#: ../../../source/programs/options/help_general.rst:3
+msgid ""
+"Gives a brief usage message for the generic GDAL commandline options and "
+"exit."
+msgstr ""
+
+#: ../../../source/programs/ogrtindex.rst:42
+msgid "Add layer number ``n`` from each source file in the tile index."
+msgstr ""
+
+#: ../../../source/programs/ogrtindex.rst:46
+msgid "Add the layer named ``name`` from each source file in the tile index."
+msgstr ""
+
+#: ../../../source/programs/ogrtindex.rst:50
+msgid "Select an output format name. The default is to create a shapefile."
+msgstr ""
+
+#: ../../../source/programs/ogrtindex.rst:54
+msgid "The name to use for the dataset name. Defaults to LOCATION."
+msgstr ""
+
+#: ../../../source/programs/ogrtindex.rst:58
+msgid "Filenames are written with absolute paths"
+msgstr ""
+
+#: ../../../source/programs/ogrtindex.rst:62
+msgid ""
+"Only layers with same projection ref as layers already inserted in the "
+"tileindex will be inserted."
+msgstr ""
+
+#: ../../../source/programs/ogrtindex.rst:67
+msgid ""
+"Extent of input files will be transformed to the desired target coordinate "
+"reference system. Using this option generates files that are not compatible "
+"with MapServer < 7.2. Default creates simple rectangular polygons in the "
+"same coordinate reference system as the input vector layers."
+msgstr ""
+
+#: ../../../source/programs/ogrtindex.rst:77
+msgid ""
+"The name of the field to store the SRS of each tile. This field name can be "
+"used as the value of the TILESRS keyword in MapServer >= 7.2."
+msgstr ""
+
+#: ../../../source/programs/ogrtindex.rst:84
+msgid ""
+"The format in which the SRS of each tile must be written. Available formats "
+"are: ``AUTO``, ``WKT``, ``EPSG``, ``PROJ``."
+msgstr ""
+
+#: ../../../source/programs/ogrtindex.rst:91
+msgid ""
+"By default ogrtindex checks that all layers inserted into the index have the "
+"same attribute schemas. If you specify this option, this test will be "
+"disabled. Be aware that resulting index may be incompatible with MapServer!"
+msgstr ""
+
+#: ../../../source/programs/ogrtindex.rst:96
+msgid ""
+"If no :option:`-lnum` or :option:`-lname` arguments are given it is assumed "
+"that all layers in source datasets should be added to the tile index as "
+"independent records."
+msgstr ""
+
+#: ../../../source/programs/ogrtindex.rst:100
+msgid ""
+"If the tile index already exists it will be appended to, otherwise it will "
+"be created."
+msgstr ""
+
+#: ../../../source/programs/ogrtindex.rst:104
+msgid "Example"
+msgstr ""
+
+#: ../../../source/programs/ogrtindex.rst:106
+msgid ""
+"This example would create a shapefile (:file:`tindex.shp`) containing a tile "
+"index of the ``BL2000_LINK`` layers in all the NTF files in the :file:`wrk` "
+"directory:"
+msgstr ""
+
+#: ../../../source/programs/ogrtindex.rst:110
+msgid ""
+"ogrtindex tindex.shp wrk/*.NTF 1069148.900,419873.100 "
+"1069147.500,419870.200\n"
+"  1069146.400,419862.100 1069143.000,419860 1069142,419854.900\n"
+"  1069138.600,419850 1069135,419848.800 1069134.100,419843\n"
+"  1069130,419836.200 1069127.600,419824.600 1069123.800,419820.200\n"
+"  1069126.900,419815.500 1069126.900,419808.200 1069116.500,419798.700\n"
+"  1069117.600,419794.100 1069115.100,419796.300 1069109.100,419801.800\n"
+"  1069106.800,419805.000  1069107.300)"
+msgstr ""

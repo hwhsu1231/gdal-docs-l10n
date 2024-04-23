@@ -1,0 +1,90 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/ilwis.rst:5
+msgid "ILWIS -- Raster Map"
+msgstr ""
+
+#: ../../../source/drivers/raster/ilwis.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/ilwis.rst:7
+msgid "ILWIS"
+msgstr ""
+
+#: ../../../source/drivers/raster/ilwis.rst:11
+msgid ""
+"This driver implements reading and writing of ILWIS raster maps and map "
+"lists. Select the raster files with ``the.mpr`` (for raster map) or ``the."
+"mpl`` (for maplist) extensions."
+msgstr ""
+
+#: ../../../source/drivers/raster/ilwis.rst:15
+msgid "Features:"
+msgstr ""
+
+#: ../../../source/drivers/raster/ilwis.rst:17
+msgid "Support for Byte, Int16, Int32 and Float64 pixel data types."
+msgstr ""
+
+#: ../../../source/drivers/raster/ilwis.rst:18
+msgid "Supports map lists with an associated set of ILWIS raster maps."
+msgstr ""
+
+#: ../../../source/drivers/raster/ilwis.rst:19
+msgid ""
+"Read and write geo-reference (.grf). Support for geo-referencing transform "
+"is limited to north-oriented GeoRefCorner only. If possible the affine "
+"transform is computed from the corner coordinates."
+msgstr ""
+
+#: ../../../source/drivers/raster/ilwis.rst:22
+msgid ""
+"Read and write coordinate files (.csy). Support is limited to: Projection "
+"type of Projection and Lat/Lon type that are defined in .csy file, the rest "
+"of pre-defined projection types are ignored."
+msgstr ""
+
+#: ../../../source/drivers/raster/ilwis.rst:26
+msgid "Limitations:"
+msgstr ""
+
+#: ../../../source/drivers/raster/ilwis.rst:28
+msgid ""
+"Map lists with internal raster map storage (such as produced through Import "
+"General Raster) are not supported."
+msgstr ""
+
+#: ../../../source/drivers/raster/ilwis.rst:30
+msgid ""
+"ILWIS domain (.dom) and representation (.rpr) files are currently ignored."
+msgstr ""
+
+#: ../../../source/drivers/raster/ilwis.rst:33
+msgid "NOTE: Implemented in :source_file:`frmts/ilwis`."
+msgstr ""
+
+#: ../../../source/drivers/raster/ilwis.rst:35
+msgid "See Also: http://www.itc.nl/ilwis/default.asp ."
+msgstr ""
+
+#: ../../../source/drivers/raster/ilwis.rst:38
+msgid "Driver capabilities"
+msgstr ""

@@ -1,0 +1,496 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/jpipkak.rst:5
+msgid "JPIPKAK - JPIP Streaming"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:7
+msgid "JPIPKAK"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:9
+msgid "Kakadu library"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:11
+msgid ""
+"JPEG 2000 Interactive Protocol (JPIP) flexibility with respect to random "
+"access, code stream reordering and incremental decoding is highly "
+"exploitable in a networked environment allowing access to remote large files "
+"using limited bandwidth connections or high contention networks."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:17
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:22
+msgid "JPIPKAK - JPIP Overview"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:24
+msgid ""
+"A brief overview of the JPIP event sequence is presented in this section, "
+"more information can be found at `JPEG 2000 Interactive Protocol (Part 9 – "
+"JPIP) <http://www.jpeg.org/jpeg2000/j2kpart9.html>`__ and the specification "
+"can (and should) be purchased from `ISO <http://www.iso.org>`__."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:30
+msgid ""
+"An earlier version of JPEG 2000 Part 9 is available here http://www.jpeg.org/"
+"public/fcd15444-9v2.pdf, noting the ISO copyright, diagrams are not "
+"replicated in this documentation."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:34
+msgid ""
+"The JPIP protocol has been abstracted in this format driver, requests are "
+"made at the 1:1 resolution level."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:37
+msgid "|JPIP Sequence Diagram|"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:270
+msgid "JPIP Sequence Diagram"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:39
+msgid ""
+"Initial JPIP request for a target image, a target id, a session over http, "
+"data to be returned as a jpp-stream are requested and a maximum length is "
+"put on the response. In this case no initial window is requested, though it "
+"can be. Server responds with a target identifier that can be used to "
+"identify the image on the server and a JPIP-cnew response header which "
+"includes the path to the JPIP server which will handle all future requests "
+"and a cid session identifier. A session is required so that that the server "
+"can model the state of the client connection, only sending the data that is "
+"required."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:48
+msgid ""
+"Client requests particular view windows on the target image with a maximum "
+"response length and includes the session identifier established in the "
+"previous communication. 'fsiz' is used to identify the resolution associated "
+"with the requested view-window. The values 'fx' and 'fy' specify the "
+"dimensions of the desired image resolution. 'roff' is used to identify the "
+"upper left hand corner off the spatial region associated with the requested "
+"view-windw. 'rsiz' is used to identify the horizontal and vertical extents "
+"of the spatial region associated with the requested view-window."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:59
+msgid "JPIPKAK -approach"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:61
+msgid ""
+"The JPIPKAK driver uses an approach that was first demonstrated here, "
+"`J2KViewer <http://www.drc-dev.ohiolink.edu/browser/J2KViewer>`__, by Juan "
+"Pablo Garcia Ortiz of separating the communication layer (socket / http) "
+"from the Kakadu kdu_cache object. Separating the communication layer from "
+"the data object is desirable since it allows the use of optimized http "
+"client libraries such as libcurl, Apache HttpClient (note that jportiz used "
+"a plain Java socket) and allows SSL communication between the client and "
+"server."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:70
+msgid ""
+"Kakadu's implementation of client communication with a JPIP server uses a "
+"socket, and this socket connection holds the state for this client session. "
+"A client session with Kakadu can be recreated using the JPIP cache "
+"operations between client and server, but no use of traditional HTTP cookies "
+"is supported since JPIP is neutral to the transport layer."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:76
+msgid ""
+"The JPIPKAK driver is written using a HTTP client library with the Kakadu "
+"cache object and supports optimized communication with a JPIP server (which "
+"may or may not support HTTP sessions) and the high performance of the kakadu "
+"kdu_region_decompressor."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:81
+msgid "|Component Diagram|"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:271
+msgid "Component Diagram"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:84
+msgid "JPIPKAK - implementation"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:86
+msgid ""
+"The implementation supports the GDAL C++ and C API, and provides an initial "
+"SWIG wrapper for this driver with a Java ImageIO example (**TODO** - qGIS "
+"Example)."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:90
+msgid ""
+"The driver uses a simple threading model to support requesting reads of the "
+"data and remote fetching. This threading model supports two separate client "
+"windows, with just one connection to the server. Requests to the server are "
+"multiplexed to utilize available bandwidth efficiently. The client "
+"identifies these windows by using “0” (low) or “1” (high) values to a "
+"“PRIORITY” metadata request option."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:97
+msgid "Note: SSL support"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:99
+msgid ""
+"If the client is built with support for SSL, then driver determines whether "
+"to use SSL if the request is a jpips:// protocol as opposed to jpip:// . "
+"Note that the driver does not verify server certificates using the Curl "
+"certificate bundle and is currently set to accept all SSL server "
+"certificates."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:105
+msgid "Note: libCurl"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:107
+msgid ""
+"JPIP sets client/server values using HTTP headers, modifications have been "
+"made to the GDAL HTTP portability library to support this."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:110
+msgid "|GDAL Sequence Diagram|"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:272
+msgid "GDAL Sequence Diagram"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:112
+msgid "GDALGetDatasetDriver"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:114
+msgid "Fetch the driver to which this dataset relates."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:116
+msgid "Open"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:118
+msgid ""
+"If the filename contained in the ``GDALOpenInfo`` object has a case "
+"insensitive URI scheme of JPIP or JPIPS the ``JPIPKAKDataset`` is created "
+"and initialized, otherwise NULL is returned."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:122
+msgid "Initialize"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:124
+msgid ""
+"Initialization involves making an initial connection to the JPIP Server to "
+"establish a session and to retrieve the initial metadata about the image "
+"(ref. `JPIP Sequence Diagram <#initJPIP>`__)."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:128
+msgid ""
+"If the connection fails, the function returns false and the ``Open`` "
+"function returns NULL indicating that opening the dataset with this driver "
+"failed."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:132
+msgid ""
+"If the connection is successful, then subsequent requests to the JPIP server "
+"are made to retrieve all the available metadata about the image. Metadata "
+"items are set using the ``GDALMajorObject->SetMetadataItem`` in the \"JPIP\" "
+"domain."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:137
+msgid ""
+"If the metadata returned from the server includes GeoJP2 UUID box, or a "
+"GMLJP2 XML box then this metadata is parsed and sets the geographic metadata "
+"of this dataset."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:141
+msgid "GDALGetMetadata"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:143
+msgid "C API to ``JPIPKAKDataset->GetMetadata``"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:145
+msgid "GetMetadata"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:147
+msgid ""
+"returns metadata for the \"JPIP\" domain, keys are \"JPIP_NQUALITYLAYERS\", "
+"\"JPIP_NRESOLUTIONLEVELS\", \"JPIP_NCOMPS\" and \"JPIP_SPRECISION\""
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:151
+msgid "GDALEndAsyncRasterIO"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:153
+msgid ""
+"If the asynchronous raster IO is active and not required, the C API calls "
+"``JPIPKAKDataset->EndAsyncRasterIO``"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:156
+msgid "EndAsyncRasterIO"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:158
+msgid "The JPIPKAKAsyncRasterIO object is deleted"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:160
+msgid "delete"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:161
+msgid "GDALBeginAsyncRasterIO"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:163
+msgid "C API to ``JPIPKAKDataset->BeginAsyncRasterIO``"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:165
+msgid "BeginAsyncRasterIO"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:167
+msgid ""
+"The client has set the requested view window at 1:1 and have optionally set "
+"the discard level, quality layers and thread priority metadata items."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:171
+msgid "Create"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:173
+msgid "Creates a JPIPKAKAsyncRasterIO Object"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:175
+msgid "Start"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:177
+msgid ""
+"Configures the kakadu machinery and starts a background thread (if not "
+"already running) to communicate to the server the current view window "
+"request. The background thread results in the ``kdu_cache`` object being "
+"updated until the JPIP server sends an \"End Of Response\" (EOR) message for "
+"the current view window request."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:183
+msgid "GDALLockBuffer"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:185
+msgid "C API to LockBuffer"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:187
+msgid "LockBuffer"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:189
+#: ../../../source/drivers/raster/jpipkak.rst:227
+msgid ""
+"Not implemented in ``JPIPKAKAsyncRasterIO``, a lock is acquired in "
+"``JPIPKAKAsyncRasterIO->GetNextUpdatedRegion``"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:192
+msgid "GDALGetNextUpdatedRegion"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:194
+msgid "C API to GetNextUpdatedRegion"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:196
+msgid "GetNextUpdatedRegion"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:198
+msgid ""
+"The function decompresses the available data to generate an image (according "
+"to the dataset buffer type set in ``JPIPKAKDataset->BeginAsyncRasterIO``) "
+"The window width, height (at the requested discard level) decompressed is "
+"returned in the region pointer and can be rendered by the client. The status "
+"of the rendering operation is one of ``GARIO_PENDING, GARIO_UPDATE, "
+"GARIO_ERROR, GARIO_COMPLETE`` from the ``GDALAsyncStatusType`` structure. "
+"``GARIO_UPDATE, GARIO_PENDING`` require more reads of GetNextUpdatedRegion "
+"to get the full image data, this is the progressive rendering of JPIP. "
+"``GARIO_COMPLETE`` indicates the window is complete."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:210
+msgid ""
+"``GDALAsyncStatusType`` is a structure used by\\ ``GetNextUpdatedRegion`` to "
+"indicate whether the function should be called again when either kakadu has "
+"more data in its cache to decompress, or the server has not sent an End Of "
+"Response (EOR) message to indicate the request window is complete."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:216
+msgid ""
+"The region passed into this function is passed by reference, and the caller "
+"can read this region when the result returns to find the region that has "
+"been decompressed. The image data is packed into the buffer, e.g. RGB if the "
+"region requested has 3 components."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:221
+msgid "GDALUnlockBuffer"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:223
+msgid "C Api to UnlockBuffer"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:225
+msgid "UnlockBuffer"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:230
+msgid "Draw"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:232
+msgid "Client renders image data"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:234
+msgid "`GDALLockBuffer <#GDALLockBuffer>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:235
+msgid "`LockBuffer <#LockBuffer>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:236
+msgid "`GDALGetNextUpdatedRegion <#GDALGetNextUpdatedRegion>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:237
+msgid "`GetNextUpdatedRegion <#GetNextUpdatedRegion>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:238
+msgid "`GDALUnlockBuffer <#GDALUnlockBuffer>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:239
+msgid "`UnlockBuffer <#UnlockBuffer>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:240
+msgid "`Draw <#Draw>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:243
+msgid "JPIPKAK - installation requirements"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:245
+msgid "`Libcurl 7.9.4 <http://curl.haxx.se/>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:246
+msgid ""
+"`OpenSSL 0.9.8K <http://www.openssl.org/>`__ (if SSL is required, a JPIPS "
+"connection)"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:248
+msgid "`Kakadu <http://www.kakadusoftware.com>`__ (tested with v5.2.6 and v6)"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:251
+msgid ""
+"Currently only a Windows makefile is provided, however this should compile "
+"on Linux as well as there are no Windows dependencies."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:255
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:257
+msgid ""
+"`JPEG 2000 Interactive Protocol (Part 9 – JPIP) <http://www.jpeg.org/"
+"jpeg2000/j2kpart9.html>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:259
+msgid "http://www.opengeospatial.org/standards/gmljp2"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:260
+msgid "`Kakadu Software <http://www.kakadusoftware.com>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:261
+msgid "`IAS demo (example JPIP(S) streams) <http://iasdemo.ittvis.com/>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:264
+msgid "NOTES"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpipkak.rst:266
+msgid ""
+"Driver originally developed by `ITT VIS <http://www.ittvis.com>`__ and "
+"donated to GDAL to enable SSL enabled JPIP client streaming of remote JPEG "
+"2000 datasets."
+msgstr ""

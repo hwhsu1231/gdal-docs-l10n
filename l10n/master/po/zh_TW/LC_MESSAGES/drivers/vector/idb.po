@@ -1,0 +1,122 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/idb.rst:4
+#: ../../../source/drivers/vector/idb.rst:6
+msgid "IDB"
+msgstr ""
+
+#: ../../../source/drivers/vector/idb.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/idb.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/vector/idb.rst:8
+msgid "Informix DataBlade"
+msgstr ""
+
+#: ../../../source/drivers/vector/idb.rst:10
+msgid ""
+"This driver implements support for access to spatial tables in IBM Informix "
+"extended with the DataBlade spatial module."
+msgstr ""
+
+#: ../../../source/drivers/vector/idb.rst:13
+msgid "When opening a database, its name should be specified in the form"
+msgstr ""
+
+#: ../../../source/drivers/vector/idb.rst:17
+msgid ""
+"\"IDB:dbname={dbname} server={host} user={login} pass={pass} "
+"table={layertable}\"."
+msgstr ""
+
+#: ../../../source/drivers/vector/idb.rst:19
+msgid "The IDB: prefix is used to mark the name as a IDB connection string."
+msgstr ""
+
+#: ../../../source/drivers/vector/idb.rst:21
+msgid ""
+"If the *geometry_columns* table exists, then all listed tables and named "
+"views will be treated as OGR layers. Otherwise all regular user tables will "
+"be treated as layers."
+msgstr ""
+
+#: ../../../source/drivers/vector/idb.rst:25
+msgid ""
+"Regular (non-spatial) tables can be accessed, and will return features with "
+"attributes, but not geometry. If the table has a \"st_*\" field, it will be "
+"treated as a spatial table. The type of the field is inspected to determine "
+"how to read it."
+msgstr ""
+
+#: ../../../source/drivers/vector/idb.rst:30
+msgid "Driver supports automatic FID detection."
+msgstr ""
+
+#: ../../../source/drivers/vector/idb.rst:33
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/idb.rst:42
+msgid "Environment variables"
+msgstr ""
+
+#: ../../../source/drivers/vector/idb.rst:44
+msgid "``INFORMIXDIR`` It should be set to Informix client SDK install dir"
+msgstr ""
+
+#: ../../../source/drivers/vector/idb.rst:46
+msgid "``INFORMIXSERVER``: Default Informix server name"
+msgstr ""
+
+#: ../../../source/drivers/vector/idb.rst:48
+msgid "``DB_LOCALE``: Locale of Informix database"
+msgstr ""
+
+#: ../../../source/drivers/vector/idb.rst:50
+msgid "``CLIENT_LOCALE``: Client locale"
+msgstr ""
+
+#: ../../../source/drivers/vector/idb.rst:52
+msgid ""
+"For more information about Informix variables read documentation of Informix "
+"Client SDK"
+msgstr ""
+
+#: ../../../source/drivers/vector/idb.rst:56
+msgid "Configuration options"
+msgstr ""
+
+#: ../../../source/drivers/vector/idb.rst:64
+msgid "Example"
+msgstr ""
+
+#: ../../../source/drivers/vector/idb.rst:66
+msgid ""
+"This example shows using ogrinfo to list Informix DataBlade layers on a "
+"different host."
+msgstr ""
+
+#: ../../../source/drivers/vector/idb.rst:71
+msgid "ogrinfo -ro IDB:\"server=demo_on user=informix dbname=frames\""
+msgstr ""

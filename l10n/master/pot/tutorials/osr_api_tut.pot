@@ -1,0 +1,830 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/tutorials/osr_api_tut.rst:5
+msgid "OGR Coordinate Reference Systems and Coordinate Transformation tutorial"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:16
+msgid "Introduction"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:18
+msgid ""
+"The :cpp:class:`OGRSpatialReference` and :cpp:class:"
+"`OGRCoordinateTransformation` classes provide respectively services to "
+"represent coordinate reference systems (known as CRS or SRS, such as "
+"typically a projected CRS associating a map projection with a geodetic "
+"datums) and to transform between them.  These services are loosely modeled "
+"on the OpenGIS Coordinate Transformations specification, and rely on the "
+"Well Known Text (WKT) format (in its various versions: OGC WKT 1, ESRI WKT, "
+"WKT2:2015 and WKT2:2018) for describing coordinate systems."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:27
+msgid "References and applicable standards"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:29
+msgid ""
+"`PROJ documentation <https://proj4.org>`_: projection methods and coordinate "
+"operations"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:30
+msgid ""
+"`ISO:19111 and WKT standards <https://proj4.org/development/reference/cpp/"
+"cpp_general.html#standards>`_"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:31
+msgid ""
+"`GeoTIFF Projections Transform List <http://geotiff.maptools.org/"
+"proj_list>`_: understanding formulations of projections in WKT for GeoTIFF"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:32
+msgid ""
+"`EPSG Geodesy web page <http://www.epsg.org>`_ is also a useful resource"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:35
+msgid "Defining a Geographic Coordinate Reference System"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:37
+msgid ""
+"CRS are encapsulated in the :cpp:class:`OGRSpatialReference` class. There "
+"are a number of ways of initializing an OGRSpatialReference object to a "
+"valid coordinate reference system.  There are two primary kinds of CRS. The "
+"first is geographic (positions are measured in long/lat) and the second is "
+"projected (such as UTM - positions are measured in meters or feet)."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:43
+msgid ""
+"A Geographic CRS contains information on the datum (which implies a spheroid "
+"described by a semi-major axis, and inverse flattening), prime meridian "
+"(normally Greenwich), and an angular units type which is normally degrees.  "
+"The following code initializes a geographic CRS on supplying all this "
+"information along with a user visible name for the geographic CRS."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:50
+msgid ""
+"OGRSpatialReference oSRS;\n"
+"\n"
+"oSRS.SetGeogCS( \"My geographic CRS\",\n"
+"                \"World Geodetic System 1984\",\n"
+"                \"My WGS84 Spheroid\",\n"
+"                SRS_WGS84_SEMIMAJOR, SRS_WGS84_INVFLATTENING,\n"
+"                \"Greenwich\", 0.0,\n"
+"                \"degree\", SRS_UA_DEGREE_CONV );"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:63
+msgid ""
+"The abbreviation CS in :cpp:func:`OGRSpatialReference::SetGeogCS` is not "
+"appropriate according to current geodesic terminology, and should be "
+"understood as CRS"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:66
+msgid ""
+"Of these values, the names \"My geographic CRS\", \"My WGS84 Spheroid\", "
+"\"Greenwich\" and \"degree\" are not keys, but are used for display to the "
+"user.  However, the datum name \"World Geodetic System 1984\" is used as a "
+"key to identify the datum, and should be set to a known value from the EPSG "
+"registry, so that appropriate datum transformations can be done during "
+"coordinate operations. The list of valid geodetic datum can be seen in the "
+"3rd column of the `geodetic_datum.sql <https://github.com/OSGeo/PROJ/blob/"
+"master/data/sql/geodetic_datum.sql>`_ file."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:77
+msgid ""
+"In WKT 1, space characters in datum names are normally replaced by "
+"underscore. And WGS_1984 is used as an alias of \"World Geodetic System "
+"1984\""
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:80
+msgid ""
+"The OGRSpatialReference has built in support for a few well known CRS, which "
+"include \"NAD27\", \"NAD83\", \"WGS72\" and \"WGS84\" which can be defined "
+"in a single call to :cpp:func:`OGRSpatialReference::SetWellKnownGeogCS`."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:84
+msgid "oSRS.SetWellKnownGeogCS( \"WGS84\" );"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:91
+msgid ""
+"The abbreviation CS in SetWellKnownGeogCS() is not appropriate according to "
+"current geodesic terminology, and should be understood as CRS"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:94
+msgid ""
+"Furthermore, any geographic CRS in the EPSG database can be set by its GCS "
+"code number if the EPSG database is available."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:97
+msgid "oSRS.SetWellKnownGeogCS( \"EPSG:4326\" );"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:101
+msgid ""
+"For serialization, and transmission of projection definitions to other "
+"packages, the OpenGIS Well Known Text format for coordinate systems is "
+"used.  An OGRSpatialReference can be initialized from WKT, or converted back "
+"into WKT. As of GDAL 3.0, the default format for WKT export is still OGC WKT "
+"1."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:107
+msgid ""
+"char *pszWKT = NULL;\n"
+"oSRS.SetWellKnownGeogCS( \"WGS84\" );\n"
+"oSRS.exportToWkt( &pszWKT );\n"
+"printf( \"%s\\n\", pszWKT );\n"
+"CPLFree(pszWKT);"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:115
+msgid "outputs:"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:119
+msgid ""
+"GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS "
+"84\",6378137,298.257223563,\n"
+"AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],"
+"PRIMEM[\"Greenwich\",0,\n"
+"AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,\n"
+"AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\","
+"EAST],\n"
+"AUTHORITY[\"EPSG\",\"4326\"]]"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:125
+msgid "or in more readable form:"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:129
+msgid ""
+"GEOGCS[\"WGS 84\",\n"
+"    DATUM[\"WGS_1984\",\n"
+"        SPHEROID[\"WGS 84\",6378137,298.257223563,\n"
+"            AUTHORITY[\"EPSG\",\"7030\"]],\n"
+"        AUTHORITY[\"EPSG\",\"6326\"]],\n"
+"    PRIMEM[\"Greenwich\",0,\n"
+"        AUTHORITY[\"EPSG\",\"8901\"]],\n"
+"    UNIT[\"degree\",0.0174532925199433,\n"
+"        AUTHORITY[\"EPSG\",\"9122\"]],\n"
+"    AXIS[\"Latitude\",NORTH],\n"
+"    AXIS[\"Longitude\",EAST],\n"
+"    AUTHORITY[\"EPSG\",\"4326\"]]"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:142
+msgid ""
+"Starting with GDAL 3.0, the :cpp:func:`OGRSpatialReference::exportToWkt` "
+"method accepts options,"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:144
+msgid ""
+"char *pszWKT = nullptr;\n"
+"oSRS.SetWellKnownGeogCS( \"WGS84\" );\n"
+"const char* apszOptions[] = { \"FORMAT=WKT2_2018\", \"MULTILINE=YES\", "
+"nullptr };\n"
+"oSRS.exportToWkt( &pszWKT, apszOptions );\n"
+"printf( \"%s\\n\", pszWKT );\n"
+"CPLFree(pszWKT);"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:155
+msgid ""
+"GEOGCRS[\"WGS 84\",\n"
+"    DATUM[\"World Geodetic System 1984\",\n"
+"        ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n"
+"            LENGTHUNIT[\"metre\",1]]],\n"
+"    PRIMEM[\"Greenwich\",0,\n"
+"        ANGLEUNIT[\"degree\",0.0174532925199433]],\n"
+"    CS[ellipsoidal,2],\n"
+"        AXIS[\"geodetic latitude (Lat)\",north,\n"
+"            ORDER[1],\n"
+"            ANGLEUNIT[\"degree\",0.0174532925199433]],\n"
+"        AXIS[\"geodetic longitude (Lon)\",east,\n"
+"            ORDER[2],\n"
+"            ANGLEUNIT[\"degree\",0.0174532925199433]],\n"
+"    ID[\"EPSG\",4326]]"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:170
+msgid ""
+"This method with options is available in C as the :cpp:func:"
+"`OSRExportToWktEx` function."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:172
+msgid ""
+"The :cpp:func:`OGRSpatialReference::importFromWkt` method can be used to set "
+"an OGRSpatialReference from a WKT CRS definition."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:176
+msgid "CRS and axis order"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:178
+msgid ""
+"One \"detail\" that has been omitted in previous sections is the topic of "
+"the order of coordinate axis in a CRS. A Geographic CRS is, according to "
+"ISO:19111 modeling, made of two main components: a geodetic datum and a "
+"`coordinate system <http://docs.opengeospatial.org/as/18-005r4/18-005r4."
+"html#42>`_. For 2D geographic CRS, the coordinate system axes are the "
+"longitude and the latitude, and the values along those axes are expressed "
+"generally in degree (ancient French-based CRS may use grad)."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:185
+msgid ""
+"The order in which they are specified, that is latitude first, longitude "
+"second, or the reverse, is a constant matter of confusion and vary depending "
+"on conventions used by geodetic authorities, GIS user, file format and "
+"protocol specifications, etc. This is the source of various interoperability "
+"issues."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:190
+msgid ""
+"Before GDAL 3.0, the :cpp:class:`OGRSpatialReference` class did not honour "
+"the axis order mandated by the authority defining a CRS and consequently "
+"stripped axis order information from the WKT string when the order was "
+"latitude first, longitude second. Coordinate transformations using the "
+"OGRCoordinateTransformation class also assumed that geographic coordinates "
+"passed or returned by the Transform() method of this class used the "
+"longitude, latitude order."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:197
+msgid ""
+"Starting with GDAL 3.0, the axis order mandated by the authority defining a "
+"CRS is by default honoured by the OGRCoordinateTransformation class, and "
+"always exported in WKT1. Consequently CRS created with the \"EPSG:4326\" or "
+"\"WGS84\" strings use the latitude first, longitude second axis order."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:202
+msgid ""
+"In order to help migration from code bases still using coordinates with the "
+"longitude, latitude order, it is possible to attach a metadata information "
+"to a OGRSpatialReference instance, to specify that for the purpose of "
+"coordinate transformations, the order of values effectively passed or "
+"returned, will be longitude, latitude. For that, the following must be called"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:208
+msgid "oSRS.SetAxisMappingStrategy(OAMS_TRADITIONAL_GIS_ORDER);"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:212
+msgid ""
+"The argument passed to :cpp:func:`OGRSpatialReference::"
+"SetAxisMappingStrategy` is the data axis to CRS axis mapping strategy."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:215
+msgid ""
+":c:macro:`OAMS_TRADITIONAL_GIS_ORDER` means that for geographic CRS with lat/"
+"long order, the data will still be long/lat ordered. Similarly for a "
+"projected CRS with northing/easting order, the data will still be easting/"
+"northing ordered."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:216
+msgid ""
+":c:macro:`OAMS_AUTHORITY_COMPLIANT` means that the data axis will be "
+"identical to the CRS axis. This is the default value when instantiating "
+"OGRSpatialReference."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:217
+msgid ""
+":c:macro:`OAMS_CUSTOM` means that the data axes are customly defined with "
+"SetDataAxisToSRSAxisMapping()."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:219
+msgid ""
+"What has been discussed in this section for the particular case of "
+"Geographic CRS also applies to Projected CRS. While most of them use Easting "
+"first, Northing second convention, some defined in the EPSG registry use the "
+"reverse convention."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:223
+msgid ""
+"Another way to keep using the Traditional GIS order for some specific well "
+"known CRS is to calling to :cpp:func:`OGRSpatialReference::"
+"SetWellKnownGeogCS` with \"CRS27\", \"CRS83\" or \"CRS84\" instead of "
+"\"NAD27\", \"NAD83\" and \"WGS84\" respectively."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:227
+msgid "oSRS.SetWellKnownGeogCS( \"CRS84\" );"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:232
+msgid "Defining a Projected CRS"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:234
+msgid ""
+"A projected CRS (such as UTM, Lambert Conformal Conic, etc.) requires and "
+"underlying geographic CRS as well as a definition for the projection "
+"transform used to translate between linear positions (in meters or feet) and "
+"angular long/lat positions.  The following code defines a UTM zone 17 "
+"projected CRS with an underlying geographic CRS (datum) of WGS84."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:241
+msgid ""
+"OGRSpatialReference oSRS;\n"
+"\n"
+"oSRS.SetProjCS( \"UTM 17 (WGS84) in northern hemisphere.\" );\n"
+"oSRS.SetWellKnownGeogCS( \"WGS84\" );\n"
+"oSRS.SetUTM( 17, TRUE );"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:249
+msgid ""
+"Calling :cpp:func:`OGRSpatialReference::SetProjCS` sets a user name for the "
+"projected CRS and establishes that the system is projected.  The :cpp:func:"
+"`OGRSpatialReference::SetWellKnownGeogCS` associates a geographic coordinate "
+"system, and the :cpp:func:`OGRSpatialReference::SetUTM` call sets detailed "
+"projection transformation parameters.  At this time the above order is "
+"important in order to create a valid definition, but in the future the "
+"object will automatically reorder the internal representation as needed to "
+"remain valid."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:259
+msgid ""
+"For now, be careful of the order of steps defining an OGRSpatialReference!"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:261
+msgid ""
+"The above definition would give a WKT version that looks something like the "
+"following.  Note that the UTM 17 was expanded into the details transverse "
+"mercator definition of the UTM zone."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:267
+msgid ""
+"PROJCS[\"UTM 17 (WGS84) in northern hemisphere.\",\n"
+"    GEOGCS[\"WGS 84\",\n"
+"        DATUM[\"WGS_1984\",\n"
+"            SPHEROID[\"WGS 84\",6378137,298.257223563,\n"
+"                AUTHORITY[\"EPSG\",7030]],\n"
+"            TOWGS84[0,0,0,0,0,0,0],\n"
+"            AUTHORITY[\"EPSG\",6326]],\n"
+"        PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",8901]],\n"
+"        UNIT[\"DMSH\",0.0174532925199433,AUTHORITY[\"EPSG\",9108]],\n"
+"        AXIS[\"Lat\",NORTH],\n"
+"        AXIS[\"Long\",EAST],\n"
+"        AUTHORITY[\"EPSG\",4326]],\n"
+"    PROJECTION[\"Transverse_Mercator\"],\n"
+"    PARAMETER[\"latitude_of_origin\",0],\n"
+"    PARAMETER[\"central_meridian\",-81],\n"
+"    PARAMETER[\"scale_factor\",0.9996],\n"
+"    PARAMETER[\"false_easting\",500000],\n"
+"    PARAMETER[\"false_northing\",0]]"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:286
+msgid ""
+"There are methods for many projection methods including :cpp:func:"
+"`OGRSpatialReference::SetTM` (Transverse Mercator), :cpp:func:"
+"`OGRSpatialReference::SetLCC` (Lambert Conformal Conic), and :cpp:func:"
+"`OGRSpatialReference::SetMercator`."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:290
+msgid "Querying Coordinate Reference System"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:292
+msgid ""
+"Once an OGRSpatialReference has been established, various information about "
+"it can be queried.  It can be established if it is a projected or geographic "
+"CRS using the :cpp:func:`OGRSpatialReference::IsProjected` and :cpp:func:"
+"`OGRSpatialReference::IsGeographic` methods.  The :cpp:func:"
+"`OGRSpatialReference::GetSemiMajor`, :cpp:func:`OGRSpatialReference::"
+"GetSemiMinor` and :cpp:func:`OGRSpatialReference::GetInvFlattening` methods "
+"can be used to get information about the spheroid.  The :cpp:func:"
+"`OGRSpatialReference::GetAttrValue` method can be used to get the PROJCS, "
+"GEOGCS, DATUM, SPHEROID, and PROJECTION names strings.  The :cpp:func:"
+"`OGRSpatialReference::GetProjParm` method can be used to get the projection "
+"parameters.  The :cpp:func:`OGRSpatialReference::GetLinearUnits` method can "
+"be used to fetch the linear units type, and translation to meters."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:303
+msgid ""
+"Note that the names of the projection method and parameters is the one of "
+"WKT 1."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:306
+msgid ""
+"The following code demonstrates use of :cpp:func:`OGRSpatialReference::"
+"GetAttrValue` to get the projection, and :cpp:func:`OGRSpatialReference::"
+"GetProjParm` to get projection parameters.  The GetAttrValue() method "
+"searches for the first \"value\" node associated with the named entry in the "
+"WKT text representation. The #define'ed constants for projection parameters "
+"(such as SRS_PP_CENTRAL_MERIDIAN) should be used when fetching projection "
+"parameter with GetProjParm(). The code for the Set methods of the various "
+"projections in ogrspatialreference.cpp can be consulted to find which "
+"parameters apply to which projections."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:316
+msgid ""
+"const char *pszProjection = poSRS->GetAttrValue(\"PROJECTION\");\n"
+"\n"
+"if( pszProjection == NULL )\n"
+"{\n"
+"    if( poSRS->IsGeographic() )\n"
+"        sprintf( szProj4+strlen(szProj4), \"+proj=longlat \" );\n"
+"    else\n"
+"        sprintf( szProj4+strlen(szProj4), \"unknown \" );\n"
+"}\n"
+"else if( EQUAL(pszProjection,SRS_PT_CYLINDRICAL_EQUAL_AREA) )\n"
+"{\n"
+"    sprintf( szProj4+strlen(szProj4),\n"
+"    \"+proj=cea +lon_0=%.9f +lat_ts=%.9f +x_0=%.3f +y_0=%.3f \",\n"
+"            poSRS->GetProjParm(SRS_PP_CENTRAL_MERIDIAN,0.0),\n"
+"            poSRS->GetProjParm(SRS_PP_STANDARD_PARALLEL_1,0.0),\n"
+"            poSRS->GetProjParm(SRS_PP_FALSE_EASTING,0.0),\n"
+"            poSRS->GetProjParm(SRS_PP_FALSE_NORTHING,0.0) );\n"
+"}\n"
+"..."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:340
+msgid "Coordinate Transformation"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:342
+msgid ""
+"The :cpp:class:`OGRCoordinateTransformation` class is used for translating "
+"positions between different CRS.  New transformation objects are created "
+"using :cpp:func:`OGRCreateCoordinateTransformation`, and then the :cpp:func:"
+"`OGRCoordinateTransformation::Transform` method can be used to convert "
+"points between CRS."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:348
+msgid ""
+"OGRSpatialReference oSourceSRS, oTargetSRS;\n"
+"OGRCoordinateTransformation *poCT;\n"
+"double x, y;\n"
+"\n"
+"oSourceSRS.importFromEPSG( atoi(papszArgv[i+1]) );\n"
+"oTargetSRS.importFromEPSG( atoi(papszArgv[i+2]) );\n"
+"\n"
+"poCT = OGRCreateCoordinateTransformation( &oSourceSRS,\n"
+"                                          &oTargetSRS );\n"
+"x = atof( papszArgv[i+3] );\n"
+"y = atof( papszArgv[i+4] );\n"
+"\n"
+"if( poCT == NULL || !poCT->Transform( 1, &x, &y ) )\n"
+"    printf( \"Transformation failed.\\n\" );\n"
+"else\n"
+"{\n"
+"    printf( \"(%f,%f) -> (%f,%f)\\n\",\n"
+"            atof( papszArgv[i+3] ),\n"
+"            atof( papszArgv[i+4] ),\n"
+"            x, y );\n"
+"}"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:373
+msgid ""
+"There are a couple of points at which transformations can fail.  First, "
+"OGRCreateCoordinateTransformation() may fail, generally because the "
+"internals recognize that no transformation between the indicated systems can "
+"be established, and will return a NULL pointer."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:379
+msgid ""
+"The OGRCoordinateTransformation::Transform() method itself can also fail.  "
+"This may be as a delayed result of one of the above problems, or as a result "
+"of an operation being numerically undefined for one or more of the passed in "
+"points.  The Transform() function will return TRUE on success, or FALSE if "
+"any of the points fail to transform.  The point array is left in an "
+"indeterminate state on error."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:387
+msgid ""
+"Though not shown above, the coordinate transformation service can take 3D "
+"points, and will adjust elevations for elevation differences in spheroids, "
+"and datums. Elevations given on a geographic or projected CRS are assumed to "
+"be ellipsoidal heights. When using a compound CRS made of a horizontal CRS "
+"(geographic or projected) and a vertical CRS, elevations will be related to "
+"a vertical datum (mean sea level, gravity based, etc.)."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:394
+msgid ""
+"Starting with GDAL 3.0, a time value (generally as a value in decimal years) "
+"can also be specified for time-dependent coordinate operations."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:397
+msgid ""
+"The following example shows how to conveniently create a long/lat coordinate "
+"system using the same geographic CRS as a projected coordinate system, and "
+"using that to transform between projected coordinates and long/lat. The "
+"returned coordinates will be in longitude, latitude order due to the call to "
+"SetAxisMappingStrategy(OAMS_TRADITIONAL_GIS_ORDER)"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:403
+msgid ""
+"OGRSpatialReference    oUTM, *poLongLat;\n"
+"OGRCoordinateTransformation *poTransform;\n"
+"\n"
+"oUTM.SetProjCS(\"UTM 17 / WGS84\");\n"
+"oUTM.SetWellKnownGeogCS( \"WGS84\" );\n"
+"oUTM.SetUTM( 17 );\n"
+"\n"
+"poLongLat = oUTM.CloneGeogCS();\n"
+"poLongLat->SetAxisMappingStrategy(OAMS_TRADITIONAL_GIS_ORDER);\n"
+"\n"
+"poTransform = OGRCreateCoordinateTransformation( &oUTM, poLongLat );\n"
+"if( poTransform == NULL )\n"
+"{\n"
+"    ...\n"
+"}\n"
+"\n"
+"...\n"
+"\n"
+"if( !poTransform->Transform( nPoints, x, y, z ) )\n"
+"..."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:427
+msgid "Advanced Coordinate Transformation"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:429
+msgid ""
+"OGRCreateCoordinateTransformation() under-the-hood may determine several "
+"candidate coordinate operations transforming from the source CRS to the "
+"target CRS. Those candidate coordinate operations each have their own area "
+"of use. When Transform() is invoked, it will determine the most appropriate "
+"coordinate operation based on the coordinates of the point to transform and "
+"area of use. For example, there are several dozens of possible coordinate "
+"operations for the NAD27 to WGS84 transformation."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:437
+msgid ""
+"If a bounding box of the area of interest into which coordinates to "
+"transform are located is known, it is possible to specify it to restrict the "
+"candidate coordinate operations to consider:"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:441
+msgid ""
+"OGRCoordinateTransformationOptions options;\n"
+"options.SetAreaOfInterest(-100,40,-99,41);\n"
+"poTransform = OGRCreateCoordinateTransformation( &oNAD27, &oWGS84, options );"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:447
+msgid ""
+"For cases where a particular coordinate operation must be used, it is "
+"possible to specify it as as a PROJ string (single step operation or "
+"multiple step string starting with +proj=pipeline), a WKT2 string describing "
+"a CoordinateOperation, or a urn:ogc:def:coordinateOperation:EPSG::XXXX URN"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:452
+msgid ""
+"OGRCoordinateTransformationOptions options;\n"
+"\n"
+"// EPSG:8599, NAD27 to WGS 84 (46), 1.15 m, USA - Indiana\n"
+"options.SetCoordinateOperation(\n"
+"    \"+proj=pipeline +step +proj=axisswap +order=2,1 \"\n"
+"    \"+step +proj=unitconvert +xy_in=deg +xy_out=rad \"\n"
+"    \"+step +proj=hgridshift +grids=conus \"\n"
+"    \"+step +proj=hgridshift +grids=inhpgn.gsb \"\n"
+"    \"+step +proj=unitconvert +xy_in=rad +xy_out=deg +step \"\n"
+"    \"+proj=axisswap +order=2,1\", false );\n"
+"\n"
+"// or\n"
+"// options.SetCoordinateOperation(\n"
+"//      \"urn:ogc:def:coordinateOperation:EPSG::8599\", false);\n"
+"\n"
+"poTransform = OGRCreateCoordinateTransformation( &oNAD27, &oWGS84, options );"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:473
+msgid "Alternate Interfaces"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:475
+msgid ""
+"A C interface to the coordinate system services is defined in ogr_srs_api.h, "
+"and Python bindings are available via the osr.py module. Methods are close "
+"analogs of the C++ methods but C and Python bindings are missing for some C+"
+"+ methods."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:481
+msgid "C bindings"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:483
+msgid ""
+"typedef void *OGRSpatialReferenceH;\n"
+"typedef void *OGRCoordinateTransformationH;\n"
+"\n"
+"OGRSpatialReferenceH OSRNewSpatialReference( const char * );\n"
+"void    OSRDestroySpatialReference( OGRSpatialReferenceH );\n"
+"\n"
+"int     OSRReference( OGRSpatialReferenceH );\n"
+"int     OSRDereference( OGRSpatialReferenceH );\n"
+"\n"
+"void OSRSetAxisMappingStrategy( OGRSpatialReferenceH,\n"
+"                                OSRAxisMappingStrategy );\n"
+"\n"
+"OGRErr  OSRImportFromEPSG( OGRSpatialReferenceH, int );\n"
+"OGRErr  OSRImportFromWkt( OGRSpatialReferenceH, char ** );\n"
+"OGRErr  OSRExportToWkt( OGRSpatialReferenceH, char ** );\n"
+"OGRErr  OSRExportToWktEx( OGRSpatialReferenceH, char **,\n"
+"                        const char* const* papszOptions );\n"
+"\n"
+"OGRErr  OSRSetAttrValue( OGRSpatialReferenceH hSRS, const char * "
+"pszNodePath,\n"
+"                        const char * pszNewNodeValue );\n"
+"const char *OSRGetAttrValue( OGRSpatialReferenceH hSRS,\n"
+"                            const char * pszName, int iChild);\n"
+"\n"
+"OGRErr  OSRSetLinearUnits( OGRSpatialReferenceH, const char *, double );\n"
+"double  OSRGetLinearUnits( OGRSpatialReferenceH, char ** );\n"
+"\n"
+"int     OSRIsGeographic( OGRSpatialReferenceH );\n"
+"int     OSRIsProjected( OGRSpatialReferenceH );\n"
+"int     OSRIsSameGeogCS( OGRSpatialReferenceH, OGRSpatialReferenceH );\n"
+"int     OSRIsSame( OGRSpatialReferenceH, OGRSpatialReferenceH );\n"
+"\n"
+"OGRErr  OSRSetProjCS( OGRSpatialReferenceH hSRS, const char * pszName );\n"
+"OGRErr  OSRSetWellKnownGeogCS( OGRSpatialReferenceH hSRS,\n"
+"                            const char * pszName );\n"
+"\n"
+"OGRErr  OSRSetGeogCS( OGRSpatialReferenceH hSRS,\n"
+"                    const char * pszGeogName,\n"
+"                    const char * pszDatumName,\n"
+"                    const char * pszEllipsoidName,\n"
+"                    double dfSemiMajor, double dfInvFlattening,\n"
+"                    const char * pszPMName ,\n"
+"                    double dfPMOffset ,\n"
+"                    const char * pszUnits,\n"
+"                    double dfConvertToRadians );\n"
+"\n"
+"double  OSRGetSemiMajor( OGRSpatialReferenceH, OGRErr * );\n"
+"double  OSRGetSemiMinor( OGRSpatialReferenceH, OGRErr * );\n"
+"double  OSRGetInvFlattening( OGRSpatialReferenceH, OGRErr * );\n"
+"\n"
+"OGRErr  OSRSetAuthority( OGRSpatialReferenceH hSRS,\n"
+"                        const char * pszTargetKey,\n"
+"                        const char * pszAuthority,\n"
+"                        int nCode );\n"
+"OGRErr  OSRSetProjParm( OGRSpatialReferenceH, const char *, double );\n"
+"double  OSRGetProjParm( OGRSpatialReferenceH hSRS,\n"
+"                        const char * pszParamName,\n"
+"                        double dfDefault,\n"
+"                        OGRErr * );\n"
+"\n"
+"OGRErr  OSRSetUTM( OGRSpatialReferenceH hSRS, int nZone, int bNorth );\n"
+"int     OSRGetUTMZone( OGRSpatialReferenceH hSRS, int *pbNorth );\n"
+"\n"
+"OGRCoordinateTransformationH\n"
+"OCTNewCoordinateTransformation( OGRSpatialReferenceH hSourceSRS,\n"
+"                                OGRSpatialReferenceH hTargetSRS );\n"
+"\n"
+"void OCTDestroyCoordinateTransformation( OGRCoordinateTransformationH );\n"
+"\n"
+"int OCTTransform( OGRCoordinateTransformationH hCT,\n"
+"                int nCount, double *x, double *y, double *z );\n"
+"\n"
+"OGRCoordinateTransformationOptionsH OCTNewCoordinateTransformationOptions(;\n"
+"\n"
+"int OCTCoordinateTransformationOptionsSetOperation(\n"
+"    OGRCoordinateTransformationOptionsH hOptions,\n"
+"    const char* pszCO, int bReverseCO);\n"
+"\n"
+"int OCTCoordinateTransformationOptionsSetAreaOfInterest(\n"
+"    OGRCoordinateTransformationOptionsH hOptions,\n"
+"    double dfWestLongitudeDeg,\n"
+"    double dfSouthLatitudeDeg,\n"
+"    double dfEastLongitudeDeg,\n"
+"    double dfNorthLatitudeDeg);\n"
+"\n"
+"void "
+"OCTDestroyCoordinateTransformationOptions(OGRCoordinateTransformationOptionsH);\n"
+"\n"
+"OGRCoordinateTransformationH\n"
+"OCTNewCoordinateTransformationEx( OGRSpatialReferenceH hSourceSRS,\n"
+"                                OGRSpatialReferenceH hTargetSRS,\n"
+"                                OGRCoordinateTransformationOptionsH "
+"hOptions );"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:577
+msgid "Python bindings"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:579
+msgid ""
+"class osr.SpatialReference\n"
+"    def __init__(self,obj=None):\n"
+"    def SetAxisMappingStrategy( self, strategy ):\n"
+"    def ImportFromWkt( self, wkt ):\n"
+"    def ExportToWkt(self, options = None):\n"
+"    def ImportFromEPSG(self,code):\n"
+"    def IsGeographic(self):\n"
+"    def IsProjected(self):\n"
+"    def GetAttrValue(self, name, child = 0):\n"
+"    def SetAttrValue(self, name, value):\n"
+"    def SetWellKnownGeogCS(self, name):\n"
+"    def SetProjCS(self, name = \"unnamed\" ):\n"
+"    def IsSameGeogCS(self, other):\n"
+"    def IsSame(self, other):\n"
+"    def SetLinearUnits(self, units_name, to_meters ):\n"
+"    def SetUTM(self, zone, is_north = 1):\n"
+"\n"
+"class CoordinateTransformation:\n"
+"    def __init__(self,source,target):\n"
+"    def TransformPoint(self, x, y, z = 0):\n"
+"    def TransformPoints(self, points):"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:604
+msgid "History and implementation considerations"
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:606
+msgid ""
+"Before GDAL 3.0, the OGRSpatialReference class was strongly tied to OGC WKT "
+"(WKT 1) format specified by `Coordinate Transformation Services (CT) "
+"specification (01-009) <http://portal.opengeospatial.org/files/?"
+"artifact_id=999>`_, and the way it was interpreted by GDAL, which various "
+"caveats detailed in the :ref:`wktproblems` page. The class mostly contained "
+"an in-memory tree-like representation of WKT 1 strings. The class used to "
+"directly implement import and export to OGC WKT 1, WKT-ESRI and PROJ.4 "
+"formats. Reprojection services were only available if GDAL had been build "
+"against the PROJ library."
+msgstr ""
+
+#: ../../../source/tutorials/osr_api_tut.rst:616
+msgid ""
+"Starting with GDAL 3.0, the `PROJ <https://proj4.org>`_ >= 6.0 library has "
+"become a required dependency of GDAL. PROJ 6 has built-in support for OGC "
+"WKT 1, ESRI WKT, OGC WKT 2:2015 and OGC WKT 2:2018 representations. PROJ 6 "
+"also implements a C++ object class hierarchy of the ISO-19111 / OGC Abstract "
+"Topic 2 \"Referencing by coordinate\" standard. Consequently the "
+"OGRSpatialReference class has been modified to act mostly as a wrapper on "
+"top of PROJ PJ* CRS objects, and tries to abstract away from the OGC WKT 1 "
+"representation as much as possible. However, for backward compatibility, "
+"some methods still expect arguments or return values that are specific of "
+"OGC WKT 1. The design of th OGRSpatialReference class is also still "
+"monolithic. Users wanting direct and fine grained access to CRS "
+"representations might want to directly use the PROJ 6 C or C++ API."
+msgstr ""

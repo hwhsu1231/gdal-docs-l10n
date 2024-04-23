@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/ctg.rst:5
+msgid "CTG -- USGS LULC Composite Theme Grid"
+msgstr ""
+
+#: ../../../source/drivers/raster/ctg.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/ctg.rst:7
+msgid "CTG"
+msgstr ""
+
+#: ../../../source/drivers/raster/ctg.rst:11
+msgid ""
+"This driver can read USGS Land Use and Land Cover (LULC) grids encoded in "
+"the Character Composite Theme Grid (CTG) format. Each file is reported as a "
+"6-band dataset of type Int32. The meaning of each band is the following one :"
+msgstr ""
+
+#: ../../../source/drivers/raster/ctg.rst:16
+msgid "Land Use and Land Cover Code"
+msgstr ""
+
+#: ../../../source/drivers/raster/ctg.rst:17
+msgid "Political units Code"
+msgstr ""
+
+#: ../../../source/drivers/raster/ctg.rst:18
+msgid "Census county subdivisions and SMSA tracts Code"
+msgstr ""
+
+#: ../../../source/drivers/raster/ctg.rst:19
+msgid "Hydrologic units Code"
+msgstr ""
+
+#: ../../../source/drivers/raster/ctg.rst:20
+msgid "Federal land ownership Code"
+msgstr ""
+
+#: ../../../source/drivers/raster/ctg.rst:21
+msgid "State land ownership Code"
+msgstr ""
+
+#: ../../../source/drivers/raster/ctg.rst:23
+msgid ""
+"Those files are typically named grid_cell.gz, grid_cell1.gz or grid_cell2.gz "
+"on the USGS site."
+msgstr ""
+
+#: ../../../source/drivers/raster/ctg.rst:26
+msgid ""
+"`Land Use and Land Cover Digital Data (Data Users Guide 4) <http://edc2.usgs."
+"gov/geodata/LULC/LULCDataUsersGuide.pdf>`__ - PDF version from USGS"
+msgstr ""
+
+#: ../../../source/drivers/raster/ctg.rst:29
+msgid ""
+"`Land Use and Land Cover Digital Data (Data Users Guide 4) <http://www."
+"vterrain.org/Culture/LULC/Data_Users_Guide_4.html>`__ - HTML version "
+"converted by Ben Discoe"
+msgstr ""
+
+#: ../../../source/drivers/raster/ctg.rst:32
+msgid ""
+"`USGS LULC data at 250K and 100K <http://edcftp.cr.usgs.gov/pub/data/LULC>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/ctg.rst:35
+msgid "NOTE: Implemented as :source_file:`frmts/ctg/ctgdataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/ctg.rst:38
+msgid "Driver capabilities"
+msgstr ""

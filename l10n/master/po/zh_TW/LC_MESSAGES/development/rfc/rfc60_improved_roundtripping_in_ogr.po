@@ -1,0 +1,442 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:5
+msgid "RFC 60 : Improved round-tripping in OGR"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:7
+msgid "Author: Even Rouault"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:9
+msgid "Contact: even.rouault at spatialys.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:11
+msgid "Status: Adopted, implemented"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:13
+msgid "Implementation version: 2.1"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:16
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:18
+msgid ""
+"This RFC defines how to improve better round-tripping in conversion of "
+"vector formats, in particular for GeoJSON extensions."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:22
+msgid "Rationale"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:24
+msgid ""
+"Some formats have concepts that are not well modeled by the OGR abstraction, "
+"but that are desirable to be preserved in transformation scenarios involving "
+"reprojection, spatial/attribute filtering, clipping, etc... where the target "
+"format is the source format."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:29
+msgid ""
+"Various extensions exist above the core GeoJSON specification: at the "
+"FeatureCollection, Feature or Geometry levels."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:32
+msgid ""
+"See `https://github.com/mapbox/carmen/blob/master/carmen-geojson.md <https://"
+"github.com/mapbox/carmen/blob/master/carmen-geojson.md>`__,"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:37
+msgid ""
+"{\n"
+"    \"type\": \"FeatureCollection\",\n"
+"    \"query\": [\"austin\"],\n"
+"    \"features\": [\n"
+"        {\n"
+"            \"type\": \"Feature\",\n"
+"            \"id\": \"place.4201\",\n"
+"            \"text\": \"Austin\",\n"
+"            \"place_name\": \"Austin, Texas, United States\",\n"
+"            \"bbox\": [-97.9383829999999, 30.098659, -97.5614889999999, "
+"30.516863],\n"
+"            \"center\": [-97.7559964, 30.3071816],\n"
+"            \"geometry\": {\n"
+"                \"type\": \"Point\",\n"
+"                \"coordinates\": [-97.7559964, 30.3071816]\n"
+"            },\n"
+"            \"properties\": {\n"
+"                \"title\": \"Austin\",\n"
+"                \"type\": \"city\",\n"
+"                \"score\": 600000790107194.8\n"
+"            },\n"
+"            \"context\": [\n"
+"                {\n"
+"                    \"id\": \"province.293\",\n"
+"                    \"text\": \"Texas\"\n"
+"                },\n"
+"                {\n"
+"                    \"id\": \"country.51\",\n"
+"                    \"text\": \"United States\"\n"
+"                }\n"
+"            ]\n"
+"        },\n"
+"        ...\n"
+"    ]\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:72
+msgid ""
+"`https://github.com/geocoders/geocodejson-spec/blob/master/draft/README.md "
+"<https://github.com/geocoders/geocodejson-spec/blob/master/draft/README."
+"md>`__:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:76
+msgid ""
+"{\n"
+"\n"
+"  // REQUIRED. GeocodeJSON result is a FeatureCollection.\n"
+"  \"type\": \"FeatureCollection\",\n"
+"\n"
+"  // REQUIRED. Namespace.\n"
+"  \"geocoding\": {\n"
+"\n"
+"    // REQUIRED. A semver.org compliant version number. Describes the "
+"version of\n"
+"    // the GeocodeJSON spec that is implemented by this instance.\n"
+"    \"version\": \"0.1.0\",\n"
+"\n"
+"    // OPTIONAL. Default: null. The licence of the data. In case of multiple "
+"sources,\n"
+"    // and then multiple licences, can be an object with one key by source.\n"
+"    \"licence\": \"ODbL\",\n"
+"\n"
+"    // OPTIONAL. Default: null. The attribution of the data. In case of "
+"multiple sources,\n"
+"    // and then multiple attributions, can be an object with one key by "
+"source.\n"
+"    \"attribution\": \"OpenStreetMap Contributors\",\n"
+"\n"
+"    // OPTIONAL. Default: null. The query that has been issued to trigger "
+"the\n"
+"    // search.\n"
+"    \"query\": \"24 allée de Bercy 75012 Paris\",\n"
+"\n"
+"  },\n"
+"\n"
+"  // REQUIRED. As per GeoJSON spec.\n"
+"  \"features\": [\n"
+"    // OPTIONAL. An array of feature objects. See below.\n"
+"  ]\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:108
+msgid ""
+"or `https://github.com/geojson/draft-geojson/"
+"issues/80#issuecomment-138037554 <https://github.com/geojson/draft-geojson/"
+"issues/80#issuecomment-138037554>`__ for a few examples."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:114
+msgid ""
+"{ \"type\" : \"GeometryCollection\",\n"
+"  \"geometries\" : [\n"
+"    { \"type\" : \"LineString\",\n"
+"      \"extensions\" : [ \"time\", \"atemp\", \"hr\", \"cad\" ],\n"
+"      \"coordinates\" : [\n"
+"        [\n"
+"          -122.45671039447188,\n"
+"          37.786870915442705,\n"
+"          0.4000000059604645,\n"
+"          \"2014-11-06T19:16:06.000Z\",\n"
+"          31.0,\n"
+"          99,\n"
+"          0\n"
+"        ],"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:130
+msgid "Changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:133
+msgid "OGRFeature"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:135
+msgid ""
+"Two new members will be added to the OGRFeature class, m_pszNativeData "
+"(string) and m_pszNativeMediaType (string). m_pszNativeData will contain the "
+"representation (or part of the representation) of the original feature, and "
+"m_pszNativeMediaType the `media type <https://en.wikipedia.org/wiki/"
+"Media_type>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:141
+msgid "The following methods will be added to OGRFeature class:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:145
+msgid ""
+"public:\n"
+"    const char *GetNativeData() const;\n"
+"    const char *GetNativeMediaType() const;\n"
+"    void        SetNativeData( const char* pszNativeData );\n"
+"    void        SetNativeMediaType( const char* pszNativeMediaType );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:151
+msgid ""
+"Thus, in the GeoJSON case, nativeData would contain the full serialization "
+"of a GeoJSON Feature. m_pszNativeMediaType would be set to \"application/vnd."
+"geo+json\" The writer side of the GeoJSON driver would start from the "
+"nativeData if present (and if nativeMediaType = \"application/vnd."
+"geo+json\", replace its properties member with the content of the OGR fields "
+"and patch its geometry to include additional JSON objects."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:159
+msgid ""
+"The OGRFeature::Clone() and ::SetFrom() methods will propagate nativeData "
+"and nativeMediaType."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:163
+msgid "OGRLayer"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:165
+msgid ""
+"A dedicated metadata domain \"NATIVE_DATA\" in which there would be a "
+"\"NATIVE_DATA\" and \"NATIVE_MEDIA_TYPE\" items would be used. In the "
+"GeoJSON case, this would contain JSON members at the FeatureCollection level "
+"(excluding the features array of course)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:171
+msgid "Driver open options and layer creation options"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:173
+msgid ""
+"Drivers that support nativeData on read should expose a NATIVE_DATA boolean "
+"open option, and disable it by default so as not to impact performance. "
+"ogr2ogr will by default turn this option on."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:177
+msgid ""
+"Drivers that support nativeData on write at the layer level should expose a "
+"NATIVE_DATA string and NATIVE_MEDIA_TYPE string layer creation options, so "
+"that ogr2ogr can fill them with the content of the NATIVE_DATA metadata "
+"domain of the source layer(s)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:183
+msgid "C API"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:185
+msgid "The following functions will be added:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:189
+msgid ""
+"const char CPL_DLL *OGR_F_GetNativeData(OGRFeatureH);\n"
+"void OGR_F_SetNativeData(OGRFeatureH, const char*);\n"
+"const char CPL_DLL *OGR_F_GetNativeMediaType(OGRFeatureH);\n"
+"void OGR_F_SetNativeMediaType(OGRFeatureH, const char*);"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:195
+msgid "SQL result layers"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:197
+msgid ""
+"Both OGR SQL and SQLite SQL dialect implementations have been modified to "
+"propagate the content of the NATIVE_DATA metadata domain of the source layer "
+"(the one of the FROM table) to the target layer, and NativeData and "
+"NativeMediaType from source features are copied into target features."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:204
+msgid "SWIG bindings (Python / Java / C# / Perl) changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:206
+msgid ""
+"The new functions will mapped to SWIG as GetNativeData(), SetNativeData(), "
+"GetNativeMediaType() and SetNativeMediaType()"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:210
+msgid "Drivers"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:212
+msgid ""
+"The GeoJSON driver will be modified to implement this RFC, in read and "
+"write, and thus will\\* :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:215
+msgid ""
+"declare a NATIVE_DATA open option to enable storing layer and feature native "
+"data."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:217
+msgid ""
+"and NATIVE_DATA & NATIVE_MEDIA_TYPE layer creation options so as to be able "
+"to write native data at FeatureCollection levels"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:219
+msgid "use OGRFeature nativeData on write."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:221
+msgid ""
+"The effect of this is that ogr2ogr will be able to preserve the members "
+"marked between ``***`` in the below snippet:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:226
+msgid ""
+"{\n"
+"  \"type\": \"FeatureCollection\",\n"
+"  ***\"extra_fc_member\": \"foo\",***\n"
+"  \"features\":\n"
+"  [\n"
+"    {\n"
+"      \"type\": \"Feature\",\n"
+"      ***\"extra_feat_member\": \"bar\",***\n"
+"      \"geometry\": {\n"
+"        \"type\": \"Point\",\n"
+"        ***extra_geom_member\": \"baz\",***\n"
+"        \"coordinates\": [ 2, 49, 3, ***100, 101*** ]\n"
+"      },\n"
+"      \"properties\": {\n"
+"        \"a_property\": \"foo\",\n"
+"      }\n"
+"    }\n"
+"  ]\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:246
+msgid ""
+"Other drivers like ElasticSearch and MongoDB drivers, that use a \\_json OGR "
+"field for round-tripping could potentially be upgraded to benefit from the "
+"mechanism of this RFC."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:251
+msgid "Utilities"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:253
+msgid ""
+"ogr2ogr will be modified to automatically copy nativeData at layer and "
+"feature level. A -noNativeData flag will be added to avoid doing so, when "
+"this is not desirable."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:257
+msgid ""
+"By default, ogr2ogr will open datasources with the NATIVE_DATA=YES open "
+"option so that drivers that can store nativeData do so. And if the output "
+"datasource supports the NATIVE_DATA and NATIVE_MEDIA_TYPE layer creation "
+"options, it will feel them with the content of the source layer NATIVE_DATA "
+"metadata domain."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:264
+msgid "Documentation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:266
+msgid "All new methods/functions are documented."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:269
+msgid "Test Suite"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:271
+msgid "The GeoJSON and ogr2ogr related tests will be extended"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:274
+msgid "Compatibility Issues"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:276
+msgid ""
+"Nothing severe expected. Potentially existing scripts might need to add -"
+"noNativeData to get previous behavior."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:280
+msgid "Related ticket"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:282
+msgid ""
+"`https://trac.osgeo.org/gdal/ticket/5310 <https://trac.osgeo.org/gdal/"
+"ticket/5310>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:285
+msgid "Implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:287
+msgid ""
+"The implementation will be done by Even Rouault (Spatialys) and be sponsored "
+"by Mapbox."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:290
+msgid ""
+"The proposed implementation lies in the \"rfc60_native_data\" branch of the ​"
+"\\ `https://github.com/rouault/gdal2/tree/rfc60_native_data <https://github."
+"com/rouault/gdal2/tree/rfc60_native_data>`__, in pull request `https://"
+"github.com/OSGeo/gdal/pull/75 <https://github.com/OSGeo/gdal/pull/75>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:297
+msgid "Voting history"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc60_improved_roundtripping_in_ogr.rst:299
+msgid "+1 from HowardB, KurtS, TamasS, JukkaR and EvenR"
+msgstr ""

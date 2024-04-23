@@ -1,0 +1,372 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/api/csharp/csharp_conda.rst:5
+msgid "C# Bindings Conda Package"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:7
+msgid "The GDAL C# Bindings Conda Package is a community supported project."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:10
+msgid "Installation"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:12
+msgid "GDAL with the C# bindings and example applications can be loaded using"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:14
+msgid "conda install -c conda-forge gdal-csharp"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:19
+#: ../../../source/api/csharp/csharp_conda.rst:51
+msgid "Usage"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:21
+msgid ""
+"The Conda package for GDAL version 3.5.0 and later uses the CMAKE build "
+"scripts and therefore there have been changes in the build process and the "
+"artifacts produced."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:23
+msgid ":ref:`csharp_conda_35`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:25
+msgid ":ref:`csharp_conda_34`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:32
+msgid "GDAL 3.5.0 and later"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:34
+msgid ""
+"The Conda package for GDAL version 3.5.0 and later is built using the new "
+"Cmake build scripts."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:37
+msgid ".NET Target Framework"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:39
+msgid ""
+"On all architectures (i.e. Windows, Linux and Mac), the bindings are "
+"compiled using .NET6.0 as the current (at the time of writing) LTS version."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:42
+msgid "Package Artifacts"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:44
+msgid "The Conda package contains two sets of artifacts:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:46
+msgid ""
+"The SWIG wrapper Dynamic Shared Objects (DSO) - :file:`gdal_wrap.dll` or :"
+"file:`libgdal_wrap.so` or :file:`libgdal_wrap.dylib` etc. These are loaded "
+"as one would expect for a Conda package (i.e. in the :file:`bin` folder in "
+"Windows and the :file:`lib` folder in Unix) and thus will automatically link "
+"to the correct version of the GDAL DSO and the dependencies, and"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:48
+msgid ""
+"Local NuGet packages for the actual C# bindings (i.e. :file:`gdal_csharp."
+"dll`, :file:`gdalconst_csharp.dll`, :file:`osr_csharp.dll` and :file:"
+"`ogr_csharp.dll`). These are created as packages called :file:`OSGeo.GDAL`, :"
+"file:`OSGeo.OSR` and :file:`OSGeo.OGR`. These are loaded into the :file:"
+"`share/gdal` folder."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:53
+msgid ""
+"To use the bindings in your application, you will need to basically do the "
+"following:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:55
+msgid "Add the relevant Packages to you application as local packages, and"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:56
+msgid "Add the DSOs to the search path for the application."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:58
+msgid ""
+"The former is not complicated and can be done by defining a local source, "
+"either global (as `is explained here <https://docs.microsoft.com/en-us/nuget/"
+"hosting-packages/local-feeds>`__ ) or in the build command as is shown below."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:60
+msgid ""
+"The latter can be based on Conda for a console application, as is shown "
+"below, but if you are working in an IDE (which being a .NET IDE knows "
+"nothing about Conda) and/or working on a GUI application (which is not going "
+"to be running in a Conda environment) you are going to have to sort out the "
+"DSOs your self; probably involving copying the relevant DSOs into the "
+"application package."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:63
+msgid "Usage Example - Windows"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:65
+msgid "The most simple example would be:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:67
+#: ../../../source/api/csharp/csharp_conda.rst:104
+msgid "Create a new application (in a dedicated empty folder)"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:69
+#: ../../../source/api/csharp/csharp_conda.rst:106
+msgid ":program:`dotnet new console`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:71
+#: ../../../source/api/csharp/csharp_conda.rst:108
+msgid ""
+"Create a small application (by replacing the contents of :file:`Program.cs`)."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:73
+#: ../../../source/api/csharp/csharp_conda.rst:110
+msgid ""
+"using System;\n"
+"using OSGeo.GDAL;\n"
+"\n"
+"namespace testapp\n"
+"{\n"
+"    class GdalTest\n"
+"    {\n"
+"        static void Main(string[] args)\n"
+"        {\n"
+"            Console.WriteLine(\"Testing GDAL C# Bindings\");\n"
+"            Gdal.UseExceptions();\n"
+"            Console.WriteLine($\"Gdal version {Gdal.VersionInfo(null)}\");\n"
+"        }\n"
+"    }\n"
+"}"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:91
+#: ../../../source/api/csharp/csharp_conda.rst:128
+msgid "Add the GDAL package"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:93
+msgid ""
+":program:`dotnet add package OSGeo.GDAL -s %CONDA_PREFIX%\\\\Library\\"
+"\\share\\\\gdal`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:95
+#: ../../../source/api/csharp/csharp_conda.rst:132
+msgid "Compile or run"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:97
+#: ../../../source/api/csharp/csharp_conda.rst:134
+msgid ":program:`dotnet run`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:99
+msgid ""
+"Provided you run these commands in a Conda environment (containing the gdal-"
+"csharp package) this should just work."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:102
+msgid "Usage Example - Unix"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:130
+msgid ":program:`dotnet add package OSGeo.GDAL -s $CONDA_PREFIX/share/gdal`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:136
+msgid ""
+"This will not just work under Unix since, unlike Windows, the Library Search "
+"Path is separate from the Process Search path and is not set by Conda."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:138
+msgid ""
+"To make this work, you will probably have to change the Library search path, "
+"which is ok for development but should not be accepted for production (which "
+"means that you will need to copy the DSOs to the application search path)."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:140
+msgid "Under Linux:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:142
+msgid ":program:`export LD_LIBRARY_PATH=$CONDA_PREFIX/lib`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:144
+msgid "Under OSX:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:146
+msgid ":program:`export DYLD_LIBRARY_PATH=$CONDA_PREFIX/lib`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:153
+msgid "GDAL 3.4.x and earlier"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:156
+msgid "Windows"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:158
+msgid ""
+"You can test if the C# bindings are working in a Conda environment by "
+"running :program:`%CONDA_PREFIX%\\\\Library\\\\bin\\\\gcs\\\\gdal_test`."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:160
+msgid ""
+"The DLLs are loaded into the :file:`%CONDA_PREFIX%\\\\Library\\\\bin` "
+"folder, as is normal for a Conda environment."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:162
+msgid ""
+"The  C# sample .EXEs are loaded into  :file:`%CONDA_PREFIX%\\\\Library\\"
+"\\bin\\\\gcs`, because otherwise they over write the standard GDAL tools."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:164
+msgid ""
+"To run a sample application - eg GDALinfo.exe - add :file:`%CONDA_PREFIX%\\"
+"\\Library\\\\bin\\\\gcs` to the path and just run :program:`gdalinfo`."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:166
+msgid ""
+"To link the DLLs into your code, you will need to include the DLLs into the "
+"project (which will almost certainly mean copying them to the project "
+"directory)."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:168
+msgid ""
+"For a console app that is run from within the Conda environment (i.e. run :"
+"program:`conda activate`) then they should work once compiled."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:170
+msgid ""
+"For GUI apps or other apps that cannot be run from with the Conda "
+"environment then you will have to setup the environment to make the GDAL "
+"DLLs available to the app."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:174
+msgid "Mac / Linux"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:176
+msgid ""
+"You test if the C# bindings are working in a Conda environment by running :"
+"program:`mono $CONDA_PREFIX/lib/gdal_test.exe`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:178
+msgid ""
+"The shared objects (i.e. :file:`\\*.so` / :file:`\\*.dylib`), the .EXE and ."
+"DLL files are all loaded into the :file:`$CONDA_PREFIX/lib` folder (not the :"
+"file:`bin` folder as you might expect). This is in line with `the Mono "
+"documentation <https://www.mono-project.com/docs/getting-started/application-"
+"deployment/>`__."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:181
+msgid ""
+"To run one of the sample applications (e.g. :file:`GDALinfo.exe`), run :"
+"program:`mono $CONDA_PREFIX/lib/GDALinfo.exe`."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:183
+msgid ""
+"To build a console app in Mono, you can do this in a conda environment "
+"simple using a command similar to this (changing the source name to your "
+"own):"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:185
+msgid ""
+"msc /r:gdal_csharp.dll /r:ogr_csharp.dll /r:osr_csharp.dll /r:System.Drawing."
+"dll /out:gdal_test.exe gdal_test.cs"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:189
+msgid ""
+"If the compiled executable is run in the conda environment, this should "
+"work. For something more portable or a GUI app, then you have to work out "
+"the dependencies your self."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:191
+msgid ""
+"The DLLs can also be used in a .NET project, for instance built in VS. Just "
+"link the DLLs in as dependencies."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:194
+msgid "Differences in the Conda build"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:196
+msgid ""
+"The Conda build is in some ways different from the \"standard\" GDAL 3.4.x "
+"build:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:198
+msgid ""
+"On Mac and Linux, the SWIG files are built as :file:`\\*_wrap` in line with "
+"the windows versions. This means that there are no :file:`.config` files. "
+"Most importantly, this means that the DLLs can be used in .NET and Unity "
+"projects as well as Mono."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:199
+msgid "On Windows, the sample apps are built in .NET5 and not .NET CORE 2.1."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_conda.rst:201
+msgid "These changes anticipated the standard build for GDAL 3.5.x."
+msgstr ""

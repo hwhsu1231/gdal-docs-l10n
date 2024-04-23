@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/esat.rst:5
+msgid "ESAT -- Envisat Image Product"
+msgstr ""
+
+#: ../../../source/drivers/raster/esat.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/esat.rst:7
+msgid "ESAT"
+msgstr ""
+
+#: ../../../source/drivers/raster/esat.rst:11
+msgid ""
+"GDAL supports the Envisat product format for read access. All sample types "
+"are supported. Files with two matching measurement datasets (MDS) are "
+"represented as having two bands. Currently all ASAR Level 1 and above "
+"products, and some MERIS and AATSR products are supported."
+msgstr ""
+
+#: ../../../source/drivers/raster/esat.rst:16
+msgid ""
+"The control points of the GEOLOCATION GRID ADS dataset are read if "
+"available, generally giving a good coverage of the dataset. The GCPs are in "
+"WGS84."
+msgstr ""
+
+#: ../../../source/drivers/raster/esat.rst:20
+msgid ""
+"Virtually all key/value pairs from the MPH and SPH (primary and secondary "
+"headers) are copied through as dataset level metadata."
+msgstr ""
+
+#: ../../../source/drivers/raster/esat.rst:23
+msgid ""
+"ASAR and MERIS parameters contained in the ADS and GADS records (excluded "
+"geolocation ones) can be retrieved as key/value pairs using the \"RECORDS\" "
+"metadata domain."
+msgstr ""
+
+#: ../../../source/drivers/raster/esat.rst:27
+msgid "NOTE: Implemented as :source_file:`frmts/envisat/envisatdataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/esat.rst:29
+msgid ""
+"See Also: `Envisat <https://earth.esa.int/eogateway/missions/envisat>`__ at "
+"ESA."
+msgstr ""
+
+#: ../../../source/drivers/raster/esat.rst:33
+msgid "Driver capabilities"
+msgstr ""

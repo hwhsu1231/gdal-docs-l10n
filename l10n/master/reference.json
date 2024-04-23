@@ -1,0 +1,47 @@
+{
+  "po" : 
+  {
+    "ja" : 
+    {
+      "branch" : "",
+      "commit" : 
+      {
+        "date" : "",
+        "hash" : "",
+        "title" : ""
+      }
+    },
+    "zh_CN" : 
+    {
+      "branch" : "",
+      "commit" : 
+      {
+        "date" : "",
+        "hash" : "",
+        "title" : ""
+      }
+    },
+    "zh_TW" : 
+    {
+      "branch" : "master",
+      "commit" : 
+      {
+        "date" : "2024-04-22 00:16:34 +0200",
+        "hash" : "735e1229556f0bacae52a482451dc928c4e51b6c",
+        "title" : "Miramon: avoid integer overflow (fixes https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=68205)"
+      }
+    }
+  },
+  "pot" : 
+  {
+    "branch" : "master",
+    "commit" : 
+    {
+      "date" : "2024-04-22 00:16:34 +0200",
+      "hash" : "735e1229556f0bacae52a482451dc928c4e51b6c",
+      "title" : "Miramon: avoid integer overflow (fixes https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=68205)"
+    }
+  },
+  "type" : "branch",
+  "version" : "master"
+}

@@ -1,0 +1,167 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc10_ogropen.rst:5
+msgid "RFC 10: OGR Open Parameters (not implemented)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc10_ogropen.rst:7
+msgid "Author: Andrey Kiselev"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc10_ogropen.rst:9
+msgid "Contact: dron@ak4719.spb.edu"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc10_ogropen.rst:11
+msgid "Status: Development, *not* implemented"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc10_ogropen.rst:14
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc10_ogropen.rst:16
+msgid ""
+"It is proposed that OGRSFDriver::Open() and OGRSFDriverRegistrar::Open() "
+"calls should be changed to accept additional parameter containing arbitrary "
+"additional parameters supplied by caller. OGROpenEx() function will be "
+"introduced to map this new functionality into C interface. In addition it is "
+"proposed to add an \"update\" flag to OGRSFDriverRegistrar::Open() call to "
+"avoid using OGRSFDriverRegistrar::OpenShared() method."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc10_ogropen.rst:25
+msgid "Open parameters"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc10_ogropen.rst:27
+msgid ""
+"Sometimes it is needed to pass additional information to OGR driver along "
+"with the name of the dataset to be opened. It can be, for example, the style "
+"table name (some drivers allow to choose from the various style tables) or "
+"any other additional data. The old method for doing this was to encode the "
+"extra info in the dataset name string. It was inconvenient approach, so it "
+"proposed to use separate parameter in OGRSFDriver::Open() and "
+"OGRSFDriverRegistrar::Open() calls representing open options, just like it "
+"is implemented in OGRDataSource::CreateLayer() call."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc10_ogropen.rst:37
+msgid ""
+"It is supposed that open options will be supplied in form of NAME=VALUE "
+"pairs forming the string list."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc10_ogropen.rst:40
+msgid ""
+"In addition to options parameter the special \"shared\" flag will be added "
+"to OGRSFDriverRegistrar::Open() call, so there will be no need in separate "
+"OGRSFDriverRegistrar::OpenShared() method."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc10_ogropen.rst:45
+msgid "Implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc10_ogropen.rst:47
+msgid "All Open() functions will be changed in the following way:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc10_ogropen.rst:51
+msgid ""
+"static OGRDataSource *\n"
+"OGRSFDriverRegistrar::Open( const char * pszName, int bUpdate,\n"
+"                            OGRSFDriver ** ppoDriver,\n"
+"                int bShared = FALSE,\n"
+"                char **papszOptions = NULL );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc10_ogropen.rst:60
+msgid ""
+"OGRDataSource *\n"
+"OGRSFDriverRegistrar::OpenShared( const char * pszName, int bUpdate,\n"
+"                                  OGRSFDriver ** ppoDriver )\n"
+"    { return Open( pszName, bUpdate, ppoDriver, TRUE, NULL ); }"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc10_ogropen.rst:67
+msgid ""
+"virtual OGRDataSource\n"
+"OGRSFDriver::*Open( const char *pszName, int bUpdate=FALSE,\n"
+"                    char **papszOptions = NULL ) = 0;"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc10_ogropen.rst:71
+msgid ""
+"The last change needs to be propagated in all OGR drivers. The change itself "
+"is pretty simple: one additional parameter should be added to function "
+"definition. But it has impact on third-party OGR drivers: they are not "
+"source compatible anymore and should be changed too."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc10_ogropen.rst:76
+msgid "Also appropriate C functions will be added:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc10_ogropen.rst:80
+msgid ""
+"OGRDataSourceH OGROpenEx( const char *pszName, int bUpdate,\n"
+"                          OGRSFDriverH *pahDriverList,\n"
+"              int bShared, char **papszOptions );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc10_ogropen.rst:86
+msgid ""
+"OGRDataSourceH OGR_Dr_OpenEx( OGRSFDriverH hDriver, const char *pszName,\n"
+"                              int bUpdate, char **papszOptions );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc10_ogropen.rst:90
+msgid "New Options for OGR Utilities"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc10_ogropen.rst:92
+msgid ""
+"Proposed functionality will be available in OGR utilities ogr2ogr and "
+"ogrinfo via the '-doo NAME=VALUE' (\"Datasource Open Option\") format "
+"specific parameter."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc10_ogropen.rst:97
+msgid "Backward Compatibility"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc10_ogropen.rst:99
+msgid ""
+"Proposed additions will not have any impact on C binary compatibility. C++ "
+"binary interface will be broken, source level compatibility will be broken "
+"for third-party OGR drivers only. There will be no impact for high-level "
+"applications on source level."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc10_ogropen.rst:105
+msgid "Responsibility and Timeline"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc10_ogropen.rst:107
+msgid ""
+"Andrey Kiselev is responsible to implement this proposal. New API will be "
+"available in GDAL 1.5.0."
+msgstr ""

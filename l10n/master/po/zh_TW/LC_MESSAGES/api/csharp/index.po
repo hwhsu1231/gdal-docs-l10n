@@ -1,0 +1,166 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/api/csharp/index.rst:5
+msgid "C# bindings"
+msgstr ""
+
+#: ../../../source/api/csharp/index.rst:7
+msgid ""
+"The GDAL project (primarily Tamas Szekeres) maintains SWIG generated C# "
+"bindings for GDAL and OGR."
+msgstr ""
+
+#: ../../../source/api/csharp/index.rst:9
+msgid ""
+"Generally speaking the classes and methods mostly match those of the GDAL "
+"and OGR C++ classes, but there is currently no C# specific documentation "
+"beyond this site."
+msgstr ""
+
+#: ../../../source/api/csharp/index.rst:11
+msgid ""
+"The C# bindings are also usable from other .NET languages, such as VB.Net."
+msgstr ""
+
+#: ../../../source/api/csharp/index.rst:13
+msgid ""
+"The C# interface has been built upon the same libraries as the other SWIG "
+"generated wrappers (like Python, Java). Therefore, the class names, class "
+"member names, and the method signatures are driven by the GDAL+SWIG "
+"conventions and might not follow the conventional .NET naming guidelines. "
+"However, one can easily identify the matching members in the GDAL/OGR API "
+"documentation."
+msgstr ""
+
+#: ../../../source/api/csharp/index.rst:17
+msgid ""
+"The GDAL/OGR C# classes use the .NET P/Invoke mechanism for the "
+"communication between the managed and unmanaged code. Every class implements "
+"the IDisposable interface to control the finalization of the underlying "
+"unmanaged memory referenced by every the wrapper class."
+msgstr ""
+
+#: ../../../source/api/csharp/index.rst:21
+msgid "Supported platforms"
+msgstr ""
+
+#: ../../../source/api/csharp/index.rst:23
+msgid "Currently the interface is compilable on and supports:"
+msgstr ""
+
+#: ../../../source/api/csharp/index.rst:25
+msgid ""
+"the various Win32 and Win64 platforms targeting the Microsoft.NET and the "
+"MONO frameworks,"
+msgstr ""
+
+#: ../../../source/api/csharp/index.rst:26
+msgid "GNU Linux/OSX systems using the MONO framework, and"
+msgstr ""
+
+#: ../../../source/api/csharp/index.rst:27
+msgid ""
+"Unity systems on Windows, OSX and Linux (currently only the MONO framework "
+"and not IL2CPP)."
+msgstr ""
+
+#: ../../../source/api/csharp/index.rst:30
+msgid "Getting GDAL for C#"
+msgstr ""
+
+#: ../../../source/api/csharp/index.rst:32
+msgid ""
+"There are a number of ways to get the C# bindings, including but not limited "
+"to:"
+msgstr ""
+
+#: ../../../source/api/csharp/index.rst:34
+msgid ""
+"The `gisinternals <http://www.gisinternals.com/sdk>`__ site, see below under "
+"\"Windows Build SDK\","
+msgstr ""
+
+#: ../../../source/api/csharp/index.rst:35
+msgid ""
+"The `Conda package <https://anaconda.org/conda-forge/gdal-csharp>`__, see "
+"instructions below"
+msgstr ""
+
+#: ../../../source/api/csharp/index.rst:36
+msgid "The gdal.netcore NuGet package, see link below, and"
+msgstr ""
+
+#: ../../../source/api/csharp/index.rst:37
+msgid ""
+"For Unity, there is a UPM package that installs GDAL, `available from here "
+"<https://openupm.com/packages/com.virgis.gdal/?subPage=readme>`__ (available "
+"on Windows, Mac and Linux)"
+msgstr ""
+
+#: ../../../source/api/csharp/index.rst:39
+msgid "(all of these are community supported)"
+msgstr ""
+
+#: ../../../source/api/csharp/index.rst:43
+msgid "Related Documents"
+msgstr ""
+
+#: ../../../source/api/csharp/index.rst:56
+msgid "Useful Links"
+msgstr ""
+
+#: ../../../source/api/csharp/index.rst:58
+msgid ""
+"A variety of example programs in CSharp are available at the `/swig/csharp/"
+"apps <https://github.com/OSGeo/gdal/tree/master/swig/csharp/apps>`__ folder "
+"of the GDAL project tree."
+msgstr ""
+
+#: ../../../source/api/csharp/index.rst:60
+msgid "The Conda Feedstock"
+msgstr ""
+
+#: ../../../source/api/csharp/index.rst:62
+msgid ""
+"A simple (as is) build engine of GDAL 3.2 library for .NET Core. `MaxRev-Dev/"
+"gdal.netcore <https://github.com/MaxRev-Dev/gdal.netcore>`__"
+msgstr ""
+
+#: ../../../source/api/csharp/index.rst:64
+msgid ""
+"The `ViRGiS project <https://www.virgis.org/>`__ makes extensive use of GDAL "
+"in c# in a Unity environment."
+msgstr ""
+
+#: ../../../source/api/csharp/index.rst:66
+msgid "(Please add your project to this section)"
+msgstr ""
+
+#: ../../../source/api/csharp/index.rst:70
+msgid "Windows Build SDKs"
+msgstr ""
+
+#: ../../../source/api/csharp/index.rst:72
+msgid ""
+"Tamas Szekeres maintains `build SDK packages <http://www.gisinternals.com/"
+"sdk>`__ in order to compile GDAL from the sources on Windows. The build "
+"system provides daily build binary packages for the latest stable and "
+"development versions."
+msgstr ""

@@ -1,0 +1,466 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/download.rst:5
+msgid "Download"
+msgstr ""
+
+#: ../../../source/download.rst:10
+msgid "Contents"
+msgstr ""
+
+#: ../../../source/download.rst:14
+msgid "Current Release"
+msgstr ""
+
+#: ../../../source/download.rst:16
+msgid ""
+"**2024-04-04** `gdal-3.8.5.tar.gz`_ `3.8.5 Release Notes`_ (`3.8.5 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:23
+msgid "Past Releases"
+msgstr ""
+
+#: ../../../source/download.rst:25
+msgid ""
+"**2024-02-18** `gdal-3.8.4.tar.gz`_ `3.8.4 Release Notes`_ (`3.8.4 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:31
+msgid ""
+"**2024-01-08** `gdal-3.8.3.tar.gz`_ `3.8.3 Release Notes`_ (`3.8.3 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:37
+msgid ""
+"**2023-12-20** `gdal-3.8.2.tar.gz`_ `3.8.2 Release Notes`_ (`3.8.2 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:43
+msgid ""
+"**2023-11-30** `gdal-3.8.1.tar.gz`_ `3.8.1 Release Notes`_ (`3.8.1 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:49
+msgid ""
+"**2023-11-13** `gdal-3.8.0.tar.gz`_ `3.8.0 Release Notes`_ (`3.8.0 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:55
+msgid ""
+"**2023-11-03** `gdal-3.7.3.tar.gz`_ `3.7.3 Release Notes`_ (`3.7.3 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:61
+msgid ""
+"**2023-09-13** `gdal-3.7.2.tar.gz`_ `3.7.2 Release Notes`_ (`3.7.2 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:67
+msgid ""
+"**2023-07-13** `gdal-3.7.1.tar.gz`_ `3.7.1 Release Notes`_ (`3.7.1 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:73
+msgid ""
+"**2023-05-10** `gdal-3.7.0.tar.gz`_ `3.7.0 Release Notes`_ (`3.7.0 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:79
+msgid ""
+"**2023-04-21** `gdal-3.6.4.tar.gz`_ `3.6.4 Release Notes`_ (`3.6.4 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:85
+msgid ""
+"**2023-03-13** `gdal-3.6.3.tar.gz`_ `3.6.3 Release Notes`_ (`3.6.3 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:91
+msgid ""
+"**2023-01-05** `gdal-3.6.2.tar.gz`_ `3.6.2 Release Notes`_ (`3.6.2 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:97
+msgid ""
+"**2022-12-11** `gdal-3.6.1.tar.gz`_ `3.6.1 Release Notes`_ (`3.6.1 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:103
+msgid ""
+"**2022-11-06** `3.6.0 Release Notes`_ *Warning*: this version has been "
+"official retracted and superseded per 3.6.1"
+msgstr ""
+
+#: ../../../source/download.rst:107
+msgid ""
+"**2022-10-21** `gdal-3.5.3.tar.gz`_ `3.5.3 Release Notes`_ (`3.5.3 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:113
+msgid ""
+"**2022-09-12** `gdal-3.5.2.tar.gz`_ `3.5.2 Release Notes`_ (`3.5.2 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:119
+msgid ""
+"**2022-07-06** `gdal-3.5.1.tar.gz`_ `3.5.1 Release Notes`_ (`3.5.1 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:125
+msgid ""
+"**2022-05-13** `gdal-3.5.0.tar.gz`_ `3.5.0 Release Notes`_ (`3.5.0 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:131
+msgid ""
+"**2022-04-22** `gdal-3.4.3.tar.gz`_ `3.4.3 Release Notes`_ (`3.4.3 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:137
+msgid ""
+"**2022-03-08** `gdal-3.4.2.tar.gz`_ `3.4.2 Release Notes`_ (`3.4.2 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:143
+msgid ""
+"**2021-12-27** `gdal-3.4.1.tar.gz`_ `3.4.1 Release Notes`_ (`3.4.1 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:149
+msgid ""
+"**2021-11-08** `gdal-3.4.0.tar.gz`_ `3.4.0 Release Notes`_ (`3.4.0 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:155
+msgid ""
+"**2021-10-29** `gdal-3.3.3.tar.gz`_ `3.3.3 Release Notes`_ (`3.3.3 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:161
+msgid ""
+"**2021-09-01** `gdal-3.3.2.tar.gz`_ `3.3.2 Release Notes`_ (`3.3.2 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:167
+msgid ""
+"**2021-07-05** `gdal-3.3.1.tar.gz`_ `3.3.1 Release Notes`_ (`3.3.1 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:173
+msgid ""
+"**2021-05-03** `gdal-3.3.0.tar.gz`_ `3.3.0 Release Notes`_ (`3.3.0 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:179
+msgid ""
+"**2021-05-04** `gdal-3.2.3.tar.gz`_ `3.2.3 Release Notes`_ (`3.2.3 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:185
+msgid ""
+"**2021-03-10** `gdal-3.2.2.tar.gz`_ `3.2.2 Release Notes`_ (`3.2.2 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:191
+msgid ""
+"**2020-12-28** `gdal-3.2.1.tar.gz`_ `3.2.1 Release Notes`_ (`3.2.1 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:197
+msgid ""
+"**2020-10-26** `gdal-3.2.0.tar.gz`_ `3.2.0 Release Notes`_ (`3.2.0 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:203
+msgid ""
+"**2020-10-23** `gdal-3.1.4.tar.gz`_ `3.1.4 Release Notes`_ (`3.1.4 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:209
+msgid ""
+"**2020-09-01** `gdal-3.1.3.tar.gz`_ `3.1.3 Release Notes`_ (`3.1.3 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:215
+msgid ""
+"**2020-07-07** `gdal-3.1.2.tar.gz`_ `3.1.2 Release Notes`_ (`3.1.2 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:221
+msgid ""
+"**2020-06-22** `gdal-3.1.1.tar.gz`_ `3.1.1 Release Notes`_ (`3.1.1 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:228
+msgid ""
+"**2020-05-03** `gdal-3.1.0.tar.gz`_ `3.1.0 Release Notes`_ (`3.1.0 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:234
+msgid ""
+"**2020-01-28** `gdal-3.0.4.tar.gz`_ `3.0.4 Release Notes`_ (`3.0.4 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:240
+msgid ""
+"**2020-01-08** `gdal-2.4.4.tar.gz`_ `2.4.4 Release Notes`_ (`2.4.4 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:246
+msgid ""
+"**2020-01-08** `gdal-3.0.3.tar.gz`_ `3.0.3 Release Notes`_ (`3.0.3 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:252
+msgid ""
+"**2019-10-28** `gdal-3.0.2.tar.gz`_ `3.0.2 Release Notes`_ (`3.0.2 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:258
+msgid ""
+"**2019-10-28** `gdal-2.4.3.tar.gz`_ `2.4.3 Release Notes`_ (`2.4.3 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:265
+msgid ""
+"**2019-06-28** `gdal-3.0.1.tar.gz`_ `3.0.1 Release Notes`_ (`3.0.1 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:272
+msgid ""
+"**2019-06-28** `gdal-2.4.2.tar.gz`_ `2.4.2 Release Notes`_ (`2.4.2 md5`_)"
+msgstr ""
+
+#: ../../../source/download.rst:281
+msgid "Development Source"
+msgstr ""
+
+#: ../../../source/download.rst:283
+msgid ""
+"The main repository for GDAL is located on GitHub at https://github.com/"
+"OSGeo/GDAL."
+msgstr ""
+
+#: ../../../source/download.rst:286
+msgid ""
+"You can obtain a copy of the active source code by issuing the following "
+"command"
+msgstr ""
+
+#: ../../../source/download.rst:291
+msgid "git clone https://github.com/OSGeo/GDAL.git"
+msgstr ""
+
+#: ../../../source/download.rst:294
+msgid ""
+"Additional information is available about :ref:`build_requirements` and :ref:"
+"`building_from_source`."
+msgstr ""
+
+#: ../../../source/download.rst:297
+msgid "Binaries"
+msgstr ""
+
+#: ../../../source/download.rst:299
+msgid ""
+"In this section we list a number of the binary distributions of GDAL all of "
+"which should have fully reproducible open source build recipes."
+msgstr ""
+
+#: ../../../source/download.rst:302
+msgid ""
+"Note that the maintainers of those distributions are generally not the "
+"maintainers of the GDAL sources, so please report any issue specific to "
+"those builds through their own support channels."
+msgstr ""
+
+#: ../../../source/download.rst:307
+msgid "Windows"
+msgstr ""
+
+#: ../../../source/download.rst:309
+msgid ""
+"Windows builds are available via `Conda Forge`_ (64-bit only). See the :ref:"
+"`conda` section for more detailed information."
+msgstr ""
+
+#: ../../../source/download.rst:315
+msgid "Debian"
+msgstr ""
+
+#: ../../../source/download.rst:317
+msgid "Debian packages are now available on `Debian Unstable`_."
+msgstr ""
+
+#: ../../../source/download.rst:324
+msgid "Conda"
+msgstr ""
+
+#: ../../../source/download.rst:326
+msgid ""
+"`Conda <https://anaconda.org>`__ can be used on multiple platforms (Windows, "
+"macOS, and Linux) to install software packages and manage environments. "
+"Conda packages for GDAL are available at https://anaconda.org/conda-forge/"
+"gdal."
+msgstr ""
+
+#: ../../../source/download.rst:332
+msgid "Latest version: |Conda badge|"
+msgstr ""
+
+#: ../../../source/download.rst:0
+msgid "Conda badge"
+msgstr ""
+
+#: ../../../source/download.rst:339
+msgid "conda install [-c channel] [package...]"
+msgstr ""
+
+#: ../../../source/download.rst:344
+msgid "conda install -c conda-forge gdal"
+msgstr ""
+
+#: ../../../source/download.rst:347
+msgid "To install the Arrow and Parquet drivers as plugins:"
+msgstr ""
+
+#: ../../../source/download.rst:351
+msgid "conda install -c conda-forge libgdal-arrow-parquet"
+msgstr ""
+
+#: ../../../source/download.rst:355
+msgid "GDAL master Conda builds"
+msgstr ""
+
+#: ../../../source/download.rst:357
+msgid ""
+"GDAL master builds are available in the `gdal-master <https://anaconda.org/"
+"gdal-master/gdal>`__ channel. They are based on dependencies from the "
+"``conda-forge`` channel."
+msgstr ""
+
+#: ../../../source/download.rst:360
+msgid ""
+"First, install mamba into the ``base`` environment, create a dedicated "
+"``gdal_master_env`` environment, and then activate the dedicated "
+"``gdal_master_env`` environment."
+msgstr ""
+
+#: ../../../source/download.rst:365
+msgid ""
+"conda update -n base -c conda-forge conda\n"
+"conda install -n base --override-channels -c conda-forge mamba "
+"'python_abi=*=*cp*'\n"
+"conda create --name gdal_master_env\n"
+"conda activate gdal_master_env"
+msgstr ""
+
+#: ../../../source/download.rst:370
+msgid "Then install GDAL from the ``gdal-master`` channel:"
+msgstr ""
+
+#: ../../../source/download.rst:374
+msgid ""
+"mamba install -c gdal-master gdal\n"
+"mamba install -c gdal-master libgdal-arrow-parquet # if you need the Arrow "
+"and Parquet drivers"
+msgstr ""
+
+#: ../../../source/download.rst:379
+msgid "Vcpkg"
+msgstr ""
+
+#: ../../../source/download.rst:381
+msgid ""
+"The gdal port in vcpkg is kept up to date by Microsoft team members and "
+"community contributors. The url of vcpkg is: https://github.com/Microsoft/"
+"vcpkg . You can download and install gdal using the vcpkg dependency manager:"
+msgstr ""
+
+#: ../../../source/download.rst:387
+msgid ""
+"git clone https://github.com/Microsoft/vcpkg.git\n"
+"cd vcpkg\n"
+"./bootstrap-vcpkg.sh  # ./bootstrap-vcpkg.bat for Windows\n"
+"./vcpkg integrate install\n"
+"./vcpkg install gdal"
+msgstr ""
+
+#: ../../../source/download.rst:393
+msgid ""
+"If the version is out of date, please `create an issue or pull request "
+"<https://github.com/Microsoft/vcpkg>`__ on the vcpkg repository."
+msgstr ""
+
+#: ../../../source/download.rst:396
+msgid "Spack"
+msgstr ""
+
+#: ../../../source/download.rst:398
+msgid ""
+"Spack is a package management tool designed to support multiple versions and "
+"configurations of software on a wide variety of platforms and environments. "
+"It was designed for large supercomputing centers. Spack builds packages from "
+"sources, and allows tweaking their configurations."
+msgstr ""
+
+#: ../../../source/download.rst:403
+msgid ""
+"You can find information about GDAL in Spack at https://spack.readthedocs.io/"
+"en/latest/package_list.html#gdal"
+msgstr ""
+
+#: ../../../source/download.rst:406
+msgid "For the default GDAL build with a reduced number of drivers:"
+msgstr ""
+
+#: ../../../source/download.rst:410
+msgid ""
+"git clone -c feature.manyFiles=true https://github.com/spack/spack.git\n"
+"cd spack/bin\n"
+"./spack install gdal"
+msgstr ""
+
+#: ../../../source/download.rst:414
+msgid "For a build with netcdf driver enabled:"
+msgstr ""
+
+#: ../../../source/download.rst:418
+msgid "./spack install gdal +netcdf"
+msgstr ""
+
+#: ../../../source/download.rst:422
+msgid "Linux Docker images"
+msgstr ""
+
+#: ../../../source/download.rst:424
+msgid ""
+"Images with nightly builds of GDAL master and tagged releases are available "
+"at `GitHub Container registry <https://github.com/OSGeo/gdal/pkgs/container/"
+"gdal>`_"
+msgstr ""
+
+#: ../../../source/download.rst:427
+msgid ""
+"Information on the content of the different configurations can be found at "
+"`https://github.com/OSGeo/gdal/tree/master/docker <https://github.com/OSGeo/"
+"gdal/tree/master/docker>`_"
+msgstr ""

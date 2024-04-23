@@ -1,0 +1,266 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/dev_environment.rst:7
+msgid "Setting up a development environment"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:12
+msgid "Build requirements"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:14
+msgid "The minimum requirements to build GDAL are:"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:16
+msgid ""
+"CMake >= 3.16, and an associated build system (make, ninja, Visual Studio, "
+"etc.)"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:17
+msgid "C99 compiler"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:18
+msgid "C++17 compiler since GDAL 3.9 (C++11 in previous versions)"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:19
+msgid "PROJ >= 6.3.1"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:21
+msgid "Additional requirements to run the GDAL test suite are:"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:23
+msgid "SWIG >= 4, for building bindings to other programming languages"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:24
+msgid "Python >= 3.8"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:25
+msgid "Python packages listed in `autotest/requirements.txt`"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:27
+msgid ""
+"A number of optional libraries are also strongly recommended for most "
+"builds: SQLite3, expat, libcurl, zlib, libtiff, libgeotiff, libpng, libjpeg, "
+"etc. Consult :ref:`raster_drivers` and :ref:`vector_drivers` pages for "
+"information on dependencies of optional drivers."
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:33
+msgid "Vagrant"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:35
+msgid ""
+"`Vagrant <https://www.vagrantup.com>`_ is a tool that works with a "
+"virtualization product such as VirtualBox to create a reproducible "
+"development environment. GDAL includes a Vagrant configuration file that "
+"sets up an Ubuntu virtual machine with a comprehensive set of dependencies."
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:39
+msgid ""
+"Once Vagrant has been installed and the GDAL source downloaded, the virtual "
+"machine can be set up by running the following from the source root "
+"directory:"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:42
+msgid ""
+"# VAGRANT_VM_CPU=number_of_cpus\n"
+"vagrant up"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:47
+msgid ""
+"The source root directory is exposed inside the virtual machine at ``/"
+"vagrant``, so changes made to GDAL source files on the host are seen inside "
+"the VM. To rebuild GDAL after changing source files, you can connect to the "
+"VM and re-run the build command:"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:51
+msgid ""
+"vagrant ssh\n"
+"cmake --build ."
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:56
+msgid ""
+"Note that the following directories on the host will be created (and can be "
+"removed if the Vagrant environment is no longer needed):"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:59
+msgid ""
+"``../apt-cache/ubuntu/jammy64``: contains a cache of Ubuntu packages of the "
+"VM, to allow faster VM reconstruction"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:61
+msgid "``build_vagrant``: CMake build directory"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:62
+msgid "``ccache_vagrant``: CCache directory"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:65
+msgid "Docker"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:67
+msgid ""
+"The Linux environments used for building and testing GDAL on GitHub Actions "
+"are defined by Docker images that can be pulled to any machine for "
+"development. The Docker image used for each build is specified in :"
+"source_file:`.github/workflows/linux_build.yml`. As an example, the "
+"following commands can be run from the GDAL source root to build and test "
+"GDAL using the clang address sanitizer (ASAN) in the same environment that "
+"is used in GitHub Actions:"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:74
+msgid ""
+"docker run -it \\\n"
+"    -v $(pwd):/gdal:rw \\\n"
+"    ghcr.io/osgeo/gdal-deps:ubuntu20.04-master\n"
+"cd /gdal\n"
+"mkdir build-asan\n"
+"cd build-asan\n"
+"../.github/workflows/asan/build.sh\n"
+"../.github/workflows/asan/test.sh"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:85
+msgid ""
+"To avoid built objects being owned by root, it may be desirable to add ``-u "
+"$(id -u):$(id -g) -v /etc/passwd:/etc/passwd`` to the ``docker run`` command "
+"above."
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:89
+msgid "Building on Windows with Conda dependencies and Visual Studio"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:91
+msgid ""
+"It is less appropriate for Debug builds of GDAL, than other methods, such as "
+"using vcpkg."
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:94
+msgid "Install git"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:96
+msgid "Install `git <https://git-scm.com/download/win>`_"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:99
+msgid "Install miniconda"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:101
+msgid ""
+"Install `miniconda <https://repo.anaconda.com/miniconda/Miniconda3-latest-"
+"Windows-x86_64.exe>`_"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:104
+msgid "Install GDAL dependencies"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:106
+msgid ""
+"Start a Conda enabled console and assuming there is a c:\\\\dev directory"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:108
+msgid ""
+"cd c:\\dev\n"
+"conda create --name gdal\n"
+"conda activate gdal\n"
+"conda install --yes --quiet curl libiconv icu git python=3.7 swig numpy "
+"pytest zlib clcache\n"
+"conda install --yes --quiet -c conda-forge compilers\n"
+"conda install --yes --quiet -c conda-forge \\\n"
+"    cmake proj geos hdf4 hdf5 \\\n"
+"    libnetcdf openjpeg poppler libtiff libpng xerces-c expat libxml2 kealib "
+"json-c \\\n"
+"    cfitsio freexl geotiff jpeg libpq libspatialite libwebp-base pcre "
+"postgresql \\\n"
+"    sqlite tiledb zstd charls cryptopp cgal librttopo libkml openssl xz"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:123
+msgid ""
+"The ``compilers`` package will install ``vs2017_win-64`` (at time of "
+"writing) to set the appropriate environment for cmake to pick up. It is also "
+"possible to use the ``vs2019_win-64`` package if Visual Studio 2019 is to be "
+"used."
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:128
+msgid "Checkout GDAL sources"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:130
+msgid ""
+"cd c:\\dev\n"
+"git clone https://github.com/OSGeo/gdal.git"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:136
+msgid "Build GDAL"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:138
+msgid "From a Conda enabled console"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:140
+msgid ""
+"conda activate gdal\n"
+"cd c:\\dev\\gdal\n"
+"cmake -S . -B build -DCMAKE_PREFIX_PATH:FILEPATH=\"%CONDA_PREFIX%\" \\\n"
+"                    -DCMAKE_C_COMPILER_LAUNCHER=clcache\n"
+"                    -DCMAKE_CXX_COMPILER_LAUNCHER=clcache\n"
+"cmake --build build --config Release -j 8"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:152
+msgid "Run GDAL tests"
+msgstr ""
+
+#: ../../../source/development/dev_environment.rst:156
+msgid ""
+"cd c:\\dev\\GDAL\n"
+"cd _build.vs2019\n"
+"ctest -V --build-config Release"
+msgstr ""

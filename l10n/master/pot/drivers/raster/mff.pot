@@ -1,0 +1,77 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/mff.rst:5
+msgid "MFF -- Vexcel MFF Raster"
+msgstr ""
+
+#: ../../../source/drivers/raster/mff.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/mff.rst:7
+msgid "MFF"
+msgstr ""
+
+#: ../../../source/drivers/raster/mff.rst:11
+msgid ""
+"GDAL includes read, update, and creation support for Vexcel's MFF raster "
+"format. MFF dataset consist of a header file (typically with the extension ."
+"hdr) and a set of data files with extensions like .x00, .b00 and so on. To "
+"open a dataset select the .hdr file."
+msgstr ""
+
+#: ../../../source/drivers/raster/mff.rst:16
+msgid ""
+"Reading lat/long GCPs (TOP_LEFT_CORNER, ...) is supported but there is no "
+"support for reading affine georeferencing or projection information."
+msgstr ""
+
+#: ../../../source/drivers/raster/mff.rst:19
+msgid "Unrecognized keywords from the .hdr file are preserved as metadata."
+msgstr ""
+
+#: ../../../source/drivers/raster/mff.rst:21
+msgid ""
+"All data types with GDAL equivalents are supported, including 8, 16, 32 and "
+"64 bit data precisions in integer, real and complex data types. In addition "
+"tile organized files (as produced by the Vexcel SAR Processor - APP) are "
+"supported for reading."
+msgstr ""
+
+#: ../../../source/drivers/raster/mff.rst:26
+msgid ""
+"On creation (with a format code of MFF) a simple, ungeoreferenced raster "
+"file is created."
+msgstr ""
+
+#: ../../../source/drivers/raster/mff.rst:29
+msgid ""
+"MFF files are not normally portable between systems with different byte "
+"orders. However GDAL honours the new BYTE_ORDER keyword which can take a "
+"value of LSB (Integer - little endian), and MSB (Motorola - big endian). "
+"This may be manually added to the .hdr file if required."
+msgstr ""
+
+#: ../../../source/drivers/raster/mff.rst:34
+msgid "NOTE: Implemented as :source_file:`frmts/raw/mffdataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/mff.rst:37
+msgid "Driver capabilities"
+msgstr ""

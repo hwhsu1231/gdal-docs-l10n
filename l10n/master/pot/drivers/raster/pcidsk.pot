@@ -1,0 +1,85 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/pcidsk.rst:5
+msgid "PCIDSK -- PCI Geomatics Database File"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcidsk.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcidsk.rst:7
+msgid "PCIDSK"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcidsk.rst:11
+msgid ""
+"PCIDSK database file used by PCI EASI/PACE software for image analysis. It "
+"is supported for reading, and writing by GDAL. All pixel data types, and "
+"data organizations (pixel interleaved, band interleaved, file interleaved "
+"and tiled) should be supported. Currently LUT segments are ignored, but PCT "
+"segments should be treated as associated with the bands. Overall file, and "
+"band specific metadata should be correctly associated with the image or "
+"bands."
+msgstr ""
+
+#: ../../../source/drivers/raster/pcidsk.rst:19
+msgid ""
+"Georeferencing is supported though there may be some limitations in support "
+"of datums and ellipsoids. GCP segments are ignored. RPC segments will be "
+"returned as GDAL style RPC metadata."
+msgstr ""
+
+#: ../../../source/drivers/raster/pcidsk.rst:23
+msgid ""
+"Internal overview (pyramid) images will also be correctly read though newly "
+"requested overviews will be built externally as an .ovr file."
+msgstr ""
+
+#: ../../../source/drivers/raster/pcidsk.rst:26
+msgid "Vector segments are also supported by the driver."
+msgstr ""
+
+#: ../../../source/drivers/raster/pcidsk.rst:29
+msgid "Creation Options"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcidsk.rst:31
+msgid ""
+"Note that PCIDSK files are always produced pixel interleaved, even though "
+"other organizations are supported for read."
+msgstr ""
+
+#: ../../../source/drivers/raster/pcidsk.rst:55
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcidsk.rst:66
+msgid "See Also:"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcidsk.rst:68
+msgid "Implemented as :source_file:`frmts/pcidsk/pcidskdataset2.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/pcidsk.rst:69
+msgid ""
+"`PCIDSK SDK <https://web.archive.org/web/20130730111701/http://home.gdal.org/"
+"projects/pcidsk/index.html>`__"
+msgstr ""

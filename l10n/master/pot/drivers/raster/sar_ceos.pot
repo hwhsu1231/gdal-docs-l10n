@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/sar_ceos.rst:5
+msgid "SAR_CEOS -- CEOS SAR Image"
+msgstr ""
+
+#: ../../../source/drivers/raster/sar_ceos.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/sar_ceos.rst:7
+msgid "SAR_CEOS"
+msgstr ""
+
+#: ../../../source/drivers/raster/sar_ceos.rst:11
+msgid ""
+"This is a read-only reader for CEOS SAR image files. To use, select the main "
+"imagery file."
+msgstr ""
+
+#: ../../../source/drivers/raster/sar_ceos.rst:14
+msgid ""
+"This driver works with most Radarsat, JERS-1 and ERS data products, "
+"including single look complex products; however, it is unlikely to work for "
+"non-Radar CEOS products. The simpler :ref:`raster.ceos` driver is often "
+"appropriate for these."
+msgstr ""
+
+#: ../../../source/drivers/raster/sar_ceos.rst:19
+msgid ""
+"This driver will attempt to read 15 lat/long GCPS by sampling the per-"
+"scanline CEOS superstructure information. In the case of products from the "
+"Alaska Satellite Facility, it will obtain corner coordinates from either the "
+"map projection record in the case of ScanSAR products, or the facility data "
+"record for non-ScanSAR products. It also captures various pieces of metadata "
+"from various header files, including:"
+msgstr ""
+
+#: ../../../source/drivers/raster/sar_ceos.rst:28
+msgid ""
+"CEOS_LOGICAL_VOLUME_ID=EERS-1-SAR-MLD\n"
+"CEOS_FACILITY=CDPF-RSAT\n"
+"CEOS_PROCESSING_FACILITY=APP\n"
+"CEOS_PROCESSING_AGENCY=CCRS\n"
+"CEOS_PROCESSING_COUNTRY=CANADA\n"
+"CEOS_SOFTWARE_ID=APP 1.62\n"
+"CEOS_ACQUISITION_TIME=19911029162818919\n"
+"CEOS_SENSOR_CLOCK_ANGLE=  90.000\n"
+"CEOS_ELLIPSOID=IUGG_75\n"
+"CEOS_SEMI_MAJOR=    6378.1400000\n"
+"CEOS_SEMI_MINOR=    6356.7550000"
+msgstr ""
+
+#: ../../../source/drivers/raster/sar_ceos.rst:40
+msgid ""
+"The SAR_CEOS driver also includes some support for SIR-C and PALSAR "
+"polarimetric data. The SIR-C format contains an image in compressed "
+"scattering matrix form, described `here <http://southport.jpl.nasa.gov/"
+"software/dcomp/dcomp.html>`__. GDAL decompresses the data as it is read in. "
+"The PALSAR format contains bands that correspond almost exactly to elements "
+"of the 3x3 Hermitian covariance matrix- see the `ERSDAC-VX-CEOS-004A.pdf "
+"<http://www.ersdac.or.jp/palsar/palsar_E.html>`__ document for a complete "
+"description (pixel storage is described on page 193). GDAL converts these to "
+"complex floating point covariance matrix bands as they are read in. The "
+"convention used to represent the covariance matrix in terms of the "
+"scattering matrix elements HH, HV (=VH), and VV is indicated below. Note "
+"that the non-diagonal elements of the matrix are complex values, while the "
+"diagonal values are real (though represented as complex bands)."
+msgstr ""
+
+#: ../../../source/drivers/raster/sar_ceos.rst:56
+msgid "Band 1: Covariance_11 (Float32) = HH*conj(HH)"
+msgstr ""
+
+#: ../../../source/drivers/raster/sar_ceos.rst:57
+msgid "Band 2: Covariance_12 (CFloat32) = sqrt(2)*HH*conj(HV)"
+msgstr ""
+
+#: ../../../source/drivers/raster/sar_ceos.rst:58
+msgid "Band 3: Covariance_13 (CFloat32) = HH*conj(VV)"
+msgstr ""
+
+#: ../../../source/drivers/raster/sar_ceos.rst:59
+msgid "Band 4: Covariance_22 (Float32) = 2*HV*conj(HV)"
+msgstr ""
+
+#: ../../../source/drivers/raster/sar_ceos.rst:60
+msgid "Band 5: Covariance_23 (CFloat32) = sqrt(2)*HV*conj(VV)"
+msgstr ""
+
+#: ../../../source/drivers/raster/sar_ceos.rst:61
+msgid "Band 6: Covariance_33 (Float32) = VV*conj(VV)"
+msgstr ""
+
+#: ../../../source/drivers/raster/sar_ceos.rst:63
+msgid "The identities of the bands are also reflected in the metadata."
+msgstr ""
+
+#: ../../../source/drivers/raster/sar_ceos.rst:65
+msgid "NOTE: Implemented as :source_file:`frmts/ceos2/sar_ceosdataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/sar_ceos.rst:68
+msgid "Driver capabilities"
+msgstr ""

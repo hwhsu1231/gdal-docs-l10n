@@ -1,0 +1,172 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc17_python_namespaces.rst:5
+msgid "RFC 17: Python Namespaces"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc17_python_namespaces.rst:7
+msgid "Author: Howard Butler"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc17_python_namespaces.rst:9
+msgid "Contact: hobu.inc@gmail.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc17_python_namespaces.rst:11
+msgid "Status: Adopted"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc17_python_namespaces.rst:14
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc17_python_namespaces.rst:17
+msgid ""
+"GDAL bindings for Python have historically dodged the normal Python "
+"practices of using packages and namespaces to provide organization."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc17_python_namespaces.rst:25
+msgid ""
+"This RFC implements a new namespace for Python, called *osgeo*, where the "
+"GDAL Python bindings henceforth will reside. Backward compatibility is "
+"provided, so that current code will continue to run unchanged, but new "
+"developments should utilize the namespace for code organization and global "
+"namespace pollution reasons. As of 10/1/2007, the changes described here in "
+"RFC 17 only pertain to the \"next-gen\" Python bindings. It is expected that "
+"these bindings will be the default bindings for GDAL 1.5."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc17_python_namespaces.rst:28
+msgid "Objective"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc17_python_namespaces.rst:30
+msgid ""
+"To provide the GDAL Python bindings in a Python package that is properly "
+"namespaced, eliminating pollution of Python's global namespace."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc17_python_namespaces.rst:34
+msgid "Past Usage"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc17_python_namespaces.rst:36
+msgid "GDAL's Python bindings previously used globally-aware Python modules:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc17_python_namespaces.rst:40
+msgid ""
+"import gdal\n"
+"import osr\n"
+"import ogr\n"
+"import gdalconst\n"
+"import gdalnumeric"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc17_python_namespaces.rst:47
+msgid "New Usage"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc17_python_namespaces.rst:49
+msgid "RFC 17 now provides these modules under the *osgeo* namespace:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc17_python_namespaces.rst:53
+msgid ""
+"from osgeo import gdal\n"
+"from osgeo import osr\n"
+"from osgeo import ogr\n"
+"from osgeo import gdalconst\n"
+"from osgeo import gdal_array"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc17_python_namespaces.rst:59
+msgid ""
+"Additionally, the old module-style imports continue to work with a "
+"deprecation warning:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc17_python_namespaces.rst:64
+msgid ""
+">>> import gdal\n"
+"/Users/hobu/svn/gdal/swig/python/gdal.py:3: DeprecationWarning: gdal.py was "
+"placed in a namespace, it is now available as osgeo.gdal\n"
+"  warn('gdal.py was placed in a namespace, it is now available as osgeo."
+"gdal', DeprecationWarning)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc17_python_namespaces.rst:68
+msgid ""
+"It is planned that we will remove the GDAL-specific global modules at some "
+"point in the future."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc17_python_namespaces.rst:72
+msgid "Other Sprint Updates"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc17_python_namespaces.rst:74
+msgid ""
+"The work for this RFC was done at the FOSS4G2007 GDAL code sprint by Howard "
+"Butler and Chris Barker. In addition to the Python namespacing, some minor "
+"issues were dealt with respect to building the GDAL bindings."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc17_python_namespaces.rst:78
+msgid ""
+"The next-gen Python bindings now use setuptools by default if it is "
+"available."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc17_python_namespaces.rst:80
+msgid ""
+"The ./swig/python directory was slightly reorganized to separate extension "
+"building from pure python modules."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc17_python_namespaces.rst:82
+msgid ""
+"gdal2tiles, a Google Summer of Code project by Petr Klokan, was integrated "
+"into the next-gen bindings"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc17_python_namespaces.rst:86
+msgid "Voting History"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc17_python_namespaces.rst:88
+msgid "A voice vote (our first ever!) commenced at the FOSS4G2007 sprint."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc17_python_namespaces.rst:90
+msgid "Frank Warmerdam +1"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc17_python_namespaces.rst:91
+msgid "Howard Butler +1"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc17_python_namespaces.rst:92
+msgid "Daniel Morissette +1"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc17_python_namespaces.rst:93
+msgid "Tamas Szekerest +1"
+msgstr ""

@@ -1,0 +1,157 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc38_ogr_faster_open.rst:5
+msgid "RFC 38: OGR Faster Open (withdrawn)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc38_ogr_faster_open.rst:7
+msgid "Author: Even Rouault"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc38_ogr_faster_open.rst:9
+msgid "Contact: even dot rouault at spatialys.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc38_ogr_faster_open.rst:11
+msgid "Status: Withdrawn."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc38_ogr_faster_open.rst:13
+msgid ""
+"Covered by `RFC 46: GDAL/OGR unification <./rfc46_gdal_ogr_unification>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc38_ogr_faster_open.rst:16
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc38_ogr_faster_open.rst:18
+msgid ""
+"It is proposed that the OGR datasource opening mechanism relies on the "
+"GDALOpenInfo class, already used by GDAL drivers, to speed-up datasource "
+"opening. The speed-up is due to the fact that the file passed to OGROpen() "
+"will be opened and stat'ed only once, whereas currently, it is opened and "
+"closed as many times as there are OGR drivers. This should be particularly "
+"beneficial for network filesystems, or when trying to open a file that is "
+"not a OGR datasource at all."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc38_ogr_faster_open.rst:26
+msgid ""
+"E.g., trying to open a file that is not a OGR datasource currently requires "
+"45 file opening or stat operations :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc38_ogr_faster_open.rst:31
+msgid ""
+"$ strace ogrinfo -ro NEWS 2>&1 | grep NEWS | wc -l\n"
+"45"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc38_ogr_faster_open.rst:34
+msgid ""
+"It is expected that if/once all drivers are migrated, it will decrease to 2 "
+"operations only."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc38_ogr_faster_open.rst:38
+msgid "Implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc38_ogr_faster_open.rst:40
+msgid ""
+"Similarly to GDALDriver, the OGRSFDriver class is extended to have a pfnOpen "
+"member, that drivers will set to point to their own Open method."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc38_ogr_faster_open.rst:45
+msgid ""
+"/* -------------------------------------------------------------------- */\n"
+"/*      The following are semiprivate, not intended to be accessed      */\n"
+"/*      by anyone but the formats instantiating and populating the      */\n"
+"/*      drivers.                                                        */\n"
+"/* -------------------------------------------------------------------- */\n"
+"    OGRDataSource       *(*pfnOpen)( GDALOpenInfo * );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc38_ogr_faster_open.rst:52
+msgid ""
+"The OGRSFDriverRegistrar::Open() method is updated to call pfnOpen when "
+"iterating over the drivers. When pfnOpen is not set, it will try to call the "
+"Open() method of OGRSFDriver (which enables a progressive migration of "
+"drivers)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc38_ogr_faster_open.rst:57
+msgid ""
+"Mainly for compatibility reasons, the virtual method Open() of OGRSFDriver "
+"that is currently pure virtual, will now be a regular virtual method, that "
+"will have a default implementation, that will try to call pfnOpen."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc38_ogr_faster_open.rst:62
+msgid "The patch with the changes to OGR core is attached to this page."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc38_ogr_faster_open.rst:65
+msgid "Backward Compatibility"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc38_ogr_faster_open.rst:67
+msgid "Proposed additions will not have any impact on C binary compatibility."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc38_ogr_faster_open.rst:69
+msgid ""
+"C++ binary interface will be broken (due to the addition of a new member in "
+"OGRSFDriver class and the Open() method changed from pure virtual to "
+"virtual)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc38_ogr_faster_open.rst:73
+msgid ""
+"Source level compatibility will be preserved for third-party OGR drivers."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc38_ogr_faster_open.rst:77
+msgid "Impact on drivers"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc38_ogr_faster_open.rst:79
+msgid ""
+"Existing drivers are *not* required to migrate to RFC38, but are strongly "
+"encouraged to. New drivers *should* use RFC38 mechanism to preserve the "
+"overall faster opening."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc38_ogr_faster_open.rst:83
+msgid "An example of the migration for a few drivers is attached to this page."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc38_ogr_faster_open.rst:86
+msgid "Timeline"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc38_ogr_faster_open.rst:88
+msgid ""
+"Even Rouault is responsible to implement this proposal. New API will be "
+"available in GDAL 2.0. Most in-tree OGR drivers will be migrated to the new "
+"mechanism."
+msgstr ""

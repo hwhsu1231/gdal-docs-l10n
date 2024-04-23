@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/ogcapi.rst:5
+msgid "OGCAPI -- OGC API Tiles / Maps / Coverage"
+msgstr ""
+
+#: ../../../source/drivers/raster/ogcapi.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/ogcapi.rst:9
+msgid "OGCAPI"
+msgstr ""
+
+#: ../../../source/drivers/raster/ogcapi.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/raster/ogcapi.rst:11
+msgid "libcurl"
+msgstr ""
+
+#: ../../../source/drivers/raster/ogcapi.rst:13
+msgid ""
+"Access to server implementing OGC API - Tiles, OGC API - Maps or OGC API - "
+"Coverages. This driver has raster and vector capabilities."
+msgstr ""
+
+#: ../../../source/drivers/raster/ogcapi.rst:18
+msgid ""
+"This driver is experimental, and has been developed to demonstrate work "
+"related to the \"Modular OGC API Workflows\" initiative. It implements non-"
+"finalized versions of OGC API - Tiles, - Maps and - Coverages. Its interface "
+"may change at any time, or it might be removed. It might also be eventually "
+"merged with the OGC API - Features driver."
+msgstr ""
+
+#: ../../../source/drivers/raster/ogcapi.rst:25
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/ogcapi.rst:30
+msgid "Dataset opening"
+msgstr ""
+
+#: ../../../source/drivers/raster/ogcapi.rst:32
+msgid "The driver supports opening by:"
+msgstr ""
+
+#: ../../../source/drivers/raster/ogcapi.rst:34
+msgid ""
+"passing a filename (with .moaw extension) containing a JSON document, like "
+"the following, specifying a deferred processing"
+msgstr ""
+
+#: ../../../source/drivers/raster/ogcapi.rst:37
+msgid ""
+"{\n"
+"    \"process\" : \"https://maps.ecere.com/ogcapi/processes/RenderMap\",\n"
+"    \"inputs\" : {\n"
+"        \"transparent\" : false,\n"
+"        \"background\" : \"navy\",\n"
+"        \"layers\" : [\n"
+"             { \"collection\" : \"https://maps.ecere.com/ogcapi/collections/"
+"NaturalEarth:physical:bathymetry\" },\n"
+"             { \"collection\" : \"https://maps.ecere.com/ogcapi/collections/"
+"SRTM_ViewFinderPanorama\" }\n"
+"         ]\n"
+"     }\n"
+" }"
+msgstr ""
+
+#: ../../../source/drivers/raster/ogcapi.rst:51
+msgid ""
+"passing a string \"OGCAPI:{url}\" where {url} is the URL to a OGC API "
+"landing page In that case the driver will return subdatasets with the "
+"different collections."
+msgstr ""
+
+#: ../../../source/drivers/raster/ogcapi.rst:54
+msgid ""
+"passing a string \"OGCAPI:{url}\" where {url} is the URL to a OGC API "
+"collection description"
+msgstr ""
+
+#: ../../../source/drivers/raster/ogcapi.rst:57
+msgid ""
+"When the driver opens a collection, for raster, it will look if tiles or "
+"maps API are advertized for it. It will use tiles API by default, and "
+"fallback to maps API when not available. It will also look at the image "
+"formats, and will prefer PNG When available."
+msgstr ""
+
+#: ../../../source/drivers/raster/ogcapi.rst:62
+msgid ""
+"For vector collections, this driver handles the tiles API, with GeoJSON or "
+"Mapbox Vector tiles."
+msgstr ""
+
+#: ../../../source/drivers/raster/ogcapi.rst:65
+msgid ""
+"When using the tiles API, the driver will use by default the WorldCRS84Quad "
+"tile matrix set when available"
+msgstr ""
+
+#: ../../../source/drivers/raster/ogcapi.rst:69
+msgid "Open options"
+msgstr ""
+
+#: ../../../source/drivers/raster/ogcapi.rst:71
+msgid "The following open options are available:"
+msgstr ""

@@ -1,0 +1,143 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/programs/gdal_polygonize.rst:5
+msgid "gdal_polygonize.py"
+msgstr ""
+
+#: ../../../source/programs/gdal_polygonize.rst:9
+msgid "Produces a polygon feature layer from a raster."
+msgstr ""
+
+#: ../../../source/programs/gdal_polygonize.rst:14
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../source/programs/gdal_polygonize.rst:16
+msgid ""
+"gdal_polygonize.py [--help] [--help-general]\n"
+"                   [-8] [-o <name>=<value>]... [-nomask]\n"
+"                   [-mask <filename>] <raster_file> [-b <band>]\n"
+"                   [-q] [-f <ogr_format>] [-lco <name>=<value>]...\n"
+"                   [-overwrite] <out_file> [<layer>] [<fieldname>]"
+msgstr ""
+
+#: ../../../source/programs/gdal_polygonize.rst:25
+msgid "Description"
+msgstr ""
+
+#: ../../../source/programs/gdal_polygonize.rst:26
+msgid ""
+"This utility creates vector polygons for all connected regions of pixels in "
+"the raster sharing a common pixel value.  Each polygon is created with an "
+"attribute indicating the pixel value of that polygon.  A raster mask may "
+"also be provided to determine which pixels are eligible for processing."
+msgstr ""
+
+#: ../../../source/programs/gdal_polygonize.rst:31
+msgid ""
+"The utility will create the output vector datasource if it does not already "
+"exist, otherwise it will try to append to an existing one."
+msgstr ""
+
+#: ../../../source/programs/gdal_polygonize.rst:34
+msgid ""
+"The utility is based on the ::cpp:func:`GDALPolygonize` function which has "
+"additional details on the algorithm."
+msgstr ""
+
+#: ../../../source/programs/options/help.rst:3
+msgid "Show this help message and exit"
+msgstr ""
+
+#: ../../../source/programs/options/help_general.rst:3
+msgid ""
+"Gives a brief usage message for the generic GDAL commandline options and "
+"exit."
+msgstr ""
+
+#: ../../../source/programs/gdal_polygonize.rst:43
+msgid "Use 8 connectedness. Default is 4 connectedness."
+msgstr ""
+
+#: ../../../source/programs/gdal_polygonize.rst:47
+msgid ""
+"Do not use the default validity mask for the input band (such as nodata, or "
+"alpha masks)."
+msgstr ""
+
+#: ../../../source/programs/gdal_polygonize.rst:52
+msgid ""
+"Use the first band of the specified file as a validity mask (zero is "
+"invalid, non-zero is valid). If not specified, the default validity mask for "
+"the input band (such as nodata, or alpha masks) will be used (unless -nomask "
+"is specified)"
+msgstr ""
+
+#: ../../../source/programs/gdal_polygonize.rst:58
+msgid "The source raster file from which polygons are derived."
+msgstr ""
+
+#: ../../../source/programs/gdal_polygonize.rst:62
+msgid ""
+"The band on <raster_file> to build the polygons from. Starting with GDAL "
+"2.2, the value can also be set to \"mask\", to indicate that the mask band "
+"of the first band must be used (or \"mask,band_number\" for the mask of a "
+"specified band)"
+msgstr ""
+
+#: ../../../source/programs/gdal_polygonize.rst:69
+msgid ""
+"Select the output format. Starting with GDAL 2.3, if not specified, the "
+"format is guessed from the extension (previously was GML). Use the short "
+"format name"
+msgstr ""
+
+#: ../../../source/programs/gdal_polygonize.rst:77
+msgid "Polygonize option. See ::cpp:func:`GDALPolygonize` documentation."
+msgstr ""
+
+#: ../../../source/programs/gdal_polygonize.rst:83
+msgid "Layer creation option (format specific)"
+msgstr ""
+
+#: ../../../source/programs/gdal_polygonize.rst:89
+msgid "Overwrite the output layer if it already exists."
+msgstr ""
+
+#: ../../../source/programs/gdal_polygonize.rst:93
+msgid "The destination vector file to which the polygons will be written."
+msgstr ""
+
+#: ../../../source/programs/gdal_polygonize.rst:97
+msgid "The name of the layer created to hold the polygon features."
+msgstr ""
+
+#: ../../../source/programs/gdal_polygonize.rst:101
+msgid "The name of the field to create (defaults to \"DN\")."
+msgstr ""
+
+#: ../../../source/programs/gdal_polygonize.rst:105
+msgid ""
+"The script runs in quiet mode.  The progress monitor is suppressed and "
+"routine messages are not displayed."
+msgstr ""
+
+#: ../../../source/programs/gdal_polygonize.rst:11
+msgid "gdal_polygonize"
+msgstr ""

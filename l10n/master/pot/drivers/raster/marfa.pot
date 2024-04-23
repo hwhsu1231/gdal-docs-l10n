@@ -1,0 +1,63 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/marfa.rst:5
+msgid "MRF -- Meta Raster Format"
+msgstr ""
+
+#: ../../../source/drivers/raster/marfa.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/marfa.rst:7
+msgid "MRF"
+msgstr ""
+
+#: ../../../source/drivers/raster/marfa.rst:13
+msgid ""
+"Access to a indexed heap of regular tiles (blocks). Controlled by an xml "
+"file, usually organized as a pyramid of overviews, with level zero being the "
+"full resolution image. None, PNG, JPEG, ZLIB tile packing are implemented"
+msgstr ""
+
+#: ../../../source/drivers/raster/marfa.rst:18
+msgid "For file creation options, see \"gdalinfo --format MRF\""
+msgstr ""
+
+#: ../../../source/drivers/raster/marfa.rst:21
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/marfa.rst:32
+msgid "Links"
+msgstr ""
+
+#: ../../../source/drivers/raster/marfa.rst:34
+msgid ""
+"`MRF User Guide <https://github.com/nasa-gibs/mrf/blob/master/doc/MUG.md>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/marfa.rst:35
+msgid ""
+"`MRF Specification <https://github.com/nasa-gibs/mrf/blob/master/spec/"
+"mrf_spec.md>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/marfa.rst:36
+msgid "`Source repository nasa-gibs/mrf <https://github.com/nasa-gibs/mrf>`__"
+msgstr ""

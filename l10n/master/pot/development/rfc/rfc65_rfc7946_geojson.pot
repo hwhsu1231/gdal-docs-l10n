@@ -1,0 +1,165 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:5
+msgid "RFC 65: RFC 7946 GeoJSON"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:7
+msgid "Authors: Sean Gillies"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:9
+msgid "Contact: sean at mapbox.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:11
+msgid "Status: Adopted, implemented"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:13
+msgid "Implementation version: 2.2"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:16
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:18
+msgid ""
+"GeoJSON has been standardized by the IETF: `RFC 7946 <https://tools.ietf.org/"
+"html/rfc7946>`__. Updates to the OGR GeoJSON driver are needed so that it "
+"may write RFC 7946 GeoJSON."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:23
+msgid "Rationale"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:25
+msgid ""
+"The RFC 7946 standard is backwards compatible with the legacy definition of "
+"GeoJSON, but has a few differences (see `https://tools.ietf.org/html/"
+"rfc7946#appendix-B <https://tools.ietf.org/html/rfc7946#appendix-B>`__). For "
+"OGR, the most significant are: removal of \"crs\" (CRS84 only), counter-"
+"clockwise winding of polygons, geometry splitting at the antimeridian, and "
+"representation of bounding boxes at the antimeridian and poles. Note: RFC "
+"7946 explicitly restricts to 2D and 3D coordinates, and forbid use of the M "
+"dimension for example. This was already the case in the existing driver for "
+"the GeoJSON 2008 output."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:35
+msgid ""
+"Consensus on the gdal-dev list is that developers should be able to require "
+"RFC 7946 GeoJSON by configuring layer creation with an option and that it be "
+"an all-or-nothing switch."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:40
+msgid "Changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:42
+msgid ""
+"A layer creation option will be added for the GeoJSON driver, e.g., "
+"``RFC7946=TRUE``. When \"on\", OGR will write GeoJSON with CRS84 coordinates "
+"(reprojecting as needed) with 7 places of precision by default, polygons "
+"wound properly, and geometries split at the antimeridian."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:48
+msgid ""
+"Related to that work, the OGRGeometryFactory::transformWithOptions() method "
+"has been improved to better deal with reprojection of geometries from polar "
+"projections, and projections that span the antimeridian, to EPSG:4326"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:54
+msgid "Updated drivers"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:56
+msgid "GeoJSON"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:59
+msgid "SWIG bindings (Python / Java / C# / Perl) changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:61
+msgid "None"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:64
+msgid "Utilities"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:66
+msgid "Utilities will implement RFC 7946 by using the layer creation option."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:69
+msgid "Documentation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:71
+msgid "Documentation of the new layer creation option will reference RFC 7946."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:74
+msgid "Test Suite"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:76
+msgid "The ogr_geojson.py file tests the effect of the new option."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:79
+msgid "Compatibility Issues"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:81
+msgid ""
+"As this is a opt-in parameter, no backward compatibility issue. GeoJSON "
+"files conformant to RFC 7646 can be read by previous GDAL/OGR versions."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:85
+msgid "Related ticket"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:87
+msgid "#6705"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:90
+msgid "Implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:92
+msgid "Implementation has been done by Even Rouault and sponsored by Mapbox."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:95
+msgid "Voting history"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc65_rfc7946_geojson.rst:97
+msgid "+1 from JukkaR, HowardB, DanielM and EvenR"
+msgstr ""

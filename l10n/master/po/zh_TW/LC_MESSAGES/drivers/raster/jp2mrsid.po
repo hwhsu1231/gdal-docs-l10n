@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/jp2mrsid.rst:5
+msgid "JP2MrSID -- JPEG2000 via MrSID SDK"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2mrsid.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2mrsid.rst:7
+msgid "JP2MrSID"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2mrsid.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2mrsid.rst:9
+msgid "MrSID SDK"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2mrsid.rst:11
+msgid ""
+"JPEG2000 file format is supported for reading with the MrSID DSDK. It is "
+"also supported for writing with the MrSID ESDK."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2mrsid.rst:14
+msgid ""
+"JPEG2000 MrSID support is only available with the version 5.x or newer DSDK "
+"and ESDK."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2mrsid.rst:18
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2mrsid.rst:27
+msgid "Georeferencing"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2mrsid.rst:29
+msgid ""
+"Georeferencing information can come from different sources : internal "
+"(GeoJP2 or GMLJP2 boxes), worldfile .j2w/.wld sidecar files, or PAM "
+"(Persistent Auxiliary metadata) .aux.xml sidecar files. By default, "
+"information is fetched in following order (first listed is the most "
+"prioritary): PAM, GeoJP2, GMLJP2, WORLDFILE."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2mrsid.rst:35
+msgid ""
+"Starting with GDAL 2.2, the allowed sources and their priority order can be "
+"changed with the :config:`GDAL_GEOREF_SOURCES` configuration option (or :oo:"
+"`GEOREF_SOURCES` open option) whose value is a comma-separated list of the "
+"following keywords : PAM, GEOJP2, GMLJP2, INTERNAL (shortcut for GEOJP2,"
+"GMLJP2), WORLDFILE, NONE. First mentioned sources are the most prioritary "
+"over the next ones. A non mentioned source will be ignored."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2mrsid.rst:42
+msgid ""
+"For example setting it to \"WORLDFILE,PAM,INTERNAL\" will make a "
+"geotransformation matrix from a potential worldfile prioritary over PAM or "
+"internal JP2 boxes. Setting it to \"PAM,WORLDFILE,GEOJP2\" will use the "
+"mentioned sources and ignore GMLJP2 boxes."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2mrsid.rst:48
+msgid "Open Options"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2mrsid.rst:59
+msgid "Creation Options"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2mrsid.rst:61
+msgid ""
+"If you have the MrSID ESDK (5.x or newer), it can be used to write JPEG2000 "
+"files. The following creation options are supported."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2mrsid.rst:87
+msgid ""
+"<?xml version=\"1.0\"?>\n"
+"<Jp2Profile version=\"1.0\">\n"
+"  <Header>\n"
+"    <name>Default</name>\n"
+"    <description>Extensis preferred settings (20051216)</description>\n"
+"  </Header>\n"
+"  <Codestream>\n"
+"    <layers>\n"
+"      8\n"
+"    </layers>\n"
+"    <levels>\n"
+"      99\n"
+"    </levels>\n"
+"    <tileSize>\n"
+"      0 0\n"
+"    </tileSize>\n"
+"    <progressionOrder>\n"
+"      RPCL\n"
+"    </progressionOrder>\n"
+"    <codeblockSize>\n"
+"      64 64\n"
+"    </codeblockSize>\n"
+"    <pltMarkers>\n"
+"      true\n"
+"    </pltMarkers>\n"
+"    <wavelet97>\n"
+"      false\n"
+"    </wavelet97>\n"
+"    <precinctSize>\n"
+"      256 256\n"
+"    </precinctSize>\n"
+"  </Codestream>\n"
+"</Jp2Profile>"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2mrsid.rst:122
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2mrsid.rst:124
+msgid "Implemented as :source_file:`frmts/mrsid/mrsiddataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2mrsid.rst:125
+msgid "`Extensis web site <http://www.extensis.com/support/developers>`__"
+msgstr ""

@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/idrisi.rst:4
+msgid "Idrisi Vector (.VCT)"
+msgstr ""
+
+#: ../../../source/drivers/vector/idrisi.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/idrisi.rst:6
+msgid "IDRISI"
+msgstr ""
+
+#: ../../../source/drivers/vector/idrisi.rst:10
+msgid ""
+"This driver reads Idrisi vector files with .vct extension. The driver "
+"recognized point, lines and polygons geometries."
+msgstr ""
+
+#: ../../../source/drivers/vector/idrisi.rst:13
+msgid ""
+"For geographical referencing identification, the .vdc file contains "
+"information that points to a file that holds the geographic reference "
+"details. Those files uses extension REF and resides in the same folder as "
+"the RST image or more likely in the Idrisi installation folders."
+msgstr ""
+
+#: ../../../source/drivers/vector/idrisi.rst:18
+msgid ""
+"Therefore the presence or absence of the Idrisi software in the running "
+"operation system will determine the way that this driver will work. By "
+"setting the environment variable IDRISIDIR pointing to the Idrisi main "
+"installation folder will enable GDAL to find more detailed information about "
+"geographical reference and projection in the REF files."
+msgstr ""
+
+#: ../../../source/drivers/vector/idrisi.rst:24
+msgid ""
+"Note that the driver recognizes the name convention used in Idrisi for UTM "
+"and State Plane geographic reference so it doesn't need to access the REF "
+"files. That is the case for RDC file that specify \"utm-30n\" or "
+"\"spc87ma1\" in the \"ref. system\" field. Note that exporting to RST in any "
+"other geographical reference system will generate a suggested REF content in "
+"the comment section of the RDC file."
+msgstr ""
+
+#: ../../../source/drivers/vector/idrisi.rst:31
+msgid "The driver can retrieve attributes from .ADC / .AVL ASCII files."
+msgstr ""
+
+#: ../../../source/drivers/vector/idrisi.rst:34
+msgid "Driver capabilities"
+msgstr ""

@@ -1,0 +1,249 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/vicar.rst:5
+msgid "VICAR -- VICAR"
+msgstr ""
+
+#: ../../../source/drivers/raster/vicar.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/vicar.rst:7
+msgid "VICAR"
+msgstr ""
+
+#: ../../../source/drivers/raster/vicar.rst:12
+msgid ""
+"PDS3 datasets can incorporate a VICAR header. By default, GDAL will use the :"
+"ref:`PDS <raster.pds>` driver in that situation. Starting with GDAL 3.1, if "
+"the :config:`GDAL_TRY_PDS3_WITH_VICAR` configuration option is set to YES, "
+"the dataset will be opened by the VICAR driver."
+msgstr ""
+
+#: ../../../source/drivers/raster/vicar.rst:18
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/vicar.rst:30
+msgid "Metadata"
+msgstr ""
+
+#: ../../../source/drivers/raster/vicar.rst:32
+msgid ""
+"Starting with GDAL 3.1, the VICAR label can be retrieved as JSon-serialized "
+"content in the json:VICAR metadata domain."
+msgstr ""
+
+#: ../../../source/drivers/raster/vicar.rst:35
+#: ../../../source/drivers/raster/vicar.rst:140
+msgid "For example:"
+msgstr ""
+
+#: ../../../source/drivers/raster/vicar.rst:39
+msgid ""
+"$ python3\n"
+"from osgeo import gdal\n"
+"ds = gdal.Open('../autotest/gdrivers/data/test_vicar_truncated.bin')\n"
+"print(ds.GetMetadata_List('json:VICAR')[0])\n"
+"{\n"
+" \"LBLSIZE\":9680,\n"
+" \"FORMAT\":\"BYTE\",\n"
+" \"TYPE\":\"IMAGE\",\n"
+" \"BUFSIZ\":2097152,\n"
+" \"DIM\":3,\n"
+" \"EOL\":0,\n"
+" \"RECSIZE\":4840,\n"
+" \"ORG\":\"BSQ\",\n"
+" \"NL\":1000,\n"
+" \"NS\":400,\n"
+" \"NB\":1,\n"
+" \"N1\":4000,\n"
+" \"N2\":1000,\n"
+" \"N3\":1,\n"
+" \"N4\":0,\n"
+" \"NBB\":0,\n"
+" \"NLB\":0,\n"
+" \"HOST\":\"X86-64-LINX\",\n"
+" \"INTFMT\":\"LOW\",\n"
+" \"REALFMT\":\"RIEEE\",\n"
+" \"BHOST\":\"X86-LINUX\",\n"
+" \"BINTFMT\":\"LOW\",\n"
+" \"BREALFMT\":\"RIEEE\",\n"
+" \"BLTYPE\":\"M94_HRSC\",\n"
+" \"COMPRESS\":\"NONE\",\n"
+" \"EOCI1\":0,\n"
+" \"EOCI2\":0,\n"
+" \"PROPERTY\":{\n"
+"     \"M94_ORBIT\":{\n"
+"         \"ORBIT_NUMBER\":5273,\n"
+"         \"ASCENDING_NODE_LONGITUDE\":118.46,\n"
+"         \"ORBITAL_ECCENTRICITY\":1.23,\n"
+"         \"ORBITAL_INCLINATION\":4.56,\n"
+"         \"PERIAPSIS_ARGUMENT_ANGLE\":7.89,\n"
+"         \"PERIAPSIS_TIME\":\"PERIAPSIS_TIME\",\n"
+"         \"PERIAPSIS_ALTITUDE\":333.16,\n"
+"         \"ORBITAL_SEMIMAJOR_AXIS\":1.23,\n"
+"         \"SPACECRAFT_SOLAR_DISTANCE\":4.56,\n"
+"         \"SPACECRAFT_CLOCK_START_COUNT\":\"1\\/1\",\n"
+"         \"SPACECRAFT_CLOCK_STOP_COUNT\":\"1\\/2\",\n"
+"         \"START_TIME\":\"start_time\",\n"
+"         \"STOP_TIME\":\"stop_time\",\n"
+"         \"SPACECRAFT_POINTING_MODE\":\"NADIR\",\n"
+"         \"RIGHT_ASCENSION\":-1.0000000000000001e+32,\n"
+"         \"DECLINATION\":-1.0000000000000001e+32,\n"
+"         \"OFFSET_ANGLE\":-1.0000000000000001e+32,\n"
+"         \"SPACECRAFT_ORIENTATION\":[\n"
+"             0.000000,\n"
+"             -1.000000,\n"
+"             0.000000\n"
+"         ]\n"
+"     },\n"
+"     [...]\n"
+"     \"PHOT\":{\n"
+"         \"PHO_FUNC\":\"NONE\"\n"
+"     }\n"
+" },\n"
+" \"TASK\":{\n"
+"     \"HRCONVER\":{\n"
+"         \"USER\":\"mexsyst\",\n"
+"         \"DAT_TIM\":\"DAT_TIM\",\n"
+"         \"SPICE_FILE_NAME\":[\n"
+"             \"foo\"\n"
+"         ],\n"
+"         \"SPICE_FILE_ID\":\"(LSK,SCLK,ON)\",\n"
+"         \"DETECTOR_TEMPERATURE\":1.23,\n"
+"         \"DETECTOR_TEMPERATURE__UNIT\":\"degC\",\n"
+"         \"FOCAL_PLANE_TEMPERATURE\":8.5833,\n"
+"         \"FOCAL_PLANE_TEMPERATURE__UNIT\":\"degC\",\n"
+"         \"INSTRUMENT_TEMPERATURE\":2.34,\n"
+"         \"INSTRUMENT_TEMPERATURE__UNIT\":\"degC\",\n"
+"         \"LENS_TEMPERATURE\":4.56,\n"
+"         \"LENS_TEMPERATURE__UNIT\":\"degC\",\n"
+"         \"SOURCE_FILE_NAME\":\"SOURCE_FILE_NAME\",\n"
+"         \"MISSING_FRAMES\":0,\n"
+"         \"OVERFLOW_FRAMES\":0,\n"
+"         \"ERROR_FRAMES\":1\n"
+"     }\n"
+"   }\n"
+" }"
+msgstr ""
+
+#: ../../../source/drivers/raster/vicar.rst:125
+msgid "or"
+msgstr ""
+
+#: ../../../source/drivers/raster/vicar.rst:129
+msgid ""
+"$ gdalinfo -json ../autotest/gdrivers/data/test_vicar_truncated.bin -mdd all"
+msgstr ""
+
+#: ../../../source/drivers/raster/vicar.rst:132
+msgid "Binary prefixes"
+msgstr ""
+
+#: ../../../source/drivers/raster/vicar.rst:134
+msgid ""
+"Starting with GDAL 3.1, if the VICAR label declares a non-zero binary prefix "
+"length (`NBB` label item), then GDAL will look in the `vicar.json` "
+"configuration file if there is an entry corresponding to the `BLTYPE` label "
+"item (currently only M94_HRSC is defined), and if there is a match, a OGR "
+"vector layer will be available on the dataset, with a feature for each image "
+"record."
+msgstr ""
+
+#: ../../../source/drivers/raster/vicar.rst:144
+msgid ""
+"$ ogrinfo h0038_0000.bl2.16 -al -q\n"
+"\n"
+"Layer name: binary_prefixes\n"
+"OGRFeature(binary_prefixes):0\n"
+"    EphTime (Real) = 127988268.646895\n"
+"    Exposure (Real) = 40.1072692871094\n"
+"    COT (Integer) = 28275\n"
+"    FEETemp (Integer) = 28508\n"
+"    FPMTemp (Integer) = 29192\n"
+"    OBTemp (Integer) = 28295\n"
+"    FERT (Integer) = 27001\n"
+"    LERT (Integer) = 28435\n"
+"    CmpDataLen (Integer) = 146\n"
+"    FrameCount (Integer) = 486\n"
+"    Pischel (Integer) = 5\n"
+"    ActPixel (Integer) = 5120\n"
+"    RSHits (Integer) = 0\n"
+"    DceInput (Integer) = 0\n"
+"    DceOutput (Integer) = 4\n"
+"    FrameErr1 (Integer) = 0\n"
+"    FrameErr2 (Integer) = 0\n"
+"    Gob1 (Integer) = 0\n"
+"    Gob2 (Integer) = 0\n"
+"    Gob3 (Integer) = 0\n"
+"    DSS (Integer) = 97\n"
+"    DecmpErr1 (Integer) = 0\n"
+"    DecmpErr2 (Integer) = 0\n"
+"    DecmpErr3 (Integer) = 0\n"
+"    FillerFlag (Integer) = 5"
+msgstr ""
+
+#: ../../../source/drivers/raster/vicar.rst:176
+msgid "Creation support"
+msgstr ""
+
+#: ../../../source/drivers/raster/vicar.rst:178
+msgid ""
+"Starting with GDAL 3.1, the VICAR driver supports updating imagery of "
+"existing datasets, creating new datasets through the CreateCopy() and "
+"Create() interfaces."
+msgstr ""
+
+#: ../../../source/drivers/raster/vicar.rst:182
+msgid ""
+"When using CreateCopy(), gdal_translate or gdalwarp, an effort is made to "
+"preserve as much as possible of the original label when doing VICAR to VICAR "
+"conversions. This can be disabled with the :co:`USE_SRC_LABEL=NO` creation "
+"option."
+msgstr ""
+
+#: ../../../source/drivers/raster/vicar.rst:187
+msgid "The available creation options are:"
+msgstr ""
+
+#: ../../../source/drivers/raster/vicar.rst:218
+msgid ""
+"Value of MAP.TARGET_NAME. This is normally deduced from the SRS datum name. "
+"If specified, and USE_SRC_MAP is in effect, this will be taken into account "
+"to override the source TARGET_NAME."
+msgstr ""
+
+#: ../../../source/drivers/raster/vicar.rst:243
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/vicar.rst:245
+msgid "Implemented as :source_file:`frmts/pds/vicardataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/vicar.rst:246
+msgid "`VICAR documentation <https://www-mipl.jpl.nasa.gov/vicar.html>`_"
+msgstr ""
+
+#: ../../../source/drivers/raster/vicar.rst:247
+msgid ""
+"`VICAR file format <https://www-mipl.jpl.nasa.gov/external/VICAR_file_fmt."
+"pdf>`_"
+msgstr ""

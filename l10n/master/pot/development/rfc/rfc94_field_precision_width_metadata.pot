@@ -1,0 +1,380 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:5
+msgid "RFC 94: Numeric fields width/precision metadata"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:8
+msgid "Author:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:8
+msgid "Alessandro Pasotti"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:9
+msgid "Contact:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:9
+msgid "elpaso @ itopen.it"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:10
+msgid "Started:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:10
+msgid "2023-Feb-17"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:11
+msgid "Status:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:11
+msgid "Adopted, implemented"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:12
+msgid "Target:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:12
+msgid "GDAL 3.7"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:16
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:18
+msgid ""
+"The document proposes and describes the introduction of a couple of new "
+"vector driver metadata that return information for numeric real fields about "
+"how the precision and width have been calculated by the driver and have to "
+"be interpreted."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:24
+msgid "Motivation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:26
+msgid ""
+"Applications (for example OGR/GDAL utils and QGIS) may require information "
+"about the field width and precision in order to convert between different "
+"formats or to validate user input on editing."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:30
+msgid ""
+"Different drivers may calculate the width and precision differently by "
+"including or not the decimal separator and/or the minus sign into the "
+"calculated length."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:33
+msgid ""
+"There is currently no way for an application to access this information and "
+"this can lead to loss of width or precision while converting between formats "
+"or when the application decides to stay on the safe side and reduce the "
+"width reported by GDAL."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:37
+msgid ""
+"Additionally, attention must be paid to the meaning of \"width\" and "
+"\"precision\": OGR \"width\" corresponds to SQL \"precision\" and OGR "
+"\"precision\" corresponds to SQL \"scale\"."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:41
+msgid "For reference:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:43
+msgid "https://trac.osgeo.org/gdal/ticket/6960"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:44
+msgid "https://issues.qgis.org/issues/11755"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:45
+msgid "https://issues.qgis.org/issues/15188#note-8"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:46
+msgid "https://github.com/qgis/QGIS/issues/51849"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:50
+msgid "Current drivers behavior"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:52
+msgid ""
+"Here is a list of the drivers and how they behave with respect to the width "
+"and precision, (for databases we refer to the `NUMERIC` data type)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:56
+msgid "Driver"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:56
+msgid "Width Includes Decimal Separator"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:56
+msgid "Width Includes Sign"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:58
+msgid "Shapefile"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:58
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:59
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:65
+msgid "YES"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:59
+msgid "MapInfo"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:60
+msgid "PostgreSQL"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:60
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:61
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:62
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:63
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:66
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:67
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:69
+msgid "NO"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:61
+msgid "MySQL"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:62
+msgid "MSSQL"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:63
+msgid "OCI"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:64
+msgid "GPKG"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:64
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:68
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:70
+msgid "N/A"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:65
+msgid "CSV (from .csvt)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:66
+msgid "HANA"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:67
+msgid "FlatGeoBuf"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:68
+msgid "FileGDB"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:69
+msgid "GML"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:70
+msgid "MEM"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:75
+msgid "Notes about specific drivers"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:77
+msgid ""
+"GPKG: SQLite column affinity storage is 8-byte IEEE floating point number"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:78
+msgid ""
+"GML: `xsd:decimal` with `totalDigits` and `fractionDigits`, `xs:totalDigits` "
+"defines the maximum number of digits of decimal and derived datatypes (both "
+"after and before the decimal point, not counting the decimal point itself). "
+"`xs:fractionDigits`` defines the maximum number of fractional digits (i.e., "
+"digits that are after the decimal point) of an xs:decimal datatype."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:83
+msgid ""
+"FlatGeoBuf: for Float fields, OGR_width = flatgeobuf_precision and "
+"OGR_precision = flatgeobuf_scale (if flatgeobuf_scale != -1, or 0 if "
+"flatgeobuf_scale == -1)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:85
+msgid ""
+"FileGDB: Scale is the number of digits to the right of the decimal point in "
+"a number. For example, the number 56.78 has a scale of 2. Scale applies only "
+"to fields that are double. Scale is always returned as 0 from personal or "
+"File geodatabase fields. Precision is the number of digits in a number. For "
+"example, the number 56.78 has a precision of 4. Precision is only valid for "
+"fields that are numeric. Precision is always returned as 0 from personal or "
+"File geodatabase fields"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:93
+msgid "Technical details"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:95
+msgid ""
+"The change will be done at the driver metadata level with a couple of flags "
+"that report the capabilities."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:98
+msgid ""
+"The vector drivers will expose a metadata entry to define if the width of "
+"the fields includes the decimal separator and/or the sign."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:101
+msgid ""
+"If the metadata entry is undefined the feature is not supported (there is no "
+"client-accessible width or precision constraint for numeric fields)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:104
+msgid ""
+"The feature will be exposed to the `ogr2ogr` application with a switch to "
+"enable/disable the width reduction when converting from a format where width "
+"includes the minus sign to a format where it doesn't. This is useful when "
+"the user knows that the input data are all negative values because in that "
+"that case it won't be necessary to add the extra width to store it."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:109
+msgid ""
+"To clarify, when converting from DBF to SQL the width is decreased by 1, "
+"when converting from SQL to DBF the width is increased by 2."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:112
+msgid ""
+"\"-1.23\" for .DBF needs width=5 and precision=2. In SQL, it needs "
+"precision=3 and scale=2 \"12.34\" for DBF needs width=5 and precision=2. In "
+"SQL, it needs precision=4 and scale=2"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:115
+msgid ""
+"This means that when converting from DBF to SQL we can safely reduce the "
+"width by 1 but we cannot safely reduce it by 2 unless we are sure all values "
+"are negative."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:118
+msgid "Example API:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:120
+msgid ""
+"/** Capability set by a vector driver that supports field width and "
+"precision.\n"
+"*\n"
+"* This capability reflects that a vector driver includes the decimal "
+"separator\n"
+"* in the field width.\n"
+"*\n"
+"* See GDAL_DMD_NUMERIC_FIELD_WIDTH_INCLUDES_SIGN for a related capability "
+"flag.\n"
+"* @since GDAL 3.7\n"
+"*/\n"
+"#define GDAL_DMD_NUMERIC_FIELD_WIDTH_INCLUDES_DECIMAL_SEPARATOR "
+"\"DMD_NUMERIC_FIELD_WIDTH_INCLUDES_DECIMAL_SEPARATOR\"\n"
+"\n"
+"/** Capability set by a vector driver that supports field width and "
+"precision.\n"
+"*\n"
+"* This capability reflects that a vector driver includes the (minus) sign\n"
+"* in the field width.\n"
+"*\n"
+"* See GDAL_DMD_NUMERIC_FIELD_WIDTH_INCLUDES__DECIMAL_SEPARATOR for a related "
+"capability flag.\n"
+"* @since GDAL 3.7\n"
+"*/\n"
+"#define GDAL_DMD_NUMERIC_FIELD_WIDTH_INCLUDES_SIGN "
+"\"DMD_NUMERIC_FIELD_WIDTH_INCLUDES_SIGN\""
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:145
+msgid "Efficiency considerations"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:147
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:153
+msgid "None."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:151
+msgid "Backward compatibility"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:156
+msgid "SWIG Bindings"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:158
+msgid "This implementation will be exposed to bindings."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:161
+msgid "Testing"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:163
+msgid "A C++ test will be added to the test suite."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:167
+msgid "Voting history"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc94_field_precision_width_metadata.rst:169
+msgid "+1 from PSC members EvenR and JukkaR"
+msgstr ""

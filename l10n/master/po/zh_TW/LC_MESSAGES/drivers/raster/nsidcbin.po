@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/nsidcbin.rst:5
+msgid "NSIDCbin -- National Snow and Ice Data Centre Sea Ice Concentrations"
+msgstr ""
+
+#: ../../../source/drivers/raster/nsidcbin.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/nsidcbin.rst:7
+msgid "NSIDCbin"
+msgstr ""
+
+#: ../../../source/drivers/raster/nsidcbin.rst:14
+msgid ""
+"Supported by GDAL for read access. This format is a raw binary format for "
+"the Nimbus-7 SMMR and DMSP SSM/I-SSMIS Passive Microwave Data sea ice "
+"concentrations. There are daily and monthly maps in the north and south "
+"hemispheres supported by this driver."
+msgstr ""
+
+#: ../../../source/drivers/raster/nsidcbin.rst:19
+msgid ""
+"Support includes an affine georeferencing transform, and projection - these "
+"are both 25000m resolution polar stereographic grids centred on the north "
+"and south pole respectively. Metadata from the file including julian day and "
+"year are recorded."
+msgstr ""
+
+#: ../../../source/drivers/raster/nsidcbin.rst:24
+msgid ""
+"This driver is implemented based on the NSIDC documentation in the `User "
+"Guide <https://nsidc.org/data/nsidc-0051>`__."
+msgstr ""
+
+#: ../../../source/drivers/raster/nsidcbin.rst:26
+msgid ""
+"Band values are Byte, sea ice concentration (fractional coverage scaled by "
+"250)."
+msgstr ""
+
+#: ../../../source/drivers/raster/nsidcbin.rst:28
+msgid ""
+"The dataset band implements GetScale() which will convert the values from "
+"0,255 to 0.0,102.0 by multiplying by 0.4. Unscaled values above 250 have "
+"specific meanings, 251 is Circular mask used in the Arctic, 252 is Unused, "
+"253 is Coastlines, 254 is Superimposed land mask, 255 is Missing data."
+msgstr ""
+
+#: ../../../source/drivers/raster/nsidcbin.rst:33
+msgid "NOTE: Implemented as :source_file:`frmts/raw/nsidcbindataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/nsidcbin.rst:36
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/nsidcbin.rst:43
+msgid "Example"
+msgstr ""
+
+#: ../../../source/drivers/raster/nsidcbin.rst:45
+msgid ""
+"For example, we want to read monthly data from September 2019, with data "
+"from this source (requires authentication)."
+msgstr ""
+
+#: ../../../source/drivers/raster/nsidcbin.rst:47
+msgid ""
+"<https://n5eil01u.ecs.nsidc.org/PM/NSIDC-0051.001/2018.09.01/"
+"nt_201809_f17_v1.1_s.bin>"
+msgstr ""
+
+#: ../../../source/drivers/raster/nsidcbin.rst:53
+msgid "gdalinfo nt_201809_f17_v1.1_s.bin"
+msgstr ""

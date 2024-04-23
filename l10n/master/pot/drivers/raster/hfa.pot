@@ -1,0 +1,155 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/hfa.rst:5
+msgid "HFA -- Erdas Imagine .img"
+msgstr ""
+
+#: ../../../source/drivers/raster/hfa.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/hfa.rst:7
+msgid "HFA"
+msgstr ""
+
+#: ../../../source/drivers/raster/hfa.rst:11
+msgid ""
+"GDAL supports Erdas Imagine .img format for read access and write. The "
+"driver supports reading overviews, palettes, and georeferencing. It supports "
+"the Erdas band types u8, s8, u16, s16, u32, s32, f32, f64, c64 and c128."
+msgstr ""
+
+#: ../../../source/drivers/raster/hfa.rst:16
+msgid ""
+"Compressed and missing tiles in Erdas files should be handled properly on "
+"read. Files between 2GiB and 4GiB in size should work on Windows NT, and may "
+"work on some Unix platforms. Files with external spill files (needed for "
+"datasets larger than 2GiB) are also supported for reading and writing."
+msgstr ""
+
+#: ../../../source/drivers/raster/hfa.rst:22
+msgid ""
+"Metadata reading and writing is supported at the dataset and band level. But "
+"this is GDAL specific metadata, not metadata in an Imagine recognized form. "
+"The metadata is stored in a table called GDAL_MetaData which as many columns "
+"as metadata items. The title of the column is the ``key`` of the "
+"``key``=``value`` metadata item pair and the value of row 1 is ``value``."
+msgstr ""
+
+#: ../../../source/drivers/raster/hfa.rst:30
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/hfa.rst:41
+msgid "Creation Issues"
+msgstr ""
+
+#: ../../../source/drivers/raster/hfa.rst:43
+msgid ""
+"Erdas Imagine files can be created with any GDAL defined band type, "
+"including the complex types. Created files may have any number of bands. "
+"Pseudo-Color tables will be written if using the GDALDriver::CreateCopy() "
+"methodology. Most projections should be supported, though translation of "
+"unusual datums (other than WGS84, WGS72, NAD83, and NAD27) may be "
+"problematic."
+msgstr ""
+
+#: ../../../source/drivers/raster/hfa.rst:50
+msgid "Creation Options:"
+msgstr ""
+
+#: ../../../source/drivers/raster/hfa.rst:127
+msgid ""
+"Erdas Imagine supports external creation of overviews (with gdaladdo for "
+"instance). To force them to be created in an .rrd file (rather than inside "
+"the original .img) set the global config option HFA_USE_RRD=YES)."
+msgstr ""
+
+#: ../../../source/drivers/raster/hfa.rst:131
+msgid ""
+"Layer names can be set and retrieved with the GDALSetDescription/"
+"GDALGetDescription calls on the Raster Band objects."
+msgstr ""
+
+#: ../../../source/drivers/raster/hfa.rst:134
+msgid "Some HFA band metadata exported to GDAL metadata:"
+msgstr ""
+
+#: ../../../source/drivers/raster/hfa.rst:136
+msgid "LAYER_TYPE - layer type (athematic, ... )"
+msgstr ""
+
+#: ../../../source/drivers/raster/hfa.rst:137
+msgid ""
+"OVERVIEWS_ALGORITHM - layer overviews algorithm ('IMAGINE 2X2 Resampling', "
+"'IMAGINE 4X4 Resampling', and others)"
+msgstr ""
+
+#: ../../../source/drivers/raster/hfa.rst:141
+msgid "Configuration Options"
+msgstr ""
+
+#: ../../../source/drivers/raster/hfa.rst:143
+msgid ""
+"Currently three `runtime configuration options <http://trac.osgeo.org/gdal/"
+"wiki/ConfigOptions>`__ are supported by the HFA driver:"
+msgstr ""
+
+#: ../../../source/drivers/raster/hfa.rst:162
+msgid ""
+"This configuration option can be used when building external overviews for a "
+"base image that is not in Erdas Imagine format. Resulting overview file will "
+"use the rrd structure and have .aux extension."
+msgstr ""
+
+#: ../../../source/drivers/raster/hfa.rst:169
+msgid ""
+"gdaladdo out.tif --config USE_RRD YES --config HFA_COMPRESS_OVR YES 2 4 8"
+msgstr ""
+
+#: ../../../source/drivers/raster/hfa.rst:171
+msgid ""
+"Erdas Imagine and older ArcGIS versions may recognize overviews for some "
+"image formats only if they have .rrd extension. In this case use:"
+msgstr ""
+
+#: ../../../source/drivers/raster/hfa.rst:177
+msgid ""
+"gdaladdo out.tif --config USE_RRD YES --config HFA_USE_RRD YES --config "
+"HFA_COMPRESS_OVR YES 2 4 8"
+msgstr ""
+
+#: ../../../source/drivers/raster/hfa.rst:194
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/hfa.rst:196
+msgid "Implemented as :source_file:`frmts/hfa/hfadataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/hfa.rst:197
+msgid ""
+"More information, and other tools are available on the `Imagine (.img) "
+"Reader <http://web.archive.org/web/20130730133056/http://home.gdal.org/"
+"projects/imagine/hfa_index.html>`__ page as saved by archive.org."
+msgstr ""
+
+#: ../../../source/drivers/raster/hfa.rst:201
+msgid "`Erdas.com <http://www.erdas.com/>`__"
+msgstr ""

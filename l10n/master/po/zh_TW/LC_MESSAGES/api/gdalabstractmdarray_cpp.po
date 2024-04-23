@@ -1,0 +1,66 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/api/gdalabstractmdarray_cpp.rst:5
+msgid "GDALAbstractMDArray C++ API"
+msgstr ""
+
+#: ../../../source/api/gdalabstractmdarray_cpp.rst:0
+msgid "Public Types"
+msgstr ""
+
+#: ../../../source/api/gdalabstractmdarray_cpp.rst:0
+msgid "Param array"
+msgstr ""
+
+#: ../../../source/api/gdalabstractmdarray_cpp.rst:0
+msgid "Param chunkArrayStartIdx"
+msgstr ""
+
+#: ../../../source/api/gdalabstractmdarray_cpp.rst:0
+msgid "Param chunkCount"
+msgstr ""
+
+#: ../../../source/api/gdalabstractmdarray_cpp.rst:0
+msgid "Param iCurChunk"
+msgstr ""
+
+#: ../../../source/api/gdalabstractmdarray_cpp.rst:0
+msgid "Param nChunkCount"
+msgstr ""
+
+#: ../../../source/api/gdalabstractmdarray_cpp.rst:0
+msgid "Param pUserData"
+msgstr ""
+
+#: ../../../source/api/gdalabstractmdarray_cpp.rst:0
+msgid "Return"
+msgstr ""
+
+#: ../../../source/api/gdalabstractmdarray_cpp.rst:0
+msgid "Public Functions"
+msgstr ""
+
+#: ../../../source/api/gdalabstractmdarray_cpp.rst:0
+msgid "Returns"
+msgstr ""
+
+#: ../../../source/api/gdalabstractmdarray_cpp.rst:0
+msgid "Parameters"
+msgstr ""

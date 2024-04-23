@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/api/java/index.rst:5
+msgid "Java bindings"
+msgstr ""
+
+#: ../../../source/api/java/index.rst:7
+msgid "The GDAL project has SWIG generated Java bindings for GDAL and OGR."
+msgstr ""
+
+#: ../../../source/api/java/index.rst:9
+msgid ""
+"Generally speaking the classes and methods mostly match those of the GDAL "
+"and OGR C++ classes. You can find the `​Javadoc <http://gdal.org/java>`__ of "
+"the API of the Java bindings."
+msgstr ""
+
+#: ../../../source/api/java/index.rst:11
+msgid ""
+"Due to the fact the Java garbage collector works in a separate thread from "
+"the main thread, it is necessary to configure GDAL with multi-threading "
+"support, even if you do not use GDAL API from several Java threads."
+msgstr ""
+
+#: ../../../source/api/java/index.rst:14
+msgid "How to build bindings"
+msgstr ""
+
+#: ../../../source/api/java/index.rst:16
+msgid ""
+"Please consult the CMake :ref:`building_from_source_java` paragraph for "
+"CMake options controlling how to enable the Java bindings and where to "
+"install its artifacts"
+msgstr ""
+
+#: ../../../source/api/java/index.rst:21
+msgid "How to use the bindings"
+msgstr ""
+
+#: ../../../source/api/java/index.rst:23
+msgid ""
+"The result of the build of the Java bindings will be both a :file:`gdal.jar` "
+"and a companion :file:`libgdalalljni.so` / :file:`libgdalalljni.dylib` / :"
+"file:`gdalalljni.dll` native library. To limit potential compatibility "
+"problems, you should ensure that gdal.jar and gdalalljni come from the same "
+"GDAL sources."
+msgstr ""
+
+#: ../../../source/api/java/index.rst:28
+msgid ""
+"The native gdalalljni library, as well as the core libgdal library (and its "
+"dependencies) should be accessible through the mechanism of the operating "
+"system to locate shared libraries. Typically on Linux, this means that the "
+"path to those libraries should be set in the ``LD_LIBRARY_PATH`` environment "
+"variable (or in :file:`/etc/ld.so.conf`). On MacOSX, it should be in the "
+"``DYLD_LIBRARY_PATH`` environment variable. And on Windows, in the ``PATH`` "
+"environment variable."
+msgstr ""
+
+#: ../../../source/api/java/index.rst:36
+msgid ""
+"For example, to test on Linux that the bindings are working, you can lanch, "
+"from the build directory:"
+msgstr ""
+
+#: ../../../source/api/java/index.rst:41
+msgid ""
+"export LD_LIBRARY_PATH=$PWD:$PWD/swig/java:$LD_LIBRARY_PATH\n"
+"java -classpath $PWD/swig/java/gdal.jar:$PWD/swig/java/build/apps gdalinfo"
+msgstr ""
+
+#: ../../../source/api/java/index.rst:44
+msgid "On Windows:"
+msgstr ""
+
+#: ../../../source/api/java/index.rst:48
+msgid ""
+"set PATH=%CD%;%CD%\\swig\\java;%PATH%\n"
+"java -classpath %CD%\\swig\\java\\gdal.jar;%CD%\\swig\\java\\build\\apps "
+"gdalinfo"
+msgstr ""
+
+#: ../../../source/api/java/index.rst:53
+msgid "Maven Users"
+msgstr ""
+
+#: ../../../source/api/java/index.rst:55
+msgid ""
+"The Java bindings are available from the ​`Maven Central <http://search.maven."
+"org/>`__ repository. All that is needed is to declare a dependency."
+msgstr ""
+
+#: ../../../source/api/java/index.rst:58
+msgid ""
+"<dependency>\n"
+"   <groupId>org.gdal</groupId>\n"
+"   <artifactId>gdal</artifactId>\n"
+"   <version>3.8.0</version>\n"
+"</dependency>"
+msgstr ""
+
+#: ../../../source/api/java/index.rst:69
+msgid "Useful Links"
+msgstr ""
+
+#: ../../../source/api/java/index.rst:71
+msgid "​`Javadoc <http://gdal.org/java>`__ of the API of the Java bindings."
+msgstr ""
+
+#: ../../../source/api/java/index.rst:72
+msgid ""
+"`gdalinfo.java <https://github.com/OSGeo/gdal/tree/master/swig/java/apps/"
+"gdalinfo.java>`__ Sample Java program similar to gdalinfo utility."
+msgstr ""
+
+#: ../../../source/api/java/index.rst:73
+msgid ""
+"`All Java sample programs <https://github.com/OSGeo/gdal/tree/master/swig/"
+"java/apps/>`__"
+msgstr ""
+
+#: ../../../source/api/java/index.rst:74
+msgid ""
+"`Tamas Szekeres' Windows daily builds <http://www.gisinternals.com/sdk>`__ : "
+"Tamas Szekeres maintains a complete set of Win32 and Win64 binary packages "
+"that include the GDAL Java bindings. These packages are based on the current "
+"development and stable branches built from the GDAL source repository."
+msgstr ""
+
+#: ../../../source/api/java/index.rst:75
+msgid ""
+"`Image I/O-Ext <https://imageio-ext.dev.java.net/>`__ : The main core module "
+"of the project is gdalframework, a framework leveraging on GDAL via SWIG's "
+"generated JAVA bindings to provide support for a reach set of data formats. "
+"(**Note**: this framework doesn't necessarily ship the latest released GDAL "
+"version)"
+msgstr ""

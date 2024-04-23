@@ -1,0 +1,230 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/tiledb.rst:5
+msgid "TileDB -- TileDB vector"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:7
+msgid "TileDB"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:11
+msgid "TileDB >= 2.7"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:13
+msgid "GDAL can read and write TileDB sparse arrays containing vector data."
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:15
+msgid ""
+"The driver relies on the Open Source TileDB `library <https://github.com/"
+"TileDB-Inc/TileDB>`__ (MIT licensed)."
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:19
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:26
+msgid "Supported datasets"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:28
+msgid ""
+"The driver can read TileDB sparse arrays that contain at least 2 dimensions "
+"of type Float64. By default dimensions names ``_X`` and ``_Y`` are looked "
+"up, but this can be customized with the :oo:`DIM_X` and :oo:`DIM_Y` open "
+"options."
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:32
+msgid ""
+"Attributes (or extra dimensions) of the following TileDB data types are "
+"recognized as OGR fields: Bool, Int16, Int32, Int64, Float32, Float64, "
+"String_ASCII, String_UTF8, Blob, varying size UInt8 (as Binary), "
+"DateTime_Day, DateTime_MS, Time_MS. Attributes of other data types will be "
+"ignored."
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:37
+msgid ""
+"If a ``wkb_geometry`` named attribute of type Binary is found, it is used as "
+"the geometry column, and is assumed to contain WKB encoded geometries. If "
+"there is no such column, Point geometries are assumed and the X, Y (and "
+"optional Z) dimensions are used to create the corresponding OGR point "
+"geometries."
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:44
+msgid "Dataset connection string"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:46
+msgid ""
+"Valid dataset connection strings are paths to a local or remote TileDB "
+"sparse array, or to a local or remote TileDB group that contains TileDB "
+"sparse arrays."
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:50
+msgid "Filtering"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:52
+msgid ""
+"The bounding box of OGR spatial filters is forwarded to the TileDB query "
+"engine."
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:54
+msgid ""
+"OGR attribute filters are translated to TileDB query conditions for the "
+"following elements:"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:57
+msgid "AND"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:58
+msgid "OR"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:59
+msgid "NOT"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:60
+msgid ""
+"comparisons of the form \"attribute_name operator constant\" where operator "
+"is ``=``, ``<>``, ``<``, ``<=``, ``>``, ``>=``"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:62
+msgid "attribute_name IS NULL"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:63
+msgid "attribute_name IS NOT NULL"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:64
+msgid "attribute_name IN (value1, ... valueN)"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:65
+msgid "attribute_name BETWEEN min_val AND max_val"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:67
+msgid ""
+"Other OGR attribute filter elements may be used, but this may cause the "
+"filter to be fully or partially evaluated on OGR side. For example, given "
+"the filter \"int_attribute = 5 AND string_attribute LIKE '%foo%'\", the "
+"condition on int_attribute will be translated as a TileDB query condition, "
+"and the right side of the AND operation will be evaluated as a post-filter "
+"on OGR side."
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:74
+msgid "Arrow C Stream data interface"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:76
+msgid ""
+"The driver has an efficient implementation of the :ref:`Arrow C Stream data "
+"interface <vector_api_tut_arrow_stream>`"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:79
+msgid ""
+"The ``INCLUDE_FID=YES/NO`` and ``MAX_FEATURES_IN_BATCH=number`` options of :"
+"cpp:func:`OGRLayer::GetArrowStream()` are supported. If "
+"MAX_FEATURES_IN_BATCH is not specified, it defaults to the value of the "
+"BATCH_SIZE open option."
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:84
+msgid "Creation issues"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:86
+msgid ""
+"By default, when creating a layer, the driver will create a TileDB sparse "
+"array at the location of the dataset connection string. Consequently only "
+"one OGR layer can be created in that mode. If several layers need to be "
+"created and accessible through a OGR dataset connection, a TileDB group "
+"needs to be created to point to the different arrays (layers), by specifying "
+"the :dsco:`CREATE_GROUP=YES` dataset creation option."
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:93
+msgid "The driver supports appending features to exiting layers."
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:95
+msgid ""
+"The driver does not support adding new fields to a layer where features have "
+"already been written."
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:99
+msgid "Open options"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:101
+msgid "The following open options are available:"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:137
+msgid "Dataset creation options"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:139
+msgid "The following dataset creation options are available:"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:158
+msgid "Layer creation options"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:160
+msgid "The following layer options are available:"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:235
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:237
+msgid "`TileDB home page <https://tiledb.io/>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:239
+msgid ":ref:`TileDB raster <raster.tiledb>` documentation page"
+msgstr ""

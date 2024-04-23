@@ -1,0 +1,54 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/grassasciigrid.rst:5
+msgid "GRASSASCIIGrid -- GRASS ASCII Grid"
+msgstr ""
+
+#: ../../../source/drivers/raster/grassasciigrid.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/grassasciigrid.rst:7
+msgid "GRASSASCIIGrid"
+msgstr ""
+
+#: ../../../source/drivers/raster/grassasciigrid.rst:11
+msgid ""
+"Supports reading GRASS ASCII grid format (similar to Arc/Info ASCIIGRID "
+"command)."
+msgstr ""
+
+#: ../../../source/drivers/raster/grassasciigrid.rst:14
+msgid ""
+"By default, the datatype returned for GRASS ASCII grid datasets by GDAL is "
+"autodetected, and set to Float32 for grid with floating point values or "
+"Int32 otherwise. This is done by analysing the format of the null value and "
+"the first 100k bytes of data of the grid. You can also explicitly specify "
+"the datatype by setting the GRASSASCIIGRID_DATATYPE configuration option "
+"(Int32, Float32 and Float64 values are supported currently)"
+msgstr ""
+
+#: ../../../source/drivers/raster/grassasciigrid.rst:22
+msgid "NOTE: Implemented as :source_file:`frmts/aaigrid/aaigriddataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/grassasciigrid.rst:25
+msgid "Driver capabilities"
+msgstr ""

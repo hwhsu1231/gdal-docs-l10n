@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/programs/gdalcompare.rst:5
+#: ../../../source/programs/gdalcompare.rst:11
+msgid "gdalcompare.py"
+msgstr ""
+
+#: ../../../source/programs/gdalcompare.rst:9
+msgid "Compare two images."
+msgstr ""
+
+#: ../../../source/programs/gdalcompare.rst:14
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../source/programs/gdalcompare.rst:16
+msgid ""
+"gdalcompare.py [--help] [--help-general]\n"
+"               [-dumpdiffs] [-skip_binary] [-skip_overviews]\n"
+"               [-skip_geolocation] [-skip_geotransform]\n"
+"               [-skip_metadata] [-skip_rpc] [-skip_srs]\n"
+"               [-sds] <golden_file> <new_file>"
+msgstr ""
+
+#: ../../../source/programs/gdalcompare.rst:26
+msgid "Description"
+msgstr ""
+
+#: ../../../source/programs/gdalcompare.rst:28
+msgid ""
+"The :program:`gdalcompare.py` script compares two GDAL supported datasets "
+"and reports the differences. In addition to reporting differences to the "
+"standard output the script will also return the difference count in its exit "
+"value."
+msgstr ""
+
+#: ../../../source/programs/gdalcompare.rst:33
+msgid ""
+"Image pixels, and various metadata are checked. There is also a byte by byte "
+"comparison done which will count as one difference. So if it is only "
+"important that the GDAL visible data is identical a difference count of 1 "
+"(the binary difference) should be considered acceptable."
+msgstr ""
+
+#: ../../../source/programs/options/help.rst:3
+msgid "Show this help message and exit"
+msgstr ""
+
+#: ../../../source/programs/options/help_general.rst:3
+msgid ""
+"Gives a brief usage message for the generic GDAL commandline options and "
+"exit."
+msgstr ""
+
+#: ../../../source/programs/gdalcompare.rst:46
+msgid ""
+"Whether to output the difference in pixel content in a TIFF file in the "
+"current directory."
+msgstr ""
+
+#: ../../../source/programs/gdalcompare.rst:53
+msgid "Whether to skip exact comparison of binary content."
+msgstr ""
+
+#: ../../../source/programs/gdalcompare.rst:59
+msgid "Whether to skip comparison of overviews."
+msgstr ""
+
+#: ../../../source/programs/gdalcompare.rst:65
+msgid "Whether to skip comparison of GEOLOCATION metadata domain."
+msgstr ""
+
+#: ../../../source/programs/gdalcompare.rst:71
+msgid "Whether to skip comparison of geotransform matrix."
+msgstr ""
+
+#: ../../../source/programs/gdalcompare.rst:77
+msgid "Whether to skip comparison of metadata"
+msgstr ""
+
+#: ../../../source/programs/gdalcompare.rst:83
+msgid ""
+"Whether to skip comparison of Rational Polynomial Coefficients (RPC) "
+"metadata domain."
+msgstr ""
+
+#: ../../../source/programs/gdalcompare.rst:89
+msgid "Whether to skip comparison of spatial reference systems (SRS)."
+msgstr ""
+
+#: ../../../source/programs/gdalcompare.rst:93
+msgid ""
+"If this flag is passed the script will compare all subdatasets that are part "
+"of the dataset, otherwise subdatasets are ignored."
+msgstr ""
+
+#: ../../../source/programs/gdalcompare.rst:98
+msgid "The file that is considered correct, referred to as the golden file."
+msgstr ""
+
+#: ../../../source/programs/gdalcompare.rst:102
+msgid ""
+"The file being compared to the golden file, referred to as the new file."
+msgstr ""
+
+#: ../../../source/programs/gdalcompare.rst:105
+msgid ""
+"Note that the :program:`gdalcompare.py` script (like all the other scripts) "
+"can also be called as a library from python code: `from osgeo_utils import "
+"gdalcompare`. The primary entry point is `gdalcompare.compare_db()` which "
+"takes a golden `gdal.Dataset` and a new `gdal.Dataset` as arguments and "
+"returns a difference count (excluding the binary comparison). The "
+"`gdalcompare.compare_sds()` entry point can be used to compare subdatasets."
+msgstr ""
+
+#: ../../../source/programs/gdalcompare.rst:114
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/programs/gdalcompare.rst:116
+msgid ""
+"gdalcompare.py -dumpdiffs N.tiff S.tiff; echo $?\n"
+"Files differ at the binary level.\n"
+"Band 1 checksum difference:\n"
+"  Golden: 36694\n"
+"  New:    40645\n"
+"  Pixels Differing: 1509\n"
+"  Maximum Pixel Difference: 255.0\n"
+"  Wrote Diffs to: 1.tif\n"
+"Differences Found: 2\n"
+"2\n"
+"\n"
+"gdalcompare.py N.tiff N.tiff; echo $?\n"
+"Differences Found: 0\n"
+"0"
+msgstr ""

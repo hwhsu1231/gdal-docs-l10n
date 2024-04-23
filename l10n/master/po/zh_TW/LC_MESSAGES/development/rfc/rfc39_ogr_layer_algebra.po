@@ -1,0 +1,168 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc39_ogr_layer_algebra.rst:5
+msgid "RFC 39: OGR Layer Algebra"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc39_ogr_layer_algebra.rst:7
+msgid "Author: Ari Jolma"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc39_ogr_layer_algebra.rst:9
+msgid "Contact: ari dot jolma at aalto dot fi"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc39_ogr_layer_algebra.rst:11
+msgid "Status: Adopted, implemented in GDAL 1.10"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc39_ogr_layer_algebra.rst:14
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc39_ogr_layer_algebra.rst:16
+msgid ""
+"It is proposed that the OGR layer class and the C API contains methods for "
+"commonly needed overlay analysis methods."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc39_ogr_layer_algebra.rst:19
+msgid ""
+"The basic functionality for spatial analysis with GDAL is provided by GEOS. "
+"However, GEOS operates on geometries and typically people work with "
+"geospatial data layers. Vector data layers are represented in GDAL by "
+"OGRLayer objects. Thus, there is a need for spatial analaysis operations "
+"that work on layers."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc39_ogr_layer_algebra.rst:25
+msgid ""
+"Unfortunately there is no standard for spatial analysis operations API, but "
+"it is possible to create a useful set by using existing software as example."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc39_ogr_layer_algebra.rst:29
+msgid ""
+"The methods are fundamentally dependent on comparison of all the features of "
+"two layers. There would possibly be huge performance improvements achievable "
+"with layer specific spatial indexes. This is considered out of the scope of "
+"these methods and belonging to the general problem of iterating features in "
+"a layer and accessing features randomly. For these reasons these methods "
+"should be only considered convenience methods and not replacements for "
+"analysis in relational databases for example."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc39_ogr_layer_algebra.rst:39
+msgid "Implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc39_ogr_layer_algebra.rst:41
+msgid ""
+"The methods are implemented by new methods in OGRLayer class (ogrsf_frmts.h "
+"and ogrlayer.cpp) and new calls in the C API (ogr_api.h). The Swig bindings "
+"(ogr.i) are also extended with these methods."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc39_ogr_layer_algebra.rst:45
+msgid ""
+"The patch with the changes to OGR core and to the Swig bindings is attached "
+"to this page. The patch has been superficially tested but it is not written "
+"or formatted according to the GDAL tradition."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc39_ogr_layer_algebra.rst:50
+msgid "Backward Compatibility"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc39_ogr_layer_algebra.rst:52
+msgid ""
+"Proposed additions will have an impact on C binary compatibility because "
+"they change the API."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc39_ogr_layer_algebra.rst:55
+msgid ""
+"C++ binary interface will be broken (due to the addition of a new members in "
+"OGRLayer class)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc39_ogr_layer_algebra.rst:58
+msgid "The changes are purely extensions and have no impact on existing code."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc39_ogr_layer_algebra.rst:61
+msgid "Impact on drivers"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc39_ogr_layer_algebra.rst:63
+msgid "The changes do not have any impacts on drivers."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc39_ogr_layer_algebra.rst:66
+msgid "Timeline"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc39_ogr_layer_algebra.rst:68
+msgid ""
+"Ari Jolma is responsible to implement this proposal. New API should be "
+"available in GDAL 1.11."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc39_ogr_layer_algebra.rst:71
+msgid ""
+"There needs to be a discussion on the names of the methods and on the "
+"internal logic of the methods (this refers especially to the handling of "
+"attributes and error conditions)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc39_ogr_layer_algebra.rst:75
+msgid ""
+"In addition to the methods in the attached patch, there should be some "
+"discussion on additional methods. For example Append and Buffer methods "
+"could be easily added to the set. An illustration of what is currently "
+"available in the common software is for example this page: `http://courses."
+"washington.edu/gis250/lessons/Model_Builder/ <http://courses.washington.edu/"
+"gis250/lessons/Model_Builder/>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc39_ogr_layer_algebra.rst:82
+msgid "Comments on performance"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc39_ogr_layer_algebra.rst:84
+msgid ""
+"Profiling Intersection of a layer of 46288 line string features with a layer "
+"of one polygon feature (~1/3 of features within and many only partly within "
+"the one feature) showed that when the method layer was a Shapefile, most of "
+"the time was spent in reading the feature from the Shapefile. When the "
+"method layer was copied into memory, most of the time (83 %) was spent in "
+"OGRLineString::getEnvelope. The 6th version of the patch contains a test "
+"against a pre-computed layer envelope, which speeds up the computation in "
+"this case ~30% (from 2.44 s to 1.76 in my machine). Still the most of the "
+"time (82 %) is spent in OGRLineString::getEnvelope."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc39_ogr_layer_algebra.rst:96
+msgid "Voting history"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc39_ogr_layer_algebra.rst:98
+msgid "(June 2012) +1 from Even, Frank, Howard, Tamas, Daniel"
+msgstr ""

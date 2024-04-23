@@ -1,0 +1,386 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/programs/gdalsrsinfo.rst:5
+#: ../../../source/programs/gdalsrsinfo.rst:11
+msgid "gdalsrsinfo"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:9
+msgid "Lists info about a given SRS in number of formats (WKT, PROJ.4, etc.)"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:14
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:16
+msgid ""
+"Usage: gdalsrsinfo [--help] [--help-general]\n"
+"                   [--single-line] [-V] [-e][-o <out_type>] <srs_def>"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:22
+msgid "Description"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:24
+msgid ""
+"The :program:`gdalsrsinfo` utility reports information about a given SRS "
+"from one of the following:"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:26
+msgid ""
+"The filename of a dataset supported by GDAL/OGR which contains SRS "
+"information"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:27
+msgid ""
+"Any of the usual GDAL/OGR forms (complete WKT, PROJ.4, EPSG:n or a file "
+"containing the SRS)"
+msgstr ""
+
+#: ../../../source/programs/options/help.rst:3
+msgid "Show this help message and exit"
+msgstr ""
+
+#: ../../../source/programs/options/help_general.rst:3
+msgid ""
+"Gives a brief usage message for the generic GDAL commandline options and "
+"exit."
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:36
+msgid "Print WKT on single line"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:40
+msgid "Validate SRS"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:44
+msgid "Search for EPSG number(s) corresponding to SRS"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:48
+msgid "Output types:"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:50
+msgid "``default``: proj4 and wkt (default option)"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:51
+msgid "``all``: all options available"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:52
+msgid "``wkt_all``: all wkt options available"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:53
+msgid "``PROJJSON``: PROJJSON string (GDAL >= 3.1 and PROJ >= 6.2)"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:54
+msgid "``proj4``: PROJ.4 string"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:55
+msgid "``wkt1``: OGC WKT format (full)"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:56
+msgid "``wkt_simple``: OGC WKT 1 (simplified)"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:57
+msgid "``wkt_noct``: OGC WKT 1 (without OGC CT params)"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:58
+msgid "``wkt_esri``: ESRI WKT format"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:59
+msgid "``wkt``: Latest WKT version supported, currently wkt2_2019"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:60
+msgid "``wkt2``: Latest WKT2 version supported, currently wkt2_2019"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:61
+msgid "``wkt2_2015``: OGC WKT2:2015"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:62
+msgid "``wkt2_2019``: OGC WKT2:2019 (for GDAL < 3.6, use ``wkt2_2018``)"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:63
+msgid "``mapinfo``: Mapinfo style CoordSys format"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:64
+msgid "``xml``: XML format (GML based)"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:68
+msgid ""
+"may be the filename of a dataset supported by GDAL/OGR from which to extract "
+"SRS information OR any of the usual GDAL/OGR forms (complete WKT, PROJ.4, "
+"EPSG:n or a file containing the SRS)"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:72
+msgid "Example"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:76
+msgid ""
+"$ gdalsrsinfo EPSG:4326\n"
+"\n"
+"PROJ.4 : +proj=longlat +datum=WGS84 +no_defs\n"
+"\n"
+"OGC WKT :\n"
+"GEOGCS[\"WGS 84\",\n"
+"    DATUM[\"WGS_1984\",\n"
+"        SPHEROID[\"WGS 84\",6378137,298.257223563,\n"
+"            AUTHORITY[\"EPSG\",\"7030\"]],\n"
+"        AUTHORITY[\"EPSG\",\"6326\"]],\n"
+"    PRIMEM[\"Greenwich\",0,\n"
+"        AUTHORITY[\"EPSG\",\"8901\"]],\n"
+"    UNIT[\"degree\",0.0174532925199433,\n"
+"        AUTHORITY[\"EPSG\",\"9122\"]],\n"
+"    AUTHORITY[\"EPSG\",\"4326\"]]"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:94
+msgid ""
+"$ gdalsrsinfo -o proj4 osr/data/lcc_esri.prj\n"
+"'+proj=lcc +lat_1=34.33333333333334 +lat_2=36.16666666666666 +lat_0=33.75 "
+"+lon_0=-79 +x_0=609601.22 +y_0=0 +datum=NAD83 +units=m +no_defs '"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:99
+msgid ""
+"$ gdalsrsinfo -o proj4 landsat.tif\n"
+"PROJ.4 : '+proj=utm +zone=19 +south +datum=WGS84 +units=m +no_defs '"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:104
+msgid ""
+"$ gdalsrsinfo  -o wkt \"EPSG:32722\"\n"
+"\n"
+"PROJCRS[\"WGS 84 / UTM zone 22S\",\n"
+"    BASEGEOGCRS[\"WGS 84\",\n"
+"        DATUM[\"World Geodetic System 1984\",\n"
+"            ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n"
+"                LENGTHUNIT[\"metre\",1]]],\n"
+"        PRIMEM[\"Greenwich\",0,\n"
+"            ANGLEUNIT[\"degree\",0.0174532925199433]]],\n"
+"    CONVERSION[\"UTM zone 22S\",\n"
+"        METHOD[\"Transverse Mercator\",\n"
+"            ID[\"EPSG\",9807]],\n"
+"        PARAMETER[\"Latitude of natural origin\",0,\n"
+"            ANGLEUNIT[\"degree\",0.0174532925199433],\n"
+"            ID[\"EPSG\",8801]],\n"
+"        PARAMETER[\"Longitude of natural origin\",-51,\n"
+"            ANGLEUNIT[\"degree\",0.0174532925199433],\n"
+"            ID[\"EPSG\",8802]],\n"
+"        PARAMETER[\"Scale factor at natural origin\",0.9996,\n"
+"            SCALEUNIT[\"unity\",1],\n"
+"            ID[\"EPSG\",8805]],\n"
+"        PARAMETER[\"False easting\",500000,\n"
+"            LENGTHUNIT[\"metre\",1],\n"
+"            ID[\"EPSG\",8806]],\n"
+"        PARAMETER[\"False northing\",10000000,\n"
+"            LENGTHUNIT[\"metre\",1],\n"
+"            ID[\"EPSG\",8807]]],\n"
+"    CS[Cartesian,2],\n"
+"        AXIS[\"(E)\",east,\n"
+"            ORDER[1],\n"
+"            LENGTHUNIT[\"metre\",1]],\n"
+"        AXIS[\"(N)\",north,\n"
+"            ORDER[2],\n"
+"            LENGTHUNIT[\"metre\",1]],\n"
+"    USAGE[\n"
+"        SCOPE[\"unknown\"],\n"
+"        AREA[\"World - S hemisphere - 54°W to 48°W - by country\"],\n"
+"        BBOX[-80,-54,0,-48]],\n"
+"    ID[\"EPSG\",32722]]"
+msgstr ""
+
+#: ../../../source/programs/gdalsrsinfo.rst:146
+msgid ""
+"$ gdalsrsinfo -o wkt_all \"EPSG:4322\"\n"
+"OGC WKT 1:\n"
+"GEOGCS[\"WGS 72\",\n"
+"    DATUM[\"World_Geodetic_System_1972\",\n"
+"        SPHEROID[\"WGS 72\",6378135,298.26,\n"
+"            AUTHORITY[\"EPSG\",\"7043\"]],\n"
+"        TOWGS84[0,0,4.5,0,0,0.554,0.2263],\n"
+"        AUTHORITY[\"EPSG\",\"6322\"]],\n"
+"    PRIMEM[\"Greenwich\",0,\n"
+"        AUTHORITY[\"EPSG\",\"8901\"]],\n"
+"    UNIT[\"degree\",0.0174532925199433,\n"
+"        AUTHORITY[\"EPSG\",\"9122\"]],\n"
+"    AXIS[\"Latitude\",NORTH],\n"
+"    AXIS[\"Longitude\",EAST],\n"
+"    AUTHORITY[\"EPSG\",\"4322\"]]\n"
+"\n"
+"OGC WKT2:2015 :\n"
+"BOUNDCRS[\n"
+"    SOURCECRS[\n"
+"        GEODCRS[\"WGS 72\",\n"
+"            DATUM[\"World Geodetic System 1972\",\n"
+"                ELLIPSOID[\"WGS 72\",6378135,298.26,\n"
+"                    LENGTHUNIT[\"metre\",1]]],\n"
+"            PRIMEM[\"Greenwich\",0,\n"
+"                ANGLEUNIT[\"degree\",0.0174532925199433]],\n"
+"            CS[ellipsoidal,2],\n"
+"                AXIS[\"geodetic latitude (Lat)\",north,\n"
+"                    ORDER[1],\n"
+"                    ANGLEUNIT[\"degree\",0.0174532925199433]],\n"
+"                AXIS[\"geodetic longitude (Lon)\",east,\n"
+"                    ORDER[2],\n"
+"                    ANGLEUNIT[\"degree\",0.0174532925199433]],\n"
+"            AREA[\"World\"],\n"
+"            BBOX[-90,-180,90,180],\n"
+"            ID[\"EPSG\",4322]]],\n"
+"    TARGETCRS[\n"
+"        GEODCRS[\"WGS 84\",\n"
+"            DATUM[\"World Geodetic System 1984\",\n"
+"                ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n"
+"                    LENGTHUNIT[\"metre\",1]]],\n"
+"            PRIMEM[\"Greenwich\",0,\n"
+"                ANGLEUNIT[\"degree\",0.0174532925199433]],\n"
+"            CS[ellipsoidal,2],\n"
+"                AXIS[\"latitude\",north,\n"
+"                    ORDER[1],\n"
+"                    ANGLEUNIT[\"degree\",0.0174532925199433]],\n"
+"                AXIS[\"longitude\",east,\n"
+"                    ORDER[2],\n"
+"                    ANGLEUNIT[\"degree\",0.0174532925199433]],\n"
+"            ID[\"EPSG\",4326]]],\n"
+"    ABRIDGEDTRANSFORMATION[\"WGS 72 to WGS 84 (1)\",\n"
+"        METHOD[\"Position Vector transformation (geog2D domain)\",\n"
+"            ID[\"EPSG\",9606]],\n"
+"        PARAMETER[\"X-axis translation\",0,\n"
+"            ID[\"EPSG\",8605]],\n"
+"        PARAMETER[\"Y-axis translation\",0,\n"
+"            ID[\"EPSG\",8606]],\n"
+"        PARAMETER[\"Z-axis translation\",4.5,\n"
+"            ID[\"EPSG\",8607]],\n"
+"        PARAMETER[\"X-axis rotation\",0,\n"
+"            ID[\"EPSG\",8608]],\n"
+"        PARAMETER[\"Y-axis rotation\",0,\n"
+"            ID[\"EPSG\",8609]],\n"
+"        PARAMETER[\"Z-axis rotation\",0.554,\n"
+"            ID[\"EPSG\",8610]],\n"
+"        PARAMETER[\"Scale difference\",1.0000002263,\n"
+"            ID[\"EPSG\",8611]],\n"
+"        AREA[\"World\"],\n"
+"        BBOX[-90,-180,90,180],\n"
+"        ID[\"EPSG\",1237]]]\n"
+"\n"
+"OGC WKT2:2019 :\n"
+"BOUNDCRS[\n"
+"    SOURCECRS[\n"
+"        GEOGCRS[\"WGS 72\",\n"
+"            DATUM[\"World Geodetic System 1972\",\n"
+"                ELLIPSOID[\"WGS 72\",6378135,298.26,\n"
+"                    LENGTHUNIT[\"metre\",1]]],\n"
+"            PRIMEM[\"Greenwich\",0,\n"
+"                ANGLEUNIT[\"degree\",0.0174532925199433]],\n"
+"            CS[ellipsoidal,2],\n"
+"                AXIS[\"geodetic latitude (Lat)\",north,\n"
+"                    ORDER[1],\n"
+"                    ANGLEUNIT[\"degree\",0.0174532925199433]],\n"
+"                AXIS[\"geodetic longitude (Lon)\",east,\n"
+"                    ORDER[2],\n"
+"                    ANGLEUNIT[\"degree\",0.0174532925199433]],\n"
+"            USAGE[\n"
+"                SCOPE[\"unknown\"],\n"
+"                AREA[\"World\"],\n"
+"                BBOX[-90,-180,90,180]],\n"
+"            ID[\"EPSG\",4322]]],\n"
+"    TARGETCRS[\n"
+"        GEOGCRS[\"WGS 84\",\n"
+"            DATUM[\"World Geodetic System 1984\",\n"
+"                ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n"
+"                    LENGTHUNIT[\"metre\",1]]],\n"
+"            PRIMEM[\"Greenwich\",0,\n"
+"                ANGLEUNIT[\"degree\",0.0174532925199433]],\n"
+"            CS[ellipsoidal,2],\n"
+"                AXIS[\"latitude\",north,\n"
+"                    ORDER[1],\n"
+"                    ANGLEUNIT[\"degree\",0.0174532925199433]],\n"
+"                AXIS[\"longitude\",east,\n"
+"                    ORDER[2],\n"
+"                    ANGLEUNIT[\"degree\",0.0174532925199433]],\n"
+"            ID[\"EPSG\",4326]]],\n"
+"    ABRIDGEDTRANSFORMATION[\"WGS 72 to WGS 84 (1)\",\n"
+"        METHOD[\"Position Vector transformation (geog2D domain)\",\n"
+"            ID[\"EPSG\",9606]],\n"
+"        PARAMETER[\"X-axis translation\",0,\n"
+"            ID[\"EPSG\",8605]],\n"
+"        PARAMETER[\"Y-axis translation\",0,\n"
+"            ID[\"EPSG\",8606]],\n"
+"        PARAMETER[\"Z-axis translation\",4.5,\n"
+"            ID[\"EPSG\",8607]],\n"
+"        PARAMETER[\"X-axis rotation\",0,\n"
+"            ID[\"EPSG\",8608]],\n"
+"        PARAMETER[\"Y-axis rotation\",0,\n"
+"            ID[\"EPSG\",8609]],\n"
+"        PARAMETER[\"Z-axis rotation\",0.554,\n"
+"            ID[\"EPSG\",8610]],\n"
+"        PARAMETER[\"Scale difference\",1.0000002263,\n"
+"            ID[\"EPSG\",8611]],\n"
+"        USAGE[\n"
+"            SCOPE[\"unknown\"],\n"
+"            AREA[\"World\"],\n"
+"            BBOX[-90,-180,90,180]],\n"
+"        ID[\"EPSG\",1237]]]\n"
+"\n"
+"OGC WKT 1 (simple) :\n"
+"GEOGCS[\"WGS 72\",\n"
+"    DATUM[\"World_Geodetic_System_1972\",\n"
+"        SPHEROID[\"WGS 72\",6378135,298.26],\n"
+"        TOWGS84[0,0,4.5,0,0,0.554,0.2263]],\n"
+"    PRIMEM[\"Greenwich\",0],\n"
+"    UNIT[\"degree\",0.0174532925199433]]\n"
+"\n"
+"OGC WKT 1 (no CT) :\n"
+"GEOGCS[\"WGS 72\",\n"
+"    DATUM[\"World_Geodetic_System_1972\",\n"
+"        SPHEROID[\"WGS 72\",6378135,298.26]],\n"
+"    PRIMEM[\"Greenwich\",0],\n"
+"    UNIT[\"degree\",0.0174532925199433]]\n"
+"\n"
+"ESRI WKT :\n"
+"GEOGCS[\"GCS_WGS_1972\",\n"
+"    DATUM[\"D_WGS_1972\",\n"
+"        SPHEROID[\"WGS_1972\",6378135.0,298.26]],\n"
+"    PRIMEM[\"Greenwich\",0.0],\n"
+"    UNIT[\"Degree\",0.0174532925199433]]"
+msgstr ""

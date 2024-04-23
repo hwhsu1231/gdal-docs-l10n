@@ -1,0 +1,84 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/sdts.rst:4
+#: ../../../source/drivers/vector/sdts.rst:6
+msgid "SDTS"
+msgstr ""
+
+#: ../../../source/drivers/vector/sdts.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/sdts.rst:10
+msgid ""
+"SDTS TVP (Topological Vector Profile) and Point Profile datasets are "
+"supported for read access. Each primary attribute, node (point), line and "
+"polygon module is treated as a distinct layer."
+msgstr ""
+
+#: ../../../source/drivers/vector/sdts.rst:14
+msgid ""
+"To select an SDTS transfer, the name of the catalog file should be used. For "
+"instance ``TR01CATD.DDF`` where the first four characters are all that "
+"typically varies."
+msgstr ""
+
+#: ../../../source/drivers/vector/sdts.rst:18
+msgid ""
+"SDTS coordinate system information is properly supported for most coordinate "
+"systems defined in SDTS."
+msgstr ""
+
+#: ../../../source/drivers/vector/sdts.rst:21
+msgid "There is no update or creation support in the SDTS driver."
+msgstr ""
+
+#: ../../../source/drivers/vector/sdts.rst:23
+msgid ""
+"Note that in TVP datasets the polygon geometry is formed from the geometry "
+"in the line modules. Primary attribute module attributes should be properly "
+"attached to their related node, line or polygon features, but can be "
+"accessed separately as their own layers."
+msgstr ""
+
+#: ../../../source/drivers/vector/sdts.rst:28
+msgid "This driver has no support for raster (DEM) SDTS datasets."
+msgstr ""
+
+#: ../../../source/drivers/vector/sdts.rst:31
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/sdts.rst:38
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/vector/sdts.rst:40
+msgid ""
+"`SDTS Abstraction Library <https://web.archive.org/web/20130730111701/http://"
+"home.gdal.org/projects/sdts/index.html>`__: The base library used to "
+"implement this driver."
+msgstr ""
+
+#: ../../../source/drivers/vector/sdts.rst:43
+msgid ""
+"`http://mcmcweb.er.usgs.gov/sdts <http://mcmcweb.er.usgs.gov/sdts/>`__: Main "
+"USGS SDTS web page."
+msgstr ""

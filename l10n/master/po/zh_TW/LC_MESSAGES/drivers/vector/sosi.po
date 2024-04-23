@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/sosi.rst:5
+msgid "Norwegian SOSI Standard"
+msgstr ""
+
+#: ../../../source/drivers/vector/sosi.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/sosi.rst:7
+msgid "SOSI"
+msgstr ""
+
+#: ../../../source/drivers/vector/sosi.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/vector/sosi.rst:9
+msgid "FYBA library"
+msgstr ""
+
+#: ../../../source/drivers/vector/sosi.rst:11
+msgid "This driver requires the FYBA library."
+msgstr ""
+
+#: ../../../source/drivers/vector/sosi.rst:14
+msgid "Open options"
+msgstr ""
+
+#: ../../../source/drivers/vector/sosi.rst:16
+msgid ""
+"Starting with GDAL 3.1, the following open options can be specified "
+"(typically with the -oo name=value parameters of ogrinfo or ogr2ogr):"
+msgstr ""
+
+#: ../../../source/drivers/vector/sosi.rst:29
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/drivers/vector/sosi.rst:31
+msgid ""
+"This example will convert a sosi file to a shape a file where all duplicate "
+"fields in a feature will be appended with a comma between."
+msgstr ""
+
+#: ../../../source/drivers/vector/sosi.rst:35
+msgid ""
+"ogr2ogr -t_srs EPSG:4258 test_poly.shp test_duplicate_fields.sos polygons"
+msgstr ""
+
+#: ../../../source/drivers/vector/sosi.rst:37
+msgid ""
+"This example will convert a sosi file to a shape a file where only "
+"duplicates for BEITEBRUKERID and OPPHAV will appended with a comma between."
+msgstr ""
+
+#: ../../../source/drivers/vector/sosi.rst:41
+msgid ""
+"ogr2ogr -t_srs EPSG:4258  test_poly.shp test_duplicate_fields.sos polygons -"
+"oo appendFieldsMap=\"BEITEBRUKERID&OPPHAV\""
+msgstr ""
+
+#: ../../../source/drivers/vector/sosi.rst:43
+msgid ""
+"This example will convert a sosi file to a shape a file where for "
+"BEITEBRUKERID and OPPHAV will be appended with a semicolon and comma between"
+msgstr ""
+
+#: ../../../source/drivers/vector/sosi.rst:47
+msgid ""
+"ogr2ogr -t_srs EPSG:4258  test_poly.shp test_duplicate_fields.sos polygons -"
+"oo appendFieldsMap=\"BEITEBRUKERID:;&OPPHAV:,\""
+msgstr ""

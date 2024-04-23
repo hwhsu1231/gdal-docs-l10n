@@ -1,0 +1,160 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/stacit.rst:5
+msgid "STACIT - Spatio-Temporal Asset Catalog Items"
+msgstr ""
+
+#: ../../../source/drivers/raster/stacit.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/stacit.rst:9
+msgid "STACIT"
+msgstr ""
+
+#: ../../../source/drivers/raster/stacit.rst:13
+msgid ""
+"This driver supports opening STAC API ItemCollections, with the input "
+"usually being a `STAC API search query <https://github.com/radiantearth/stac-"
+"api-spec/tree/main/item-search>`_ or the results saved as a JSON file. Items "
+"in the response must include projection information following the "
+"`Projection Extension Specification <https://github.com/stac-extensions/"
+"projection/>`_. It builds a virtual mosaic from the items."
+msgstr ""
+
+#: ../../../source/drivers/raster/stacit.rst:16
+msgid ""
+"A STACIT dataset which has no subdatasets is actually a :ref:`raster.vrt` "
+"dataset. Thus, translating it into VRT will result in a VRT file that "
+"directly references the items."
+msgstr ""
+
+#: ../../../source/drivers/raster/stacit.rst:19
+msgid ""
+"Note that `STAC API ItemCollections <https://github.com/radiantearth/stac-"
+"api-spec/blob/main/fragments/itemcollection/README.md>`_ are not the same "
+"as  `STAC Collections <https://github.com/radiantearth/stac-spec/tree/master/"
+"collection-spec>`_. STAC API ItemCollections are GeoJSON FeatureCollections "
+"enhanced with STAC entities."
+msgstr ""
+
+#: ../../../source/drivers/raster/stacit.rst:21
+msgid ""
+"Note that when the ItemCollections contains overlapping items, and that some "
+"items are fully covered by other items that are more recent, the STACIT "
+"virtual mosaic will not list those fully covered items not participating to "
+"the pixel values of the mosaic."
+msgstr ""
+
+#: ../../../source/drivers/raster/stacit.rst:26
+msgid "Open syntax"
+msgstr ""
+
+#: ../../../source/drivers/raster/stacit.rst:28
+msgid ""
+"STACIT datasets/subdatasets can be accessed with one of the following "
+"syntaxes:"
+msgstr ""
+
+#: ../../../source/drivers/raster/stacit.rst:30
+msgid "``filename.json``: local file"
+msgstr ""
+
+#: ../../../source/drivers/raster/stacit.rst:32
+msgid "``STACIT:\"https://example.com/filename.json\"``: remote file or query"
+msgstr ""
+
+#: ../../../source/drivers/raster/stacit.rst:34
+msgid ""
+"``STACIT:\"filename.json\":asset=my_asset``: specify the name of the asset "
+"GDAL should read (i.e. \"visual\")"
+msgstr ""
+
+#: ../../../source/drivers/raster/stacit.rst:36
+msgid ""
+"``STACIT:\"filename.json\":collection=my_collect,asset=my_asset``: limit to "
+"items in a given collection and specify asset to read"
+msgstr ""
+
+#: ../../../source/drivers/raster/stacit.rst:38
+msgid ""
+"``STACIT:\"filename.json\":collection=my_collect,asset=my_asset,"
+"crs=my_crs``: specify a collection, asset, and limit to items in a given CRS"
+msgstr ""
+
+#: ../../../source/drivers/raster/stacit.rst:41
+msgid "Open options"
+msgstr ""
+
+#: ../../../source/drivers/raster/stacit.rst:43
+msgid "The following open options are supported:"
+msgstr ""
+
+#: ../../../source/drivers/raster/stacit.rst:70
+msgid "Subdatasets"
+msgstr ""
+
+#: ../../../source/drivers/raster/stacit.rst:72
+msgid ""
+"If a STACIT JSON file contains several collections, assets or CRS, the "
+"driver will return a list of subdataset names to open each of the possible "
+"subdatasets."
+msgstr ""
+
+#: ../../../source/drivers/raster/stacit.rst:77
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/stacit.rst:82
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/drivers/raster/stacit.rst:84
+msgid ""
+"List the subdatasets associated to a `STAC search <https://github.com/"
+"radiantearth/stac-api-spec/tree/master/item-search>`_ on a given collection, "
+"bbox and starting from a datetime:"
+msgstr ""
+
+#: ../../../source/drivers/raster/stacit.rst:89
+msgid ""
+"gdalinfo \"STACIT:\\\"https://planetarycomputer.microsoft.com/api/stac/v1/"
+"search?"
+"collections=naip&bbox=-100,40,-99,41&datetime=2019-01-01T00:00:00Z%2F..\\\"\""
+msgstr ""
+
+#: ../../../source/drivers/raster/stacit.rst:92
+msgid "Open a subdataset returned by the above request:"
+msgstr ""
+
+#: ../../../source/drivers/raster/stacit.rst:96
+msgid ""
+"gdalinfo \"STACIT:\\\"https://planetarycomputer.microsoft.com/api/stac/v1/"
+"search?"
+"collections=naip&bbox=-100,40,-99,41&datetime=2019-01-01T00:00:00Z%2F..\\\":"
+"asset=image\""
+msgstr ""
+
+#: ../../../source/drivers/raster/stacit.rst:100
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/stacit.rst:102
+msgid ":ref:`raster.stacta` documentation page."
+msgstr ""

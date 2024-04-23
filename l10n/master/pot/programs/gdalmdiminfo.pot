@@ -1,0 +1,243 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/programs/gdalmdiminfo.rst:5
+#: ../../../source/programs/gdalmdiminfo.rst:13
+msgid "gdalmdiminfo"
+msgstr ""
+
+#: ../../../source/programs/gdalmdiminfo.rst:11
+msgid "Reports structure and content of a multidimensional dataset."
+msgstr ""
+
+#: ../../../source/programs/gdalmdiminfo.rst:16
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../source/programs/gdalmdiminfo.rst:18
+msgid ""
+"gdalmdiminfo [--help] [--help-general]\n"
+"             [-oo <NAME>=<VALUE>]... [-arrayoption <NAME>=<VALUE>]...\n"
+"             [-detailed] [-nopretty] [-array <array_name>] [-limit "
+"<number>]\n"
+"             [-stats] [-if <format>]... <datasetname>"
+msgstr ""
+
+#: ../../../source/programs/gdalmdiminfo.rst:26
+msgid "Description"
+msgstr ""
+
+#: ../../../source/programs/gdalmdiminfo.rst:28
+msgid ""
+":program:`gdalmdiminfo` program lists various information about a GDAL "
+"supported multidimensional raster dataset as JSON output. It follows the "
+"following `JSON schema <https://github.com/OSGeo/gdal/blob/master/data/"
+"gdalmdiminfo_output.schema.json>`_"
+msgstr ""
+
+#: ../../../source/programs/gdalmdiminfo.rst:32
+msgid "The following command line parameters can appear in any order"
+msgstr ""
+
+#: ../../../source/programs/options/help.rst:3
+msgid "Show this help message and exit"
+msgstr ""
+
+#: ../../../source/programs/options/help_general.rst:3
+msgid ""
+"Gives a brief usage message for the generic GDAL commandline options and "
+"exit."
+msgstr ""
+
+#: ../../../source/programs/gdalmdiminfo.rst:40
+msgid "Most verbose output. Report attribute data types and array values."
+msgstr ""
+
+#: ../../../source/programs/gdalmdiminfo.rst:44
+msgid "Outputs on a single line without any indentation."
+msgstr ""
+
+#: ../../../source/programs/gdalmdiminfo.rst:48
+msgid "Name of the array used to restrict the output to the specified array."
+msgstr ""
+
+#: ../../../source/programs/gdalmdiminfo.rst:52
+msgid ""
+"Number of values in each dimension that is used to limit the display of "
+"array values. By default, unlimited. Only taken into account if used with -"
+"detailed."
+msgstr ""
+
+#: ../../../source/programs/gdalmdiminfo.rst:58
+msgid ""
+"Dataset open option (format specific). This option may be used several times."
+msgstr ""
+
+#: ../../../source/programs/gdalmdiminfo.rst:63
+msgid ""
+"Option passed to :cpp:func:`GDALGroup::GetMDArrayNames` to filter reported "
+"arrays. Such option is format specific. Consult driver documentation. This "
+"option may be used several times."
+msgstr ""
+
+#: ../../../source/programs/gdalmdiminfo.rst:69
+msgid ""
+"Read and display image statistics. Force computation if no statistics are "
+"stored in an image."
+msgstr ""
+
+#: ../../../source/programs/options/if.rst:3
+msgid ""
+"Format/driver name to be attempted to open the input file(s). It is "
+"generally not necessary to specify it, but it can be used to skip automatic "
+"driver detection, when it fails to select the appropriate driver. This "
+"option can be repeated several times to specify several candidate drivers. "
+"Note that it does not force those drivers to open the dataset. In "
+"particular, some drivers have requirements on file extensions."
+msgstr ""
+
+#: ../../../source/programs/gdalmdiminfo.rst:78
+msgid "C API"
+msgstr ""
+
+#: ../../../source/programs/gdalmdiminfo.rst:80
+msgid "This utility is also callable from C with :cpp:func:`GDALMultiDimInfo`."
+msgstr ""
+
+#: ../../../source/programs/gdalmdiminfo.rst:83
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/programs/gdalmdiminfo.rst:85
+msgid "Display general structure1"
+msgstr ""
+
+#: ../../../source/programs/gdalmdiminfo.rst:87
+msgid "$ gdalmdiminfo netcdf-4d.nc"
+msgstr ""
+
+#: ../../../source/programs/gdalmdiminfo.rst:92
+msgid ""
+"{\n"
+"  \"type\": \"group\",\n"
+"  \"name\": \"/\",\n"
+"  \"attributes\": {\n"
+"    \"Conventions\": \"CF-1.5\"\n"
+"  },\n"
+"  \"dimensions\": [\n"
+"    {\n"
+"      \"name\": \"levelist\",\n"
+"      \"full_name\": \"/levelist\",\n"
+"      \"size\": 2,\n"
+"      \"type\": \"VERTICAL\",\n"
+"      \"indexing_variable\": \"/levelist\"\n"
+"    },\n"
+"    {\n"
+"      \"name\": \"longitude\",\n"
+"      \"full_name\": \"/longitude\",\n"
+"      \"size\": 10,\n"
+"      \"type\": \"HORIZONTAL_X\",\n"
+"      \"direction\": \"EAST\",\n"
+"      \"indexing_variable\": \"/longitude\"\n"
+"    },\n"
+"    {\n"
+"      \"name\": \"latitude\",\n"
+"      \"full_name\": \"/latitude\",\n"
+"      \"size\": 10,\n"
+"      \"type\": \"HORIZONTAL_Y\",\n"
+"      \"direction\": \"NORTH\",\n"
+"      \"indexing_variable\": \"/latitude\"\n"
+"    },\n"
+"    {\n"
+"      \"name\": \"time\",\n"
+"      \"full_name\": \"/time\",\n"
+"        \"size\": 4,\n"
+"      \"type\": \"TEMPORAL\",\n"
+"      \"indexing_variable\": \"/time\"\n"
+"      }\n"
+"  ],\n"
+"  \"arrays\": {\n"
+"    \"levelist\": {\n"
+"      \"datatype\": \"Int32\",\n"
+"      \"dimensions\": [\n"
+"          \"/levelist\"\n"
+"        ],\n"
+"      \"attributes\": {\n"
+"        \"long_name\": \"pressure_level\"\n"
+"      },\n"
+"      \"unit\": \"millibars\"\n"
+"    },\n"
+"    \"longitude\": {\n"
+"      \"datatype\": \"Float32\",\n"
+"      \"dimensions\": [\n"
+"        \"/longitude\"\n"
+"      ],\n"
+"      \"attributes\": {\n"
+"        \"standard_name\": \"longitude\",\n"
+"        \"long_name\": \"longitude\",\n"
+"        \"axis\": \"X\"\n"
+"      },\n"
+"      \"unit\": \"degrees_east\"\n"
+"    },\n"
+"    \"latitude\": {\n"
+"      \"datatype\": \"Float32\",\n"
+"      \"dimensions\": [\n"
+"        \"/latitude\"\n"
+"      ],\n"
+"      \"attributes\": {\n"
+"        \"standard_name\": \"latitude\",\n"
+"        \"long_name\": \"latitude\",\n"
+"        \"axis\": \"Y\"\n"
+"      },\n"
+"      \"unit\": \"degrees_north\"\n"
+"    },\n"
+"    \"time\": {\n"
+"      \"datatype\": \"Float64\",\n"
+"      \"dimensions\": [\n"
+"        \"/time\"\n"
+"      ],\n"
+"      \"attributes\": {\n"
+"        \"standard_name\": \"time\",\n"
+"        \"calendar\": \"standard\"\n"
+"      },\n"
+"      \"unit\": \"hours since 1900-01-01 00:00:00\"\n"
+"    },\n"
+"    \"t\": {\n"
+"      \"datatype\": \"Int32\",\n"
+"      \"dimensions\": [\n"
+"        \"/time\",\n"
+"        \"/levelist\",\n"
+"        \"/latitude\",\n"
+"        \"/longitude\"\n"
+"      ],\n"
+"      \"nodata_value\": -32767\n"
+"    }\n"
+"  },\n"
+"  \"structural_info\": {\n"
+"    \"NC_FORMAT\": \"CLASSIC\"\n"
+"  }\n"
+"}"
+msgstr ""
+
+#: ../../../source/programs/gdalmdiminfo.rst:194
+msgid "Display detailed information about a given array"
+msgstr ""
+
+#: ../../../source/programs/gdalmdiminfo.rst:196
+msgid "$ gdalmdiminfo netcdf-4d.nc -array t -detailed -limit 3"
+msgstr ""

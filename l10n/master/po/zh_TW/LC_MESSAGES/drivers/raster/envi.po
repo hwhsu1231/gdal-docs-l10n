@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/envi.rst:5
+msgid "ENVI -- ENVI .hdr Labelled Raster"
+msgstr ""
+
+#: ../../../source/drivers/raster/envi.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/envi.rst:7
+msgid "ENVI"
+msgstr ""
+
+#: ../../../source/drivers/raster/envi.rst:11
+msgid ""
+"GDAL supports some variations of raw raster files with associated ENVI "
+"style .hdr files describing the format. To select an existing ENVI raster "
+"file select the binary file containing the data (as opposed to the .hdr "
+"file), and GDAL will find the .hdr file by replacing the dataset extension "
+"with .hdr."
+msgstr ""
+
+#: ../../../source/drivers/raster/envi.rst:17
+msgid ""
+"GDAL should support reading bil, bip and bsq interleaved formats, and most "
+"pixel types are supported, including 8bit unsigned, 16 and 32bit signed and "
+"unsigned integers, 32bit and 64 bit floating point, and 32bit and 64bit "
+"complex floating point. There is limited support for recognising map_info "
+"keywords with the coordinate system and georeferencing. In particular, UTM "
+"and State Plane should work."
+msgstr ""
+
+#: ../../../source/drivers/raster/envi.rst:24
+msgid ""
+"All ENVI header fields are stored in the ENVI metadata domain, and all of "
+"these can then be written out to the header file."
+msgstr ""
+
+#: ../../../source/drivers/raster/envi.rst:28
+msgid "Creation Options:"
+msgstr ""
+
+#: ../../../source/drivers/raster/envi.rst:50
+msgid "NOTE: Implemented as :source_file:`frmts/raw/envidataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/envi.rst:53
+msgid "Driver capabilities"
+msgstr ""

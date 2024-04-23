@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/msgn.rst:5
+msgid "MSGN -- Meteosat Second Generation (MSG) Native Archive Format (.nat)"
+msgstr ""
+
+#: ../../../source/drivers/raster/msgn.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/msgn.rst:7
+msgid "MSGN"
+msgstr ""
+
+#: ../../../source/drivers/raster/msgn.rst:11
+msgid ""
+"GDAL supports reading only of MSG native files. These files may have "
+"anything from 1 to 12 bands, all at 10-bit resolution."
+msgstr ""
+
+#: ../../../source/drivers/raster/msgn.rst:14
+msgid ""
+"Includes support for the 12th band (HRV - High Resolution Visible). This is "
+"implemented as a subset, i.e., it is accessed by prefixing the filename with "
+"the tag \"HRV:\"."
+msgstr ""
+
+#: ../../../source/drivers/raster/msgn.rst:18
+msgid ""
+"Similarly, it is possible to obtain floating point radiance values in stead "
+"of the usual 10-bit digital numbers (DNs). This subset is accessed by "
+"prefixing the filename with the tag \"RAD:\"."
+msgstr ""
+
+#: ../../../source/drivers/raster/msgn.rst:22
+msgid ""
+"Georeferencing is currently supported, but the results may not be acceptable "
+"(accurate enough), depending on your requirements. The current workaround is "
+"to implement the CGMS Geostationary projection directly, using the code "
+"available from EUMETSAT."
+msgstr ""
+
+#: ../../../source/drivers/raster/msgn.rst:28
+msgid "Driver capabilities"
+msgstr ""

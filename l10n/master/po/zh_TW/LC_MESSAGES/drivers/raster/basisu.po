@@ -1,0 +1,136 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/basisu.rst:5
+msgid "BASISU -- Basis Universal"
+msgstr ""
+
+#: ../../../source/drivers/raster/basisu.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/basisu.rst:9
+msgid "BASISU"
+msgstr ""
+
+#: ../../../source/drivers/raster/basisu.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/raster/basisu.rst:11
+msgid "Basis Universal"
+msgstr ""
+
+#: ../../../source/drivers/raster/basisu.rst:14
+msgid "From https://github.com/BinomialLLC/basis_universal,"
+msgstr ""
+
+#: ../../../source/drivers/raster/basisu.rst:16
+msgid ""
+"Basis Universal is a \"supercompressed\" GPU texture data interchange system "
+"that supports two highly compressed intermediate file formats (.basis or "
+"the .KTX2 open standard from the Khronos Group) that can be quickly "
+"transcoded to a very wide variety of GPU compressed and uncompressed pixel "
+"formats."
+msgstr ""
+
+#: ../../../source/drivers/raster/basisu.rst:22
+msgid ""
+"This driver handles textures with the .basis extension. For KTX2, refer to "
+"the :ref:`raster.ktx2` driver."
+msgstr ""
+
+#: ../../../source/drivers/raster/basisu.rst:25
+msgid ""
+"Note that while the file format supports direct transcoding to other GPU "
+"pixel formats, this GDAL driver supports only conversion between "
+"uncompressed RGB(A) data and Basis Universal textures."
+msgstr ""
+
+#: ../../../source/drivers/raster/basisu.rst:29
+msgid ""
+"When a file is made of several images, they are exposed as subdataset, with "
+"the `BASISU:filename:image_idx` syntax."
+msgstr ""
+
+#: ../../../source/drivers/raster/basisu.rst:32
+msgid "Mipmaps levels are exposed as GDAL overviews."
+msgstr ""
+
+#: ../../../source/drivers/raster/basisu.rst:35
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/basisu.rst:42
+msgid "Creation options"
+msgstr ""
+
+#: ../../../source/drivers/raster/basisu.rst:44
+msgid ""
+"The format supports 2 modes: a high quality mode which is internally based "
+"off the `UASTC compressed texture format <https://richg42.blogspot."
+"com/2020/01/uastc-block-format-encoding.html>`_, and the original lower "
+"quality mode which is based off a subset of ETC1 called \"ETC1S\". The "
+"default is ETC1S. Only input of type Byte and with 1 (grey), 2 (grey+alpha), "
+"3 (RGB) or 4 (RGB + alpha) bands is supported. Refer to https://github.com/"
+"BinomialLLC/basis_universal for more details on those modes and their "
+"options."
+msgstr ""
+
+#: ../../../source/drivers/raster/basisu.rst:53
+msgid "The following creation options are available:"
+msgstr ""
+
+#: ../../../source/drivers/raster/basisu.rst:110
+msgid ""
+"Defaults to the maximum number of virtual CPUs available. Can also be "
+"controlled with the :config:`GDAL_NUM_THREADS` configuration option."
+msgstr ""
+
+#: ../../../source/drivers/raster/basisu.rst:118
+msgid "Whether to enable MIPMAP generation."
+msgstr ""
+
+#: ../../../source/drivers/raster/basisu.rst:128
+msgid "Build instructions"
+msgstr ""
+
+#: ../../../source/drivers/raster/basisu.rst:130
+msgid ""
+"Building basisu as a library requires currently building the `cmake` branch "
+"of the https://github.com/rouault/basis_universal/tree/cmake fork."
+msgstr ""
+
+#: ../../../source/drivers/raster/basisu.rst:133
+msgid ""
+"git clone -b cmake https://github.com/rouault/basis_universal\n"
+"cd basis_universal\n"
+"mkdir build\n"
+"cd build\n"
+"cmake .. -DCMAKE_INSTALL_PREFIX=/path/to/install-basisu -"
+"DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON\n"
+"cmake --build . --config Release --target install"
+msgstr ""
+
+#: ../../../source/drivers/raster/basisu.rst:142
+msgid ""
+"Once basisu is built, GDAL CMake options must be configured by pointing the "
+"basisu install prefix in the ``CMAKE_PREFIX_PATH`` variable or "
+"``basisu_ROOT`` variable."
+msgstr ""

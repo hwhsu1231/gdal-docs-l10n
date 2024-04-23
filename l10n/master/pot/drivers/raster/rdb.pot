@@ -1,0 +1,218 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/rdb.rst:5
+msgid "RDB - *RIEGL* Database"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:7
+msgid "RDB"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:11
+msgid "rdblib >= 2.2.0."
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:13
+msgid ""
+"GDAL can read \\*.mpx files in the RDB format, the in-house format used by "
+"`RIEGL Laser Measurement Systems GmbH <http://www.riegl.com>`__ through the "
+"RDB library."
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:15
+msgid ""
+"The driver relies on the RDB library, which can be downloaded `here <https://"
+"repository.riegl.com/software/libraries/rdblib>`__ . The minimum version "
+"required of the rdblib is 2.2.0."
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:18
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:23
+msgid "Provided Bands"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:25
+msgid ""
+"All attributes stored in the RDB, but the coordinates, are provided in "
+"bands. Vector attributes are split up into multiple bands. The attributes "
+"are currently mapped as follows:"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:29
+msgid "RDB attribute"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:29
+msgid "GDAL Band"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:31
+msgid "riegl.surface_normal[0],"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:33
+msgid "riegl.surface_normal[1],"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:35
+msgid "riegl.surface_normal[2]"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:31
+msgid "Band 1"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:33
+msgid "Band 2"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:35
+msgid "Band 3"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:37
+msgid "riegl.timestamp_min"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:37
+msgid "Band 4"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:39
+msgid "riegl.timestamp_max"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:39
+msgid "Band 5"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:41
+msgid "riegl.reflectance"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:41
+msgid "Band 6"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:43
+msgid "riegl.amplitude"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:43
+msgid "Band 7"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:45
+msgid "riegl.deviation"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:45
+msgid "Band 8"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:47
+msgid "riegl.height_center"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:47
+msgid "Band 9"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:49
+msgid "riegl.height_mean"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:49
+msgid "Band 10"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:51
+msgid "riegl.height_min"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:51
+msgid "Band 11"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:53
+msgid "riegl.height_max"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:53
+msgid "Band 12"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:55
+msgid "riegl.point_count"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:55
+msgid "Band 13"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:57
+msgid "riegl.point_count_grid_cell"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:57
+msgid "Band 14"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:59
+msgid "riegl.pca_thickness"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:59
+msgid "Band 15"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:61
+msgid "riegl.std_dev"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:61
+msgid "Band 16"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:63
+msgid "riegl.voxel_count"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:63
+msgid "Band 17"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:65
+msgid "riegl.id"
+msgstr ""
+
+#: ../../../source/drivers/raster/rdb.rst:65
+msgid "Band 18"
+msgstr ""

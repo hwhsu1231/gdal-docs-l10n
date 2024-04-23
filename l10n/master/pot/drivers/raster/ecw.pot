@@ -1,0 +1,329 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/ecw.rst:5
+msgid "ECW -- Enhanced Compressed Wavelets (.ecw)"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:7
+msgid "ECW"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:9
+msgid "ECW SDK"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:11
+msgid ""
+"GDAL supports reading and writing ECW files using the ERDAS ECW/JP2 SDK "
+"developed by Hexagon Geospatial (formerly Intergraph, ERDAS, ERMapper). "
+"Support is optional and requires linking in the libraries available from the "
+"ECW/JP2 SDK Download page."
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:17
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:28
+msgid "Licensing"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:30
+msgid ""
+"The ERDAS ECW/JP2 SDK v5.x is available under multiple license types. For "
+"Desktop usage, decoding any sized ECW/JP2 image is made available free of "
+"charge. To compress, deploy on a Server platform, or decode unlimited sized "
+"files on Mobile platforms a license must be purchased from Hexagon "
+"Geospatial."
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:37
+msgid "History"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:39
+msgid "v3.x - Last release, 2006"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:40
+msgid "v4.x - Last release, 2012"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:41
+msgid "v5.x - Active development, 2013 - current"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:44
+msgid "Creation Options"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:46
+msgid ""
+"The ERDAS ECW/JP2 v4.x and v5.x SDK is only free for image decompression. To "
+"compress images it is necessary to build with the read/write SDK and to "
+"provide an OEM licensing key at runtime which may be purchased from ERDAS."
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:51
+msgid ""
+"For those still using the ECW 3.3 SDK, images less than 500MB may be "
+"compressed for free, while larger images require licensing from ERDAS. See "
+"the licensing agreement and the LARGE_OK option."
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:55
+msgid ""
+"Files to be compressed into ECW format must also be at least 128x128. ECW "
+"currently only supports 8 bits per channel for ECW Version 2 files. ECW "
+"Version 3 files supports 16 bits per channel (as Uint16 data type). Please "
+"see Creation options to enable ECW V3 files writing"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:60
+msgid ""
+"When writing coordinate system information to ECW files, many less common "
+"coordinate systems are not mapped properly. If you know the ECW name for the "
+"coordinate system you can force it to be set at creation time with the PROJ "
+"and DATUM creation options."
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:65
+msgid ""
+"ECW format does not support creation of overviews since the ECW format is "
+"already considered to be optimized for \"arbitrary overviews\"."
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:71
+msgid "Creation Options:"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:128
+msgid "Configuration Options"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:130
+msgid ""
+"The ERDAS ECW SDK supports a variety of `runtime configuration options "
+"<http://trac.osgeo.org/gdal/wiki/ConfigOptions>`__ to control various "
+"features. Most of these are exposed as GDAL configuration options. See the "
+"ECW SDK documentation for full details on the meaning of these options."
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:202
+msgid "The GDAL-specific options:"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:217
+msgid "ECW Version 3 Files"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:219
+msgid "ECW 5.x SDK introduces a new file format version which,"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:221
+msgid ""
+"Storage of data statistics, histograms, metadata, RPC information within the "
+"file header"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:223
+msgid "Support for UInt16 data type"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:224
+msgid "Ability to update regions within an existing ECW v3 file"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:225
+msgid "Introduces other space saving optimizations"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:227
+msgid ""
+"Note: This version is not backward compatible and will fail to decode in v3."
+"x or v4.x ECW/JP2 SDK's. The File VERSION Metadata will advertise whether "
+"the file is ECW v2 or ECW v3."
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:232
+msgid "ECWP"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:234
+msgid ""
+"In addition to local files, this driver also supports access to streaming "
+"network imagery services using the proprietary \"ECWP\" protocol from the "
+"ERDAS APOLLO product. Use the full ecwp:// prefixed dataset url as input. "
+"When built with ECW/JP2 SDK v4.1 or newer it is also possible to take "
+"advantage of :ref:`rfc-24` for asynchronous / progressive streaming access "
+"to ECWP services."
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:242
+msgid "Metadata / Georeferencing"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:244
+msgid ""
+"The PROJ, DATUM and UNITS found in the ECW header are reported in the ECW "
+"metadata domain. They can also be set with the SetMetadataItem() method, in "
+"order to update the header information of an existing ECW file, opened in "
+"update mode, without modifying the imagery."
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:249
+msgid ""
+"The geotransform and projection can also be modified with the "
+"SetGeoTransform() and SetProjection() methods. If the projection is set with "
+"SetProjection() and the PROJ, DATUM or UNITS with SetMetadataItem(), the "
+"later values will override the values built from the projection string."
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:255
+msgid ""
+"All those can for example be modified with the -a_ullr, -a_srs or -mo "
+"switches of the :ref:`gdal_edit` utility."
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:258
+msgid "For example:"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:262
+msgid ""
+"gdal_edit.py -mo DATUM=WGS84 -mo PROJ=GEODETIC -a_ullr 7 47 8 46 test.ecw\n"
+"\n"
+"gdal_edit.py -a_srs EPSG:3068 -a_ullr 20800 22000 24000 19600 test.ecw"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:267
+msgid "File Metadata Keys:"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:269
+msgid "FILE_METADATA_ACQUISITION_DATE"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:270
+msgid "FILE_METADATA_ACQUISITION_SENSOR_NAME"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:271
+msgid "FILE_METADATA_ADDRESS"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:272
+msgid "FILE_METADATA_AUTHOR"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:273
+msgid "FILE_METADATA_CLASSIFICATION"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:274
+msgid "FILE_METADATA_COMPANY - should be set to ECW_ENCODE_COMPANY"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:275
+msgid "FILE_METADATA_COMPRESSION_SOFTWARE - updated during recompression"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:276
+msgid "FILE_METADATA_COPYRIGHT"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:277
+msgid "FILE_METADATA_EMAIL"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:278
+msgid "FILE_METADATA_TELEPHONE"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:279
+msgid "CLOCKWISE_ROTATION_DEG"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:280
+msgid "COLORSPACE"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:281
+msgid "COMPRESSION_DATE"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:282
+msgid "COMPRESSION_RATE_ACTUAL"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:283
+msgid ""
+"COMPRESSION_RATE_TARGET. This is the percentage of the target compressed "
+"file size divided by the uncompressed file size. This is equal to 100 / (100 "
+"- TARGET) where TARGET is the value of the TARGET creation option used at "
+"file creation, so a COMPRESSION_RATE_TARGET=1 is equivalent to a TARGET=0 "
+"(ie no compression), COMPRESSION_RATE_TARGET=5 is equivalent to TARGET=80 "
+"(ie dividing uncompressed file size by 5), etc..."
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:290
+msgid "VERSION"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:293
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:295
+msgid "Implemented as :source_file:`frmts/ecw/ecwdataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:296
+msgid ""
+"ERDAS ECW/JP2 SDK Read-Only Redistributable available at `www."
+"hexagongeospatial.com <https://supportsi.hexagon.com/help/s/article/ERDAS-"
+"ECW-JP2-SDK-Read-Only-Redistributable-download>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:298
+msgid ""
+"Further product information available in the `User Guide <https://bynder."
+"hexagon.com/m/5af86a8895f6696f/original/"
+"Hexagon_GSP_ERDAS_ECW_JP2_SDK_5_5_User_Guide.pdf>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:300
+msgid ""
+"Support for non-GDAL specific issues should be directed to the `Hexagon "
+"Geospatial public forum <https://supportsi.hexagon.com/help/s/erdas-"
+"apollo>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:303
+msgid "`GDAL ECW Build Hints <http://trac.osgeo.org/gdal/wiki/ECW>`__"
+msgstr ""

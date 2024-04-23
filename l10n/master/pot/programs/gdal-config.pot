@@ -1,0 +1,84 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/programs/gdal-config.rst:5
+msgid "gdal-config (Unix)"
+msgstr ""
+
+#: ../../../source/programs/gdal-config.rst:9
+msgid "Determines various information about a GDAL installation."
+msgstr ""
+
+#: ../../../source/programs/gdal-config.rst:14
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../source/programs/gdal-config.rst:16
+msgid ""
+"gdal-config [OPTIONS]\n"
+"Options:\n"
+"        [--prefix[=DIR]]\n"
+"        [--libs]\n"
+"        [--cflags]\n"
+"        [--version]\n"
+"        [--ogr-enabled]\n"
+"        [--formats]"
+msgstr ""
+
+#: ../../../source/programs/gdal-config.rst:28
+msgid "Description"
+msgstr ""
+
+#: ../../../source/programs/gdal-config.rst:30
+msgid ""
+"This utility script (available on Unix systems) can be used to determine "
+"various information about a GDAL installation. It is normally just used by "
+"configure scripts for applications using GDAL but can be queried by an end "
+"user."
+msgstr ""
+
+#: ../../../source/programs/gdal-config.rst:37
+msgid "the top level directory for the GDAL installation."
+msgstr ""
+
+#: ../../../source/programs/gdal-config.rst:41
+msgid "The libraries and link directives required to use GDAL."
+msgstr ""
+
+#: ../../../source/programs/gdal-config.rst:45
+msgid ""
+"The include and macro definition required to compiled modules using GDAL."
+msgstr ""
+
+#: ../../../source/programs/gdal-config.rst:50
+msgid "Reports the GDAL version."
+msgstr ""
+
+#: ../../../source/programs/gdal-config.rst:54
+msgid ""
+"Reports \"yes\" or \"no\" to standard output depending on whether OGR is "
+"built into GDAL."
+msgstr ""
+
+#: ../../../source/programs/gdal-config.rst:59
+msgid "Reports which formats are configured into GDAL to stdout."
+msgstr ""
+
+#: ../../../source/programs/gdal-config.rst:11
+msgid "gdal-config"
+msgstr ""

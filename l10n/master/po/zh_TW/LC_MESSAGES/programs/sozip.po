@@ -1,0 +1,246 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/programs/sozip.rst:5 ../../../source/programs/sozip.rst:13
+msgid "sozip"
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:11
+msgid "Generate a seek-optimized ZIP (SOZip) file."
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:16
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:18
+msgid ""
+"sozip [--help] [--help-general]\n"
+"      [--quiet|--verbose]\n"
+"      [[-g|--grow] | [--overwrite]]\n"
+"      [-r|--recurse-paths]\n"
+"      [-j|--junk-paths]\n"
+"      [-l|--list]\n"
+"      [--optimize-from=<input.zip>]\n"
+"      [--validate]\n"
+"      [--enable-sozip={auto|yes|no}]\n"
+"      [--sozip-chunk-size=<value>]\n"
+"      [--sozip-min-file-size=<value>]\n"
+"      [--content-type=<value>]\n"
+"      <zip_filename> [<filename>]..."
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:36
+msgid "Description"
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:38
+msgid "The :program:`sozip` utility can be used to:"
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:40
+msgid "create a :ref:`sozip_intro` file"
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:41
+msgid "append files to an existing ZIP/SOZip file"
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:42
+msgid "list the contents of a ZIP/SOZip file"
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:43
+msgid "validate a SOZip file"
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:44
+msgid "convert an existing Zip file in a SOZip optimized one"
+msgstr ""
+
+#: ../../../source/programs/options/help.rst:3
+msgid "Show this help message and exit"
+msgstr ""
+
+#: ../../../source/programs/options/help_general.rst:3
+msgid ""
+"Gives a brief usage message for the generic GDAL commandline options and "
+"exit."
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:53
+msgid "Quiet mode. No progress message is emitted on the standard output."
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:57
+msgid "Verbose mode."
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:62
+msgid ""
+"Grow an existing zip file with the content of the specified filename(s). "
+"This is the default mode of the utility. This switch is here for "
+"compatibility with Info-ZIP :program:`zip` utility"
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:68
+msgid "Overwrite the target zip file if it already exists."
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:73
+msgid ""
+"List the files contained in the zip file in an output similar to Info-ZIP :"
+"program:`unzip` utility, but with the addition of a column indicating "
+"whether each file is seek-optimized."
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:79
+msgid ""
+"Validates a SOZip file. Baseline ZIP validation is done in a light way, "
+"limited to being able to browse through ZIP records with the InfoZIP-based "
+"ZIP reader used by GDAL. But validation of the SOZip-specific aspects is "
+"done in a more thoroughful way."
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:87
+msgid ""
+"Travels the directory structure of the specified directory/directories "
+"recursively."
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:92
+msgid ""
+"Store just the name of a saved file (junk the path), and do not store "
+"directory names. By default, sozip will store the full path (relative to the "
+"current directory)."
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:98
+msgid ""
+"Re-process {input.zip} to generate a SOZip-optimized .zip. Options :option:"
+"`--enable-sozip`, :option:`--sozip-chunk-size` and :option:`--sozip-min-file-"
+"size` may be used in that mode."
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:104
+msgid ""
+"In ``auto`` mode, a file is seek-optimized only if its size is above the "
+"value of :option:`--sozip-chunk-size`. In ``yes`` mode, all input files will "
+"be seek-optimized. In ``no`` mode, no input files will be seek-optimized."
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:111
+msgid ""
+"Chunk size for a seek-optimized file. Defaults to 32768 bytes. The value is "
+"specified in bytes, or K and M suffix can be respectively used to specify a "
+"value in kilo-bytes or mega-bytes."
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:117
+msgid ""
+"Minimum file size to decide if a file should be seek-optimized, in --enable-"
+"sozip=auto mode. Defaults to 1 MB byte. The value is specified in bytes, or "
+"K, M or G suffix can be respectively used to specify a value in kilo-bytes, "
+"mega-bytes or giga-bytes."
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:124
+msgid ""
+"Store the Content-Type for the file being added as a key-value pair in the "
+"extra field extension 'KV' (0x564b) dedicated to storing key-value pair "
+"metadata"
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:129
+msgid "Filename of the zip file to create/append to/list."
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:133
+msgid "Filename of the file to add."
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:137
+msgid "Multithreading"
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:139
+msgid ""
+"The :config:`GDAL_NUM_THREADS` configuration option can be set to "
+"``ALL_CPUS`` or a integer value to specify the number of threads to use for "
+"SOZip-compressed files. Defaults to ``ALL_CPUS``."
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:144
+msgid "C API"
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:146
+msgid ""
+"Functionality of this utility can be done from C with :cpp:func:"
+"`CPLAddFileInZip` or :cpp:func:`VSICopyFile`."
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:150
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:152
+msgid ""
+"Create a, potentially seek-optimized, ZIP file with the content of my.gpkg:"
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:156
+msgid "sozip my.gpkg.zip my.gpkg"
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:159
+msgid ""
+"Create a, potentially seek-optimized, ZIP file from the content of a source "
+"directory:"
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:164
+msgid "sozip -r my.gpkg.zip source_dir/"
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:167
+msgid ""
+"Create a, potentially seek-optimized, ZIP file from an existing ZIP file."
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:171
+msgid "sozip --convert-from=in.zip out.zip"
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:174
+msgid ""
+"List the contents of a ZIP file and display which files are seek-optimized:"
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:178
+msgid "sozip -l my.gpkg.zip"
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:181
+msgid "Validates a SOZip file:"
+msgstr ""
+
+#: ../../../source/programs/sozip.rst:185
+msgid "sozip --validate my.gpkg.zip"
+msgstr ""

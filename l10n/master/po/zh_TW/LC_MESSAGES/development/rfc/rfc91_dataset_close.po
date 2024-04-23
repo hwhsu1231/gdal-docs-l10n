@@ -1,0 +1,350 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:5
+msgid "RFC 91: GDALDataset::Close() method"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:8
+msgid "Author:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:8
+msgid "Even Rouault"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:9
+msgid "Contact:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:9
+msgid "even.rouault at spatialys.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:10
+msgid "Started:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:10
+msgid "2023-Jan-20"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:11
+msgid "Status:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:11
+msgid "Adopted, implemented"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:12
+msgid "Target:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:12
+msgid "GDAL 3.7"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:16
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:18
+msgid ""
+"This RFC aims at providing more robust error detection during dataset "
+"closing, in particular for datasets in creation/update mode."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:21
+msgid ""
+"It modifies the GDALDataset::FlushCache() method and GDALFlushCache() "
+"function to return an error code, adds a GDALDataset::Close() virtual method "
+"and modifies GDALClose() to return an error code."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:26
+msgid "Motivation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:28
+msgid ""
+"A lot of drivers that have write capabilities may do write operations in "
+"their destructors, or just close the file descriptor owned by the dataset. "
+"Currently there is no clean way of catching errors that might occur. This "
+"recently bit `Fiona <https://github.com/Toblerity/Fiona/issues/1169>` where "
+"the GeoJSON driver may emit an error in its dataset destructor when writing "
+"the content of a file to a cloud object storage."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:35
+msgid ""
+"Code that currently wants to detect if GDALClose() causes an error has to do "
+"something like the following:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:38
+msgid ""
+"CPLErr eErrCodeBefore = CPLGetLastErrorType();\n"
+"GDALClose(hOutDS);\n"
+"if( eErrCodeBefore == CE_None && CPLGetLastErrorType() != CE_None )\n"
+"    printf(\"Error occurred during GDALClose()!\\n\")"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:45
+msgid ""
+"This is awkward and there is a risk that something in the chain of calls "
+"would clean the error state. It is thus desirable for the GDALClose() method "
+"to return an error code."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:50
+msgid "Technical details"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:52
+msgid ""
+"The GDALDataset::FlushCache() method is modified to return a CPLErr return "
+"value."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:54
+msgid "A new virtual method GDALDataset::Close() is added."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:56
+msgid ""
+"/** Do final cleanup before a dataset is destroyed.\n"
+" *\n"
+" * This method is typically called by GDALClose() or the destructor of a\n"
+" * GDALDataset subclass. It might also be called by C++ users before\n"
+" * destroying a dataset. It should not be called on a shared dataset whose\n"
+" * reference count is greater than one.\n"
+" *\n"
+" * It gives a last chance to the closing processus to return an error code "
+"if\n"
+" * something goes wrong, in particular in creation / update scenarios where\n"
+" * file write or network communication might occur when finalizing the "
+"dataset.\n"
+" *\n"
+" * Implementations should be robust to this method to be called several "
+"times\n"
+" * (on subsequent calls, it should do nothing and return CE_None).\n"
+" * Once it has been called, no other method than Close() or the dataset\n"
+" * destructor should be called. RasterBand or OGRLayer owned by the dataset\n"
+" * should be assumed as no longer being valid.\n"
+" *\n"
+" * If a driver implements this method, it must also call it from its\n"
+" * dataset destructor.\n"
+" *\n"
+" * @since GDAL 3.7\n"
+" */"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:81
+msgid "A typical implementation might look as the following:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:83
+msgid ""
+"MyDataset::~MyDataset()\n"
+"{\n"
+"   try\n"
+"   {\n"
+"       MyDataset::Close();\n"
+"   }\n"
+"   catch (const std::exception &exc)\n"
+"   {\n"
+"       // If Close() can throw exception\n"
+"       CPLError(CE_Failure, CPLE_AppDefined,\n"
+"                \"Exception thrown in MyDataset::Close(): %s\",\n"
+"                exc.what());\n"
+"   }\n"
+"   catch (...)\n"
+"   {\n"
+"       // If Close() can throw exception\n"
+"       CPLError(CE_Failure, CPLE_AppDefined,\n"
+"                \"Exception thrown in MyDataset::Close()\");\n"
+"   }\n"
+"}\n"
+"\n"
+"CPLErr MyDataset::Close()\n"
+"{\n"
+"    CPLErr eErr = CE_None;\n"
+"    if( nOpenFlags != OPEN_FLAGS_CLOSED )\n"
+"    {\n"
+"        if( MyDataset::FlushCache(true) != CE_None )\n"
+"            eErr = CE_Failure;\n"
+"\n"
+"        // Do something driver specific\n"
+"        if (m_fpImage != nullptr)\n"
+"        {\n"
+"            if( VSIFCloseL(m_fpImage) != 0 )\n"
+"            {\n"
+"                CPLError(CE_Failure, CPLE_FileIO, \"VSIFCloseL() failed\");\n"
+"                eErr = CE_Failure;\n"
+"            }\n"
+"        }\n"
+"\n"
+"        // Call parent Close() implementation.\n"
+"        if( MyParentDatasetClass::Close() != CE_None )\n"
+"            eErr = CE_Failure;\n"
+"    }\n"
+"    return eErr;\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:131
+msgid ""
+"The default GDALDataset::Close() implementation sets nOpenFlags to "
+"OPEN_FLAGS_CLOSED"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:135
+msgid "C API"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:137
+msgid ""
+"GDALClose() and GDALFlushCache() are modified to return a CPLErr return "
+"value."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:140
+msgid "Backward compatibility"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:142
+msgid ""
+"This is an ABI change that should not require more than rebuilding "
+"applications against GDAL headers."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:145
+msgid ""
+"For out-of-tree drivers that implement GDALDataset::FlushCache(), they need "
+"to take into account the change in its signature."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:148
+msgid ""
+"Out-of-tree drivers that have write capabilities are also encouraged to "
+"implement GDALDataset::Close()."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:152
+msgid "Limitations"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:154
+msgid ""
+"Not all drivers will be modified to implement Close() in the candidate "
+"implementation, and even those modified might call internal methods of the "
+"driver that do not do error propagation. Consequently, further work might be "
+"needed on a case-by-case to improve driver implementations."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:160
+msgid "SWIG Bindings"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:162
+msgid ""
+"The destructor of gdal.Dataset is modified to test the return value of "
+"GDALClose() and emits a CPLError(CE_Failure, ...) if the error state is "
+"clean (normally it should not)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:167
+msgid "C/C++ command line utilities"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:169
+msgid ""
+"C/C++ command line utilities are modified to test the return value of "
+"GDALClose() on output datasets, and return a non-zero return code for the "
+"process if GDALClose() returns an error."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:174
+msgid "Testing"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:176
+msgid ""
+"autotest/pymod/gdaltest.py::testCreate() is modified to call FlushCache() "
+"and test its return value."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:179
+msgid ""
+"The existing tests of the C/C++ command line utilities test GDALClose() "
+"modified behavior."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:183
+msgid "Issues / pull requests"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:185
+msgid "Addresses https://github.com/OSGeo/gdal/issues/6886"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:187
+msgid ""
+"https://github.com/OSGeo/gdal/compare/master...rouault:gdal:"
+"dataset_FlushCache_return_CPLErr?expand=1 contains a candidate "
+"implementation."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:190
+msgid "The candidate implementation does the following:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:192
+msgid "Update all drivers that implements GDALDataset::FlushCache()."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:193
+msgid ""
+"Implements GDALDataset::Close() for all drivers that derive from RawDataset."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:194
+msgid ""
+"Implements GDALDataset::Close() in the GeoJSON, GTiff, ODS, XLSX, SQLite, "
+"GPKG, netCDF, JP2OpenJPEG, FlatGeoBuf and OpenFileGDB drivers."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:196
+msgid ""
+"Modifies all C/C++ command line utilities to test the return value of "
+"GDALClose()"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:197
+msgid "Tests GDALClose() return value in gdal.Dataset destructor."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:200
+msgid "Voting history"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc91_dataset_close.rst:202
+msgid "+1 from PSC members KurtS, MateuszL and me, and +0 from JukkaR"
+msgstr ""

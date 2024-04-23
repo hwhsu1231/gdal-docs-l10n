@@ -1,0 +1,66 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/cosar.rst:5
+msgid "COSAR -- TerraSAR-X Complex SAR Data Product"
+msgstr ""
+
+#: ../../../source/drivers/raster/cosar.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/cosar.rst:7
+msgid "COSAR"
+msgstr ""
+
+#: ../../../source/drivers/raster/cosar.rst:11
+msgid ""
+"This driver provides the capability to read TerraSAR-X complex data. While "
+"most users will receive products in GeoTIFF format (representing detected "
+"radiation reflected from the targets, or geocoded data), ScanSAR products "
+"will be distributed in COSAR format."
+msgstr ""
+
+#: ../../../source/drivers/raster/cosar.rst:16
+msgid ""
+"Essentially, COSAR is an annotated binary matrix, with each sample held in 4 "
+"bytes (16 bits real, 16 bits imaginary) stored with the most significant "
+"byte first (Big Endian). Within a COSAR container there are one or more "
+"\"bursts\" which represent individual ScanSAR bursts. Note that if a "
+"Stripmap or Spotlight product is held in a COSAR container it is stored in a "
+"single burst."
+msgstr ""
+
+#: ../../../source/drivers/raster/cosar.rst:23
+msgid ""
+"Support for ScanSAR data is currently under way, due to the difficulties in "
+"fitting the ScanSAR \"burst\" identifiers into the GDAL model."
+msgstr ""
+
+#: ../../../source/drivers/raster/cosar.rst:27
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/cosar.rst:32
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/cosar.rst:34
+msgid "DLR Document TX-GS-DD-3307 \"Level 1b Product Format Specification.\""
+msgstr ""

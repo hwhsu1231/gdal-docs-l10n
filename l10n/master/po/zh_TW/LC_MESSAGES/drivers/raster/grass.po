@@ -1,0 +1,59 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/grass.rst:4
+msgid "GRASS Raster Format"
+msgstr ""
+
+#: ../../../source/drivers/raster/grass.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/grass.rst:6
+msgid "GRASS"
+msgstr ""
+
+#: ../../../source/drivers/raster/grass.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/raster/grass.rst:8
+msgid "gdal-grass-driver"
+msgstr ""
+
+#: ../../../source/drivers/raster/grass.rst:10
+msgid ""
+"The GDAL-GRASS driver can read GRASS GIS raster maps. The driver is "
+"maintained at the `GDAL-GRASS GIS driver repository <https://github.com/"
+"OSGeo/gdal-grass/>`__."
+msgstr ""
+
+#: ../../../source/drivers/raster/grass.rst:13
+msgid ""
+"For the driver documentation, please visit the `GDAL-GRASS GIS raster driver "
+"page <https://github.com/OSGeo/gdal-grass/blob/main/docs/grass_raster.md>`__."
+msgstr ""
+
+#: ../../../source/drivers/raster/grass.rst:18
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/grass.rst:20
+msgid "`GRASS GIS home page <http://grass.osgeo.org>`__"
+msgstr ""

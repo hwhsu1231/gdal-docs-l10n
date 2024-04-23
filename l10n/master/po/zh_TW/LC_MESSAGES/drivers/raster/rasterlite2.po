@@ -1,0 +1,198 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/rasterlite2.rst:5
+msgid "RasterLite2 - Rasters in SQLite DB"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:9
+msgid "SQLite"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:11
+msgid ""
+"The above short name is not a typo. The RasterLite2 functionality is part of "
+"the :ref:`vector.sqlite` driver."
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:14
+msgid "libsqlite3, librasterlite2, libspatialite"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:16
+msgid ""
+"The SQLite driver allows reading and writing SQLite databases containing "
+"RasterLite2 coverages."
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:21
+msgid ""
+"Those databases can be produced by the utilities of the `RasterLite2 "
+"<https://www.gaia-gis.it/fossil/librasterlite2>`__ distribution, such as "
+"rl2tools."
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:25
+msgid ""
+"The driver supports reading grayscale, paletted, RGB, multispectral images "
+"stored as tiles in the many compressed formats supported by libRasterLite2. "
+"The driver also supports reading overviews/pyramids, spatial reference "
+"system and spatial extent."
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:27
+msgid ""
+"GDAL/OGR must be compiled with sqlite support and against librasterlite2 and "
+"libspatialite."
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:30
+msgid ""
+"The driver is implemented a unified SQLite / SpatiaLite / RasterLite2 vector "
+"and raster capable driver."
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:34
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:43
+msgid "Opening syntax"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:45
+msgid ""
+"A RasterLite2 filename can be specified as the connection string. If the "
+"file contains a single RasterLite2 coverage, this one will be exposed as the "
+"GDAL dataset. If the file contains multiple coverages, each one will be "
+"exposed as a subdataset with the syntax RASTERLITE2:filename:coverage_name. "
+"See `the basic concepts of RasterLite2 <https://www.gaia-gis.it/fossil/"
+"librasterlite2/wiki?name=basic_concepts>`__."
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:52
+msgid ""
+"If a coverage is made of several sections, they will be listed as "
+"subdatasets of the coverage dataset, so as to be accessed individually. By "
+"default, they will be exposed as a unified dataset. The syntax of section-"
+"based dataset is RASTERLITE2:filename:coverage_name:section_id:section_name."
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:59
+msgid "Creation"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:61
+msgid ""
+"The driver supports creating new databases from scratch, adding new "
+"coverages to an existing database and adding sections to an existing "
+"coverage."
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:66
+msgid "Creation options"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:141
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:143
+msgid "Reading a RasterLite2 database with a single coverage:"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:147
+msgid "gdalinfo my.rl2"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:149
+msgid ""
+"Listing the subdatasets corresponding to the coverages of a RasterLite2 "
+"database with several coverages:"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:154
+msgid "gdalinfo multiple_coverages.rl2"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:156
+msgid "Reading a subdataset corresponding to a coverage:"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:160
+msgid "gdalinfo RASTERLITE2:multiple_coverages.rl2:my_coverage"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:162
+msgid "Creating a RasterLite2 dataset from a grayscale image:"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:166
+msgid "gdal_translate -f SQLite byte.tif byte.rl2"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:168
+msgid ""
+"Creating a RasterLite2 dataset from a RGB image, and using JPEG compression:"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:173
+msgid "gdal_translate -f SQLite rgb.tif rgb.rl2 -co COMPRESS=JPEG"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:175
+msgid ""
+"Adding a RasterLite2 coverage to an existing SpatiaLite/RasterLite2 database:"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:180
+msgid ""
+"gdal_translate -f SQLite rgb.tif rgb.rl2 -co APPEND_SUBDATASET=YES -co "
+"COVERAGE=rgb"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:182
+msgid "Adding pyramids to a coverage:"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:186
+msgid "gdaladdo rgb.rl2 2 4 8 16"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:189
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:191
+msgid ""
+"`Rasterlite2 home page <https://www.gaia-gis.it/fossil/librasterlite2/"
+"index>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite2.rst:193
+msgid ":ref:`OGR SQLite driver <vector.sqlite>`"
+msgstr ""

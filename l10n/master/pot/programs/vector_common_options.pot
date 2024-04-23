@@ -1,0 +1,115 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/programs/vector_common_options.rst:5
+msgid "Common options for vector programs"
+msgstr ""
+
+#: ../../../source/programs/vector_common_options.rst:7
+msgid ""
+"All GDAL OGR command line programs support the following common options."
+msgstr ""
+
+#: ../../../source/programs/vector_common_options.rst:11
+msgid "Report the version of GDAL and exit."
+msgstr ""
+
+#: ../../../source/programs/vector_common_options.rst:15
+msgid "Report detailed information about GDAL in use."
+msgstr ""
+
+#: ../../../source/programs/options/formats_vector.rst:3
+msgid ""
+"List all vector formats supported by this GDAL build (read-only and read-"
+"write) and exit. The format support is indicated as follows:"
+msgstr ""
+
+#: ../../../source/programs/options/formats_vector.rst:6
+msgid "``ro`` is read-only driver"
+msgstr ""
+
+#: ../../../source/programs/options/formats_vector.rst:7
+msgid ""
+"``rw`` is read or write (i.e. supports :cpp:func:`GDALDriver::CreateCopy`)"
+msgstr ""
+
+#: ../../../source/programs/options/formats_vector.rst:8
+msgid ""
+"``rw+`` is read, write and update (i.e. supports :cpp:func:`GDALDriver::"
+"Create`)"
+msgstr ""
+
+#: ../../../source/programs/options/formats_vector.rst:9
+msgid ""
+"A ``v`` is appended for formats supporting virtual IO (``/vsimem``, ``/"
+"vsigzip``, ``/vsizip``, etc)."
+msgstr ""
+
+#: ../../../source/programs/options/formats_vector.rst:10
+msgid "A ``s`` is appended for formats supporting subdatasets."
+msgstr ""
+
+#: ../../../source/programs/options/formats_vector.rst:12
+msgid ""
+"The order in which drivers are listed is the one in which they are "
+"registered, which determines the order in which they are successively probed "
+"when opening a dataset. Most of the time, this order does not matter, but in "
+"some situations, several drivers may recognize the same file. The ``-if`` "
+"option of some utilities can be specified to restrict opening the dataset "
+"with a subset of drivers (generally one). Note that it does not force those "
+"drivers to open the dataset. In particular, some drivers have requirements "
+"on file extensions. Alternatively, the :config:`GDAL_SKIP` configuration "
+"option can also be used to exclude one or several drivers."
+msgstr ""
+
+#: ../../../source/programs/vector_common_options.rst:21
+msgid ""
+"List detailed information about a single format driver. The format should be "
+"the short name reported in the :option:`--formats` list, such as GML."
+msgstr ""
+
+#: ../../../source/programs/vector_common_options.rst:27
+msgid ""
+"Read the named file and substitute the contents into the command line "
+"options list. Lines beginning with ``#`` will be ignored. Multi-word "
+"arguments may be kept together with double quotes."
+msgstr ""
+
+#: ../../../source/programs/vector_common_options.rst:33
+msgid ""
+"Sets the named configuration keyword to the given value, as opposed to "
+"setting them as environment variables. Some common configuration keywords "
+"are :config:`SHAPE_ENCODING` (force shapefile driver to read DBF files with "
+"the given character encoding) and :config:`CPL_TMPDIR` (define the location "
+"of temporary files). Individual drivers may be influenced by other :ref:"
+"`configuration options <list_config_options>`."
+msgstr ""
+
+#: ../../../source/programs/vector_common_options.rst:41
+msgid ""
+"Control what debugging messages are emitted. A value of ON will enable all "
+"debug messages. A value of OFF will disable all debug messages. Otherwise, a "
+"debug message will be emitted if its category appears somewhere in the value "
+"string."
+msgstr ""
+
+#: ../../../source/programs/vector_common_options.rst:49
+msgid ""
+"Gives a brief usage message for the generic GDAL OGR command line options "
+"and exit."
+msgstr ""

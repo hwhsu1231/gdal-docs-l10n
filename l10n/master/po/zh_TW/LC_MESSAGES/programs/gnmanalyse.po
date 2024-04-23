@@ -1,0 +1,116 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/programs/gnmanalyse.rst:5
+#: ../../../source/programs/gnmanalyse.rst:11
+msgid "gnmanalyse"
+msgstr ""
+
+#: ../../../source/programs/gnmanalyse.rst:9
+msgid "Analyses networks"
+msgstr ""
+
+#: ../../../source/programs/gnmanalyse.rst:14
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../source/programs/gnmanalyse.rst:16
+msgid ""
+"gnmanalyse [--help] [--help-general] [-q] [-quiet] [--long-usage]\n"
+"           [dijkstra <start_gfid> <end_gfid [-alo <NAME>=<VALUE>]...]\n"
+"           [kpaths <start_gfid> <end_gfid> <k> [-alo <NAME>=<VALUE>]...]\n"
+"           [resource [-alo <NAME>=<VALUE>]...]\n"
+"           [-ds <ds_name>][-f <ds_format>][-l <layer_name>]\n"
+"           [-dsco <NAME>=<VALUE>]... [-lco <NAME>=<VALUE>]...\n"
+"           <gnm_name>"
+msgstr ""
+
+#: ../../../source/programs/gnmanalyse.rst:27
+msgid "Description"
+msgstr ""
+
+#: ../../../source/programs/gnmanalyse.rst:29
+msgid ""
+"The :program:`gnmanalyse` program provides analysing capabilities of "
+"geographical networks in GDAL. The results of calculations are return in an "
+"OGRLayer format or as a console text output if such layer is undefined. All "
+"calculations are made considering the blocking state of features."
+msgstr ""
+
+#: ../../../source/programs/options/help.rst:3
+msgid "Show this help message and exit"
+msgstr ""
+
+#: ../../../source/programs/options/help_general.rst:3
+msgid ""
+"Gives a brief usage message for the generic GDAL commandline options and "
+"exit."
+msgstr ""
+
+#: ../../../source/programs/gnmanalyse.rst:37
+msgid ""
+"Calculates the best path between two points using Dijkstra algorithm from "
+"start_gfid point to end_gfid point."
+msgstr ""
+
+#: ../../../source/programs/gnmanalyse.rst:41
+msgid ""
+"Calculates K shortest paths between two points using Yen's algorithm (which "
+"internally uses Dijkstra algorithm for single path calculating) from "
+"start_gfid point to end_gfid point."
+msgstr ""
+
+#: ../../../source/programs/gnmanalyse.rst:45
+msgid ""
+"Calculates the \"resource distribution\". The connected components search is "
+"performed using breadth-first search and starting from that features which "
+"are marked by rules as 'EMITTERS'."
+msgstr ""
+
+#: ../../../source/programs/gnmanalyse.rst:49
+msgid ""
+"The name and path of the dataset to save the layer with resulting paths. Not "
+"need to be existed dataset."
+msgstr ""
+
+#: ../../../source/programs/gnmanalyse.rst:53
+msgid "Define this to set the format of newly created dataset."
+msgstr ""
+
+#: ../../../source/programs/gnmanalyse.rst:57
+msgid ""
+"The name of the resulting layer. If the layer exist already - it will be "
+"rewritten."
+msgstr ""
+
+#: ../../../source/programs/gnmanalyse.rst:61
+msgid "The network to work with (path and name)."
+msgstr ""
+
+#: ../../../source/programs/gnmanalyse.rst:65
+msgid "Dataset creation option (format specific)"
+msgstr ""
+
+#: ../../../source/programs/gnmanalyse.rst:69
+msgid "Layer creation option (format specific)"
+msgstr ""
+
+#: ../../../source/programs/gnmanalyse.rst:73
+msgid "Algorithm option (format specific)"
+msgstr ""

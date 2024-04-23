@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/tga.rst:5
+msgid "TGA -- TARGA Image File Format"
+msgstr ""
+
+#: ../../../source/drivers/raster/tga.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/tga.rst:9
+msgid "TGA"
+msgstr ""
+
+#: ../../../source/drivers/raster/tga.rst:13
+msgid "The TGA driver currently supports reading TGA 2.0 files."
+msgstr ""
+
+#: ../../../source/drivers/raster/tga.rst:15
+msgid ""
+"The driver supports reading 1 (grey-level or paletted), 3 (RGB), and 4 "
+"(RGBA, or RGB-undefined) band images. The driver supports both uncompressed "
+"or RLE-compressed images. Top-left or bottom-left origins are supported (if "
+"the later, the lines are re-order to expose a top-left order). 16-bit RGB "
+"encoded images are also supported."
+msgstr ""
+
+#: ../../../source/drivers/raster/tga.rst:21
+msgid ""
+"The following metadata items may be reported: IMAGE_ID, AUTHOR_NAME and "
+"COMMENTS. The extended area is used to determine if the fourth band is an "
+"alpha channel or not."
+msgstr ""
+
+#: ../../../source/drivers/raster/tga.rst:26
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/tga.rst:31
+msgid "Links"
+msgstr ""
+
+#: ../../../source/drivers/raster/tga.rst:33
+msgid ""
+"`Format specification <http://www.dca.fee.unicamp.br/~martino/disciplinas/"
+"ea978/tgaffs.pdf>`_"
+msgstr ""

@@ -1,0 +1,195 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/vfk.rst:4
+msgid "VFK - Czech Cadastral Exchange Data Format"
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:6
+msgid "VFK"
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:8
+msgid "libsqlite3"
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:10
+msgid ""
+"This driver reads VFK files, i.e. data in the *Czech cadastral exchange data "
+"format*. The VFK file is recognized as an datasource with multiple layers."
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:14
+msgid "The driver is compiled only if GDAL is *built with SQLite support*."
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:16
+msgid ""
+"Points are represented as wkbPoints, lines and boundaries as wkbLineStrings "
+"and areas as wkbPolygons. wkbMulti\\* features are not used. Feature types "
+"cannot be mixed in one layer."
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:21
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:28
+msgid "Open options"
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:30
+msgid ""
+"Starting with GDAL 2.3, the following open options can be specified "
+"(typically with the ``-oo name=value`` parameters of ogrinfo or ogr2ogr):"
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:52
+msgid "Configuration options"
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:54
+msgid "Several :ref:`configuration options <configoptions>` are available:"
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:98
+msgid "Internal working and performance tweaking"
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:100
+msgid ""
+"If backend SQLite database already exists then the driver reads features "
+"directly from the database and not from input VFK file given as an input "
+"datasource. This causes significant performance gain when reading features "
+"by the driver."
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:105
+msgid ""
+"The driver reads by default all data blocks from VFK file when building "
+"backend SQLite database. When configuration option :config:"
+"`OGR_VFK_DB_READ_ALL_BLOCKS` =NO is given, the driver reads only data blocks "
+"which are requested by the user. This can be useful when the user want to "
+"process only part of VFK data."
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:112
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:114
+msgid ""
+"Data related to a single cadastral area is typically distributed in multiple "
+"VFK files. Example below is based on `sample VFK files <https://services."
+"cuzk.cz/vfk/anonym/>`__ provided by the Czech State Administration of Land "
+"Surveying and Cadastre. In order to process all VFK files related to a "
+"single cadastral area (in example below with ID 602515), the configuration "
+"option :config:`OGR_VFK_DB_NAME` has to be defined."
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:124
+msgid ""
+"# load first file mapa/602515.vfk\n"
+"ogrinfo --config OGR_VFK_DB_NAME 602515.db mapa/602515.vfk\n"
+"# load second file spi_s_jpv/602515.vfk\n"
+"ogrinfo --config OGR_VFK_DB_NAME 602515.db spi_s_jpv/602515.vfk\n"
+"# now we can access eg. geometry of parcels\n"
+"ogrinfo 602515.db PAR -fid 1\n"
+"..."
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:133
+msgid "Datasource name"
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:135
+msgid "Datasource name is a full path to the VFK file."
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:137
+msgid ""
+"The driver supports reading files managed by VSI Virtual File System API, "
+"which include \"regular\" files, as well as files in the /vsizip/, /"
+"vsigzip/, and /vsicurl/ read-only domains."
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:141
+msgid ""
+"Since GDAL 2.2 also a full path to the backend SQLite database can be used "
+"as an datasource. By default, such datasource is read by SQLite driver. If "
+"configuration option :config:`OGR_VFK_DB_READ` =YES is given, such "
+"datasource is opened by VFK driver instead."
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:147
+msgid "Layer names"
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:149
+msgid "VFK data blocks are used as layer names."
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:152
+msgid "Filters"
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:155
+msgid "Attribute filter"
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:157
+msgid ""
+"An internal SQL engine is used to evaluate the expression. Evaluation is "
+"done once when the attribute filter is set."
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:161
+msgid "Spatial filter"
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:163
+msgid ""
+"Bounding boxes of features stored in topology structure are used to evaluate "
+"if a features matches current spatial filter. Evaluation is done once when "
+"the spatial filter is set."
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:168
+msgid "References"
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:170
+msgid ""
+"`OGR VFK Driver Implementation Issues <https://www.researchgate.net/"
+"publication/238067945_OGR_VFK_Driver_Implementation_Issues>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/vfk.rst:172
+msgid ""
+"`Czech cadastral exchange data format documentation <http://www.cuzk.cz/"
+"Dokument.aspx?PRARESKOD=998&MENUID=0&AKCE=DOC:10-VF_ISKNTEXT>`__ (in Czech)"
+msgstr ""

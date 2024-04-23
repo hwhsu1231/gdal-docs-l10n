@@ -1,0 +1,532 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/geojson.rst:4
+#: ../../../source/drivers/vector/geojson.rst:6
+msgid "GeoJSON"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:10
+msgid ""
+"This driver implements read/write support for access to features encoded in "
+"`GeoJSON <http://geojson.org/>`__ format. GeoJSON is a dialect based on the "
+"`JavaScript Object Notation (JSON) <http://json.org/>`__. JSON is a "
+"lightweight plain text format for data interchange and GeoJSON is nothing "
+"other than its specialization for geographic content."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:16
+msgid ""
+"GeoJSON is supported as an output format of a number of services: `GeoServer "
+"<http://docs.geoserver.org/2.6.x/en/user/services/wfs/outputformats."
+"html>`__, `CartoWeb <http://exportgge.sourceforge.net/kml/>`__, etc."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:20
+msgid ""
+"The OGR GeoJSON driver translates GeoJSON encoded data to objects of the "
+"`OGR Simple Features model <ogr_arch.html>`__: Datasource, Layer, Feature, "
+"Geometry. The implementation is based on `GeoJSON Specification, v1.0 "
+"<http://geojson.org/geojson-spec.html>`__."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:25
+msgid ""
+"Starting with GDAL 2.1.0, the GeoJSON driver supports updating existing "
+"GeoJSON files. In that case, the default value for the NATIVE_DATA open "
+"option will be YES."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:30
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:39
+msgid "Datasource"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:41
+msgid "The OGR GeoJSON driver accepts three types of sources of data:"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:43
+msgid ""
+"Uniform Resource Locator (`URL <http://en.wikipedia.org/wiki/URL>`__) - a "
+"Web address to perform `HTTP <http://en.wikipedia.org/wiki/HTTP>`__ request"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:46
+msgid ""
+"Plain text file with GeoJSON data - identified from the file extension ."
+"geojson or .json"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:48
+msgid "Text passed directly and encoded in GeoJSON"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:50
+msgid ""
+"Starting with GDAL 2.3, the URL/filename/text might be prefixed with "
+"GeoJSON: to avoid any ambiguity with other drivers."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:54
+msgid "Layer"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:56
+msgid ""
+"A GeoJSON datasource is translated to single OGRLayer object with pre-"
+"defined name *OGRGeoJSON*:"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:61
+msgid "ogrinfo -ro http://featureserver/data/.geojson OGRGeoJSON"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:63
+msgid ""
+"It is also valid to assume that OGRDataSource::GetLayerCount() for GeoJSON "
+"datasource always returns 1."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:66
+msgid ""
+"Starting with GDAL 2.2, the layer name is built with the following logic:"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:69
+msgid ""
+"If a \"name\" member is found at the FeatureCollection level, it is used."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:71
+msgid ""
+"Otherwise if the filename is regular (ie not a URL with query parameters), "
+"then the filename without extension and path is used as the layer name."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:74
+msgid "Otherwise OGRGeoJSON is used."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:76
+msgid ""
+"Accessing Web Service as a datasource (i.e. FeatureServer), each request "
+"will produce new layer. This behavior conforms to stateless nature of HTTP "
+"transaction and is similar to how Web browsers operate: single request == "
+"single page."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:81
+msgid ""
+"If a top-level member of GeoJSON data is of any other type than "
+"*FeatureCollection*, the driver will produce a layer with only one feature. "
+"Otherwise, a layer will consists of a set of features."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:85
+msgid ""
+"If the :oo:`NATIVE_DATA` open option is set to YES, members at the level of "
+"the FeatureCollection will be stored as a serialized JSon object in the "
+"NATIVE_DATA item of the NATIVE_DATA metadata domain of the layer object (and "
+"\"application/vnd.geo+json\" in the NATIVE_MEDIA_TYPE of the NATIVE_DATA "
+"metadata domain)."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:92
+msgid "Feature"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:94
+msgid ""
+"The OGR GeoJSON driver maps each object of following types to new "
+"*OGRFeature* object: Point, LineString, Polygon, GeometryCollection, Feature."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:98
+msgid ""
+"According to the *GeoJSON Specification*, only the *Feature* object must "
+"have a member with name *properties*. Each and every member of *properties* "
+"is translated to OGR object of type of OGRField and added to corresponding "
+"OGRFeature object."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:103
+msgid ""
+"The *GeoJSON Specification* does not require all *Feature* objects in a "
+"collection to have the same schema of properties. If *Feature* objects in a "
+"set defined by *FeatureCollection* object have different schema of "
+"properties, then resulting schema of fields in OGRFeatureDefn is generated "
+"as `union <http://en.wikipedia.org/wiki/Union_(set_theory)>`__ of all "
+"*Feature* properties."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:110
+msgid ""
+"Schema detection will recognized fields of type String, Integer, Real, "
+"StringList, IntegerList and RealList, Integer(Boolean), Date, Time and "
+"DateTime."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:113
+msgid ""
+"It is possible to tell the driver to not to process attributes by setting "
+"configuration option :config:`ATTRIBUTES_SKIP=YES`. Default behavior is to "
+"preserve all attributes (as an union, see previous paragraph), what is equal "
+"to setting :config:`ATTRIBUTES_SKIP=NO`."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:119
+msgid ""
+"If the :oo:`NATIVE_DATA` open option is set to YES, the Feature JSon object "
+"will be stored as a serialized JSon object in the NativeData property of the "
+"OGRFeature object (and \"application/vnd.geo+json\" in the NativeMediaType "
+"property). On write, if a OGRFeature to be written has its NativeMediaType "
+"property set to \"application/vnd.geo+json\" and its NativeData property set "
+"to a string that is a serialized JSon object, then extra members of this "
+"object (i.e. not the \"property\" dictionary, nor the first 3 dimensions of "
+"geometry coordinates) will be used to enhance the created JSon object from "
+"the OGRFeature. See :ref:`rfc-60` for more details."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:131
+msgid "Geometry"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:133
+msgid ""
+"Similarly to the issue with mixed-properties features, the *GeoJSON "
+"Specification* draft does not require all *Feature* objects in a collection "
+"must have geometry of the same type. Fortunately, OGR objects model does "
+"allow to have geometries of different types in single layer - a "
+"heterogeneous layer. By default, the GeoJSON driver preserves type of "
+"geometries."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:140
+msgid ""
+"However, sometimes there is a need to generate a homogeneous layer from a "
+"set of heterogeneous features. For this purpose, it is possible to tell the "
+"driver to wrap all geometries with OGRGeometryCollection type as a common "
+"denominator. This behavior may be controlled by setting the :config:"
+"`GEOMETRY_AS_COLLECTION` configuration option to YES."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:147
+msgid "Configuration options"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:149
+msgid ""
+"The following :ref:`configuration options <configoptions>` are available:"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:181
+msgid "Open options"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:235
+msgid ""
+"To explain :oo:`FLATTEN_NESTED_ATTRIBUTES`, consider the following GeoJSON "
+"fragment:"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:240
+msgid ""
+"{\n"
+"  \"type\": \"FeatureCollection\",\n"
+"  \"features\":\n"
+"  [\n"
+"    {\n"
+"      \"type\": \"Feature\",\n"
+"      \"geometry\": {\n"
+"        \"type\": \"Point\",\n"
+"        \"coordinates\": [ 2, 49 ]\n"
+"      },\n"
+"      \"properties\": {\n"
+"        \"a_property\": \"foo\",\n"
+"        \"some_object\": {\n"
+"          \"a_property\": 1,\n"
+"          \"another_property\": 2\n"
+"        }\n"
+"      }\n"
+"    }\n"
+"  ]\n"
+"}"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:261
+msgid "\"ogrinfo test.json -al -oo FLATTEN_NESTED_ATTRIBUTES=yes\" reports:"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:265
+msgid ""
+"OGRFeature(OGRGeoJSON):0\n"
+"  a_property (String) = foo\n"
+"  some_object_a_property (Integer) = 1\n"
+"  some_object_another_property (Integer) = 2\n"
+"  POINT (2 49)"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:272
+msgid "Layer creation options"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:405
+msgid "VSI Virtual File System API support"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:407
+msgid ""
+"The driver supports reading and writing to files managed by VSI Virtual File "
+"System API, which includes \"regular\" files, as well as files in the /"
+"vsizip/ (read-write), /vsigzip/ (read-write), /vsicurl/ (read-only) domains."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:412
+msgid "Writing to /dev/stdout or /vsistdout/ is also supported."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:415
+msgid "Round-tripping of extra JSon members"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:417
+msgid "See :ref:`rfc-60` for more details."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:419
+msgid ""
+"Starting with GDAL 2.1, extra JSon members at the FeatureCollection, Feature "
+"or geometry levels that are not normally reflected in the OGR abstraction, "
+"such as the ones called \"extra_XXXXX_member\" in the below snippet, are by "
+"default preserved when executing ogr2ogr with GeoJSON both at the source and "
+"destination. This also applies to extra values in position tuples of "
+"geometries, beyond the 3rd dimension (100, 101 in the below example), if the "
+"transformation preserves the geometry structure (for example, reprojection "
+"is allowed, but not change in the number of coordinates)."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:431
+msgid ""
+"{\n"
+"  \"type\": \"FeatureCollection\",\n"
+"  \"extra_fc_member\": \"foo\",\n"
+"  \"features\":\n"
+"  [\n"
+"    {\n"
+"      \"type\": \"Feature\",\n"
+"      \"extra_feat_member\": \"bar\",\n"
+"      \"geometry\": {\n"
+"        \"type\": \"Point\",\n"
+"        \"extra_geom_member\": \"baz\",\n"
+"        \"coordinates\": [ 2, 49, 3, 100, 101 ]\n"
+"      },\n"
+"      \"properties\": {\n"
+"        \"a_property\": \"foo\",\n"
+"      }\n"
+"    }\n"
+"  ]\n"
+"}"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:451
+msgid ""
+"This behavior can be turned off by specifying the **-noNativeData** switch "
+"of the ogr2ogr utility."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:455
+msgid "RFC 7946 write support"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:457
+msgid ""
+"By default, the driver will write GeoJSON files following GeoJSON 2008 "
+"specification. When specifying the :lco:`RFC7946=YES` creation option, the "
+"RFC 7946 standard will be used instead."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:461
+msgid ""
+"The differences between the 2 versions are mentioned in `Appendix B of RFC "
+"7946 <https://tools.ietf.org/html/rfc7946#appendix-B>`__ and recalled here "
+"for what matters to the driver:"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:465
+msgid ""
+"Coordinates must be geographic over the WGS 84 ellipsoid, hence if the "
+"spatial reference system specified at layer creation time is not EPSG:4326, "
+"on-the-fly reprojection will be done by the driver."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:469
+msgid ""
+"Polygons will be written such as to follow the right-hand rule for "
+"orientation (counterclockwise external rings, clockwise internal rings)."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:472
+msgid ""
+"The values of a \"bbox\" array are \"[west, south, east, north]\", not "
+"\"[minx, miny, maxx, maxy]\""
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:474
+msgid ""
+"Some extension member names (see previous section about round/tripping) are "
+"forbidden in the FeatureCollection, Feature and Geometry objects."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:477
+msgid ""
+"The default coordinate precision is 7 decimal digits after decimal separator."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:481
+msgid "Geometry coordinate precision"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:483
+msgid "3.9"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:485
+msgid ""
+"The GeoJSON driver supports reading and writing the geometry coordinate "
+"precision, using the :cpp:class:`OGRGeomCoordinatePrecision` settings of "
+"the :cpp:class:`OGRGeomFieldDefn` Those settings are used to round the "
+"coordinates of the geometry of the features to an appropriate decimal "
+"precision."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:492
+msgid ""
+"The :lco:`COORDINATE_PRECISION` layer creation option has precedence over "
+"the values set on the :cpp:class:`OGRGeomFieldDefn`."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:495
+msgid ""
+"Implementation details: the coordinate precision is stored as "
+"``xy_coordinate_resolution`` and ``z_coordinate_resolution`` members at the "
+"FeatureCollection level. Their numeric value is expressed in the units of "
+"the SRS."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:500
+msgid "Example:"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:502
+msgid ""
+"{\n"
+"    \"type\": \"FeatureCollection\",\n"
+"    \"xy_coordinate_resolution\": 8.9e-6,\n"
+"    \"z_coordinate_resolution\": 1e-1,\n"
+"    \"features\": []\n"
+"}"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:512
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:514
+msgid "How to dump content of .geojson file:"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:518
+msgid "ogrinfo -ro point.geojson"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:520
+msgid "How to query features from remote service with filtering by attribute:"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:524
+msgid ""
+"ogrinfo -ro http://featureserver/cities/.geojson OGRGeoJSON -where "
+"\"name=Warsaw\""
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:526
+msgid ""
+"How to translate number of features queried from FeatureServer to ESRI "
+"Shapefile:"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:531
+msgid ""
+"ogr2ogr -f \"ESRI Shapefile\" cities.shp http://featureserver/cities/."
+"geojson OGRGeoJSON"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:533
+msgid "How to translate a ESRI Shapefile into a RFC 7946 GeoJSON file:"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:537
+msgid "ogr2ogr -f GeoJSON cities.json cities.shp -lco RFC7946=YES"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:540
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:542
+msgid "`GeoJSON <http://geojson.org/>`__ - encoding geographic content in JSON"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:544
+msgid "`RFC 7946 <https://tools.ietf.org/html/rfc7946>`__ standard."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:545
+msgid ""
+"`GeoJSON 2008 <http://geojson.org/geojson-spec.html>`__ specification "
+"(obsoleted by RFC 7946)."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:547
+msgid "`JSON <http://json.org/>`__ - JavaScript Object Notation"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:548
+msgid ":ref:`GeoJSON sequence driver <vector.geojsonseq>`"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:549
+msgid ""
+":ref:`OGC Features and Geometries JSON (JSON-FG) driver <vector.jsonfg>`"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:550
+msgid ":ref:`ESRI JSon / FeatureService driver <vector.esrijson>`"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:551
+msgid ":ref:`TopoJSON driver <vector.topojson>`"
+msgstr ""

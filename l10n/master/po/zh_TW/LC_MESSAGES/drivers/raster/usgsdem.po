@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/usgsdem.rst:5
+msgid "USGSDEM -- USGS ASCII DEM (and CDED)"
+msgstr ""
+
+#: ../../../source/drivers/raster/usgsdem.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/usgsdem.rst:7
+msgid "USGSDEM"
+msgstr ""
+
+#: ../../../source/drivers/raster/usgsdem.rst:11
+msgid ""
+"GDAL includes support for reading USGS ASCII DEM files. This is the "
+"traditional format used by USGS before being replaced by SDTS, and is the "
+"format used for CDED DEM data products from Canada. Most popular variations "
+"on USGS DEM files should be supported, including correct recognition of "
+"coordinate system, and georeferenced positioning."
+msgstr ""
+
+#: ../../../source/drivers/raster/usgsdem.rst:17
+msgid ""
+"The 7.5 minute (UTM grid) USGS DEM files will generally have regions of "
+"missing data around the edges, and these are properly marked with a nodata "
+"value. Elevation values in USGS DEM files may be in meters or feet, and this "
+"will be indicated by the return value of GDALRasterBand::GetUnitType() "
+"(either \"m\" or \"ft\")."
+msgstr ""
+
+#: ../../../source/drivers/raster/usgsdem.rst:23
+msgid ""
+"Note that USGS DEM files are represented as one big tile. This may cause "
+"cache thrashing problems if the GDAL tile cache size is small. It will also "
+"result in a substantial delay when the first pixel is read as the whole file "
+"will be ingested."
+msgstr ""
+
+#: ../../../source/drivers/raster/usgsdem.rst:28
+msgid ""
+"Some of the code for implementing usgsdemdataset.cpp was derived from VTP "
+"code by Ben Discoe. See the `Virtual Terrain <http://www.vterrain.org/>`__ "
+"project for more information on VTP."
+msgstr ""
+
+#: ../../../source/drivers/raster/usgsdem.rst:34
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/usgsdem.rst:43
+msgid "Creation Issues"
+msgstr ""
+
+#: ../../../source/drivers/raster/usgsdem.rst:45
+msgid ""
+"GDAL supports export of geographic (and UTM) USGS DEM and CDED data files, "
+"including the ability to generate CDED 2.0 50K products to Canadian federal "
+"government specifications."
+msgstr ""
+
+#: ../../../source/drivers/raster/usgsdem.rst:49
+msgid ""
+"Input data must already be sampled in a geographic or UTM coordinate system. "
+"By default the entire area of the input file will be output, but for CDED50K "
+"products the output file will be sampled at the production specified "
+"resolution and on product tile boundaries."
+msgstr ""
+
+#: ../../../source/drivers/raster/usgsdem.rst:54
+msgid ""
+"If the input file has appropriate coordinate system information set, export "
+"to specific product formats can take input in different coordinate systems "
+"(i.e. from Albers projection to NAD83 geographic for CDED50K production)."
+msgstr ""
+
+#: ../../../source/drivers/raster/usgsdem.rst:59
+msgid "Creation Options:"
+msgstr ""
+
+#: ../../../source/drivers/raster/usgsdem.rst:145
+msgid ""
+"Example: The following would generate a single CDED50K tile, extracting from "
+"the larger DEM coverage yk_3arcsec for a tile with the top left corner "
+"-117w,60n. The file yk_template.dem is used to set some product fields "
+"including the Producer of Data, Process Code and Origin Code fields."
+msgstr ""
+
+#: ../../../source/drivers/raster/usgsdem.rst:153
+msgid ""
+"gdal_translate -of USGSDEM -co PRODUCT=CDED50K -co TEMPLATE=yk_template.dem "
+"\\\n"
+"               -co TOPLEFT=-117w,60n yk_3arcsec 031a01_e.dem"
+msgstr ""
+
+#: ../../../source/drivers/raster/usgsdem.rst:158
+msgid "NOTE: Implemented as :source_file:`frmts/usgsdem/usgsdemdataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/usgsdem.rst:160
+msgid ""
+"The USGS DEM reading code in GDAL was derived from the importer in the `VTP "
+"<http://www.vterrain.org/>`__ software. The export capability was developed "
+"with the financial support of the Yukon Department of Environment."
+msgstr ""

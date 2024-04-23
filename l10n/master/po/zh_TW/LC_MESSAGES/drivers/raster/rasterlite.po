@@ -1,0 +1,383 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/rasterlite.rst:5
+msgid "Rasterlite - Rasters in SQLite DB"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:7
+msgid "Rasterlite"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:9
+msgid "libsqlite3"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:11
+msgid "The Rasterlite driver allows reading and creating Rasterlite databases."
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:16
+msgid ""
+"Those databases can be produced by the utilities of the `rasterlite <http://"
+"www.gaia-gis.it/spatialite>`__ distribution, such as rasterlite_load, "
+"rasterlite_pyramids, ...."
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:19
+msgid ""
+"The driver supports reading grayscale, paletted and RGB images stored as "
+"GIF, PNG, TIFF or JPEG tiles. The driver also supports reading overviews/"
+"pyramids, spatial reference system and spatial extent."
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:21
+msgid ""
+"GDAL/OGR must be compiled with OGR SQLite driver support. For read support, "
+"linking against spatialite library is not required, but recent enough "
+"sqlite3 library is needed to read rasterlite databases. rasterlite library "
+"is not required either."
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:26
+msgid ""
+"For write support a new table, linking against spatialite library \\*is\\* "
+"required."
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:29
+msgid ""
+"Although the Rasterlite documentation only mentions GIF, PNG, TIFF, JPEG as "
+"compression formats for tiles, the driver supports reading and writing "
+"internal tiles in any format handled by GDAL. Furthermore, the Rasterlite "
+"driver also allow reading and writing as many bands and as many band types "
+"as supported by the driver for the internal tiles."
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:37
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:46
+msgid "Connection string syntax in read mode"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:48
+msgid ""
+"Syntax: 'rasterlitedb_name' or 'RASTERLITE:rasterlitedb_name[,"
+"table=raster_table_prefix][,minx=minx_val,miny=miny_val,maxx=maxx_val,"
+"maxy=maxy_val][,level=level_number]"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:51
+msgid "where :"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:53
+msgid "*rasterlitedb_name* is the filename of the RasterLite DB."
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:54
+msgid ""
+"*raster_table_prefix* is the prefix of the raster table to open. For each "
+"raster, there are 2 corresponding SQLite tables, suffixed with \\_rasters "
+"and \\_metadata"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:57
+msgid ""
+"*minx_val,miny_val,maxx_val,maxy_val* set a user-defined extent (expressed "
+"in coordinate system units) for the raster that can be different from the "
+"default extent."
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:60
+msgid ""
+"*level_number* is the level of the pyramid/overview to open, 0 being the "
+"base pyramid."
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:64
+msgid "Creation issues"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:66
+msgid ""
+"The driver can create a new database if necessary, create a new raster table "
+"if necessary and copy a source dataset into the specified raster table."
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:70
+msgid ""
+"If data already exists in the raster table, the new data will be added. You "
+"can use the WIPE=YES creation options to erase existing data."
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:73
+msgid ""
+"The driver does not support updating a block in an existing raster table. It "
+"can only append new data."
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:76
+msgid ""
+"Syntax for the name of the output dataset: 'RASTERLITE:rasterlitedb_name,"
+"table=raster_table_prefix' or 'rasterlitedb_name'"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:80
+msgid ""
+"It is possible to specify only the DB name as in the later form, but only if "
+"the database does not already exists. In that case, the raster table name "
+"will be base on the DB name itself."
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:85
+msgid "Creation options"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:134
+msgid "Configuration options"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:142
+msgid "Overviews"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:144
+msgid ""
+"The driver supports building (if the dataset is opened in update mode) and "
+"reading internal overviews."
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:147
+msgid ""
+"If no internal overview is detected, the driver will try using external "
+"overviews (.ovr files)."
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:150
+msgid ""
+"Options can be used for internal overviews building. They can be specified "
+"with the :config:`RASTERLITE_OVR_OPTIONS` configuration option, as a comma "
+"separated list of the above creation options. See below examples."
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:155
+msgid "All resampling methods supported by GDAL overviews are available."
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:159
+msgid "Performance hints"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:161
+msgid ""
+"Some of the performance hints of the OGR SQLite driver apply. In particular "
+"setting the OGR_SQLITE_SYNCHRONOUS configuration option to OFF when creating "
+"a dataset or adding overviews might increase performance on some filesystems."
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:166
+msgid ""
+"After having added all the raster tables and building all the needed "
+"overview levels, it is advised to run :"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:171
+msgid "ogrinfo rasterlitedb.sqlite -sql \"VACUUM\""
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:173
+msgid ""
+"in order to optimize the database, and increase read performances "
+"afterwards. This is particularly true with big rasterlite datasets. Note "
+"that the operation might take a long time."
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:178
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:180
+msgid "Accessing a rasterlite DB with a single raster table :"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:184
+msgid "$ gdalinfo rasterlitedb.sqlite -noct"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:186
+#: ../../../source/drivers/raster/rasterlite.rst:225
+msgid "Output:"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:190
+msgid ""
+"Driver: Rasterlite/Rasterlite\n"
+"Files: rasterlitedb.sqlite\n"
+"Size is 7200, 7200\n"
+"Coordinate System is:\n"
+"GEOGCS[\"WGS 84\",\n"
+"    DATUM[\"WGS_1984\",\n"
+"        SPHEROID[\"WGS 84\",6378137,298.257223563,\n"
+"            AUTHORITY[\"EPSG\",\"7030\"]],\n"
+"        AUTHORITY[\"EPSG\",\"6326\"]],\n"
+"    PRIMEM[\"Greenwich\",0,\n"
+"        AUTHORITY[\"EPSG\",\"8901\"]],\n"
+"    UNIT[\"degree\",0.01745329251994328,\n"
+"        AUTHORITY[\"EPSG\",\"9122\"]],\n"
+"    AUTHORITY[\"EPSG\",\"4326\"]]\n"
+"Origin = (-5.000000000000000,55.000000000000000)\n"
+"Pixel Size = (0.002083333333333,-0.002083333333333)\n"
+"Metadata:\n"
+"  TILE_FORMAT=GIF\n"
+"Image Structure Metadata:\n"
+"  INTERLEAVE=PIXEL\n"
+"Corner Coordinates:\n"
+"Upper Left  (  -5.0000000,  55.0000000) (  5d 0'0.00\"W, 55d 0'0.00\"N)\n"
+"Lower Left  (  -5.0000000,  40.0000000) (  5d 0'0.00\"W, 40d 0'0.00\"N)\n"
+"Upper Right (  10.0000000,  55.0000000) ( 10d 0'0.00\"E, 55d 0'0.00\"N)\n"
+"Lower Right (  10.0000000,  40.0000000) ( 10d 0'0.00\"E, 40d 0'0.00\"N)\n"
+"Center      (   2.5000000,  47.5000000) (  2d30'0.00\"E, 47d30'0.00\"N)\n"
+"Band 1 Block=480x480 Type=Byte, ColorInterp=Palette\n"
+"  Color Table (RGB with 256 entries)"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:219
+msgid "Listing a multi-raster table DB :"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:223
+msgid "$ gdalinfo multirasterdb.sqlite"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:229
+msgid ""
+"Driver: Rasterlite/Rasterlite\n"
+"Files:\n"
+"Size is 512, 512\n"
+"Coordinate System is `'\n"
+"Subdatasets:\n"
+"  SUBDATASET_1_NAME=RASTERLITE:multirasterdb.sqlite,table=raster1\n"
+"  SUBDATASET_1_DESC=RASTERLITE:multirasterdb.sqlite,table=raster1\n"
+"  SUBDATASET_2_NAME=RASTERLITE:multirasterdb.sqlite,table=raster2\n"
+"  SUBDATASET_2_DESC=RASTERLITE:multirasterdb.sqlite,table=raster2\n"
+"Corner Coordinates:\n"
+"Upper Left  (    0.0,    0.0)\n"
+"Lower Left  (    0.0,  512.0)\n"
+"Upper Right (  512.0,    0.0)\n"
+"Lower Right (  512.0,  512.0)\n"
+"Center      (  256.0,  256.0)"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:245
+msgid "Accessing a raster table within a multi-raster table DB:"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:249
+msgid "$ gdalinfo RASTERLITE:multirasterdb.sqlite,table=raster1"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:251
+msgid "Creating a new rasterlite DB with data encoded in JPEG tiles :"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:255
+msgid ""
+"$ gdal_translate -of Rasterlite source.tif RASTERLITE:my_db.sqlite,"
+"table=source -co DRIVER=JPEG"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:257
+msgid "Creating internal overviews :"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:261
+msgid "$ gdaladdo RASTERLITE:my_db.sqlite,table=source 2 4 8 16"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:263
+msgid "Cleaning internal overviews :"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:267
+msgid "$ gdaladdo -clean RASTERLITE:my_db.sqlite,table=source"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:269
+msgid "Creating external overviews in a .ovr file:"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:273
+msgid "$ gdaladdo -ro RASTERLITE:my_db.sqlite,table=source 2 4 8 16"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:275
+msgid "Creating internal overviews with options (GDAL 1.10 or later):"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:279
+msgid ""
+"$ gdaladdo RASTERLITE:my_db.sqlite,table=source 2 4 8 16 --config "
+"RASTERLITE_OVR_OPTIONS DRIVER=GTiff,COMPRESS=JPEG,PHOTOMETRIC=YCbCr"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:281
+msgid ":"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:284
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:286
+msgid ""
+"`Spatialite and Rasterlite home page <https://www.gaia-gis.it/fossil/"
+"libspatialite/index>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:288
+msgid ""
+"`Rasterlite manual <http://www.gaia-gis.it/gaia-sins/rasterlite-docs/"
+"rasterlite-man.pdf>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:290
+msgid ""
+"`Rasterlite howto <http://www.gaia-gis.it/gaia-sins/rasterlite-docs/"
+"rasterlite-how-to.pdf>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:292
+msgid ""
+"`Sample databases <http://www.gaia-gis.it/spatialite-2.3.1/resources.html>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/rasterlite.rst:294
+msgid ":ref:`OGR SQLite driver <vector.sqlite>`"
+msgstr ""

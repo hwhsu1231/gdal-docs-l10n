@@ -1,0 +1,61 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/srp.rst:5
+msgid "SRP -- Standard Product Format (ASRP/USRP) (.gen)"
+msgstr ""
+
+#: ../../../source/drivers/raster/srp.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/srp.rst:7
+msgid "SRP"
+msgstr ""
+
+#: ../../../source/drivers/raster/srp.rst:11
+msgid ""
+"The ASRP and USRP raster products (as defined by DGIWG) are variations on a "
+"common standard product format and are supported for reading by GDAL. ASRP "
+"and USRP datasets are made of several files - typically a .GEN, .IMG, .SOU "
+"and .QAL file with a common basename. The .IMG file should be selected to "
+"access the dataset."
+msgstr ""
+
+#: ../../../source/drivers/raster/srp.rst:17
+msgid ""
+"ASRP (in a geographic coordinate system) and USRP (in a UTM/UPS coordinate "
+"system) products are single band images with a palette and georeferencing."
+msgstr ""
+
+#: ../../../source/drivers/raster/srp.rst:21
+msgid ""
+"the Transmission Header File (.THF) can also be used as an input to GDAL. If "
+"the THF references more than one image, GDAL will report the images it is "
+"composed of as subdatasets. If the THF references just one image, GDAL will "
+"open it directly."
+msgstr ""
+
+#: ../../../source/drivers/raster/srp.rst:26
+msgid "NOTE: Implemented as :source_file:`frmts/adrg/srpdataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/srp.rst:29
+msgid "Driver capabilities"
+msgstr ""

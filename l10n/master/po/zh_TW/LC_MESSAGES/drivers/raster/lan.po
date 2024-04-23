@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/lan.rst:5
+msgid "LAN -- Erdas 7.x .LAN and .GIS"
+msgstr ""
+
+#: ../../../source/drivers/raster/lan.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/lan.rst:7
+msgid "LAN"
+msgstr ""
+
+#: ../../../source/drivers/raster/lan.rst:11
+msgid ""
+"GDAL supports reading and writing Erdas 7.x .LAN and .GIS raster files. "
+"Currently 4bit, 8bit and 16bit pixel data types are supported for reading "
+"and 8bit and 16bit for writing."
+msgstr ""
+
+#: ../../../source/drivers/raster/lan.rst:15
+msgid ""
+"GDAL does read the map extents (geotransform) from LAN/GIS files, and "
+"attempts to read the coordinate system information. However, this format of "
+"file does not include complete coordinate system information, so for state "
+"plane and UTM coordinate systems a LOCAL_CS definition is returned with "
+"valid linear units but no other meaningful information."
+msgstr ""
+
+#: ../../../source/drivers/raster/lan.rst:21
+msgid "The .TRL, .PRO and worldfiles are ignored at this time."
+msgstr ""
+
+#: ../../../source/drivers/raster/lan.rst:23
+msgid "NOTE: Implemented as :source_file:`frmts/raw/landataset.cpp`"
+msgstr ""
+
+#: ../../../source/drivers/raster/lan.rst:25
+msgid ""
+"Development of this driver was financially supported by Kevin Flanders of "
+"(`PeopleGIS <http://www.peoplegis.com>`__)."
+msgstr ""
+
+#: ../../../source/drivers/raster/lan.rst:29
+msgid "Driver capabilities"
+msgstr ""

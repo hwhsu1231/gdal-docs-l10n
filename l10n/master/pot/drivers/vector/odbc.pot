@@ -1,0 +1,178 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/odbc.rst:4
+msgid "ODBC RDBMS"
+msgstr ""
+
+#: ../../../source/drivers/vector/odbc.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/odbc.rst:6
+msgid "ODBC"
+msgstr ""
+
+#: ../../../source/drivers/vector/odbc.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/vector/odbc.rst:8
+msgid "ODBC library"
+msgstr ""
+
+#: ../../../source/drivers/vector/odbc.rst:10
+msgid ""
+"OGR optionally supports spatial and non-spatial tables accessed via ODBC. "
+"ODBC is a generic access layer for access to many database systems, and data "
+"that can be represented as a database (collection of tables). ODBC support "
+"is potentially available on Unix and Windows platforms, but is only included "
+"in unix builds by special configuration options."
+msgstr ""
+
+#: ../../../source/drivers/vector/odbc.rst:17
+msgid ""
+"ODBC datasources are accessed using a datasource name of the form **ODBC:\\ "
+"userid/password\\ @\\ dsn,\\ schema.tablename(geometrycolname),...:"
+"srs_tablename(sridcolumn,srtextcolumn)**. With optional items dropped the "
+"following are also acceptable:"
+msgstr ""
+
+#: ../../../source/drivers/vector/odbc.rst:21
+msgid "**ODBC:\\ userid/password\\ @\\ dsn**"
+msgstr ""
+
+#: ../../../source/drivers/vector/odbc.rst:22
+msgid "**ODBC:\\ userid\\ @\\ dsn,\\ table_list**"
+msgstr ""
+
+#: ../../../source/drivers/vector/odbc.rst:23
+msgid "**ODBC:\\ dsn,\\ table_list**"
+msgstr ""
+
+#: ../../../source/drivers/vector/odbc.rst:24
+msgid "**ODBC:\\ dsn**"
+msgstr ""
+
+#: ../../../source/drivers/vector/odbc.rst:25
+msgid "**ODBC:\\ dsn,\\ table_list:srs_tablename**"
+msgstr ""
+
+#: ../../../source/drivers/vector/odbc.rst:27
+msgid ""
+"The **dsn** is the ODBC Data Source Name. Normally ODBC datasources are "
+"setup using an ODBC Administration tool, and assigned a DSN. That DSN is "
+"what is used to access the datasource."
+msgstr ""
+
+#: ../../../source/drivers/vector/odbc.rst:31
+msgid ""
+"By default the ODBC searches for GEOMETRY_COLUMNS table. If found it is used "
+"to identify the set of spatial tables that should be treated as layers by "
+"OGR. If not found, then all tables in the datasource are returned as non-"
+"spatial layers. However, if a table list (a list of comma separated table "
+"names) is provided, then only those tables will be represented as layers "
+"(non-spatial). Fetching the full definition of all tables in a complicated "
+"database can be quite time consuming, so the ability to restrict the set of "
+"tables accessed is primarily a performance issue."
+msgstr ""
+
+#: ../../../source/drivers/vector/odbc.rst:41
+msgid ""
+"If the GEOMETRY_COLUMNS table is found, it is used to select a column to be "
+"the geometry source. If the tables are passed in the datasource name, then "
+"the geometry column associated with a table can be included in round "
+"brackets after the tablename. It is currently a hardcoded assumption that "
+"the geometry is in Well Known Binary (WKB) format if the field is binary, or "
+"Well Known Text (WKT) otherwise. The GEOMETRY_COLUMNS table should have at "
+"least the columns F_TABLE_NAME, F_GEOMETRY_COLUMN and GEOMETRY_TYPE."
+msgstr ""
+
+#: ../../../source/drivers/vector/odbc.rst:50
+msgid ""
+"If the table has a geometry column, and has fields called XMIN, YMIN, XMAX "
+"and YMAX then direct table queries with a spatial filter accelerate the "
+"spatial query. The XMIN, YMIN, XMAX and YMAX fields should represent the "
+"extent of the geometry in the row in the tables coordinate system."
+msgstr ""
+
+#: ../../../source/drivers/vector/odbc.rst:55
+msgid ""
+"By default, SQL statements are passed directly to the underlying database "
+"engine. It's also possible to request the driver to handle SQL commands with "
+"the :ref:`OGR SQL <ogr_sql_dialect>` engine, by passing **\"OGRSQL\"** "
+"string to the ExecuteSQL() method, as name of the SQL dialect."
+msgstr ""
+
+#: ../../../source/drivers/vector/odbc.rst:62
+msgid "Dataset open options"
+msgstr ""
+
+#: ../../../source/drivers/vector/odbc.rst:75
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/odbc.rst:80
+msgid "Access Databases (.MDB) support"
+msgstr ""
+
+#: ../../../source/drivers/vector/odbc.rst:82
+msgid ""
+"On Windows provided that the \"Microsoft Access Driver (\\*.mdb)\" ODBC "
+"driver is installed, non-spatial MS Access Databases (not Personal "
+"Geodabases or Geomedia databases) can be opened directly by their filenames."
+msgstr ""
+
+#: ../../../source/drivers/vector/odbc.rst:87
+msgid ""
+"On Linux opening non-spatial MS Access Databases using the ODBC driver is "
+"possible via installation of unixODBC and mdbtools. See :ref:`MDB <vector."
+"pgeo>` for instructions on how to enable this."
+msgstr ""
+
+#: ../../../source/drivers/vector/odbc.rst:91
+msgid ""
+"The driver supports either .mdb or .accdb extensions for Microsoft Access "
+"databases. Additionally, it also supports opening files with the ESRI .style "
+"database extension (which is just an alias for the .mdb file extension)."
+msgstr ""
+
+#: ../../../source/drivers/vector/odbc.rst:97
+msgid "Creation Issues"
+msgstr ""
+
+#: ../../../source/drivers/vector/odbc.rst:99
+msgid ""
+"Currently the ODBC OGR driver is read-only, so new features, tables and "
+"datasources cannot normally be created by OGR applications. This limitation "
+"may be removed in the future."
+msgstr ""
+
+#: ../../../source/drivers/vector/odbc.rst:104
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/vector/odbc.rst:106
+msgid ""
+"`MSDN ODBC API Reference <http://msdn.microsoft.com/en-us/library/"
+"ms714562(VS.85).aspx>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/odbc.rst:108
+msgid ":ref:`PGeo driver <vector.pgeo>`"
+msgstr ""

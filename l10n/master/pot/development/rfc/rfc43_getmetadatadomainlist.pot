@@ -1,0 +1,333 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:5
+msgid "RFC 43: GDALMajorObject::GetMetadataDomainList"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:7
+msgid "Author: Even Rouault"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:9
+msgid "Contact: even dot rouault at spatialys.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:12
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:14
+msgid ""
+"This (mini)RFC proposes a new virtual method, GetMetadataDomainList(), in "
+"the GDALMajorObject class (and a C API) to return the list of all available "
+"metadata domains."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:19
+msgid "Background"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:21
+msgid ""
+"GDALMajorObject currently offers the GetMetadata() and GetMetadataItem() "
+"methods that both accept a metadata domain argument. But there is no way to "
+"auto-discover which metadata domains are valid for a given GDALMajorObject "
+"(i.e. a dataset or raster band). This make it impossible to have generic "
+"code that can exhaustively discover all metadata in a dataset/raster band."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:29
+msgid "Implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:31
+msgid ""
+"The base implementation in GDALMajorObject just calls GetDomainList() on the "
+"internal oMDMD member."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:36
+msgid ""
+"/************************************************************************/\n"
+"/*                      GetMetadataDomainList()                         */\n"
+"/************************************************************************/\n"
+"\n"
+"/**\n"
+" * \\brief Fetch list of metadata domains.\n"
+" *\n"
+" * The returned string list is the list of (non-empty) metadata domains.\n"
+" *\n"
+" * This method does the same thing as the C function "
+"GDALGetMetadataDomainList().\n"
+" *\n"
+" * @return NULL or a string list. Must be freed with CSLDestroy()\n"
+" *\n"
+" * @since GDAL 1.11\n"
+" */\n"
+"\n"
+"char **GDALMajorObject::GetMetadataDomainList()\n"
+"{\n"
+"    return CSLDuplicate(oMDMD.GetDomainList());\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:57
+msgid ""
+"This method is also available in the C API ( char \\*\\* CPL_STDCALL "
+"GDALGetMetadataDomainList( GDALMajorObjectH hObject) ) and Swig bindings."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:62
+msgid "Impacted drivers"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:64
+msgid ""
+"Drivers that have custom implementations of GetMetadata() and/or "
+"GetMetadataItem() will generally have to also implement "
+"GetMetadataDomainList(), when they don't modify the oMDMD member."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:68
+msgid ""
+"To make it easy to implement the specialized GetMetadataDomainList(), "
+"GDALMajorObject will offer a protected BuildMetadataDomainList() method that "
+"can be used like the following :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:74
+msgid ""
+"/************************************************************************/\n"
+"/*                      GetMetadataDomainList()                         */\n"
+"/************************************************************************/\n"
+"\n"
+"char **NITFDataset::GetMetadataDomainList()\n"
+"{\n"
+"    return BuildMetadataDomainList(GDALPamDataset::GetMetadataDomainList(),\n"
+"                                   TRUE,\n"
+"                                   \"NITF_METADATA\", \"NITF_DES\", "
+"\"NITF_DES_METADATA\",\n"
+"                                   \"NITF_FILE_HEADER_TRES\", "
+"\"NITF_IMAGE_SEGMENT_TRES\",\n"
+"                                   \"CGM\", \"TEXT\", \"TRE\", \"xml:TRE\", "
+"\"OVERVIEWS\", NULL);\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:87
+msgid ""
+"The TRUE parameter means that the list of domains that follows are potential "
+"domains, and thus BuildMetadataDomainList() will check for each one that "
+"GetMetadata() returns a non-NULL value."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:91
+msgid ""
+"An exhaustive search in GDAL drivers has been made and all drivers that "
+"needed to be updated to implement GetMetadataDomainList() have been updated: "
+"ADRG, BAG, CEOS2, DIMAP, ECW, ENVISAT, ERS, GeoRaster (cannot check myself "
+"that it compiles), GIF, GTiff, HDF4, JPEG, MBTILES, netCDF, NITF, OGDI, "
+"PCIDSK, PDF, PNG, PostgisRaster, RasterLite, RS2, VRT, WCS, WebP, WMS."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:98
+msgid "A few caveats :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:100
+msgid ""
+"For MBTiles, WMS and VRT, GetMetadataDomainList(), at the band level, will "
+"return \"LocationInfo\" as a valid metadata domain (used by the "
+"gdallocationinfo utility), even if GetMetadata(\"LocationInfo\") itself does "
+"not return metadata : you have to call "
+"GetMetadataItem(\"Pixel_someX_someY\", \"LocationInfo\") or "
+"GetMetadataItem(\"GeoPixel_someX_someY\", \"LocationInfo\")."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:106
+msgid ""
+"For CEOS2 and ENVISAT, the list of metadata domains cannot be established "
+"easily. GetMetadataDomainList() will return the pattern of accepted domain "
+"names."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:111
+msgid "Impacted utilities"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:113
+msgid "The gdalinfo utility is extended to accept :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:115
+msgid "a \"-listmdd\" option that will print the metadata domains available,"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:119
+msgid ""
+"$ gdalinfo ../autotest/gdrivers/data/byte_with_xmp.jpg -listmdd\n"
+"\n"
+"Driver: JPEG/JPEG JFIF\n"
+"Files: ../autotest/gdrivers/data/byte_with_xmp.jpg\n"
+"Size is 20, 20\n"
+"Coordinate System is `'\n"
+"Metadata domains:\n"
+"  xml:XMP\n"
+"Corner Coordinates:\n"
+"Upper Left  (    0.0,    0.0)\n"
+"Lower Left  (    0.0,   20.0)\n"
+"Upper Right (   20.0,    0.0)\n"
+"Lower Right (   20.0,   20.0)\n"
+"Center      (   10.0,   10.0)\n"
+"Band 1 Block=20x1 Type=Byte, ColorInterp=Gray\n"
+"  Metadata domains:\n"
+"    IMAGE_STRUCTURE\n"
+"  Image Structure Metadata:\n"
+"    COMPRESSION=JPEG"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:139
+msgid "and \"-mdd all\" will display the content of all metadata domains."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:143
+msgid ""
+"$ gdalinfo ../autotest/gdrivers/data/byte_with_xmp.jpg -mdd all\n"
+"\n"
+"Driver: JPEG/JPEG JFIF\n"
+"Files: ../autotest/gdrivers/data/byte_with_xmp.jpg\n"
+"Size is 20, 20\n"
+"Coordinate System is `'\n"
+"Metadata (xml:XMP):\n"
+"<?xpacket begin='' id='W5M0MpCehiHzreSzNTczkc9d'?>\n"
+"<x:xmpmeta xmlns:x='adobe:ns:meta/' x:xmptk='Image::ExifTool 7.89'>\n"
+"<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>\n"
+"\n"
+" <rdf:Description rdf:about=''\n"
+"  xmlns:dc='http://purl.org/dc/elements/1.1/'>\n"
+"  <dc:description>\n"
+"   <rdf:Alt>\n"
+"    <rdf:li xml:lang='x-default'>Description</rdf:li>\n"
+"   </rdf:Alt>\n"
+"  </dc:description>\n"
+"  <dc:subject>\n"
+"   <rdf:Bag>\n"
+"    <rdf:li>XMP</rdf:li>\n"
+"    <rdf:li>Test</rdf:li>\n"
+"   </rdf:Bag>\n"
+"  </dc:subject>\n"
+"  <dc:title>\n"
+"   </rdf:Alt>\n"
+"  </dc:title>\n"
+" </rdf:Description>\n"
+"\n"
+" <rdf:Description rdf:about=''\n"
+"  xmlns:tiff='http://ns.adobe.com/tiff/1.0/'>\n"
+"  <tiff:BitsPerSample>\n"
+"   <rdf:Seq>\n"
+"    <rdf:li>8</rdf:li>\n"
+"   </rdf:Seq>\n"
+"  </tiff:BitsPerSample>\n"
+"  <tiff:Compression>1</tiff:Compression>\n"
+"  <tiff:ImageLength>20</tiff:ImageLength>\n"
+"  <tiff:ImageWidth>20</tiff:ImageWidth>\n"
+"  <tiff:PhotometricInterpretation>1</tiff:PhotometricInterpretation>\n"
+"  <tiff:PlanarConfiguration>1</tiff:PlanarConfiguration>\n"
+"  <tiff:SamplesPerPixel>1</tiff:SamplesPerPixel>\n"
+" </rdf:Description>\n"
+"</rdf:RDF>\n"
+"</x:xmpmeta>\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"<?xpacket end='w'?>\n"
+"Corner Coordinates:\n"
+"Upper Left  (    0.0,    0.0)\n"
+"Lower Left  (    0.0,   20.0)\n"
+"Upper Right (   20.0,    0.0)\n"
+"Lower Right (   20.0,   20.0)\n"
+"Center      (   10.0,   10.0)\n"
+"Band 1 Block=20x1 Type=Byte, ColorInterp=Gray\n"
+"  Image Structure Metadata:\n"
+"    COMPRESSION=JPEG"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:224
+msgid "Backward Compatibility"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:226
+msgid ""
+"This change has no impact on backward compatibility at the C API/ABI and C++ "
+"API levels. But it impacts C++ ABI, so it requires a full rebuild of all "
+"GDAL drivers."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:231
+msgid "Testing"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:233
+msgid ""
+"The Python autotest suite will be extended to test the new API in a few "
+"drivers."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:237
+msgid "Ticket"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:239
+msgid "Ticket #5275 has been opened to track the progress of this RFC."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:241
+msgid ""
+"The implementation is available in `an attachment to ticket 5275 <http://"
+"trac.osgeo.org/gdal/attachment/ticket/5275/getmetadatadomainlist.patch>`__."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:245
+msgid "Voting history"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc43_getmetadatadomainlist.rst:247
+msgid "+1 from EvenR, DanielM and JukkaR"
+msgstr ""

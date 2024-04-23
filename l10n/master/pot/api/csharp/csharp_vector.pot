@@ -1,0 +1,346 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/api/csharp/csharp_vector.rst:5
+msgid "C# Vector and Spatial Reference Interfaces"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:8
+msgid "Basic Architecture"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:10
+msgid ""
+"The vector interface is within the :file:`OSGeo.OGR` namespace and the "
+"spatial reference interface is within the :file:`OSGeo.OSR` namespace."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:12
+msgid "The **main** classes are as follows"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:16
+msgid ""
+"OGR\n"
+"|\n"
+"|- DataSource\n"
+"|\n"
+"|- Layer\n"
+"|\n"
+"|- Feature\n"
+"|\n"
+"|- Geometry"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:28
+msgid ""
+"OSR\n"
+"|\n"
+"|- SpatialReference\n"
+"|\n"
+"|- CoordinateTransform"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:35
+msgid "Accessing Feature Geometries"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:37
+msgid ""
+"The basic process is :file:`DataSource` => :file:`Layer` => :file:`Feature` "
+"=> :file:`Geometry`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:40
+msgid "Open a DataSource"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:42
+msgid ""
+"A :file:`DataSource` wraps a OGR source (e.g a filename) and is created as "
+"follows:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:44
+msgid ""
+"/* -------------------------------------------------------------------- */\n"
+"/*      Register format(s).                                             */\n"
+"/* -------------------------------------------------------------------- */\n"
+"Ogr.RegisterAll();\n"
+"\n"
+"/* -------------------------------------------------------------------- */\n"
+"/*      Open data source.                                               */\n"
+"/* -------------------------------------------------------------------- */\n"
+"using (DataSource ds = Ogr.Open( \"... add your own valid OGR source\", "
+"0 ))\n"
+"{\n"
+"    if (ds == null) {\n"
+"        // create an error\n"
+"    }\n"
+"    // Do your processing here\n"
+"}"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:63
+msgid "Access the Layers"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:65
+msgid ""
+"Each :file:`DataSource` will have one or more layers that can be iterated as "
+"follows:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:67
+msgid ""
+"/* -------------------------------------------------------------------- */\n"
+"/*      Iterating through the layers                                    */\n"
+"/* -------------------------------------------------------------------- */\n"
+"\n"
+"for( int iLayer = 0; iLayer < ds.GetLayerCount(); iLayer++ )\n"
+"{\n"
+"    Layer layer = ds.GetLayerByIndex(iLayer);\n"
+"\n"
+"    if( layer == null )\n"
+"    {\n"
+"        // create an error\n"
+"    }\n"
+"    // Do your processing here\n"
+"}"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:85
+msgid "Access a Layer's Features"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:87
+msgid ""
+"Each :file:`Layer` can have zero or more :file:`Feature` s. These should be "
+"accessed as follows:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:89
+msgid ""
+"layer.ResetReading();\n"
+"Feature f = null;\n"
+"do {\n"
+"    f = layer.GetNextFeature();\n"
+"    if (f != null)\n"
+"        // Do your processing here\n"
+"} while (f != null);"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:100
+msgid "Access a Features's Geometry"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:102
+msgid ""
+"Geometry geom = feature.GetGeometryRef();\n"
+"wkbGeometryType type = geom.GetGeometryType();"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:107
+msgid ":file:`Geometry` objects are nested - so for instance:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:109
+msgid ""
+"a :file:`Geometry` of type :file:`wkbGeometryType.wkbTIN` has multiple "
+"daughter :file:`Geometry` objects of type :file:`wkbGeometryType."
+"wkbTriangle`,"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:110
+msgid ""
+"each :file:`Geometry` object of type :file:`wkbGeometryType.wkbTriangle` has "
+"a daughter :file:`Geometry` object of type :file:`wkbGeometryType."
+"LinearRing`,"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:111
+msgid ""
+"each :file:`Geometry` of type :file:`wkbGeometryType.LinearRing` contains a "
+"number of points."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:113
+msgid ""
+"When you get to the most basic type - which usually seems to be :file:"
+"`wkbGeometryType.wkbPoint`, :file:`wkbGeometryType.wkbLineString` or :file:"
+"`wkbGeometryType.wkbLinearRing` or their multi- versions or 25D or ZM "
+"versions, you can access the point coordinates as follows:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:116
+msgid ""
+"int count = geom.GetPointCount();\n"
+"if (count > 0)\n"
+"    for (int i = 0; i < count; i++) {\n"
+"        double[] argout = new double[3];\n"
+"        geom.GetPoint(i, argout);\n"
+"        // do your processing here\n"
+"    }"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:126
+msgid ""
+"The size of the :file:`double[]` depends on the number of dimensions of the :"
+"file:`Geometry`."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:129
+msgid "Access a Feature's data fields"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:131
+msgid ""
+"Each :file:`Feature` object can have a number of data fields associated. The "
+"schema for the data fields is defined in a :file:`FieldDefn` object. The "
+"fields can be fetched a follows:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:134
+msgid ""
+"Dictionary<string, object> ret = new Dictionary<string, object>();\n"
+"if (feature != null) {\n"
+"    int fieldCount = feature.GetFieldCount();\n"
+"    for (int i = 0; i < fieldCount; i++) {\n"
+"        FieldDefn fd = feature.GetFieldDefnRef(i);\n"
+"        string key = fd.GetName();\n"
+"        object value = null;\n"
+"        FieldType ft = fd.GetFieldType();\n"
+"        switch (ft) {\n"
+"            case FieldType.OFTString:\n"
+"                value = feature.GetFieldAsString(i);\n"
+"                break;\n"
+"            case FieldType.OFTReal:\n"
+"                value = feature.GetFieldAsDouble(i);\n"
+"                break;\n"
+"            case FieldType.OFTInteger:\n"
+"                value = feature.GetFieldAsInteger(i);\n"
+"                break;\n"
+"            // Note this is only a sub-set of the possible field types\n"
+"        }\n"
+"        ret.Add(key, value);\n"
+"    }\n"
+"}"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:162
+msgid "Access a Geometry's CRS"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:164
+msgid ""
+"If there is a CRS (aka SRS) defined for the :file:`Geometry` it can be "
+"retrieved as follows:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:166
+msgid "SpatialReference crs = geom.GetSpatialReference()"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:170
+msgid ""
+"The :file:`SpatialReference` is the main class for representing the CRS / "
+"projection. The CRS can be turned into a WKT string, e.g. for display "
+"purposes, as follows:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:173
+msgid ""
+"string wkt;\n"
+"crs.ExportToWkt(out wkt, null);"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:178
+msgid ""
+"Sometimes the CRS defined on the layer does not cascade down to the Feature "
+"- you need to refer bak to the Layer"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:182
+msgid "Reproject a Geometry"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:184
+msgid ""
+"If the :file:`Geometry` has a valid :file:`SpatialReference` defined, then "
+"the :file:`Geometry` can be transformed to a new CRS using this command:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:187
+msgid ""
+"if (geom.TransformTo(newProjection) != 0)\n"
+"    throw new NotSupportedException(\"projection failed\");"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:192
+msgid ""
+"However, often it is better to explicitly define the :file:"
+"`CoordinateTransform` to be used"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:195
+msgid ""
+"SpatialReference from_crs = new SpatialReference(null)\n"
+"    // note - if you are defining from wkt - replace the null with the wkt\n"
+"from_crs.SetWellKnownGeogCS(\"EPSG:4326\");\n"
+"\n"
+"SpatialReference to_crs = new SpatialReference(null);\n"
+"to_crs.ImportFromEPSG(27700);\n"
+"\n"
+"CoordinateTransform ct = new CoordinateTransform(from_crs, to_crs, new "
+"CoordinateTransformationOptions())\n"
+"    // You can use the CoordinateTransformationOptions to set the operation "
+"or area of interet etc\n"
+"\n"
+"if (geom.Transform(ct) != 0)\n"
+"    throw new NotSupportedException(\"projection failed\");"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:212
+msgid "Related C# examples"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:214
+msgid ""
+"The following examples demonstrate the usage of the OGR vector operations "
+"mentioned above:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:216
+msgid ":source_file:`swig/csharp/apps/ogrinfo.cs`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:217
+msgid ":source_file:`swig/csharp/apps/OGRLayerAlg.cs`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:218
+msgid ":source_file:`swig/csharp/apps/OGRFeatureEdit.cs`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:219
+msgid ":source_file:`swig/csharp/apps/OSRTransform.cs`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_vector.rst:220
+msgid ":source_file:`swig/csharp/apps/GetCRSInfo.cs`"
+msgstr ""

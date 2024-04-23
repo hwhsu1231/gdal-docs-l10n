@@ -1,0 +1,235 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/api/gdal_alg.rst:5
+msgid "gdal_alg.h: GDAL Algorithms C API"
+msgstr ""
+
+#: ../../../source/api/gdal_alg.rst:8
+msgid "gdal_alg.h"
+msgstr ""
+
+#: ../../../source/api/gdal_alg.rst:0
+msgid "Defines"
+msgstr ""
+
+#: ../../../source/api/gdal_alg.rst:0
+msgid "Typedefs"
+msgstr ""
+
+#: ../../../source/api/gdal_alg.rst:-1
+msgid ""
+"typedef int\n"
+"(*GDALTransformerFunc)( void *pTransformerArg,\n"
+"                        int bDstToSrc, int nPointCount,\n"
+"                        double *x, double *y, double *z, int *panSuccess );"
+msgstr ""
+
+#: ../../../source/api/gdal_alg.rst:0
+msgid "Param pTransformerArg"
+msgstr ""
+
+#: ../../../source/api/gdal_alg.rst:0
+msgid "Param bDstToSrc"
+msgstr ""
+
+#: ../../../source/api/gdal_alg.rst:0
+msgid "Param nPointCount"
+msgstr ""
+
+#: ../../../source/api/gdal_alg.rst:0
+msgid "Param x"
+msgstr ""
+
+#: ../../../source/api/gdal_alg.rst:0
+msgid "Param y"
+msgstr ""
+
+#: ../../../source/api/gdal_alg.rst:0
+msgid "Param z"
+msgstr ""
+
+#: ../../../source/api/gdal_alg.rst:0
+msgid "Param panSuccess"
+msgstr ""
+
+#: ../../../source/api/gdal_alg.rst:0
+msgid "Return"
+msgstr ""
+
+#: ../../../source/api/gdal_alg.rst:0
+msgid "Enums"
+msgstr ""
+
+#: ../../../source/api/gdal_alg.rst:0
+msgid "Functions"
+msgstr ""
+
+#: ../../../source/api/gdal_alg.rst:-1
+msgid ""
+"*   \"Color  Image Quantization for Frame Buffer Display\", Paul\n"
+"*   Heckbert, SIGGRAPH proceedings, 1982, pp. 297-307.\n"
+"*"
+msgstr ""
+
+#: ../../../source/api/gdal_alg.rst:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../../source/api/gdal_alg.rst:0
+msgid "Returns"
+msgstr ""
+
+#: ../../../source/api/gdal_alg.rst:-1
+msgid ""
+"General Case:\n"
+"\n"
+"      5 |                  | 3\n"
+"     -- + ---------------- + --\n"
+"        |                  |\n"
+"        |                  |\n"
+"        |                  |\n"
+"        |                  |\n"
+"     10 +                  |\n"
+"        |\\                 |\n"
+"        | \\                |\n"
+"     -- + -+-------------- + --\n"
+"     12 |  10              | 1\n"
+"\n"
+"Saddle Point:\n"
+"\n"
+"      5 |                  | 12\n"
+"     -- + -------------+-- + --\n"
+"        |               \\  |\n"
+"        |                 \\|\n"
+"        |                  +\n"
+"        |                  |\n"
+"        +                  |\n"
+"        |\\                 |\n"
+"        | \\                |\n"
+"     -- + -+-------------- + --\n"
+"     12 |                  | 1\n"
+"\n"
+"or:\n"
+"\n"
+"      5 |                  | 12\n"
+"     -- + -------------+-- + --\n"
+"        |          __/     |\n"
+"        |      ___/        |\n"
+"        |  ___/          __+\n"
+"        | /           __/  |\n"
+"        +'         __/     |\n"
+"        |       __/        |\n"
+"        |   ,__/           |\n"
+"     -- + -+-------------- + --\n"
+"     12 |                  | 1"
+msgstr ""
+
+#: ../../../source/api/gdal_alg.rst:-1
+msgid ""
+"      5 |                  | 3\n"
+"     -- + ---------------- + --\n"
+"        |                  |\n"
+"        |                  |\n"
+"        |      6.7         |\n"
+"        |        +---------+ 3\n"
+"     10 +___     |\n"
+"        |   \\____+ 10\n"
+"        |        |\n"
+"     -- + -------+        +\n"
+"     12 |       12           (nodata)"
+msgstr ""
+
+#: ../../../source/api/gdal_alg.rst:-1
+msgid " ELEV_FIELD_MAX=d"
+msgstr ""
+
+#: ../../../source/api/gdal_alg.rst:-1
+msgid " POLYGONIZE=YES|NO"
+msgstr ""
+
+#: ../../../source/api/gdal_alg.rst:-1
+msgid "              GVOT_MIN_TARGET_HEIGHT_FROM_DEM and"
+msgstr ""
+
+#: ../../../source/api/gdal_alg.rst:-1
+msgid ""
+"      int nBufXSize      = 1024;\n"
+"      int nBufYSize      = 1024;\n"
+"      int nBandCount     = 1;\n"
+"      GDALDataType eType = GDT_Byte;\n"
+"      int nDataTypeSize  = GDALGetDataTypeSizeBytes(eType);\n"
+" \n"
+"      void* pData = CPLCalloc( nBufXSize*nBufYSize*nBandCount, "
+"nDataTypeSize );\n"
+"      char memdsetpath[1024];\n"
+"      sprintf(memdsetpath,\"MEM:::DATAPOINTER=0x%p,PIXELS=%d,LINES=%d,\"\n"
+"              \"BANDS=%d,DATATYPE=%s,PIXELOFFSET=%d,LINEOFFSET=%d\",\n"
+"              pData,nBufXSize,nBufYSize,nBandCount,"
+"GDALGetDataTypeName(eType),\n"
+"              nBandCount*nDataTypeSize, "
+"nBufXSize*nBandCount*nDataTypeSize );\n"
+" \n"
+"       // Open Memory Dataset\n"
+"       GDALDatasetH hMemDset = GDALOpen(memdsetpath, GA_Update);\n"
+"       // or create it as follows\n"
+"       // GDALDriverH hMemDriver = GDALGetDriverByName(\"MEM\");\n"
+"       // GDALDatasetH hMemDset = GDALCreate(hMemDriver, \"\", nBufXSize,\n"
+"*nBufYSize, nBandCount, eType, NULL);\n"
+" \n"
+"       double adfGeoTransform[6];\n"
+"       // Assign GeoTransform parameters,Omitted here.\n"
+" \n"
+"       GDALSetGeoTransform(hMemDset,adfGeoTransform);\n"
+"       GDALSetProjection(hMemDset,pszProjection); // Can not\n"
+" \n"
+"       // Do something ...\n"
+"       // Need an array of OGRGeometry objects,The assumption here is "
+"pahGeoms\n"
+" \n"
+"       int bandList[3] = { 1, 2, 3};\n"
+"       std::vector<double> geomBurnValue(nGeomCount*nBandCount,255.0);\n"
+"       CPLErr err = GDALRasterizeGeometries(hMemDset, nBandCount, bandList,\n"
+"                               nGeomCount, pahGeoms, pfnTransformer,\n"
+"*pTransformArg, geomBurnValue.data(), papszOptions, pfnProgress, "
+"pProgressArg);\n"
+"       if( err != CE_None )\n"
+"       {\n"
+"           // Do something ...\n"
+"       }\n"
+"       GDALClose(hMemDset);\n"
+"       CPLFree(pData);"
+msgstr ""
+
+#: ../../../source/api/gdal_alg.rst:-1
+msgid ""
+"hSrcDataset = GDALOpen(...)\n"
+"hGridDataset = GDALOpen(...)\n"
+"hDstDataset = GDALApplyVerticalShiftGrid(hSrcDataset, hGridDataset, ...)\n"
+"GDALReleaseDataset(hSrcDataset);\n"
+"GDALReleaseDataset(hGridDataset);\n"
+"if( hDstDataset )\n"
+"{\n"
+"    // Do things with hDstDataset\n"
+"    GDALClose(hDstDataset) // will close hSrcDataset and hGridDataset\n"
+"}"
+msgstr ""
+
+#: ../../../source/api/gdal_alg.rst:0
+msgid "Public Members"
+msgstr ""

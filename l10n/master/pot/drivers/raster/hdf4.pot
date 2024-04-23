@@ -1,0 +1,455 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/hdf4.rst:5
+msgid "HDF4 -- Hierarchical Data Format Release 4 (HDF4)"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:7
+msgid "HDF4"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:9
+msgid "HDF4Image"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:11
+msgid "libdf"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:13
+msgid ""
+"There are two HDF formats, HDF4 (4.x and previous releases) and HDF5. These "
+"formats are completely different and NOT compatible. This driver intended "
+"for HDF4 file formats importing. NASA's Earth Observing System (EOS) "
+"maintains its own HDF modification called HDF-EOS. This modification is "
+"suited for use with remote sensing data and fully compatible with underlying "
+"HDF. This driver can import HDF4-EOS files. Currently EOS use HDF4-EOS for "
+"data storing (telemetry from \"Terra\" and \"Aqua\" satellites). In the "
+"future they will switch to HDF5-EOS format, which will be used for telemetry "
+"from \"Aura\" satellite."
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:24
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:33
+msgid "Multiple Image Handling (Subdatasets)"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:35
+msgid ""
+"Hierarchical Data Format is a container for several different datasets. For "
+"data storing Scientific Datasets (SDS) used most often. SDS is a "
+"multidimensional array filled by data. One HDF file may contain several "
+"different SDS arrays. They may differ in size, number of dimensions and may "
+"represent data for different regions."
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:41
+msgid ""
+"If the file contains only one SDS that appears to be an image, it may be "
+"accessed normally, but if it contains multiple images it may be necessary to "
+"import the file via a two step process. The first step is to get a report of "
+"the components images (SDS arrays) in the file using **gdalinfo**, and then "
+"to import the desired images using gdal_translate. The **gdalinfo** utility "
+"lists all multidimensional subdatasets from the input HDF file. The name of "
+"individual images (subdatasets) are assigned to the **SUBDATASET_n_NAME** "
+"metadata item. The description for each image is found in the "
+"**SUBDATASET_n_DESC** metadata item. For HDF4 images the subdataset names "
+"will be formatted like this:"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:53
+msgid "*HDF4_SDS:subdataset_type:file_name:subdataset_index*"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:55
+msgid ""
+"where *subdataset_type* shows predefined names for some of the well known "
+"HDF datasets, *file_name* is the name of the input file, and "
+"*subdataset_index* is the index of the image to use (for internal use in "
+"GDAL)."
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:60
+msgid ""
+"On the second step you should provide this name for **gdalinfo** or "
+"**gdal_translate** for actual reading of the data."
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:63
+msgid "For example, we want to read data from the MODIS Level 1B dataset:"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:67
+msgid ""
+"$ gdalinfo GSUB1.A2001124.0855.003.200219309451.hdf\n"
+"Driver: HDF4/Hierarchical Data Format Release 4\n"
+"Size is 512, 512\n"
+"Coordinate System is `'\n"
+"Metadata:\n"
+"  HDFEOSVersion=HDFEOS_V2.7\n"
+"  Number of Scans=204\n"
+"  Number of Day mode scans=204\n"
+"  Number of Night mode scans=0\n"
+"  Incomplete Scans=0"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:78
+msgid "...a lot of metadata output skipped..."
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:82
+msgid ""
+"Subdatasets:\n"
+"  SUBDATASET_1_NAME=HDF4_SDS:MODIS_L1B:GSUB1.A2001124.0855.003.200219309451."
+"hdf:0\n"
+"  SUBDATASET_1_DESC=[408x271] Latitude (32-bit floating-point)\n"
+"  SUBDATASET_2_NAME=HDF4_SDS:MODIS_L1B:GSUB1.A2001124.0855.003.200219309451."
+"hdf:1\n"
+"  SUBDATASET_2_DESC=[408x271] Longitude (32-bit floating-point)\n"
+"  SUBDATASET_3_NAME=HDF4_SDS:MODIS_L1B:GSUB1.A2001124.0855.003.200219309451."
+"hdf:2\n"
+"  SUBDATASET_3_DESC=[12x2040x1354] EV_1KM_RefSB (16-bit unsigned integer)\n"
+"  SUBDATASET_4_NAME=HDF4_SDS:MODIS_L1B:GSUB1.A2001124.0855.003.200219309451."
+"hdf:3\n"
+"  SUBDATASET_4_DESC=[12x2040x1354] EV_1KM_RefSB_Uncert_Indexes (8-bit "
+"unsigned integer)\n"
+"  SUBDATASET_5_NAME=HDF4_SDS:MODIS_L1B:GSUB1.A2001124.0855.003.200219309451."
+"hdf:4\n"
+"  SUBDATASET_5_DESC=[408x271] Height (16-bit integer)\n"
+"  SUBDATASET_6_NAME=HDF4_SDS:MODIS_L1B:GSUB1.A2001124.0855.003.200219309451."
+"hdf:5\n"
+"  SUBDATASET_6_DESC=[408x271] SensorZenith (16-bit integer)\n"
+"  SUBDATASET_7_NAME=HDF4_SDS:MODIS_L1B:GSUB1.A2001124.0855.003.200219309451."
+"hdf:6\n"
+"  SUBDATASET_7_DESC=[408x271] SensorAzimuth (16-bit integer)\n"
+"  SUBDATASET_8_NAME=HDF4_SDS:MODIS_L1B:GSUB1.A2001124.0855.003.200219309451."
+"hdf:7\n"
+"  SUBDATASET_8_DESC=[408x271] Range (16-bit unsigned integer)\n"
+"  SUBDATASET_9_NAME=HDF4_SDS:MODIS_L1B:GSUB1.A2001124.0855.003.200219309451."
+"hdf:8\n"
+"  SUBDATASET_9_DESC=[408x271] SolarZenith (16-bit integer)\n"
+"  SUBDATASET_10_NAME=HDF4_SDS:MODIS_L1B:GSUB1.A2001124.0855.003.200219309451."
+"hdf:9\n"
+"  SUBDATASET_10_DESC=[408x271] SolarAzimuth (16-bit integer)\n"
+"  SUBDATASET_11_NAME=HDF4_SDS:MODIS_L1B:GSUB1.A2001124.0855.003.200219309451."
+"hdf:10\n"
+"  SUBDATASET_11_DESC=[408x271] gflags (8-bit unsigned integer)\n"
+"  SUBDATASET_12_NAME=HDF4_SDS:MODIS_L1B:GSUB1.A2001124.0855.003.200219309451."
+"hdf:12\n"
+"  SUBDATASET_12_DESC=[16x10] Noise in Thermal Detectors (8-bit unsigned "
+"integer)\n"
+"  SUBDATASET_13_NAME=HDF4_SDS:MODIS_L1B:GSUB1.A2001124.0855.003.200219309451."
+"hdf:13\n"
+"  SUBDATASET_13_DESC=[16x10] Change in relative responses of thermal "
+"detectors (8-bit unsigned integer)\n"
+"  SUBDATASET_14_NAME=HDF4_SDS:MODIS_L1B:GSUB1.A2001124.0855.003.200219309451."
+"hdf:14\n"
+"  SUBDATASET_14_DESC=[204x16x10] DC Restore Change for Thermal Bands (8-bit "
+"integer)\n"
+"  SUBDATASET_15_NAME=HDF4_SDS:MODIS_L1B:GSUB1.A2001124.0855.003.200219309451."
+"hdf:15\n"
+"  SUBDATASET_15_DESC=[204x2x40] DC Restore Change for Reflective 250m Bands "
+"(8-bit integer)\n"
+"  SUBDATASET_16_NAME=HDF4_SDS:MODIS_L1B:GSUB1.A2001124.0855.003.200219309451."
+"hdf:16\n"
+"  SUBDATASET_16_DESC=[204x5x20] DC Restore Change for Reflective 500m Bands "
+"(8-bit integer)\n"
+"  SUBDATASET_17_NAME=HDF4_SDS:MODIS_L1B:GSUB1.A2001124.0855.003.200219309451."
+"hdf:17\n"
+"  SUBDATASET_17_DESC=[204x15x10] DC Restore Change for Reflective 1km Bands "
+"(8-bit integer)\n"
+"Corner Coordinates:\n"
+"Upper Left  (    0.0,    0.0)\n"
+"Lower Left  (    0.0,  512.0)\n"
+"Upper Right (  512.0,    0.0)\n"
+"Lower Right (  512.0,  512.0)\n"
+"Center      (  256.0,  256.0)"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:124
+msgid ""
+"Now select one of the subdatasets, described as ``[12x2040x1354] "
+"EV_1KM_RefSB (16-bit unsigned integer)``:"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:129
+msgid ""
+"$ gdalinfo HDF4_SDS:MODIS_L1B:GSUB1.A2001124.0855.003.200219309451.hdf:2\n"
+"Driver: HDF4Image/HDF4 Internal Dataset\n"
+"Size is 1354, 2040\n"
+"Coordinate System is `'\n"
+"Metadata:\n"
+"  long_name=Earth View 1KM Reflective Solar Bands Scaled Integers"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:136
+msgid "...metadata skipped..."
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:140
+msgid ""
+"Corner Coordinates:\n"
+"Upper Left  (    0.0,    0.0)\n"
+"Lower Left  (    0.0, 2040.0)\n"
+"Upper Right ( 1354.0,    0.0)\n"
+"Lower Right ( 1354.0, 2040.0)\n"
+"Center      (  677.0, 1020.0)\n"
+"Band 1 Block=1354x2040 Type=UInt16, ColorInterp=Undefined\n"
+"Band 2 Block=1354x2040 Type=UInt16, ColorInterp=Undefined\n"
+"Band 3 Block=1354x2040 Type=UInt16, ColorInterp=Undefined\n"
+"Band 4 Block=1354x2040 Type=UInt16, ColorInterp=Undefined\n"
+"Band 5 Block=1354x2040 Type=UInt16, ColorInterp=Undefined\n"
+"Band 6 Block=1354x2040 Type=UInt16, ColorInterp=Undefined\n"
+"Band 7 Block=1354x2040 Type=UInt16, ColorInterp=Undefined\n"
+"Band 8 Block=1354x2040 Type=UInt16, ColorInterp=Undefined\n"
+"Band 9 Block=1354x2040 Type=UInt16, ColorInterp=Undefined\n"
+"Band 10 Block=1354x2040 Type=UInt16, ColorInterp=Undefined\n"
+"Band 11 Block=1354x2040 Type=UInt16, ColorInterp=Undefined\n"
+"Band 12 Block=1354x2040 Type=UInt16, ColorInterp=Undefined"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:159
+msgid ""
+"Or you may use **gdal_translate** for reading image bands from this dataset."
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:162
+msgid ""
+"Note that you should provide exactly the contents of the line marked "
+"**SUBDATASET_n_NAME** to GDAL, including the **HDF4_SDS:** prefix."
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:165
+msgid ""
+"This driver is intended only for importing remote sensing and geospatial "
+"datasets in form of raster images. If you want explore all data contained in "
+"HDF file you should use another tools (you can find information about "
+"different HDF tools using links at end of this page)."
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:171
+msgid "Georeference"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:173
+msgid ""
+"There is no universal way of storing georeferencing in HDF files. However, "
+"some product types have mechanisms for saving georeferencing, and some of "
+"these are supported by GDAL. Currently supported are (*subdataset_type* "
+"shown in parenthesis):"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:178
+msgid "HDF4 files created by GDAL (**GDAL_HDF4**)"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:179
+msgid "ASTER Level 1A (**ASTER_L1A**)"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:180
+msgid "ASTER Level 1B (**ASTER_L1B**)"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:181
+msgid "ASTER Level 2 (**ASTER_L2**)"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:182
+msgid "ASTER DEM (**AST14DEM**)"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:183
+msgid "MODIS Level 1B Earth View products (**MODIS_L1B**)"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:184
+msgid "MODIS Level 3 products (**MODIS_L3**)"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:185
+msgid "SeaWiFS Level 3 Standard Mapped Image Products (**SEAWIFS_L3**)"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:187
+msgid ""
+"By default the hdf4 driver only reads the gcps from every 10th row and "
+"column from EOS_SWATH datasets. You can change this behavior by setting the "
+"GEOL_AS_GCPS environment variable to PARTIAL (default), NONE, or FULL."
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:193
+msgid "Creation Issues"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:195
+msgid ""
+"This driver supports creation of the HDF4 Scientific Datasets. You may "
+"create set of 2D datasets (one per each input band) or single 3D dataset "
+"where the third dimension represents band numbers. All metadata and band "
+"descriptions from the input dataset are stored as HDF4 attributes. "
+"Projection information (if it exists) and affine transformation coefficients "
+"also stored in form of attributes. Files, created by GDAL have the special "
+"attribute:"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:203
+msgid "\"Signature=Created with GDAL (http://www.remotesensing.org/gdal/)\""
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:205
+msgid ""
+"and are automatically recognised when read, so the projection info and "
+"transformation matrix restored back."
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:208
+msgid "Creation Options:"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:-1
+msgid ""
+"RANK=[2/3]:  Defaults to 3. Create n-dimensional SDS. Currently only 2D and "
+"3D datasets supported. By default a 3-dimensional dataset will be created."
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:219
+msgid "Metadata"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:221
+msgid ""
+"All HDF4 attributes are transparently translated as GDAL metadata. In the "
+"HDF file attributes may be assigned assigned to the whole file as well as to "
+"particular subdatasets."
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:226
+msgid "Open options"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:228
+msgid "The following open option is supported:"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:-1
+msgid ""
+"LIST_SDS=[AUTO/YES/NO]:  (GDAL >= 3.2) Whether to report Scientific Data "
+"Sets (SDS). By default, when a HDF file contains EOS_SWATH or EOS_GRID, SDS "
+"will not be listed as GDAL subdatasets (as this would cause them to be "
+"reported twice). Listing them can be forced by setting LIST_SDS to YES."
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:241
+msgid "Multidimensional API support"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:245
+msgid ""
+"The HDF4 driver supports the :ref:`multidim_raster_data_model` for reading "
+"operations."
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:249
+msgid "Driver building"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:251
+msgid ""
+"This driver built on top of NCSA HDF library, so you need one to compile "
+"GDAL with HDF4 support. You may search your operating system distribution "
+"for the precompiled binaries or download source code or binaries from the "
+"NCSA HDF Home Page (see links below)."
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:256
+msgid ""
+"Please note, that NCSA HDF library compiled with several defaults which is "
+"defined in *hlimits.h* file. For example, *hlimits.h* defines the maximum "
+"number of opened files:"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:262
+msgid "#   define MAX_FILE   32"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:264
+msgid ""
+"If you need open more HDF4 files simultaneously you should change this value "
+"and rebuild HDF4 library (and relink GDAL if using static HDF libraries)."
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:269
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:271
+msgid ""
+"Implemented as :source_file:`frmts/hdf4/hdf4dataset.cpp` and :source_file:"
+"`frmts/hdf4/hdf4imagedataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:273
+msgid "`The HDF Group <http://www.hdfgroup.org/>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:274
+msgid ""
+"Sources of the data in HDF4 and HDF4-EOS formats: `Earth Observing System "
+"Data Gateway <http://edcimswww.cr.usgs.gov/pub/imswelcome/>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:278
+msgid "Documentation to individual products, supported by this driver:"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:280
+msgid ""
+"`Geo-Referencing ASTER L1B Data <http://edcdaac.usgs.gov/aster/"
+"ASTER_GeoRef_FINAL.pdf>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:282
+msgid ""
+"`ASTER Standard Data Product Specifications Document <http://asterweb.jpl."
+"nasa.gov/documents/ASTERHigherLevelUserGuideVer2May01.pdf>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:284
+msgid ""
+"`MODIS Level 1B Product Information and Status <http://www.mcst.ssai.biz/"
+"mcstweb/L1B/product.html>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/hdf4.rst:286
+msgid ""
+"`MODIS Ocean User's Guide <http://modis-ocean.gsfc.nasa.gov/userguide."
+"html>`__"
+msgstr ""

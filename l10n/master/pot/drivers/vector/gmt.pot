@@ -1,0 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/gmt.rst:4
+msgid "GMT ASCII Vectors (.gmt)"
+msgstr ""
+
+#: ../../../source/drivers/vector/gmt.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/gmt.rst:6
+msgid "GMT"
+msgstr ""
+
+#: ../../../source/drivers/vector/gmt.rst:10
+msgid ""
+"OGR supports reading and writing GMT ASCII vector format. This is the format "
+"used by the Generic Mapping Tools (GMT) package, and includes recent "
+"additions to the format to handle more geometry types, and attributes. "
+"Currently GMT files are only supported if they have the extension \".gmt\". "
+"Old (simple) GMT files are treated as either point, or linestring files "
+"depending on whether a \">\" line is encountered before the first vertex. "
+"New style files have a variety of auxiliary information including geometry "
+"type, layer extents, coordinate system and attribute field declarations in "
+"comments in the header, and for each feature can have attributes."
+msgstr ""
+
+#: ../../../source/drivers/vector/gmt.rst:22
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/gmt.rst:31
+msgid "Creation Issues"
+msgstr ""
+
+#: ../../../source/drivers/vector/gmt.rst:33
+msgid ""
+"The driver supports creating new GMT files, and appending additional "
+"features to existing files, but update of existing features is not "
+"supported. Each layer is created as a separate .gmt file. If a name that "
+"ends with .gmt is not given, then the GMT driver will take the layer name "
+"and add the \".gmt\" extension."
+msgstr ""
+
+#: ../../../source/drivers/vector/gmt.rst:39
+msgid ""
+"Writing to /dev/stdout or /vsistdout/ is supported since GDAL 3.5.0 (note "
+"that the file will then lack the optional region/bounding box header item)"
+msgstr ""

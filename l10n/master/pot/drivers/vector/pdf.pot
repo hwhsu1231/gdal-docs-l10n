@@ -1,0 +1,227 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/pdf.rst:5
+msgid "PDF -- Geospatial PDF"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:7
+msgid "PDF"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:9
+msgid "none for write support, Poppler/PoDoFo/PDFium for read support"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:11
+msgid ""
+"Refer to the :ref:`PDF raster <raster.pdf>` documentation page for common "
+"documentation of the raster and vector sides of the driver."
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:15
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:24
+msgid "Vector support"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:26
+msgid ""
+"This driver can read and write geospatial PDF with vector features. Vector "
+"read support requires linking to one of the above mentioned dependent "
+"libraries, but write support does not. The driver can read vector features "
+"encoded according to PDF's logical structure facilities (as described by "
+"\"§10.6 - Logical Structure\" of PDF spec), or retrieve only vector "
+"geometries for other vector PDF files."
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:33
+msgid ""
+"If there is no such logical structure, the driver will not try to interpret "
+"the vector content of the PDF, unless you defined the :config:"
+"`OGR_PDF_READ_NON_STRUCTURED` configuration option to YES."
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:38
+msgid "Feature style support"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:40
+msgid ""
+"For write support, the driver has partial support for the style information "
+"attached to features, encoded according to the :ref:`ogr_feature_style`."
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:44
+msgid "The following tools are recognized:"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:46
+msgid "For points, LABEL and SYMBOL."
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:47
+msgid "For lines, PEN."
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:48
+msgid "For polygons, PEN and BRUSH."
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:50
+msgid ""
+"The supported attributes for each tool are summed up in the following table:"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:57
+msgid "Tool"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:58
+msgid "Supported attributes"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:59
+msgid "Example"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:60
+msgid "PEN"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:61
+msgid "color (c); width (w); dash pattern (p)"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:62
+msgid "PEN(c:#FF0000,w:5px)"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:63
+msgid "BRUSH"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:64
+msgid "foreground color (fc)"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:65
+msgid "BRUSH(fc:#0000FF)"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:66
+msgid "LABEL"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:0
+msgid "GDAL >= 2.3.0: text (t), limited to ASCII strings; font name (f), see"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:0
+msgid ""
+"note below; font size (s); bold (bo); italic (it); text color (c); x and"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:0
+msgid "y offsets (dx, dy); angle (a); anchor point (p), values 1 through 9;"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:0
+msgid "stretch (w)"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:0
+msgid "GDAL <= 2.2.x: text (t), limited to ASCII strings; font size (s); text"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:0
+msgid "color (c); x and y offsets (dx, dy); angle (a)"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:73
+msgid "LABEL(c:#000000,t:\"Hello World!\",s:5g)"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:74
+msgid "SYMBOL"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:75
+msgid ""
+"id (ogr-sym-0 to ogr-sym-9, and filenames for raster symbols); color (c); "
+"size (s)"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:0
+msgid "SYMBOL(c:#00FF00,id:\"ogr- sym-3\",s:10)"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:0
+msgid "SYMBOL(c:#00000080,id:\"a_symbol.png\")"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:79
+msgid ""
+"Alpha values are supported for colors to control the opacity. If not "
+"specified, for BRUSH, it is set at 50% opaque."
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:82
+msgid ""
+"For SYMBOL with a bitmap name, only the alpha value of the color specified "
+"with 'c' is taken into account."
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:85
+msgid ""
+"A font name starting with \"Times\" or containing the string \"Serif\" (case "
+"sensitive) will be treated as Times. A font name starting with \"Courier\" "
+"or containing the string \"Mono\" (case sensitive) will be treated as "
+"Courier. All other font names will be treated as Helvetica."
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:91
+msgid "Configuration options"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:93
+msgid ""
+"The following :ref:`configuration options <configoptions>` are available:"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:104
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:106
+msgid ":ref:`PDF raster <raster.pdf>` documentation page"
+msgstr ""
+
+#: ../../../source/drivers/vector/pdf.rst:107
+msgid ":ref:`ogr_feature_style`"
+msgstr ""

@@ -1,0 +1,264 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/programs/raster_common_options.rst:5
+msgid "Common options for raster programs"
+msgstr ""
+
+#: ../../../source/programs/raster_common_options.rst:7
+msgid "All GDAL command line programs support the following common options."
+msgstr ""
+
+#: ../../../source/programs/raster_common_options.rst:11
+msgid "Report the version of GDAL and exit."
+msgstr ""
+
+#: ../../../source/programs/raster_common_options.rst:15
+msgid "Report detailed information about GDAL in use."
+msgstr ""
+
+#: ../../../source/programs/options/formats_raster.rst:3
+msgid ""
+"List all raster formats supported by this GDAL build (read-only and read-"
+"write) and exit."
+msgstr ""
+
+#: ../../../source/programs/options/formats_raster.rst:5
+msgid "The format support is indicated as follows:"
+msgstr ""
+
+#: ../../../source/programs/options/formats_raster.rst:7
+msgid "``ro`` is read-only driver"
+msgstr ""
+
+#: ../../../source/programs/options/formats_raster.rst:8
+msgid ""
+"``rw`` is read or write (i.e. supports :cpp:func:`GDALDriver::CreateCopy`)"
+msgstr ""
+
+#: ../../../source/programs/options/formats_raster.rst:9
+msgid ""
+"``rw+`` is read, write and update (i.e. supports :cpp:func:`GDALDriver::"
+"Create`)"
+msgstr ""
+
+#: ../../../source/programs/options/formats_raster.rst:10
+msgid ""
+"A ``v`` is appended for formats supporting virtual IO (/vsimem, /vsigzip, /"
+"vsizip, etc)."
+msgstr ""
+
+#: ../../../source/programs/options/formats_raster.rst:11
+msgid "A ``s`` is appended for formats supporting subdatasets."
+msgstr ""
+
+#: ../../../source/programs/options/formats_raster.rst:13
+msgid ""
+"The order in which drivers are listed is the one in which they are "
+"registered, which determines the order in which they are successively probed "
+"when opening a dataset. Most of the time, this order does not matter, but in "
+"some situations, several drivers may recognize the same file. The ``-if`` "
+"option of some utilities can be specified to restrict opening the dataset "
+"with a subset of drivers (generally one). Note that it does not force those "
+"drivers to open the dataset. In particular, some drivers have requirements "
+"on file extensions. Alternatively, the :config:`GDAL_SKIP` configuration "
+"option can also be used to exclude one or several drivers."
+msgstr ""
+
+#: ../../../source/programs/raster_common_options.rst:22
+msgid ""
+"List detailed information about a single format driver. The format should be "
+"the short name reported in the --formats list, such as GTiff."
+msgstr ""
+
+#: ../../../source/programs/raster_common_options.rst:27
+msgid ""
+"Read the named file and substitute the contents into the command line "
+"options list. Lines beginning with # will be ignored. Multi-word arguments "
+"may be kept together with double quotes."
+msgstr ""
+
+#: ../../../source/programs/raster_common_options.rst:31
+msgid ""
+"Sets the named configuration keyword to the given value, as opposed to "
+"setting them as environment variables. Some common configuration keywords "
+"are :config:`GDAL_CACHEMAX` (memory used internally for caching in "
+"megabytes) and :config:`GDAL_DATA` (path of the GDAL \"data\" directory). "
+"Individual drivers may be influenced by other :ref:`configuration options "
+"<list_config_options>`."
+msgstr ""
+
+#: ../../../source/programs/raster_common_options.rst:35
+msgid ""
+"Control what debugging messages are emitted. A value of ON will enable all "
+"debug messages. A value of OFF will disable all debug messages. Another "
+"value will select only debug messages containing that string in the debug "
+"prefix code."
+msgstr ""
+
+#: ../../../source/programs/raster_common_options.rst:39
+msgid ""
+"Gives a brief usage message for the generic GDAL command line options and "
+"exit."
+msgstr ""
+
+#: ../../../source/programs/raster_common_options.rst:42
+msgid "Creating new files"
+msgstr ""
+
+#: ../../../source/programs/raster_common_options.rst:44
+msgid ""
+"Access an existing file to read it is generally quite simple. Just indicate "
+"the name of the file or dataset on the command line. However, creating a "
+"file is more complicated. It may be necessary to indicate the format to "
+"create, various creation options affecting how it will be created and "
+"perhaps a coordinate system to be assigned. Many of these options are "
+"handled similarly by different GDAL utilities, and are introduced here."
+msgstr ""
+
+#: ../../../source/programs/raster_common_options.rst:54
+msgid ""
+"Select the format to create the new file as. The formats are assigned short "
+"names such as GTiff (for GeoTIFF) or HFA (for Erdas Imagine). The list of "
+"all format codes can be listed with the :option:`--formats` switch. Only "
+"formats list as ``(rw)`` (read-write) can be written."
+msgstr ""
+
+#: ../../../source/programs/raster_common_options.rst:61
+msgid ""
+"If not specified, the format is guessed from the extension. Previously, it "
+"was generally GTiff for raster, or ESRI Shapefile for vector."
+msgstr ""
+
+#: ../../../source/programs/options/co.rst:5
+msgid ""
+"Many formats have one or more optional creation options that can be used to "
+"control particulars about the file created. For instance, the GeoTIFF driver "
+"supports creation options to control compression, and whether the file "
+"should be tiled."
+msgstr ""
+
+#: ../../../source/programs/options/co.rst:10
+msgid ""
+"The creation options available vary by format driver, and some simple "
+"formats have no creation options at all. A list of options supported for a "
+"format can be listed with the :ref:`--formats "
+"<raster_common_options_formats>` command line option but the documentation "
+"for the format is the definitive source of information on driver creation "
+"options. See :ref:`raster_drivers` format specific documentation for legal "
+"creation options for each format."
+msgstr ""
+
+#: ../../../source/programs/raster_common_options.rst:70
+msgid ""
+"Several utilities (e.g. :command:`gdal_translate` and :command:`gdalwarp`) "
+"include the ability to specify coordinate systems with command line options "
+"like :option:`-a_srs` (assign SRS to output), :option:`-s_srs` (source SRS) "
+"and :option:`-t_srs` (target SRS). These utilities allow the coordinate "
+"system (SRS = spatial reference system) to be assigned in a variety of "
+"formats."
+msgstr ""
+
+#: ../../../source/programs/raster_common_options.rst:76
+msgid "``NAD27|NAD83|WGS84|WGS72``"
+msgstr ""
+
+#: ../../../source/programs/raster_common_options.rst:78
+msgid ""
+"These common geographic (lat/long) coordinate systems can be used directly "
+"by these names."
+msgstr ""
+
+#: ../../../source/programs/raster_common_options.rst:81
+msgid "``EPSG:n``"
+msgstr ""
+
+#: ../../../source/programs/raster_common_options.rst:83
+msgid ""
+"Coordinate systems (projected or geographic) can be selected based on their "
+"EPSG codes. For instance, :samp:`EPSG:27700` is the British National Grid. A "
+"list of EPSG coordinate systems can be found in the GDAL data files :file:"
+"`gcs.csv` and :file:`pcs.csv`."
+msgstr ""
+
+#: ../../../source/programs/raster_common_options.rst:88
+msgid "``PROJ.4 definition``"
+msgstr ""
+
+#: ../../../source/programs/raster_common_options.rst:90
+msgid ""
+"A PROJ.4 definition string can be used as a coordinate system. Take care to "
+"keep the proj.4 string together as a single argument to the command (usually "
+"by double quoting)."
+msgstr ""
+
+#: ../../../source/programs/raster_common_options.rst:94
+msgid "For instance :samp:`+proj=utm +zone=11 +datum=WGS84`."
+msgstr ""
+
+#: ../../../source/programs/raster_common_options.rst:96
+msgid "``OpenGIS Well Known Text``"
+msgstr ""
+
+#: ../../../source/programs/raster_common_options.rst:98
+msgid ""
+"The Open GIS Consortium has defined a textual format for describing "
+"coordinate systems as part of the Simple Features specifications. This "
+"format is the internal working format for coordinate systems used in GDAL. "
+"The name of a file containing a WKT coordinate system definition may be used "
+"a coordinate system argument, or the entire coordinate system itself may be "
+"used as a command line option (though escaping all the quotes in WKT is "
+"quite challenging)."
+msgstr ""
+
+#: ../../../source/programs/raster_common_options.rst:106
+msgid "``ESRI Well Known Text``"
+msgstr ""
+
+#: ../../../source/programs/raster_common_options.rst:108
+msgid ""
+"ESRI uses a slight variation on OGC WKT format in their ArcGIS product "
+"(ArcGIS :file:`.prj` files), and these may be used in a similar manner o WKT "
+"files, but the filename should be prefixed with ``ESRI::``."
+msgstr ""
+
+#: ../../../source/programs/raster_common_options.rst:112
+msgid ""
+"For example, `\"ESRI::NAD 1927 StatePlane Wyoming West FIPS 4904.prj\"`."
+msgstr ""
+
+#: ../../../source/programs/raster_common_options.rst:114
+msgid "``Spatial References from URLs``"
+msgstr ""
+
+#: ../../../source/programs/raster_common_options.rst:116
+msgid ""
+"For example http://spatialreference.org/ref/user/north-pacific-albers-conic-"
+"equal-area/."
+msgstr ""
+
+#: ../../../source/programs/raster_common_options.rst:118
+msgid ":file:`filename`"
+msgstr ""
+
+#: ../../../source/programs/raster_common_options.rst:120
+msgid ""
+"File containing WKT, PROJ.4 strings, or XML/GML coordinate system "
+"definitions can be provided."
+msgstr ""

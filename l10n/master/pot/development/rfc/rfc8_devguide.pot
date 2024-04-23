@@ -1,0 +1,44 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc8_devguide.rst:5
+msgid "RFC 8: Developer Guidelines"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc8_devguide.rst:7
+msgid "Author: Frank Warmerdam"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc8_devguide.rst:9
+msgid "Contact: warmerdam@pobox.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc8_devguide.rst:11
+msgid "Status: draft"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc8_devguide.rst:14
+msgid "Purpose"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc8_devguide.rst:16
+msgid ""
+"This document used to document developer practices for the GDAL/OGR project. "
+"As it was an evolving document, its content has been moved to :ref:"
+"`development_practices`."
+msgstr ""

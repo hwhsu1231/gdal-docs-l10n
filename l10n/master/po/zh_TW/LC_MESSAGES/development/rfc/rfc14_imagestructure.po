@@ -1,0 +1,180 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc14_imagestructure.rst:5
+msgid "RFC 14: Image Structure Metadata"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc14_imagestructure.rst:7
+msgid "Author: Frank Warmerdam"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc14_imagestructure.rst:9
+msgid "Contact: warmerdam@pobox.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc14_imagestructure.rst:11
+msgid "Status: Adopted, amended per :ref:`rfc-87`"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc14_imagestructure.rst:14
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc14_imagestructure.rst:16
+msgid ""
+"This RFC attempts to formalize the semantics of the \"IMAGE_STRUCTURE\" "
+"domain of metadata. This metadata domain is used to hold structural "
+"information about image organization that would not normally be carried with "
+"an image when translated into another format. The IMAGE_STRUCTURE metadata "
+"may occur on the GDALDataset or on individual bands, and most items are "
+"meaningful in both contexts. When items like NBITS are found on the dataset "
+"it is assumed they apply to all bands of that dataset."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc14_imagestructure.rst:25
+msgid "IMAGE_STRUCTURE items"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc14_imagestructure.rst:27
+msgid ""
+"COMPRESSION:: The compression type used for this dataset or band. There is "
+"no fixed catalog of compression type names, but where a given format "
+"includes a COMPRESSION creation option, the same list of values should be "
+"used here as there."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc14_imagestructure.rst:32
+msgid ""
+"NBITS:: The actual number of bits used for this band, or the bands of this "
+"dataset. Normally only present when the number of bits is non-standard for "
+"the datatype, such as when a 1 bit TIFF is represented through GDAL as "
+"GDT_Byte."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc14_imagestructure.rst:37
+msgid ""
+"INTERLEAVE:: This only applies on datasets, and the value should be one of "
+"PIXEL, LINE or BAND. It can be used as a data access hint."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc14_imagestructure.rst:40
+msgid ""
+"PIXELTYPE:: This may appear on a GDT_Byte band (or the corresponding "
+"dataset) and have the value SIGNEDBYTE to indicate the unsigned byte values "
+"between 128 and 255 should be interpreted as being values between -128 and "
+"-1 for applications that recognise the SIGNEDBYTE type."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc14_imagestructure.rst:47
+msgid ""
+"Starting with GDAL 3.7, with the implementation of :ref:`rfc-87`, PIXELTYPE "
+"is no longer used, as the Int8 data type is used for signed bytes."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc14_imagestructure.rst:51
+msgid "Compatibility Issues"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc14_imagestructure.rst:53
+msgid ""
+"This RFC has two changes from existing practise that may cause compatibility "
+"issues:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc14_imagestructure.rst:56
+msgid ""
+"Traditionally the NBITS metadata appeared in the default metadata domain on "
+"datasets, instead of in the IMAGE_STRUCTURE domain."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc14_imagestructure.rst:58
+msgid ""
+"Traditionally the COMPRESSION metadata appeared only on the dataset, never "
+"one the band."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc14_imagestructure.rst:61
+msgid ""
+"I am only aware of one application previously making systematic use of these "
+"items, and it will be updated to reflect the new usage as GDAL 1.5.0 is "
+"adopted."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc14_imagestructure.rst:66
+msgid "Development"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc14_imagestructure.rst:68
+msgid ""
+"Beyond adopting the definition for the semantics of the IMAGE_STRUCTURE "
+"metadata, the following development steps will be taken:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc14_imagestructure.rst:71
+msgid ""
+"The PNG, GTiff, NITF and EHdr drivers will be updated to place NBITS in the "
+"IMAGE_STRUCTURE metadata domain."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc14_imagestructure.rst:73
+msgid "The HFA driver will be updated to return NBITS metadata."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc14_imagestructure.rst:74
+msgid ""
+"The HFA, GTiff, JP2KAK, ECW, JPEG, and PNG drivers will be updated to return "
+"INTERLEAVE metadata."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc14_imagestructure.rst:76
+msgid "The HFA and GTiff drivers will be updated to return PIXELTYPE metadata."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc14_imagestructure.rst:79
+msgid ""
+"The development will be done by Frank Warmerdam in trunk in time for GDAL/"
+"OGR 1.5.0 release. Changes to other drivers that these definitions might be "
+"useful for while be done as time permits by interested developers - not "
+"necessarily in time for GDAL/OGR 1.5.0."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc14_imagestructure.rst:85
+msgid "Notes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc14_imagestructure.rst:87
+msgid ""
+"The gdalinfo utility already reports IMAGE_STRUCTURE metadata when it is "
+"available."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc14_imagestructure.rst:89
+msgid ""
+"The GTiff, and HFA drivers CreateCopy() methods check the source for NBITS, "
+"and PIXELTYPE metadata to create specialized output files types."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc14_imagestructure.rst:92
+msgid ""
+"The GTiff, HFA and default CreateCopy() implementations have been reworked "
+"to use the new GDALDatasetCopyWholeRaster() function which uses the "
+"INTERLEAVE metadata as a clue whether to do interleaved copies if the source "
+"dataset is interleaved."
+msgstr ""

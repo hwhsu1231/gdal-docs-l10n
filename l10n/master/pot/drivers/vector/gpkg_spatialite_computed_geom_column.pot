@@ -1,0 +1,162 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/gpkg_spatialite_computed_geom_column.rst:4
+msgid "GeoPackage Spatialite computed geometry column extension"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpkg_spatialite_computed_geom_column.rst:6
+msgid "GeoPackage 1.3.1 Extension"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpkg_spatialite_computed_geom_column.rst:8
+msgid ""
+"Extension follows template from Annex E of the OGC `GeoPackage 1.3.1 "
+"Specification`_."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpkg_spatialite_computed_geom_column.rst:11
+msgid "Extension Title"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpkg_spatialite_computed_geom_column.rst:13
+msgid "Spatialite computed geometry column"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpkg_spatialite_computed_geom_column.rst:16
+msgid "Introduction"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpkg_spatialite_computed_geom_column.rst:18
+msgid ""
+"Support for geometry column computed from the result of a SQL function of "
+"the Spatialite library."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpkg_spatialite_computed_geom_column.rst:22
+msgid "Extension Author"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpkg_spatialite_computed_geom_column.rst:24
+msgid "`GDAL - Geospatial Data Abstraction Library`_, author_name `gdal`."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpkg_spatialite_computed_geom_column.rst:27
+msgid "Extension Name or Template"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpkg_spatialite_computed_geom_column.rst:29
+msgid "The extension name is ``gdal_spatialite_computed_geom_column``."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpkg_spatialite_computed_geom_column.rst:31
+msgid ""
+"Each view using the extension should register its geometry column with the "
+"following template:"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpkg_spatialite_computed_geom_column.rst:34
+msgid ""
+"INSERT INTO gpkg_extensions\n"
+"(table_name, column_name, extension_name, definition, scope)\n"
+"VALUES\n"
+"(\n"
+"    '{view_name}',\n"
+"    '{geometry_column_name}',\n"
+"    'gdal_spatialite_computed_geom_column',\n"
+"    'https://gdal.org/drivers/vector/gpkg_spatialite_computed_geom_column."
+"html',\n"
+"    'read-write'\n"
+");"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpkg_spatialite_computed_geom_column.rst:48
+msgid "Extension Type"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpkg_spatialite_computed_geom_column.rst:50
+msgid "Extension of Existing Requirement in Clause 2.1 \"Features\"."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpkg_spatialite_computed_geom_column.rst:53
+msgid "Applicability"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpkg_spatialite_computed_geom_column.rst:55
+msgid ""
+"This extension applies to any view specified in the ``gpkg_contents`` table "
+"with a lowercase `data_type` column value of \"features\" which defines its "
+"geometry column as the result of a SQL function of the Spatialite library."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpkg_spatialite_computed_geom_column.rst:61
+msgid "Scope"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpkg_spatialite_computed_geom_column.rst:63
+msgid "Read-write"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpkg_spatialite_computed_geom_column.rst:66
+msgid "Requirements"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpkg_spatialite_computed_geom_column.rst:69
+msgid "GeoPackage"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpkg_spatialite_computed_geom_column.rst:71
+msgid ""
+"A view using this extension should have its geometry column defined as the "
+"result of a Spatialite SQL function returning a geometry, and wrapped with "
+"the ``AsGPB`` function to return a GeoPackage geometry blob."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpkg_spatialite_computed_geom_column.rst:75
+msgid "An example of such a view is:"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpkg_spatialite_computed_geom_column.rst:77
+msgid ""
+"CREATE VIEW my_view AS SELECT foo.fid AS OGC_FID, AsGBP(ST_Multi(foo.geom)) "
+"FROM foo"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpkg_spatialite_computed_geom_column.rst:82
+msgid ""
+"The view name and geometry column name should be registered in the "
+"``gpkg_extensions`` table, as shown in the above Extension Template."
+msgstr ""
+
+#: ../../../source/drivers/vector/gpkg_spatialite_computed_geom_column.rst:86
+msgid "GeoPackage SQLite Configuration"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpkg_spatialite_computed_geom_column.rst:88
+msgid "None"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpkg_spatialite_computed_geom_column.rst:91
+msgid "GeoPackage SQLite Extension"
+msgstr ""
+
+#: ../../../source/drivers/vector/gpkg_spatialite_computed_geom_column.rst:93
+msgid ""
+"This extension assumes that the `Spatialite SQL functions`_ are available at "
+"runtime."
+msgstr ""

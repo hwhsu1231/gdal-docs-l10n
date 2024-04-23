@@ -1,0 +1,533 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:5
+msgid "RFC 3: GDAL Committer Guildlines"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:7
+msgid "Author: Frank Warmerdam"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:9
+msgid "Contact: warmerdam@pobox.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:11
+msgid "Status: Adopted"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:14
+msgid "Purpose"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:16
+msgid ""
+"To formalize SVN (or CVS) commit access, and specify some guidelines for SVN "
+"committers."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:20
+msgid "Election to SVN Commit Access"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:22
+msgid ""
+"Permission for SVN commit access shall be provided to new developers only if "
+"accepted by the GDAL/OGR Project Steering Committee. A proposal should be "
+"written to the PSC for new committers and voted on normally. It is not "
+"necessary to write an RFC document for these votes, a proposal to gdal-dev "
+"is sufficient."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:28
+msgid "Removal of SVN commit access should be handled by the same process."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:30
+msgid ""
+"The new committer should have demonstrated commitment to GDAL/OGR and "
+"knowledge of the GDAL/OGR source code and processes to the committee's "
+"satisfaction, usually by reporting bugs, submitting patches, and/or actively "
+"participating in the GDAL/OGR mailing list(s)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:35
+msgid ""
+"The new committer should also be prepared to support any new feature or "
+"changes that he/she commits to the GDAL/OGR source tree in future releases, "
+"or to find someone to which to delegate responsibility for them if he/she "
+"stops being available to support the portions of code that he/she is "
+"responsible for."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:41
+msgid ""
+"All committers should also be a member of the gdal-dev mailing list so they "
+"can stay informed on policies, technical developments and release "
+"preparation."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:45
+msgid ""
+"New committers are responsible for having read, and understood this document."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:49
+msgid "Committer Tracking"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:51
+msgid ""
+"A list of all project committers will be kept in the main gdal directory "
+"(called COMMITTERS) listing for each SVN committer:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:54
+msgid "Userid: the id that will appear in the SVN logs for this person."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:55
+msgid "Full name: the users actual name."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:56
+msgid ""
+"Email address: A current email address at which the committer can be "
+"reached. It may be altered in normal ways to make it harder to auto-harvest."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:59
+msgid "A brief indication of areas of responsibility."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:62
+msgid "SVN Administrator"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:64
+msgid ""
+"One member of the Project Steering Committee will be designed the SVN "
+"Administrator. That person will be responsible for giving SVN commit access "
+"to folks, updating the COMMITTERS file, and other SVN related management. "
+"That person will need login access on the SVN server of course."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:70
+msgid "Initially Frank Warmerdam will be the SVN Administrator."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:73
+msgid "SVN Commit Practices"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:75
+msgid ""
+"The following are considered good SVN commit practices for the GDAL/OGR "
+"project."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:78
+msgid "Use meaningful descriptions for SVN commit log entries."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:79
+msgid ""
+"Add a bug reference like \"(#1232)\" at the end of SVN commit log entries "
+"when committing changes related to a ticket in Trac. The '#' character "
+"enables Trac to create a hyperlink from the changeset to the mentioned "
+"ticket."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:83
+msgid ""
+"After committing changes related to a ticket in Trac, write the tree and "
+"revision in which it was fixed in the ticket description. Such as \"Fixed in "
+"trunk (r12345) and in branches/1.7 (r12346)\". The 'r' character enables "
+"Trac to create a hyperlink from the ticket to the changeset."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:88
+msgid ""
+"Changes should not be committed in stable branches without a corresponding "
+"bug id. Any change worth pushing into the stable version is worth a bug "
+"entry."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:91
+msgid ""
+"Never commit new features to a stable branch without permission of the PSC "
+"or release manager. Normally only fixes should go into stable branches."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:94
+msgid "New features go in the main development trunk."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:95
+msgid ""
+"Only bug fixes should be committed to the code during pre-release code "
+"freeze, without permission from the PSC or release manager."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:97
+msgid ""
+"Significant changes to the main development version should be discussed on "
+"the gdal-dev list before you make them, and larger changes will require a "
+"RFC approved by the PSC."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:100
+msgid ""
+"Do not create new branches without the approval of the PSC. Release managers "
+"are assumed to have permission to create a branch."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:102
+msgid ""
+"All source code in SVN should be in Unix text format as opposed to DOS text "
+"mode."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:104
+msgid ""
+"When committing new features or significant changes to existing source code, "
+"the committer should take reasonable measures to insure that the source code "
+"continues to build and work on the most commonly supported platforms "
+"(currently Linux and Windows), either by testing on those platforms "
+"directly, running [wiki:Buildbot] tests, or by getting help from other "
+"developers working on those platforms. If new files or library dependencies "
+"are added, then the configure.in, Makefile.in, Makefile.vc and related "
+"documentations should be kept up to date."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:115
+msgid ""
+"Relationship with other upstream projects imported in GDAL/OGR code base"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:117
+msgid ""
+"Some parts of the GDAL/OGR code base are regularly refreshed from other "
+"upstream projects. So changes in those areas should go first into those "
+"upstream projects, otherwise they may be lost during a later refresh. Note "
+"that those directories may contain a mix of GDAL specific files and upstream "
+"files. This has to be checked on a case-by-case basis (any file with CVS "
+"changelog at its beginning is a good candidate for belonging to the upstream "
+"project)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:125
+msgid "Currently the list of those areas is :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:127
+msgid ""
+"frmts/gtiff/libtiff : from libtiff CVS (`http://www.remotesensing.org/"
+"libtiff/ <http://www.remotesensing.org/libtiff/>`__)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:129
+msgid ""
+"frmts/gtiff/libgeotiff : from libgeotiff SVN (`http://trac.osgeo.org/"
+"geotiff/ <http://trac.osgeo.org/geotiff/>`__)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:131
+msgid ""
+"frmts/jpeg/libjpeg : from libjpeg project (`http://sourceforge.net/projects/"
+"libjpeg/ <http://sourceforge.net/projects/libjpeg/>`__)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:133
+msgid ""
+"frmts/png/libpng : from libpng project (`http://www.libpng.org/pub/png/"
+"libpng.html <http://www.libpng.org/pub/png/libpng.html>`__)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:135
+msgid ""
+"frmts/gif/giflib : from giflib project (`http://sourceforge.net/projects/"
+"giflib <http://sourceforge.net/projects/giflib>`__)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:137
+msgid ""
+"frmts/zlib : from zlib project (`http://www.zlib.net/ <http://www.zlib.net/"
+">`__)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:139
+msgid ""
+"ogr/ogrsf_frmts/mitab : from MITAB CVS (`http://mitab.maptools.org/ <http://"
+"mitab.maptools.org/>`__)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:141
+msgid ""
+"ogr/ogrsf_frmts/avc : from AVCE00 CVS (`http://avce00.maptools.org/ <http://"
+"avce00.maptools.org/>`__)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:143
+msgid ""
+"ogr/ogrsf_frmts/shape/[dbfopen.c, shpopen.c, shptree.c, shapefil.h] : from "
+"shapelib project (`http://shapelib.maptools.org/ <http://shapelib.maptools."
+"org/>`__)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:146
+msgid "data/ : some .csv files related to CRS come from libgeotiff"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:149
+msgid "Legal"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:151
+msgid ""
+"Committers are the front line gatekeepers to keep the code base clear of "
+"improperly contributed code. It is important to the GDAL/OGR users, "
+"developers and the OSGeo foundation to avoid contributing any code to the "
+"project without it being clearly licensed under the project license."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:156
+msgid ""
+"Generally speaking the key issues are that those providing code to be "
+"included in the repository understand that the code will be released under "
+"the MIT license, and that the person providing the code has the right to "
+"contribute the code. For the committer themselves understanding about the "
+"license is hopefully clear. For other contributors, the committer should "
+"verify the understanding unless the committer is very comfortable that the "
+"contributor understands the license (for instance frequent contributors)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:165
+msgid ""
+"If the contribution was developed on behalf of an employer (on work time, as "
+"part of a work project, etc) then it is important that an appropriate "
+"representative of the employer understand that the code will be contributed "
+"under the MIT license. The arrangement should be cleared with an authorized "
+"supervisor/manager, etc."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:171
+msgid ""
+"The code should be developed by the contributor, or the code should be from "
+"a source which can be rightfully contributed such as from the public domain, "
+"or from an open source project under a compatible license."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:176
+msgid "All unusual situations need to be discussed and/or documented."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:178
+msgid ""
+"Committers should adhere to the following guidelines, and may be personally "
+"legally liable for improperly contributing code to the source repository:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:182
+msgid ""
+"Make sure the contributor (and possibly employer) is aware of the "
+"contribution terms."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:184
+msgid ""
+"Code coming from a source other than the contributor (such as adapted from "
+"another project) should be clearly marked as to the original source, "
+"copyright holders, license terms and so forth. This information can be in "
+"the file headers, but should also be added to the project licensing file if "
+"not exactly matching normal project licensing (gdal/LICENSE.txt)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:190
+msgid ""
+"Existing copyright headers and license text should never be stripped from a "
+"file. If a copyright holder wishes to give up copyright they must do so in "
+"writing to the foundation before copyright messages are removed. If license "
+"terms are changed it has to be by agreement (written in email is ok) of the "
+"copyright holders."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:195
+msgid ""
+"Code with licenses requiring credit, or disclosure to users should be added "
+"to /trunk/gdal/LICENSE.TXT."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:197
+msgid ""
+"When substantial contributions are added to a file (such as substantial "
+"patches) the author/contributor should be added to the list of copyright "
+"holders for the file."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:200
+msgid ""
+"If there is uncertainty about whether a change it proper to contribute to "
+"the code base, please seek more information from the project steering "
+"committee, or the foundation legal counsel."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:205
+msgid "Bootstraping"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:207
+msgid ""
+"The following existing committers will be considered authorized GDAL/OGR "
+"committers as long as they each review the committer guidelines, and agree "
+"to adhere to them. The SVN administrator will be responsible for checking "
+"with each person."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:212
+msgid "Daniel Morissette"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:213
+msgid "Frank Warmerdam"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:214
+msgid "Gillian Walter"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:215
+msgid "Andrey Kiselev"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:216
+msgid "Alessandro Amici"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:217
+msgid "Kor de Jong"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:218
+msgid "Howard Butler"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:219
+msgid "Lichun Wang"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:220
+msgid "Norman Vine"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:221
+msgid "Ken Melero"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:222
+msgid "Kevin Ruland"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:223
+msgid "Marek Brudka"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:224
+msgid "Pirmin Kalberer"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:225
+msgid "Steve Soule"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:226
+msgid "Frans van der Bergh"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:227
+msgid "Denis Nadeau"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:228
+msgid "Oleg Semykin"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:229
+msgid "Julien-Samuel Lacroix"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:230
+msgid "Daniel Wallner"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:231
+msgid "Charles F. I. Savage"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:232
+msgid "Mateusz Loskot"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:233
+msgid "Peter Nagy"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:234
+msgid "Simon Perkins"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:235
+msgid "Radim Blazek"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:236
+msgid "Steve Halasz"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:237
+msgid "Nacho Brodin"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:238
+msgid "Benjamin Collins"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:239
+msgid "Ivan Lucena"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:240
+msgid "Ari Jolma"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:241
+msgid "Tamas Szekeres"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:245
+msgid ""
+"`COMMITTERS <http://trac.osgeo.org/gdal/browser/trunk/gdal/COMMITTERS>`__ "
+"file"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc3_commiters.rst:247
+msgid ""
+"`Edit GDAL Subversion Group <https://www.osgeo.org/cgi-bin/auth/ldap_group."
+"py?group=gdal>`__"
+msgstr ""

@@ -1,0 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/dimap.rst:5
+msgid "DIMAP -- Spot DIMAP"
+msgstr ""
+
+#: ../../../source/drivers/raster/dimap.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/dimap.rst:7
+msgid "DIMAP"
+msgstr ""
+
+#: ../../../source/drivers/raster/dimap.rst:11
+msgid ""
+"This is a read-only read for Spot DIMAP described images. To use, select the "
+"METADATA.DIM (DIMAP 1), VOL_PHR.XML (DIMAP 2) or VOL_PNEO.XML (DIMAP 2 "
+"VHR-2020) file in a product directory, or the product directory itself."
+msgstr ""
+
+#: ../../../source/drivers/raster/dimap.rst:15
+msgid ""
+"The imagery is in a distinct imagery file, often a TIFF file, but the DIMAP "
+"dataset handles accessing that file, and attaches geolocation and other "
+"metadata to the dataset from the metadata xml file."
+msgstr ""
+
+#: ../../../source/drivers/raster/dimap.rst:19
+msgid ""
+"The content of the <Spectral_Band_Info> node is reported as metadata at the "
+"level of the raster band. Note that the content of the Spectral_Band_Info of "
+"the first band is still reported as metadata of the dataset, but this should "
+"be considered as a deprecated way of getting this information."
+msgstr ""
+
+#: ../../../source/drivers/raster/dimap.rst:25
+msgid ""
+"For multi-component products, each component will be exposed in a subdataset."
+msgstr ""
+
+#: ../../../source/drivers/raster/dimap.rst:27
+msgid "NOTE: Implemented as :source_file:`frmts/dimap/dimapdataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/dimap.rst:30
+msgid "Driver capabilities"
+msgstr ""

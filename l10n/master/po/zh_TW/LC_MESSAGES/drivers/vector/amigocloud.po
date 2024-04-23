@@ -1,0 +1,328 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/amigocloud.rst:5
+#: ../../../source/drivers/vector/amigocloud.rst:9
+msgid "AmigoCloud"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:11
+msgid "libcurl"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:13
+msgid ""
+"This driver can connect to the AmigoCloud API services. GDAL/OGR must be "
+"built with Curl support in order for the AmigoCloud driver to be compiled."
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:16
+msgid "The driver supports read and write operations."
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:19
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:28
+msgid "Dataset name syntax"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:30
+msgid "The minimal syntax to open a AmigoCloud datasource is:"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:32
+msgid "AmigoCloud:[project_id]"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:36
+msgid ""
+"Additional optional parameters can be specified after the ':' sign. "
+"Currently the following one is supported :"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:39
+msgid ""
+"**datasets=dataset_id1[,dataset_id2, ..]**: A list of AmigoCloud dataset "
+"IDs. This is necessary when you need to access a particular AmigoCloud "
+"dataset."
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:43
+msgid "If several parameters are specified, they must be separated by a space."
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:45
+msgid ""
+"If no datset_id is provided, the driver will print list of available "
+"datasets for given project."
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:48
+msgid "For example: **\"AmigoCloud:1234 datasets\"**"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:50
+msgid ""
+"List of available datasets for project id: 1234\n"
+"| id        | name\n"
+"|-----------|-------------------\n"
+"| 5551      | points\n"
+"| 5552      | lines"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:59
+msgid "Authentication"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:61
+msgid "All the access permissions are defined by AmigoCloud backend."
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:63
+msgid ""
+"Authenticated access is obtained by specifying the API key given in the "
+"AmigoCloud dashboard web interface. It is specified with the :config:"
+"`AMIGOCLOUD_API_KEY` configuration option."
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:68
+msgid "Geometry"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:70
+msgid ""
+"The OGR driver will report as many geometry fields as available in the "
+"layer, following RFC 41."
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:74
+msgid "Filtering"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:76
+msgid ""
+"The driver will forward any spatial filter set with :cpp:func:`OGRLayer::"
+"SetSpatialFilter` to the server. It also makes the same for attribute "
+"filters set with :cpp:func:`OGRLayer::SetAttributeFilter`."
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:81
+msgid "Write support"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:83
+msgid "Dataset creation and deletion is possible."
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:85
+msgid ""
+"Write support is only enabled when the datasource is opened in update mode."
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:88
+msgid ""
+"The mapping between the operations of the AmigoCloud service and the OGR "
+"concepts is the following :"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:91
+msgid ":cpp:func:`OGRFeature::CreateFeature` <==> ``INSERT`` operation"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:92
+msgid ":cpp:func:`OGRFeature::SetFeature` <==> ``UPDATE`` operation"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:93
+msgid ":cpp:func:`OGRFeature::DeleteFeature` <==> ``DELETE`` operation"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:94
+msgid ":cpp:func:`OGRDataSource::CreateLayer` <==> ``CREATE TABLE`` operation"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:95
+msgid ":cpp:func:`OGRDataSource::DeleteLayer` <==> `DROP TABLE` operation"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:97
+msgid ""
+"When inserting a new feature with CreateFeature(), and if the command is "
+"successful, OGR will fetch the returned amigo_id (GUID) and use hash value "
+"of it as the OGR FID."
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:101
+msgid ""
+"The above operations are by default issued to the server synchronously with "
+"the OGR API call. This however can cause performance penalties when issuing "
+"a lot of commands due to many client/server exchanges."
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:106
+msgid "Layer creation options"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:108
+msgid "The following layer creation options are available:"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:124
+msgid "Configuration options"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:126
+msgid ""
+"The following :ref:`configuration options <configoptions>` are available:"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:139
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:141
+msgid "Different ways to provide AmigoCloud API token:"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:143
+msgid ""
+"ogrinfo --config AMIGOCLOUD_API_KEY abcdefghijklmnopqrstuvw -al "
+"\"AmigoCloud:1234 datasets=987\"\n"
+"ogrinfo -oo AMIGOCLOUD_API_KEY=abcdefghijklmnopqrstuvw -al \"AmigoCloud:1234 "
+"datasets=987\"\n"
+"env AMIGOCLOUD_API_KEY=abcdefghijklmnopqrstuvw ogrinfo -al \"AmigoCloud:1234 "
+"datasets=987\""
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:149
+msgid ""
+"export AMIGOCLOUD_API_KEY=abcdefghijklmnopqrstuvw\n"
+"ogrinfo -al \"AmigoCloud:1234 datasets=987\""
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:154
+msgid "Show list of datasets."
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:156
+msgid ""
+"$ ogrinfo -ro \"AmigoCloud:1234 datasets\"\n"
+"List of available datasets for project id: 1234\n"
+"| id        | name\n"
+"|-----------|-------------------\n"
+"| 5551      | points\n"
+"| 5552      | lines"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:165
+msgid "Accessing data from a list of datasets:"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:167
+msgid "ogrinfo -ro \"AmigoCloud:1234 datasets=1234,1235\""
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:171
+msgid "Creating and populating a table from a shapefile:"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:173
+msgid "ogr2ogr -f AmigoCloud \"AmigoCloud:1234\" myshapefile.shp"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:177
+msgid ""
+"Append the data to an existing table (dataset id: 12345) from a shapefile:"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:179
+msgid ""
+"ogr2ogr -f AmigoCloud \"AmigoCloud:1234 datasets=12345\" myshapefile.shp"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:183
+msgid "or"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:185
+msgid ""
+"ogr2ogr -append -f AmigoCloud \"AmigoCloud:1234 datasets=12345\" myshapefile."
+"shp"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:189
+msgid ""
+"Overwriting the data of an existing table (dataset id: 12345) with data from "
+"a shapefile:"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:192
+msgid ""
+"ogr2ogr -append -doo OVERWRITE=YES -f AmigoCloud \"AmigoCloud:1234 "
+"datasets=12345\" myshapefile.shp"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:196
+msgid ""
+"Delete existing dataset (dataset id: 12345) and create a new one with data "
+"from a shapefile:"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:199
+msgid ""
+"ogr2ogr -overwrite -f AmigoCloud \"AmigoCloud:1234 datasets=12345\" "
+"myshapefile.shp"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:203
+msgid ""
+"Overwriting the data of an existing table (dataset id: 12345) with data from "
+"a shapefile. Filter the only the records with values of the field "
+"\"visited_on\" after 2017-08-20"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:207
+msgid ""
+"ogr2ogr -append -doo OVERWRITE=YES -f AmigoCloud \"AmigoCloud:1234 "
+"datasets=12345\" -where \"visited_on > '2017-08-20'\" myshapefile.shp"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:212
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:214
+msgid ""
+"`AmigoCloud API Token management <https://www.amigocloud.com/accounts/"
+"tokens>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/amigocloud.rst:215
+msgid "`AmigoCloud API Browser <https://www.amigocloud.com/api/v1/>`__"
+msgstr ""

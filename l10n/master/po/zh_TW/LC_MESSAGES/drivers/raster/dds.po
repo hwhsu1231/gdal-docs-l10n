@@ -1,0 +1,146 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/dds.rst:5
+msgid "DDS -- DirectDraw Surface"
+msgstr ""
+
+#: ../../../source/drivers/raster/dds.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/dds.rst:7
+msgid "DDS"
+msgstr ""
+
+#: ../../../source/drivers/raster/dds.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/raster/dds.rst:9
+msgid "Crunch Lib"
+msgstr ""
+
+#: ../../../source/drivers/raster/dds.rst:11
+msgid ""
+"The DirectDraw Surface file format (uses the filename extension DDS), from "
+"Microsoft, is a standard for storing data compressed with the lossy S3 "
+"Texture Compression (S3TC) algorithm. The DDS format and compression are "
+"provided by the crunch library."
+msgstr ""
+
+#: ../../../source/drivers/raster/dds.rst:17
+msgid ""
+"Support for reading has been added in GDAL 3.1. Previous versions have write-"
+"only support."
+msgstr ""
+
+#: ../../../source/drivers/raster/dds.rst:20
+msgid ""
+"The driver supports the following texture formats: DXT1, DXT1A, DXT3 "
+"(default), DXT5 and ETC1. You can set the texture format using the creation "
+"option FORMAT."
+msgstr ""
+
+#: ../../../source/drivers/raster/dds.rst:24
+msgid ""
+"The driver supports the following compression quality: SUPERFAST, FAST, "
+"NORMAL (default), BETTER and UBER. You can set the compression quality using "
+"the creation option QUALITY."
+msgstr ""
+
+#: ../../../source/drivers/raster/dds.rst:28
+msgid ""
+"More information about `Crunch Lib <https://github.com/BinomialLLC/"
+"crunch>`__ (see below for build instructions of a working fork of that "
+"repository)"
+msgstr ""
+
+#: ../../../source/drivers/raster/dds.rst:31
+msgid "NOTE: Implemented as :source_file:`frmts/dds/ddsdataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/dds.rst:34
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/dds.rst:40
+msgid "Build instructions"
+msgstr ""
+
+#: ../../../source/drivers/raster/dds.rst:42
+msgid ""
+"Building crunch can be a bit difficult. The `build_fixes` branch of https://"
+"github.com/rouault/crunch/ includes a CMake build system, as well as a few "
+"fixes that are not found in the upstream repository"
+msgstr ""
+
+#: ../../../source/drivers/raster/dds.rst:47
+msgid "Build crunch"
+msgstr ""
+
+#: ../../../source/drivers/raster/dds.rst:50
+#: ../../../source/drivers/raster/dds.rst:77
+msgid "Linux"
+msgstr ""
+
+#: ../../../source/drivers/raster/dds.rst:52
+msgid ""
+"git clone -b build_fixes https://github.com/rouault/crunch\n"
+"cd crunch\n"
+"mkdir build\n"
+"cd build\n"
+"cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/install-crunch -"
+"DCMAKE_BUILD_TYPE=Release\n"
+"make -j8 install"
+msgstr ""
+
+#: ../../../source/drivers/raster/dds.rst:62
+#: ../../../source/drivers/raster/dds.rst:84
+msgid "Windows"
+msgstr ""
+
+#: ../../../source/drivers/raster/dds.rst:64
+msgid ""
+"git clone -b build_fixes https://github.com/rouault/crunch\n"
+"cd crunch\n"
+"mkdir build\n"
+"cd build\n"
+"cmake .. -DCMAKE_INSTALL_PREFIX=c:\\dev\\install-crunch -G \"Visual Studio "
+"15 2017 Win64\"\n"
+"cmake --build . --config Release --target install"
+msgstr ""
+
+#: ../../../source/drivers/raster/dds.rst:74
+msgid "Build GDAL against crunch"
+msgstr ""
+
+#: ../../../source/drivers/raster/dds.rst:79
+msgid "./configure --with-dds=$HOME/install-crunch"
+msgstr ""
+
+#: ../../../source/drivers/raster/dds.rst:86
+msgid "In nmake.local, add the following lines:"
+msgstr ""
+
+#: ../../../source/drivers/raster/dds.rst:88
+msgid ""
+"CRUNCH_INC = -Ic:\\dev\\install-crunch\\include\\crunch\n"
+"CRUNCH_LIB = c:\\dev\\install-crunch\\lib\\crunch.lib"
+msgstr ""

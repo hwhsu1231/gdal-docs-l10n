@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/gta.rst:5
+msgid "GTA - Generic Tagged Arrays"
+msgstr ""
+
+#: ../../../source/drivers/raster/gta.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/gta.rst:7
+msgid "GTA"
+msgstr ""
+
+#: ../../../source/drivers/raster/gta.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/raster/gta.rst:9
+msgid "libgta"
+msgstr ""
+
+#: ../../../source/drivers/raster/gta.rst:11
+msgid "GDAL can read and write GTA data files through the libgta library."
+msgstr ""
+
+#: ../../../source/drivers/raster/gta.rst:14
+msgid ""
+"GTA is a file format that can store any kind of multidimensional array data, "
+"allows generic manipulations of array data, and allows easy conversion to "
+"and from other file formats."
+msgstr ""
+
+#: ../../../source/drivers/raster/gta.rst:19
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/gta.rst:26
+msgid "Creation options"
+msgstr ""
+
+#: ../../../source/drivers/raster/gta.rst:36
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/gta.rst:38
+msgid "`GTA home page <http://gta.nongnu.org>`__"
+msgstr ""

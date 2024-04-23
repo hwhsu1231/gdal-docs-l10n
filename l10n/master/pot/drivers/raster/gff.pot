@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/gff.rst:5
+msgid "GFF -- Sandia National Laboratories GSAT File Format"
+msgstr ""
+
+#: ../../../source/drivers/raster/gff.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/gff.rst:7
+msgid "GFF"
+msgstr ""
+
+#: ../../../source/drivers/raster/gff.rst:11
+msgid ""
+"This read-only GDAL driver is designed to provide access to processed data "
+"from Sandia National Laboratories' various experimental sensors. The format "
+"is essentially an arbitrary length header containing instrument "
+"configuration and performance parameters along with a binary matrix of 16- "
+"or 32-bit complex or byte real data."
+msgstr ""
+
+#: ../../../source/drivers/raster/gff.rst:17
+msgid ""
+"The GFF format was implemented based on the Matlab code provided by Sandia "
+"to read the data. The driver supports all types of data (16-bit or 32-bit "
+"complex, real bytes) theoretically, however due to a lack of data only 32-"
+"bit complex data has been tested."
+msgstr ""
+
+#: ../../../source/drivers/raster/gff.rst:22
+msgid ""
+"Sandia provides some sample data at http://www.sandia.gov/radar/complex-"
+"data/."
+msgstr ""
+
+#: ../../../source/drivers/raster/gff.rst:25
+msgid "The extension for GFF formats is .gff."
+msgstr ""
+
+#: ../../../source/drivers/raster/gff.rst:27
+msgid "NOTE: Implemented as :source_file:`frmts/gff/gff_dataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/gff.rst:30
+msgid "Driver capabilities"
+msgstr ""

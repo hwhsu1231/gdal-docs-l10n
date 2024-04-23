@@ -1,0 +1,180 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/pcraster.rst:5
+msgid "PCRaster -- PCRaster raster file format"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:7
+msgid "PCRaster"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:9
+msgid "(internal libcf provided)"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:11
+msgid ""
+"GDAL includes support for reading and writing PCRaster raster files. "
+"PCRaster is a dynamic modeling system for distributed simulation models. The "
+"main applications of PCRaster are found in environmental modeling: "
+"geography, hydrology, ecology to name a few. Examples include models for "
+"research on global hydrology, vegetation competition models, slope stability "
+"models and land use change models."
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:18
+msgid ""
+"The driver reads all types of PCRaster maps: booleans, nominal, ordinals, "
+"scalar, directional and ldd. The same cell representation used to store "
+"values in the file is used to store the values in memory."
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:22
+msgid ""
+"The driver detects whether the source of the GDAL raster is a PCRaster file. "
+"When such a raster is written to a file the value scale of the original "
+"raster will be used. The driver **always** writes values using UINT1, INT4 "
+"or REAL4 cell representations, depending on the value scale:"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:28
+msgid "Value scale"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:28
+msgid "Cell representation"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:30
+#: ../../../source/drivers/raster/pcraster.rst:43
+msgid "VS_BOOLEAN"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:30
+#: ../../../source/drivers/raster/pcraster.rst:35
+#: ../../../source/drivers/raster/pcraster.rst:43
+msgid "CR_UINT1"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:31
+#: ../../../source/drivers/raster/pcraster.rst:44
+msgid "VS_NOMINAL"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:31
+#: ../../../source/drivers/raster/pcraster.rst:32
+#: ../../../source/drivers/raster/pcraster.rst:44
+msgid "CR_INT4"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:32
+msgid "VS_ORDINAL"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:33
+#: ../../../source/drivers/raster/pcraster.rst:45
+#: ../../../source/drivers/raster/pcraster.rst:46
+msgid "VS_SCALAR"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:33
+#: ../../../source/drivers/raster/pcraster.rst:34
+#: ../../../source/drivers/raster/pcraster.rst:45
+#: ../../../source/drivers/raster/pcraster.rst:46
+msgid "CR_REAL4"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:34
+msgid "VS_DIRECTION"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:35
+msgid "VS_LDD"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:38
+msgid ""
+"For rasters from other sources than a PCRaster raster file a value scale and "
+"cell representation is determined according to the following rules:"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:42
+msgid "Source type"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:42
+msgid "Target value scale"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:42
+msgid "Target cell representation"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:43
+msgid "GDT_Byte"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:44
+msgid "GDT_Int32"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:45
+msgid "GDT_Float32"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:46
+msgid "GDT_Float64"
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:49
+msgid ""
+"The driver can convert values from one supported cell representation to "
+"another. It cannot convert to unsupported cell representations. For example, "
+"it is not possible to write a PCRaster raster file from values which are "
+"used as CR_INT2 (GDT_Int16)."
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:54
+msgid ""
+"Although the de-facto file extension of a PCRaster raster file is .map, the "
+"PCRaster software does not require a standardized file extension."
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:57
+msgid "NOTE: Implemented as :source_file:`frmts/pcraster/pcrasterdataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:59
+msgid ""
+"See also: `PCRaster website at Utrecht University <http://pcraster.geo.uu."
+"nl>`__."
+msgstr ""
+
+#: ../../../source/drivers/raster/pcraster.rst:63
+msgid "Driver capabilities"
+msgstr ""

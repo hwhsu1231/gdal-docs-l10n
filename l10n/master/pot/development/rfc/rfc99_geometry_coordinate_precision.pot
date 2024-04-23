@@ -1,0 +1,1084 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:5
+msgid "RFC 99: Geometry coordinate precision"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:8
+msgid "Author:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:8
+msgid "Even Rouault"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:9
+msgid "Contact:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:9
+msgid "even.rouault @ spatialys.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:10
+msgid "Started:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:10
+msgid "2024-Feb-24"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:11
+msgid "Status:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:11
+msgid "Adopted, implemented in GDAL 3.9"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:12
+msgid "Target:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:12
+msgid "GDAL 3.9"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:16
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:18
+msgid ""
+"This RFC aims at introducing optional metadata to specify the coordinate "
+"precision of geometries, to be able to round appropriately coordinates and "
+"limit the number of decimals when exporting to text-based formats or nullify "
+"least-significant bits for binary formats. That metadata will be stored into "
+"and read from formats that can support it."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:25
+msgid "Motivation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:27
+msgid "The aim is multiple:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:29
+msgid ""
+"reducing file size. For text-based formats, rounding and truncating to the "
+"specified precision directly reduce file size. For binary formats, using "
+"that information to zero least-significant bits can increase the potential "
+"when applying afterwards lossless compression methods (typically zipping a "
+"file)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:34
+msgid ""
+"presenting the user with hints on the precision of the data he/she accesses. "
+"This can be used by user interfaces build on top of GDAL to display geometry "
+"coordinates with an appropriate number of decimals."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:38
+msgid ""
+"a few drivers (GeoJSON, JSONFG, OpenFileGDB) have layer creation options to "
+"specify coordinate precision, but there is currently no driver agnostic way "
+"of specifying it."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:42
+msgid ""
+"For example, currently, when exporting a file to GML, 15 significant decimal "
+"digits (ie the total of digits for the integral and decimal parts) are used, "
+"which corresponds to a 0.1 micrometer precision for geography coordinates. "
+"The same holds for regular GeoJSON export, unless the RFC 7946 variant is "
+"selected, in which case only 7 decimal digits after decimal separators are "
+"used. However this is a layer creation option, which means that it is no "
+"longer remembered when data is edited/appended to an existing layer (see "
+"https://github.com/qgis/QGIS/issues/56335)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:51
+msgid ""
+"For binary formats using IEEE-754 double-precision encoding of real numbers, "
+"one can show that at least the last 16 least-significants bits (ie the last "
+"2 bytes of 8) of a coordinate can be set to zero while keeping a 1 mm "
+"precision (which corresponds to about 8.9e-9 degree). On a test dataset, "
+"setting a 1 mm precision reduced the size of the .zip of the .gpkg file from "
+"766 MB to 667 MB (13% size decrease). If only a 1 meter precision is wished, "
+"this increases to 26 useless least-significant bits."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:59
+msgid ""
+">>> import math\n"
+">>> earth_radius_in_meter = 6378137\n"
+">>> one_degree_in_meter = earth_radius_in_meter * math.pi / 180.0\n"
+">>> mm_prec_in_degree = 1e-3 / one_degree_in_meter\n"
+">>> print(mm_prec_in_degree)\n"
+"8.983152841195215e-09\n"
+">>> max_integer_part = 180  # for coordinates in range [-180,180]\n"
+">>> significant_bits_needed = math.ceil(math.log2(max_integer_part)) + math."
+"ceil(math.log2(1 / mm_prec_in_degree)) + 1\n"
+">>> mantissa_bit_size = 52\n"
+">>> unused_bits = mantissa_bit_size - significant_bits_needed\n"
+">>> print(unused_bits)\n"
+"16"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:76
+msgid "C and C++ API extensions and changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:79
+msgid "OGRGeomCoordinatePrecision class"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:81
+msgid ""
+"A new ``OGRGeomCoordinatePrecision`` class is introduced in the "
+"``ogr_geomcoordinateprecision.h`` file:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:84
+msgid ""
+"/** Geometry coordinate precision.\n"
+" *\n"
+" * This may affect how many decimal digits (for text-based output) or bits\n"
+" * (for binary encodings) are used to encode geometries.\n"
+" *\n"
+" * It is important to note that the coordinate precision has no direct\n"
+" * relationship with the \"physical\" accuracy. It is generally advised "
+"that\n"
+" * the resolution (precision) be at least 10 times smaller than the "
+"accuracy.\n"
+" */\n"
+"struct CPL_DLL OGRGeomCoordinatePrecision\n"
+"{\n"
+"    static constexpr double UNKNOWN = 0;\n"
+"\n"
+"    /** Resolution for the coordinate precision of the X and Y coordinates.\n"
+"     * Expressed in the units of the X and Y axis of the SRS.\n"
+"     * For example for a projected SRS with X,Y axis unit in meter, a value\n"
+"     * of 1e-3 corresponds to a 1 mm precision.\n"
+"     * For a geographic SRS (on Earth) with axis unit in degree, a value\n"
+"     * of 8.9e-9 (degree) also corresponds to a 1 mm precision.\n"
+"     * Set to 0 if unknown.\n"
+"     */\n"
+"    double dfXYResolution = UNKNOWN;\n"
+"\n"
+"    /** Resolution for the coordinate precision of the Z coordinate.\n"
+"     * Expressed in the units of the Z axis of the SRS.\n"
+"     * Set to 0 if unknown.\n"
+"     */\n"
+"    double dfZResolution = UNKNOWN;\n"
+"\n"
+"    /** Resolution for the coordinate precision of the M coordinate.\n"
+"     * Set to 0 if unknown.\n"
+"     */\n"
+"    double dfMResolution = UNKNOWN;\n"
+"\n"
+"    /** Map from a format name to a list of format specific options.\n"
+"     *\n"
+"     * This can be for example used to store FileGeodatabase\n"
+"     * xytolerance, xorigin, yorigin, etc. coordinate precision grids\n"
+"     * options, which can be help to maximize preservation of coordinates "
+"in\n"
+"     * FileGDB -> FileGDB conversion processes.\n"
+"     */\n"
+"    std::map<std::string, CPLStringList> oFormatSpecificOptions{};\n"
+"\n"
+"    /**\n"
+"     * \\brief Set the resolution of the geometry coordinate components.\n"
+"     *\n"
+"     * For the X, Y and Z ordinates, the precision should be expressed in "
+"meter,\n"
+"     * e.g 1e-3 for millimetric precision.\n"
+"     *\n"
+"     * Resolution should be stricty positive, or set to\n"
+"     * OGRGeomCoordinatePrecision::UNKNOWN when unknown.\n"
+"     *\n"
+"     * @param poSRS Spatial reference system, used for metric to SRS unit "
+"conversion\n"
+"     *              (must not be null)\n"
+"     * @param dfXYMeterResolution Resolution for for X and Y coordinates, in "
+"meter.\n"
+"     * @param dfZMeterResolution Resolution for for Z coordinates, in "
+"meter.\n"
+"     * @param dfMResolutionIn Resolution for for M coordinates.\n"
+"     */\n"
+"    void SetFromMeter(const OGRSpatialReference *poSRS,\n"
+"                      double dfXYMeterResolution,\n"
+"                      double dfZMeterResolution, double dfMResolution);\n"
+"\n"
+"    /**\n"
+"     * \\brief Return equivalent coordinate precision setting taking into "
+"account\n"
+"     * a change of SRS.\n"
+"     *\n"
+"     * @param poSRSSrc Spatial reference system of the current instance\n"
+"     *                 (if null, meter unit is assumed)\n"
+"     * @param poSRSDst Spatial reference system of the returned instance\n"
+"     *                 (if null, meter unit is assumed)\n"
+"     * @return a new OGRGeomCoordinatePrecision instance, with a poSRSDst "
+"SRS.\n"
+"     */\n"
+"    OGRGeomCoordinatePrecision\n"
+"    ConvertToOtherSRS(const OGRSpatialReference *poSRSSrc,\n"
+"                      const OGRSpatialReference *poSRSDst) const;\n"
+"\n"
+"    /**\n"
+"     * \\brief Return the number of decimal digits after the decimal point "
+"to\n"
+"     * get the specified resolution.\n"
+"     */\n"
+"    static int ResolutionToPrecision(double dfResolution);\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:170
+msgid "Corresponding additions at the C API level:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:172
+msgid ""
+"/** Value for a unknown coordinate precision. */\n"
+"#define OGR_GEOM_COORD_PRECISION_UNKNOWN 0\n"
+"\n"
+"/** Opaque type for OGRGeomCoordinatePrecision */\n"
+"typedef struct OGRGeomCoordinatePrecision *OGRGeomCoordinatePrecisionH;\n"
+"\n"
+"OGRGeomCoordinatePrecisionH CPL_DLL OGRGeomCoordinatePrecisionCreate(void);\n"
+"void CPL_DLL "
+"OGRGeomCoordinatePrecisionDestroy(OGRGeomCoordinatePrecisionH);\n"
+"double CPL_DLL\n"
+"    OGRGeomCoordinatePrecisionGetXYResolution(OGRGeomCoordinatePrecisionH);\n"
+"double CPL_DLL\n"
+"    OGRGeomCoordinatePrecisionGetZResolution(OGRGeomCoordinatePrecisionH);\n"
+"double CPL_DLL\n"
+"    OGRGeomCoordinatePrecisionGetMResolution(OGRGeomCoordinatePrecisionH);\n"
+"char CPL_DLL **\n"
+"    OGRGeomCoordinatePrecisionGetFormats(OGRGeomCoordinatePrecisionH);\n"
+"CSLConstList CPL_DLL OGRGeomCoordinatePrecisionGetFormatSpecificOptions(\n"
+"    OGRGeomCoordinatePrecisionH, const char *pszFormatName);\n"
+"void CPL_DLL OGRGeomCoordinatePrecisionSet(OGRGeomCoordinatePrecisionH,\n"
+"                                           double dfXYResolution,\n"
+"                                           double dfZResolution,\n"
+"                                           double dfMResolution);\n"
+"void CPL_DLL "
+"OGRGeomCoordinatePrecisionSetFromMeter(OGRGeomCoordinatePrecisionH,\n"
+"                                                    OGRSpatialReferenceH "
+"hSRS,\n"
+"                                                    double "
+"dfXYMeterResolution,\n"
+"                                                    double "
+"dfZMeterResolution,\n"
+"                                                    double dfMResolution);\n"
+"void CPL_DLL OGRGeomCoordinatePrecisionSetFormatSpecificOptions(\n"
+"    OGRGeomCoordinatePrecisionH, const char *pszFormatName,\n"
+"    CSLConstList papszOptions);"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:206
+msgid "OGRGeomFieldDefn class"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:208
+msgid ""
+"The existing :cpp:class:`OGRGeomFieldDefn` is extended with a new "
+"OGRGeomCoordinatePrecision member, and associated getter and setter methods."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:211
+msgid ""
+"class OGRGeomFieldDefn\n"
+"{\n"
+"    public:\n"
+"        const OGRGeomCoordinatePrecision& GetCoordinatePrecision() const;\n"
+"\n"
+"        void SetCoordinatePrecision(const OGRGeomCoordinatePrecision& "
+"prec);\n"
+"\n"
+"    private:\n"
+"        OGRGeomCoordinatePrecision m_oCoordPrecision{};\n"
+"};"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:224
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:261
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:358
+msgid "New corresponding C API:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:226
+msgid ""
+"OGRGeomCoordinatePrecisionH\n"
+"    CPL_DLL OGR_GFld_GetCoordinatePrecision(OGRGeomFieldDefnH);\n"
+"void CPL_DLL OGR_GFld_SetCoordinatePrecision(OGRGeomFieldDefnH,\n"
+"                                             OGRGeomCoordinatePrecisionH);"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:234
+msgid "OGRGeometry class"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:236
+msgid ""
+"The existing :cpp:class:`OGRGeometry` is extended with the following new "
+"``SetPrecision`` method which is a wrapper of the "
+"``GEOSGeom_setPrecision_r`` function:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:239
+msgid ""
+"/** Set the geometry's precision, rounding all its coordinates to the "
+"precision\n"
+" * grid, and making sure the geometry is still valid.\n"
+" *\n"
+" * This is a stronger version of roundCoordinates().\n"
+" *\n"
+" * Note that at time of writing GEOS does no supported curve geometries. So\n"
+" * currently if this function is called on such a geometry, OGR will first "
+"call\n"
+" * getLinearGeometry() on the input and getCurveGeometry() on the output, "
+"but\n"
+" * that it is unlikely to yield to the expected result.\n"
+" *\n"
+" * @param dfGridSize size of the precision grid, or 0 for FLOATING\n"
+" *                 precision.\n"
+" * @param nFlags The bitwise OR of zero, one or several of "
+"OGR_GEOS_PREC_NO_TOPO\n"
+" *               and OGR_GEOS_PREC_KEEP_COLLAPSED\n"
+" *\n"
+" * @return a new geometry or NULL if an error occurs.\n"
+" */\n"
+"\n"
+"OGRGeometry *OGRGeometry::SetPrecision(double dfGridSize, int nFlags) const;"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:263
+msgid ""
+"/** This option causes OGR_G_SetPrecision()\n"
+"  * to not attempt at preserving the topology */\n"
+"#define OGR_GEOS_PREC_NO_TOPO (1 << 0)\n"
+"\n"
+"/** This option causes OGR_G_SetPrecision()\n"
+"  * to retain collapsed elements */\n"
+"#define OGR_GEOS_PREC_KEEP_COLLAPSED (1 << 1)\n"
+"\n"
+"OGRGeometryH OGR_G_SetPrecision(OGRGeometryH, double dfGridSize, int nFlags);"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:276
+msgid ""
+"Note that this method is not automatically run by the writing side of "
+"drivers, which assume that the passed geometries are valid once rounded with "
+"the specified coordinate precision metadata."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:280
+msgid "However it is invoked when the `-xyRes` switch of ogr2ogr is passed."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:282
+msgid ""
+"It may also be triggered by setting the new ``OGR_APPLY_GEOM_SET_PRECISION`` "
+"configuration option to ``YES``, for geometries passed to :cpp:func:"
+"`OGRLayer::CreateFeature` and :cpp:func:`OGRLayer::SetFeature` before they "
+"are passed to the driver."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:288
+msgid "A closely related ``roundCoordinates`` method is also introduced:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:290
+msgid ""
+"/** Round coordinates of the geometry to the specified precision.\n"
+" *\n"
+" * Note that this is not the same as OGRGeometry::SetPrecision(). The later\n"
+" * will return valid geometries, whereas roundCoordinates() does not make\n"
+" * such guarantee and may return geometries with invalidities, if they are\n"
+" * not compatible of the specified precision. roundCoordinates() supports\n"
+" * curve geometries, whereas SetPrecision() does not currently.\n"
+" *\n"
+" * One use case for roundCoordinates() is to undo the effect of\n"
+" * quantizeCoordinates().\n"
+" *\n"
+" * @param sPrecision Contains the precision requirements.\n"
+" * @since GDAL 3.9\n"
+" */\n"
+" void roundCoordinates(const OGRGeomCoordinatePrecision &sPrecision);"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:310
+msgid "WKB export"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:312
+msgid ""
+"WKB export methods will be modified in a similar way as in the prototype "
+"https://github.com/OSGeo/gdal/pull/6974 to nullify least significant bits "
+"from the precision specifications."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:316
+msgid "More specifically the following 2 new classes are added:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:318
+msgid ""
+"/** Geometry coordinate precision for a binary representation.\n"
+" */\n"
+"struct CPL_DLL OGRGeomCoordinateBinaryPrecision\n"
+"{\n"
+"    int nXYBitPrecision =\n"
+"        INT_MIN; /**< Number of bits needed to achieved XY precision. "
+"Typically\n"
+"                    computed with SetFromResolution() */\n"
+"    int nZBitPrecision =\n"
+"        INT_MIN; /**< Number of bits needed to achieved Z precision. "
+"Typically\n"
+"                    computed with SetFromResolution() */\n"
+"    int nMBitPrecision =\n"
+"        INT_MIN; /**< Number of bits needed to achieved M precision. "
+"Typically\n"
+"                    computed with SetFromResolution() */\n"
+"\n"
+"    void SetFrom(const OGRGeomCoordinatePrecision &);\n"
+"};\n"
+"\n"
+"/** WKB export options.\n"
+" */\n"
+"struct CPL_DLL OGRwkbExportOptions\n"
+"{\n"
+"    OGRwkbByteOrder eByteOrder = wkbNDR;           /**< Byte order */\n"
+"    OGRwkbVariant eWkbVariant = wkbVariantOldOgc;  /**< WKB variant. */\n"
+"    OGRGeomCoordinateBinaryPrecision sPrecision{}; /**< Binary precision. "
+"*/\n"
+"};"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:346
+msgid ""
+"And the C++ OGRGeometry ``exportToWkb`` virtual method is modified to have "
+"the following prototype:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:349
+msgid ""
+"virtual OGRErr exportToWkb(unsigned char *,\n"
+"                           const OGRwkbExportOptions * = nullptr) const = 0;"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:355
+msgid ""
+"The existing method with signature ``OGRErr exportToWkb(OGRwkbByteOrder, "
+"unsigned char *, OGRwkbVariant = wkbVariantOldOgc) const`` is kept and call "
+"the new virtual method."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:360
+msgid ""
+"/** Opaque type for WKB export options */\n"
+"typedef struct OGRwkbExportOptions OGRwkbExportOptions;\n"
+"\n"
+"OGRwkbExportOptions CPL_DLL *OGRwkbExportOptionsCreate(void);\n"
+"void CPL_DLL OGRwkbExportOptionsDestroy(OGRwkbExportOptions *);\n"
+"void CPL_DLL OGRwkbExportOptionsSetByteOrder(OGRwkbExportOptions *,\n"
+"                                             OGRwkbByteOrder);\n"
+"void CPL_DLL OGRwkbExportOptionsSetVariant(OGRwkbExportOptions *,\n"
+"                                           OGRwkbVariant);\n"
+"void CPL_DLL OGRwkbExportOptionsSetPrecision(OGRwkbExportOptions *,\n"
+"                                             OGRGeomCoordinatePrecisionH);\n"
+"OGRErr CPL_DLL OGR_G_ExportToWkbEx(OGRGeometryH, unsigned char *,\n"
+"                                   const OGRwkbExportOptions *);"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:378
+msgid "OGRLayer CreateLayer()/ICreateLayer() changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:380
+msgid ""
+"The signature of the current :cpp:func:`OGRLayer::ICreateLayer()` protected "
+"method (implemented by drivers) will be changed from"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:383
+msgid ""
+"virtual OGRLayer *ICreateLayer(\n"
+"        const char *pszName, const OGRSpatialReference *poSpatialRef = "
+"nullptr,\n"
+"        OGRwkbGeometryType eGType = wkbUnknown, char **papszOptions = "
+"nullptr);"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:389
+msgid "to"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:391
+msgid ""
+"virtual OGRLayer *ICreateLayer(\n"
+"        const char *pszName,\n"
+"        const OGRGeomFieldDefn* poGeomFieldDefn = nullptr,\n"
+"        CSLConstList papszOptions = nullptr);"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:398
+msgid "This will require changes to out-of-tree drivers that implement it."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:400
+msgid "A corresponding non-virtual public method will also be added:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:402
+msgid ""
+"OGRLayer *CreateLayer(\n"
+"        const char *pszName,\n"
+"        const OGRGeomFieldDefn* poGeomFieldDefn,\n"
+"        CSLConstList papszOptions = nullptr);"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:409
+msgid ""
+"And the current CreateLayer() signature will be adapted to call the modified "
+"ICreateLayer()."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:412
+msgid "And for the C API:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:414
+msgid ""
+"OGRLayerH CPL_DLL GDALDatasetCreateLayerFromGeomFieldDefn(\n"
+"                                           GDALDatasetH, const char *,\n"
+"                                           OGRGeomFieldDefnH "
+"hGeomFieldDefn,\n"
+"                                           CSLConstList);"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:422
+msgid ""
+"A new ``GDAL_DCAP_HONOR_GEOM_COORDINATE_PRECISION`` driver capability will "
+"be added to advertise that a driver honours OGRGeomFieldDefn::"
+"GetCoordinatePrecision() when writing geometries. This may be useul for user "
+"interfaces that could offer an option to the user to specify the coordinate "
+"precision. Note however that the driver may not be able to store that "
+"precision in the dataset metadata."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:428
+msgid ""
+"There will be *no* provision to modify the coordinate precision of an "
+"existing layer geometry field with :cpp:func:`OGRLayer::AlterFieldDefn`."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:432
+msgid "Driver changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:434
+msgid ""
+"The following drivers will be modified to honour "
+"``GDAL_DCAP_HONOR_GEOM_COORDINATE_PRECISION``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:437
+msgid "GeoJSON"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:439
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:452
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:482
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:506
+msgid ""
+"The driver will compute the number of decimal digits after the decimal point "
+"to write as ``ceil(1. / log10(resolution))``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:442
+msgid ""
+"The driver will be able to store and retrieve the coordinate precision "
+"metadata in the files it generates, by adding ``xy_coordinate_resolution`` "
+"and ``z_coordinate_resolution`` members at the FeatureCollection level."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:446
+msgid ""
+"The existing COORDINATE_PRECISION layer creation option, if specified, will "
+"take precedence over the settings coming from OGRGeomFieldDefn::"
+"GetCoordinatePrecision()."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:450
+msgid "GeoJSONSeq"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:455
+msgid "It will *not* be able to store it in its metadata."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:458
+msgid "JSONFG"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:460
+msgid ""
+"Similar to GeoJSON. One subtelty is that this driver may write both the "
+"\"place\" geometry (generally in a non-WGS84 CRS) and the GeoJSON RFC7946 "
+"WGS84 \"geometry\"."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:463
+msgid ""
+"The OGRGeomFieldDefn::GetCoordinatePrecision() will qualify the \"place\" "
+"geometry. The coordinate precision of the WGS84 \"geometry\" will be derived "
+"from the one of the \"place\" geometry with appropriate geographic/projected "
+"CRS and axis unit changes."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:468
+msgid ""
+"The coordinate precision metadata of the \"place\" member will be stored in "
+"``xy_coordinate_resolution_place`` and ``z_coordinate_resolution_place`` "
+"members at the FeatureCollection level."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:472
+msgid ""
+"For the \"geometry\" member, the same ``xy_coordinate_resolution`` and "
+"``z_coordinate_resolution`` members as the GeoJSON driver will be used."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:475
+msgid ""
+"The existing COORDINATE_PRECISION_PLACE or COORDINATE_PRECISION_GEOMETRY "
+"layer creation option, if specified, will take precedence over the settings "
+"coming from OGRGeomFieldDefn::GetCoordinatePrecision()."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:480
+msgid "GML"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:485
+msgid ""
+"The driver will be able to store the coordinate precision metadata in the "
+"XML schema it generates by adding a ``xs:annotation/xs:appinfo`` element in "
+"the declaration of the geometry property, and with ``ogr:"
+"xy_coordinate_resolution`` and ``ogr:z_coordinate_resolution`` sub-elements. "
+"This should hopefully be ignored by readers that don't recognize that "
+"metadata (this will be the case of GDAL < 3.9)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:492
+msgid ""
+"<xs:element name=\"wkb_geometry\" type=\"gml:SurfacePropertyType\" "
+"nillable=\"true\" minOccurs=\"0\" maxOccurs=\"1\">\n"
+"    <xs:annotation>\n"
+"      <xs:appinfo source=\"http://ogr.maptools.org/\">\n"
+"        <ogr:xy_coordinate_resolution>8.9e-9</ogr:xy_coordinate_resolution>\n"
+"        <ogr:z_coordinate_resolution>1e-3</ogr:z_coordinate_resolution>\n"
+"      </xs:appinfo>\n"
+"    </xs:annotation>\n"
+"</xs:element>"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:504
+msgid "CSV"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:509
+msgid ""
+"It will *not* be able to store it in its metadata. The possibility of "
+"storing the coordinate metadata in the .csvt side-car file has been "
+"considered, but it would not be backwards-compatible."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:514
+msgid "GeoPackage"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:516
+msgid ""
+"The GeoPackage driver will support reading and writing the geometry "
+"coordinate precision. By default, the geometry coordinate precision will "
+"only noted in metadata, and does not cause geometries that are written to be "
+"modified to comply with this precision."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:521
+msgid "Several settings may be combined to apply further processing:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:523
+msgid ""
+"the ``OGR_APPLY_GEOM_SET_PRECISION`` configuration option as described "
+"previously."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:526
+msgid ""
+"if the new ``DISCARD_COORD_LSB`` layer creation option is set to YES, the "
+"less-significant bits of the WKB geometry encoding which are not relevant "
+"for the requested precision are set to zero. This can improve further "
+"lossless compression stages, for example when putting a GeoPackage in an "
+"archive. Note however that when reading back such geometries and displaying "
+"them to the maximum precision, they will not \"exactly\" match the original "
+"OGRGeomCoordinatePrecision settings. However, they will round back to it. "
+"The value of the ``DISCARD_COORD_LSB`` layer creation option is written in "
+"the dataset metadata, and will be re-used for later edition sessions."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:537
+msgid ""
+"if the new ``UNDO_DISCARD_COORD_LSB_ON_READING`` layer creation option is "
+"set to YES (only makes sense if the ``DISCARD_COORD_LSB`` layer creation "
+"option is also set to YES), when *reading* back geometries from a dataset, "
+"the ``OGRGeometry::roundCoordinates`` method will be applied so that the "
+"geometry coordinates exactly match the original specified coordinate "
+"precision. That option will only be honored by GDAL 3.9 or later."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:545
+msgid ""
+"Implementation details: the coordinate precision is stored in a record in "
+"each of the ``gpkg_metadata`` and ``gpkg_metadata_reference`` table, with "
+"the following additional constraints on top of the ones imposed by the "
+"GeoPackage specification:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:550
+msgid "gpkg_metadata.md_standard_uri = 'http://gdal.org'"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:551
+msgid "gpkg_metadata.mime_type = 'text/xml'"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:552
+msgid ""
+"gpkg_metadata.metadata = '<CoordinatePrecision "
+"xy_resolution=\"{xy_resolution}\" z_resolution=\"{z_resolution}\" "
+"m_resolution=\"{m_resolution}\" discard_coord_lsb={true or false} "
+"undo_discard_coord_lsb_on_reading={true or false} />'"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:553
+msgid "gpkg_metadata_reference.reference_scope = 'column'"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:554
+msgid "gpkg_metadata_reference.table_name = '{table_name}'"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:555
+msgid "gpkg_metadata_reference.column_name = '{geometry_column_name}'"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:557
+msgid ""
+"Note that the xy_resolution, z_resolution or m_resolution attributes of the "
+"XML CoordinatePrecision element are optional. Their numeric value is "
+"expressed in the units of the SRS for xy_resolution and z_resolution."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:561
+msgid ""
+"INSERT INTO gpkg_metadata VALUES(1,'dataset','http://gdal.org','text/xml',\n"
+"    '<CoordinatePrecision xy_resolution=\"8.9e-9\" z_resolution=\"1e-3\" "
+"m_resolution=\"1e-3\" discard_coord_lsb=\"false\" "
+"undo_discard_coord_lsb_on_reading=\"false\"></CoordinatePrecision>');\n"
+"INSERT INTO gpkg_metadata_reference VALUES('column','poly','geom',"
+"NULL,'2023-10-22T21:13:43.282Z',1,NULL);"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:568
+msgid "OpenFileGDB"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:570
+msgid ""
+"OGRGeomCoordinatePrecision::dfXYResolution (resp. dfZResolution, "
+"dfMResolution) directly map to 1. / xyscale (resp. 1 / zscale, 1 / mscale) "
+"in the declaration of the coordinate grid precision options of the "
+"FileGeodatabase format (cf https://help.arcgis.com/en/sdk/10.0/java_ao_adf/"
+"conceptualhelp/engine/index.html#//00010000037m000000)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:575
+msgid ""
+"Consequently the OpenFileGDB driver can be modified in reading and writing "
+"to fully honour OGRGeomCoordinatePrecision."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:578
+msgid ""
+"The driver will also get and set other coordinate grid precision options, "
+"such as the origin and tolerance, values in the ``FileGeodatabase`` key of "
+"the ``OGRGeomCoordinatePrecision::oFormatSpecificOptions`` member."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:582
+msgid ""
+"The existing ``XYSCALE``, ``ZSCALE`` and ``MSCALE`` layer creation options, "
+"if specified, will take precedence over the settings coming from "
+"OGRGeomFieldDefn::GetCoordinatePrecision()."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:587
+msgid "FileGDB"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:589
+msgid "Modified to have exactly the same behavior as OpenFileGDB."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:592
+msgid "OGR VRT"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:594
+msgid ""
+"The driver will read the geometry coordinate precision from the source "
+"geometry field, or possibly overridden with the following elements in the "
+"XML VRT:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:597
+msgid ""
+"<GeometryField>\n"
+"    <XYResolution>{xy_resolution}</XYResolution>\n"
+"    <ZResolution>{z_resolution}</ZResolution>\n"
+"    <MResolution>{m_resolution}</MResolution>\n"
+"</GeometryField>"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:606
+msgid "Utilities"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:609
+msgid "ogrinfo"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:611
+msgid ""
+"ogrinfo will be modified to honour OGRGeomCoordinatePrecision when "
+"outputting WKT geometries (or GeoJSON geometries for the -json output)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:615
+msgid "ogr2ogr"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:617
+msgid ""
+"ogr2ogr will forward by default the OGRGeomCoordinatePrecision of the input "
+"layer to the output layer, but of course it will only have effects for "
+"drivers honouring ``GDAL_DCAP_HONOR_GEOM_COORDINATE_PRECISION``."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:621
+msgid ""
+"When reprojection occurs, the coordinate precision will be adjusted to take "
+"into account geographic vs projected CRS changes and unit changes."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:624
+msgid "The following options will be added:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:626
+msgid ""
+"``-xyRes <val>``: XY coordinate resolution. Nominally in the unit of the X "
+"and Y SRS axis. Appending a ``m``, ``mm`` or ``deg`` suffix will be also "
+"supported. A warning will be emitted if the user specifies this option when "
+"creating a new layer for a driver that does not advertise "
+"``GDAL_DCAP_HONOR_GEOM_COORDINATE_PRECISION``."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:633
+msgid ""
+"``-zRes <val>``: Z coordinate resolution. Nominally in the unit of the Z SRS "
+"axis. Appending a ``m`` or ``mm`` suffix will be also supported."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:636
+msgid "``-mRes <val>``: M coordinate resolution."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:638
+msgid ""
+"``-unsetCoordPrecision``: to disable automatic propagation of the input "
+"coordinate precision to the output."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:642
+msgid "Out of scope"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:644
+msgid ""
+"While there is an obvious logical connection with GEOS' PrecisionModel "
+"(https://libgeos.org/doxygen/classgeos_1_1geom_1_1PrecisionModel.html), this "
+"RFC does not tie the introduced OGR coordinate precision metadata with it. "
+"Tying both would require either adding a reference to a "
+"OGRGeomCoordinatePrecision as a member of the OGRGeometry class (which would "
+"have some extra RAM usage implications), or as a parameter in OGRGeometry "
+"GEOS related methods."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:652
+msgid ""
+"Quantization of raster pixel values (e.g. the ``DISCARD_LSB`` creation "
+"option of the GeoTIFF driver) is also slightly connected."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:656
+msgid "SWIG bindings"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:658
+msgid "The new C functions are bound to SWIG."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:660
+msgid ""
+"class ogr.GeomCoordinatePrecision:\n"
+"\n"
+"  void Set(double xyResolution, double zResolution, double mResolution);\n"
+"  void SetFromMeter(osr.SpatialReference srs, double xyMeterResolution, "
+"double zMeterResolution, double mResolution);\n"
+"  double GetXYResolution();\n"
+"  double GetZResolution();\n"
+"  double GetMResolution();\n"
+"  char **GetFormats();  // as a list\n"
+"  char ** GetFormatSpecificOptions(const char* formatName); // as a "
+"dictionary\n"
+"  void SetFormatSpecificOptions(const char* formatName, char "
+"**formatSpecificOptions) // formatSpecificOptions as a dictionary\n"
+"\n"
+"ogr.GeomCoordinatePrecision ogr.CreateGeomCoordinatePrecision();\n"
+"\n"
+"class ogr.GeomFieldDefn:\n"
+"    ogr.GeomCoordinatePrecision GetCoordinatePrecision();\n"
+"    void SetCoordinatePrecision(ogr.GeomCoordinatePrecision coordPrec);\n"
+"\n"
+"class gdal.Dataset:\n"
+"    Layer CreateLayerFromGeomFieldDefn(const char* name, ogr.GeomFieldDefn "
+"geom_field, char** options=0);"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:683
+msgid "Testing"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:685
+msgid "Tests will be added for the new API and the modified drivers."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:688
+msgid "Backward compatibility"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:690
+msgid "The C and C++ API are extended."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:692
+msgid ""
+"The change of the ICreateLayer() virtual method is an ABI change, and will "
+"require source code changes to out-of-tree drivers implementing it."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:695
+msgid "MIGRATION_GUIDE.TXT will mention that and point to this RFC."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:698
+msgid "Design discussion"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:700
+msgid ""
+"This paragraph discusses a number of thoughts that arose during the writing "
+"of this RFC but were not kept."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:703
+msgid ""
+"While changing ICreateLayer() prototype, which requires the tedious process "
+"of changing it in more than 50 drivers, I've also considered introducing an "
+"additional OGRLayerCreationContext argument, but I've decided against if, as "
+"it is unclear if it would be that useful. For example, in most ogr2ogr "
+"scenarios, the final extent and feature count is unknown at the start of the "
+"process."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:710
+msgid ""
+"struct OGRLayerCreationContext\n"
+"{\n"
+"    OGRExtent3D sExtent;\n"
+"    int64_t     nFeatureCount;\n"
+"}\n"
+"\n"
+"OGRLayer *ICreateLayer(\n"
+"        const char *pszName, const OGRGeomFieldDefn* poFieldDefn = nullptr,\n"
+"        const OGRLayerCreationContext& sContext = "
+"OGRLayerCreationContext(),\n"
+"        CSLConstList papszOptions = nullptr);"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:725
+msgid "Related issues and PRs"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:727
+msgid "Candidate implementation: https://github.com/OSGeo/gdal/pull/9378"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:729
+msgid ""
+"A prior implementation with a different and reduced scope was done last year "
+"in https://github.com/OSGeo/gdal/pull/6974. The GeoPackage driver specific "
+"creation options of this pull request will no longer be needed in the "
+"implementation of this RFC."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:734
+msgid ""
+"Related QGIS issue about coordinate precision not being preserved when "
+"appending to GeoJSON: https://github.com/qgis/QGIS/issues/56335"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:738
+msgid "Voting history"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc99_geometry_coordinate_precision.rst:740
+msgid "+1 from PSC members EvenR and HowardB. +0 from KurtS"
+msgstr ""

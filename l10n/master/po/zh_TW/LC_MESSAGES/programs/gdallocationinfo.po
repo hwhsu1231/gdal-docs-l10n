@@ -1,0 +1,272 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/programs/gdallocationinfo.rst:5
+#: ../../../source/programs/gdallocationinfo.rst:11
+msgid "gdallocationinfo"
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:9
+msgid "Raster query tool"
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:14
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:16
+msgid ""
+"Usage: gdallocationinfo [--help] [--help-general]\n"
+"                        [-xml] [-lifonly] [-valonly]\n"
+"                        [-E] [-field_sep <sep>] [-ignore_extra_input]\n"
+"                        [-b <band>]... [-overview <overview_level>]\n"
+"                        [-l_srs <srs_def>] [-geoloc] [-wgs84]\n"
+"                        [-oo <NAME>=<VALUE>]... <srcfile> [<x> <y>]"
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:27
+msgid "Description"
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:29
+msgid ""
+"The :program:`gdallocationinfo` utility provide a mechanism to query "
+"information about a pixel given its location in one of a variety of "
+"coordinate systems.  Several reporting options are provided."
+msgstr ""
+
+#: ../../../source/programs/options/help.rst:3
+msgid "Show this help message and exit"
+msgstr ""
+
+#: ../../../source/programs/options/help_general.rst:3
+msgid ""
+"Gives a brief usage message for the generic GDAL commandline options and "
+"exit."
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:39
+msgid "The output report will be XML formatted for convenient post processing."
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:43
+msgid ""
+"The only output is filenames production from the LocationInfo request "
+"against the database (i.e. for identifying impacted file from VRT)."
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:48
+msgid ""
+"The only output is the pixel values of the selected pixel on each of the "
+"selected bands. By default, the value of each band is output on a separate "
+"line, unless :option:`-field_sep` is specified."
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:54
+msgid ""
+"Selects a band to query.  Multiple bands can be listed.  By default all "
+"bands are queried."
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:59
+msgid ""
+"Query the (overview_level)th overview (overview_level=1 is the 1st "
+"overview), instead of the base band. Note that the x,y location (if the "
+"coordinate system is pixel/line) must still be given with respect to the "
+"base band."
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:65
+msgid "The coordinate system of the input x, y location."
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:69
+msgid ""
+"Indicates input x,y points are in the georeferencing system of the image."
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:73
+msgid "Indicates input x,y points are WGS84 long, lat."
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:77
+msgid "Dataset open option (format specific)"
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:83
+msgid ""
+"Set this flag to avoid extra non-numeric content at end of input lines to be "
+"appended to the output lines in -valonly mode (requires :option:`-field_sep` "
+"to be also defined), or as a dedicated field in default or :option:`-xml` "
+"modes."
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:91
+msgid ""
+"Enable Echo mode, where input coordinates are prepended to the output lines "
+"in :option:`-valonly` mode."
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:98
+msgid ""
+"Defines the field separator, used in :option:`-valonly` mode, to separate "
+"different values. It defaults to the new-line character, which means that "
+"when querying a raster with several bands, the output will contain one value "
+"per line, which may make it hard to recognize which value belongs to which "
+"set of input x,y points when several ones are provided. Defining the field "
+"separator is also needed"
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:107
+msgid "The source GDAL raster datasource name."
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:111
+msgid ""
+"X location of target pixel.  By default the coordinate system is pixel/line "
+"unless -l_srs, -wgs84 or -geoloc supplied."
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:116
+msgid ""
+"Y location of target pixel.  By default the coordinate system is pixel/line "
+"unless -l_srs, -wgs84 or -geoloc supplied."
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:120
+msgid ""
+"This utility is intended to provide a variety of information about a pixel.  "
+"Currently it reports:"
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:123
+msgid "The location of the pixel in pixel/line space."
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:124
+msgid ""
+"The result of a LocationInfo metadata query against the datasource. This is "
+"implemented for VRT files which will report the file(s) used to satisfy "
+"requests for that pixel, and by the :ref:`raster.mbtiles` driver."
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:128
+msgid "The raster pixel value of that pixel for all or a subset of the bands."
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:129
+msgid "The unscaled pixel value if a Scale and/or Offset apply to the band."
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:131
+msgid ""
+"The pixel selected is requested by x/y coordinate on the command line, or "
+"read from stdin. More than one coordinate pair can be supplied when reading "
+"coordinates from stdin. By default integer pixel/line coordinates are "
+"expected. However with use of the :option:`-geoloc`, :option:`-wgs84`, or :"
+"option:`-l_srs` switches it is possible to specify the location in other "
+"coordinate systems."
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:137
+msgid ""
+"The default report is in a human readable text format.  It is possible to "
+"instead request xml output with the -xml switch."
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:140
+msgid ""
+"For scripting purposes, the -valonly and -lifonly switches are provided to "
+"restrict output to the actual pixel values, or the LocationInfo files "
+"identified for the pixel."
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:144
+msgid ""
+"It is anticipated that additional reporting capabilities will be added to "
+"gdallocationinfo in the future."
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:148
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:150
+msgid "Simple example reporting on pixel (256,256) on the file utm.tif."
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:154
+msgid ""
+"$ gdallocationinfo utm.tif 256 256\n"
+"Report:\n"
+"Location: (256P,256L)\n"
+"Band 1:\n"
+"    Value: 115"
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:160
+msgid ""
+"Query a VRT file providing the location in WGS84, and getting the result in "
+"xml."
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:164
+msgid ""
+"$ gdallocationinfo -xml -wgs84 utm.vrt -117.5 33.75\n"
+"<Report pixel=\"217\" line=\"282\">\n"
+"    <BandReport band=\"1\">\n"
+"        <LocationInfo>\n"
+"        <File>utm.tif</File>\n"
+"        </LocationInfo>\n"
+"        <Value>16</Value>\n"
+"    </BandReport>\n"
+"</Report>"
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:174
+msgid "Reading location from stdin."
+msgstr ""
+
+#: ../../../source/programs/gdallocationinfo.rst:178
+msgid ""
+"$ cat coordinates.txt\n"
+"443020 3748359\n"
+"441197 3749005\n"
+"443852 3747743\n"
+"\n"
+"$ cat coordinates.txt | gdallocationinfo -geoloc utmsmall.tif\n"
+"Report:\n"
+"  Location: (38P,49L)\n"
+"  Band 1:\n"
+"    Value: 214\n"
+"Report:\n"
+"  Location: (7P,38L)\n"
+"  Band 1:\n"
+"    Value: 107\n"
+"Report:\n"
+"  Location: (52P,59L)\n"
+"  Band 1:\n"
+"    Value: 148\n"
+"\n"
+"$ cat coordinates.txt | gdallocationinfo -geoloc -valonly -E -field_sep , "
+"utmsmall.tif\n"
+"443020,3748359,214\n"
+"441197,3749005,107\n"
+"443852,3747743,148"
+msgstr ""

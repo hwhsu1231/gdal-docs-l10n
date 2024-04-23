@@ -1,0 +1,197 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/ogdi.rst:4
+msgid "OGDI Vectors"
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:6
+msgid "OGDI"
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:8
+msgid "OGDI library"
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:10
+msgid ""
+"OGDI vector support is optional in OGR, and is normally only configured if "
+"OGDI is installed on the build system. If available OGDI vectors are "
+"supported for read access for the following family types:"
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:14
+msgid "Point"
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:15
+msgid "Line"
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:16
+msgid "Area"
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:17
+msgid ""
+"Text (Currently returned as points with the text in the \"text\" attribute)"
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:20
+msgid "OGDI can (among other formats) read VPF products, such as DCW and VMAP."
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:22
+msgid ""
+"If an OGDI gltp url is opened directly the OGDI 3.1 capabilities for the "
+"driver/server are queried to get a list of layers. One OGR layer is created "
+"for each OGDI family available for each layer in the datastore. For drivers "
+"such as VRF this can result in a lot of layers. Each of the layers has an "
+"OGR name based on the OGDI name plus an underscore and the family name. For "
+"instance a layer might be called **watrcrsl@hydro(*)_line** if coming out of "
+"the VRF driver. (layer names can be simplified with :config:"
+"`OGR_OGDI_LAUNDER_LAYER_NAMES=YES`)"
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:31
+msgid ""
+"Alternatively to accessing all the layers in a datastore, it is possible to "
+"open a particular layer using a customized filename consisting of the "
+"regular GLTP URL to which you append the layer name and family type "
+"(separated by colons). This mechanism must be used to access layers of pre "
+"OGDI 3.1 drivers as before OGDI 3.1 there was no regular way to discover "
+"available layers in OGDI."
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:40
+msgid "gltp:[//<hostname>]/<driver_name>/<dataset_name>:<layer_name>:<family>"
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:42
+msgid ""
+"Where <layer_name> is the OGDI Layer name, and <family> is one of: \"line\", "
+"\"area\", \"point\", or \"text\"."
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:45
+msgid ""
+"OGDI coordinate system information is supported for most coordinate systems. "
+"A warning will be produced when a layer is opened if the coordinate system "
+"cannot be translated."
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:49
+msgid "There is no update or creation support in the OGDI driver."
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:52
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:57
+msgid "Error handling"
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:59
+msgid ""
+"Starting with GDAL 2.2 and OGDI > 3.2.0beta2, if the OGDI_STOP_ON_ERROR "
+"environment variable is set to NO, some errors can be gracefully recovered "
+"by OGDI (in VPF driver). They will still be caught by GDAL and emitted as "
+"regular GDAL errors."
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:64
+msgid ""
+"Note: be aware that this is a work in progress. Not all recoverable errors "
+"can be recovered, and some errors might be recovered silently."
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:68
+msgid "Configuration options"
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:70
+msgid ""
+"The following :ref:`configuration options <configoptions>` are available:"
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:82
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:84
+msgid "Usage example 'ogrinfo':"
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:88
+msgid ""
+"ogrinfo gltp:/vrf/usr4/mpp1/v0eur/vmaplv0/eurnasia 'watrcrsl@hydro(*)_line'"
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:90
+msgid ""
+"In the dataset name 'gltp:/vrf/usr4/mpp1/v0eur/vmaplv0/eurnasia' the gltp:/"
+"vrf part is not really in the filesystem, but has to be added. The VPF data "
+"was at /usr4/mpp1/v0eur/. The 'eurnasia' directory should be at the same "
+"level as the dht. and lat. files. The 'hydro' reference is a subdirectory of "
+"'eurnasia/' where watrcrsl.\\* is found."
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:96
+msgid "Usage examples VMAP0 to SHAPE conversion with 'ogr2ogr':"
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:100
+msgid ""
+"ogr2ogr watrcrsl.shp gltp:/vrf/usr4/mpp1/v0eur/vmaplv0/eurnasia "
+"'watrcrsl@hydro(*)_line'\n"
+"ogr2ogr polbnda.shp  gltp:/vrf/usr4/mpp1/v0eur/vmaplv0/eurnasia "
+"'polbnda@bnd(*)_area'"
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:103
+msgid ""
+"An OGR SQL query against a VMAP dataset. Again, note the careful quoting of "
+"the layer name."
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:108
+msgid ""
+"ogrinfo -ro gltp:/vrf/usr4/mpp1/v0noa/vmaplv0/noamer \\\n"
+"        -sql 'select * from \"polbndl@bnd(*)_line\" where use=26'"
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:112
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:114
+msgid "`OGDI.SourceForge.Net <http://ogdi.sourceforge.net/>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/ogdi.rst:115
+msgid "`VMap0 Coverages <http://www.terragear.org/docs/vmap0/coverage.html>`__"
+msgstr ""

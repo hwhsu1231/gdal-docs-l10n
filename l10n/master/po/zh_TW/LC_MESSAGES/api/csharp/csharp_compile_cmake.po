@@ -1,0 +1,428 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:5
+msgid "Compiling the C# bindings - CMake Scripts"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:7
+msgid ""
+"This page describes the primary steps when creating the GDAL/OGR C# binaries "
+"from the source using the new CMake scripts."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:9
+msgid ""
+"In most cases this is not necessary and it is better to use one of the pre-"
+"compiled sources, such as `GisInternals <https://gisinternals.com/>`__ or "
+"Conda."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:11
+msgid ""
+"You can either build the bindings as part of a full GDAL build - or "
+"standalone on top of an existing installation."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:14
+msgid "Requirements"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:16
+msgid "The build environment has the following dependencies:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:18
+msgid "CMake 3.10 or later"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:19
+msgid "the appropriate C++ build environment (i.e. gcc or Visual Studio etc)."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:20
+msgid "SWIG 4"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:21
+msgid ".NET 5.0 or Mono"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:24
+msgid ".NET Build Toolchain"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:26
+msgid ""
+"The build scripts can use either .NET 5.0 and  :file:`dotnet.exe` or Mono "
+"and :file:`msc.exe` to compile the bindings."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:28
+msgid ""
+".NET is used for preference if it found on all platforms but the use of Mono "
+"can be forced using a command line variable."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:31
+msgid "Building as part of a GDAL Build"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:33
+msgid "The build environment uses the following variables:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:36
+msgid "CSHARP_MONO"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:36
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:42
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:44
+msgid "Boolean"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:36
+msgid "Forces the use of Mono"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:38
+msgid "CSHARP_LIBRARY_VERSION"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:38
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:40
+msgid "String"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:38
+msgid "Set the .NET version for the shared libraries"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:40
+msgid "CSHARP_APPLICATION_VERSION"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:40
+msgid "Set the .NET version for the sample apps"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:42
+msgid "GDAL_CSHARP_ONLY"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:42
+msgid "Build standalone on GDAL binaries"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:44
+msgid "BUILD_CSHARP_BINDINGS"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:44
+msgid "Build the C# bindings DEFAULT ON"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:48
+msgid "Building with .NET"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:50
+msgid ""
+"If the build environment has .NET 5.0 installed and GDAL is built, then the "
+"c# bindings will be built using .NET by default."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:52
+msgid ""
+"The details of building GDAL are documented elsewhere, but there are likely "
+"to be variants of the following commands run from the root directory of the "
+"gdal repository:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:54
+msgid ""
+"cmake -DCMAKE_INSTALL_PREFIX ../install -B ../build -S .\n"
+"cmake --build ../build --config Release\n"
+"cmake --build ../build --config Release --target install"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:60
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:115
+msgid ""
+"The C# bindings and sample apps are installed in the install directory (in "
+"the above case that would be `../install`, in the `share/csharp` sub folder. "
+"There would be the following files:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:62
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:117
+msgid ":file:`gdal_csharp.dll`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:63
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:118
+msgid ":file:`ogr_csharp.dll`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:64
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:119
+msgid ":file:`osr_csharp.dll`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:65
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:120
+msgid ":file:`gdalconst_csharp.dll`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:66
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:121
+msgid ""
+":file:`gdal_wrap.dll` or :file:`libgdal_wrap.so` or :file:`libgdal_wrap."
+"dylib`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:67
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:122
+msgid ""
+":file:`ogr_wrap.dll` or :file:`libogr_wrap.so` or :file:`libogr_wrap.dylib`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:68
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:69
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:123
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:124
+msgid ""
+":file:`osr_wrap.dll` or :file:`libosr_wrap.so` or :file:`libosr_wrap.dylib`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:70
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:125
+msgid ""
+":file:`gdalconst_wrap.dll` or :file:`libgdalconst_wrap.so` or :file:"
+"`libgdalconst_wrap.dylib`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:71
+msgid ""
+"various sample applications - as \\*.exe on Windows, or just as \\* on Unix, "
+"along with \\*.dll for each app and the runtime config files."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:73
+msgid ""
+"There are also subdirectories for each of the sample apps, holding the "
+"config files."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:75
+msgid "There are also the following NuGET packages:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:77
+msgid ":file:`OSGeo.GDAL`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:78
+msgid ":file:`OSGeo.OGR`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:79
+msgid ":file:`OSgeo.OSR`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:80
+msgid ":file:`OSGeo.GDAL.CONST`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:81
+msgid "various sample application"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:84
+msgid "Using the .NET Bindings"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:86
+msgid ""
+"The easiest way to use the bindings in development would be use the NuGET "
+"packages created."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:88
+msgid ""
+"To do this you need to add a local repistory pointing to the GDAL install "
+"directory. `This is explained here <https://docs.microsoft.com/en-us/nuget/"
+"hosting-packages/local-feeds>`__ ."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:90
+msgid ""
+"Once this is done, you add the GDAL packages into your project as normal."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:92
+msgid ""
+"These packages only install the bindings and do not install core GDAL. It is "
+"for you as the developer to make sure that the GDAL binaries are available "
+"in the search path."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:95
+msgid ""
+"The NuGET packages are created with the same version number as the version "
+"of GDAL in the build system. If you are building in a GIT repository, then "
+"the build system automatically makes the version with a x.y.z-dev pre-"
+"release tag. This means that to load the package into Visual Studio (for "
+"instance), you have to tick the pre-release box. This is all intentional and "
+"not a bug."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:102
+msgid "Building on Mono"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:104
+msgid ""
+"If the build environment does not have .NET 5.0 or msbuild installed and "
+"GDAL is built, then the c# bindings will be built using Mono by default. "
+"Mono building can also be forced by setting CSHARP_MONO."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:107
+msgid ""
+"The details of building GDAL are documented elsewhere, but the there are "
+"likely to be variants of the following commands run from the root directory "
+"of the gdal repository:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:109
+msgid ""
+"cmake -DCMAKE_INSTALL_PREFIX ../install -DCSHARP_MONO=ON -B ../build -S .\n"
+"cmake --build ../build --config Release\n"
+"cmake --build ../build --config Release --target install"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:126
+msgid "various sample applications as \\*.exe on all platforms."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:129
+msgid "Using the Mono Bindings"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:131
+msgid ""
+"Note that the bindings created by this process will only work with Mono."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:133
+msgid ""
+"To run one of the prebuilt executables - you can run them with Mono as "
+"follows :"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:135
+msgid ":program:`mono GDALInfo.exe`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:137
+msgid ""
+"Both the managed libraries (i.e. the DLLs) and the unmanaged libraries must "
+"be available to Mono. This is in more detail in `the Mono documentation "
+"<https://www.mono-project.com/docs/advanced/pinvoke/>`__"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:141
+msgid "Building Standalone"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:143
+msgid ""
+"The Bindings using both the .NET or Mono toolchains can be build on top of "
+"an existing implementation of GDAL that includes the include files and libs "
+"- for instance the Conda distribution."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:146
+msgid ""
+"To do this, Cmake must be run with the GDAL_CSHARP_ONLY flag set and only "
+"one of the following targets should be built:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:150
+msgid "csharp_binding"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:150
+msgid "Just the bindings"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:152
+msgid "csharp_samples"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:152
+msgid "The bindings and the sample apps"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:155
+msgid "Do not build the install target when running standalone, it will fail!"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:157
+msgid ""
+"Do not run a bare ctest command on this build, it will likely fail! Use "
+"something like `ctest -R \"^csharp.*\"` instead."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:159
+msgid "As an example:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:161
+msgid ""
+"cmake -DGDAL_CSHARP_ONLY=ON -B ../build -S .\n"
+"cmake --build ../build --config Release --target csharp_samples"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:166
+msgid ""
+"The output from this build is axactly the same as documented as above, "
+"except that the outputs will be in `../build/swig/csharp` and some of the "
+"sub folders."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:169
+msgid "Signing of build artifacts"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:171
+msgid ""
+"The CSharp assemblies are strong name signed by default with the provided "
+"key file in :source_file:`swig/csharp/gdal.snk`. If authenticode signing of "
+"the assemblies is wished, it should be done in a post-build manual step, for "
+"example with:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_cmake.rst:175
+msgid ""
+"signtool sign /f \"path\\to\\your\\certificate.pfx\" /p \"password\" /tr "
+"http://timestamp.digicert.com /td sha256 \"path\\to\\your\\gdal_csharp.dll\""
+msgstr ""

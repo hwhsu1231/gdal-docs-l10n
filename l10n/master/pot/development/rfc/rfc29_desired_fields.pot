@@ -1,0 +1,233 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:5
+msgid "RFC 29: OGR Set Ignored Fields"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:7
+msgid "Author: Martin Dobias"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:9
+msgid "Contact: wonder.sk@gmail.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:11
+msgid "Status: Adopted"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:14
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:16
+msgid ""
+"To improve performance when fetching features, this RFC proposes a way how "
+"to tell OGR which fields are not going to be required in subsequent "
+"GetFeature() / GetNextFeature() calls. Such fields will be ignored by the "
+"driver and their value will be kept null. The RFC counts also with the "
+"possibility to ignore feature geometry and style."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:22
+msgid "Common use cases:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:24
+msgid ""
+"the client renders the layer: all (or most) fields can be ignored, only the "
+"geometry is required"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:27
+msgid ""
+"the client shows attribute table: all fields are required, the geometry can "
+"be ignored"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:31
+msgid "Details"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:33
+msgid ""
+"A new function will be added to OGRLayer class to allow the client to set "
+"which fields will *not* be fetched:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:38
+msgid "virtual OGRErr OGRLayer::SetIgnoredFields( const char **papszFields );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:40
+msgid "and an equivalent call for C API:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:44
+msgid ""
+"OGRErr CPL_DLL OGR_L_SetIgnoredFields( OGRLayerH, const char **papszFields );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:46
+msgid ""
+"The argument is a list of fields to be ignored, by name, and the special "
+"field names \"OGR_GEOMETRY\" and \"OGR_STYLE\" will be interpreted to refer "
+"to the geometry and style values of a feature."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:50
+msgid ""
+"Passing by field name has been chosen so that we could handle OGR_GEOMETRY, "
+"OGR_STYLE and possibly some other special fields in the future. Instead of "
+"specifying \"desired\" fields, it has been decided to specify \"ignored\" "
+"fields so that we wouldn't accidentally drop things like geometry and style "
+"just because they weren't explicitly listed in a desired list."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:57
+msgid "Passing NULL for papszFields will clear the ignored list."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:59
+msgid ""
+"The method will return OGRERR_NONE as long as all the field names are able "
+"to be resolved, even if the method does not support selection of fields."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:63
+msgid ""
+"The drivers supporting this method will return TRUE to OLCIgnoreFields "
+"(\"IgnoreFields\") capability."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:66
+msgid ""
+"The method will be implemented at the level of OGRLayer class: it will "
+"resolve indexes of the fields and set the following new member variables "
+"which indicate what should be ignored. The flags will be stored within "
+"OGRFeatureDefn and OGRFieldDefn classes and available with these getter "
+"functions:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:74
+msgid ""
+"bool OGRFieldDefn::IsIgnored();\n"
+"bool OGRFeatureDefn::IsGeometryIgnored();\n"
+"bool OGRFeatureDefn::IsStyleIgnored();"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:78
+msgid ""
+"The getter member functions will be complemented by setter functions for use "
+"by OGRLayer. Setting the \"ignored\" flags directly by clients will be "
+"forbidden."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:82
+msgid ""
+"Optionally the method ``SetIgnoredFields()`` can be overridden in driver "
+"implementation if the driver has some special needs."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:86
+msgid "Implementation in drivers"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:88
+msgid ""
+"The implementation of drivers will require small adjustments in order to "
+"support this RFC. Drivers not making use of this addition will simply "
+"continue to fetch also fields/geometry/style that are not requested by the "
+"caller."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:93
+msgid "The adjustments in driver implementation will look as follows:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:97
+msgid ""
+"if (!poDefn->IsGeometryIgnored())\n"
+"{\n"
+"  // fetch geometry\n"
+"}\n"
+"if (!poDefn->IsStyleIgnored())\n"
+"{\n"
+"  // fetch style\n"
+"}\n"
+"\n"
+"for( int iField = 0; iField < poDefn->GetFieldCount(); iField++ )\n"
+"{\n"
+"  if (poDefn->GetFieldDefn(iField)->IsIgnored())\n"
+"    continue;\n"
+"\n"
+"  // fetch field\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:115
+msgid "Compatibility"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:117
+msgid ""
+"This change is fully backwards compatible: OGR will continue to fetch "
+"geometry, style and all fields by default. Only applications using the "
+"proposed API will experience the new behavior."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:121
+msgid ""
+"Initially, only some drivers (Shapefile and few others) will implement this "
+"RFC. There is no need to modify all existing drivers when adopting the RFC - "
+"drivers that do not consider the ignored fields will simply fetch all "
+"attributes as before. To check whether a driver supports this RFC, "
+"OLCIgnoreFields capability can be checked."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:127
+msgid ""
+"ogr2ogr command line tool will make use of this RFC in cases it receives -"
+"select argument with a list of required fields. Other than the specified "
+"fields will be ignored."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:132
+msgid "Voting History"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:134
+msgid "Frank Warmerdam +1"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:135
+msgid "Tamas Szekeres +1"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:136
+msgid "Daniel Morissette +0"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:137
+msgid "Howard Butler +0"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc29_desired_fields.rst:138
+msgid "Even Rouault +0"
+msgstr ""

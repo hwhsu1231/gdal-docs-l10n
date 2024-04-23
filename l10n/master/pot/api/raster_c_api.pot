@@ -1,0 +1,221 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/api/raster_c_api.rst:5
+msgid "gdal.h: Raster C API"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Defines"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Typedefs"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Param pszFuncName"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Param pUserData"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Param papszFunctionArgs"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Param nInBands"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Param eInDT"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Param padfInNoData"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Param pnOutBands"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Param peOutDT"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Param ppadfOutNoData"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Param pszVRTPath"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Param ppWorkingData"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Return"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Param pWorkingData"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Param nBufXSize"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Param nBufYSize"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Param pInBuffer"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Param nInBufferSize"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Param pOutBuffer"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Param nOutBufferSize"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Param eOutDT"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Param nOutBands"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Param padfOutNoData"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Param dfSrcXOff"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Param dfSrcYOff"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Param dfSrcXSize"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Param dfSrcYSize"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Param adfSrcGT"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Param papszExtra"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Enums"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Functions"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Returns"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:-1
+msgid ""
+"*pdfGeoX = padfGeoTransform[0] + dfPixel * padfGeoTransform[1]\n"
+"                               + dfLine  * padfGeoTransform[2];\n"
+"*pdfGeoY = padfGeoTransform[3] + dfPixel * padfGeoTransform[4]\n"
+"                               + dfLine  * padfGeoTransform[5];"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:-1
+msgid ""
+"#include \"gdal.h\"\n"
+"#include \"cpl_string.h\"\n"
+"\n"
+"...\n"
+"\n"
+"        OGRLayerH  hLayer;\n"
+"        char     **papszOptions;\n"
+"\n"
+"        if( !GDALDatasetTestCapability( hDS, ODsCCreateLayer ) )\n"
+"        {\n"
+"        ...\n"
+"        }\n"
+"\n"
+"        papszOptions = CSLSetNameValue( papszOptions, \"DIM\", \"2\" );\n"
+"        hLayer = GDALDatasetCreateLayer( hDS, \"NewLayer\", NULL, "
+"wkbUnknown,\n"
+"                                         papszOptions );\n"
+"        CSLDestroy( papszOptions );\n"
+"\n"
+"        if( hLayer == NULL )\n"
+"        {\n"
+"            ...\n"
+"        }"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:-1
+msgid ""
+" <ProcessedDatasetFunctionArgumentsList>\n"
+"    <Argument name='src_nodata' type='double' description='Override input "
+"nodata value'/>\n"
+"    <Argument name='dst_nodata' type='double' description='Override output "
+"nodata value'/>\n"
+"    <Argument name='replacement_nodata' description='value to substitute to "
+"a valid computed value that would be nodata' type='double'/>\n"
+"    <Argument name='dst_intended_datatype' type='string' "
+"description='Intented datatype of output (which might be different than the "
+"working data type)'/>\n"
+"    <Argument name='coefficients_{band}' description='Comma-separated "
+"coefficients for combining bands. First one is constant term' "
+"type='double_list' required='true'/>\n"
+" </ProcessedDatasetFunctionArgumentsList>"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:-1
+msgid ""
+"for(size_t i = 0; i < nIters; ++i)\n"
+"    for(int iComp = 0; iComp < nComponents; iComp++ )\n"
+"        ppDestBuffer[iComp][i] = pSourceBuffer[nComponents * i + iComp]"
+msgstr ""
+
+#: ../../../source/api/raster_c_api.rst:0
+msgid "Public Members"
+msgstr ""

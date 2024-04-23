@@ -1,0 +1,196 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/eedai.rst:5
+msgid "EEDAI - Google Earth Engine Data API Image"
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:7
+msgid "EEDAI"
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:11
+msgid "libcurl"
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:13
+msgid ""
+"The driver supports read-only operations to access image content, using "
+"Google Earth Engine REST API."
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:17
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:22
+msgid "Dataset name syntax"
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:24
+msgid "The minimal syntax to open a datasource is :"
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:28
+msgid "EEDAI:[asset][:band_names]"
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:30
+msgid ""
+"where asset is something like projects/earthengine-public/assets/COPERNICUS/"
+"S2/20170430T190351_20170430T190351_T10SEG, and band_names a comma separated "
+"list of band names (typically indicated by subdatasets on the main image)"
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:36
+msgid "Open options"
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:38
+msgid "The following open options are available :"
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:63
+msgid "Authentication methods"
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:65
+msgid "The following authentication methods can be used:"
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:67
+msgid ""
+"Authentication Bearer header passed through the :config:`EEDA_BEARER` or :"
+"config:`EEDA_BEARER_FILE` configuration options."
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:69
+msgid ""
+"Service account private key file, through the :config:"
+"`GOOGLE_APPLICATION_CREDENTIALS` configuration option."
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:71
+msgid ""
+"OAuth2 Service Account authentication through the :config:"
+"`EEDA_PRIVATE_KEY`/ :config:`EEDA_PRIVATE_KEY_FILE` + :config:"
+"`EEDA_CLIENT_EMAIL` configuration options."
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:73
+msgid ""
+"Finally if none of the above method succeeds, the code will check if the "
+"current machine is a Google Compute Engine instance, and if so will use the "
+"permissions associated to it (using the default service account associated "
+"with the VM). To force a machine to be detected as a GCE instance (for "
+"example for code running in a container with no access to the boot logs), "
+"you can set :config:`CPL_MACHINE_IS_GCE=YES`."
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:81
+msgid "Configuration options"
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:83
+msgid "The following configuration options are available :"
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:134
+msgid "Overviews"
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:136
+msgid ""
+"The driver expose overviews, following a logic of decreasing power of 2 "
+"factors, until both dimensions of the smallest overview are lower than 256 "
+"pixels."
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:141
+msgid "Subdatasets"
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:143
+msgid ""
+"When all bands don't have the same georeferencing, resolution, CRS or image "
+"dimensions, the driver will expose subdatasets. Each subdataset groups "
+"together bands of the same dimension, extent, resolution and CRS."
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:148
+msgid "Metadata"
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:150
+msgid ""
+"The driver will expose metadata reported in \"properties\" as dataset-level "
+"or band-level metadata."
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:154
+msgid "Pixel encoding"
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:156
+msgid ""
+"By default (:oo:`PIXEL_ENCODING=AUTO`), the driver will request pixels in a "
+"format compatible of the number and data types of the bands. The PNG, JPEG "
+"and AUTO_JPEG_PNG can only be used with bands of type Byte."
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:161
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:163
+msgid "Get metadata on an image:"
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:167
+msgid ""
+"gdalinfo \"EEDAI:\" -oo ASSET=projects/earthengine-public/assets/COPERNICUS/"
+"S2/20170430T190351_20170430T190351_T10SEG --config EEDA_CLIENT_EMAIL "
+"\"my@email\" --config EEDA_PRIVATE_KEY_FILE my.pem"
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:169
+msgid "or"
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:173
+msgid ""
+"gdalinfo \"EEDAI:projects/earthengine-public/assets/COPERNICUS/"
+"S2/20170430T190351_20170430T190351_T10SEG\" --config EEDA_CLIENT_EMAIL "
+"\"my@email\" --config EEDA_PRIVATE_KEY_FILE my.pem"
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:176
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/eedai.rst:178
+msgid ":ref:`Google Earth Engine Data API driver <vector.eeda>`"
+msgstr ""

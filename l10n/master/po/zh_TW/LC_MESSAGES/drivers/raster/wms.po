@@ -1,0 +1,1382 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/wms.rst:5
+msgid "WMS -- Web Map Services"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:7
+#: ../../../source/drivers/raster/wms.rst:105
+msgid "WMS"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:9
+msgid "libcurl"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:11
+msgid ""
+"Accessing several different types of web image services is possible using "
+"the WMS format in GDAL."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:15
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:24
+msgid "XML description file"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:26
+msgid ""
+"Services are accessed by creating a local service description XML file -- "
+"there are examples below for each of the supported image services. It is "
+"important that there be no spaces or other content before the ``<GDAL_WMS>`` "
+"element."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:32
+msgid "<GDAL_WMS>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:33
+msgid "<Service name=\"WMS\">"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:33
+msgid ""
+"Define what mini-driver to use, currently supported are: WMS, WorldWind, "
+"TileService, TMS, TiledWMS, VirtualEarth or AGS. (required)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:34
+msgid "<Version>1.1.1</Version>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:34
+msgid "WMS version. (optional, defaults to 1.1.1)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:35
+msgid "<ServerUrl>http://host.domain.com/wms.cgi?</ServerUrl>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:35
+msgid "WMS server URL. (required)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:36
+msgid "<SRS>EPSG:4326</SRS>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:36
+msgid ""
+"Image projection (optional, defaults to EPSG:4326 in WMS and 102100 in AGS, "
+"WMS version 1.1.1 or below only and ArcGIS Server). For ArcGIS Server the "
+"spatial reference can be specified as either a well-known ID or as a "
+"`spatial reference json object <http://resources.arcgis.com/en/help/rest/"
+"apiref/geometry.html#sr>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:37
+msgid "<CRS>CRS:83</CRS>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:37
+msgid ""
+"Image projection (optional, defaults to EPSG:4326, WMS version 1.3.0 or "
+"above only)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:38
+msgid "<ImageFormat>image/jpeg</ImageFormat>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:38
+msgid ""
+"Format in which to request data. Paletted formats like image/gif will be "
+"converted to RGB. (optional, defaults to image/jpeg)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:39
+msgid "<Transparent>FALSE</Transparent>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:39
+msgid ""
+"Set to TRUE to include \"transparent=TRUE\" in the WMS GetMap request "
+"(optional defaults to FALSE).  The request format and BandsCount need to "
+"support alpha."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:40
+msgid "<Layers>modis%2Cglobal_mosaic</Layers>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:40
+msgid ""
+"A URL encoded, comma separated string of layers (required, except for "
+"TiledWMS)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:41
+msgid "<TiledGroupName>Clementine</TiledGroupName>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:41
+msgid "Comma separated list of layers. (required for TiledWMS)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:42
+msgid "<Styles></Styles>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:42
+msgid "Comma separated list of styles. (optional)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:43
+msgid "<BBoxOrder>xyXY</BBoxOrder>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:43
+msgid ""
+"Reorder bbox coordinates arbitrarily. May be required for version 1.3 "
+"servers. (optional) x - low X coordinate, y - low Y coordinate, X - high X "
+"coordinate, Y - high Y coordinate"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:45
+msgid "</Service>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:46
+msgid "<DataWindow>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:46
+msgid ""
+"Define size and extents of the data. (required, except for TiledWMS and "
+"VirtualEarth)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:47
+msgid "<UpperLeftX>-180.0</UpperLeftX>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:47
+msgid ""
+"X (longitude) coordinate of upper-left corner. (optional, defaults to "
+"-180.0, except for VirtualEarth)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:48
+msgid "<UpperLeftY>90.0</UpperLeftY>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:48
+msgid ""
+"Y (latitude) coordinate of upper-left corner. (optional, defaults to 90.0, "
+"except for VirtualEarth)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:49
+msgid "<LowerRightX>180.0</LowerRightX>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:49
+msgid ""
+"X (longitude) coordinate of lower-right corner. (optional, defaults to "
+"180.0, except for VirtualEarth)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:50
+msgid "<LowerRightY>-90.0</LowerRightY>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:50
+msgid ""
+"Y (latitude) coordinate of lower-right corner. (optional, defaults to -90.0, "
+"except for VirtualEarth)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:51
+msgid "<SizeX>2666666</SizeX>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:51
+#: ../../../source/drivers/raster/wms.rst:52
+msgid "Image size in pixels."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:52
+msgid "<SizeY>1333333</SizeY>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:53
+msgid "<TileX>0</TileX>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:53
+msgid ""
+"Added to tile X value at highest resolution. (ignored for WMS, tiled image "
+"sources only, optional, defaults to 0)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:54
+msgid "<TileY>0</TileY>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:54
+msgid ""
+"Added to tile Y value at highest resolution. (ignored for WMS, tiled image "
+"sources only, optional, defaults to 0)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:55
+msgid "<TileLevel>0</TileLevel>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:55
+msgid ""
+"Tile level at highest resolution. (tiled image sources only, optional, "
+"defaults to 0)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:56
+msgid "<TileCountX>0</TileCountX>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:56
+msgid ""
+"Can be used to define image size, SizeX = TileCountX \\* BlockSizeX \\* 2\\ :"
+"sup:`TileLevel`. (tiled image sources only, optional, defaults to 0)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:57
+msgid "<TileCountY>0</TileCountY>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:57
+msgid ""
+"Can be used to define image size, SizeY = TileCountY \\* BlockSizeY \\* 2\\ :"
+"sup:`TileLevel`. (tiled image sources only, optional, defaults to 0)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:58
+msgid "<YOrigin>top</YOrigin>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:58
+msgid ""
+"Can be used to define the position of the Y origin with respect to the tile "
+"grid. Possible values are 'top', 'bottom', and 'default', where the default "
+"behavior is mini-driver-specific. (TMS mini-driver only, optional, defaults "
+"to 'bottom' for TMS)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:59
+msgid "</DataWindow>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:60
+msgid "<Projection>EPSG:4326</Projection>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:60
+msgid ""
+"Image projection (optional, defaults to value reported by mini-driver or "
+"EPSG:4326)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:61
+msgid "<IdentificationTolerance>2</IdentificationTolerance>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:61
+msgid "Identification tolerance (optional, defaults to 2)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:62
+msgid "<BandsCount>3</BandsCount>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:62
+msgid ""
+"Number of bands/channels, 1 for grayscale data, 3 for RGB, 4 for RGBA. "
+"(optional, defaults to 3)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:63
+msgid "<DataType>Byte</DataType>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:63
+msgid ""
+"Band data type, one of: Byte, Int16, UInt16, Int32, UInt32, Float32, "
+"Float64, etc.. (optional, defaults to Byte)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:64
+msgid "<DataValues NoData=\"0 0 0\" min=\"1 1 1\" max=\"255 255 255\" />"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:64
+msgid ""
+"Define NoData and/or minimum and/or maximum value for bands. nodata_values, "
+"min_values, max_values can be one single value, or a value per band, with a "
+"space separator between value"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:65
+msgid "<BlockSizeX>1024</BlockSizeX>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:65
+#: ../../../source/drivers/raster/wms.rst:66
+msgid ""
+"Block size in pixels. (optional, defaults to 1024, except for VirtualEarth)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:66
+msgid "<BlockSizeY>1024</BlockSizeY>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:67
+msgid "<OverviewCount>10</OverviewCount>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:67
+msgid ""
+"Count of reduced resolution layers each having 2 times lower resolution. "
+"(optional, default is calculated at runtime)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:68
+msgid "<Cache>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:68
+msgid ""
+"Enable local disk cache. Allows for offline operation. (optional but present "
+"in the autogenerated service file, cache is disabled when not present or if "
+"it is overridden with GDAL_ENABLE_WMS_CACHE=NO)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:69
+msgid "<Path>./gdalwmscache</Path>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:69
+msgid ""
+"Location where to store cache files. It is safe to use same cache path for "
+"different data sources. /vsimem/ paths are supported allowing for temporary "
+"in-memory cache. (optional, cf below Caching section for default value)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:70
+msgid "<Depth>2</Depth>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:70
+msgid ""
+"Number of directory layers. 2 will result in files being written as "
+"cache_path/A/B/ABCDEF... (optional, defaults to 2)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:71
+msgid "<Extension>.jpg</Extension>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:71
+msgid "Append to cache files. (optional, defaults to none)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:72
+msgid "<Type>file</Type>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:72
+msgid ""
+"Cache type. Now supported only 'file' type. In 'file' cache type files are "
+"stored in file system folders. (optional, defaults to 'file')"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:73
+msgid "<Expires>604800</Expires>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:73
+msgid ""
+"Time in seconds cached files will stay valid. If cached file expires it is "
+"deleted when maximum size of cache is reached. Also expired file can be "
+"overwritten by the new one from web. Default value is 7 days (604800s)."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:74
+msgid "<MaxSize>67108864</MaxSize>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:74
+msgid ""
+"The cache maximum size in bytes. If cache reached maximum size, expired "
+"cached files will be deleted. Default value is 64 Mb (67108864 bytes)."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:75
+msgid "<CleanTimeout>120</CleanTimeout>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:75
+msgid ""
+"Clean Thread Run Timeout in seconds. How often to run the clean thread, "
+"which finds and deletes expired cached files. Default value is 120s. Use "
+"value of 0 to disable the Clean Thread (effectively unlimited cache size). "
+"If you intend to use very large cache size you might want to disable the "
+"cache clean or to use a much longer timeout as the time that takes to scan "
+"the cache files for expired cache files might be long. (\"disabled\" was the "
+"only option for GDAL <= 2.2; \"120s\" was the only option for 2.3 <= GDAL <= "
+"3.1)."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:76
+msgid "<Unique>True</Unique>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:76
+msgid ""
+"If set to true the path will appended with md5 hash of ServerURL. Default "
+"value is true."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:77
+msgid "</Cache>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:78
+msgid "<MaxConnections>2</MaxConnections>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:78
+msgid ""
+"Maximum number of simultaneous connections. (optional, defaults to 2). Can "
+"also be set with the :config:`GDAL_MAX_CONNECTIONS` configuration option "
+"(GDAL >= 3.2)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:79
+msgid "<Timeout>300</Timeout>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:79
+msgid ""
+"Connection timeout in seconds. (optional, defaults to 300 or :config:"
+"`GDAL_HTTP_TIMEOUT`, if specified)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:80
+msgid "<OfflineMode>true</OfflineMode>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:80
+msgid ""
+"Do not download any new images, use only what is in cache. Useful only with "
+"cache enabled. (optional, defaults to false)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:81
+msgid "<AdviseRead>true</AdviseRead>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:81
+msgid ""
+"Enable AdviseRead API call - download images into cache. (optional, defaults "
+"to false)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:82
+msgid "<VerifyAdviseRead>true</VerifyAdviseRead>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:82
+msgid ""
+"Open each downloaded image and do some basic checks before writing into "
+"cache. Disabling can save some CPU cycles if server is trusted to always "
+"return correct images. (optional, defaults to true)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:83
+msgid "<ClampRequests>false</ClampRequests>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:83
+msgid ""
+"Should requests, that otherwise would be partially outside of defined data "
+"window, be clipped resulting in smaller than block size request. (optional, "
+"defaults to true)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:84
+msgid ""
+"<UserAgent>GDAL WMS driver (http://www.gdal.org/frmt_wms.html)</UserAgent>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:84
+msgid ""
+"HTTP User-agent string. Some servers might require a well-known user-agent "
+"such as \"Mozilla/5.0\" (optional, defaults to \"GDAL WMS driver (http://www."
+"gdal.org/frmt_wms.html)\"). When used with some servers, like OpenStreetMap "
+"ones, it is highly recommended to put a custom user agent to avoid being "
+"blocked if the default user agent had to be blocked."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:85
+msgid "<Accept>mimetype>/Accept>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:85
+msgid ""
+"HTTP Accept header to specify the MIME type of the expected output of the "
+"server. Empty by default"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:86
+msgid "<UserPwd>user:password</UserPwd>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:86
+msgid "User and Password for HTTP authentication (optional)."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:87
+msgid "<UnsafeSSL>true</UnsafeSSL>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:87
+msgid ""
+"Skip SSL certificate verification. May be needed if server is using a self "
+"signed certificate (optional, defaults to false)."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:88
+msgid "<Referer>http://example.foo/</Referer>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:88
+msgid "HTTP Referer string. Some servers might require it (optional)."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:89
+msgid "<ZeroBlockHttpCodes>204,404</ZeroBlockHttpCodes>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:89
+msgid ""
+"Comma separated list of HTTP response codes that will be interpreted as a 0 "
+"filled image (i.e. black for 3 bands, and transparent for 4 bands) instead "
+"of aborting the request. (optional, defaults to 204)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:90
+msgid "<ZeroBlockOnServerException>true</ZeroBlockOnServerException>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:90
+msgid ""
+"Whether to treat a Service Exception returned by the server as a 0 filled "
+"image instead of aborting the request. (optional, defaults to false)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:91
+msgid "</GDAL_WMS>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:92
+msgid "\\"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:95
+msgid ""
+"Starting with GDAL 2.3, additional HTTP headers can be sent by setting the "
+"GDAL_HTTP_HEADER_FILE configuration option to point to a filename of a text "
+"file with “key: value” HTTP headers."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:98
+msgid "Minidrivers"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:100
+msgid ""
+"The GDAL WMS driver has support for several internal 'minidrivers', which "
+"allow access to different web mapping services. Each of these services may "
+"support a different set of options in the Service block."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:107
+msgid ""
+"Communications with an OGC WMS server. Has support for both tiled and "
+"untiled requests."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:110
+msgid ""
+"WMS layers can be queried (through a GetFeatureInfo request) with the "
+"gdallocationinfo utility, or with a GetMetadataItem(\"Pixel_iCol_iLine\", "
+"\"LocationInfo\") call on a band object."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:117
+msgid ""
+"gdallocationinfo \"WMS:http://demo.opengeo.org/geoserver/gwc/service/wms?"
+"SERVICE=WMS&VERSION=1.1.1&\n"
+"                            REQUEST=GetMap&LAYERS=og%3Abugsites&SRS=EPSG:900913&\n"
+"                            BBOX=-1.15841845090625E7,5479006.186718751,-1.1505912992109375E7,5557277.703671876&\n"
+"                            FORMAT=image/"
+"png&TILESIZE=256&OVERVIEWCOUNT=25&MINRESOLUTION=0.0046653459640220&TILED=true\"\n"
+"                           -geoloc -11547071.455 5528616 -xml -b 1"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:124
+msgid "Output:"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:128
+msgid ""
+"Report pixel=\"248595\" line=\"191985\">\n"
+"  <BandReport band=\"1\">\n"
+"    <LocationInfo>\n"
+"      <wfs:FeatureCollection xmlns=\"http://www.opengis.net/wfs\"\n"
+"                                xmlns:wfs=\"http://www.opengis.net/wfs\"\n"
+"                                xmlns:gml=\"http://www.opengis.net/gml\"\n"
+"                                xmlns:og=\"http://opengeo.org\"\n"
+"                                xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-"
+"instance\"\n"
+"                                xsi:schemaLocation=\"http://opengeo.org "
+"http://demo.opengeo.org/geoserver/wfs?"
+"service=WFS&version=1.0.0&request=DescribeFeatureType&typeName=og%3Abugsites "
+"http://www.opengis.net/wfs http://demo.opengeo.org/geoserver/schemas/"
+"wfs/1.0.0/WFS-basic.xsd\">\n"
+"        <gml:boundedBy>\n"
+"          <gml:Box srsName=\"http://www.opengis.net/gml/srs/epsg."
+"xml#26713\">\n"
+"            <gml:coordinates xmlns:gml=\"http://www.opengis.net/gml\" "
+"decimal=\".\" cs=\",\" ts=\" \">601228,4917635 601228,4917635</gml:"
+"coordinates>\n"
+"          </gml:Box>\n"
+"        </gml:boundedBy>\n"
+"        <gml:featureMember>\n"
+"          <og:bugsites fid=\"bugsites.40946\">\n"
+"            <gml:boundedBy>\n"
+"              <gml:Box srsName=\"http://www.opengis.net/gml/srs/epsg."
+"xml#26713\">\n"
+"                <gml:coordinates xmlns:gml=\"http://www.opengis.net/gml\" "
+"decimal=\".\" cs=\",\" ts=\" \">601228,4917635 601228,4917635</gml:"
+"coordinates>\n"
+"              </gml:Box>\n"
+"            </gml:boundedBy>\n"
+"            <og:cat>86</og:cat>\n"
+"            <og:str1>Beetle site</og:str1>\n"
+"            <og:the_geom>\n"
+"              <gml:Point srsName=\"http://www.opengis.net/gml/srs/epsg."
+"xml#26713\">\n"
+"                <gml:coordinates xmlns:gml=\"http://www.opengis.net/gml\" "
+"decimal=\".\" cs=\",\" ts=\" \">601228,4917635</gml:coordinates>\n"
+"              </gml:Point>\n"
+"            </og:the_geom>\n"
+"          </og:bugsites>\n"
+"        </gml:featureMember>\n"
+"      </wfs:FeatureCollection>\n"
+"    </LocationInfo>\n"
+"    <Value>255</Value>\n"
+"  </BandReport>\n"
+"</Report>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:166
+msgid "TileService"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:168
+msgid ""
+"Service to support talking to a WorldWind `TileService <http://www."
+"worldwindcentral.com/wiki/TileService>`__. Access is always tile based."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:173
+msgid "WorldWind"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:175
+msgid ""
+"Access to web-based WorldWind tile services. Access is always tile based."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:179
+msgid "TMS"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:181
+msgid ""
+"The TMS Minidriver is designed primarily to support the users of the `TMS "
+"Specification <http://wiki.osgeo.org/wiki/"
+"Tile_Map_Service_Specification>`__. This service supports only access by "
+"tiles."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:186
+msgid ""
+"Because TMS is similar to many other 'x/y/z' flavored services on the web, "
+"this service can also be used to access these services. To use it in this "
+"fashion, you can use replacement variables, of the format ${x}, ${y}, etc."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:191
+msgid "Supported variables (name is case sensitive) are :"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:193
+msgid "${x} -- x position of the tile"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:194
+msgid ""
+"${y} -- y position of the tile. This can be either from the top or the "
+"bottom of the tileset, based on whether the YOrigin parameter is set to true "
+"or false."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:197
+msgid "${z} -- z position of the tile -- zoom level"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:198
+msgid ""
+"${version} -- version parameter, set in the config file. Defaults to 1.0.0."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:200
+msgid ""
+"${format} -- format parameter, set in the config file. Defaults to 'jpg'."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:202
+msgid ""
+"${layer} -- layer parameter, set in the config file. Defaults to nothing."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:205
+msgid "A typical ServerURL might look like:"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:206
+msgid ""
+"``http://tilecache.osgeo.org/wms-c/Basic.py/${version}/${layer}/${z}/${x}/"
+"${y}.${format}``"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:209
+msgid ""
+"In order to better suit TMS users, any URL that does not contain \"${\" will "
+"automatically have the string above (after \"Basic.py/\") appended to their "
+"URL."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:211
+msgid ""
+"The TMS Service has 3 XML configuration elements that are different from "
+"other services: ``Format`` which defaults to ``jpg``, ``Layer`` which has no "
+"default, and ``Version`` which defaults to ``1.0.0``."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:215
+msgid ""
+"Additionally, the TMS service respects one additional parameter, at the "
+"DataWindow level, which is the YOrigin element. This element should be one "
+"of ``bottom`` (the default in TMS) or ``top``, which matches OpenStreetMap "
+"and many other popular tile services."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:220
+msgid ""
+"Two examples of usage of the TMS service are included in the examples below."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:224
+msgid "OnEarth Tiled WMS"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:226
+msgid ""
+"The OnEarth Tiled WMS minidriver supports the Tiled WMS specification "
+"implemented for the JPL OnEarth driver per the specification at http://web."
+"archive.org/web/20130511182803/http://onearth.jpl.nasa.gov/tiled.html."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:230
+msgid ""
+"Only the ServerUrl and the TiledGroupName are required, most of the required "
+"information is automatically fetched from the remote server using the "
+"GetTileService method at open time."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:233
+msgid "A typical OnEarth Tiled WMS configuration file might look like:"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:237
+msgid ""
+"<GDAL_WMS>\n"
+"    <Service name=\"TiledWMS\">\n"
+"    <ServerUrl>https://gibs.earthdata.nasa.gov/twms/epsg4326/best/twms.cgi?</"
+"ServerUrl>\n"
+"    <TiledGroupName>MODIS Terra CorrectedReflectance TrueColor tileset</"
+"TiledGroupName>\n"
+"    <Change key=\"${time}\">2020-02-02</Change>\n"
+"    </Service>\n"
+"</GDAL_WMS>"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:245
+msgid "The TiledWMS minidriver can use the following open options :"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:247
+msgid ""
+"TiledGroupName -- The value is a string that identifies one of the tiled "
+"services available on the server"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:249
+msgid ""
+"Change -- A <Key>:<Value> pair, which will be passed to the server. The key "
+"has to match a change key that the server declares for the respective tiled "
+"group. This option can be used multiple times, for different keys. Example: "
+"-  Change=time:2020-02-02"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:255
+msgid ""
+"These open options are only accepted if the corresponding XML element is not "
+"present in the configuration file."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:259
+msgid "VirtualEarth"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:261
+msgid ""
+"Access to web-based Virtual Earth tile services. Access is always tile based."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:264
+msgid "The ${quadkey} variable must be found in the ServerUrl element."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:266
+msgid "The DataWindow element might be omitted. The default values are :"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:268
+msgid "UpperLeftX = -20037508.34"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:269
+msgid "UpperLeftY = 20037508.34"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:270
+msgid "LowerRightX = 20037508.34"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:271
+msgid "LowerRightY = -20037508.34"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:272
+msgid "TileLevel = 21"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:273
+msgid "OverviewCount = 20"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:274
+msgid "SRS = EPSG:3857"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:275
+msgid "BlockSizeX = 256"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:276
+msgid "BlockSizeY = 256"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:279
+msgid "ArcGIS REST API"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:281
+msgid ""
+"Access to ArcGIS REST `map service resource <http://resources.arcgis.com/en/"
+"help/rest/apiref/mapserver.html>`__ (untiled requests)."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:285
+msgid ""
+"AGS layers can be `queried <http://resources.arcgis.com/en/help/rest/apiref/"
+"identify.html>`__ (through a GetFeatureInfo request) with the "
+"gdallocationinfo utility, or with a GetMetadataItem(\"Pixel_iCol_iLine\", "
+"\"LocationInfo\") call on a band object."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:293
+msgid ""
+"gdallocationinfo -wgs84 \"<GDAL_WMS><Service name=\\\"AGS\\"
+"\"><ServerUrl>http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/"
+"Specialty/ESRI_StateCityHighway_USA/MapServer</ServerUrl><BBoxOrder>xyXY</"
+"BBoxOrder><SRS>3857</SRS></Service><DataWindow><UpperLeftX>-20037508.34</"
+"UpperLeftX><UpperLeftY>20037508.34</UpperLeftY><LowerRightX>20037508.34</"
+"LowerRightX><LowerRightY>-20037508.34</LowerRightY><SizeX>512</"
+"SizeX><SizeY>512</SizeY></DataWindow></GDAL_WMS>\" -75.704 39.75"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:297
+msgid "Internet Imaging Protocol (IIP) (GDAL 2.1 and later)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:299
+msgid ""
+"Access to images served through `IIP protocol <https://en.wikipedia.org/wiki/"
+"Internet_Imaging_Protocol>`__. The server must support the JTL (Retrieve a "
+"tile as a complete JFIF image) extension of the IIP protocol."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:304
+msgid "If using the XML syntax, the ServerURL must contain the FIF parameter."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:306
+msgid ""
+"Otherwise it is also possible to use \"IIP:http://foo.com/FIF=image_name\" "
+"syntax as connection string, to retrieve from the server information on the "
+"full resolution dimension and the number of resolutions."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:310
+msgid ""
+"The XML definition can then be generated with \"gdal_translate IIP:http://"
+"foo.com/FIF=image_name out.xml -of WMS\""
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:314
+msgid "Caching"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:316
+msgid ""
+"Caching of remote pixel data is possible by setting a <Cache> element in the "
+"WMS configuration file."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:319
+msgid ""
+"Before GDAL 3.9, if the <Path> sub-element of <Cache> was not specified, the "
+"directory of the cache was ``./gdalwmscache`` (that is to say a "
+"``gdalwmscache`` subdiretory of the current directory), unless the :config:"
+"`GDAL_DEFAULT_WMS_CACHE_PATH` configuration option is specified."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:324
+msgid ""
+"Starting with GDAL 3.9, the directory of the cache is set according to the "
+"following logic (first listed criterion is prioritary over following ones):"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:327
+msgid "Value of the <Path> sub-element of <Cache>, if specified."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:329
+msgid ""
+"``${GDAL_DEFAULT_WMS_CACHE_PATH}`` if :config:`GDAL_DEFAULT_WMS_CACHE_PATH` "
+"is set."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:331
+msgid ""
+"``${XDG_CACHE_HOME}/gdalwmscache`` if the ``XDG_CACHE_HOME`` configuration "
+"option is set."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:333
+msgid ""
+"On Unix, ``${HOME}/.cache/gdalwmscache`` if the ``HOME`` configuration "
+"option is set."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:335
+msgid ""
+"On Windows, ``${USERPROFILE}/.cache/gdalwmscache`` if the ``USERPROFILE`` "
+"configuration option is set."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:337
+msgid ""
+"``${CPL_TMPDIR}/gdalwmscache_${USER}`` if :config:`CPL_TMPDIR` and ``USER`` "
+"configuration options are set."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:339
+msgid "If ``CPL_TMPDIR`` is not set, then ``TMPDIR`` is used, or ``TEMP``"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:341
+msgid ""
+"If ``USER`` is not set, ``USERNAME`` is used if set. If neither ``USERNAME`` "
+"or ``USER`` are set, the md5sum of the filename of the configuration file is "
+"used)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:344
+msgid ""
+"``./gdalwmscache_{md5sum(filename)}`` if none of the above mentioned "
+"configuration options are set."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:346
+msgid ""
+"Note that if the <Unique> element is set to true (which is its default "
+"value), a subdirectory whose name is the md5sum of the filename of the "
+"configuration file is appended to the caching directory."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:350
+msgid ""
+"The actual caching directory can be got by querying the ``CACHE_PATH`` "
+"metadata item on the dataset."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:354
+msgid "Configuration options"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:356
+msgid ""
+"The following :ref:`configuration options <configoptions>` are available:"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:382
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:386
+msgid ""
+"The below examples rely on external servers that might go down over time. "
+"They are just here to demonstrate how to use the various services."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:0
+msgid ""
+"`onearth_global_mosaic.xml <https://github.com/OSGeo/gdal/blob/master/frmts/"
+"wms/frmt_wms_onearth_global_mosaic.xml>`__ - Landsat mosaic from a `OnEarth "
+"<http://onearth.jpl.nasa.gov/>`__ WMS server"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:396
+msgid ""
+"gdal_translate -of JPEG -outsize 500 250 onearth_global_mosaic.xml "
+"onearth_global_mosaic.jpg"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:400
+msgid ""
+"gdal_translate -of JPEG -projwin -10 55 30 35 -outsize 500 250 "
+"onearth_global_mosaic.xml onearth_global_mosaic2.jpg"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:402
+msgid ""
+"*Note : this particular server does no longer accept regular WMS queries.*"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:405
+msgid ""
+"`metacarta_wmsc.xml <https://github.com/OSGeo/gdal/blob/master/frmts/wms/"
+"frmt_wms_metacarta_wmsc.xml>`__ - It is possible to configure a WMS Service "
+"conforming to a WMS-C cache by specifying a number of overviews and "
+"specifying the 'block size' as the tile size of the cache. The following "
+"example is a sample set up for a 19-level \"Global Profile\" WMS-C cache."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:0
+msgid ""
+"`tileservice_bmng.xml <https://github.com/OSGeo/gdal/blob/master/frmts/wms/"
+"frmt_wms_tileservice_bmng.xml>`__ - - TileService, Blue Marble NG (January)"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:0
+msgid ""
+"`tileservice_nysdop2004.xml <https://github.com/OSGeo/gdal/blob/master/frmts/"
+"wms/frmt_wms_tileservice_nysdop2004.xml>`__ - TileService, NYSDOP 2004"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:0
+msgid ""
+"`OpenStreetMap TMS Service Example <https://github.com/OSGeo/gdal/blob/"
+"master/frmts/wms/frmt_wms_openstreetmap_tms.xml>`__: Connect to "
+"OpenStreetMap tile service. Note that this file takes advantage of the tile "
+"cache; more information about configuring the tile cache settings is "
+"available above. Please also change the <UserAgent>, to avoid the default "
+"one being used, and potentially blocked by OSM servers in case a too big "
+"usage of it would be seen."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:0
+msgid ""
+"``gdal_translate -of PNG -outsize 512 512 frmt_wms_openstreetmap_tms.xml "
+"openstreetmap.png``"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:0
+msgid ""
+"`MetaCarta TMS Layer Example <https://github.com/OSGeo/gdal/blob/master/"
+"frmts/wms/frmt_wms_metacarta_tms.xml>`__, accessing the default MetaCarta "
+"TMS layer."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:0
+msgid ""
+"``gdal_translate -of PNG -outsize 512 256 frmt_wms_metacarta_tms.xml "
+"metacarta.png``"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:430
+msgid ""
+"`BlueMarble Amazon S3 Example <https://github.com/OSGeo/gdal/blob/master/"
+"frmts/wms/frmt_wms_bluemarble_s3_tms.xml>`__ accessed with the TMS "
+"minidriver."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:433
+msgid ""
+"`Google Maps <https://github.com/OSGeo/gdal/blob/master/frmts/wms/"
+"frmt_wms_googlemaps_tms.xml>`__ accessed with the TMS minidriver."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:436
+msgid ""
+"`ArcGIS MapServer Tiles <https://github.com/OSGeo/gdal/blob/master/frmts/wms/"
+"frmt_wms_arcgis_mapserver_tms.xml>`__ accessed with the TMS minidriver."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:439
+msgid ""
+"OnEarth Tiled WMS `Clementine <https://github.com/OSGeo/gdal/blob/master/"
+"frmts/wms/frmt_twms_Clementine.xml>`__, `daily <https://github.com/OSGeo/"
+"gdal/blob/master/frmts/wms/frmt_twms_daily.xml>`__, and `srtm <https://"
+"github.com/OSGeo/gdal/blob/master/gdal/frmts/wms/frmt_twms_srtm.xml>`__ "
+"examples."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:443
+msgid ""
+"`VirtualEarth Aerial Layer <https://github.com/OSGeo/gdal/blob/master/frmts/"
+"wms/frmt_wms_virtualearth.xml>`__ accessed with the VirtualEarth minidriver."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:446
+msgid ""
+"`ArcGIS online sample server layer <https://github.com/OSGeo/gdal/blob/"
+"master/frmts/wms/frmt_ags_arcgisonline.xml>`__ accessed with the ArcGIS "
+"Server REST API minidriver."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:449
+msgid ""
+"`IIP online sample server layer <https://github.com/OSGeo/gdal/blob/master/"
+"frmts/wms/frmt_wms_iip.xml>`__ accessed with the IIP minidriver."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:453
+msgid "Open syntax"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:455
+msgid "The WMS driver can open :"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:457
+msgid "a local service description XML file :"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:461
+msgid "gdalinfo description_file.xml"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:463
+msgid "the content of a description XML file provided as filename :"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:467
+msgid ""
+"gdalinfo \"<GDAL_WMS><Service name=\\\"TiledWMS\\\"><ServerUrl>https://gibs."
+"earthdata.nasa.gov/twms/epsg4326/best/twms.cgi?</"
+"ServerUrl><TiledGroupName>MODIS Terra CorrectedReflectance Bands367 tileset</"
+"TiledGroupName></Service></GDAL_WMS>\""
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:469
+msgid "the base URL of a WMS service, prefixed with *WMS:* :"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:473
+msgid "gdalinfo \"WMS:http://wms.geobase.ca/wms-bin/cubeserv.cgi\""
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:475
+msgid ""
+"A list of subdatasets will be returned, resulting from the parsing of the "
+"GetCapabilities request on that server."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:478
+msgid ""
+"a pseudo GetMap request, such as the subdataset name returned by the "
+"previous syntax :"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:483
+msgid ""
+"gdalinfo \"WMS:http://wms.geobase.ca/wms-bin/cubeserv.cgi?"
+"SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=DNEC_250K%3AELEVATION%2FELEVATION&SRS=EPSG:42304&BBOX=-3000000,-1500000,6000000,4500000\""
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:485
+msgid ""
+"the base URL of a Tiled WMS service, prefixed with *WMS:* and with "
+"request=GetTileService as GET argument:"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:490
+msgid ""
+"gdalinfo \"WMS:https://gibs.earthdata.nasa.gov/twms/epsg4326/best/twms.cgi?"
+"request=GetTileService\""
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:492
+msgid ""
+"A list of subdatasets will be returned, resulting from the parsing of the "
+"GetTileService request on that server."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:495
+msgid "the URL of a REST definition for a ArcGIS MapServer:"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:499
+msgid ""
+"gdalinfo \"http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/"
+"MapServer?f=json&pretty=true\""
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:501
+msgid "(GDAL >= 2.1.0) the URL of a IIP image:"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:505
+msgid ""
+"gdalinfo \"IIP:http://merovingio.c2rmf.cnrs.fr/fcgi-bin/iipsrv.fcgi?"
+"FIF=globe.256x256.tif\""
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:508
+msgid "Generation of WMS service description XML file"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:510
+msgid ""
+"The WMS service description XML file can be generated manually, or created "
+"as the output of the CreateCopy() operation of the WMS driver, only if the "
+"source dataset is itself a WMS dataset. Said otherwise, you can use "
+"gdal_translate with as source dataset any of the above syntax mentioned in "
+"\"Open syntax\" and as output an XML file. For example:"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:518
+msgid ""
+"gdal_translate \"http://server.arcgisonline.com/ArcGIS/rest/services/"
+"World_Imagery/MapServer?f=json\" wms.xml -of WMS"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:520
+msgid ""
+"The generated file will come with default values that you may need to edit."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:524
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:526
+msgid "`OGC WMS Standards <http://www.opengeospatial.org/standards/wms>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:527
+msgid ""
+"`WMS Tiling Client Recommendation (WMS-C) <http://wiki.osgeo.org/index.php/"
+"WMS_Tiling_Client_Recommendation>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:529
+msgid ""
+"`WorldWind TileService <http://www.worldwindcentral.com/wiki/TileService>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:531
+msgid ""
+"`TMS Specification <http://wiki.osgeo.org/wiki/"
+"Tile_Map_Service_Specification>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:533
+msgid ""
+"`OnEarth Tiled WMS specification <http://web.archive.org/web/20130511182803/"
+"http://onearth.jpl.nasa.gov/tiled.html>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:535
+msgid ""
+"`ArcGIS Server REST API <http://resources.arcgis.com/en/help/rest/apiref/>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:537
+msgid ":ref:`raster.wmts` driver page."
+msgstr ""

@@ -1,0 +1,675 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:5
+msgid "RFC 90: Direct access to compressed raster data"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:8
+msgid "Author:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:8
+msgid "Even Rouault"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:9
+msgid "Contact:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:9
+msgid "even.rouault at spatialys.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:10
+msgid "Started:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:10
+msgid "2023-Jan-03"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:11
+msgid "Status:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:11
+msgid "Adopted, implemented"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:12
+msgid "Target:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:12
+msgid "GDAL 3.7"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:16
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:18
+msgid ""
+"The document proposes 2 new methods to directly obtain the content of a "
+"window of interest of a raster dataset in its native compressed format. "
+"Those methods can be optionally implemented and used by drivers to perform:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:22
+msgid ""
+"extraction of a compressed tile as a standalone file from a container format "
+"(GeoTIFF, GeoPackage, etc.)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:25
+msgid "creation of mosaics from a set of tiles in individual files"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:27
+msgid ""
+"lossless conversion between container formats using the same compression "
+"method"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:31
+msgid "Motivation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:33
+msgid ""
+"When converting data between formats, calls to RasterIO(GF_Read, ...) "
+"followed by RasterIO(GF_Write, ...) must be currently done. For compressed "
+"formats, this causes decompression and recompression of data."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:37
+msgid ""
+"In some particular cases, we could avoid decompressing and recompressing "
+"when the underlying compression method is the same (or compatible), and when "
+"requesting data aligned on the boundaries of the encoded data (typically "
+"whole tiles). This would save execution time and would avoid extra quality "
+"loss due to recompression cycles for lossy compression methods."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:43
+msgid ""
+"This RFC offers the framework to potentially address the following use cases "
+"(non exhaustive list):"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:46
+msgid ""
+"extraction of a JPEG (resp. WEBP, JPEGXL)-compressed whole tile from a "
+"GeoTIFF file to a standalone JPEG (resp. WEBP, JPEGXL) file. Typical "
+"scenario of tile servers using a GeoTIFF file as a tile backend."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:50
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:55
+msgid ""
+"similarly as above, but with GeoPackage and JPEG/PNG/WEBP compression "
+"methods."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:52
+msgid ""
+"extraction of a subset of whole tiles of a JPEG/WEBP/JPEGXL-compressed tiled "
+"GeoTIFF to a tiled GeoTIFF using the same compression method."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:57
+msgid ""
+"lossless conversion of a mosaic of JPEG, WEBP, etc. non-overlapping and "
+"contiguous tiles, each in a separate file, assembled as a VRT mosaic, to a "
+"tiled GeoTIFF using the same compression method, with the tile dimension "
+"being the one of each source file."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:62
+msgid ""
+"lossless conversion of a JPEG-compressed (resp. WEBP-compressed) tiled "
+"GeoTIFF to a JPEG-compressed (resp. WEBP-compressed) GeoPackage file and "
+"vice-versa. Or a subset of the file, provided that the window of interest is "
+"aligned on tiles boundaries."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:67
+msgid ""
+"lossless conversion of JPEG to JPEGXL (currently implemented in master in a "
+"rather ad-hoc way in the JPEGXL driver)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:70
+msgid ""
+"lossless conversion of JPEGXL that has JPEG reconstruction box back to JPEG "
+"(currently implemented in master in a rather ad-hoc way in the JPEGXL and "
+"JPEGXL drivers)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:74
+msgid ""
+"lossless conversion of JPEG-compressed tiled GeoTIFF to a JPEGXL-compressed "
+"tiled GeoTIFF (and the reverse if JPEG reconstruction box is included). Or a "
+"subset of the file, provided that the window of interest is aligned on tiles "
+"boundaries."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:79
+msgid ""
+"extraction of a subset of a JPEG-compressed tiled GeoTIFF to a standalone "
+"JPEG file, with a window of interest not necessarily aligned on tile "
+"boundaries, but just on the JPEG MCU (Minimum Code Unit), which is equal to "
+"8 pixels in the general case, and 16 for YCbCr data. And when intersecting "
+"several tiles, provided that they share the same quality settings (which is "
+"usually the case!) Or lossless retiling of JPEG-compressed tiled GeoTIFF (e."
+"g 256x256 -> 512x512)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:88
+msgid ""
+"The proposed candidate implementation only covers a subset of those use "
+"cases (some of them would require significant implementation effort), but "
+"the proposed API addition makes them possible pending further developments."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:94
+msgid "Technical details"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:96
+msgid ""
+"The following 2 new methods are added at the :cpp:class:`GDALDataset` level:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:99
+msgid "GetCompressionFormats()"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:101
+msgid ""
+"/** Return the compression formats that can be natively obtained for the\n"
+" * window of interest and requested bands.\n"
+" *\n"
+" * For example, a tiled dataset may be able to return data in a compressed\n"
+" * format if the window of interest matches exactly a tile. For some "
+"formats,\n"
+" * drivers may also be able to merge several tiles together (not currently\n"
+" * implemented though).\n"
+" *\n"
+" * Each format string is a pseudo MIME type, whose first part can be passed\n"
+" * as the pszFormat argument of ReadCompressedData(), with additional\n"
+" * parameters specified as key=value with a semi-colon separator.\n"
+" *\n"
+" * The amount and types of optional parameters passed after the MIME type "
+"is\n"
+" * format dependent, and driver dependent (some drivers might not be able "
+"to\n"
+" * return those extra information without doing a rather costly "
+"processing).\n"
+" *\n"
+" * For example, a driver might return \"JPEG;frame_type=SOF0_baseline;\"\n"
+" * \"bit_depth=8;num_components=3;subsampling=4:2:0;colorspace=YCbCr\", and\n"
+" * consequently \"JPEG\" can be passed as the pszFormat argument of\n"
+" * ReadCompressedData(). For JPEG, implementations can use the\n"
+" * GDALGetCompressionFormatForJPEG() helper method to generate a string "
+"like\n"
+" * above from a JPEG codestream.\n"
+" *\n"
+" * Several values might be returned. For example,\n"
+" * the JPEGXL driver will return \"JXL\", but also potentially \"JPEG\"\n"
+" * if the JPEGXL codestream includes a JPEG reconstruction box.\n"
+" *\n"
+" * In the general case this method will return an empty list.\n"
+" *\n"
+" * @param nXOff The pixel offset to the top left corner of the region\n"
+" * of the band to be accessed.  This would be zero to start from the left "
+"side.\n"
+" *\n"
+" * @param nYOff The line offset to the top left corner of the region\n"
+" * of the band to be accessed.  This would be zero to start from the top.\n"
+" *\n"
+" * @param nXSize The width of the region of the band to be accessed in "
+"pixels.\n"
+" *\n"
+" * @param nYSize The height of the region of the band to be accessed in "
+"lines.\n"
+" *\n"
+" * @param nBandCount the number of bands being requested.\n"
+" *\n"
+" * @param panBandList the list of nBandCount band numbers.\n"
+" * Note band numbers are 1 based. This may be NULL to select the first\n"
+" * nBandCount bands.\n"
+" *\n"
+" * @return a list of compatible formats (which may be empty)\n"
+" *\n"
+" * @since GDAL 3.7\n"
+" */\n"
+"CPLStringList\n"
+"GDALDataset::GetCompressionFormats(int nXOff, int nYOff,\n"
+"                                   int nXSize, int nYSize,\n"
+"                                   int nBandCount,\n"
+"                                   const int *panBandList);"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:158
+msgid ""
+"For example, to check if native compression format(s) are available on the "
+"whole image:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:162
+msgid ""
+"const CPLStringList aosFormats =\n"
+"   poDataset->GetCompressionFormats(0, 0,\n"
+"                                    poDataset->GetRasterXSize(),\n"
+"                                    poDataset->GetRasterYSize(),\n"
+"                                    poDataset->GetRasterCount(),\n"
+"                                    nullptr);\n"
+"for( const char* pszFormat: aosFormats )\n"
+"{\n"
+"   // Remove optional parameters and just print out the MIME type.\n"
+"   const CPLStringList aosTokens(CSLTokenizeString2(pszFormat, \";\", 0));\n"
+"   printf(\"Found format %s\\n, aosTokens[0]);\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:179
+msgid "ReadCompressedData()"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:181
+msgid ""
+"/** Return the compressed content that can be natively obtained for the\n"
+" * window of interest and requested bands.\n"
+" *\n"
+" * For example, a tiled dataset may be able to return data in compressed "
+"format\n"
+" * if the window of interest matches exactly a tile. For some formats, "
+"drivers\n"
+" * may also be able to merge several tiles together (not currently\n"
+" * implemented though).\n"
+" *\n"
+" * The implementation should make sure that the content returned forms a "
+"valid\n"
+" * standalone file. For example, for the GeoTIFF implementation of this "
+"method,\n"
+" * when extracting a JPEG tile, the method will automatically add the "
+"content\n"
+" * of the JPEG Huffman and/or quantization tables that might be stored in "
+"the\n"
+" * TIFF JpegTables tag, and not in tile data itself.\n"
+" *\n"
+" * In the general case this method will return CE_Failure.\n"
+" *\n"
+" * @param pszFormat Requested compression format (e.g. \"JPEG\",\n"
+" * \"WEBP\", \"JXL\"). This is the MIME type of one of the values\n"
+" * returned by GetCompressionFormats(). The format string is designed to\n"
+" * potentially include at a later point key=value optional parameters "
+"separated\n"
+" * by a semi-colon character. At time of writing, none are implemented.\n"
+" * ReadCompressedData() implementations should verify optional parameters "
+"and\n"
+" * return CE_Failure if they cannot support one of them.\n"
+" *\n"
+" * @param nXOff The pixel offset to the top left corner of the region\n"
+" * of the band to be accessed.  This would be zero to start from the left "
+"side.\n"
+" *\n"
+" * @param nYOff The line offset to the top left corner of the region\n"
+" * of the band to be accessed.  This would be zero to start from the top.\n"
+" *\n"
+" * @param nXSize The width of the region of the band to be accessed in "
+"pixels.\n"
+" *\n"
+" * @param nYSize The height of the region of the band to be accessed in "
+"lines.\n"
+" *\n"
+" * @param nBandCount the number of bands being requested.\n"
+" *\n"
+" * @param panBandList the list of nBandCount band numbers.\n"
+" * Note band numbers are 1 based. This may be NULL to select the first\n"
+" * nBandCount bands.\n"
+" *\n"
+" * @param ppBuffer Pointer to a buffer to store the compressed data or "
+"nullptr.\n"
+" * If ppBuffer is not nullptr, then pnBufferSize should also not be "
+"nullptr.\n"
+" * If ppBuffer is not nullptr, and *ppBuffer is not nullptr, then the "
+"provided\n"
+" * buffer will be filled with the compressed data, provided that "
+"pnBufferSize\n"
+" * and *pnBufferSize are not nullptr, and *pnBufferSize, indicating the "
+"size\n"
+" * of *ppBuffer, is sufficiently large to hold the data.\n"
+" * If ppBuffer is not nullptr, but *ppBuffer is nullptr, then the method "
+"will\n"
+" * allocate *ppBuffer using VSIMalloc(), and thus the caller is responsible "
+"to\n"
+" * free it with VSIFree().\n"
+" * If ppBuffer is nullptr, then the compressed data itself will not be "
+"returned,\n"
+" * but *pnBufferSize will be updated with an upper bound of the size that "
+"would\n"
+" * be necessary to hold it (if pnBufferSize != nullptr).\n"
+" *\n"
+" * @param pnBufferSize Output buffer size, or nullptr.\n"
+" * If ppBuffer != nullptr && *ppBuffer != nullptr, then pnBufferSize should\n"
+" * be != nullptr and *pnBufferSize contain the size of *ppBuffer. If the\n"
+" * method is successful, *pnBufferSize will be updated with the actual size\n"
+" * used.\n"
+" *\n"
+" * @param ppszDetailedFormat Pointer to an output string, or nullptr.\n"
+" * If ppszDetailedFormat is not nullptr, then, on success, the method will\n"
+" * allocate a new string in *ppszDetailedFormat (to be freed with "
+"VSIFree())\n"
+" * *ppszDetailedFormat might contain strings like\n"
+" * \"JPEG;frame_type=SOF0_baseline;bit_depth=8;num_components=3;\"\n"
+" * \"subsampling=4:2:0;colorspace=YCbCr\" or simply the MIME type.\n"
+" * The string will contain at least as much information as what\n"
+" * GetCompressionFormats() returns, and potentially more when\n"
+" * ppBuffer != nullptr.\n"
+" *\n"
+" * @return CE_None in case of success, CE_Failure otherwise.\n"
+" * @since GDAL 3.7\n"
+" */\n"
+"CPLErr GDALDataset::ReadCompressedData(\n"
+"    const char *pszFormat, int nXOff,\n"
+"    int nYOff, int nXSize, int nYSize,\n"
+"    int nBandCount, const int *panBandList,\n"
+"    void **ppBuffer, size_t *pnBufferSize,\n"
+"    char **ppszDetailedFormat);"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:263
+msgid ""
+"For example, to request JPEG content on the whole image and let GDAL deal "
+"with the buffer allocation."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:266
+msgid ""
+"void* pBuffer = nullptr;\n"
+"size_t nBufferSize = 0;\n"
+"CPLErr eErr =\n"
+"   poDataset->ReadCompressedData(\"JPEG\",\n"
+"                                 0, 0,\n"
+"                                 poDataset->GetRasterXSize(),\n"
+"                                 poDataset->GetRasterYSize(),\n"
+"                                 poDataset->GetRasterCount(),\n"
+"                                 nullptr, // panBandList\n"
+"                                 &pBuffer,\n"
+"                                 &nBufferSize,\n"
+"                                 nullptr // ppszDetailedFormat\n"
+"                                );\n"
+"if (eErr == CE_None)\n"
+"{\n"
+"    CPLAssert(pBuffer != nullptr);\n"
+"    CPLAssert(nBufferSize > 0);\n"
+"    VSILFILE* fp = VSIFOpenL(\"my.jpeg\", \"wb\");\n"
+"    if (fp)\n"
+"    {\n"
+"        VSIFWriteL(pBuffer, nBufferSize, 1, fp);\n"
+"        VSIFCloseL(fp);\n"
+"    }\n"
+"    VSIFree(pBuffer);\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:295
+msgid "Or to manage the buffer allocation on your side:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:297
+msgid ""
+"size_t nUpperBoundBufferSize = 0;\n"
+"CPLErr eErr =\n"
+"   poDataset->ReadCompressedData(\"JPEG\",\n"
+"                                 0, 0,\n"
+"                                 poDataset->GetRasterXSize(),\n"
+"                                 poDataset->GetRasterYSize(),\n"
+"                                 poDataset->GetRasterCount(),\n"
+"                                 nullptr, // panBandList\n"
+"                                 nullptr, // ppBuffer,\n"
+"                                 &nUpperBoundBufferSize,\n"
+"                                 nullptr // ppszDetailedFormat\n"
+"                                );\n"
+"if (eErr == CE_None)\n"
+"{\n"
+"    std::vector<uint8_t> myBuffer;\n"
+"    myBuffer.resize(nUpperBoundBufferSize);\n"
+"    void* pBuffer = myBuffer.data();\n"
+"    size_t nActualSize = nUpperBoundBufferSize;\n"
+"    char* pszDetailedFormat = nullptr;\n"
+"    // We also request detailed format, but we could have passed it to\n"
+"    // nullptr as well.\n"
+"    eErr =\n"
+"      poDataset->ReadCompressedData(\"JPEG\",\n"
+"                                    0, 0,\n"
+"                                    poDataset->GetRasterXSize(),\n"
+"                                    poDataset->GetRasterYSize(),\n"
+"                                    poDataset->GetRasterCount(),\n"
+"                                    nullptr, // panBandList\n"
+"                                    &pBuffer,\n"
+"                                    &nActualSize,\n"
+"                                    &pszDetailedFormat);\n"
+"    if (eErr == CE_None)\n"
+"    {\n"
+"       CPLAssert(pBuffer == myBuffer.data()); // pointed value not modified\n"
+"       CPLAssert(nActualSize <= nUpperBoundBufferSize);\n"
+"       myBuffer.resize(nActualSize);\n"
+"       // do something useful\n"
+"       VSIFree(pszDetailedFormat);\n"
+"    }\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:342
+msgid "LOSSLESS_COPY creation option"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:344
+msgid ""
+"Those methods are typically used by a GDALDriver::CreateCopy() "
+"implementation to short-circuit the nominal logic of acquiring pixels from "
+"the source and compressing them and use instead the compressed data if "
+"available in the desired target compression format."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:349
+msgid ""
+"Drivers that implement such short-circuit should expose a LOSSLESS_COPY "
+"creation option, whose default value is AUTO, to mean that use of source "
+"compressed data should be done in priority, and fallback to the regular code "
+"path otherwise. Users might set it to YES to require the use of lossless "
+"copy, and, when it is not possible to use it, the driver should error out. "
+"Users might also set it to NO to ask for the regular code path to be taken. "
+"Setting it to NO should be uncommon. This is a provision in case the "
+"optimized code path would have bugs, or if for any other reason, the regular "
+"code path must be taken (if the source compressed data was not fully "
+"conformant for example)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:361
+msgid "Miscellaneous"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:363
+msgid ""
+"A helper ``bool GDALDataset::IsAllBands(int nBandCount, const int "
+"*panBandList) const`` method is also added to check if (nBandCount, "
+"panBandList) requests all the bands of the dataset."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:369
+msgid "Intended use"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:371
+msgid ""
+"This RFC does *not* deprecate the traditional RasterIO() usage by any means. "
+"Its main intended users are (some) CreateCopy() implementations."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:374
+msgid ""
+"Clearly, the use of ReadCompressedData() is an advanced one, which often "
+"requires a good understanding of some low-level characteristics of the "
+"compression methods to be used properly (e.g. not all formulations of JPEG "
+"codestreams are usable as a JPEG-in-TIFF or supported by libjxl in JPEG "
+"lossless transcoding, which requires to examine the output of the new helper "
+"GDALGetCompressionFormatForJPEG() function)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:382
+msgid "C API"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:384
+msgid ""
+"The 2 above C++ methods are available in the C API as "
+"``GDALDatasetGetCompressionFormats()`` and "
+"``GDALDatasetReadCompressedData()``. The return of "
+"GDALDatasetGetCompressionFormats() should be freed with :cpp:func:"
+"`CSLDestroy`."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:390
+msgid "Backward compatibility"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:392
+msgid "No backward incompatibility. Only API addition."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:394
+msgid ""
+"For driver using ReadCompressedData() in their CreateCopy() implementation, "
+"generated files might be changed, with more frequent lossless conversions."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:398
+msgid "SWIG Bindings"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:400
+msgid "The new functions will *not* be exposed to bindings currently."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:403
+msgid "Testing"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:405
+msgid ""
+"The scenarios covered by the below proposed implementation will be tested by "
+"C++ unit tests (unit testing of GetCompressionFormats() and "
+"ReadCompressedData() implementations), and in Python autotest suite for end-"
+"to-end tests (e.g lossless JPEG -> JPEGXL -> JPEG)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:411
+msgid "Issues / pull requests"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:413
+msgid ""
+"https://github.com/OSGeo/gdal/compare/master...rouault:gdal:"
+"ReadCompressedData?expand=1 contains a candidate implementation with the "
+"following capabilities:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:416
+msgid ""
+"core empty implementation of GetCompressionFormats() and ReadCompressedData()"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:418
+msgid ""
+"implement ReadCompressedData() in the GeoTIFF driver for JPEG/WEBP/JPEGXL "
+"compression (limited to extracting a single tile for now)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:421
+msgid ""
+"implement ReadCompressedData() in the VRT driver (limited to a single source "
+"for now, which forwards the call to the source)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:424
+msgid "implement ReadCompressedData() in the JPEG driver."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:426
+msgid ""
+"use ReadCompressedData() in the JPEG driver (with pszFormat equal to "
+"\"JPEG\") in its CreateCopy() implementation, and expose the LOSSLESS_COPY "
+"creation option"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:430
+msgid ""
+"implement ReadCompressedData() in the JPEGXL driver, returning both \"JXL\" "
+"of course, but also \"JPEG\" if the JPEGXL file includes a JPEG "
+"reconstruction box."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:433
+msgid ""
+"use ReadCompressedData() in the JPEGXL driver, with pszFormat equal to "
+"\"JPEG\" or \"JXL\", in its CreateCopy() implementation, and expose the "
+"LOSSLESS_COPY creation option"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:437
+msgid "implement ReadCompressedData() in the WEBP driver."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:439
+msgid ""
+"use ReadCompressedData() in the WEBP driver (with pszFormat equal to "
+"\"WEBP\") in its CreateCopy() implementation, and expose the LOSSLESS_COPY "
+"creation option"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:443
+msgid "Given the above, the following scenarios are for example covered:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:445
+msgid ""
+"gdal_translate -srcwin of a tile of a JPEG (resp. JPEGXL, WEBP)-compressed "
+"tiled GeoTIFF to JPEG (resp. JPEGXL, WEBP). (involves the GTiff and VRT "
+"drivers as producers, the JPEG/JPEGXL/WEBP drivers as consumers)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:450
+msgid ""
+"gdal_translate of a JPEGXL file with JPEG reconstruction box to JPEG "
+"(involves the JPEGXL driver as producer, the JPEG driver as consumer). And "
+"the reverse operation: lossless conversion of JPEG to JPEGXL with a JPEG "
+"reconstruction box."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:456
+msgid "Voting history"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc90_read_compressed_data.rst:458
+msgid "+1 from PSC members JukkaR, FrankW, SeanG, MateuzL and EvenR"
+msgstr ""

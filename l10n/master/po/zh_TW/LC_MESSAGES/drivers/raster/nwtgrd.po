@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/nwtgrd.rst:5
+msgid "NWT_GRD/NWT_GRC -- Northwood/Vertical Mapper File Format"
+msgstr ""
+
+#: ../../../source/drivers/raster/nwtgrd.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/nwtgrd.rst:7
+msgid "NWT_GRD"
+msgstr ""
+
+#: ../../../source/drivers/raster/nwtgrd.rst:9
+msgid "NWT_GRC"
+msgstr ""
+
+#: ../../../source/drivers/raster/nwtgrd.rst:13
+msgid ""
+"Support for reading & writing Northwood GRID raster formats. This format is "
+"also known as Vertical Mapper Grid or MapInfo Grid and is commonly used in "
+"MapInfo Pro software"
+msgstr ""
+
+#: ../../../source/drivers/raster/nwtgrd.rst:17
+msgid ""
+"Full read/write support of \\*.grd (grid) files is available, read-only "
+"support is available for classified grids (\\*.grc)."
+msgstr ""
+
+#: ../../../source/drivers/raster/nwtgrd.rst:20
+msgid "For writing, Float32 is the only supported band type."
+msgstr ""
+
+#: ../../../source/drivers/raster/nwtgrd.rst:23
+msgid "Driver capabilities (NWT_GRD)"
+msgstr ""
+
+#: ../../../source/drivers/raster/nwtgrd.rst:34
+msgid "Driver capabilities (NWT_GRC)"
+msgstr ""
+
+#: ../../../source/drivers/raster/nwtgrd.rst:41
+msgid "Color Information"
+msgstr ""
+
+#: ../../../source/drivers/raster/nwtgrd.rst:43
+msgid ""
+"The grid formats have color information embedded in the grid file header. "
+"This describes how to scale data values to RGB values. When opening in read "
+"mode, the driver will report 4 bands - R, G, B and the data band. In reality "
+"there is 1 band and the RGB bands are 'virtual', made from scaling data. For "
+"this reason, when opening in write mode only 1 band is reported and the RGB "
+"bands are unavailable."
+msgstr ""
+
+#: ../../../source/drivers/raster/nwtgrd.rst:51
+msgid "Metadata"
+msgstr ""
+
+#: ../../../source/drivers/raster/nwtgrd.rst:53
+msgid "GDAL Metadata items are stored in the PAM .aux.xml file"
+msgstr ""
+
+#: ../../../source/drivers/raster/nwtgrd.rst:55
+msgid "Northwood Grid itself does not natively support arbitrary metadata"
+msgstr ""
+
+#: ../../../source/drivers/raster/nwtgrd.rst:58
+msgid "Nodata values"
+msgstr ""
+
+#: ../../../source/drivers/raster/nwtgrd.rst:60
+msgid ""
+"In write mode, it is possible to designate any value as the nodata value. "
+"These values are translated to the Vertical Mapper no data value when "
+"writing. Therefore, in read mode the nodata value is always reported as "
+"-1e37."
+msgstr ""
+
+#: ../../../source/drivers/raster/nwtgrd.rst:66
+msgid "Creation Options"
+msgstr ""

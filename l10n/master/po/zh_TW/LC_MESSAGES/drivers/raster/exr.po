@@ -1,0 +1,118 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/exr.rst:5
+msgid "EXR -- Extended Dynamic Range Image File Format"
+msgstr ""
+
+#: ../../../source/drivers/raster/exr.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/exr.rst:9
+msgid "EXR"
+msgstr ""
+
+#: ../../../source/drivers/raster/exr.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/raster/exr.rst:11
+msgid "libopenexr"
+msgstr ""
+
+#: ../../../source/drivers/raster/exr.rst:13
+msgid ""
+"OpenEXR is a high dynamic range raster file format. The driver supports "
+"reading and writing images in that format."
+msgstr ""
+
+#: ../../../source/drivers/raster/exr.rst:16
+msgid ""
+"Georeferencing is written as a WKT CRS string and a 3x3 geotransform matrix "
+"in EXR header metadata."
+msgstr ""
+
+#: ../../../source/drivers/raster/exr.rst:19
+msgid "\"Deep images\" are not supported."
+msgstr ""
+
+#: ../../../source/drivers/raster/exr.rst:22
+msgid "Creation Options"
+msgstr ""
+
+#: ../../../source/drivers/raster/exr.rst:36
+msgid "``HALF`` corresponds to a IEEE-754 16-bit floating point value."
+msgstr ""
+
+#: ../../../source/drivers/raster/exr.rst:37
+msgid "``FLOAT`` corresponds to a IEEE-754 32-bit floating point value."
+msgstr ""
+
+#: ../../../source/drivers/raster/exr.rst:38
+msgid "``UINT`` corresponds to a 32-bit unsigned integer value."
+msgstr ""
+
+#: ../../../source/drivers/raster/exr.rst:40
+msgid ""
+"If not specified, the following GDAL data types will be mapped as following:"
+msgstr ""
+
+#: ../../../source/drivers/raster/exr.rst:42
+msgid "``Byte`` ==> HALF"
+msgstr ""
+
+#: ../../../source/drivers/raster/exr.rst:43
+msgid "``Int16`` ==> HALF (potentially lossy)"
+msgstr ""
+
+#: ../../../source/drivers/raster/exr.rst:44
+msgid "``UInt16`` ==> HALF (potentially lossy)"
+msgstr ""
+
+#: ../../../source/drivers/raster/exr.rst:45
+msgid "``Int32`` ==> FLOAT (potentially lossy)"
+msgstr ""
+
+#: ../../../source/drivers/raster/exr.rst:46
+msgid "``UInt32`` ==> UINT"
+msgstr ""
+
+#: ../../../source/drivers/raster/exr.rst:47
+msgid "``Float32`` ==> FLOAT"
+msgstr ""
+
+#: ../../../source/drivers/raster/exr.rst:48
+msgid "``Float64`` ==> FLOAT (generally lossy)"
+msgstr ""
+
+#: ../../../source/drivers/raster/exr.rst:102
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/exr.rst:-1
+msgid "Supports Create()"
+msgstr ""
+
+#: ../../../source/drivers/raster/exr.rst:108
+msgid ""
+"With the caveat, that it is only for tiled data, and each tile must be "
+"written at most once, and written tiles cannot be read back before dataset "
+"closing."
+msgstr ""

@@ -1,0 +1,149 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/jml.rst:4
+msgid "JML: OpenJUMP JML format"
+msgstr ""
+
+#: ../../../source/drivers/vector/jml.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/jml.rst:6
+msgid "JML"
+msgstr ""
+
+#: ../../../source/drivers/vector/jml.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/vector/jml.rst:8
+msgid "(read support needs libexpat)"
+msgstr ""
+
+#: ../../../source/drivers/vector/jml.rst:10
+msgid ""
+"OGR has support for reading and writing .JML files used by the OpenJUMP "
+"software. Read support is only available if GDAL is built with *expat* "
+"library support"
+msgstr ""
+
+#: ../../../source/drivers/vector/jml.rst:14
+msgid ""
+".jml is a variant of GML format. There is no formal definition of the "
+"format. It supports a single layer per file, mixed geometry types, and for "
+"each feature, a geometry and several attributes of type integer, double, "
+"string, date or object. That object data type, used for example to store 64 "
+"bit integers, but potentially arbitrary serialized Java objects, is "
+"converted as string when reading. Contrary to GML, the definition of fields "
+"is embedded in the .jml file, at its beginning."
+msgstr ""
+
+#: ../../../source/drivers/vector/jml.rst:22
+msgid ""
+"Support for reading and writing spatial reference systems requires GDAL 2.3 "
+"or later."
+msgstr ""
+
+#: ../../../source/drivers/vector/jml.rst:26
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/jml.rst:35
+msgid "Encoding issues"
+msgstr ""
+
+#: ../../../source/drivers/vector/jml.rst:37
+msgid "Expat library supports reading the following built-in encodings :"
+msgstr ""
+
+#: ../../../source/drivers/vector/jml.rst:39
+msgid "US-ASCII"
+msgstr ""
+
+#: ../../../source/drivers/vector/jml.rst:40
+msgid "UTF-8"
+msgstr ""
+
+#: ../../../source/drivers/vector/jml.rst:41
+msgid "UTF-16"
+msgstr ""
+
+#: ../../../source/drivers/vector/jml.rst:42
+msgid "ISO-8859-1"
+msgstr ""
+
+#: ../../../source/drivers/vector/jml.rst:43
+msgid "Windows-1252"
+msgstr ""
+
+#: ../../../source/drivers/vector/jml.rst:45
+msgid ""
+"The content returned by OGR will be encoded in UTF-8, after the conversion "
+"from the encoding mentioned in the file header is. But files produced by "
+"OpenJUMP are always UTF-8 encoded."
+msgstr ""
+
+#: ../../../source/drivers/vector/jml.rst:49
+msgid ""
+"When writing a JML file, the driver expects UTF-8 content to be passed in."
+msgstr ""
+
+#: ../../../source/drivers/vector/jml.rst:53
+msgid "Styling"
+msgstr ""
+
+#: ../../../source/drivers/vector/jml.rst:55
+msgid ""
+"OpenJUMP uses an optional string attribute called \"R_G_B\" to determine the "
+"color of objects. The field value is \"RRGGBB\" where RR, GG, BB are "
+"respectively the value of the red, green and blue components expressed as "
+"hexadecimal values from 00 to FF. When reading a .jml file, OGR will "
+"translate the R_G_B attribute to the Feature Style encoding, unless a "
+"OGR_STYLE attribute is present. When writing a .jml file, OGR will extract "
+"from the Feature Style string the color of the PEN tool or the forecolor of "
+"the BRUSH tool to write the R_G_B attribute, unless the R_G_B attribute is "
+"defined in the provided feature. The addition of the R_G_B attribute can be "
+"disabled by setting the CREATE_R_G_B_FIELD layer creation option to NO."
+msgstr ""
+
+#: ../../../source/drivers/vector/jml.rst:68
+msgid "Creation Issues"
+msgstr ""
+
+#: ../../../source/drivers/vector/jml.rst:70
+msgid "The JML writer supports the following *layer* creation options:"
+msgstr ""
+
+#: ../../../source/drivers/vector/jml.rst:88
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/vector/jml.rst:90
+msgid ":ref:`ogr_feature_style`"
+msgstr ""
+
+#: ../../../source/drivers/vector/jml.rst:93
+msgid "Credits"
+msgstr ""
+
+#: ../../../source/drivers/vector/jml.rst:95
+msgid ""
+"The author wishes to thank Jukka Rahkonen for funding the development of "
+"this driver."
+msgstr ""

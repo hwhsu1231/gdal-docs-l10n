@@ -1,0 +1,138 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/flatgeobuf.rst:4
+#: ../../../source/drivers/vector/flatgeobuf.rst:8
+msgid "FlatGeobuf"
+msgstr ""
+
+#: ../../../source/drivers/vector/flatgeobuf.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/flatgeobuf.rst:12
+msgid ""
+"This driver implements read/write support for access to features encoded in "
+"`FlatGeobuf <https://github.com/bjornharrtell/flatgeobuf>`__ format, a "
+"performant binary encoding for geographic data based on flatbuffers that can "
+"hold a collection of Simple Features."
+msgstr ""
+
+#: ../../../source/drivers/vector/flatgeobuf.rst:18
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/flatgeobuf.rst:27
+msgid "Multi layer support"
+msgstr ""
+
+#: ../../../source/drivers/vector/flatgeobuf.rst:29
+msgid ""
+"A single .fgb file only contains one single layer. For multiple layer "
+"support, it is possible to put several .fgb files in a directory, and use "
+"that directory name as the connection string."
+msgstr ""
+
+#: ../../../source/drivers/vector/flatgeobuf.rst:33
+msgid ""
+"On creation, passing a filename without a .fgb suffix will instruct the "
+"driver to create a directory of that name, and create layers as .fgb files "
+"in that directory."
+msgstr ""
+
+#: ../../../source/drivers/vector/flatgeobuf.rst:37
+msgid ""
+"Starting with GDAL 3.9, metadata set at the layer level will be written in "
+"the FlatGeobuf header, and retrieved on reading as layer metadata."
+msgstr ""
+
+#: ../../../source/drivers/vector/flatgeobuf.rst:41
+msgid "Open options"
+msgstr ""
+
+#: ../../../source/drivers/vector/flatgeobuf.rst:43
+msgid ""
+"**VERIFY_BUFFERS=**\\ *YES/NO*: Set to YES to verify buffers when reading. "
+"This can provide some protection for invalid/corrupt data with a performance "
+"trade off. Defaults to YES."
+msgstr ""
+
+#: ../../../source/drivers/vector/flatgeobuf.rst:48
+msgid "Dataset Creation Options"
+msgstr ""
+
+#: ../../../source/drivers/vector/flatgeobuf.rst:50
+msgid "None"
+msgstr ""
+
+#: ../../../source/drivers/vector/flatgeobuf.rst:53
+msgid "Layer Creation Options"
+msgstr ""
+
+#: ../../../source/drivers/vector/flatgeobuf.rst:84
+msgid "Creation Issues"
+msgstr ""
+
+#: ../../../source/drivers/vector/flatgeobuf.rst:86
+msgid ""
+"Currently, NULL geometries are not supported with :lco:`SPATIAL_INDEX=YES`."
+msgstr ""
+
+#: ../../../source/drivers/vector/flatgeobuf.rst:88
+msgid ""
+"`More background and dicussion on this issue at <https://github.com/"
+"flatgeobuf/flatgeobuf/discussions/260>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/flatgeobuf.rst:90
+msgid ""
+"The creation of the packet Hilbert R-Tree requires an amount of RAM which is "
+"at least the number of features times 83 bytes."
+msgstr ""
+
+#: ../../../source/drivers/vector/flatgeobuf.rst:94
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/drivers/vector/flatgeobuf.rst:96
+msgid ""
+"Simple translation of a single shapefile into a FlatGeobuf file. The file "
+"'filename.fgb' will be created with the features from abc.shp and attributes "
+"from abc.dbf. The file ``filename.fgb`` must **not** already exist, as it "
+"will be created."
+msgstr ""
+
+#: ../../../source/drivers/vector/flatgeobuf.rst:103
+msgid "ogr2ogr -f FlatGeobuf filename.fgb abc.shp"
+msgstr ""
+
+#: ../../../source/drivers/vector/flatgeobuf.rst:105
+msgid "Conversion of a Geopackage file with multiple layers:"
+msgstr ""
+
+#: ../../../source/drivers/vector/flatgeobuf.rst:109
+msgid "ogr2ogr -f FlatGeobuf my_fgb_dataset input.gpkg"
+msgstr ""
+
+#: ../../../source/drivers/vector/flatgeobuf.rst:112
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/vector/flatgeobuf.rst:114
+msgid "`FlatGeobuf at GitHub <https://github.com/bjornharrtell/flatgeobuf>`__"
+msgstr ""

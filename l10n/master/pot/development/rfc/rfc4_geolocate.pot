@@ -1,0 +1,274 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:5
+msgid "RFC 4: Geolocation Arrays"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:7
+msgid "Author: Frank Warmerdam"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:9
+msgid "Contact: warmerdam@pobox.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:11
+msgid "Status: Adopted, implemented"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:14
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:16
+msgid ""
+"It is proposed that GDAL support an additional mechanism for geolocation of "
+"imagery based on large arrays of points associating pixels and lines with "
+"geolocation coordinates. These arrays would be represented as raster bands "
+"themselves."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:21
+msgid ""
+"It is common in AVHRR, Envisat, HDF and netCDF data products to distribute "
+"geolocation for raw or projected data in this manner, and current approaches "
+"to representing this as very large numbers of GCPs, or greatly subsampling "
+"the geolocation information to provide more reasonable numbers of GCPs are "
+"inadequate for many applications."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:28
+msgid "Geolocation Domain Metadata"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:30
+msgid ""
+"Datasets with geolocation information will include the following dataset "
+"level metadata items in the \"GEOLOCATION\" domain to identify the "
+"geolocation arrays, and the details of the coordinate system and "
+"relationship back to the original pixels and lines."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:35
+msgid "SRS: wkt encoding of spatial reference system."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:36
+msgid "X_DATASET: dataset name (defaults to same dataset if not specified)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:37
+msgid "X_BAND: band number within X_DATASET."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:38
+msgid "Y_DATASET: dataset name (defaults to same dataset if not specified)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:39
+msgid "Y_BAND: band number within Y_DATASET."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:40
+msgid "Z_DATASET: dataset name (defaults to same dataset if not specified)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:41
+msgid "Z_BAND: band number within Z_DATASET. (optional)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:42
+msgid ""
+"PIXEL_OFFSET: pixel offset into geo-located data of left geolocation pixel"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:44
+msgid "LINE_OFFSET: line offset into geo-located data of top geolocation pixel"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:46
+msgid ""
+"PIXEL_STEP: each geolocation pixel represents this many geolocated pixels."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:48
+msgid ""
+"LINE_STEP: each geolocation pixel represents this many geolocated lines."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:50
+msgid ""
+"GEOREFERENCING_CONVENTION: (added in GDAL 3.5) either TOP_LEFT_CORNER to "
+"indicate that the X/Y values refer to the top-left corner of the pixel, or "
+"PIXEL_CENTER to indicate that they refer to the center of the pixel. The "
+"default is TOP_LEFT_CORNER."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:55
+msgid ""
+"In the common case where two of the bands of a dataset are actually latitude "
+"and longitude, and so the geolocation arrays are the same size as the base "
+"image, the metadata might look like:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:61
+msgid ""
+"SRS: GEOGCS...\n"
+"X_BAND: 2\n"
+"Y_BAND: 3\n"
+"PIXEL_OFFSET: 0\n"
+"LINE_OFFSET: 0\n"
+"PIXEL_STEP: 1\n"
+"LINE_STEP: 1"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:69
+msgid ""
+"For AVHRR datasets, there are only 11 points (note, the more recent NOAA "
+"AVHRR datasets have 51 points), but for every line. So the result for a LAC "
+"dataset might look like:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:75
+msgid ""
+"SRS: GEOGCS...\n"
+"X_DATASET: L1BGCPS:n12gac10bit.l1b\n"
+"X_BAND: 1\n"
+"Y_DATASET: L1BGCPS:n12gac10bit.l1b\n"
+"Y_BAND: 2\n"
+"PIXEL_OFFSET: 25\n"
+"LINE_OFFSET: 0\n"
+"PIXEL_STEP: 40\n"
+"LINE_STEP: 1"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:85
+msgid ""
+"This assumes the L1B driver is modified to support the special access to "
+"GCPs as bands using the L1BGCPS: prefix."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:89
+msgid "Updating Drivers"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:91
+msgid ""
+"HDF4: Client needs mandate immediate incorporation of geolocation array "
+"support in the HDF4 driver (specifically for swath products). (complete)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:94
+msgid ""
+"HDF5: Some HDF5 products include geolocation information that should be "
+"handled as arrays. No timetable for update."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:96
+msgid ""
+"AVHRR: Has 11/51 known locations per-scanline. These are currently "
+"substantially downsampled and returned as GCPs, but this format would be an "
+"excellent candidate for treating as geolocation arrays. Planned in near "
+"future."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:100
+msgid ""
+"Envisat: Envisat raw products use geolocation information currently "
+"subsampled as GCPs, good candidate for upgrade. No timetable for update."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:103
+msgid ""
+"netCDF: NetCDF files can have differently varying maps in x and y "
+"directions, which are represented as geolocation arrays when they are "
+"encoded as CF conventions \"two-dimensional coordinate variables\". See the "
+"netcdf driver page for details."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:107
+msgid ""
+"OPeNDAP: Can have differently varying maps in x and y directions which could "
+"be represented as geolocation arrays when they are irregular. No timetable "
+"for update."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:112
+msgid "Changes to Warp API and gdalwarp"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:114
+msgid ""
+"Introduce a new geolocation array based transformation method, following the "
+"existing GDALTransformer mechanism. A geolocation array transformer will be "
+"created with the following function call. The \"char \\**\" array is the "
+"list of metadata from the GEOLOCATION metadata domain."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:121
+msgid ""
+"void *GDALCreateGeoLocTransformer( GDALDatasetH hBaseDS,\n"
+"                                   char **papszGeolocationInfo,\n"
+"                                   int bReversed );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:125
+msgid ""
+"This transformer is currently partially implemented, but in a manner that "
+"potentially uses a great deal of memory (twice the memory needed for the "
+"geolocation arrays), and with still dubious correctness, but once approved "
+"this will be fixup up to at least be correct, though likely not efficient "
+"for the time being."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:131
+msgid ""
+"The GDALGenImgProjTransformer will be upgraded to instantiate the GeoLoc "
+"transformer (instead of an affine, gcp, or rpc transformer) if only "
+"geolocation information is available (done). However, the current "
+"GDALCreateGenImgProjTransformer() function does not provide a mechanism to "
+"select which transformation mechanism is used. So, for instance, if an "
+"affine transform is available it will be used in preference to geolocation "
+"data. If bGCPUseOK is TRUE, gcps will be used in preference to geolocation "
+"data."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:140
+msgid ""
+"The gdalwarp program currently always sets bGCPUseOK to TRUE so there is no "
+"means for gdalwarp users select use of geolocation data in preference to "
+"gcps. Some modification to gdalwarp may be needed in the future in this "
+"regard."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:146
+msgid "Preserving Geolocation Through Translation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:150
+msgid ""
+"''How do we preserve access to geolocation information when translating a "
+"dataset? Do applications like gdal_translate need special handling?"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc4_geolocate.rst:152
+msgid ""
+"Placement of the geolocation data in a special metadata domain means it "
+"won't be transferred in default translations.''"
+msgstr ""

@@ -1,0 +1,167 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/geojsonseq.rst:4
+msgid "GeoJSONSeq: sequence of GeoJSON features"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojsonseq.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojsonseq.rst:8
+msgid "GeoJSONSeq"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojsonseq.rst:12
+msgid ""
+"This driver implements read/creation support for features encoded "
+"individually as `GeoJSON <http://geojson.org/>`__ Feature objects, separated "
+"by newline (LF) (`Newline Delimited JSON <http://ndjson.org/>`__) or record-"
+"separator (RS) characters (`RFC 8142 <https://tools.ietf.org/html/"
+"rfc8142>`__ standard: GeoJSON Text Sequences)"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojsonseq.rst:19
+msgid ""
+"Such files are equivalent to a GeoJSON FeatureCollection, but are more "
+"friendly for incremental parsing."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojsonseq.rst:22
+msgid ""
+"The driver automatically reprojects geometries to WGS84 longitude, latitude, "
+"if the layer is created with another SRS."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojsonseq.rst:25
+msgid "Appending to an existing file is supported since GDAL 3.6"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojsonseq.rst:28
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojsonseq.rst:37
+msgid "Datasource"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojsonseq.rst:39
+msgid "The driver accepts three types of sources of data:"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojsonseq.rst:41
+msgid ""
+"Uniform Resource Locator (`URL <http://en.wikipedia.org/wiki/URL>`__) - a "
+"Web address to perform `HTTP <http://en.wikipedia.org/wiki/HTTP>`__ request"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojsonseq.rst:44
+msgid ""
+"Plain text file with GeoJSON data - identified from the file extension ."
+"geojsonl or .geojsons"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojsonseq.rst:46
+msgid "Text passed directly as filename, and encoded as GeoJSON sequences"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojsonseq.rst:48
+msgid ""
+"The URL/filename/text might be prefixed with GeoJSONSeq: to avoid any "
+"ambiguity with other drivers."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojsonseq.rst:52
+msgid "Configuration options"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojsonseq.rst:54
+msgid "The following :ref:`configuration option <configoptions>` is available:"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojsonseq.rst:57
+msgid ":copy-config:`OGR_GEOJSON_MAX_OBJ_SIZE`"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojsonseq.rst:60
+msgid "Layer creation options"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojsonseq.rst:117
+msgid "Geometry coordinate precision"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojsonseq.rst:119
+msgid "3.9"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojsonseq.rst:121
+msgid ""
+"On creation, the GeoJSONSeq driver supports using the geometry coordinate "
+"precision, from th :cpp:class:`OGRGeomCoordinatePrecision` settings of the :"
+"cpp:class:`OGRGeomFieldDefn`. Those settings are used to round the "
+"coordinates of the geometry of the features to an appropriate decimal "
+"precision."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojsonseq.rst:128
+msgid ""
+"The :lco:`COORDINATE_PRECISION` layer creation option has precedence over "
+"the values set on the :cpp:class:`OGRGeomFieldDefn`."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojsonseq.rst:131
+msgid ""
+"The value of those geometry coordinate precision is *not* serialized in the "
+"generated file, hence on reading, the driver will not advertise a geometry "
+"coordinate precision."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojsonseq.rst:136
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojsonseq.rst:138
+msgid ":ref:`GeoJSON driver <vector.geojson>`"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojsonseq.rst:139
+msgid ""
+"`RFC 7946 <https://tools.ietf.org/html/rfc7946>`__ standard: the GeoJSON "
+"Format."
+msgstr ""
+
+#: ../../../source/drivers/vector/geojsonseq.rst:141
+msgid ""
+"`RFC 8142 <https://tools.ietf.org/html/rfc8142>`__ standard: GeoJSON Text "
+"Sequences (RS separator)"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojsonseq.rst:143
+msgid ""
+"`GeoJSONL <https://www.interline.io/blog/geojsonl-extracts/>`__: An "
+"optimized format for large geographic datasets"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojsonseq.rst:145
+msgid ""
+"`JSON streaming on Wikipedia <https://en.wikipedia.org/wiki/"
+"JSON_streaming>`__: An overview over formats for concatenated JSON in a "
+"single file"
+msgstr ""

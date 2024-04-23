@@ -1,0 +1,264 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/postgisraster.rst:5
+msgid "PostGISRaster -- PostGIS Raster driver"
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:7
+msgid "PostGISRaster"
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:9
+msgid "PostgreSQL library"
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:11
+msgid ""
+"PostGIS Raster (previously known as WKT Raster) is the project that provides "
+"raster support on PostGIS. Since September 26st, 2010, is an official part "
+"of PostGIS 2.0+."
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:15
+msgid ""
+"This driver was started during the Google Summer of Code 2009, and "
+"significantly improved since then."
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:18
+msgid ""
+"Currently, the driver provides read-only support to PostGIS Raster data "
+"sources."
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:22
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:29
+msgid "Connecting to a database"
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:31
+msgid ""
+"To connect to a PostGIS Raster datasource, use a connection string "
+"specifying the database name, with additional parameters as necessary"
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:36
+msgid ""
+"PG:\"[host=''] [port=''] [dbname='' [user=''] [password=''] [schema=''] "
+"[table=''] [column=''] [where=''] [mode=''] [outdb_resolution='']\""
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:38
+msgid ""
+"Note that the string, up to the part starting with \"table='\" is a libpq-"
+"style connection string. That means that you can leave out unnecessary "
+"fields (like password, in some cases)."
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:42
+msgid ""
+"**schema** - name of PostgreSQL schema where requested raster table is "
+"stored."
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:44
+msgid ""
+"**table** - name of PostGIS Raster table. The table was created by the "
+"raster loader (eg. raster2pgsql utility)."
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:46
+msgid "**column** - name of raster column in raster table"
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:47
+msgid ""
+"**where** - option is used to filter the results of the raster table. Any "
+"SQL-WHERE expression is valid."
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:49
+msgid ""
+"**mode** - option is used to know the expected arrangement of the raster "
+"table. There are 2 possible values"
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:52
+msgid ""
+"**mode=1** - ONE_RASTER_PER_ROW mode. In this case, a raster table is "
+"considered as a bunch of different raster files. This mode is intended for "
+"raster tables storing different raster files. It's the default mode if you "
+"don't provide this field in connection string."
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:57
+msgid ""
+"**mode=2** - ONE_RASTER_PER_TABLE mode. In this case, a raster table is "
+"considered as a unique raster file, even if the table has more than one row. "
+"This mode is intended for reading tiled rasters from database."
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:62
+msgid ""
+"**outdb_resolution** - (GDAL >= 2.3.1) option to specify how out-database "
+"rasters should be resolved. Default is server_side."
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:65
+msgid ""
+"**server_side**: The outDB raster will be fetched by the PostgreSQL server. "
+"This implies that outdb rasters are enabled on the server."
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:68
+msgid ""
+"**client_side**: The outDB raster filenames will be returned to the GDAL "
+"PostGISRaster client, which will open it on the client side. This implies "
+"that the filename stored on te server can be accessed by the client."
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:72
+msgid ""
+"**client_side_if_possible**: The outDB raster filenames will be returned to "
+"the GDAL PostGISRaster client, which will check if it can access them. If it "
+"can, that's equivalent to client_side. Otherwise that's equivalent to "
+"server_side. Note that this mode involves extra queries to the server."
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:79
+msgid "Additional notes"
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:81
+msgid ""
+"If a table stores a tiled raster and you execute the driver with mode=1, "
+"each image tile will be considered as a different image, and will be "
+"reported as a subdataset. There are use cases the driver can't still work "
+"with. For example: non-regular blocked rasters. That cases are detected and "
+"an error is raised. Anyway, as I've said, the driver is under development, "
+"and will work with more raster arrangements ASAP."
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:88
+msgid ""
+"There's an additional working mode. If you don't provide a table name, the "
+"driver will look for existing raster tables in all allowed database' "
+"schemas, and will report each table as a subdataset."
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:92
+msgid ""
+"You must use this connection string's format in all the gdal tools, like "
+"gdalinfo, gdal_translate, gdalwarp, etc."
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:96
+msgid "Performance hints"
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:98
+msgid ""
+"To get the maximum performance from the driver, it is best to load the "
+"raster in PostGIS raster with the following characteristics:"
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:101
+msgid "tiled: -t switch of raster2pgsql"
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:102
+msgid "with overview: -l 2,4,8,... switch of raster2pgsql"
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:103
+msgid ""
+"with a GIST spatial index on the raster column: -I switch of raster2pgsql"
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:105
+msgid "with constraints registered: -C switch of raster2pgsql"
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:108
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:110
+msgid "To get a summary about your raster via GDAL use gdalinfo:"
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:114
+msgid ""
+"gdalinfo  \"PG:host=localhost port=5432 dbname='mydb' user='postgres' "
+"password='secret' schema='public' table=mytable\""
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:116
+msgid ""
+"For more examples, check the PostGIS Raster FAQ section: `Can I export my "
+"PostGIS Raster data to other raster formats? <https://postgis.net/docs/"
+"RT_FAQ.html#idm28288>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:121
+msgid "Credits"
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:123
+msgid "The driver developers"
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:125
+msgid "Jorge Arévalo (jorgearevalo at libregis.org)"
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:126
+msgid "David Zwarg (dzwarg at azavea.com)"
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:127
+msgid "Even Rouault (even.rouault at spatialys.com)"
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:130
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:132
+msgid ""
+"`GDAL PostGISRaster driver Wiki <https://trac.osgeo.org/gdal/wiki/"
+"frmts_wtkraster.html>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/postgisraster.rst:134
+msgid ""
+"`PostGIS Raster documentation <https://postgis.net/docs/RT_reference.html>`__"
+msgstr ""

@@ -1,0 +1,378 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:5
+msgid "RFC 48: Geographical networks support"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:7
+msgid "Author: Mikhail Gusev, Dmitry Baryshnikov"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:9
+msgid "Contact: gusevmihs at gmail dot com, polimax@mail.ru"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:11
+msgid "Status: adopted, implemented in GDAL 2.1"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:14
+msgid "Introduction"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:16
+msgid ""
+"This document proposes the integration of the results of GSoC 2014 project "
+"“GDAL/OGR Geography Network support” into GDAL library. GNM (Geographical "
+"Network Model) intends to bring the capabilities to create, manage and "
+"analyse networks built over spatial data in GDAL."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:21
+msgid ""
+"GSoC project description: `http://trac.osgeo.org/gdal/wiki/"
+"geography_network_support <http://trac.osgeo.org/gdal/wiki/"
+"geography_network_support>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:24
+msgid ""
+"GDAL fork with all changes in trunk: `https://github.com/MikhanGusev/gdal "
+"<https://github.com/MikhanGusev/gdal>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:27
+msgid ""
+"GSoC blog: `http://gsoc2014gnm.blogspot.ru/ <http://gsoc2014gnm.blogspot.ru/"
+">`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:31
+msgid "Purpose and description"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:33
+msgid ""
+"There is a need to have an instrument in GDAL which on the one hand provides "
+"an abstraction for different existed network formats (pgRouting, OSRM, "
+"GraphHopper, SpatiaLite networks, etc.), like GDAL (previously OGR) provides "
+"one for spatial vector formats, and on the other hand provides a network "
+"functionality to those spatial formats which does not have it at all "
+"(Shapefiles)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:40
+msgid ""
+"Such instrument is implemented as a separate set of C++ classes, called GNM. "
+"The two main of them represent an abstract network (GNMNetwork class) and "
+"the network of ”GDAL-native” or generic format (GNMGenericNetwork class). An "
+"abstract network is used by user as a common interface to manage his network "
+"data. The list of underlying format-specific classes can be extended anytime "
+"like a list of GDAL drivers to support more network formats. The ”GDAL-"
+"native” format implements the abstract network and is used to provide the "
+"network functionality to the spatial formats which are already supported by "
+"GDAL. All the network data of this format is stored in the special set of "
+"layers along with spatial data in a spatial dataset (internally GDALDataset "
+"and OGRLayer are widely used)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:53
+msgid "What does the interface of working with networks include:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:57
+msgid ""
+"* Creating/removing networks\n"
+"* Creating network topology over spatial data manually or automatically\n"
+"* Reading resulting connections in a common way\n"
+"* Adding/removing  spatial layers/features to the network\n"
+"* Defining business logic of the networks (e.g. the way of apply or deny "
+"connections with different layer features)\n"
+"* Several methods of network analysis"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:64
+msgid ""
+"See the class architecture document (gdal/gnm/gnm_arch.dox) for more details "
+"and how this set of classes internally works."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:68
+msgid "Bindings"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:70
+msgid ""
+"The C API wrapper functions are declared in gdal/gnm/gnm_api.h. All current "
+"python bindings are implemented in a swig interface file and use these C "
+"functions."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:75
+msgid "Set of applications"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:77
+msgid ""
+"It is proposed to include the two following apps which use the GNM into GDAL "
+"source tree:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:82
+msgid ""
+"* gnmmanage. Similar to gdalmanage purposes. Manages the networks of “GDAL-"
+"native” format: creates, removes networks, builds topology manually and "
+"automatically (as the GNMNetwork inherited from GDALDataset, the gdalmanage "
+"can be used with GNMNetwork)\n"
+"* gnmanalyse. Uses the analysing capabilities of GNM. Currently: shortest "
+"path(s) and connected components searches"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:85
+msgid ""
+"See the description of these applications in according documentation for "
+"more details."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:89
+msgid "Implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:91
+msgid ""
+"There is already a pull request on github (`https://github.com/OSGeo/gdal/"
+"pull/60 <https://github.com/OSGeo/gdal/pull/60>`__) that implements this RFC."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:96
+msgid "Building GDAL with GNM support"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:98
+msgid ""
+"By default the building of GNM support is disabled. To build GNM support one "
+"have to add --with-gnm key to configure or uncomment the appropriate line in "
+"nmake.opt."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:103
+msgid "Set of tests"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:105
+msgid ""
+"All public methods of GNMNetwork tested in autotest gnm tests. The several "
+"tests for GNMGenericNetwork added. The console applications (gnmmanage and "
+"gnmanalyse) tested in autotest/utilities."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:109
+msgid ""
+"All tests were implemented according to the general rules: they are written "
+"on Python and situated in /autotest folder:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:114
+msgid ""
+"* GNM basic tests. Tests the basic “GDAL-network” functionality, using some "
+"small test shapefiles\n"
+"* GNM utilities tests. Simple tests of the gnmmanage and gnmanalyse "
+"utilities, similarly to ogrinfo tests"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:118
+msgid "Documentation structure"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:120
+msgid ""
+"All new methods and GNM classes are documented. GDAL documentation is "
+"updated when necessary."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:123
+msgid ""
+"The following new Doxyfiles in /gnm and /apps directories will be "
+"automatically built into the main auto-generated html into the “Related "
+"pages” section. All them are similar to OGR docs:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:129
+msgid ""
+"* GNM Architecture. The purpose and description of all GNM C++ classes\n"
+"* GNM Tutorial. The guide how to use the C++ GNM classes\n"
+"* GNM Utility Programs. The references to two GNM utilities\n"
+"* gnmmanage. Description and usage of gnmmanage utility\n"
+"* gnmanalyse. Description and usage of gnmanalyse utility"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:136
+msgid "Source code tree organization"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:138
+msgid "*What is being added:*"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:140
+msgid ""
+"The integration will cause the *addition* of new folders with header, "
+"source, make and doc files:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:145
+msgid ""
+"* gcore/gdal.h - add new driver type GNM\n"
+"    * gdal/gnm – the main folder of GNM\n"
+"* Source code and documentation files of applications at gdal/apps\n"
+"* Testing python scripts at autotest/gnm and autotest/utilities\n"
+"* Two testing shapefiles at autotest/gnm/data (~7 Kb)\n"
+"* Swig interface file at gdal/swig/include"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:152
+msgid "*What is being modified:*"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:154
+msgid "The *changing* of the existed GDAL files *will be insignificant*:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:158
+msgid ""
+"* GNUMakefile, makefile.vc and their configurations at /gdal and /gdal/apps\n"
+"    * /autotest/run_all.py to add gnm tests\n"
+"* /autotest/pymod/test_cli_utilities.py to add the utility testing command\n"
+"    * /autotest/utilities/test_gnmutils.py\n"
+"* /swig/python/setup.py and setup.cfg to add gnm module\n"
+"    * GNUMakefile and makefile.vc at /swig/java"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:166
+msgid "Future ideas"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:168
+msgid "I see many useful and interesting ways of GNM expending in future:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:170
+msgid ""
+"More formats support. The important thing, which must be firstly implemented "
+"in future, while the GNM intends to work with as many network formats as "
+"possible. It includes not only the support of GNMGdalNetwork formats – i.e. "
+"the testing to work with other GDAL spatial formats (currently tested only "
+"for Shapefiles and PostGIS). For example:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:177
+msgid "GNMPGRoutingNetwork. Works with pgRouting tables. Some ideas:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:179
+msgid ""
+"GNMPGRoutingNetwork::ConnectFeatures() will add to \"source\" and \"target\" "
+"columns according values via OGRFeature::setField()"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:181
+msgid ""
+"GNMPGRoutingNetwork::AutoConnect() will internally call pgr_createTopology "
+"method"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:184
+msgid ""
+"GNMSQLiteNetwork. Works with SpatiaLite VirtualNetwork networks. Some ideas:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:187
+msgid ""
+"write all network data to the Roads_net_data table and to corresponding "
+"NodeFrom and NodeTo columns"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:190
+msgid "GNMGMLNetwork. Works with the GML topology. Some ideas:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:192
+msgid ""
+"write network data to the `gml::TopoComplex <gml::TopoComplex>`__, `gml::"
+"Node <gml::Node>`__ and `gml::Edge <gml::Edge>`__ directly"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:197
+msgid ""
+"More effective algorithm of topology building in GDAL-networks. The current "
+"one is implemented as the default for any network format and can connect any "
+"amount of line and point layers but is not so efficient – the large networks "
+"are being connected too long. GNMGenericNetwork can have more effective "
+"default algorithm."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:203
+msgid ""
+"More rules in GDAL-networks, i.e. more complex syntax describing the "
+"following:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:206
+msgid "costs extracted from geometrical lengths of lines"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:207
+msgid "turn restriction roles of features"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:208
+msgid ""
+"more complex connection rules: set the limit of features can be connected "
+"and more complex expressions"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:211
+msgid ""
+"Applications. May be one of the most useful application which can be build "
+"with GNM is *network2network*, which converts the network and spatial data "
+"of the dataset from the one format to another (for example from pgRouting to "
+"Oracle Spatial networks);"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:216
+msgid ""
+"Analysis. The support of different graph types and the algorithms working "
+"with them, for different routing and even engineering purposes. For example:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:220
+msgid "Boost library"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:221
+msgid "Contraction Hierarchies technology (for large graphs)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:224
+msgid "Voting history"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc48_geographical_networks_support.rst:226
+msgid "+1 from JukkaR, TamasS and EvenR"
+msgstr ""

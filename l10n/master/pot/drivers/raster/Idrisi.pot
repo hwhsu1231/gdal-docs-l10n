@@ -1,0 +1,107 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/Idrisi.rst:5
+msgid "RST -- Idrisi Raster Format"
+msgstr ""
+
+#: ../../../source/drivers/raster/Idrisi.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/Idrisi.rst:7
+msgid "RST"
+msgstr ""
+
+#: ../../../source/drivers/raster/Idrisi.rst:11
+msgid ""
+"This format is basically a raw one. There is just one band per files, except "
+"in the RGB24 data type where the Red, Green and Blue bands are store "
+"interleaved by pixels in the order Blue, Green and Red. The others data type "
+"are unsigned 8 bits integer with values from 0 to 255 or signed 16 bits "
+"integer with values from -32.768 to 32.767 or 32 bits single precision "
+"floating point.32 bits. The description of the file is stored in a "
+"accompanying text file, extension RDC."
+msgstr ""
+
+#: ../../../source/drivers/raster/Idrisi.rst:19
+msgid ""
+"The RDC image description file doesn't include color table, or detailed "
+"geographic referencing information. The color table if present can be "
+"obtained by another accompanying file using the same base name as the RST "
+"file and SMP as extension."
+msgstr ""
+
+#: ../../../source/drivers/raster/Idrisi.rst:24
+msgid ""
+"For geographical referencing identification, the RDC file contains "
+"information that points to a file that holds the geographic reference "
+"details. Those files uses extension REF and  resides in the same folder as "
+"the RST image or more likely in the Idrisi installation folders."
+msgstr ""
+
+#: ../../../source/drivers/raster/Idrisi.rst:29
+msgid ""
+"Therefore the presence or absence of the Idrisi software in the running "
+"operation system will determine the way that this driver will work. By "
+"setting the environment variable IDRISIDIR pointing to the Idrisi main "
+"installation folder will enable GDAL to find more detailed information about "
+"geographical reference and projection in the REF files."
+msgstr ""
+
+#: ../../../source/drivers/raster/Idrisi.rst:35
+msgid ""
+"Note that the RST driver recognizes the name convention used in Idrisi for "
+"UTM and State Plane geographic reference so it doesn't need to access the "
+"REF files. That is the case for RDC file that specify \"utm-30n\" or "
+"\"spc87ma1\" in the \"ref. system\" field. Note that exporting to RST in any "
+"other geographical reference system will generate a suggested REF content in "
+"the comment section of the RDC file."
+msgstr ""
+
+#: ../../../source/drivers/raster/Idrisi.rst:42
+msgid "\".rst\" the raw image file"
+msgstr ""
+
+#: ../../../source/drivers/raster/Idrisi.rst:43
+msgid "\".rdc\" the description file"
+msgstr ""
+
+#: ../../../source/drivers/raster/Idrisi.rst:44
+msgid "\".smp\" the color table file"
+msgstr ""
+
+#: ../../../source/drivers/raster/Idrisi.rst:45
+msgid "\".ref\" the geographical reference file"
+msgstr ""
+
+#: ../../../source/drivers/raster/Idrisi.rst:48
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/Idrisi.rst:59
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/Idrisi.rst:61
+msgid "Implemented as :source_file:`frmts/idrisi/IdrisiDataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/Idrisi.rst:62
+msgid "`www.idrisi.com <http://www.idrisi.com>`__"
+msgstr ""

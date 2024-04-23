@@ -1,0 +1,254 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/api/python_samples.rst:5
+msgid "Python Sample scripts"
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:7
+msgid ""
+"The following are sample scripts intended to give an idea how to use the "
+"GDAL's Python interface. Please feel free to use them in your applications."
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:10
+msgid ""
+"From GDAL 3.2, Python utility scripts :ref:`programs` are located inside the "
+"`osgeo_utils` module. From GDAL 3.3, Python sample scripts are located "
+"inside the `osgeo_utils.samples` sub-module."
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:14
+msgid "Python Raster Sample scripts"
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:18
+msgid ""
+"assemblepoly: Script demonstrates how to assemble polygons from arcs. "
+"Demonstrates various aspects of OGR Python API."
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:19
+msgid ""
+"fft: Script to perform forward and inverse two-dimensional fast Fourier "
+"transform."
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:20
+msgid ""
+"gdal2grd: Script to write out ASCII GRD rasters (used in Golden Software "
+"Surfer). from any source supported by GDAL."
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:21
+msgid "gdal_vrtmerge: Similar to gdal_merge, but produces a VRT file."
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:22
+msgid ""
+"gdalcopyproj: Duplicate the geotransform, projection and/or GCPs from one "
+"raster dataset to another, which can be useful after performing image "
+"manipulations with other software that ignores or discards georeferencing "
+"metadata."
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:24
+msgid ""
+"gdalfilter:  Example script for applying kernel based filters to an image "
+"using GDAL. Demonstrates use of virtual files as an intermediate "
+"representation."
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:26
+msgid ""
+"get_soundg: Script to copy the SOUNDG layer from an S-57 file to a "
+"Shapefile, splitting up features with MULTIPOINT geometries into many POINT "
+"features, and appending the point elevations as an attribute."
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:29
+msgid "histrep: Module to extract data from many rasters into one output."
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:30
+msgid ""
+"load2odbc: Load ODBC table to an ODBC datastore. Uses direct SQL since the "
+"ODBC driver is read-only for OGR."
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:31
+msgid ""
+"rel: Script to produce a shaded relief image from the elevation data. "
+"(similar functionality in gdaldem now)"
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:32
+msgid ""
+"tigerpoly:  Script demonstrating how to assemble polygons from arcs in TIGER/"
+"Line datasource, writing results to a newly created shapefile."
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:34
+msgid ""
+"tolatlong: Script to read coordinate system and geotransformation matrix "
+"from input file and report latitude/longitude coordinates for the specified "
+"pixel."
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:36
+msgid ""
+"val_repl: Script to replace specified values from the input raster file with "
+"the new ones. May be useful in cases when you don't like value, used for "
+"NoData indication and want replace it with other value. Input file remains "
+"unchanged, results stored in other file."
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:39
+msgid ""
+"vec_tr: Example of applying some algorithm to all the geometries in the "
+"file, such as a fixed offset."
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:40
+msgid ""
+"vec_tr_spat: Example of using Intersect() to filter based on only those "
+"features that truly intersect a given rectangle. Easily extended to general "
+"polygon!"
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:42
+msgid ""
+"classify: Demonstrates using numpy for simple range based classification of "
+"an image. This is only an example that has stuff hardcoded."
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:44
+msgid ""
+"gdal_lut: Read a LUT from a text file, and apply it to an image. Sort of a "
+"'1 band' version of pct2rgb."
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:46
+msgid ""
+"magphase: Example script computing magnitude and phase images from a complex "
+"image."
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:47
+msgid ""
+"hsv_merge: Merge greyscale image into RGB image as intensity in HSV space."
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:48
+msgid ""
+"gdal_ls: Display the list of files in a virtual directory, like /vsicurl or /"
+"vsizip"
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:49
+msgid "gdal_cp: Copy a virtual file"
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:52
+msgid "Python Vector Sample scripts"
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:56
+msgid ""
+"ogrupdate: Update a target datasource with the features of a source "
+"datasource. Contrary to ogr2ogr, this script tries to match features between "
+"the datasources, to decide whether to create a new feature, or to update an "
+"existing one."
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:59
+msgid ""
+"ogr_layer_algebra: Application for executing OGR layer algebra operations."
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:60
+msgid ""
+"ogr_dispatch: Dispatch features into layers according to the value of some "
+"fields or the geometry type."
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:61
+msgid ""
+"wcs_virtds_params: Generates MapServer WCS layer definition from a tileindex "
+"with mixed SRS"
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:62
+msgid ""
+"ogr_build_junction_table: Create junction tables for layers coming from GML "
+"datasources that reference other objects in _href fields"
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:64
+msgid "gcps2ogr: Outputs GDAL GCPs as OGR points"
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:68
+msgid "Python Coordinate Reference System Sample scripts"
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:72
+msgid ""
+"crs2crs2grid: A script to produce PROJ.4 grid shift files from HTDP program."
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:75
+msgid "Python direct ports of c++ programs"
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:79
+msgid ":ref:`gdalinfo`: A direct port of apps/gdalinfo.c"
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:80
+msgid ":ref:`ogrinfo`: A direct port of apps/ogrinfo.cpp"
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:81
+msgid ":ref:`gdallocationinfo`: A direct port of apps/gdallocationinfo.cpp"
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:84
+msgid "Python sample scripts that are now programs"
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:86
+msgid ""
+"Sample scripts might be upgraded to proper gdal utilities (programs) in next "
+"versions with added functionality and documentation. The following samples "
+"from previous versions are now programs."
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:92
+msgid ":ref:`gdal2xyz`: Translates a raster file into xyz format."
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:93
+msgid ""
+":ref:`gdal_retile`: Script for restructuring data in a tree of regular tiles."
+msgstr ""
+
+#: ../../../source/api/python_samples.rst:94
+msgid "val_at_coord: see :ref:`gdallocationinfo`"
+msgstr ""

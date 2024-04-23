@@ -1,0 +1,124 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/user/gdal_python_utilities.rst:5
+msgid "GDAL Python Utilities"
+msgstr ""
+
+#: ../../../source/user/gdal_python_utilities.rst:7
+msgid ""
+"The GDAL python utilities are included with GDAL. If you've installed GDAL "
+"you already have them. However you may want to use a newer or older version "
+"of the utilities without changing GDAL. This is where **gdal-utils** comes "
+"in."
+msgstr ""
+
+#: ../../../source/user/gdal_python_utilities.rst:12
+msgid ""
+"**gdal-utils**: is the GDAL Python Utilities *distribution*. This is what "
+"you install. Its home page is https://pypi.org/project/gdal-utils/ . Install "
+"with ``pip install gdal-utils``."
+msgstr ""
+
+#: ../../../source/user/gdal_python_utilities.rst:16
+msgid ""
+"**osgeo_utils**: is the python *package*. This is what you use in your code "
+"after installing, e.g. ``from osgeo_utils import ...``. If you're not "
+"writing code, ignore it."
+msgstr ""
+
+#: ../../../source/user/gdal_python_utilities.rst:20
+msgid "Commonly used utilities include:"
+msgstr ""
+
+#: ../../../source/user/gdal_python_utilities.rst:22
+msgid "gdal_merge"
+msgstr ""
+
+#: ../../../source/user/gdal_python_utilities.rst:23
+msgid "gdal_edit"
+msgstr ""
+
+#: ../../../source/user/gdal_python_utilities.rst:24
+msgid "gdal_calc"
+msgstr ""
+
+#: ../../../source/user/gdal_python_utilities.rst:25
+msgid "ogrmerge"
+msgstr ""
+
+#: ../../../source/user/gdal_python_utilities.rst:27
+msgid ""
+"For the full list see :ref:`Programs <programs>` and note the ones that end "
+"in ``.py``."
+msgstr ""
+
+#: ../../../source/user/gdal_python_utilities.rst:31
+msgid "Developers"
+msgstr ""
+
+#: ../../../source/user/gdal_python_utilities.rst:33
+msgid "Read the :ref:`gdal-utils project charter <rfc-78>`."
+msgstr ""
+
+#: ../../../source/user/gdal_python_utilities.rst:35
+msgid "Clone or download the gdal project: https://github.com/OSGeo/gdal/"
+msgstr ""
+
+#: ../../../source/user/gdal_python_utilities.rst:37
+msgid ""
+"In your IDE set gdal-utils as the root folder, `.../swig/python/gdal-utils "
+"<https://github.com/OSGeo/gdal/tree/master/swig/python/gdal-utils/>`__."
+msgstr ""
+
+#: ../../../source/user/gdal_python_utilities.rst:40
+msgid ""
+"**./osgeo_utils** - contains the Programs (those scripts that have launch "
+"wrappers created by pip and added to PYTHONHOME/Scripts)"
+msgstr ""
+
+#: ../../../source/user/gdal_python_utilities.rst:43
+msgid ""
+"**./osgeo_utils/samples** - working python scripts but not typically "
+"available in path (run them with ``python3 path/to/samples/something.py``)"
+msgstr ""
+
+#: ../../../source/user/gdal_python_utilities.rst:47
+msgid ""
+"Improve the docs by editing the RST pages in `.../doc/source <https://github."
+"com/OSGeo/gdal/tree/master/doc/source>`__ which generate the web pages:"
+msgstr ""
+
+#: ../../../source/user/gdal_python_utilities.rst:51
+msgid "https://gdal.org/api/index.html#python-api"
+msgstr ""
+
+#: ../../../source/user/gdal_python_utilities.rst:52
+msgid "https://gdal.org/programs/index.html#programs"
+msgstr ""
+
+#: ../../../source/user/gdal_python_utilities.rst:53
+msgid "https://gdal.org/api/python_samples.html"
+msgstr ""
+
+#: ../../../source/user/gdal_python_utilities.rst:55
+msgid ""
+"Contribute changes with `Pull Requests <https://github.com/OSGeo/gdal/"
+"pulls>`__ from your fork to main GDAL project and use *gdal-utils* label."
+msgstr ""

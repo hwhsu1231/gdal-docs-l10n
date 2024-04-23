@@ -1,0 +1,288 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/programs/gdal_footprint.rst:5
+#: ../../../source/programs/gdal_footprint.rst:13
+msgid "gdal_footprint"
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:11
+msgid "Compute footprint of a raster."
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:16
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:18
+msgid ""
+"gdal_footprint [--help] [--help-general]\n"
+"   [-b <band>]... [-combine_bands union|intersection]\n"
+"   [-oo <NAME>=<VALUE>]... [-ovr <index>]\n"
+"   [-srcnodata \"<value>[ <value>]...\"]\n"
+"   [-t_cs pixel|georef] [-t_srs <srs_def>] [-split_polys]\n"
+"   [-convex_hull] [-densify <value>] [-simplify <value>]\n"
+"   [-min_ring_area <value>] [-max_points <value>|unlimited]\n"
+"   [-of <ogr_format>] [-lyr_name <dst_layername>]\n"
+"   [-location_field_name <field_name>] [-no_location]\n"
+"   [-write_absolute_path]\n"
+"   [-dsco <name>=<value>]... [-lco <name>=<value>]... [-overwrite] [-q]\n"
+"   <src_filename> <dst_filename>"
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:36
+msgid "Description"
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:38
+msgid ""
+"The :program:`gdal_footprint` utility can be used to compute the footprint "
+"of a raster file, taking into account nodata values (or more generally the "
+"mask band attached to the raster bands), and generating polygons/"
+"multipolygons corresponding to areas where pixels are valid, and write to an "
+"output vector file."
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:43
+msgid ""
+"The :program:`nearblack` utility may be run as a pre-processing step to "
+"generate proper mask bands."
+msgstr ""
+
+#: ../../../source/programs/options/help.rst:3
+msgid "Show this help message and exit"
+msgstr ""
+
+#: ../../../source/programs/options/help_general.rst:3
+msgid ""
+"Gives a brief usage message for the generic GDAL commandline options and "
+"exit."
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:53
+msgid ""
+"Band(s) of interest. Between 1 and the number of bands of the raster. May be "
+"specified multiple times. If not specified, all bands are taken into "
+"account. The way multiple bands are combined is controlled by :option:`-"
+"combine_bands`"
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:60
+msgid ""
+"Defines how the mask bands of the selected bands are combined to generate a "
+"single mask band, before being vectorized. The default value is ``union``: "
+"that is a pixel is valid if it is valid at least for one of the selected "
+"bands. ``intersection`` means that a pixel is valid only ifit is valid for "
+"all selected bands."
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:69
+msgid ""
+"To specify which overview level of source file must be used, when overviews "
+"are available on the source raster. By default the full resolution level is "
+"used. The index is 0-based, that is 0 means the first overview level. This "
+"option is mutually exclusive with :option:`-srcnodata`."
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:76
+msgid ""
+"Set nodata values for input bands (different values can be supplied for each "
+"band). If a single value is specified, it applies to all selected bands. If "
+"more than one value is supplied, there should be as many values as the "
+"number of selected bands, and all values should be quoted to keep them "
+"together as a single operating system argument. If the option is not "
+"specified, the intrinsic mask band of each selected bands will be used."
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:86
+msgid ""
+"Target coordinate system. By default if the input dataset is georeferenced, "
+"``georef`` is implied, that is the footprint geometry will be expressed as "
+"coordinates in the CRS of the raster (or the one specified with :option:`-"
+"t_srs`). If specifying ``pixel``, the coordinates of the footprint geometry "
+"are column and line indices."
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:94
+msgid ""
+"Target CRS of the output file.  The <srs_def> may be any of the usual GDAL/"
+"OGR forms, complete WKT, PROJ.4, EPSG:n or a file containing the WKT. "
+"Specifying this option implies -t_cs georef The footprint is reprojected "
+"from the CRS of the source raster to the specified CRS."
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:103
+msgid ""
+"When specified, multipolygons are split as several features each with one "
+"single polygon."
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:108
+msgid "When specified, the convex hull of (multi)polygons is computed."
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:112
+msgid ""
+"The specified value of this option is the maximum distance between 2 "
+"consecutive points of the output geometry. The unit of the distance is in "
+"pixels if :option:`-t_cs` equals ``pixel``, or otherwise in georeferenced "
+"units of the source raster. This option is applied before the reprojection "
+"implied by :option:`-t_srs`"
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:120
+msgid ""
+"The specified value of this option is the tolerance used to merge "
+"consecutive points of the output geometry using the :cpp:func:`OGRGeometry::"
+"Simplify` method The unit of the distance is in pixels if :option:`-t_cs` "
+"equals ``pixel``, or otherwise in georeferenced units of the target vector "
+"dataset. This option is applied after the reprojection implied by :option:`-"
+"t_srs`"
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:129
+msgid ""
+"Minimum value for the area of a ring The unit of the area is in square "
+"pixels if :option:`-t_cs` equals ``pixel``, or otherwise in georeferenced "
+"units of the target vector dataset. This option is applied after the "
+"reprojection implied by :option:`-t_srs`"
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:136
+msgid ""
+"Maximum number of points of each output geometry (not counting the closing "
+"point of each ring, which is always identical to the first point). The "
+"default value is 100. ``unlimited`` can be used to remove that limitation."
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:142
+msgid "Suppress progress monitor and other non-error output."
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:146
+msgid "Dataset open option (format specific)"
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:150
+msgid ""
+"Select the output format. Use the short format name. Guessed from the file "
+"extension if not specified"
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:157
+msgid ""
+"Specifies the name of the field in the resulting vector dataset where the "
+"path of the input dataset will be stored. The default field name is "
+"\"location\". To prevent writing the path of the input dataset, use :option:"
+"`-no_location`"
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:166
+msgid ""
+"Turns off the writing of the path of the input dataset as a field in the "
+"output vector dataset."
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:173
+msgid ""
+"Enables writing the absolute path of the input dataset. By default, the "
+"filename is written in the location field exactly as specified on the "
+"command line."
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:179
+msgid "Layer creation option (format specific)"
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:183
+msgid "Dataset creation option (format specific)"
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:187
+msgid "Name of the target layer. ``footprint`` if not specified."
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:191
+msgid "Overwrite the target layer if it exists."
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:195
+msgid "The source raster file name."
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:199
+msgid ""
+"The destination vector file name. If the file and the output layer exist, "
+"the new footprint is appended to them, unless :option:`-overwrite` is used."
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:203
+msgid ""
+"Post-vectorization geometric operations are applied in the following order:"
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:205
+msgid "optional splitting (:option:`-split_polys`)"
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:206
+msgid "optional densification (:option:`-densify`)"
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:207
+msgid "optional reprojection (:option:`-t_srs`)"
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:208
+msgid "optional filtering by minimum ring area (:option:`-min_ring_area`)"
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:209
+msgid "optional application of convex hull (:option:`-convex_hull`)"
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:210
+msgid "optional simplification (:option:`-simplify`)"
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:211
+msgid "limitation of number of points (:option:`-max_points`)"
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:214
+msgid "C API"
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:216
+msgid "This utility is also callable from C with :cpp:func:`GDALFootprint`."
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:220
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:222
+msgid ""
+"Compute the footprint of a GeoTIFF file as a GeoJSON file using WGS 84 "
+"longitude, latitude coordinates"
+msgstr ""
+
+#: ../../../source/programs/gdal_footprint.rst:227
+msgid "gdal_footprint -t_srs EPSG:4326 input.tif output.geojson"
+msgstr ""

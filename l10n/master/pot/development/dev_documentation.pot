@@ -1,0 +1,772 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/dev_documentation.rst:7
+#: ../../../source/development/dev_documentation.rst:22
+msgid "Building documentation"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:10
+msgid "Documentation overview"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:12
+msgid ""
+"GDAL's documentation includes C and C++ :ref:`API documentation <api>` built "
+"automatically from source comments using doxygen and reStructuredText (rst) "
+"files containing manually-edited content."
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:16
+msgid ""
+"|Sphinx| is used to combine the above components into a complete set of "
+"documentation in HTML, PDF, and other formats."
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:18
+msgid ""
+"|Sphinx| and extensions used by GDAL can be installed by running ``python3 -"
+"m pip install -r requirements.txt`` from the ``doc`` subdirectory."
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:24
+msgid ""
+"HTML documentation can be built by running ``make html`` in the ``doc`` "
+"subdirectory of the GDAL source repository. The generated files will be "
+"output to ``doc/build`` where they can be viewed using a web browser. "
+"Doxygen content that is incorporated into the output is not automatically "
+"rebuilt but can be regenerated using ``make doxygen``."
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:28
+msgid ""
+"To visualize documentation changes while editing, it may be useful to "
+"install the |sphinx-autobuild| python package. Once installed, running "
+"``sphinx-autobuild -b html source build`` from the ``doc`` subdirectory will "
+"build documentation and serve it on a local web server at "
+"``http://127.0.0.1:8000``. The pages served will be automatically refreshed "
+"as changes are made to underlying ``rst`` documentation files."
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:34
+msgid "Python API documentation"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:36
+msgid ""
+"Sphinx uses the `autodoc <https://www.sphinx-doc.org/en/master/usage/"
+"extensions/autodoc.html>`_ extension to generate documentation for the "
+"Python API from Python function docstrings. To be correctly parsed by "
+"``autodoc``, docstrings should follow the `numpydoc Style guide <https://"
+"numpydoc.readthedocs.io/en/latest/format.html>`_. Docstrings may be found in "
+"two locations. If the function was defined in Python (i.e., using a "
+"``%pythoncode`` SWIG directive), then the docstring must be placed within "
+"the function definition. If the function is defined in C++ only, then the "
+"docstring should be placed in a separate file containing only docstrings "
+"(located in :source_file:`swig/include/python/docs`). Sphinx loads the "
+"Python bindings when generating documentation, so for it to see any changes "
+"the following steps must be completed:"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:47
+msgid ""
+"rebuild the Python bindings from the build directory (``cmake --build . --"
+"target python_binding``)"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:48
+msgid ""
+"make the updated Python bindings visible to Python, either by installing "
+"them, or by running ``scripts/setdevenv.sh`` from the build directory"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:50
+msgid ""
+"update the timestamp of the ``rst`` files associated with the page where the "
+"documentation appears (e.g., ``touch doc/source/api/python/osgeo.ogr.rst``)"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:56
+msgid "Sphinx RST Style guide"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:58
+msgid ""
+"This section contains syntax rules, tips, and tricks for using Sphinx and "
+"reStructuredText.  For more information, please see this  `comprehensive "
+"guide to reStructuredText <http://docutils.sourceforge.net/docs/ref/rst/"
+"restructuredtext.html>`_, as well as the `Sphinx reStructuredText Primer "
+"<http://sphinx.pocoo.org/rest.html>`_."
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:61
+msgid "Basic markup"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:63
+msgid ""
+"A reStructuredText document is written in plain text.  Without the need for "
+"complex formatting, one can be composed simply, just like one would any "
+"plain text document.  For basic formatting, see this table:"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:69
+msgid "**Format**"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:70
+msgid "**Syntax**"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:71
+msgid "**Output**"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:72
+msgid "Italics"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:73
+msgid "``*italics*`` (single asterisk)"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:74
+msgid "*italics*"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:75
+msgid "Bold"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:76
+msgid "``**bold**`` (double asterisk)"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:77
+msgid "**bold**"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:78
+msgid "Monospace"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:79
+msgid "`` ``monospace`` `` (double back quote)"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:80
+msgid "``monospace``"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:82
+msgid ""
+"Use of basic markup is **not recommend**! Where possible use sphinx inline "
+"directives (described below) to logically mark commands, parameters, "
+"options, input, and files. By using directives consistently these items can "
+"be styled appropriately."
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:85
+msgid "Lists"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:87
+msgid ""
+"There are two types of lists, bulleted lists and numbered lists.  A "
+"**bulleted list** looks like this:"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:89
+msgid "An item"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:90
+msgid "Another item"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:91
+msgid "Yet another item"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:93
+#: ../../../source/development/dev_documentation.rst:105
+msgid "This is accomplished with the following code::"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:95
+msgid ""
+"* An item\n"
+"* Another item\n"
+"* Yet another item"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:99
+msgid "A **numbered list** looks like this:"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:101
+msgid "First item"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:102
+msgid "Second item"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:103
+msgid "Third item"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:107
+msgid ""
+"#. First item\n"
+"#. Second item\n"
+"#. Third item"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:111
+msgid ""
+"Note that numbers are automatically generated, making it easy to add/remove "
+"items."
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:114
+msgid "List-tables"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:116
+msgid ""
+"Bulleted lists can sometimes be cumbersome and hard to follow.  When dealing "
+"with a long list of items, use list-tables.  For example, to talk about a "
+"list of options, create a table that looks like this:"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:122
+msgid "Shapes"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:123
+msgid "Description"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:124
+msgid "Square"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:125
+msgid "Four sides of equal length, 90 degree angles"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:126
+msgid "Rectangle"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:127
+msgid "Four sides, 90 degree angles"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:129
+msgid "This is done with the following code::"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:131
+msgid ""
+".. list-table::\n"
+"   :widths: 20 80\n"
+"   :header-rows: 1\n"
+"\n"
+"   * - Shapes\n"
+"     - Description\n"
+"   * - Square\n"
+"     - Four sides of equal length, 90 degree angles\n"
+"   * - Rectangle\n"
+"     - Four sides, 90 degree angles"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:143
+msgid "Page labels"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:145
+msgid ""
+"**Ensure every page has a label that matches the name of the file.** For "
+"example if the page is named ``foo_bar.rst`` then the page should have the "
+"label::"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:147
+msgid "..  _foo_bar:"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:149
+msgid "Other pages can then link to that page by using the following code::"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:151
+msgid ":ref:`foo_bar`"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:156
+msgid "Linking"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:158
+msgid ""
+"Links to other pages should never be titled as \"here\".  Sphinx makes this "
+"easy by automatically inserting the title of the linked document."
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:160
+msgid "Bad"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:161
+msgid "More information about linking can be found :ref:`here <linking>`."
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:163
+msgid "Good"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:163
+msgid "For more information, please see the section on :ref:`linking`."
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:165
+msgid "To insert a link to an external website::"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:167
+msgid "`Text of the link <http://example.com>`__"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:169
+msgid ""
+"The resulting link would look like this: `Text of the link <http://example."
+"com>`__"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:171
+msgid ""
+"It is very easy to have two links with the same text resulting in the "
+"following error::"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:173
+msgid "**(WARNING/2) Duplicate explicit target name:foo**"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:175
+msgid ""
+"To avoid these warnings use of a double `__` generates an anonymous link."
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:179
+msgid "Sections"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:181
+msgid ""
+"Use sections to break up long pages and to help Sphinx generate tables of "
+"contents."
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:185
+msgid ""
+"================================================================================\n"
+"Document title\n"
+"================================================================================\n"
+"\n"
+"First level\n"
+"-----------\n"
+"\n"
+"Second level\n"
+"++++++++++++\n"
+"\n"
+"Third level\n"
+"***********\n"
+"\n"
+"Fourth level\n"
+"~~~~~~~~~~~~"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:202
+msgid "Notes and warnings"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:204
+msgid ""
+"When it is beneficial to have a section of text stand out from the main "
+"text, Sphinx has two such boxes, the note and the warning.  They function "
+"identically, and only differ in their coloring.  You should use notes and "
+"warnings sparingly, however, as adding emphasis to everything makes the "
+"emphasis less effective."
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:206
+msgid "Here is an example of a note:"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:208
+msgid "This is a note."
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:210
+msgid "This note is generated with the following code::"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:212
+msgid ".. note:: This is a note."
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:214
+msgid "Similarly, here is an example of a warning:"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:216
+msgid "Beware of dragons."
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:218
+msgid "This warning is generated by the following code::"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:220
+msgid ".. warning:: Beware of dragons."
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:223
+msgid "Images"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:225
+msgid ""
+"Add images to your documentation when possible.  Images, such as "
+"screenshots, are a very helpful way of making documentation understandable.  "
+"When making screenshots, try to crop out unnecessary content (browser "
+"window, desktop, etc).  Avoid scaling the images, as the Sphinx theme "
+"automatically resizes large images.  It is also helpful to include a caption "
+"underneath the image.::"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:227
+msgid ""
+".. figure:: image.png\n"
+"   :align: center\n"
+"\n"
+"   *Caption*"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:232
+msgid ""
+"In this example, the image file exists in the same directory as the source "
+"page.  If this is not the case, you can insert path information in the above "
+"command. The root :file:`/` is the directory of the :file:`conf.py` file.::"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:234
+msgid ".. figure:: /../images/gdalicon.png"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:237
+msgid "External files"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:239
+msgid ""
+"Text snippets, large blocks of downloadable code, and even zip files or "
+"other binary sources can all be included as part of the documentation."
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:241
+msgid "To include link to sample file, use the ``download`` directive::"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:243
+msgid ":download:`An external file <example.txt>`"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:245
+msgid ""
+"The result of this code will generate a standard link to an :download:"
+"`external file <example.txt>`"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:247
+msgid "To include the contents of a file, use ``literalinclude`` directive::"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:249
+msgid ""
+"Example of :command:`gdalinfo` use:\n"
+"\n"
+".. literalinclude:: example.txt"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:253
+msgid "Example of :command:`gdalinfo` use:"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:255
+msgid ""
+"Driver: GTiff/GeoTIFF\n"
+"Size is 512, 512\n"
+"Coordinate System is:\n"
+"PROJCS[\"NAD27 / UTM zone 11N\",\n"
+"    GEOGCS[\"NAD27\",\n"
+"        DATUM[\"North_American_Datum_1927\",\n"
+"            SPHEROID[\"Clarke 1866\",6378206.4,294.978698213901]],\n"
+"        PRIMEM[\"Greenwich\",0],\n"
+"        UNIT[\"degree\",0.0174532925199433]],\n"
+"    PROJECTION[\"Transverse_Mercator\"],\n"
+"    PARAMETER[\"latitude_of_origin\",0],\n"
+"    PARAMETER[\"central_meridian\",-117],\n"
+"    PARAMETER[\"scale_factor\",0.9996],\n"
+"    PARAMETER[\"false_easting\",500000],\n"
+"    PARAMETER[\"false_northing\",0],\n"
+"    UNIT[\"metre\",1]]\n"
+"Origin = (440720.000000,3751320.000000)\n"
+"Pixel Size = (60.000000,-60.000000)\n"
+"Corner Coordinates:\n"
+"Upper Left  (  440720.000, 3751320.000) (117d38'28.21\"W, 33d54'8.47\"N)\n"
+"Lower Left  (  440720.000, 3720600.000) (117d38'20.79\"W, 33d37'31.04\"N)\n"
+"Upper Right (  471440.000, 3751320.000) (117d18'32.07\"W, 33d54'13.08\"N)\n"
+"Lower Right (  471440.000, 3720600.000) (117d18'28.50\"W, 33d37'35.61\"N)\n"
+"Center      (  456080.000, 3735960.000) (117d28'27.39\"W, 33d45'52.46\"N)\n"
+"Band 1 Block=512x16 Type=Byte, ColorInterp=Gray\n"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:257
+msgid ""
+"The ``literalinclude`` directive has options for syntax highlighting, line "
+"numbers and extracting just a snippet::"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:259
+msgid ""
+"Example of :command:`gdalinfo` use:\n"
+"\n"
+".. literalinclude:: example.txt\n"
+"   :language: txt\n"
+"   :linenos:\n"
+"   :emphasize-lines: 2-6\n"
+"   :start-after: Coordinate System is:\n"
+"   :end-before: Origin ="
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:269
+msgid "Reference files and paths"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:271
+msgid "Use the following syntax to reference files and paths::"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:273
+msgid ":file:`myfile.txt`"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:275
+msgid "This will output: :file:`myfile.txt`."
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:277
+msgid "You can reference paths in the same way::"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:279
+msgid ":file:`path/to/myfile.txt`"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:281
+msgid "This will output: :file:`path/to/myfile.txt`."
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:283
+msgid "For Windows paths, use double backslashes::"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:285
+msgid ":file:`C:\\\\myfile.txt`"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:287
+msgid "This will output: :file:`C:\\\\myfile.txt`."
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:289
+msgid "If you want to reference a non-specific path or file name::"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:291
+msgid ":file:`{your/own/path/to}/myfile.txt`"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:293
+msgid "This will output: :file:`{your/own/path/to}/myfile.txt`"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:295
+msgid "To reference a file in the GDAL source tree, use::"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:297
+msgid ":source_file:`gcore/gdaldriver.cpp`"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:299
+msgid ""
+"This will output a link to the file on GitHub: :source_file:`gcore/"
+"gdaldriver.cpp`"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:302
+msgid "Reference code"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:304
+msgid "To reference a class::"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:306
+msgid ":cpp:class:`MyClass`"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:308
+msgid "To reference a method or function::"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:310
+msgid ""
+":cpp:func:`MyClass::MyMethod`\n"
+":cpp:func:`MyFunction`"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:316
+msgid "Define and reference configuration options"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:318
+msgid "To define a configuration option, use::"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:320
+msgid ""
+".. config:: OPTION_NAME\n"
+"   :choices: COMMA, SEPARATED, LIST\n"
+"   :default: DEFAULT_VALUE\n"
+"   :since: GDAL.MIN.VERSION\n"
+"\n"
+"   Narrative about the option."
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:327
+msgid ""
+"Similar syntax can be used to define opening options (``.. oo::``), creation "
+"options (``.. co::``), dataset creation options (``.. dsco::``), or layer "
+"creation options (``.. lco::``)."
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:331
+msgid ""
+"To reference a configuration option, such as **GDAL_CACHEMAX**, use the "
+"syntax in the table below."
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:337
+msgid "Option type"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:338
+msgid "Syntax"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:339
+msgid "Configuration option"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:342
+msgid ":config:`option_name`"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:343
+msgid "Creation option"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:346
+msgid ":co:`option_name`"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:347
+msgid "Open option"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:350
+msgid ":oo:`option_name`"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:351
+msgid "Dataset creation option"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:354
+msgid ":dsco:`option_name`"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:355
+msgid "Layer creation option"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:358
+msgid ":lco:`option_name`"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:362
+msgid "Reference commands"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:364
+msgid ""
+"Reference commands (such as :program:`gdalinfo`) with the following syntax::"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:366
+msgid ":program:`gdalinfo`"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:368
+msgid "Use ``option`` directive for command line options::"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:370
+msgid ""
+".. option:: -json\n"
+"\n"
+"   Display the output in json format."
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:374
+msgid "Use ``describe`` to document create parameters::"
+msgstr ""
+
+#: ../../../source/development/dev_documentation.rst:376
+msgid ""
+".. describe:: WORLDFILE=YES\n"
+"\n"
+"   Force the generation of an associated ESRI world file (with the "
+"extension .wld)."
+msgstr ""

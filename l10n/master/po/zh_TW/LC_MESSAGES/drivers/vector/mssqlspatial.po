@@ -1,0 +1,245 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:4
+msgid "MSSQLSpatial - Microsoft SQL Server Spatial Database"
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:6
+msgid "MSSQLSpatial"
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:8
+msgid "ODBC library"
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:10
+msgid ""
+"This driver implements support for access to spatial tables in Microsoft SQL "
+"Server 2008+ which contains the geometry and geography data types to "
+"represent the geometry columns."
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:15
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:22
+msgid "Connecting to a database"
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:26
+msgid ""
+"To connect to a MSSQL datasource, use a connection string specifying the "
+"database name, with additional parameters as necessary. The connection "
+"strings must be prefixed with '*MSSQL:*'."
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:30
+msgid "MSSQL:server=.\\MSSQLSERVER2008;database=dbname;trusted_connection=yes"
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:32
+msgid ""
+"In addition to the standard parameters of the `ODBC driver connection string "
+"<http://msdn.microsoft.com/en-us/library/ms130822.aspx>`__ format the "
+"following custom parameters can also be used in the following syntax:"
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:37
+msgid ""
+"**Tables=schema1.table1(geometry column1),schema2.table2(geometry "
+"column2)**: By using this parameter you can specify the subset of the layers "
+"to be used by the driver. If this parameter is not set, the layers are "
+"retrieved from the geometry_columns metadata table. You can omit specifying "
+"the schema and the geometry column portions of the syntax."
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:43
+msgid ""
+"**GeometryFormat=native|wkb|wkt|wkbzm**: The desired format in which the "
+"geometries should be retrieved from the server. The default value is "
+"'native' in this case the native SqlGeometry and SqlGeography serialization "
+"format is used. When using the 'wkb' or 'wkt' setting the geometry "
+"representation is converted to 'Well Known Binary' and 'Well Known Text' at "
+"the server. This conversion requires a significant overhead at the server "
+"and makes the feature access slower than using the native format. The wkbzm "
+"format can only be used with SQL Server 2012."
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:53
+msgid "The parameter names are not case sensitive in the connection strings."
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:55
+msgid ""
+"Specifying the **Database** parameter is required by the driver in order to "
+"select the proper database."
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:58
+msgid ""
+"The connection may contain the optional **Driver** parameter if a custom SQL "
+"server driver should be loaded (like FreeTDS). The default is **{SQL Server}"
+"**."
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:62
+msgid ""
+"Authentication is supported either through a **trusted_conection** or "
+"through username (**UID**) and password (**PWD**). As providing username and "
+"password on the commandline can be a security issue, login credentials can "
+"also be more securely stored in user defined environment variables "
+"*MSSQLSPATIAL_UID* and *MSSQLSPATIAL_PWD*."
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:69
+msgid "Layers"
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:71
+msgid ""
+"If the user defines the environment variable :config:"
+"`MSSQLSPATIAL_LIST_ALL_TABLES=YES` (and does not specify Tables= in the "
+"connection string), all regular user tables will be treated as layers. This "
+"option is useful if you want tables with with no spatial data"
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:76
+msgid ""
+"By default the MSSQL driver will only look for layers that are registered in "
+"the *geometry_columns* metadata table. If the user defines the environment "
+"variable :config:`MSSQLSPATIAL_USE_GEOMETRY_COLUMNS=NO` then the driver will "
+"look for all user spatial tables found in the system catalog"
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:83
+msgid "SQL statements"
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:85
+msgid ""
+"The MS SQL Spatial driver passes SQL statements directly to MS SQL by "
+"default, rather than evaluating them internally when using the ExecuteSQL() "
+"call on the OGRDataSource, or the -sql command option to ogr2ogr. Attribute "
+"query expressions are also passed directly through to MSSQL. It's also "
+"possible to request the OGR MSSQL driver to handle SQL commands with the :"
+"ref:`OGR SQL <ogr_sql_dialect>` engine, by passing **\"OGRSQL\"** string to "
+"the ExecuteSQL() method, as the name of the SQL dialect."
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:94
+msgid ""
+"The MSSQL driver in OGR supports the OGRLayer::StartTransaction(), OGRLayer::"
+"CommitTransaction() and OGRLayer::RollbackTransaction() calls in the normal "
+"SQL sense."
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:99
+msgid "Creation Issues"
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:101
+msgid ""
+"This driver doesn't support creating new databases, you might want to use "
+"the *Microsoft SQL Server Client Tools* for this purpose, but it does allow "
+"creation of new layers within an existing database."
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:106
+msgid "Layer Creation Options"
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:213
+msgid "Configuration options"
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:215
+msgid ""
+"The following :ref:`configuration options <configoptions>` are available:"
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:281
+msgid "Transaction support"
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:283
+msgid ""
+"The driver implements transactions at the dataset level, per :ref:`rfc-54`"
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:286
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:288
+msgid "Creating a layer from an OGR data source"
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:292
+msgid ""
+"ogr2ogr -overwrite -f MSSQLSpatial \"MSSQL:server=.\\MSSQLSERVER2008;"
+"database=geodb;trusted_connection=yes\" \"rivers.tab\"\n"
+"\n"
+"ogr2ogr -overwrite -f MSSQLSpatial \"MSSQL:server=127.0.0.1;database=TestDB;"
+"UID=SA;PWD=DummyPassw0rd\" \"rivers.gpkg\""
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:296
+msgid "Connecting to a layer and dump the contents"
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:300
+msgid ""
+"ogrinfo -al \"MSSQL:server=.\\MSSQLSERVER2008;database=geodb;tables=rivers;"
+"trusted_connection=yes\"\n"
+"\n"
+"ogrinfo -al \"MSSQL:server=127.0.0.1;database=TestDB;driver=ODBC Driver 17 "
+"for SQL Server;UID=SA;PWD=DummyPassw0rd\""
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:304
+msgid "Connecting with username/password"
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:308
+msgid ""
+"ogrinfo -al   MSSQL:server=.\\MSSQLSERVER2008;database=geodb;"
+"trusted_connection=no;UID=user;PWD=pwd"
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:310
+msgid "Connecting with username/password stored in environment variables"
+msgstr ""
+
+#: ../../../source/drivers/vector/mssqlspatial.rst:314
+msgid ""
+"export MSSQLSPATIAL_UID=user\n"
+"export MSSQLSPATIAL_PWD=pwd\n"
+"ogrinfo -al   MSSQL:server=.\\MSSQLSERVER2008;database=geodb;"
+"trusted_connection=no"
+msgstr ""

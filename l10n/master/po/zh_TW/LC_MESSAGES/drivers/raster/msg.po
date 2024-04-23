@@ -1,0 +1,378 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/msg.rst:5
+msgid "MSG -- Meteosat Second Generation"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:7
+msgid "MSG"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:9
+msgid "msg library"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:11
+msgid ""
+"This driver implements reading support for Meteosat Second Generation files. "
+"These are files with names like ``H-000-MSG1\\_\\_-"
+"MSG1\\_\\_\\_\\_\\_\\_\\_\\_-"
+"HRV\\_\\_\\_\\_\\_\\_-000007\\_\\_\\_-200405311115-C\\_``, commonly "
+"distributed into a folder structure with dates (e.g. ``2004\\05\\31`` for "
+"the file mentioned)."
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:17
+msgid ""
+"The MSG files are wavelet-compressed. A decompression library licensed from "
+"`EUMETSAT <http://www.eumetsat.int/>`__ is needed (`Public Wavelet Transform "
+"Decompression Library Software <https://gitlab.eumetsat.int/open-source/"
+"PublicDecompWT>`__, shorter *Wavelet Transform Software*). The software is "
+"compilable on Microsoft Windows, Linux and Solaris Operating Systems, and it "
+"works on 32 bits and 64 bits as well as mixed architectures. It is licensed "
+"under Apache v2."
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:28
+msgid ""
+"This driver is not \"enabled\" by default. See `Build Instructions "
+"<#MSG_Build_Instructions>`__ on how to include this driver in your GDAL "
+"library."
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:31
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:36
+msgid "Build Instructions"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:39
+msgid "CMake builds"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:41
+msgid ""
+"See the ``GDAL_USE_PUBLICDECOMPWT`` option of :ref:`building_from_source`."
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:44
+msgid "Other build systems"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:46
+msgid ""
+"Clone the EUMETSAT library for wavelet decompression into ``frmts/msg``."
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:48
+msgid ""
+"If you are building with Visual Studio 6.0, extract the .vc makefiles for "
+"the PublicDecompWT from the file `PublicDecompWTMakefiles.zip` stored in "
+"that directory."
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:52
+msgid ""
+"If you build using the GNUMakefile, use *--with-msg* option to enable MSG "
+"driver:"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:57
+msgid "./configure --with-msg"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:59
+msgid ""
+"If you find that some adjustments are needed in the makefile and/or the msg "
+"source files, please \"commit\" them. The EUMETSAT library promises to be "
+"\"platform independent\", but as we are working with Microsoft Windows and "
+"Visual Studio 6.0, we did not have the facilities to check if the rest of "
+"the msg driver is. Furthermore, apply steps 4 to 7 from the :ref:"
+"`raster_driver_tut`, section \"Adding Driver to GDAL Tree\"."
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:66
+msgid ""
+"MSG Wiki page is available at http://trac.osgeo.org/gdal/wiki/MSG. It's "
+"dedicated to document building and usage hints"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:70
+msgid "Specification of Source Dataset"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:72
+msgid ""
+"It is possible to select individual files for opening. In this case, the "
+"driver will gather the files that correspond to the other strips of the same "
+"image, and correctly compose the image."
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:76
+msgid "Example with gdal_translate.exe:"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:80
+msgid ""
+"gdal_translate\n"
+" C:\\hrit_a\\2004\\05\\31\\H-000-MSG1__-MSG1________-"
+"HRV______-000008___-200405311115-C_\n"
+" C:\\output\\myimage.tif"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:84
+msgid ""
+"It is also possible to use the following syntax for opening the MSG files:"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:87
+msgid ""
+"MSG(source_folder,timestamp,(channel,channel,...,channel),use_root_folder,"
+"data_conversion,nr_cycles,step)"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:90
+msgid "source_folder: a path to a folder structure that contains the files"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:92
+msgid ""
+"timestamp: 12 digits representing a date/time that identifies the 114 files "
+"of the 12 images of that time, e.g. 200501181200"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:94
+msgid ""
+"channel: a number between 1 and 12, representing each of the 12 available "
+"channels. When only specifying one channel, the brackets are optional."
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:97
+msgid ""
+"use_root_folder: Y to indicate that the files reside directly into the "
+"source_folder specified. N to indicate that the files reside in date "
+"structured folders: source_folder/YYYY/MM/DD"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:100
+msgid "data_conversion:"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:103
+msgid "N to keep the original 10 bits DN values. The result is UInt16."
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:104
+msgid ""
+"B to convert to 8 bits (handy for GIF and JPEG images). The result is Byte."
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:106
+msgid ""
+"R to perform radiometric calibration and get the result in mW/m2/sr/"
+"(cm-1)-1. The result is Float32."
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:108
+msgid ""
+"L to perform radiometric calibration and get the result in W/m2/sr/um. The "
+"result is Float32."
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:110
+msgid ""
+"T to get the reflectance for the visible bands (1, 2, 3 and 12) and the "
+"temperature in degrees Kelvin for the infrared bands (all other bands). The "
+"result is Float32."
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:114
+msgid ""
+"nr_cycles: a number that indicates the number of consecutive cycles to be "
+"included in the same file (time series). These are appended as additional "
+"bands."
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:117
+msgid ""
+"step: a number that indicates what is the stepsize when multiple cycles are "
+"chosen. E.g. every 15 minutes: step = 1, every 30 minutes: step = 2 etc. "
+"Note that the cycles are exactly 15 minutes apart, so you can not get images "
+"from times in-between (the step is an integer)."
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:123
+msgid "Examples with gdal_translate utility:"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:125
+msgid ""
+"Example call to fetch an MSG image of 200501181200 with bands 1, 2 and 3 in "
+"IMG format:"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:130
+msgid ""
+"gdal_translate -of HFA MSG(\\\\pc2133-24002\\RawData\\,200501181200,(1,2,3),"
+"N,N,1,1) d:\\output\\outfile.img"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:132
+msgid ""
+"In JPG format, and converting the 10 bits image to 8 bits by dividing all "
+"values by 4:"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:137
+msgid ""
+"gdal_translate -of JPEG MSG(\\\\pc2133-24002\\RawData\\,200501181200,(1,2,3),"
+"N,B,1,1) d:\\output\\outfile.jpg"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:139
+msgid "The same, but reordering the bands in the JPEG image to resemble RGB:"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:143
+msgid ""
+"gdal_translate -of JPEG MSG(\\\\pc2133-24002\\RawData\\,200501181200,(3,2,1),"
+"N,B,1,1) d:\\output\\outfile.jpg"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:145
+msgid "Geotiff output, only band 2, original 10 bits values:"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:149
+msgid ""
+"gdal_translate -of GTiff MSG(\\\\pc2133-24002\\RawData\\,200501181200,2,N,"
+"N,1,1) d:\\output\\outfile.tif"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:151
+msgid "Band 12:"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:155
+msgid ""
+"gdal_translate -of GTiff MSG(\\\\pc2133-24002\\RawData\\,200501181200,12,N,"
+"N,1,1) d:\\output\\outfile.tif"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:157
+msgid "The same band 12 with radiometric calibration in mW/m2/sr/(cm-1)-1:"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:161
+msgid ""
+"gdal_translate -of GTiff MSG(\\\\pc2133-24002\\RawData\\,200501181200,12,N,"
+"R,1,1) d:\\output\\outfile.tif"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:163
+msgid ""
+"Retrieve data from c:\\hrit-data\\2005\\01\\18 instead of \\\\"
+"\\pc2133-24002\\RawData\\... :"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:168
+msgid ""
+"gdal_translate -of GTiff MSG(c:\\hrit-data\\2005\\01\\18,200501181200,12,Y,"
+"R,1,1) d:\\output\\outfile.tif"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:170
+msgid ""
+"Another option to do the same (note the difference in the Y and the N for "
+"the “use_root_folder” parameter:"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:175
+msgid ""
+"gdal_translate -of GTiff MSG(c:\\hrit-data\\,200501181200,12,N,R,1,1) d:"
+"\\output\\outfile.tif"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:177
+msgid ""
+"Without radiometric calibration, but for 10 consecutive cycles (thus from "
+"1200 to 1415):"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:182
+msgid ""
+"gdal_translate -of GTiff MSG(c:\\hrit-data\\,200501181200,12,N,N,10,1) d:"
+"\\output\\outfile.tif"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:184
+msgid "10 cycles, but every hour (thus from 1200 to 2100):"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:188
+msgid ""
+"gdal_translate -of GTiff MSG(c:\\hrit-data\\,200501181200,12,N,N,10,4) d:"
+"\\output\\outfile.tif"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:190
+msgid "10 cycles, every hour, and bands 3, 2 and 1:"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:194
+msgid ""
+"gdal_translate -of GTiff MSG(c:\\hrit-data\\,200501181200,(3,2,1),N,N,10,4) "
+"d:\\output\\outfile.tif"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:197
+msgid "Georeference and Projection"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:199
+msgid ""
+"The images are using the Geostationary Satellite View projection. Most GIS "
+"packages don't recognize this projection (we only know of ILWIS that does "
+"have this projection), but gdalwarp.exe can be used to re-project the images."
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:205
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:207
+msgid "Implemented as :source_file:`frmts/msg/msgdataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/msg.rst:208
+msgid ""
+"http://www.eumetsat.int - European Organisation for the Exploitation of "
+"Meteorological Satellites"
+msgstr ""

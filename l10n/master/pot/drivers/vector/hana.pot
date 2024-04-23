@@ -1,0 +1,283 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/hana.rst:4
+msgid "SAP HANA"
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:6
+msgid "HANA"
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:8
+msgid "odbc-cpp-wrapper"
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:10
+msgid ""
+"This driver implements read and write access for spatial data stored in an "
+"`SAP HANA <https://www.sap.com/products/hana.html>`__ database."
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:14
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:21
+msgid "Connecting to a database"
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:25
+msgid ""
+"To connect to an SAP HANA database, use a connection string specifying the "
+"database name, with additional parameters as necessary. The HANA: prefix is "
+"used to mark the name as a HANA connection string."
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:29
+msgid ""
+"HANA:\"DRIVER=HDBODBC;DATABASE=HAN;HOST=localhost;PORT=30015;USER=mylogin;"
+"PASSWORD=mypassword;SCHEMA=MYSCHEMA\""
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:31
+msgid ""
+"In this syntax each parameter setting is in the form keyword = value. Spaces "
+"around the equal sign are optional. To write an empty value, or a value "
+"containing spaces, surround it with single quotes, e.g., keyword = 'a "
+"value'. Single quotes and backslashes within the value must be escaped with "
+"a backslash, i.e., \\' and \\\\."
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:39
+msgid "SQL statements"
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:41
+msgid ""
+"The HANA driver passes SQL statements directly to HANA by default, rather "
+"than evaluating them internally when using the ExecuteSQL() call on the "
+"OGRDataSource, or the -sql command option to ogr2ogr. Attribute query "
+"expressions are also passed directly through to HANA. It's also possible to "
+"request the OGR HANA driver to handle SQL commands with the :ref:`OGR SQL "
+"<ogr_sql_dialect>` engine, by passing **\"OGRSQL\"** string to the "
+"ExecuteSQL() method, as the name of the SQL dialect."
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:50
+msgid ""
+"The HANA driver in OGR supports the OGRDataSource::StartTransaction(), "
+"OGRDataSource::CommitTransaction() and OGRDataSource::RollbackTransaction() "
+"calls in the normal SQL sense."
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:55
+msgid "Creation Issues"
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:57
+msgid ""
+"The HANA driver does not support creation of new schemas, but it does allow "
+"creation of new layers (tables) within an existing schema."
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:61
+msgid "Dataset Open options"
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:171
+msgid "Dataset Creation Options"
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:173
+msgid "None"
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:176
+msgid "Layer Creation Options"
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:251
+msgid "Multitenant Database Containers"
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:253
+msgid ""
+"In order to connect to a tenant database, you need to specify a port number "
+"assigned exactly to a desired instance. This port number can be determined "
+"by executing the following query from the tenant database."
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:259
+msgid ""
+"SELECT SQL_PORT FROM SYS.M_SERVICES WHERE ((SERVICE_NAME='indexserver' and "
+"COORDINATOR_TYPE= 'MASTER') or (SERVICE_NAME='xsengine'))"
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:261
+msgid ""
+"For more details, see **Section 2.9 Connections for Multitenant Database "
+"Containers** in `SAP HANA Multitenant Database Containers <https://help.sap."
+"com/doc/0987e3b51fb74e5a8631385fe4599c97/2.0.00/en-us/"
+"sap_hana_multitenant_database_containers_en.pdf>`__."
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:266
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:268
+msgid ""
+"This example shows how to list HANA layers on a specified host using :ref:"
+"`ogrinfo` command."
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:273
+msgid ""
+"ogrinfo -ro HANA:\"DRIVER=HDBODBC;DATABASE=HAN;HOST=localhost;PORT=30015;"
+"USER=mylogin;PASSWORD=mypassword;SCHEMA=MYSCHEMA\""
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:275
+#: ../../../source/drivers/vector/hana.rst:281
+msgid "or"
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:279
+msgid ""
+"ogrinfo -ro HANA:\"DSN=MYHANADB;USER=mylogin;PASSWORD=mypassword;"
+"SCHEMA=MYSCHEMA\""
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:285
+msgid ""
+"ogrinfo -ro HANA:\"DRIVER=HDBODBC;USER_STORE_KEY=mykey;SCHEMA=MYSCHEMA\""
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:287
+msgid ""
+"This example shows how to print summary information about a given layer, i."
+"e. 'planet_osm_line', using :ref:`ogrinfo`."
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:292
+msgid ""
+"ogrinfo -ro HANA:\"DRIVER=HDBODBC;DATABASE=HAN;HOST=localhost;PORT=30015;"
+"USER=mylogin;PASSWORD=mypassword;SCHEMA=MYSCHEMA\" -so \"planet_osm_line\"\n"
+"\n"
+"Layer name: planet_osm_line\n"
+"Geometry: Line String\n"
+"Feature Count: 81013\n"
+"Extent: (732496.086304, 6950959.464783) - (1018694.144531, 7204272.976379)\n"
+"Layer SRS WKT:\n"
+"PROJCS[\"WGS 84 / Pseudo-Mercator\",\n"
+"    GEOGCS[\"WGS 84\",\n"
+"        DATUM[\"WGS_1984\",\n"
+"            SPHEROID[\"WGS 84\",6378137,298.257223563, AHORITY[\"EPSG\","
+"\"7030\"]],\n"
+"            AUTHORITY[\"EPSG\",\"6326\"]],\n"
+"            PRIMEM[\"Greenwich\",0, AUTHORITY[\"EPSG\",\"8901\"]],\n"
+"            UNIT[\"degree\",0.0174532925199433, AUTHORITY[\"EPSG\","
+"\"9122\"]],\n"
+"            AUTHORITY[\"EPSG\",\"4326\"]],\n"
+"        PROJECTION[\"Mercator_1SP\"],\n"
+"        PARAMETER[\"central_meridian\",0],\n"
+"        PARAMETER[\"scale_factor\",1],\n"
+"        PARAMETER[\"false_easting\",0],\n"
+"        PARAMETER[\"false_northing\",0],\n"
+"        UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],\n"
+"        AXIS[\"X\",EAST],\n"
+"        AXIS[\"Y\",NORTH],\n"
+"        AUTHORITY[\"EPSG\",\"3857\"]]\n"
+"Geometry Column = way\n"
+"osm_id: Integer64 (0.0)\n"
+"access: String (4000.0)\n"
+"addr:housename: String (4000.0)\n"
+"addr:housenumber: String (4000.0)\n"
+"addr:interpolation: String (4000.0)\n"
+"admin_level: String (4000.0)\n"
+"aerialway: String (4000.0)\n"
+"aeroway: String (4000.0)"
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:326
+msgid ""
+"This example shows how to export data from the 'points' table to a shapefile "
+"called 'points_output.shp'."
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:330
+msgid ""
+"ogr2ogr -f \"ESRI Shapefile\" \"D:\\\\points_output.shp\" HANA:"
+"\"DRIVER=HDBODBC;DATABASE=HAN;HOST=localhost;PORT=30015;USER=mylogin;"
+"PASSWORD=mypassword;SCHEMA=GIS;TABLES=points\""
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:332
+msgid ""
+"This example shows how to create and populate a table with data taken from a "
+"shapefile."
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:336
+msgid ""
+"ogr2ogr -f HANA HANA:\"DRIVER=HDBODBC;DATABASE=HAN;HOST=localhost;PORT=30015;"
+"USER=mylogin;PASSWORD=mypassword;SCHEMA=MYSCHEMA\" myshapefile.shp"
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:340
+msgid "For developers"
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:342
+msgid ""
+"To compile the SAP HANA driver, `odbc-cpp-wrapper <https://github.com/SAP/"
+"odbc-cpp-wrapper/>`__ library needs to be linked or installed. For more "
+"details, see comments in nmake.opt or configure.ac files to build the driver "
+"for Windows or Linux/MacOS correspondingly."
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:346
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:348
+msgid "`SAP HANA Home Page <https://www.sap.com/products/hana.html>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:349
+msgid ""
+"`SAP HANA Spatial Reference <https://help.sap.com/viewer/"
+"cbbbfc20871e4559abfd45a78ad58c02/2.0.03/en-US/"
+"e1c934157bd14021a3b43b5822b2cbe9.html>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:350
+msgid ""
+"`SAP HANA ODBC Connection Properties <https://help.sap.com/"
+"viewer/0eec0d68141541d1b07893a39944924e/2.0.02/en-"
+"US/7cab593774474f2f8db335710b2f5c50.html>`__"
+msgstr ""

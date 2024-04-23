@@ -1,0 +1,111 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/ehdr.rst:5
+msgid "EHdr -- ESRI .hdr Labelled"
+msgstr ""
+
+#: ../../../source/drivers/raster/ehdr.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/ehdr.rst:7
+msgid "EHdr"
+msgstr ""
+
+#: ../../../source/drivers/raster/ehdr.rst:11
+msgid ""
+"GDAL supports reading and writing the ESRI .hdr labeling format, often "
+"referred to as ESRI BIL format. Eight, sixteen and thirty-two bit integer "
+"raster data types are supported as well as 32 bit floating point. Coordinate "
+"systems (from a .prj file), and georeferencing are supported. Unrecognized "
+"options in the .hdr file are ignored. To open a dataset select the file with "
+"the image file (often with the extension .bil). If present .clr color table "
+"files are read, but not written. If present, image.rep file will be read to "
+"extract the projection system of SpatioCarte Defense 1.0 raster products."
+msgstr ""
+
+#: ../../../source/drivers/raster/ehdr.rst:21
+msgid ""
+"This driver does not always do well differentiating between floating point "
+"and integer data. The GDAL extension to the .hdr format to differentiate is "
+"to add a field named PIXELTYPE with values of either FLOAT, SIGNEDINT or "
+"UNSIGNEDINT. In combination with the NBITS field it is possible to described "
+"all variations of pixel types."
+msgstr ""
+
+#: ../../../source/drivers/raster/ehdr.rst:27
+msgid "eg."
+msgstr ""
+
+#: ../../../source/drivers/raster/ehdr.rst:31
+msgid ""
+"ncols 1375\n"
+"nrows 649\n"
+"cellsize 0.050401\n"
+"xllcorner -130.128639\n"
+"yllcorner 20.166799\n"
+"nodata_value 9999.000000\n"
+"nbits 32\n"
+"pixeltype float\n"
+"byteorder msbfirst"
+msgstr ""
+
+#: ../../../source/drivers/raster/ehdr.rst:41
+msgid "This driver may be sufficient to read GTOPO30 data."
+msgstr ""
+
+#: ../../../source/drivers/raster/ehdr.rst:43
+msgid "NOTE: Implemented as :source_file:`frmts/raw/ehdrdataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/ehdr.rst:46
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/ehdr.rst:57
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/ehdr.rst:59
+msgid ""
+"`ESRI whitepaper: + Extendable Image Formats for ArcView GIS 3.1 and 3.2 "
+"<http://downloads.esri.com/support/whitepapers/other_/eximgav.pdf>`__ (BIL, "
+"see p. 5)"
+msgstr ""
+
+#: ../../../source/drivers/raster/ehdr.rst:62
+msgid ""
+"`GTOPO30 - Global Topographic Data <http://edcdaac.usgs.gov/gtopo30/gtopo30."
+"html>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/ehdr.rst:64
+msgid "`GTOPO30 Documentation <http://edcdaac.usgs.gov/gtopo30/README.html>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/ehdr.rst:66
+msgid ""
+"`SpatioCarte Defense 1.0 specification <http://eden.ign.fr/download/pub/doc/"
+"emabgi/spdf10.pdf/download>`__ (in French)"
+msgstr ""
+
+#: ../../../source/drivers/raster/ehdr.rst:69
+msgid "`SRTMHGT Driver <#SRTMHGT>`__"
+msgstr ""

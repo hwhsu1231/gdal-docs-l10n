@@ -1,0 +1,270 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/community/code_of_conduct.rst:5
+msgid "Code of Conduct"
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:7
+msgid ""
+"This code of conduct governs how we behave in any GDAL forum or event and "
+"whenever we will be judged by our actions. We expect it to be honored by "
+"everyone who participates in the GDAL community formally or informally, or "
+"claims any affiliation with the project."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:13
+msgid "Introduction"
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:15
+msgid ""
+"This code of conduct governs how we behave in any GDAL forum or event and "
+"whenever we will be judged by our actions. We expect it to be honored by "
+"everyone who participates in the GDAL community formally or informally, or "
+"claims any affiliation with the GDAL project."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:20
+msgid ""
+"It applies to in-person events (such as conferences and related social "
+"events), IRC, public and private mailing lists, the issue tracker, the wiki, "
+"blogs, Twitter, and any other forums which the community uses for "
+"communication and interactions."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:25
+msgid ""
+"This code is not exhaustive or complete. It serves to distill our common "
+"understanding of a collaborative, shared environment and goals. We expect it "
+"to be followed in spirit as much as in the letter, so that it can enrich all "
+"of us and the technical communities in which we participate."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:31
+msgid "Diversity Statement"
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:33
+msgid ""
+"GDAL welcomes and encourages participation by everyone. We are committed to "
+"being a community that everyone feels good about joining, and we will always "
+"work to treat everyone well. No matter how you identify yourself or how "
+"others perceive you: we welcome you. Specific Guidelines"
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:39
+msgid "We strive to:"
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:41
+msgid "Be open."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:43
+msgid ""
+"We invite anyone to participate in our community. We preferably use public "
+"methods of communication for project-related messages, unless discussing "
+"something sensitive. This applies to messages for help or project-related "
+"support, too; not only is a public support request much more likely to "
+"result in an answer to a question, it also makes sure that any inadvertent "
+"mistakes made by people answering will be more easily detected and corrected."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:50
+msgid "Be empathetic, welcoming, friendly, and patient."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:52
+msgid ""
+"We work together to resolve conflict, assume good intentions, and do our "
+"best to act in an empathetic fashion. We may all experience some frustration "
+"from time to time, but we do not allow frustration to turn into a personal "
+"attack. A community where people feel uncomfortable or threatened is not a "
+"productive one. Note that we have a multi-cultural, multi-lingual community "
+"and some of us are non-native speakers. We should be respectful when dealing "
+"with other community members as well as with people outside our community."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:60
+msgid "Be collaborative."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:62
+msgid ""
+"Our work will be used by other people, and in turn we will depend on the "
+"work of others. When we make something for the benefit of GDAL, we are "
+"willing to explain to others how it works, so that they can build on the "
+"work to make it even better. Any decision we make will affect users and "
+"colleagues, and we take those consequences seriously when making decisions."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:68
+msgid "Be inquisitive."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:70
+msgid ""
+"Nobody knows everything! Asking questions early avoids many problems later, "
+"so questions are encouraged, though they may be directed to the appropriate "
+"forum. Those who are asked should be responsive and helpful, within the "
+"context of our shared goal of improving GDAL."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:75
+msgid "Be careful in the words that we choose."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:77
+msgid ""
+"Whether we are participating as professionals or volunteers, we value "
+"professionalism in all interactions, and take responsibility for our own "
+"speech. Be kind to others. Do not insult or put down other participants."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:81
+msgid "Be concise."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:83
+msgid ""
+"Keep in mind that what you write once will be read by hundreds of persons. "
+"Writing a short email means people can understand the conversation as "
+"efficiently as possible. Short emails should always strive to be empathetic, "
+"welcoming, friendly and patient. When a long explanation is necessary, "
+"consider adding a summary."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:89
+msgid ""
+"Try to bring new ideas to a conversation so that each mail adds something "
+"unique to the thread, keeping in mind that the rest of the thread still "
+"contains the other messages with arguments that have already been made."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:93
+msgid ""
+"Try to stay on topic, especially in discussions that are already fairly "
+"large."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:95
+msgid "Step down considerately."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:97
+msgid ""
+"Members of every project come and go. When somebody leaves or disengages "
+"from the project they should tell people they are leaving and take the "
+"proper steps to ensure that others can pick up where they left off. In doing "
+"so, they should remain respectful of those who continue to participate in "
+"the project and should not misrepresent the project's goals or achievements. "
+"Likewise, community members should respect any individual's choice to leave "
+"the project."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:106
+msgid "Anti-Harassment"
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:108
+msgid ""
+"Harassment and other exclusionary behavior are not acceptable. This "
+"includes, but is not limited to:"
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:111
+msgid ""
+"Personal insults or discriminatory jokes and language, especially those "
+"using racist or sexist terms."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:112
+msgid "Offensive comments, excessive or unnecessary profanity."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:113
+msgid "Intimidation, violent threats or demands."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:114
+msgid "Sustained disruption of sessions or events."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:115
+msgid "Stalking, harassing photography or recording."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:116
+msgid "Unwelcome physical contact or sexual attention."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:117
+msgid ""
+"Repeated harassment of others. In general, if someone asks you to stop, then "
+"stop."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:118
+msgid ""
+"Posting (or threatening to post) other people's personally identifying "
+"information (\"doxing\")."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:119
+msgid ""
+"Sharing private content, such as emails sent privately or non-publicly, or "
+"unlogged forums such as IRC channel history."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:120
+msgid "Advocating for, or encouraging, any of the above behavior."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:123
+msgid "Reporting Guidelines"
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:125
+msgid ""
+"If you believe someone is breaking this code of conduct, you may reply to "
+"them, and point to this code of conduct. Such messages may be in public or "
+"in private, whatever is most appropriate. Assume good faith; it is more "
+"likely that participants are unaware of their bad behavior than that they "
+"intentionally try to degrade the quality of the discussion. Should there be "
+"difficulties in dealing with the situation, you may report your concerns to "
+"event staff, a forum leader or the GDAL Board. Serious or persistent "
+"offenders may be expelled from the event or forum by event organizers or "
+"forum leaders."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:134
+msgid ""
+"To privately email the code of conduct committee leadership use coc@osgeo."
+"org."
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:137
+msgid "Credits"
+msgstr ""
+
+#: ../../../source/community/code_of_conduct.rst:139
+msgid ""
+"GDAL re-uses the `OSGeo Code of Conduct <https://www.osgeo.org/resources/"
+"osgeo-code-of-conduct/>`__"
+msgstr ""

@@ -1,0 +1,295 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/jp2kak.rst:5
+msgid "JP2KAK -- JPEG-2000 (based on Kakadu)"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:7
+msgid "JP2KAK"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:9
+msgid "Kakadu library"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:11
+msgid ""
+"Most forms of JPEG2000 JP2 and JPC compressed images (ISO/IEC 15444-1) can "
+"be read with GDAL using a driver based on the Kakadu library. As well, new "
+"images can be written. Existing images cannot be updated in place."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:16
+msgid ""
+"The JPEG2000 file format supports lossy and lossless compression of 8bit and "
+"16bit images with 1 or more bands (components). Via the `GeoJP2 (tm) "
+"<https://web.archive.org/web/20151028081930/http://www.lizardtech.com/"
+"download/geo/geotiff_box.txt>`__ mechanism, GeoTIFF style coordinate system "
+"and georeferencing information can be embedded within the JP2 file. JPEG2000 "
+"files use a substantially different format and compression mechanism than "
+"the traditional JPEG compression and JPEG JFIF format. They are distinct "
+"compression mechanisms produced by the same group. JPEG2000 is based on "
+"wavelet compression."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:26
+msgid ""
+"The JPEG2000 driver documented on this page (the JP2KAK driver) is "
+"implemented on top of the proprietary `Kakadu <http://www.kakadusoftware.com/"
+">`__ library. This is a high quality and high performance JPEG2000 library "
+"in wide used in the geospatial and general imaging community. However, it is "
+"not free, and so normally builds of GDAL from source will not include "
+"support for this driver unless the builder purchases a license for the "
+"library and configures accordingly."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:35
+msgid ""
+"When reading images this driver will represent the bands as being Byte (8bit "
+"unsigned), 16 bit signed/unsigned, and 32 bit signed/unsigned. "
+"Georeferencing and coordinate system information will be available if the "
+"file is a GeoJP2 (tm) file. Files color encoded in YCbCr color space will be "
+"automatically translated to RGB. Paletted images are also supported."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:41
+msgid ""
+"XMP metadata can be extracted from JPEG2000 files, and will be stored as XML "
+"raw content in the xml:XMP metadata domain."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:46
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:55
+msgid "Configuration Options"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:57
+msgid ""
+"The JP2KAK driver supports the following `Config Options <http://trac.osgeo."
+"org/gdal/wiki/ConfigOptions>`__. These runtime options can be used to alter "
+"the behavior of the driver."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:94
+msgid "Georeferencing"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:96
+msgid ""
+"Georeferencing information can come from different sources : internal "
+"(GeoJP2 or GMLJP2 boxes), worldfile .j2w/.wld sidecar files, or PAM "
+"(Persistent Auxiliary metadata) .aux.xml sidecar files. By default, "
+"information is fetched in following order (first listed is the most "
+"prioritary): PAM, GeoJP2, GMLJP2, WORLDFILE."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:102
+msgid ""
+"Starting with GDAL 2.2, the allowed sources and their priority order can be "
+"changed with the :config:`GDAL_GEOREF_SOURCES` configuration option (or :oo:"
+"`GEOREF_SOURCES` open option) whose value is a comma-separated list of the "
+"following keywords : PAM, GEOJP2, GMLJP2, INTERNAL (shortcut for GEOJP2,"
+"GMLJP2), WORLDFILE, NONE. First mentioned sources are the most prioritary "
+"over the next ones. A non mentioned source will be ignored."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:109
+msgid ""
+"For example setting it to \"WORLDFILE,PAM,INTERNAL\" will make a "
+"geotransformation matrix from a potential worldfile prioritary over PAM or "
+"internal JP2 boxes. Setting it to \"PAM,WORLDFILE,GEOJP2\" will use the "
+"mentioned sources and ignore GMLJP2 boxes."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:115
+msgid "Option Options"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:117
+msgid "The following open option is available:"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:133
+msgid "Creation Issues"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:135
+msgid ""
+"JPEG2000 files can only be created using the CreateCopy mechanism to copy "
+"from an existing dataset."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:138
+msgid ""
+"JPEG2000 overviews are maintained as part of the mathematical description of "
+"the image. Overviews cannot be built as a separate process, but on read the "
+"image will generally be represented as having overview levels at various "
+"power of two factors."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:143
+msgid "Creation Options:"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:230
+msgid ""
+"The following creation options are tightly tied to the Kakadu library, and "
+"are considered to be for advanced use only. Consult Kakadu documentation to "
+"better understand their meaning."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:234
+msgid "**Corder**: Defaults to \"PRCL\"."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:235
+msgid ""
+"**Cprecincts**: Defaults to \"{512,512},{256,512},{128,512},{64,512},"
+"{32,512},{16,512},{8,512},{4,512},{2,512}\"."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:237
+msgid "**ORGgen_plt**: Defaults to \"yes\"."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:238
+msgid "**ORGgen_tlm**: Kakadu library default used."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:239
+msgid "**ORGtparts**: Kakadu library default used."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:240
+msgid "**Cmodes**: Kakadu library default used."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:241
+msgid "**Clevels**: Kakadu library default used."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:242
+msgid "**Rshift**: Kakadu library default used."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:243
+msgid "**Rlevels**: Kakadu library default used."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:244
+msgid "**Rweight**: Kakadu library default used."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:245
+msgid "**Qguard**: Kakadu library default used."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:246
+msgid ""
+"**Creversible**: If not set and QUALITY >= 99.5, set to \"yes\", otherwise "
+"to \"false\"."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:247
+msgid "**Sprofile**: Kakadu library default used."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:248
+msgid ""
+"**RATE**: Kakadu library default used. One or more bit-rates, expressed in "
+"terms of the ratio between the total number of compressed bits (including "
+"headers) and the product of the largest horizontal and  vertical image "
+"component dimensions. A dash, -, may be used in place of the first bit-rate "
+"in the list to indicate that the final quality layer should include all "
+"compressed bits. If Clayers is not used, the number of layers is set to the "
+"number of rates specified here. If Clayers is used to specify an actual "
+"number of quality layers, one of the following must be true: 1) the number "
+"of rates specified here is identical to the specified number of layers; or "
+"2) one or two rates are specified using this argument.  When two rates are "
+"specified, the number of layers must be 2 or more and intervening layers "
+"will be assigned roughly logarithmically spaced bit-rates. When only one "
+"rate is specified, an internal heuristic determines a lower bound and "
+"logarithmically spaces the layer rates over the range. The rates have to be "
+"in ASC order."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:260
+msgid "Known Kakadu Issues"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:263
+msgid "Alpha Channel Writing in v7.8"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:265
+msgid ""
+"Kakadu v7.8 has a bug in jp2_channels::set_opacity_mapping that can cause an "
+"error when writing images with an alpha channel. Please upgrade to version "
+"7.9."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:271
+msgid ""
+"Error: GdalIO: Error in Kakadu File Format Support: Attempting to\n"
+"create a Component Mapping (cmap) box, one of whose channels refers to\n"
+"a non-existent image component or palette lookup table. (code = 1)"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:276
+msgid "kdu_get_num_processors always returns 0 for some platforms"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:278
+msgid ""
+"On non-windows / non-mac installs (e.g. Linux), Kakadu might not include "
+"unistd.h in kdu_arch.cpp. This means that \\_SC_NPROCESSORS_ONLN and "
+"\\_SC_NPROCESSORS_CONF are not defined and kdu_get_num_processors will "
+"always return 0. Therefore the jp2kak driver might not default to creating "
+"worker threads."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:285
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:287
+msgid "Implemented as :source_file:`frmts/jp2kak/jp2kakdataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:288
+msgid ""
+"If you're using a Kakadu release before v7.5, configure & compile GDAL with "
+"eg. `CXXFLAGS=\"-DKDU_MAJOR_VERSION=7 -DKDU_MINOR_VERSION=3 -"
+"DKDU_PATCH_VERSION=2\"` for Kakadu version 7.3.2."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2kak.rst:292
+msgid "Alternate :ref:`raster.jp2openjpeg` driver."
+msgstr ""

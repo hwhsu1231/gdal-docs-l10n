@@ -1,0 +1,61 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/jdem.rst:5
+msgid "JDEM -- Japanese DEM (.mem)"
+msgstr ""
+
+#: ../../../source/drivers/raster/jdem.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/jdem.rst:7
+msgid "JDEM"
+msgstr ""
+
+#: ../../../source/drivers/raster/jdem.rst:11
+msgid ""
+"GDAL includes read support for Japanese DEM files, normally having the "
+"extension .mem. These files are a product of the Japanese Geographic Survey "
+"Institute."
+msgstr ""
+
+#: ../../../source/drivers/raster/jdem.rst:15
+msgid ""
+"These files are represented as having one 32bit floating band with elevation "
+"data. The georeferencing of the files is returned as well as the coordinate "
+"system (always lat/long on the Tokyo datum)."
+msgstr ""
+
+#: ../../../source/drivers/raster/jdem.rst:19
+msgid "There is no update or creation support for this format."
+msgstr ""
+
+#: ../../../source/drivers/raster/jdem.rst:21
+msgid "NOTE: Implemented as :source_file:`frmts/jdem/jdemdataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/jdem.rst:23
+msgid ""
+"See Also: `Geographic Survey Institute (GSI) Web Site. <http://www.gsi.go.jp/"
+"ENGLISH/>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/jdem.rst:27
+msgid "Driver capabilities"
+msgstr ""

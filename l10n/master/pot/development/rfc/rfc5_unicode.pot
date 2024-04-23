@@ -1,0 +1,304 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:5
+msgid "RFC 5: Unicode support in GDAL"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:7
+msgid "Author: Andrey Kiselev"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:9
+msgid "Contact: dron@ak4719.spb.edu"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:11
+msgid "Status: Development"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:14
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:16
+msgid ""
+"This document contains proposal on how to make GDAL core locale independent "
+"preserving support for native character sets."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:20
+msgid "Main concepts"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:22
+msgid "GDAL should be modified in a way to support three following main ideas:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:24
+msgid ""
+"Users work in localized environment using their native languages. That means "
+"we can not assume ASCII character set when working with string data passed "
+"to GDAL."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:27
+msgid "GDAL uses UTF-8 encoding internally when working with strings."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:28
+msgid "GDAL uses Unicode version of third-party APIs when it is possible."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:30
+msgid ""
+"So all strings, used in GDAL, are in UTF-8, not in plain ASCII. That means "
+"we should convert user's input from the local encoding to UTF-8 during "
+"interactive sessions. The opposite should be done for GDAL output. For "
+"example, when user passes a filename as a command-line parameter to GDAL "
+"utilities, that filename should be immediately converted to UTF-8 and only "
+"afetrwards passed to functions like GDALOpen() or OGROpen(). All functions, "
+"which take character strings as parameters, assume UTF-8 (with except of "
+"several ones, which will do the conversion between different encodings, see "
+"Implementation). The same is valid for output functions. Output functions "
+"(CPLError/CPLDebug), embedded in GDAL, should convert all strings from UTF-8 "
+"to local encoding just before printing them. Custom error handlers should be "
+"aware of UTF-8 issue and do the proper transformation of strings passed to "
+"them."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:45
+msgid ""
+"The string encoding pops up again when GDAL needs to call the third-party "
+"API. UTF-8 should be converted to encoding suitable for that API. In "
+"particular, that means we should convert UTF-8 to UTF-16 before calling "
+"CreateFile() function in Windows implementation of VSIFOpenL(). Another "
+"example is a PostgreSQL API. PostgreSQL stores strings in UTF-8 encoding "
+"internally, so we should notify server that passed string is already in "
+"UTF-8 and it will be stored as is without any conversions and losses."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:54
+msgid ""
+"For file format drivers the string representation should be worked out on "
+"per-driver basis. Not all file formats support non-ASCII characters. For "
+"example, various .HDR labeled rasters are just 7-bit ASCII text files and it "
+"is not a good idea to write 8-bit strings in such a files. When we need to "
+"pass strings, extracted from such file outside the driver (e.g., in "
+"SetMetadata() call), we should convert them to UTF-8. If you just want to "
+"use extracted strings internally in driver, there is no need in any "
+"conversions."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:63
+msgid ""
+"In some cases the file encoding can differ from the local system encoding "
+"and we do not have a way to know the file encoding other than ask a user "
+"(for example, imagine a case when someone added a 8-bit non-ASCII string "
+"field to mentioned above plain text .HDR file). That means we can't use "
+"conversion form the local encoding to UTF-8, but from the file encoding to "
+"UTF-8. So we need a way to get file encoding in some way on per datasource "
+"basis. The natural solution of the problem is to introduce optional open "
+"parameter \"ENCODING\" to GDALOpen/OGROpen functions. Unfortunately, those "
+"functions do not accept options. That should be introduced in another RFC. "
+"Fortunately, tehre is no need to add encoding parameter immediately, because "
+"it is independent from the general i18n process. We can add UTF-8 support as "
+"it is defined in this RFC and add support for forcing per-datasource "
+"encoding later, when the open options will be introduced."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:79
+msgid "Implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:81
+msgid ""
+"New character conversion functions will be introduced in CPLString class. "
+"Objects of that class always contain UTF-8 string internally."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:87
+msgid ""
+"// Get string in local encoding from the internal UTF-8 encoded string.\n"
+"// Out-of-range characters replaced with '?' in output string.\n"
+"// nEncoding A codename of encoding. If 0 the local system\n"
+"// encoding will be used.\n"
+"char* CPLString::recode( int nEncoding = 0 );\n"
+"\n"
+"// Construct UTF-8 string object from string in other encoding\n"
+"// nEncoding A codename of encoding. If 0 the local system\n"
+"// encoding will be used.\n"
+"CPLString::CPLString( const char*, int nEncoding );\n"
+"\n"
+"// Construct UTF-8 string object from array of wchar_t elements.\n"
+"// Source encoding is system specific.\n"
+"CPLString::CPLString( wchar_t* );\n"
+"\n"
+"// Get string from UTF-8 encoding into array of wchar_t elements.\n"
+"// Destination encoding is system specific.\n"
+"operator wchar_t* (void) const;"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:106
+msgid ""
+"In order to use non-ASCII characters in user input every application should "
+"call setlocale(LC_ALL, \"\") function right after the entry point."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:110
+msgid ""
+"Code example. Let's look how the gdal utilities and core code should be "
+"changed in regard to Unicode."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:113
+msgid "For input instead of"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:117
+msgid ""
+"pszFilename = argv[i];\n"
+"if( pszFilename )\n"
+"    hDataset = GDALOpen( pszFilename, GA_ReadOnly );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:121
+#: ../../../source/development/rfc/rfc5_unicode.rst:136
+msgid "we should do"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:126
+msgid ""
+"CPLString oFilename(argv[i], 0); // <-- Conversion from local encoding to "
+"UTF-8\n"
+"hDataset = GDALOpen( oFilename.c_str(), GA_ReadOnly );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:129
+msgid "For output instead of"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:134
+msgid "printf( \"Description = %s\\n\", GDALGetDescription(hBand) );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:141
+msgid ""
+"CPLString oDescription( GDALGetDescription(hBand) );\n"
+"printf( \"Description = %s\\n\", oDescription.recode( 0 ) ); // <-- "
+"Conversion\n"
+"                            // from UTF-8 to local"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:145
+msgid ""
+"The filename passed to GDALOpen() in UTF-8 encoding in the code snippet "
+"above will be further processed in the GDAL core. On Windows instead of"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:151
+msgid ""
+"hFile = CreateFile( pszFilename, dwDesiredAccess,\n"
+"    FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, dwCreationDisposition,\n"
+"    dwFlagsAndAttributes, NULL );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:155
+msgid "we do"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:160
+msgid ""
+"CPLString oFilename( pszFilename );\n"
+"// I am prefer call the wide character version explicitly\n"
+"// rather than specify _UNICODE switch.\n"
+"hFile = CreateFileW( (wchar_t *)oFilename, dwDesiredAccess,\n"
+"        FILE_SHARE_READ | FILE_SHARE_WRITE, NULL,\n"
+"        dwCreationDisposition,  dwFlagsAndAttributes, NULL );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:167
+msgid ""
+"The actual implementation of the character conversion functions does not "
+"specified in this document yet. It needs additional discussion. The main "
+"problem is that we need not only local<->UTF-8 encoding conversions, but "
+"*arbitrary*\\ <->UTF-8 ones. That requires significant support on software "
+"part."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:174
+msgid "Backward Compatibility"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:176
+msgid ""
+"The GDAL/OGR backward compatibility will be broken by this new functionality "
+"in the way how 8-bit characters handled. Before users may rely on that all 8-"
+"bit character strings will be passed through the GDAL/OGR without change and "
+"will contain exact the same data all the way. Now it is only true for 7-bit "
+"ASCII and 8-bit UTF-8 encoded strings. Note, that if you used only ASCII "
+"subset with GDAL, you are not affected by these changes."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:184
+msgid "From The Unicode Standard, chapter 5:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:186
+msgid ""
+"*The width of wchar_t is compiler-specific and can be as small as 8 bits. "
+"Consequently, programs that need to be portable across any C or C++ compiler "
+"should not use wchar_t for storing Unicode text.*"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:191
+msgid "References"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:193
+msgid ""
+"`The Unicode Standard, Version 4.0 - Implementation Guidelines <http://"
+"unicode.org/versions/Unicode4.0.0/ch05.pdf>`__ - Chapter 5 (PDF)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:196
+msgid ""
+"FAQ on how to use Unicode in software: `http://www.cl.cam.ac.uk/~mgk25/"
+"unicode.html <http://www.cl.cam.ac.uk/~mgk25/unicode.html>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:198
+msgid ""
+"FLTK implementation of string conversion functions: `http://svn.easysw.com/"
+"public/fltk/fltk/trunk/src/utf.c <http://svn.easysw.com/public/fltk/fltk/"
+"trunk/src/utf.c>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:200
+msgid ""
+"`http://www.easysw.com/~mike/fltk/doc-2.0/html/utf_8h.html <http://www."
+"easysw.com/~mike/fltk/doc-2.0/html/utf_8h.html>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:201
+msgid "Ticket #1494 : UTF-8 encoding for GML output."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc5_unicode.rst:202
+msgid "Filenames also covered in [[wiki:rfc30_utf8_filenames]]"
+msgstr ""

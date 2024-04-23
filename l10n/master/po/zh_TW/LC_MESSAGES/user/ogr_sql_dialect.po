@@ -1,0 +1,1073 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/user/ogr_sql_dialect.rst:5
+msgid "OGR SQL dialect"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:9
+msgid ""
+"The GDALDataset supports executing commands against a datasource via the :"
+"cpp:func:`GDALDataset::ExecuteSQL` method.  While in theory any sort of "
+"command could be handled this way, in practice the mechanism is used to "
+"provide a subset of SQL SELECT capability to applications.  This page "
+"discusses the generic SQL implementation implemented within OGR, and issues "
+"with driver specific SQL support."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:16
+msgid ""
+"The ``OGRSQL`` dialect can be requested with the ``OGRSQL`` string passed as "
+"the dialect parameter of :cpp:func:`GDALDataset::ExecuteSQL`, or with the `-"
+"dialect` option switch of the :ref:`ogrinfo` or :ref:`ogr2ogr` utilities."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:20
+msgid ""
+"An alternate dialect, the ``SQLite`` dialect, can be used instead of the "
+"``OGRSQL`` dialect. Refer to the :ref:`sql_sqlite_dialect` page for more "
+"details."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:23
+msgid ""
+"The OGRLayer class also supports applying an attribute query filter to "
+"features returned using the :cpp:func:`OGRLayer::SetAttributeFilter()` "
+"method.  The syntax for the attribute filter is the same as the WHERE clause "
+"in the OGR SQL SELECT statement.  So everything here with regard to the "
+"WHERE clause applies in the context of the ``SetAttributeFilter()`` method."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:30
+msgid "SELECT"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:32
+msgid ""
+"The SELECT statement is used to fetch layer features (analogous to table "
+"rows in an RDBMS) with the result of the query represented as a temporary "
+"layer of features. The layers of the datasource are analogous to tables in "
+"an RDBMS and feature attributes are analogous to column values. The simplest "
+"form of OGR SQL SELECT statement looks like this:"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:38
+msgid "SELECT * FROM polylayer"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:42
+msgid ""
+"In this case all features are fetched from the layer named \"polylayer\", "
+"and all attributes of those features are returned. This is essentially "
+"equivalent to accessing the layer directly. In this example the \"*\" is the "
+"list of fields to fetch from the layer, with \"*\" meaning that all fields "
+"should be fetched."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:48
+msgid ""
+"This slightly more sophisticated form still pulls all features from the "
+"layer but the schema will only contain the geometry column and the EAS_ID "
+"and PROP_VALUE attributes. With OGR SQL dialect the geometry column is "
+"always included in the result so it does not need to appear in the SQL "
+"statement."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:53
+msgid "SELECT eas_id, prop_value FROM polylayer"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:57
+msgid ""
+"A much more ambitious SELECT, restricting the features fetched with a WHERE "
+"clause, and sorting the results might look like:"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:60
+msgid ""
+"SELECT * from polylayer WHERE prop_value > 220000.0 ORDER BY prop_value DESC"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:64
+msgid ""
+"This select statement will produce a table with just one feature, with "
+"geometry and one attribute (named something like \"count_eas_id\") "
+"containing the number of distinct values of the eas_id attribute."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:68
+msgid "SELECT COUNT(DISTINCT eas_id) FROM polylayer"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:73
+msgid "General syntax"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:75
+msgid "The general syntax of a SELECT statement is:"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:78
+msgid ""
+"SELECT [fields] FROM layer_name [JOIN ...] [WHERE ...] [ORDER BY ...] "
+"[LIMIT ...] [OFFSET ...]"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:84
+msgid "List Operators"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:86
+msgid ""
+"The field list is a comma-separated list of the fields to be carried into "
+"the output features from the source layer.  They will appear on output "
+"features in the order they appear on in the field list, so the field list "
+"may be used to re-order the fields. The special character ``*`` is taken to "
+"mean \"all fields\". The syntax ``* EXCLUDE ([fields])`` can be used to "
+"select all fields except those listed in parentheses."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:93
+msgid ""
+"A special form of the field list uses the DISTINCT keyword.  This returns a "
+"list of all the distinct values of the named attribute.  When the DISTINCT "
+"keyword is used, only one attribute may appear in the field list.  The "
+"DISTINCT keyword may be used against any type of field.  Currently the "
+"distinctness test against a string value is case insensitive in OGR SQL.  "
+"The result of a SELECT with a DISTINCT keyword is a layer with one column "
+"(named the same as the field operated on), and one feature per distinct "
+"value.  Geometries are discarded.  The distinct values are assembled in "
+"memory, so a lot of memory may be used for datasets with a large number of "
+"distinct values."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:104
+msgid "SELECT DISTINCT areacode FROM polylayer"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:108
+msgid ""
+"There are also several summarization operators that may be applied to "
+"columns. When a summarization operator is applied to any field, then all "
+"fields must have summarization operators applied.   The summarization "
+"operators are COUNT (a count of instances), AVG (numerical average), SUM "
+"(numerical sum), MIN (lexical or numerical minimum), and MAX (lexical or "
+"numerical maximum). This example produces a variety of summarization "
+"information on parcel property values:"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:116
+msgid ""
+"SELECT MIN(prop_value), MAX(prop_value), AVG(prop_value), SUM(prop_value),\n"
+"    COUNT(prop_value) FROM polylayer WHERE prov_name = 'Ontario'"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:121
+msgid ""
+"It is also possible to apply the COUNT() operator to a DISTINCT SELECT to "
+"get a count of distinct values, for instance:"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:124
+msgid "SELECT COUNT(DISTINCT areacode) FROM polylayer"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:128
+msgid ""
+"As a special case, the COUNT() operator can be given a \"*\" argument "
+"instead of a field name which is a short form for count all the records."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:131
+msgid "SELECT COUNT(*) FROM polylayer"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:136
+msgid ""
+"Field names can also be prefixed by a table name though this is only really "
+"meaningful when performing joins.  It is further demonstrated in the JOIN "
+"section."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:140
+msgid ""
+"Field definitions can also be complex expressions using arithmetic, and "
+"functional operators. However, the DISTINCT keyword, and summarization "
+"operators like MIN, MAX, AVG and SUM may not be applied to expression "
+"fields. Boolean resulting expressions (comparisons, logical operators) can "
+"also be used."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:145
+msgid "SELECT cost+tax from invoice"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:149
+msgid "or"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:152
+msgid "SELECT CONCAT(owner_first_name,' ',owner_last_name) from properties"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:157
+msgid "Functions"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:159
+msgid ""
+"The SUBSTR function can be used to extract a substring from a string. Its "
+"syntax is the following one : SUBSTR(string_expr, start_offset [, length]). "
+"It extracts a substring of string_expr, starting at offset start_offset (1 "
+"being the first character of string_expr, 2 the second one, etc...). If "
+"start_offset is a negative value, the substring is extracted from the end of "
+"the string (-1 is the last character of the string, -2 the character before "
+"the last character, ...). If length is specified, up to length characters "
+"are extracted from the string. Otherwise the remainder of the string is "
+"extracted."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:167
+msgid ""
+"Note: for the time being, the character as considered to be equivalent to "
+"bytes, which may not be appropriate for multi-byte encodings like UTF-8."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:170
+msgid ""
+"SELECT SUBSTR('abcdef',1,2) FROM xxx   --> 'ab'\n"
+"SELECT SUBSTR('abcdef',4)   FROM xxx   --> 'def'\n"
+"SELECT SUBSTR('abcdef',-2)  FROM xxx   --> 'ef'"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:176
+msgid ""
+"The ``hstore_get_value()`` function can be used to extract a value associate "
+"to a key from a HSTORE string, formatted like 'key=>value,"
+"other_key=>other_value,...'"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:179
+msgid ""
+"SELECT hstore_get_value('a => b, \"key with space\"=> \"value with space\"', "
+"'key with space') FROM xxx --> 'value with space'"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:184
+msgid "Using the field name alias"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:186
+msgid ""
+"OGR SQL supports renaming the fields following the SQL92 specification by "
+"using the AS keyword according to the following example:"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:189
+msgid "SELECT *, OGR_STYLE AS STYLE FROM polylayer"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:193
+msgid ""
+"The field name alias can be used as the last operation in the column "
+"specification. Therefore we cannot rename the fields inside an operator, but "
+"we can rename whole column expression, like these two:"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:197
+msgid ""
+"SELECT COUNT(areacode) AS \"count\" FROM polylayer\n"
+"SELECT dollars*100.0 AS cents FROM polylayer"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:203
+msgid "Changing the type of the fields"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:205
+msgid ""
+"OGR SQL supports changing the type of the columns by using the SQL92 "
+"compliant CAST operator according to the following example:"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:208
+msgid "SELECT *, CAST(OGR_STYLE AS character(255)) FROM rivers"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:212
+msgid "Currently casting to the following target types are supported:"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:214
+msgid "boolean"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:215
+msgid "character(field_length). By default, field_length=1."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:216
+msgid "float(field_length)"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:217
+msgid "numeric(field_length, field_precision)"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:218
+msgid "smallint(field_length) : 16 bit signed integer"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:219
+msgid "integer(field_length)"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:220
+msgid "bigint(field_length), 64 bit integer, extension to SQL92"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:221
+msgid "date(field_length)"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:222
+msgid "time(field_length)"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:223
+msgid "timestamp(field_length)"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:224
+msgid "geometry, geometry(geometry_type), geometry(geometry_type,epsg_code)"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:226
+msgid ""
+"Specifying the field_length and/or the field_precision is optional.  An "
+"explicit value of zero can be used as the width for character() to indicate "
+"variable width.  Conversion to the 'integer list', 'double list' and 'string "
+"list' OGR data types are not supported, which doesn't conform to the SQL92 "
+"specification."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:232
+msgid ""
+"While the CAST operator can be applied anywhere in an expression, including "
+"in a WHERE clause, the detailed control of output field format is only "
+"supported if the CAST operator is the \"outer most\" operators on a field in "
+"the field definition list.  In other contexts it is still useful to convert "
+"between numeric, string and date data types."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:238
+msgid ""
+"Casting a WKT string to a geometry is allowed. geometry_type can be "
+"POINT[Z], LINESTRING[Z], POLYGON[Z], MULTIPOINT[Z], MULTILINESTRING[Z], "
+"MULTIPOLYGON[Z], GEOMETRYCOLLECTION[Z] or GEOMETRY[Z]."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:243
+msgid "String literals and identifiers quoting"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:245
+msgid ""
+"Strict SQL92 rules are applied regarding string literals and identifiers "
+"quoting."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:247
+msgid ""
+"String literals (constants) must be surrounded with single-quote characters. "
+"e.g. WHERE a_field = 'a_value'"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:250
+msgid ""
+"Identifiers (column names and tables names) can be used unquoted if they "
+"don't contain special characters or are not a SQL reserved keyword. "
+"Otherwise they must be surrounded with double-quote characters. e.g. WHERE "
+"\"from\" = 5."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:255
+msgid "WHERE"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:257
+msgid ""
+"The argument to the WHERE clause is a logical expression used select records "
+"from the source layer.  In addition to its use within the WHERE statement, "
+"the WHERE clause handling is also used for OGR attribute queries on regular "
+"layers via :cpp:func:`OGRLayer::SetAttributeFilter`."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:262
+msgid ""
+"In addition to the arithmetic and other functional operators available in "
+"expressions in the field selection clause of the SELECT statement, in the "
+"WHERE context logical operators are also available and the evaluated value "
+"of the expression should be logical (true or false)."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:267
+msgid ""
+"The available logical operators are ``=``, ``!=``, ``<>``, ``<``, ``>``, "
+"``<=``, ``>=``, ``LIKE`` and ``ILIKE``, ``BETWEEN`` and ``IN``. Most of the "
+"operators are self explanatory, but it is worth noting that ``!=`` is the "
+"same as ``<>``, the string equality is case insensitive, but the ``<``, "
+"``>``, ``<=`` and ``>=`` operators *are* case sensitive."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:283
+msgid ""
+"Starting with GDAL 3.1, LIKE is case sensitive, and ILIKE is case "
+"insensitive. In previous versions, LIKE was also case insensitive. If the "
+"old behavior is wished in GDAL 3.1, the :config:`OGR_SQL_LIKE_AS_ILIKE` can "
+"be set to ``YES``."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:287
+msgid ""
+"Starting with GDAL 3.9, for layers declaring the OLCStringsAsUTF8 capability "
+"(that is the content of their fields of String type is UTF-8 encoded), UTF-8 "
+"characters are taken into account by ``LIKE`` and ``ILIKE`` operators. For "
+"ILIKE case insensitive comparisons, this is restricted to the `ASCII "
+"<https://en.wikipedia.org/wiki/Basic_Latin_(Unicode_block)>`__, `Latin-1 "
+"Supplement <https://en.wikipedia.org/wiki/"
+"Latin-1_Supplement_(Unicode_block)>`__, `Latin Extended-A <https://en."
+"wikipedia.org/wiki/Latin_Extended-A>`__, `Latin Extended-B <https://en."
+"wikipedia.org/wiki/Latin_Extended-B>`__, `Greek and Coptic <https://en."
+"wikipedia.org/wiki/Greek_and_Coptic>`__ and `Cyrillic <https://en.wikipedia."
+"org/wiki/Greek_and_Coptic>`__ Unicode categories."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:298
+msgid ""
+"The value argument to the ``LIKE`` and ``ILIKE`` operators is a pattern "
+"against which the value string is matched.  In this pattern percent (%) "
+"matches any number of characters, and underscore ( _ ) matches any one "
+"character. An optional ESCAPE escape_char clause can be added so that the "
+"percent or underscore characters can be searched as regular characters, by "
+"being preceded with the escape_char."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:306
+msgid ""
+"String             Pattern       Matches?\n"
+"------             -------       --------\n"
+"Alberta            ALB%          Yes\n"
+"Alberta            _lberta       Yes\n"
+"St. Alberta        _lberta       No\n"
+"St. Alberta        %lberta       Yes\n"
+"Robarts St.        %Robarts%     Yes\n"
+"12345              123%45        Yes\n"
+"123.45             12?45         No\n"
+"N0N 1P0            %N0N%         Yes\n"
+"L4C 5E2            %N0N%         No"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:318
+msgid ""
+"The ``IN`` takes a list of values as its argument and tests the attribute "
+"value for membership in the provided set."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:323
+msgid ""
+"Value              Value Set            Matches?\n"
+"------             -------              --------\n"
+"321                IN (456,123)         No\n"
+"'Ontario'          IN ('Ontario','BC')  Yes\n"
+"'Ont'              IN ('Ontario','BC')  No\n"
+"1                  IN (0,2,4,6)         No"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:330
+msgid ""
+"The syntax of the ``BETWEEN`` operator is \"field_name BETWEEN value1 AND "
+"value2\" and it is equivalent to \"field_name >= value1 AND field_name <= "
+"value2\"."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:333
+msgid ""
+"In addition to the above binary operators, there are additional operators "
+"for testing if a field is null or not. These are the ``IS NULL`` and ``IS "
+"NOT NULL`` operators."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:337
+msgid ""
+"Basic field tests can be combined in more complicated predicates using "
+"logical operators include ``AND``, ``OR``, and the unary logical ``NOT``. "
+"Subexpressions should be bracketed to make precedence clear.  Some more "
+"complicated predicates are:"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:342
+msgid ""
+"SELECT * FROM poly WHERE (prop_value >= 100000) AND (prop_value < 200000)\n"
+"SELECT * FROM poly WHERE NOT (area_code LIKE 'N0N%')\n"
+"SELECT * FROM poly WHERE (prop_value IS NOT NULL) AND (prop_value < 100000)"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:349
+msgid "WHERE Limitations"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:351
+msgid ""
+"Fields must all come from the primary table (the one listed in the FROM "
+"clause)."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:353
+msgid ""
+"All string comparisons are case insensitive except for ``<``, ``>``, ``<=`` "
+"and ``>=``"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:356
+msgid "ORDER BY"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:358
+msgid ""
+"The ``ORDER BY`` clause is used force the returned features to be reordered "
+"into sorted order (ascending or descending) on one or multiple fields. "
+"Ascending (increasing) order is the default if neither the ASC or DESC "
+"keyword is provided.  For example:"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:363
+msgid ""
+"SELECT * FROM property WHERE class_code = 7 ORDER BY prop_value DESC\n"
+"SELECT * FROM property ORDER BY prop_value\n"
+"SELECT * FROM property ORDER BY prop_value ASC\n"
+"SELECT DISTINCT zip_code FROM property ORDER BY zip_code\n"
+"SELECT * FROM property ORDER BY prop_value ASC, another_field DESC"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:371
+msgid ""
+"Note that ORDER BY clauses cause two passes through the feature set.  One to "
+"build an in-memory table of field values corresponded with feature ids, and "
+"a second pass to fetch the features by feature id in the sorted order. For "
+"formats which cannot efficiently randomly read features by feature id this "
+"can be a very expensive operation."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:377
+msgid ""
+"Sorting of string field values is case sensitive, not case insensitive like "
+"in most other parts of OGR SQL."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:381
+msgid "LIMIT and OFFSET"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:383
+msgid ""
+"Starting with GDAL 2.2, the ``LIMIT`` clause can be used to limit the number "
+"of features returned. For example"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:386
+msgid "SELECT * FROM poly LIMIT 5"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:390
+msgid ""
+"The ``OFFSET`` clause can be used to skip the first features of the result "
+"set. The value after OFFSET is the number of features skipped. For example, "
+"to skip the first 3 features from the result set:"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:394
+msgid "SELECT * FROM poly OFFSET 3"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:398
+msgid "Both clauses can be combined:"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:400
+msgid "SELECT * FROM poly LIMIT 5 OFFSET 3"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:405
+msgid "JOINs"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:407
+msgid ""
+"OGR SQL supports a limited form of one to one JOIN.  This allows records "
+"from a secondary table to be looked up based on a shared key between it and "
+"the primary table being queried.  For instance, a table of city locations "
+"might include a **nation_id** column that can be used as a reference into a "
+"secondary **nation** table to fetch a nation name.  A joined query might "
+"look like:"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:414
+msgid ""
+"SELECT city.*, nation.name FROM city\n"
+"    LEFT JOIN nation ON city.nation_id = nation.id"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:419
+msgid ""
+"This query would result in a table with all the fields from the city table, "
+"and an additional \"nation.name\" field with the nation name pulled from the "
+"nation table by looking for the record in the nation table that has the "
+"\"id\" field with the same value as the city.nation_id field."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:424
+msgid ""
+"Joins introduce a number of additional issues.  One is the concept of table "
+"qualifiers on field names.  For instance, referring to city.nation_id "
+"instead of just nation_id to indicate the nation_id field from the city "
+"layer.  The table name qualifiers may only be used in the field list, and "
+"within the ``ON`` clause of the join."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:430
+msgid ""
+"Wildcards are also somewhat more involved.  All fields from the primary "
+"table (**city** in this case) and the secondary table (**nation** in this "
+"case) may be selected using the usual ``*`` wildcard.  But the fields of "
+"just one of the primary or secondary table may be selected by prefixing the "
+"asterix with the table name."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:436
+msgid ""
+"The field names in the resulting query layer will be qualified by the table "
+"name, if the table name is given as a qualifier in the field list.  In "
+"addition field names will be qualified with a table name if they would "
+"conflict with earlier fields.  For instance, the following select would "
+"result might result in a results set with a **name, nation_id, nation."
+"nation_id** and ** nation.name** field if the city and nation tables both "
+"have the **nation_id** and **name** fieldnames."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:444
+msgid ""
+"SELECT * FROM city LEFT JOIN nation ON city.nation_id = nation.nation_id"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:448
+msgid ""
+"On the other hand if the nation table had a **continent_id** field, but the "
+"city table did not, then that field would not need to be qualified in the "
+"result set.  However, if the selected instead looked like the following "
+"statement, all result fields would be qualified by the table name."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:453
+msgid ""
+"SELECT city.*, nation.* FROM city\n"
+"    LEFT JOIN nation ON city.nation_id = nation.nation_id"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:458
+msgid ""
+"In the above examples, the **nation** table was found in the same datasource "
+"as the **city** table.   However, the OGR join support includes the ability "
+"to join against a table in a different data source, potentially of a "
+"different format.  This is indicated by qualifying the secondary table name "
+"with a datasource name.  In this case the secondary datasource is opened "
+"using normal OGR semantics and utilized to access the secondary table until "
+"the query result is no longer needed."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:466
+msgid ""
+"SELECT * FROM city\n"
+"LEFT JOIN '/usr2/data/nation.dbf'.nation ON city.nation_id = nation.nation_id"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:471
+msgid ""
+"While not necessarily very useful, it is also possible to introduce table "
+"aliases to simplify some SELECT statements.  This can also be useful to "
+"disambiguate situations where tables of the same name are being used from "
+"different data sources.  For instance, if the actual tables names were messy "
+"we might want to do something like:"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:477
+msgid ""
+"SELECT c.name, n.name FROM project_615_city c\n"
+"LEFT JOIN '/usr2/data/project_615_nation.dbf'.project_615_nation n\n"
+"            ON c.nation_id = n.nation_id"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:483
+msgid "It is possible to do multiple joins in a single query."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:485
+msgid ""
+"SELECT city.name, prov.name, nation.name FROM city\n"
+"LEFT JOIN province ON city.prov_id = province.id\n"
+"LEFT JOIN nation ON city.nation_id = nation.id"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:491
+msgid ""
+"The expression after ON is typically of the form \"{primary_table}."
+"{field_name} = {secondary_table}.{field_name}\", and in that order. It is "
+"also possible to use a more complex boolean expression, involving multiple "
+"comparison operators, but with the restrictions mentioned in the below "
+"\"JOIN limitations\" section. In particular, in case of multiple joins (3 "
+"tables or more) the fields compared in a JOIN must belong to the primary "
+"table (the one after FROM) and the table of the active JOIN."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:501
+msgid "JOIN Limitations"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:503
+msgid ""
+"Joins can be very expensive operations if the secondary table is not indexed "
+"on the key field being used."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:504
+msgid ""
+"Joined fields may not be used in WHERE clauses, or ORDER BY clauses at this "
+"time.  The join is essentially evaluated after all primary table subsetting "
+"is complete, and after the ORDER BY pass."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:505
+msgid ""
+"Joined fields may not be used as keys in later joins.  So you could not use "
+"the province id in a city to lookup the province record, and then use a "
+"nation id from the province id to lookup the nation record.  This is a "
+"sensible thing to want and could be implemented, but is not currently "
+"supported."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:506
+msgid ""
+"Datasource names for joined tables are evaluated relative to the current "
+"processes working directory, not the path to the primary datasource."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:507
+msgid ""
+"These are not true LEFT or RIGHT joins in the RDBMS sense.  Whether or not a "
+"secondary record exists for the join key or not, one and only one copy of "
+"the primary record is returned in the result set.  If a secondary record "
+"cannot be found, the secondary derived fields will be NULL.  If more than "
+"one matching secondary field is found only the first will be used."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:510
+msgid "UNION ALL"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:512
+msgid ""
+"The SQL engine can deal with several SELECT combined with UNION ALL. The "
+"effect of UNION ALL is to concatenate the rows returned by the right SELECT "
+"statement to the rows returned by the left SELECT statement."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:516
+msgid ""
+"[(] SELECT field_list FROM first_layer [WHERE where_expr] [)]\n"
+"UNION ALL [(] SELECT field_list FROM second_layer [WHERE where_expr] [)]\n"
+"[UNION ALL [(] SELECT field_list FROM third_layer [WHERE where_expr] [)]]*"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:523
+msgid "UNION ALL restrictions"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:525
+msgid ""
+"The processing of UNION ALL in OGR differs from the SQL standard, in which "
+"it accepts that the columns from the various SELECT are not identical. In "
+"that case, it will return a super-set of all the fields from each SELECT "
+"statement."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:529
+msgid ""
+"There is also a restriction : ORDER BY can only be specified for each "
+"SELECT, and not at the level of the result of the union."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:533
+msgid "SPECIAL FIELDS"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:535
+msgid ""
+"The OGR SQL query processor treats some attributes of the features as built-"
+"in special fields which can be used in SQL statements alongside the other "
+"fields. These fields can be placed in the SELECT list, the WHERE clause and "
+"the ORDER BY clause respectively. Special fields will not be included in the "
+"result by default but they may be explicitly included by adding them to the "
+"SELECT list. When accessing field values, the special fields will take "
+"precedence over other fields in the data source with the same names."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:545
+msgid "Feature id (FID)"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:547
+msgid ""
+"Normally the feature id is a special property of a feature and not treated "
+"as an attribute of the feature.  In some cases it is convenient to be able "
+"to utilize the feature id in queries and result sets as a regular field.  To "
+"do so use the name ``FID``. If the layer has a named FID column (:cpp:func:"
+"`OGRLayer::GetFIDColumn` != \"\"), this name may also be used."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:554
+msgid ""
+"The field wildcard expansions will not include the feature id, but it may be "
+"explicitly included using a syntax like:"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:557
+msgid "SELECT FID, * FROM nation"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:562
+msgid "Geometry field"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:564
+msgid ""
+"The OGR SQL dialect adds the geometry field of the datasource to the result "
+"set by default. Users do not need to select the geometry explicitly but it "
+"is still possible to do so. Common use case is when geometry is the only "
+"field that is needed. In this case the name of the geometry field to be used "
+"in the SQL statement is the name returned by :cpp:func:`OGRLayer::"
+"GetGeometryColumn`. If the method returns an empty string then a special "
+"name \"_ogr_geometry_\" must be used. The name begins with an underscore and "
+"SQL syntax requires that it must appear between double quotes. In addition "
+"the command line interpreter may require that double quotes are escaped and "
+"the final SELECT statement could look like:"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:574
+msgid "SELECT \"_ogr_geometry_\" FROM nation"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:579
+msgid "OGR_GEOMETRY"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:581
+msgid ""
+"Some of the data sources (like MapInfo tab) can handle geometries of "
+"different types within the same layer. The ``OGR_GEOMETRY`` special field "
+"represents the geometry type returned by :cpp:func:`OGRGeometry::"
+"getGeometryName` and can be used to distinguish the various types. By using "
+"this field one can select particular types of the geometries like:"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:587
+msgid ""
+"SELECT * FROM nation WHERE OGR_GEOMETRY='POINT' OR OGR_GEOMETRY='POLYGON'"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:592
+msgid "OGR_GEOM_WKT"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:594
+msgid ""
+"The Well Known Text representation of the geometry can also be used as a "
+"special field. To select the WKT of the geometry ``OGR_GEOM_WKT`` might be "
+"included in the select list, like:"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:598
+msgid "SELECT OGR_GEOM_WKT, * FROM nation"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:602
+msgid ""
+"Using the ``OGR_GEOM_WKT`` and the ``LIKE`` operator in the WHERE clause we "
+"can get similar effect as using OGR_GEOMETRY:"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:605
+msgid ""
+"SELECT OGR_GEOM_WKT, * FROM nation WHERE OGR_GEOM_WKT\n"
+"LIKE 'POINT%' OR OGR_GEOM_WKT LIKE 'POLYGON%'"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:611
+msgid "OGR_GEOM_AREA"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:613
+msgid ""
+"The ``OGR_GEOM_AREA`` special field returns the area of the feature's "
+"geometry computed by the OGRSurface::get_Area() method. For "
+"OGRGeometryCollection and OGRMultiPolygon the value is the sum of the areas "
+"of its members. For non-surface geometries the returned area is 0.0."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:618
+msgid "For example, to select only polygon features larger than a given area:"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:620
+msgid "SELECT * FROM nation WHERE OGR_GEOM_AREA > 10000000"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:625
+msgid "OGR_STYLE"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:627
+msgid ""
+"The ``OGR_STYLE`` special field represents the style string of the feature "
+"returned by OGRFeature::GetStyleString(). By using this field and the "
+"``LIKE`` operator the result of the query can be filtered by the style. For "
+"example we can select the annotation features as:"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:632
+msgid "SELECT * FROM nation WHERE OGR_STYLE LIKE 'LABEL%'"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:637
+msgid "CREATE INDEX"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:639
+msgid ""
+"Some OGR SQL drivers support creating of attribute indexes.  Currently this "
+"includes the Shapefile driver.  An index accelerates very simple attribute "
+"queries of the form **fieldname = value**, which is what is used by the "
+"``JOIN`` capability.  To create an attribute index on the nation_id field of "
+"the nation table a command like this would be used:"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:645
+msgid "CREATE INDEX ON nation USING nation_id"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:650
+msgid "Index Limitations"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:652
+msgid ""
+"Indexes are not maintained dynamically when new features are added to or "
+"removed from a layer."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:653
+msgid ""
+"Very long strings (longer than 256 characters?) cannot currently be indexed."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:654
+msgid ""
+"To recreate an index it is necessary to drop all indexes on a layer and then "
+"recreate all the indexes."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:655
+msgid ""
+"Indexes are not used in any complex queries.   Currently the only query the "
+"will accelerate is a simple \"field = value\" query."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:658
+msgid "DROP INDEX"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:660
+msgid ""
+"The OGR SQL DROP INDEX command can be used to drop all indexes on a "
+"particular table, or just the index for a particular column."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:663
+msgid ""
+"DROP INDEX ON nation USING nation_id\n"
+"DROP INDEX ON nation"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:669
+msgid "ALTER TABLE"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:671
+msgid "The following OGR SQL ALTER TABLE commands can be used."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:673
+msgid ""
+"-\"ALTER TABLE tablename ADD [COLUMN] columnname columntype\" to add a new "
+"field. Supported if the layer declares the OLCCreateField capability. -"
+"\"ALTER TABLE tablename RENAME [COLUMN] oldcolumnname TO newcolumnname\" to "
+"rename an existing field. Supported if the layer declares the "
+"OLCAlterFieldDefn capability. -\"ALTER TABLE tablename ALTER [COLUMN] "
+"columnname TYPE columntype\" to change the type of an existing field. "
+"Supported if the layer declares the OLCAlterFieldDefn capability. -\"ALTER "
+"TABLE tablename DROP [COLUMN] columnname\" to delete an existing field. "
+"Supported if the layer declares the OLCDeleteField capability."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:678
+msgid ""
+"The columntype value follows the syntax of the types supported by the CAST "
+"operator described above."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:680
+msgid ""
+"ALTER TABLE nation ADD COLUMN myfield integer\n"
+"ALTER TABLE nation RENAME COLUMN myfield TO myfield2\n"
+"ALTER TABLE nation ALTER COLUMN myfield2 TYPE character(15)\n"
+"ALTER TABLE nation DROP COLUMN myfield2"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:688
+msgid "DROP TABLE"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:690
+msgid ""
+"The OGR SQL DROP TABLE command can be used to delete a table. This is only "
+"supported on datasources that declare the ODsCDeleteLayer capability."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:693
+msgid "DROP TABLE nation"
+msgstr ""

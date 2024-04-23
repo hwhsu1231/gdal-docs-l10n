@@ -1,0 +1,406 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:5
+msgid "Compiling the C# bindings - Legacy Scripts"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:7
+msgid ""
+"This page describes the primary steps when creating the GDAL/OGR C# binaries "
+"from the source."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:9
+msgid ""
+"In most cases this is not necessary and it is better to use one of the pre-"
+"compiled sources, such as `GisInternals <https://gisinternals.com/>`__ or "
+"Conda."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:12
+msgid "Building on Windows"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:14
+msgid ""
+"To building the C# interface, you need a compiled version of the GDAL core. "
+"This can be the result of a manual compilation or can be linking to one of "
+"the prebuilt binaries. In the former case the following should be run in the "
+"clone of the GitHub repository used to build GDAL and the steps to create "
+"the environment should not be necessary."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:18
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:105
+msgid "Requirements"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:20
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:107
+msgid "The build environment has the following dependencies:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:22
+msgid "nmake / Visual Studio"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:23
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:110
+msgid "SWIG 3/4"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:25
+msgid ""
+"The `GDAL test scripts <https://github.com/OSGeo/gdal/blob/master/.github/"
+"workflows/windows_build.yml>`__ use VS 2019 (MSVC Ver 1920) so it would make "
+"sense to use the same versions."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:27
+msgid ""
+"`SWIG <http://www.swig.org/>`__ is used to build the API bindings. The GDAL "
+"test scripts use version 3 and the conda build use version 4. Both Work."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:30
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:114
+msgid "Build Environment"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:32
+msgid ""
+"You need to set up the build environment. If you are using VS 2019, this "
+"might be the command:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:34
+msgid ":program:`VsDevCmd.bat -arch=x64`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:36
+msgid ""
+"The :program:`VsDevCmd.bat` command can usually be found in :file:`C:\\"
+"\\Program Files (x86)\\\\Microsoft Visual Studio\\\\2019\\\\Enterprise\\"
+"\\Common7\\\\Tools` or the equivalent for the Community Edition."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:38
+msgid ""
+"If you don't want to bother with executing the proper vcvars*.bat you might "
+"use the development environment specific command prompt to accomplish this "
+"task. When using a Win64 compilation be careful to activate the x64 version "
+"of the command prompt installed on your system."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:40
+msgid ""
+"If you are not running in an environment that has been used to compile GDAL "
+"locally, then there are a number of variables that need to be configured. "
+"The Conda ``gdal-feedstock`` configuration app can be used as a guideline "
+"about how to do that - `build.bat <https://github.com/conda-forge/gdal-"
+"feedstock/blob/master/recipe/set_bld_opts.bat>`__."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:43
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:121
+msgid "Creating the SWIG interface code"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:45
+msgid ""
+"The first step is to generate the SWIG interface code. This will create a "
+"set of ``.cs`` definitions that will be compiled into the ``.dll`` files"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:47
+msgid ""
+"To create the interface execute the following command (from the "
+"``swig\\csharp`` directory):"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:49
+msgid "nmake /f makefile.vc interface`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:53
+msgid ""
+"You should edit nmake.opt adding the actual location of the :file:`swig.exe` "
+"file."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:56
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:134
+msgid "Compiling the code"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:58
+msgid ""
+"After creating the interface the code can be compiled using this command "
+"(from the ``swig\\csharp`` directory):"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:60
+msgid "nmake /f makefile.vc"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:64
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:142
+msgid "Upon a successful compilation the following files are created:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:66
+msgid ":file:`gdal_csharp.dll`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:67
+msgid ":file:`ogr_csharp.dll`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:68
+msgid ":file:`osr_csharp.dll`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:69
+msgid ":file:`gdalconst_csharp.dll`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:70
+msgid ":file:`gdal_wrap.dll`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:71
+msgid ":file:`ogr_wrap.dll`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:72
+msgid ":file:`osr_wrap.dll`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:73
+msgid ":file:`gdalconst_wrap.dll`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:74
+msgid "various sample applications"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:76
+msgid ""
+"The :file:`\\*_csharp.dll` binaries are the managed part of the interface. "
+"You should add a reference to these assemblies for using the classes of the "
+"interface. These :file:`\\*_csharp.dll` files will load the corresponding :"
+"file:`\\*_wrap.dll` files, which are the unmanaged part of the interface "
+"hosting the code of the gdal core."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:79
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:160
+msgid "Testing the successful compilation"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:81
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:162
+msgid "To test the compiled binaries, you can use:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:83
+msgid "nmake /f makefile.vc test`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:87
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:168
+msgid "This command will invoke some of the sample applications."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:89
+msgid ""
+"For the tests to work the location of the proj and gdal DLLs should be "
+"available in the PATH."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:92
+msgid "Using MONO on Windows"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:94
+msgid ""
+"If you have the Windows version of the MONO package installed you can "
+"compile the C# code using the MONO compiler. In this case uncomment the "
+"following entry in csharp.opt:"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:96
+msgid ":program:`MONO = YES`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:98
+msgid "mcs.exe must be in the PATH."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:102
+msgid "Building on Linux/OSX"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:109
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:138
+msgid "make"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:111
+msgid "mono (probably any reasonable version)"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:116
+msgid ""
+"The build environment needs to be correctly configured. If you are not "
+"running in an environment that has been used to locally build GDAL then you "
+"should run the :program:`configure` command from the GDAL root directory."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:118
+msgid ""
+"The conda gdal-feedstock recipe provides an example of how to do that - "
+"`build.sh <https://github.com/conda-forge/gdal-feedstock/blob/master/recipe/"
+"build.sh>`__"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:123
+msgid ""
+"The first step is to generate the SWIG interface code. This will create a "
+"set of :file:`.cs` definitions that will be compiled into the :file:`.dll` "
+"files"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:125
+msgid ""
+"To create the interface execute the following command (from the :file:"
+"`swig/    csharp` directory):"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:127
+msgid "make generate"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:131
+msgid ""
+"In versions of GDAL < 3.3.0 - this command will create incorrect interfaces "
+"without the correct namespace. See `#3670 <https://github.com/OSGeo/gdal/"
+"pull/3670/commits/777c9d0e86602740199cf9a4ab44e040c52c2283>`__."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:136
+msgid ""
+"After creating the interface the code can be compiled using this command "
+"(from the :file:`swig/csharp` directory):"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:144
+msgid ":file:`gdal_csharp.dll` and :file:`gdal_csharp.dll.config`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:145
+msgid ":file:`ogr_csharp.dll` and :file:`ogr_csharp.dll.config`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:146
+msgid ":file:`osr_csharp.dll` and :file:`osr_csharp.dll.config`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:147
+msgid ":file:`gdalconst_csharp.dll` and :file:`gdalconst_csharp.dll.config`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:148
+msgid ":file:`libgdalcsharp.so / .dylib` etc"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:149
+msgid ":file:`libogrcsharp.so / .dylib` etc"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:150
+msgid ":file:`libosrcsharp.so / .dylib` etc"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:151
+msgid ":file:`libgdalconst_wrap.so / .dylib` etc"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:152
+msgid "various sample applications (:file:`\\*.exe`)"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:154
+msgid ""
+"The :file:`\\*_csharp.dll` binaries are the managed part of the interface. "
+"You should add a reference to these assemblies for using the classes of the "
+"interface."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:156
+msgid ""
+"The :file:`\\*_csharp.dll` files will try to load the corresponding :file:"
+"`\\*_wrap.dll` and are redirected to the :file:`libxxxcsharp.\\*` libraries, "
+"which are the unmanaged part of the interface hosting the code of the gdal "
+"core, by the :file:`\\*.dll.config` definitions."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:164
+msgid "nmake test"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:170
+msgid ""
+"For the tests to work the location of the proj and gdal libraries should be "
+"available in the PATH."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:173
+msgid "Using The Bindings on Unix"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:175
+msgid ""
+"Note that the bindings created by this process will only work with Mono at "
+"the moment."
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:177
+msgid ""
+"To run one of the prebuilt executables - you can run them with Mono as "
+"follows :"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:179
+msgid ":program:`mono GDALInfo.exe`"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:181
+msgid ""
+"Both the managed libraries (i.e. the DLLs) and the unmanaged libraries must "
+"be available to Mono. This is in more detail in `the Mono documentation "
+"<https://www.mono-project.com/docs/advanced/pinvoke/>`__"
+msgstr ""
+
+#: ../../../source/api/csharp/csharp_compile_legacy.rst:184
+msgid ""
+"This document was amended from the previous version at `https://trac.osgeo."
+"org/gdal/wiki/GdalOgrCsharpCompile <https://trac.osgeo.org/gdal/wiki/"
+"GdalOgrCsharpCompile>`__"
+msgstr ""

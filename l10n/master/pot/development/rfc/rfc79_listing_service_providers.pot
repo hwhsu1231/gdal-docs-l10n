@@ -1,0 +1,246 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:5
+msgid "RFC 79: Listing of Service Providers on GDAL website"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:8
+msgid "Author:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:8
+msgid "Daniel Morissette, Even Rouault"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:9
+msgid "Contact:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:9
+msgid "even.rouault @ spatialys.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:10
+msgid "Started:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:10
+msgid "2021-Feb-22"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:11
+msgid "Last updated:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:11
+msgid "2021-Mar-01"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:12
+msgid "Status:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:12
+msgid "Adopted"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:16
+msgid "1. Motivation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:18
+msgid ""
+"GDAL is developed and supported by a rich ecosystem of businesses and "
+"individuals around the world but we do not do a good job of promoting those "
+"service providers and making them easy to find by our users at the moment."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:22
+msgid ""
+"In this RFC, we propose a plan to address this by adding a Service Providers "
+"page to the GDAL website."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:26
+msgid "2. Proposed plan"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:28
+msgid "A new Service Providers page will be added to the Sphinx documentation."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:30
+msgid ""
+"The service providers will be grouped in three categories. The descriptions "
+"below should make it relatively easy to determine in which group a given "
+"organization belongs."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:34
+msgid ""
+"Each qualified organization who wishes to be listed is responsible for "
+"adding themselves to the correct category in the page through a pull request "
+"(or a direct commit in case of core committers). We are intentionally not "
+"providing instructions here for preparing the pull request as it is expected "
+"that a qualified service provider should have people on staff who can figure "
+"it out. Yes, we intentionally try to keep the bar at a minimum level."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:42
+msgid ""
+"A PSC vote is NOT required in order to add a new service provider, i.e. any "
+"core committer can validate and commit the pull request (or their own entry) "
+"but in case of doubts or disagreements on the interpretation of the rules, "
+"the GDAL PSC will be the ultimate authority to resolve the question."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:48
+msgid ""
+"Organizations in each category are displayed in randomized order (except in "
+"the PDF docs which are static). However entries should be added to the "
+"source file in alphabetical order (for PDF docs purpose). The output will be "
+"similar to https://mapserver.org/community/service_providers.html"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:55
+msgid "2.1 Core Contributors"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:57
+msgid ""
+"Core Contributors are the organizations that have one or more Core Committer "
+"(a person with merge rights in the GDAL GitHub repository) and/or PSC "
+"members as part of their staff and who provide GDAL related services to "
+"customers."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:62
+msgid ""
+"To qualify, the Core Committers and/or PSC members must be directly employed "
+"by the organization and not part time contractors."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:65
+msgid ""
+"They get to add a 200px max high or wide logo with a descriptive text "
+"outlining their qualifications and services."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:68
+msgid "2.2 Contributors"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:70
+msgid ""
+"Contributors are organizations who provide GDAL related services and have "
+"one or more people on their staff who are well known in the GDAL community "
+"for their long term contributions to the project. Contributions are not "
+"limited to source code and can also be in the form of documentation, binary "
+"builds, active user support via the public forums, etc."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:76
+msgid ""
+"They get to add a 150px max high or wide logo with a descriptive text "
+"outlining their qualifications and services."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:79
+msgid "2.3 Other Service Providers"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:81
+msgid ""
+"Organization with GDAL expertise and providing services around GDAL can fit "
+"in this category. While proprietary solutions providers are welcome, we "
+"expect organizations listed here to be providing legitimate services to "
+"users of the Open Source software as well. This is not an advertisement "
+"board for proprietary products."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:87
+msgid ""
+"They get to add a 100px max high or wide logo with a descriptive text "
+"outlining their qualifications and services."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:90
+msgid "2.4 Refreshing the service providers list"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:92
+msgid ""
+"If at some point (every 2 years?) we feel that the list is or might be no "
+"longer current, we could bring it up to date as follows:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:95
+msgid "create a GitHub ticket dedicated for the refresh"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:96
+msgid ""
+"send an email to the list with this message \"in 4 weeks, we are going to "
+"remove all currently listed service providers to refresh the site. If you "
+"are still interested, add a note to ticket XXXX\"."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:100
+msgid ""
+"Instead of the ticket we could just ask people to reply to the email but the "
+"advantage of the ticket is to generate less email traffic for those not "
+"interested. It leaves a trace of the list of organizations who responded in "
+"a single place inside the ticket."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:105
+msgid "3. FAQ"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:107
+msgid ""
+"Should we also recognize sponsors or organizations that are funding "
+"significant features in this page?"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:110
+msgid ""
+"No. This is a service provider page and not a sponsorship page. However if "
+"the organization in question is also offering GDAL related services they can "
+"be added to the relevant category. They just won't get special status due to "
+"their financial contributions."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:116
+msgid "4. Credits"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:118
+msgid ""
+"This RFC is a straightforward adaptation of the equivalent MapServer one: "
+"https://mapserver.org/development/rfc/ms-rfc-116.html"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:122
+msgid "5. Voting History"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc79_listing_service_providers.rst:124
+msgid "+1 from PSC members MateuszL, KurtS, JukkaR, DanielM and EvenR."
+msgstr ""

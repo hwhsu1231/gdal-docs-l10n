@@ -1,0 +1,316 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/mongodbv3.rst:4
+#: ../../../source/drivers/vector/mongodbv3.rst:8
+msgid "MongoDBv3"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:10
+msgid "Mongo CXX >= 3.4.0 client library"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:12
+msgid "This driver can connect to the a MongoDB service."
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:14
+msgid ""
+"The driver supports read, creation, update and delete operations of "
+"documents/features and collections/layers. The MongoDB database must exist "
+"before operating on it with OGR."
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:18
+msgid "This driver requires the MongoDB C++ v3.4.0 client library."
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:21
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:28
+msgid "MongoDB vs OGR concepts"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:30
+msgid ""
+"A MongoDB collection within a database is considered as a OGR layer. A "
+"MongoDB document is considered as a OGR feature."
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:34
+msgid "Dataset name syntax"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:36
+msgid "There are two main possible syntaxes:"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:38
+msgid ""
+"One using `MongoDB URI <https://docs.mongodb.com/manual/reference/connection-"
+"string/index.html>`__ prefixed with *MONGODBV3:*, such as MONGODBV3:"
+"mongodb://[usr:pwd@]host1[:port1]...[,hostN[:portN]]][/[db][?options]]"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:42
+msgid ""
+"One using just MongoDBv3: as the name and open options to specify host, "
+"port, user, password, database, etc..."
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:45
+msgid ""
+"Note: the MONGODBV3: prefix before a URI starting with *mongodb://* is "
+"required to make it recognize by this driver, instead of the legacy driver. "
+"If the URI is starting with *mongodb+srv://*, then it is not needed."
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:50
+msgid "The open options available are :"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:148
+msgid "Whether to use bulk insert for feature creation."
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:151
+msgid "Filtering"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:153
+msgid ""
+"The driver will forward any spatial filter set with SetSpatialFilter() to "
+"the server when a \"2d\" or \"2dsphere\" spatial index is available on the "
+"geometry field."
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:157
+msgid ""
+"However, in the current state, SQL attribute filters set with "
+"SetAttributeFilter() are evaluated only on client-side. To enable server-"
+"side filtering, the string passed to SetAttributeFilter() must be a JSon "
+"object in the `MongoDB filter syntax <https://docs.mongodb.com/manual/"
+"reference/method/db.collection.find/index.html>`__."
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:164
+msgid "Paging"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:166
+msgid ""
+"Features are retrieved from the server by chunks of 101 documents or just "
+"enough documents to exceed 1 megabyte. Subsequent batch size is 4 megabytes. "
+"This can be altered with the BATCH_SIZE open option."
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:171
+msgid "Schema"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:173
+msgid ""
+"When reading a MongoDB collection, OGR must establish the schema of "
+"attribute and geometry fields, since, contrary to MongoDB collections which "
+"are schema-less, OGR has a fixed schema concept."
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:177
+msgid ""
+"In the general case, OGR will read the first 100 documents (can be altered "
+"with the FEATURE_COUNT_TO_ESTABLISH_FEATURE_DEFN open option) of the "
+"collection and build the schema that best fit to the found fields and values."
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:182
+msgid ""
+"If the collection/layer has been previously created with OGR, a "
+"\\_ogr_metadata special collection contains the OGR schema, in which case it "
+"will be directly used. It might be possible to ignore the schema written in "
+"\\_ogr_metadata by setting the USE_OGR_METADATA=NO open option."
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:188
+msgid ""
+"It is also possible to set the JSON_FIELD=YES open option so that a \\_json "
+"special field is added to the OGR schema. When reading MongoDB documents as "
+"OGR features, the full JSon version of the document will be stored in the "
+"\\_json field. This might be useful in case of complex documents or with "
+"data types that do not translate well in OGR data types. On creation/update "
+"of documents, if the \\_json field is present and set, its content will be "
+"used directly (other fields will be ignored)."
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:198
+msgid "Feature ID"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:200
+msgid ""
+"MongoDB have a special \\_id field that contains the unique ID of the "
+"document. This field is returned as an OGR field, but cannot be used as the "
+"OGR special FeatureID field, which must be of integer type. By default, OGR "
+"will try to read a potential 'ogc_fid' field to set the OGR FeatureID. The "
+"name of this field to look up can be set with the FID open option. If the "
+"field is not found, the FID returned by OGR will be a sequential number "
+"starting at 1, but it is not guaranteed to be stable at all."
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:210
+msgid "ExecuteSQL() interface"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:212
+msgid ""
+"If specifying \"MongoDB\" as the dialect of ExecuteSQL(), a JSon string with "
+"a serialized `MongoDB command <https://docs.mongodb.com/manual/reference/"
+"command/index.html>`__ can be passed. The result will be returned as a JSon "
+"string in a single OGR feature."
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:218
+msgid "Standard SQL requests will be executed on client-side."
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:221
+msgid "Write support"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:223
+msgid "Layer/collection creation and deletion is possible."
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:225
+msgid ""
+"Write support is only enabled when the datasource is opened in update mode."
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:228
+msgid ""
+"When inserting a new feature with CreateFeature(), and if the command is "
+"successful, OGR will fetch the returned \\_id and use it for the "
+"SetFeature() operation."
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:233
+msgid "Layer creation options"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:235
+msgid "The following layer creation options are supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:282
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:284
+msgid "Listing the tables of a MongoDB database:"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:288
+msgid "ogrinfo -ro mongodb+srv://user:password@cluster0-ox9uy.mongodb.net/test"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:290
+msgid "Filtering on a MongoDB field:"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:294
+msgid ""
+"ogrinfo -ro mongodb+srv://user:password@cluster0-ox9uy.mongodb.net/test -"
+"where '{ \"field\": 5 }'"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:296
+msgid "Creating and populating a collection from a shapefile:"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:300
+msgid ""
+"ogr2ogr -update mongodb+srv://user:password@cluster0-ox9uy.mongodb.net/test "
+"shapefile.shp"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:303
+msgid "Build instructions"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:305
+msgid ""
+"GDAL/OGR must be built against the `MongoDB C++ driver client library "
+"<https://github.com/mongodb/mongo-cxx-driver>`__, v3.4.0, in order to the "
+"MongoDBv3 driver to be compiled."
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:309
+msgid ""
+"You must first follow `MongoDB C++ driver client build instructions <http://"
+"mongocxx.org/mongocxx-v3/installation/>`__."
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:312
+msgid "Then:"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:314
+msgid ""
+"On Linux/Unix, run ./configure --with-mongocxxv3 (potentially by overriding "
+"PKG_CONFIG_PATH to point to the {INSTALLATION_PREFIX_OF_MONGOCXX}/lib/"
+"pkgconfig"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:317
+msgid ""
+"On Windows, uncomment and adapt the following in nmake.opt (or add in nmake."
+"local):"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:322
+msgid ""
+"# Uncomment for MongoDBv3 support\n"
+"# Uncomment following line if plugin is preferred\n"
+"#MONGODBV3_PLUGIN = YES\n"
+"BOOST_INC=E:/boost_1_69_0\n"
+"MONGOCXXV3_CFLAGS = -IE:/dev/install-mongocxx-3.4.0/include/mongocxx/v_noabi "
+"-IE:/dev/install-mongocxx-3.4.0/include/bsoncxx/v_noabi\n"
+"MONGOCXXV3_LIBS = E:/dev/install-mongocxx-3.4.0/lib/mongocxx.lib E:/dev/"
+"install-mongocxx-3.4.0/lib/bsoncxx.lib"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:330
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:332
+msgid "`MongoDB C++ Driver <https://github.com/mongodb/mongo-cxx-driver>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:333
+msgid "`MongoDB Manual <https://docs.mongodb.com/manual/>`__"
+msgstr ""

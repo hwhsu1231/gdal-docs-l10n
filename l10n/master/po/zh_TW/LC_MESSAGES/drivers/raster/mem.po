@@ -1,0 +1,170 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/mem.rst:5
+msgid "MEM -- In Memory Raster"
+msgstr ""
+
+#: ../../../source/drivers/raster/mem.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/mem.rst:7
+msgid "MEM"
+msgstr ""
+
+#: ../../../source/drivers/raster/mem.rst:11
+msgid ""
+"GDAL supports the ability to hold rasters in a temporary in-memory format. "
+"This is primarily useful for temporary datasets in scripts or internal to "
+"applications. It is not generally of any use to application end-users."
+msgstr ""
+
+#: ../../../source/drivers/raster/mem.rst:16
+msgid ""
+"Memory datasets should support for most kinds of auxiliary information "
+"including metadata, coordinate systems, georeferencing, GCPs, color "
+"interpretation, nodata, color tables and all pixel data types."
+msgstr ""
+
+#: ../../../source/drivers/raster/mem.rst:21
+msgid "Dataset Name Format"
+msgstr ""
+
+#: ../../../source/drivers/raster/mem.rst:23
+msgid ""
+"It is possible to open an existing array in memory. To do so, construct a "
+"dataset name with the following format:"
+msgstr ""
+
+#: ../../../source/drivers/raster/mem.rst:28
+msgid "MEM:::option=value[,option=value...]"
+msgstr ""
+
+#: ../../../source/drivers/raster/mem.rst:30
+msgid "For example:"
+msgstr ""
+
+#: ../../../source/drivers/raster/mem.rst:34
+msgid ""
+"MEM:::DATAPOINTER=342343408,PIXELS=100,LINES=100,BANDS=3,DATATYPE=Byte,\n"
+"     PIXELOFFSET=3,LINEOFFSET=300,BANDOFFSET=1,\n"
+"     GEOTRANSFORM=1.166396e+02/1.861068e-05/0.000000e+00/3.627969e+01/0.000000e+00/-1.861068e-05"
+msgstr ""
+
+#: ../../../source/drivers/raster/mem.rst:38
+msgid "or"
+msgstr ""
+
+#: ../../../source/drivers/raster/mem.rst:42
+msgid ""
+"MEM:::DATAPOINTER=0x1467BEF0,PIXELS=100,LINES=100,BANDS=3,DATATYPE=Byte,\n"
+"     PIXELOFFSET=3,LINEOFFSET=300,BANDOFFSET=1,\n"
+"     GEOTRANSFORM=1.166396e+02/1.861068e-05/0.000000e+00/3.627969e+01/0.000000e+00/-1.861068e-05"
+msgstr ""
+
+#: ../../../source/drivers/raster/mem.rst:46
+msgid ""
+"DATAPOINTER: address of the first pixel of the first band. The address can "
+"be represented as a hexadecimal or decimal value. Hexadecimal values must be "
+"prefixed with '0x'. Some implementations (notably Windows) doesn't print "
+"hexadecimal pointer values with a leading '0x', so the prefix must be added. "
+"You can use CPLPrintPointer to create a string with format suitable for use "
+"as a DATAPOINTER."
+msgstr ""
+
+#: ../../../source/drivers/raster/mem.rst:53
+msgid "PIXELS: Width of raster in pixels. (required)"
+msgstr ""
+
+#: ../../../source/drivers/raster/mem.rst:54
+msgid "LINES: Height of raster in lines. (required)"
+msgstr ""
+
+#: ../../../source/drivers/raster/mem.rst:55
+msgid "BANDS: Number of bands, defaults to 1. (optional)"
+msgstr ""
+
+#: ../../../source/drivers/raster/mem.rst:56
+msgid ""
+"DATATYPE: Name of the data type, as returned by GDALGetDataTypeName() (eg. "
+"Byte, Int16) Defaults to Byte. (optional)"
+msgstr ""
+
+#: ../../../source/drivers/raster/mem.rst:58
+msgid ""
+"PIXELOFFSET: Offset in bytes between the start of one pixel and the next on "
+"the same scanline. (optional)"
+msgstr ""
+
+#: ../../../source/drivers/raster/mem.rst:60
+msgid ""
+"LINEOFFSET: Offset in bytes between the start of one scanline and the next. "
+"(optional)"
+msgstr ""
+
+#: ../../../source/drivers/raster/mem.rst:62
+msgid ""
+"BANDOFFSET: Offset in bytes between the start of one bands data and the next."
+msgstr ""
+
+#: ../../../source/drivers/raster/mem.rst:64
+msgid ""
+"GEOTRANSFORM: Set the affine transformation coefficients. 6 real numbers "
+"with '/' as separator (optional)"
+msgstr ""
+
+#: ../../../source/drivers/raster/mem.rst:66
+msgid ""
+"SPATIALREFERENCE: (GDAL >= 3.7) Set the projection. The coordinate reference "
+"systems that can be passed are anything supported by the OGRSpatialReference."
+"SetFromUserInput() as per '-a_srs' in :ref:`gdal_translate`. If the passed "
+"string includes comma or double-quote characters (typically WKT), it should "
+"be surrounded by double-quote characters and the double-quote characters "
+"inside it should be escaped with anti-slash. e.g "
+"``SPATIALREFERENCE=\"GEOGCRS[\\\"WGS 84\\\",[... snip ...],ID[\\\"EPSG\\"
+"\",4326]]\"``"
+msgstr ""
+
+#: ../../../source/drivers/raster/mem.rst:76
+msgid "Creation Options"
+msgstr ""
+
+#: ../../../source/drivers/raster/mem.rst:78
+msgid "There are no supported creation options."
+msgstr ""
+
+#: ../../../source/drivers/raster/mem.rst:80
+msgid ""
+"The MEM format is one of the few that supports the AddBand() method. The "
+"AddBand() method supports DATAPOINTER, PIXELOFFSET and LINEOFFSET options to "
+"reference an existing memory array."
+msgstr ""
+
+#: ../../../source/drivers/raster/mem.rst:85
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/mem.rst:94
+msgid "Multidimensional API support"
+msgstr ""
+
+#: ../../../source/drivers/raster/mem.rst:98
+msgid "The MEM driver supports the :ref:`multidim_raster_data_model`."
+msgstr ""

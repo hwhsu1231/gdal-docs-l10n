@@ -1,0 +1,166 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/programs/gnmmanage.rst:5
+#: ../../../source/programs/gnmmanage.rst:11
+msgid "gnmmanage"
+msgstr ""
+
+#: ../../../source/programs/gnmmanage.rst:9
+msgid "Manages networks"
+msgstr ""
+
+#: ../../../source/programs/gnmmanage.rst:14
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../source/programs/gnmmanage.rst:16
+msgid ""
+"gnmmanage [--help] [--help-general] [-q] [-quiet] [--long-usage]\n"
+"          [info]\n"
+"          [create [-f <format_name>] [-t_srs <srs_name>] [-dsco "
+"<NAME>=<VALUE>]... ]\n"
+"          [import <src_dataset_name>] [-l <layer_name>]\n"
+"          [connect <gfid_src> <gfid_tgt> <gfid_con> [-c <cost>] [-ic "
+"<inv_cost>] [-dir <dir>]]\n"
+"          [disconnect <gfid_src> <gfid_tgt> <gfid_con>]\n"
+"          [rule <rule_str>]\n"
+"          [autoconnect <tolerance>]\n"
+"          [delete]\n"
+"          [change [-bl <gfid>][-unbl <gfid>][-unblall]]\n"
+"          <gnm_name> [<layer> [<layer>]...]"
+msgstr ""
+
+#: ../../../source/programs/gnmmanage.rst:31
+msgid "Description"
+msgstr ""
+
+#: ../../../source/programs/gnmmanage.rst:33
+msgid ""
+"The :program:`gnmmanage` program can perform various managing operations on "
+"geographical networks in GDAL. In addition to creating and deleting networks "
+"this includes capabilities of managing network's features, topology and "
+"rules."
+msgstr ""
+
+#: ../../../source/programs/options/help.rst:3
+msgid "Show this help message and exit"
+msgstr ""
+
+#: ../../../source/programs/options/help_general.rst:3
+msgid ""
+"Gives a brief usage message for the generic GDAL commandline options and "
+"exit."
+msgstr ""
+
+#: ../../../source/programs/gnmmanage.rst:41
+msgid ""
+"Different information about network: system and class layers, network "
+"metadata, network spatial reference."
+msgstr ""
+
+#: ../../../source/programs/gnmmanage.rst:45
+msgid "Create network."
+msgstr ""
+
+#: ../../../source/programs/gnmmanage.rst:49
+msgid "Output file format name."
+msgstr ""
+
+#: ../../../source/programs/gnmmanage.rst:53
+msgid "Spatial reference input."
+msgstr ""
+
+#: ../../../source/programs/gnmmanage.rst:57
+msgid "Network creation option set as pair name=value."
+msgstr ""
+
+#: ../../../source/programs/gnmmanage.rst:61
+msgid "Import layer with dataset name to copy."
+msgstr ""
+
+#: ../../../source/programs/gnmmanage.rst:65
+msgid "Layer name in dataset. If unset, 0 layer is copied."
+msgstr ""
+
+#: ../../../source/programs/gnmmanage.rst:69
+msgid ""
+"Make a topological connection, where the gfid_src and gfid_tgt are vertices "
+"and gfid_con is edge (gfid_con can be -1, so the system edge will be "
+"inserted)."
+msgstr ""
+
+#: ../../../source/programs/gnmmanage.rst:71
+msgid "Manually assign the following values:"
+msgstr ""
+
+#: ../../../source/programs/gnmmanage.rst:75
+msgid "Cost / weight"
+msgstr ""
+
+#: ../../../source/programs/gnmmanage.rst:79
+msgid "Inverse cost"
+msgstr ""
+
+#: ../../../source/programs/gnmmanage.rst:83
+msgid "Direction of the edge."
+msgstr ""
+
+#: ../../../source/programs/gnmmanage.rst:87
+msgid "Removes the connection from the graph."
+msgstr ""
+
+#: ../../../source/programs/gnmmanage.rst:91
+msgid "Creates a rule in the network by the given rule_str string."
+msgstr ""
+
+#: ../../../source/programs/gnmmanage.rst:95
+msgid ""
+"Create topology automatically with the given double tolerance and layer "
+"names. In no layer name provided all layers of network will be used."
+msgstr ""
+
+#: ../../../source/programs/gnmmanage.rst:99
+msgid "Delete network."
+msgstr ""
+
+#: ../../../source/programs/gnmmanage.rst:103
+msgid "Change blocking state of network edges or vertices."
+msgstr ""
+
+#: ../../../source/programs/gnmmanage.rst:107
+msgid ""
+"Block feature before the main operation. Blocking features are saved in the "
+"special layer."
+msgstr ""
+
+#: ../../../source/programs/gnmmanage.rst:111
+msgid "Unblock feature before the main operation."
+msgstr ""
+
+#: ../../../source/programs/gnmmanage.rst:115
+msgid "Unblock all blocked features before the main operation."
+msgstr ""
+
+#: ../../../source/programs/gnmmanage.rst:119
+msgid "The network to work with (path and name)."
+msgstr ""
+
+#: ../../../source/programs/gnmmanage.rst:123
+msgid "The network layer name."
+msgstr ""

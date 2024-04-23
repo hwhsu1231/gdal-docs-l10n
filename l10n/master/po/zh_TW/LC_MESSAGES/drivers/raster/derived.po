@@ -1,0 +1,322 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/derived.rst:5
+msgid "DERIVED -- Derived subdatasets driver"
+msgstr ""
+
+#: ../../../source/drivers/raster/derived.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/derived.rst:7
+msgid "DERIVED"
+msgstr ""
+
+#: ../../../source/drivers/raster/derived.rst:11
+msgid ""
+"This driver allows accessing subdatasets derived from a given dataset. Those "
+"derived datasets have the same projection reference, geo-transform and "
+"metadata than the original dataset, but derives new pixel values using gdal "
+"pixel functions."
+msgstr ""
+
+#: ../../../source/drivers/raster/derived.rst:17
+msgid "Available functions"
+msgstr ""
+
+#: ../../../source/drivers/raster/derived.rst:19
+msgid "Available derived datasets are:"
+msgstr ""
+
+#: ../../../source/drivers/raster/derived.rst:21
+msgid "AMPLITUDE: Amplitude of pixels from input bands"
+msgstr ""
+
+#: ../../../source/drivers/raster/derived.rst:22
+msgid "PHASE: Phase of pixels from input bands"
+msgstr ""
+
+#: ../../../source/drivers/raster/derived.rst:23
+msgid "REAL: Real part of pixels from input bands"
+msgstr ""
+
+#: ../../../source/drivers/raster/derived.rst:24
+msgid "IMAG: Imaginary part of pixels from input bands"
+msgstr ""
+
+#: ../../../source/drivers/raster/derived.rst:25
+msgid "CONJ: Conjugate of pixels from input bands"
+msgstr ""
+
+#: ../../../source/drivers/raster/derived.rst:26
+msgid "INTENSITY: Intensity (squared amplitude) of pixels from input bands"
+msgstr ""
+
+#: ../../../source/drivers/raster/derived.rst:27
+msgid "LOGAMPLITUDE: Log10 of amplitude of pixels from input bands"
+msgstr ""
+
+#: ../../../source/drivers/raster/derived.rst:29
+msgid "Note: for non-complex data types, only LOGAMPLITUDE will be listed."
+msgstr ""
+
+#: ../../../source/drivers/raster/derived.rst:31
+msgid ""
+"A typical use is to directly access amplitude, phase or log-amplitude of any "
+"complex dataset."
+msgstr ""
+
+#: ../../../source/drivers/raster/derived.rst:35
+msgid "Accessing derived subdatasets"
+msgstr ""
+
+#: ../../../source/drivers/raster/derived.rst:37
+msgid ""
+"Derived subdatasets are stored in the DERIVED_SUBDATASETS metadata domain, "
+"and can be accessed using the following syntax:"
+msgstr ""
+
+#: ../../../source/drivers/raster/derived.rst:42
+msgid "DERIVED_SUBDATASET:FUNCTION:dataset_name"
+msgstr ""
+
+#: ../../../source/drivers/raster/derived.rst:44
+msgid ""
+"where function is one of AMPLITUDE, PHASE, REAL, IMAG, CONJ, INTENSITY, "
+"LOGAMPLITUDE. So as to ensure numerical precision, all derived subdatasets "
+"bands will have Float64 or CFloat64 precision (depending on the function "
+"used)."
+msgstr ""
+
+#: ../../../source/drivers/raster/derived.rst:49
+msgid "For instance:"
+msgstr ""
+
+#: ../../../source/drivers/raster/derived.rst:53
+msgid "$ gdalinfo cint_sar.tif"
+msgstr ""
+
+#: ../../../source/drivers/raster/derived.rst:57
+msgid ""
+"Driver: GTiff/GeoTIFF\n"
+"Files: cint_sar.tif\n"
+"Size is 5, 6\n"
+"Coordinate System is `'\n"
+"GCP Projection =\n"
+"GEOGCS[\"WGS 84\",\n"
+"    DATUM[\"WGS_1984\",\n"
+"        SPHEROID[\"WGS 84\",6378137,298.257223563,\n"
+"            AUTHORITY[\"EPSG\",\"7030\"]],\n"
+"        AUTHORITY[\"EPSG\",\"6326\"]],\n"
+"    PRIMEM[\"Greenwich\",0],\n"
+"    UNIT[\"degree\",0.0174532925199433],\n"
+"    AUTHORITY[\"EPSG\",\"4326\"]]\n"
+"GCP[  0]: Id=1, Info=\n"
+"          (-1910.5,-7430.5) -> (297.507,16.368,0)\n"
+"GCP[  1]: Id=2, Info=\n"
+"          (588.5,-7430.5) -> (297.938,16.455,0)\n"
+"GCP[  2]: Id=3, Info=\n"
+"          (588.5,7363.5) -> (297.824,16.977,0)\n"
+"GCP[  3]: Id=4, Info=\n"
+"          (-1910.5,7363.5) -> (297.393,16.89,0)\n"
+"Metadata:\n"
+"  AREA_OR_POINT=Area\n"
+"  CEOS_ACQUISITION_TIME=19970718024119087\n"
+"  CEOS_ELLIPSOID=GEM6\n"
+"  CEOS_INC_ANGLE=24.824\n"
+"  CEOS_LINE_SPACING_METERS=3.9900000\n"
+"  CEOS_LOGICAL_VOLUME_ID=0001667400297672\n"
+"  CEOS_PIXEL_SPACING_METERS=7.9040000\n"
+"  CEOS_PIXEL_TIME_DIR=INCREASE\n"
+"  CEOS_PLATFORM_HEADING=347.339\n"
+"  CEOS_PLATFORM_LATITUDE=16.213\n"
+"  CEOS_PLATFORM_LONGITUDE=-65.311\n"
+"  CEOS_PROCESSING_AGENCY=ESA\n"
+"  CEOS_PROCESSING_COUNTRY=ITALY\n"
+"  CEOS_PROCESSING_FACILITY=ES\n"
+"  CEOS_SEMI_MAJOR=6378.1440000\n"
+"  CEOS_SEMI_MINOR=6356.7590000\n"
+"  CEOS_SENSOR_CLOCK_ANGLE=90.000\n"
+"  CEOS_SOFTWARE_ID=ERS2-SLC-6.1\n"
+"  CEOS_TRUE_HEADING=345.5885834\n"
+"Image Structure Metadata:\n"
+"  INTERLEAVE=BAND\n"
+"Corner Coordinates:\n"
+"Upper Left  (    0.0,    0.0)\n"
+"Lower Left  (    0.0,    6.0)\n"
+"Upper Right (    5.0,    0.0)\n"
+"Lower Right (    5.0,    6.0)\n"
+"Center      (    2.5,    3.0)\n"
+"Band 1 Block=5x6 Type=CInt16, ColorInterp=Gray"
+msgstr ""
+
+#: ../../../source/drivers/raster/derived.rst:110
+msgid "$ gdalinfo DERIVED_SUBDATASET:LOGAMPLITUDE:cint_sar.tif"
+msgstr ""
+
+#: ../../../source/drivers/raster/derived.rst:114
+msgid ""
+"Driver: DERIVED/Derived datasets using VRT pixel functions\n"
+"Files: cint_sar.tif\n"
+"Size is 5, 6\n"
+"Coordinate System is `'\n"
+"GCP Projection =\n"
+"GEOGCS[\"WGS 84\",\n"
+"    DATUM[\"WGS_1984\",\n"
+"        SPHEROID[\"WGS 84\",6378137,298.257223563,\n"
+"            AUTHORITY[\"EPSG\",\"7030\"]],\n"
+"        AUTHORITY[\"EPSG\",\"6326\"]],\n"
+"    PRIMEM[\"Greenwich\",0],\n"
+"    UNIT[\"degree\",0.0174532925199433],\n"
+"    AUTHORITY[\"EPSG\",\"4326\"]]\n"
+"GCP[  0]: Id=1, Info=\n"
+"          (-1910.5,-7430.5) -> (297.507,16.368,0)\n"
+"GCP[  1]: Id=2, Info=\n"
+"          (588.5,-7430.5) -> (297.938,16.455,0)\n"
+"GCP[  2]: Id=3, Info=\n"
+"          (588.5,7363.5) -> (297.824,16.977,0)\n"
+"GCP[  3]: Id=4, Info=\n"
+"          (-1910.5,7363.5) -> (297.393,16.89,0)\n"
+"Metadata:\n"
+"  AREA_OR_POINT=Area\n"
+"  CEOS_ACQUISITION_TIME=19970718024119087\n"
+"  CEOS_ELLIPSOID=GEM6\n"
+"  CEOS_INC_ANGLE=24.824\n"
+"  CEOS_LINE_SPACING_METERS=3.9900000\n"
+"  CEOS_LOGICAL_VOLUME_ID=0001667400297672\n"
+"  CEOS_PIXEL_SPACING_METERS=7.9040000\n"
+"  CEOS_PIXEL_TIME_DIR=INCREASE\n"
+"  CEOS_PLATFORM_HEADING=347.339\n"
+"  CEOS_PLATFORM_LATITUDE=16.213\n"
+"  CEOS_PLATFORM_LONGITUDE=-65.311\n"
+"  CEOS_PROCESSING_AGENCY=ESA\n"
+"  CEOS_PROCESSING_COUNTRY=ITALY\n"
+"  CEOS_PROCESSING_FACILITY=ES\n"
+"  CEOS_SEMI_MAJOR=6378.1440000\n"
+"  CEOS_SEMI_MINOR=6356.7590000\n"
+"  CEOS_SENSOR_CLOCK_ANGLE=90.000\n"
+"  CEOS_SOFTWARE_ID=ERS2-SLC-6.1\n"
+"  CEOS_TRUE_HEADING=345.5885834\n"
+"Corner Coordinates:\n"
+"Upper Left  (    0.0,    0.0)\n"
+"Lower Left  (    0.0,    6.0)\n"
+"Upper Right (    5.0,    0.0)\n"
+"Lower Right (    5.0,    6.0)\n"
+"Center      (    2.5,    3.0)\n"
+"Band 1 Block=5x6 Type=Float64, ColorInterp=Undefined"
+msgstr ""
+
+#: ../../../source/drivers/raster/derived.rst:164
+msgid "Listing available subdatasets"
+msgstr ""
+
+#: ../../../source/drivers/raster/derived.rst:166
+msgid ""
+"Available subdatasets are reported in the DERIVED_SUBDATASETS metadata "
+"domain. Only functions that make sense will be reported for a given dataset, "
+"which means that AMPLITUDE, PHASE, REAL, IMAG, CONJ and INTENSITY will only "
+"be reported if the dataset has at least one complex band. Nevertheless, even "
+"if not reported, those derived datasets are still reachable with the syntax "
+"presented above."
+msgstr ""
+
+#: ../../../source/drivers/raster/derived.rst:175
+msgid "$ gdalinfo -mdd DERIVED_SUBDATASETS cint_sar.tif"
+msgstr ""
+
+#: ../../../source/drivers/raster/derived.rst:180
+msgid ""
+"Driver: GTiff/GeoTIFF\n"
+"Files: cint_sar.tif\n"
+"Size is 5, 6\n"
+"Coordinate System is `'\n"
+"GCP Projection =\n"
+"GEOGCS[\"WGS 84\",\n"
+"    DATUM[\"WGS_1984\",\n"
+"        SPHEROID[\"WGS 84\",6378137,298.257223563,\n"
+"            AUTHORITY[\"EPSG\",\"7030\"]],\n"
+"        AUTHORITY[\"EPSG\",\"6326\"]],\n"
+"    PRIMEM[\"Greenwich\",0],\n"
+"    UNIT[\"degree\",0.0174532925199433],\n"
+"    AUTHORITY[\"EPSG\",\"4326\"]]\n"
+"GCP[  0]: Id=1, Info=\n"
+"          (-1910.5,-7430.5) -> (297.507,16.368,0)\n"
+"GCP[  1]: Id=2, Info=\n"
+"          (588.5,-7430.5) -> (297.938,16.455,0)\n"
+"GCP[  2]: Id=3, Info=\n"
+"          (588.5,7363.5) -> (297.824,16.977,0)\n"
+"GCP[  3]: Id=4, Info=\n"
+"          (-1910.5,7363.5) -> (297.393,16.89,0)\n"
+"Metadata:\n"
+"  AREA_OR_POINT=Area\n"
+"  CEOS_ACQUISITION_TIME=19970718024119087\n"
+"  CEOS_ELLIPSOID=GEM6\n"
+"  CEOS_INC_ANGLE=24.824\n"
+"  CEOS_LINE_SPACING_METERS=3.9900000\n"
+"  CEOS_LOGICAL_VOLUME_ID=0001667400297672\n"
+"  CEOS_PIXEL_SPACING_METERS=7.9040000\n"
+"  CEOS_PIXEL_TIME_DIR=INCREASE\n"
+"  CEOS_PLATFORM_HEADING=347.339\n"
+"  CEOS_PLATFORM_LATITUDE=16.213\n"
+"  CEOS_PLATFORM_LONGITUDE=-65.311\n"
+"  CEOS_PROCESSING_AGENCY=ESA\n"
+"  CEOS_PROCESSING_COUNTRY=ITALY\n"
+"  CEOS_PROCESSING_FACILITY=ES\n"
+"  CEOS_SEMI_MAJOR=6378.1440000\n"
+"  CEOS_SEMI_MINOR=6356.7590000\n"
+"  CEOS_SENSOR_CLOCK_ANGLE=90.000\n"
+"  CEOS_SOFTWARE_ID=ERS2-SLC-6.1\n"
+"  CEOS_TRUE_HEADING=345.5885834\n"
+"Metadata (DERIVED_SUBDATASETS):\n"
+"  DERIVED_SUBDATASET_1_NAME=DERIVED_SUBDATASET:AMPLITUDE:cint_sar.tif\n"
+"  DERIVED_SUBDATASET_1_DESC=Amplitude of input bands from cint_sar.tif\n"
+"  DERIVED_SUBDATASET_2_NAME=DERIVED_SUBDATASET:PHASE:cint_sar.tif\n"
+"  DERIVED_SUBDATASET_2_DESC=Phase of input bands from cint_sar.tif\n"
+"  DERIVED_SUBDATASET_3_NAME=DERIVED_SUBDATASET:REAL:cint_sar.tif\n"
+"  DERIVED_SUBDATASET_3_DESC=Real part of input bands from cint_sar.tif\n"
+"  DERIVED_SUBDATASET_4_NAME=DERIVED_SUBDATASET:IMAG:cint_sar.tif\n"
+"  DERIVED_SUBDATASET_4_DESC=Imaginary part of input bands from cint_sar.tif\n"
+"  DERIVED_SUBDATASET_5_NAME=DERIVED_SUBDATASET:CONJ:cint_sar.tif\n"
+"  DERIVED_SUBDATASET_5_DESC=Conjugate of input bands from cint_sar.tif\n"
+"  DERIVED_SUBDATASET_6_NAME=DERIVED_SUBDATASET:INTENSITY:cint_sar.tif\n"
+"  DERIVED_SUBDATASET_6_DESC=Intensity (squared amplitude) of input bands "
+"from cint_sar.tif\n"
+"  DERIVED_SUBDATASET_7_NAME=DERIVED_SUBDATASET:LOGAMPLITUDE:cint_sar.tif\n"
+"  DERIVED_SUBDATASET_7_DESC=log10 of amplitude of input bands from cint_sar."
+"tif\n"
+"Image Structure Metadata:\n"
+"  INTERLEAVE=BAND\n"
+"Corner Coordinates:\n"
+"Upper Left  (    0.0,    0.0)\n"
+"Lower Left  (    0.0,    6.0)\n"
+"Upper Right (    5.0,    0.0)\n"
+"Lower Right (    5.0,    6.0)\n"
+"Center      (    2.5,    3.0)\n"
+"Band 1 Block=5x6 Type=CInt16, ColorInterp=Gray"
+msgstr ""
+
+#: ../../../source/drivers/raster/derived.rst:247
+msgid "See Also:"
+msgstr ""
+
+#: ../../../source/drivers/raster/derived.rst:249
+msgid ""
+":ref:`Using Derived Bands part of the GDAL VRT tutorial <vrt_derived_bands>`"
+msgstr ""

@@ -1,0 +1,1574 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/user/ogr_feature_style.rst:5
+msgid "Feature Style Specification"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:7
+msgid "Version 0.016 - 2018-12-03"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:10
+msgid "1. Overview"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:12
+msgid ""
+"This document defines the way feature style information (i.e. colors, line "
+"width, symbols, etc.) should be handled at the various levels in GDAL's "
+"vector drivers (OGR)."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:16
+msgid ""
+"The following GDAL vector drivers have varying levels of support for feature "
+"styles: :ref:`DWG (libopencad) <vector.cad>`, :ref:`DWG (Teigha) <vector."
+"dwg>`, :ref:`DXF <vector.dxf>`, :ref:`KML (libkml) <vector.libkml>`, :ref:"
+"`MapInfo <vector.mitab>`, :ref:`MicroStation DGN v7 <vector.dgn>` and :ref:"
+"`DGN v8 <vector.dgnv8>`, :ref:`OpenJUMP JML <vector.jml>` and :ref:`PDF "
+"<raster.pdf>`."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:24
+msgid "1.1 Style is a property of Feature object"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:26
+msgid ""
+"Conceptually, the feature style should be seen as a property of a feature. "
+"Even though some systems store style information in a special attribute, in "
+"GDAL it is more consistent to see the style as a property, just the same way "
+"the geometry of a feature is also a property."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:31
+msgid ""
+"This does not prevent us from storing the style information in an attribute "
+"when writing to some formats that have no provision for styles (e.g. E00). "
+"But then at the time such a dataset is opened through GDAL, the name of the "
+"attribute that contains style information should either be specified in some "
+"metadata, or be specified by the user."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:37
+msgid ""
+"Also, in the SFCOM interface, the style information will be stored in an "
+"attribute just like the geometry is."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:41
+msgid "1.2 Feature Styles can be stored at 2 levels"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:43
+msgid ""
+"The style defines the way a feature should be drawn, but it is very common "
+"to have several features that share the same style. In those cases, instead "
+"of duplicating the style information on each feature, we will provide a more "
+"efficient way to share style information."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:48
+msgid "There are two levels at which style information can be found:"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:50
+msgid ""
+"A **dataset** can have a table of pre-defined styles that can then be "
+"referred to by the layers or by the individual features. The mechanism for "
+"that is defined further down in this document."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:53
+msgid ""
+"A **feature (OGRFeature object)** can have its own complete style "
+"definition. Alternatively, a feature can be linked to a style in the "
+"dataset's table of styles. This can save storage space when the same styles "
+"are reused often."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:58
+msgid ""
+"It should be possible to have style information stored at one or more of the "
+"various levels while working on a given dataset. The level(s) where the "
+"style is actually stored will depend on the most efficient approach for the "
+"format we are dealing with."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:64
+msgid "1.3 Drawing Tools"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:66
+msgid ""
+"We define a small set of drawing tools that are used to build style "
+"definitions:"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:69
+msgid "**PEN**: For linear styles"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:70
+msgid "**BRUSH**: For filling areas"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:71
+msgid "**SYMBOL**: Point symbols"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:72
+msgid "**LABEL**: For annotations"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:74
+msgid ""
+"Each drawing tool can take a number of parameters, all optional. The style "
+"syntax is built in a way that a system that cannot support all possible "
+"parameters can safely skip and ignore the parameters it does not support. "
+"This will also make it easy to extend the specification in the future "
+"without breaking existing code or applications."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:80
+msgid ""
+"A style can use a single tool, or use a combination of one or more tools. By "
+"combining the use of several tools in a style, one can build virtually any "
+"type of graphical representation. For instance, the SYMBOL tool can be used "
+"to place spaced symbols along a line. Also, the LABEL tool can be used to "
+"place text on a point, stretch it along a line, or even, by combining the "
+"PEN tool with the LABEL tool, use the line as a leader to the text label, "
+"and draw the text string on the last vertex of the line."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:89
+msgid ""
+"Of course, few systems can support all that. But the intention here is to "
+"have a style specification that is powerful and flexible enough to allow all "
+"types of formats to exchange style information with the least possible loss."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:95
+msgid "1.4 Feature attributes can be used by style definitions"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:97
+msgid ""
+"In some cases, it might be useful for a style definition to refer to an "
+"attribute field on the feature for a given tool parameter's value instead of "
+"having a hardcoded value inside the style itself."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:101
+msgid ""
+"Example of this are text angle, text string, etc... these values change for "
+"every single text label, but we can share the rest of the label style at the "
+"layer level if we lookup the angle and text string in an attribute on each "
+"feature."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:106
+msgid ""
+"The syntax of the style string provides a way that any parameter value can "
+"be either a constant value, or a lookup to an attribute field."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:110
+msgid "1.5 Tool parameter units"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:112
+msgid ""
+"Several parameter values can be expressed in different measurement units "
+"depending on the file format you are dealing with. For instance, some "
+"systems express line width, or text height in points, other in pixels, and "
+"others use ground units. In order to accommodate all that, all parameters "
+"can be specified in one of the following units systems:"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:118
+msgid "**g**: Map Ground Units (whatever the map coordinate units are)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:119
+msgid "**px**: Pixels"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:120
+msgid "**pt**: Points (1/72 inch)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:121
+msgid "**mm**: Millimeters"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:122
+msgid "**cm**: Centimeters"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:123
+msgid "**in**: Inches"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:125
+msgid ""
+"Some tools will have to be provided at the GDAL client level to simplify the "
+"conversion of any value from one units system to another. This would imply "
+"that the GDAL client has to specify a map scale so that conversions from "
+"ground units to paper/pixel units can be performed."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:133
+msgid "2. Feature Style String"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:135
+msgid ""
+"As was mentioned earlier, styles definitions will usually be stored as "
+"strings, either in a per-layer (or per-dataset) table, or directly in the "
+"features."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:140
+msgid "2.1 Examples"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:142
+msgid "Here are some example style definition strings:"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:144
+msgid "A 5 pixels wide red line: ``PEN(c:#FF0000,w:5px)``"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:146
+msgid ""
+"A polygon filled in blue, with a black outline: ``BRUSH(fc:#0000FF);PEN(c:"
+"#000000)``"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:148
+msgid "A point symbol: ``SYMBOL(c:#00FF00,id:\"points.sym-45,ogr-sym-7\")``"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:150
+msgid ""
+"A text label, taking the text string from the \"text_attribute\" attribute "
+"field: ``LABEL(f:\"Times New Roman\",s:12pt,t:{text_attribute})\"``"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:154
+msgid ""
+"Here is what a style table that contains all the above styles could look "
+"like:"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:159
+msgid ""
+"road:      PEN(c:#FF0000,w:5px)\n"
+"lake:      BRUSH(fc:#0000FF);PEN(c:#000000)\n"
+"campsite:  SYMBOL(c:#00FF00,id:\"points.sym-45,ogr-sym-7\")\n"
+"label:     LABEL(f:\"Times New Roman\",s:12pt,t:{text_attribute})"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:164
+msgid ""
+"Then individual features can refer to styles from the table above using the "
+"\"@\" character followed by the style name in their style property."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:167
+msgid ""
+"For instance, a feature with its style set to \"@road\" would be drawn as a "
+"red line."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:171
+msgid "2.2 Style String Syntax"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:173
+msgid "Each feature object has a style property (a string):"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:177
+msgid ""
+"<style_property> = \"<style_def>\" | \"\" | \"@<style_name>\" | "
+"\"{<field_name>}\""
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:179
+msgid "``<style_def>`` is defined later in this section."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:180
+msgid ""
+"An empty style string means that the feature's style is unspecified. It does "
+"not indicate that the feature is invisible – an invisible feature may be "
+"indicated using a fully transparent color, like PEN(c:#00000000)."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:184
+msgid ""
+"``@<style_name>`` is a reference to a predefined style in the layer or the "
+"dataset's style table. The layer's table is looked up first, and if "
+"style_name is not found there then the dataset's table will be looked up."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:188
+msgid ""
+"Finally, ``{<field_name>}`` means that the style property should be read "
+"from the specified attribute field."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:191
+msgid ""
+"The <style_def> is the real style definition. It is a combination of 1 or "
+"more style parts separated by semicolons. Each style_part uses a drawing "
+"tool to define a portion of the complete graphical representation:"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:198
+msgid ""
+"<style_def> =    <style_part>[;<style_part>[;...]]\n"
+"\n"
+"<style_part> =   <tool_name>([<tool_param>[,<tool_param>[,...]]])\n"
+"\n"
+"<tool_name> =    name of a drawing tool, for now: PEN | BRUSH | SYMBOL | "
+"LABEL\n"
+"\n"
+"<tool_param> =   <param_name>:<param_value>\n"
+"\n"
+"<param_name> =   see list of parameters names for each drawing tool\n"
+"\n"
+"<param_value> =  <value> | <value><units>\n"
+"\n"
+"<value> =        \"<string_value>\" | <numeric_value> | {<field_name>}\n"
+"\n"
+"<units> =        g | px | pt | mm | cm | in"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:214
+msgid ""
+"By default, style parts are drawn in the order that they appear in the "
+"style_def string unless each part is assigned a different level parameter "
+"value (see the level parameter definition)."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:218
+msgid ""
+"All drawing tool parameters are optional. So it is legal to have a "
+"style_part with an empty drawing tool parameter list (e.g. \"PEN()\"). For "
+"each parameter that does not have any specified value, it is up to the "
+"client application to use its own default value. This document provides "
+"advisory default values for most parameters, but it is not mandatory for an "
+"application to use those default values."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:225
+msgid ""
+"When {<field_name>} is used for a tool_param value, several options are "
+"available with respect to the units. The units can be specified after the "
+"field name as in PEN(c:#FF0000,w:{line_width}pt) or can be left unspecified "
+"as in PEN(c:#FF0000,w:{line_width}). In the first case, the default units "
+"will be points (pt), but if the attribute field line_width contains a value "
+"followed by a units abbreviation (e.g. \"5px\") then the units specified in "
+"the attribute fields have precedence (in this case pixels). Note that the "
+"attribute field does not have to contain a units value and probably won't in "
+"most cases; it is just an optional feature to be able to override the "
+"default units from inside an attribute field's value."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:238
+msgid "2.3 Pen Tool Parameters"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:240
+#: ../../../source/user/ogr_feature_style.rst:364
+#: ../../../source/user/ogr_feature_style.rst:459
+#: ../../../source/user/ogr_feature_style.rst:586
+msgid "**Applicable geometry types:**"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:242
+msgid ""
+"Point: When applied to a point, a PEN tool can only define the color and the "
+"size of the point to draw."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:244
+msgid "Polyline: This is the most obvious case."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:245
+msgid "Polygon: Defines the way the outline of a polygon should be drawn."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:247
+msgid ""
+"Here is the current list of PEN tool parameters. While this is sufficient to "
+"cover all the cases that we have encountered so far, new parameters might be "
+"added in the future to handle new types of graphical representation. Note "
+"again that all parameters are optional:"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:252
+msgid "``c``: **Pen Color**, expressed hexadecimal (#RRGGBB[AA])"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:254
+#: ../../../source/user/ogr_feature_style.rst:377
+#: ../../../source/user/ogr_feature_style.rst:386
+#: ../../../source/user/ogr_feature_style.rst:519
+msgid ""
+"[AA]: the last 2 digits define the alpha channel value, with 0 being "
+"transparent and FF being opaque. The default is FF (opaque)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:256
+msgid "Suggested default: black (c:#000000)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:257
+msgid "Example: PEN(c:#FF0000), or PEN(C:#FF0000FF)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:260
+msgid ""
+"``w``: **Pen Width**, expressed as a numeric value with units (g, px, pt, "
+"mm, cm, in)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:263
+msgid "Suggested default: 1 pixel"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:264
+msgid "Examples: PEN(c:#FF0000,w:5px), PEN(w:3pt), PEN(w:50g)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:266
+msgid ""
+"``p``: **Pattern**. To create dash lines. A list of pen-down/pen-up distances"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:268
+#: ../../../source/user/ogr_feature_style.rst:319
+msgid "Examples:"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:270
+msgid "|style_pen1| = PEN(c:#FF0000,w:2px,p:\"4px 5px\"). short-dash line"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:276
+msgid "style_pen1"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:272
+msgid "|style_pen2| = PEN(c:#FF0000,w:2px,p:\"10px 5px\"). long-dash line"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:279
+msgid "style_pen2"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:274
+msgid ""
+"|style_pen3| = PEN(c:#FF0000,w:2px,p:\"10px 5px 4px 5px\"). long/short dash"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:282
+msgid "style_pen3"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:287
+msgid ""
+"``id``: **Comma-delimited list of Pen Names or Ids** For systems that "
+"identify pens with a name or an id. The names in the comma-delimited list of "
+"ids are scanned until one is recognized by the target system. Pen Ids can be "
+"either system-specific ids (see further below) or be one of the pre-defined "
+"OGR pen ids for known line patterns. The id parameter should always include "
+"one of the OGR ids at the end of the comma-delimited list of ids so that an "
+"application never has to rely on understanding system-specific ids."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:296
+msgid "Here is the current list of OGR pen ids (this could grow time):"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:298
+msgid "ogr-pen-0: solid (the default when no id is provided)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:299
+msgid "ogr-pen-1: null pen (invisible)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:300
+msgid "ogr-pen-2: dash"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:301
+msgid "ogr-pen-3: short-dash"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:302
+msgid "ogr-pen-4: long-dash"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:303
+msgid "ogr-pen-5: dot line"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:304
+msgid "ogr-pen-6: dash-dot line"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:305
+msgid "ogr-pen-7: dash-dot-dot line"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:306
+msgid "ogr-pen-8: alternate-line (sets every other pixel)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:308
+msgid ""
+"System-specific ids are very likely to be meaningful only to that specific "
+"system that created them. The ids should start with the system's name, "
+"followed by a dash (-), followed by whatever information is meaningful to "
+"that system (a number, a name, a filename, etc.). e.g. \"mapinfo-5\", or "
+"\"mysoft-lines.sym-123\", or \"othersystems-funnyline\""
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:314
+msgid ""
+"System-specific ids are allowed in order to prevent loss of information when "
+"dealing with data from systems that store line patterns in external files or "
+"that have their own pre-defined set of line styles (for instance, to do a "
+"MapInfo MIF to TAB translation without any loss."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:321
+msgid "PEN(c:#00FF00,id:\"ogr-pen-0\") - simple solid line"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:322
+msgid ""
+"PEN(c:#00FF00,id:\"mapinfo-5,ogr-pen-7\") - corresponds to MapInfo's Pen #5, "
+"and a system that can't understand MapInfo pens falls back on the default "
+"\"ogr-pen-7\" pen (dot-dot line)."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:327
+msgid "``cap``: **Pen Cap** - Set the shape of  end points of lines."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:329
+msgid ""
+"\"cap:b\" - Butt: The ends of the line don't extend beyond the end points. "
+"This is the default."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:331
+msgid ""
+"\"cap:r\" - Round: Terminate lines with a circle whose diameter is equal to "
+"the line width."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:333
+msgid ""
+"\"cap:p\" - Projecting: Similar to Butt, but the ends of the line extend by "
+"half of line width beyond the end points."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:337
+msgid ""
+"``j``: **Pen Join** - Set the shape of the join point (vertex) of lines."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:339
+msgid ""
+"\"j:m\" - Miter: Extend the outer edge of the lines until they touch. This "
+"is the default."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:341
+msgid ""
+"\"j:r\" - Rounded: Join lines with an arc whose center is at the join point "
+"and whose diameter is equal to the line width."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:343
+msgid ""
+"\"j:b\" - Bevel: Join the lines with butt end caps and fill the resulting "
+"triangular notch at the join position."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:347
+msgid ""
+"``dp``: **Perpendicular Offset**, expressed as a numeric value units (g, px, "
+"pt, mm, cm, in)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:350
+msgid ""
+"Offset from the line center. If the offset is negative then the pen will be "
+"drawn left of the main segment and right otherwise."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:354
+#: ../../../source/user/ogr_feature_style.rst:449
+#: ../../../source/user/ogr_feature_style.rst:566
+#: ../../../source/user/ogr_feature_style.rst:713
+msgid ""
+"``l``: **Priority Level** - Numeric value defining the order in which style "
+"parts should be drawn."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:357
+#: ../../../source/user/ogr_feature_style.rst:452
+#: ../../../source/user/ogr_feature_style.rst:569
+#: ../../../source/user/ogr_feature_style.rst:716
+msgid ""
+"Lower priority style parts are drawn first, and higher priority ones are "
+"drawn on top. If priority level is unspecified, the default is 1."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:362
+msgid "2.4 Brush Tool Parameters"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:366
+msgid "Point: Not applicable."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:367
+msgid "Polyline: Not applicable."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:368
+msgid "Polygon: Defines the way the surface of a polygon is filled."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:370
+msgid ""
+"Here is the current list of BRUSH tool parameters. Note again that that this "
+"list may be extended in the future, and all parameters are optional:"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:374
+msgid ""
+"``fc``: **Brush ForeColor**, expressed in hexadecimal (#RRGGBB[AA]). Used "
+"for painting the brush pattern itself."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:379
+msgid "Suggested default: 50% grey (c:#808080)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:380
+msgid "Example: BRUSH(fc:#FF0000)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:383
+msgid ""
+"``bc``: **Brush BackColor**, expressed in hexadecimal (#RRGGBB[AA]). Used "
+"for painting the area behind the brush pattern."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:388
+msgid "Suggested default: transparent (c:#FFFFFF00)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:389
+msgid "Example: BRUSH(fc:#FF0000,bc:#FFEEDD)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:392
+msgid ""
+"``id``: **Brush Name or Brush Id** - Comma-delimited list of brush names or "
+"ids. The names in the comma-delimited list of ids are scanned until one is "
+"recognized by the target system."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:396
+msgid ""
+"Brush Ids can be either system-specific ids (see furtherbelow) or be one of "
+"the pre-defined OGR brush ids for well known brush patterns. The id "
+"parameter should always include one of the OGR ids at the end of the comma-"
+"delimited list of ids so that an application never has to rely on "
+"understanding system-specific ids."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:402
+msgid "Here is the current list of OGR brush ids (this could grow over time):"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:406
+msgid ""
+"ogr-brush-0: solid foreground color (the default when no id  is provided)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:407
+msgid ""
+"ogr-brush-1: null brush (transparent - no fill, irrespective of fc or bc "
+"values"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:409
+msgid "ogr-brush-2: horizontal hatch"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:410
+msgid "ogr-brush-3: vertical hatch"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:411
+msgid "ogr-brush-4: top-left to bottom-right diagonal hatch"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:412
+msgid "ogr-brush-5: bottom-left to top-right diagonal hatch"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:413
+msgid "ogr-brush-6: cross hatch"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:414
+msgid "ogr-brush-7: diagonal cross hatch"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:416
+msgid ""
+"Like with Pen Ids, system-specific brush ids are very likely to be "
+"meaningful only to that specific system that created them. The ids should "
+"start with the system's name, followed by a dash (-), followed by whatever "
+"information is meaningful to that system (a number, a name, a filename, "
+"etc.)."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:421
+msgid ""
+"The following conventions will be used for common system-specific brush ids:"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:423
+msgid "\"bmp-filename.bmp\" for Windows BMP patterns"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:425
+msgid ""
+"Other conventions may be added in the future (such as vector symbols, WMF, "
+"etc)."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:429
+msgid ""
+"``a``: **Angle** - Rotation angle (in degrees, counterclockwise) to apply to "
+"the brush pattern."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:433
+msgid ""
+"``s``: **Size or Scaling Factor** - Numeric value with or without units."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:435
+msgid ""
+"If units are specified, then this value is the absolute size to draw the "
+"brush or symbol. If no units are specified then it is taken as a scaling "
+"factor relative to the symbol's default size."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:440
+msgid ""
+"``dx``, ``dy``: **Spacing**, expressed as a numeric value with units (g, px, "
+"pt, mm, cm, in)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:443
+msgid ""
+"If filling an area using point symbols, these values will define the spacing "
+"to use between them. \"dx\" is the horizontal distance between the center of "
+"two adjacent symbols and \"dy\" is the vertical distance. The default is to "
+"use the symbol's bounding box width and height for dx and dy respectively."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:457
+msgid "2.5 Symbol Tool Parameters"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:461
+msgid "Point: Place a symbol at the point's location"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:462
+msgid ""
+"Polyline: Place symbols along the polyline, either at each vertex, or "
+"equally spaced."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:464
+msgid "Polygon: Place the symbols on the outline of the polygon."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:466
+msgid ""
+"Here is the current list of SYMBOL tool parameters. Note again that that "
+"this list may be extended in the future, and all parameters are optional:"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:470
+msgid ""
+"``id``: **Symbol Name or Id** - Comma-delimited list of symbol names or ids."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:472
+msgid ""
+"The names in the comma-delimited list of ids are scanned until one is "
+"recognized by the target system."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:475
+msgid ""
+"Symbol Ids can be either system-specific ids (see further below) or be one "
+"of the pre-defined OGR symbol ids for well known symbols. The id parameter "
+"should always include one of the OGR ids at the end of the comma-delimited "
+"list of ids so that an application never has to rely on understanding system-"
+"specific ids."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:481
+msgid "Here is the current list of OGR symbol ids (this could grow over time):"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:485
+msgid "ogr-sym-0: cross (+)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:486
+msgid "ogr-sym-1: diagcross (X)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:487
+msgid "ogr-sym-2: circle (not filled)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:488
+msgid "ogr-sym-3: circle (filled)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:489
+msgid "ogr-sym-4: square (not filled)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:490
+msgid "ogr-sym-5: square (filled)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:491
+msgid "ogr-sym-6: triangle (not filled)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:492
+msgid "ogr-sym-7: triangle (filled)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:493
+msgid "ogr-sym-8: star (not filled)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:494
+msgid "ogr-sym-9: star (filled)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:495
+msgid ""
+"ogr-sym-10: vertical bar (can be rotated using angle attribute to produce "
+"diagonal bar)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:498
+msgid ""
+"Like with Pen Ids, system-specific symbol ids are very likely to be "
+"meaningful only to that specific system that created them. The ids should "
+"start with the system's name, followed by a dash (-), followed by whatever "
+"information is meaningful to that system (a number, a name, a filename, "
+"etc.)."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:503
+msgid ""
+"The following conventions will be used for common system-specific symbol ids:"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:505
+msgid "\"bmp-filename.bmp\" for Windows BMP symbols"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:506
+msgid ""
+"\"font-sym-%d\" for a font symbols, where %d is a glyph number inside a "
+"font, font family is defined by **f** style field."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:509
+msgid ""
+"Other conventions may be added in the future (such as vector symbols, WMF, "
+"etc.)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:513
+msgid ""
+"``a``: **Angle** - Rotation angle (in degrees, counterclockwise) to apply to "
+"the symbol."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:517
+msgid "``c``: **Symbol Color**, expressed in hexadecimal (#RRGGBB[AA])"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:521
+msgid "Suggested default symbol color: black (c:#000000)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:522
+#: ../../../source/user/ogr_feature_style.rst:561
+#: ../../../source/user/ogr_feature_style.rst:578
+#: ../../../source/user/ogr_feature_style.rst:603
+msgid "Example ::"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:524
+msgid "SYMBOL(c:#FF0000)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:526
+msgid ""
+"``o``: **Symbol Outline Color**, expressed in hexadecimal (#RRGGBB[AA])."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:528
+msgid ""
+"If this parameter is set, an additional halo or border of this color is "
+"drawn around the symbol."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:532
+msgid ""
+"``s``:  **Size or Scaling Factor** - Numeric value with or without units."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:534
+msgid ""
+"If units are specified, then this value is the absolute size to draw the "
+"symbol. If no units are specified then it is taken as a scaling factor "
+"relative to the symbol's default size."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:539
+msgid ""
+"``dx``, ``dy``: **X and Y offset**, of the symbol's insertion point, "
+"expressed as a numeric value with units (g, px, pt, mm, cm, in)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:542
+msgid ""
+"Applies to point geometries, and to symbols placed at each vertex of a "
+"polyline."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:546
+msgid ""
+"``ds``, ``dp``, ``di``: **Spacing parameters** for symbols spaced along a "
+"line, expressed as a numeric value with units (g, px, pt, mm, cm, in)."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:549
+msgid ""
+"``ds`` is the step to use when  placing symbols along the line. By default, "
+"symbols applied to a feature with a line geometry are placed at each vertex, "
+"butsetting \"ds\" triggers the placement of symbols at an equal distance "
+"along the line. \"ds\" has no effect for a feature with a point geometry."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:555
+msgid ""
+"``dp`` can be used together with \"ds\" to specify the perpendicular "
+"distance between the symbols' center and the line along which they're placed."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:558
+msgid ""
+"``di`` can be used to specify an initial offset from the beginning of the "
+"line."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:563
+msgid "SYMBOL(id:123, s:5, di:5px, ds:50px)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:573
+#: ../../../source/user/ogr_feature_style.rst:598
+msgid "``f``: **Font Name** - Comma-delimited list of fonts names."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:575
+#: ../../../source/user/ogr_feature_style.rst:600
+msgid ""
+"Works like the CSS font-family property: the list of font names is scanned "
+"until a known font name is encountered."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:580
+msgid ""
+"SYMBOL(c:#00FF00,s:12pt,id:\"font-sym-75,ogr-sym-9\",f:"
+"\"MapInfo_Cartographic\")"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:584
+msgid "2.6 Label Tool Parameters"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:588
+msgid "Point: Place a text label at the point's location"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:589
+msgid "Polyline: Place text along the polyline."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:590
+msgid ""
+"Polygon: Place a label at the centroid of the polygon. All parameters behave "
+"exactly as if the geometry was a point located at the polygon's centroid."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:594
+msgid ""
+"Here is the current list of LABEL tool parameters. Note again that that this "
+"list may be extended in the future, and all parameters are optional:"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:605
+msgid "LABEL(f:\"Noto Sans, Helvetica\", s:12pt, t:\"Hello World!\")"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:608
+msgid ""
+"``s``: **Font Size**, expressed as a numeric value with units (g, px, pt, "
+"mm, cm, in)."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:611
+msgid ""
+"In the CAD world, font size, or \"text height\", determines the height of a "
+"capital letter - what typographers call \"cap height\". But in the worlds of "
+"typesetting, graphics and cartography, font size refers to the \"em height\" "
+"of the font, which is taller than the cap height. This means that text "
+"assigned a height of 1 inch in a DXF file will look larger (often about 45% "
+"larger) than 72-point text in a PDF file or MapInfo map. At present, GDAL "
+"vector drivers treat the \"s:\" style string value as whichever font size "
+"measurement (cap height or em height) is used natively by that format, which "
+"may result in incorrect text sizing when using the ogr2ogr tool. This "
+"parameter could be subject to clearer specification in the future."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:623
+msgid ""
+"``t``: **Text String** - Can be a constant string, or a reference to an "
+"attribute field's value."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:626
+msgid ""
+"If a double-quote character or backslash (\\) character is present in the "
+"string, it is escaped with a backslash character before it."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:629
+msgid "Examples ::"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:631
+msgid ""
+"LABEL(f:\"Arial, Helvetica\", s:12pt, t:\"Hello World!\")\n"
+"LABEL(f:\"Arial, Helvetica\", s:12pt, t:\"Hello World with escaped \\\\"
+"\"quotes\\\" and \\\\\\backslash!\")\n"
+"LABEL(f:\"Arial, Helvetica\", s:12pt, t:{text_attribute})"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:636
+msgid "``a``: **Angle** - Rotation angle (in degrees, counterclockwise)."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:638
+msgid ""
+"``c``: **Text Foreground Color**, expressed in hexadecimal (#RRGGBB[AA]) "
+"Suggested default: black (c:#000000)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:641
+msgid ""
+"``b``: **Text Background Color** - Color of the filled box to draw behind "
+"the label, expressed in hexadecimal (#RRGGBB[AA]). No box drawn if not set."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:644
+msgid ""
+"``o``: **Text Outline Color** - Color of the text outline (halo in MapInfo "
+"terminology), expressed in hexadecimal (#RRGGBB[AA]). No outline if not set."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:647
+msgid ""
+"``h``: **Shadow Color** - Color of the text shadow, expressed in hexadecimal "
+"(#RRGGBB[AA]). No shadow if not set."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:650
+msgid ""
+"``w``: **Stretch** - The stretch factor changes the width of all characters "
+"in the font by the given percentage. For example, a setting of 150 results "
+"in all characters in the font being stretched to 150% of their usual width. "
+"The default stretch factor is 100."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:655
+msgid ""
+"``m``: **Label Placement Mode** - How the text is drawn relative to the "
+"feature's geometry."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:658
+msgid ""
+"\"m:p\" - The default. A simple label is attached to a point or to the first "
+"vertex of a polyline."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:660
+msgid ""
+"\"m:l\" - Text is attached to the last vertex of a polyline. A PEN tool can "
+"be combined with this LABEL tool to draw the polyline as a leader to the "
+"label."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:663
+msgid ""
+"\"m:s\" - Stretch the text string along a polyline, with an equal spacing "
+"between each character."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:665
+msgid ""
+"\"m:m\" - Place text as a single label at the middle of a polyline (based on "
+"total line length)."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:667
+msgid "\"m:w\" - One word per line segment in a polyline."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:668
+msgid ""
+"\"m:h\" - Every word of text attached to polyline is placed horizontally in "
+"its segment, anchor point is a center of segment."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:670
+msgid ""
+"\"m:a\" - Every word of text attached to polyline is stretched to fit the "
+"segment of polyline and placed along that segment. The anchor point is a "
+"start of a segment."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:675
+msgid ""
+"``p``: **Anchor Position** - A value from 1 to 12 defining the label's "
+"position relative to the point to which it is attached"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:678
+msgid ""
+"There are four vertical alignment modes: *baseline*, *center*, *top* and "
+"*bottom*; and three horizontal modes: *left*, *center* and *right*."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:683
+msgid ""
+"Currently, the precise interpretation of these values (for example, whether "
+"accents on uppercase letters sit above or below the alignment point with "
+"p:7) differs from file format to file format. This parameter could be "
+"subject to clearer specification in the future."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:689
+msgid ""
+"``dx``, ``dy``: **X and Y offset** of the label's insertion point, expressed "
+"as a numeric value with units (g, px, pt, mm, cm, in)."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:692
+msgid "Applies to text placed on a point, or at each vertex of a polyline."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:695
+msgid ""
+"``dp``: **Perpendicular Offset** for labels placed along a line, expressed "
+"as a numeric value with units (g, px, pt, mm, cm, in)."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:698
+msgid ""
+"\"dp\" specifies the perpendicular distance between the label and the line "
+"along which it is placed. If the offset is negative then the label will be "
+"shifted left of the main segment, and right otherwise."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:703
+msgid ""
+"``bo``: **Bold** - Set to 1 for bold text. Set to 0 or omitted otherwise."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:705
+msgid ""
+"``it``: **Italic** - Set to 1 for italic text. Set to 0 or omitted otherwise."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:707
+msgid ""
+"``un``: **Underline** - Set to 1 for underlined text. Set to 0 or omitted "
+"otherwise."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:710
+msgid ""
+"``st``:  **Strikethrough** - Set to 1 for struck-through text. Set to 0 or "
+"omitted otherwise."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:721
+msgid "2.7 Styles Table Format"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:723
+msgid ""
+"For file formats that support tables of styles, then the predefined styles "
+"would be stored in that format."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:726
+msgid ""
+"For file formats that do not support tables of styles, then the style table "
+"could be stored in a text file with a .ofs (OGR Feature Styles) extension "
+"and the same basename as the dataset. This would apply to formats like Esri "
+"Shapefile."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:731
+msgid "Here is an example of a .ofs file:"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:735
+msgid ""
+"#OFS-Version: 1.0\n"
+"#StyleField: \"style\"\n"
+"\n"
+"DefaultStyle: PEN(c:#000000)\n"
+"road:      PEN(c:#FF0000,w:5px)\n"
+"lake:      BRUSH(fc:#0000FF);PEN(c:#000000)\n"
+"campsite:  SYMBOL(c:#00FF00,id:\"points.sym-45,ogr-sym-7\")\n"
+"label:     LABEL(f:\"Times New Roman\",s:12pt,t:{text_attribute})"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:744
+msgid ""
+"The first line is a signature with a version number, which must be present."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:747
+msgid ""
+"The second line (StyleField: \"style\") is the name of the attribute field "
+"in which the Feature Style String is stored for each object in the "
+"corresponding layer. This is optional, if not set, then the objects in the "
+"layer will all share the same style defined in DefaultStyle."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:752
+msgid ""
+"The third line (DefaultStyle:...) defines the style that applies by default "
+"to all objects that have no explicit style."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:755
+msgid "Then the list of style definitions follow."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:758
+msgid "2.8 Using OGR SQL to transfer the style between the data sources"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:760
+msgid ""
+"You can use the **OGR_STYLE** special field to extract the feature level "
+"style, and ogr2ogr can be used to transfer the style string between data "
+"sources according to the following example:"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:766
+msgid ""
+"ogr2ogr -f \"ESRI Shapefile\" -sql \"select *, OGR_STYLE from rivers\" "
+"rivers.shp rivers.tab"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:768
+msgid ""
+"Without specifying the length of the style field, the output driver may "
+"truncate the length to a default value. Therefore it may be necessary to "
+"specify the target length manually, like:"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:774
+msgid ""
+"ogr2ogr -f \"ESRI Shapefile\" -sql \"select *, CAST(OGR_STYLE AS "
+"character(255)) from rivers\" rivers.shp rivers.tab"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:776
+msgid ""
+"OGR is aware of using the OGR_STYLE field if it exists, and OGRFeature::"
+"GetStyleString will return the value of this field if no style string has "
+"been specified programmatically."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:785
+msgid "3. OGR Support Classes"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:787
+msgid ""
+"The :cpp:class:`OGRFeature` class has member functions :cpp:func:"
+"`OGRFeature::GetStyleString`, :cpp:func:`OGRFeature::SetStyleString` and :"
+"cpp:func:`OGRFeature::SetStyleStringDirectly` which may be used to interact "
+"with a feature's style string as a C-style string. Additionally, there are :"
+"cpp:func:`OGRFeature::GetStyleTable`, :cpp:func:`OGRFeature::SetStyleTable` "
+"and :cpp:func:`OGRFeature::SetStyleTableDirectly` for managing style tables "
+"as instances of the :cpp:class:`OGRStyleTable` class."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:794
+msgid ""
+"The :cpp:class:`OGRLayer` and :cpp:class:`GDALDataset` classes also have :"
+"cpp:func:`OGRLayer::GetStyleTable`, :cpp:func:`OGRLayer::SetStyleTable` and :"
+"cpp:func:`OGRLayer::SetStyleTableDirectly` member functions."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:797
+msgid ""
+"To parse style strings, the :cpp:class:`OGRStyleMgr` class is used. Each "
+"style tool in the string is accessed as an instance of the :cpp:class:"
+"`OGRStyleTool` class. Lastly, four helper classes exist, one for each tool (:"
+"cpp:class:`OGRStylePen`, :cpp:class:`OGRStyleBrush`, :cpp:class:"
+"`OGRStyleSymbol`, :cpp:class:`OGRStyleLabel`), with each available parameter "
+"represented by a getter and setter member function. To understand these "
+"classes better, it may be useful to read the :source_file:`ogr/"
+"ogr_featurestyle.h` and :source_file:`ogr/ogrfeaturestyle.cpp` code files."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:810
+msgid "Here is some example C++ code:"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:812
+msgid ""
+"OGRStyleTable oStyleTable;\n"
+"\n"
+"OGRStyleMgr *poStyleMgr = new OGRStyleMgr(&oStyleTable);\n"
+"\n"
+"// Create a new style in the style table by specifying the whole style "
+"string\n"
+"\n"
+"if (poStyleMgr->AddStyle(\"@Name\",\"PEN(c:#123456;w:10px);BRUSH(c:"
+"#345678)\"))\n"
+"{\n"
+"  poStyleMgr->SetFeatureStyleString(poFeature,\"@Name\",TRUE)\n"
+"  // or\n"
+"  poStyleMgr->SetFeatureStyleString(poFeature,\"PEN(c:#123456,w:10px);"
+"BRUSH(c:#345678)\",FALSE)\n"
+"}\n"
+"\n"
+"oStyleTable->SaveStyleTable(\"ttt.tbl\");\n"
+"\n"
+"\n"
+"// Create a new style in the style table by specifying each tool (part) as a "
+"string\n"
+"\n"
+"poStyleMgr->InitStyleString();\n"
+"poStyleMgr->AddPart(\"PEN(c:#123456,w:10px)\");\n"
+"poStyleMgr->AddPart(\"BRUSH(c:345678)\");\n"
+"poStyleMgr->AddStyle(\"@Name\");\n"
+"poStyleMgr->SetFeatureStyleString(poFeature,\"@Name\",TRUE);\n"
+"\n"
+"oStyleTable->SaveStyleTable(\"ttt.tbl\");\n"
+"\n"
+"\n"
+"// Create a new style in the style table using the style tool helper "
+"classes\n"
+"\n"
+"OGRStyleTool *poStylePen = new OGRStylePen;\n"
+"\n"
+"poStylePen->SetColor(\"#123456\");\n"
+"poStylePen->SetUnit(OGRSTUPixel);\n"
+"poStylePen->SetWidth(10.0);\n"
+"poStyleMgr->AddPart(poStylePen);\n"
+"\n"
+"delete poStylePen;\n"
+"\n"
+"\n"
+"// Reading a style\n"
+"\n"
+"OGRStyleTool *poStyleTool;\n"
+"\n"
+"poStyleMgr->GetStyleString(poFeature);\n"
+"\n"
+"for (int iPart = 0; iPart < poStyleMgr->GetPartCount(); iPart++)\n"
+"{\n"
+"   poStyleTool = GetPart(iPart);\n"
+"   switch (poStyleTool->GetType())\n"
+"   {\n"
+"      case OGRSTCPen:\n"
+"         poStylePen = (OGRStylePen *)poStyleTool;\n"
+"         pszColor = poStylePen->Color(bDefault);\n"
+"         if (bDefault == FALSE)\n"
+"           poStylePen->GetRGBFromString(pszColor, nRed, nGreen,\n"
+"                                    nBlue, nTrans);\n"
+"         else\n"
+"           // Color not defined\n"
+"\n"
+"         dfWidth = poStylePen->Width(bDefault);\n"
+"         if (bDefault == FALSE)\n"
+"           // Use dfWidth\n"
+"         else\n"
+"           // dfWidth not defined\n"
+"\n"
+"        :\n"
+"        :\n"
+"    }\n"
+" }"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:888
+msgid "Revision history"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:890
+msgid ""
+"**Version 0.016 - 2018-12-03 - Andrew Sudorgin** Restored and documented "
+"font property for point symbols"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:892
+msgid ""
+"**Version 0.015 - 2018-01-08 - Alan Thomas** Update outdated material; minor "
+"changes to BRUSH 'id' and LABEL 't', 'bo', 'it', 'un', 'st'; clarify BRUSH "
+"'fc', 'bc', SYMBOL 'o' and LABEL 's', 'w', 'p'"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:896
+msgid ""
+"**Version 0.014 - 2011-07-24 - Even Rouault** Mention the escaping of double-"
+"quote characters in the text string of a LABEL (ticket #3675)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:899
+msgid ""
+"**Version 0.013 - 2008-07-29 - Daniel Morissette** Added 'o:' for font point "
+"symbol outline color (ticket #2509)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:901
+msgid ""
+"**Version 0.012 - 2008-07-21 - Daniel Morissette** Added 'o:' for text "
+"outline color and updated 'b:' to be specifically a filled label background "
+"box (ticket #2480)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:904
+msgid ""
+"**Version 0.011 - 2008-02-28 - Tamas Szekeres** Note about OGR SQL to "
+"transfer the style between the data sources"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:906
+msgid ""
+"**Version 0.010 - 2006-09-23- Andrey Kiselev** Added label styles 'w', 'st', "
+"'h', 'm:h', 'm:a', 'p:{10,11,12}'"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:908
+msgid ""
+"**Version 0.009 - 2005-03-11- Frank Warmerdam** Remove reference to OGRWin, "
+"move into ogr distribution"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:910
+msgid ""
+"**Version 0.008 - 2001-03-21- Frank Warmerdam** Fix minor typos (h:12pt "
+"instead of s:12pt in examples)"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:912
+msgid ""
+"**Version 0.008 - 2000-07-15 - Stephane Villeneuve** Remove style table in "
+"Layer. Add forecolor and backcolor to brush."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:914
+msgid ""
+"**Version 0.007 - 2000-06-22 - Daniel Morissette** Fixed typo and added "
+"offset param for PEN."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:916
+msgid ""
+"**Version 0.006 - 2000-06-20 - Daniel Morissette** Added the OGR-Win idea "
+"and made small changes here and there."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:918
+msgid ""
+"**Version 0.005 - 2000-06-12 - Daniel Morissette** Allow passing of comma-"
+"delimited list of names in PEN's \"id\" parameter. Defined system-"
+"independent pen style names."
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:922
+msgid ""
+"**Version 0.004 - 2000-06-09 - Stephane Villeneuve** Added PEN cap and join "
+"parameters More clearly defined the API"
+msgstr ""
+
+#: ../../../source/user/ogr_feature_style.rst:925
+msgid ""
+"**Version 0.003 - 2000-02-15 - Daniel Morissette** First kind-of-complete "
+"version."
+msgstr ""

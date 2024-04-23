@@ -1,0 +1,72 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/xls.rst:4
+msgid "XLS - MS Excel format"
+msgstr ""
+
+#: ../../../source/drivers/vector/xls.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/xls.rst:6
+msgid "XLS"
+msgstr ""
+
+#: ../../../source/drivers/vector/xls.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/vector/xls.rst:8
+msgid "libfreexl"
+msgstr ""
+
+#: ../../../source/drivers/vector/xls.rst:10
+msgid ""
+"This driver reads spreadsheets in MS Excel format. GDAL/OGR must be built "
+"against the FreeXL library (GPL/LPL/MPL licensed), and the driver has the "
+"same restrictions as the FreeXL library itself as far as which and how Excel "
+"files are supported. (At the time of writing - with FreeXL 1.0.0a -, it "
+"means in particular that formulas are not supported.)"
+msgstr ""
+
+#: ../../../source/drivers/vector/xls.rst:16
+msgid ""
+"Each sheet is presented as a OGR layer. No geometry support is available "
+"directly (but you may use the OGR VRT capabilities for that)."
+msgstr ""
+
+#: ../../../source/drivers/vector/xls.rst:20
+msgid "Configuration options"
+msgstr ""
+
+#: ../../../source/drivers/vector/xls.rst:22
+msgid ""
+"The following :ref:`configuration options <configoptions>` are available:"
+msgstr ""
+
+#: ../../../source/drivers/vector/xls.rst:45
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/vector/xls.rst:47
+msgid ""
+"`Homepage of the FreeXL library <https://www.gaia-gis.it/fossil/freexl/"
+"index>`__"
+msgstr ""

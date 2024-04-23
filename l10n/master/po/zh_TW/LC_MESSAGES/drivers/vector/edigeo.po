@@ -1,0 +1,172 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/edigeo.rst:4
+#: ../../../source/drivers/vector/edigeo.rst:6
+msgid "EDIGEO"
+msgstr ""
+
+#: ../../../source/drivers/vector/edigeo.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/edigeo.rst:10
+msgid ""
+"This driver reads files encoded in the French EDIGEO exchange format, a text "
+"based file format aimed at exchanging geographical information between GIS, "
+"with powerful description capabilities, topology modeling, etc."
+msgstr ""
+
+#: ../../../source/drivers/vector/edigeo.rst:15
+msgid ""
+"The driver has been developed to read files of the French PCI (Plan "
+"Cadastral Informatisé - Digital Cadastral Plan) as produced by the DGI "
+"(Direction Générale des Impots - General Tax Office). The driver should also "
+"be able to open other EDIGEO based products."
+msgstr ""
+
+#: ../../../source/drivers/vector/edigeo.rst:20
+msgid ""
+"The driver must be provided with the .THF file describing the EDIGEO "
+"exchange and it will read the associated .DIC, .GEO, .SCD, .QAL and .VEC "
+"files."
+msgstr ""
+
+#: ../../../source/drivers/vector/edigeo.rst:24
+msgid ""
+"In order the SRS of the layers to be correctly built, the IGNF file that "
+"contains the definition of IGN SRS must be placed in the directory of PROJ "
+"resource files."
+msgstr ""
+
+#: ../../../source/drivers/vector/edigeo.rst:28
+msgid ""
+"The whole set of files will be parsed into memory. This may be a limitation "
+"if dealing with big EDIGEO exchanges."
+msgstr ""
+
+#: ../../../source/drivers/vector/edigeo.rst:32
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/edigeo.rst:39
+msgid "Configuration options"
+msgstr ""
+
+#: ../../../source/drivers/vector/edigeo.rst:41
+msgid ""
+"The following :ref:`configuration options <configoptions>` are available:"
+msgstr ""
+
+#: ../../../source/drivers/vector/edigeo.rst:56
+msgid "Labels"
+msgstr ""
+
+#: ../../../source/drivers/vector/edigeo.rst:58
+msgid ""
+"For EDIGEO PCI files, the labels are contained in the ID_S_OBJ_Z_1_2_2 "
+"layer. OGR will export styling following the :ref:`ogr_feature_style`."
+msgstr ""
+
+#: ../../../source/drivers/vector/edigeo.rst:61
+msgid "It will also add the following fields :"
+msgstr ""
+
+#: ../../../source/drivers/vector/edigeo.rst:63
+msgid "OGR_OBJ_LNK: the id of the object that is linked to this label"
+msgstr ""
+
+#: ../../../source/drivers/vector/edigeo.rst:64
+msgid "OBJ_OBJ_LNK_LAYER: the name of the layer of the linked object"
+msgstr ""
+
+#: ../../../source/drivers/vector/edigeo.rst:65
+msgid ""
+"OGR_ATR_VAL: the value of the attribute to display (found in the ATR "
+"attribute of the OGR_OBJ_LNK object)"
+msgstr ""
+
+#: ../../../source/drivers/vector/edigeo.rst:67
+msgid ""
+"OGR_ANGLE: the rotation angle in degrees (0 = horizontal, counter-clock-wise "
+"oriented)"
+msgstr ""
+
+#: ../../../source/drivers/vector/edigeo.rst:69
+msgid ""
+"OGR_FONT_SIZE: the value of the HEI attribute multiplied by the value of the "
+"configuration option :config:`OGR_EDIGEO_FONT_SIZE_FACTOR`."
+msgstr ""
+
+#: ../../../source/drivers/vector/edigeo.rst:72
+msgid ""
+"Combined with the FON (font family) attributes, they can be used to define "
+"the styling in QGIS for example."
+msgstr ""
+
+#: ../../../source/drivers/vector/edigeo.rst:75
+msgid ""
+"By default, OGR will create specific layers (xxx_LABEL) to dispatch into the "
+"various labels of the ID_S_OBJ_Z_1_2_2 layer according to the value of "
+"xxx=OBJ_OBJ_LNK_LAYER. This can be disabled by setting :config:"
+"`OGR_EDIGEO_CREATE_LABEL_LAYERS` to NO."
+msgstr ""
+
+#: ../../../source/drivers/vector/edigeo.rst:81
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/vector/edigeo.rst:83
+msgid ""
+"`Introduction to the EDIGEO standard <http://georezo.net/wiki/main/donnees/"
+"edigeo>`__ (in French)"
+msgstr ""
+
+#: ../../../source/drivers/vector/edigeo.rst:85
+msgid ""
+"`EDIGEO standard - AFNOR NF Z 52000 <http://georezo.net/wiki/_media/main/"
+"geomatique/norme_edigeo.zip>`__ (in French)"
+msgstr ""
+
+#: ../../../source/drivers/vector/edigeo.rst:88
+msgid ""
+"`Standard d'échange des objets du PCI selon la norme EDIGEO <https://www."
+"craig.fr/sites/www.craig.fr/files/contenu/60-2010-le-pci-en-auvergne/docs/"
+"edigeopci.pdf>`__ (in French)"
+msgstr ""
+
+#: ../../../source/drivers/vector/edigeo.rst:91
+msgid ""
+"`Homepage of the French Digital Cadastral Plan <http://www.cadastre.gouv."
+"fr>`__ (in French)"
+msgstr ""
+
+#: ../../../source/drivers/vector/edigeo.rst:93
+msgid ""
+"`Geotools EDIGEO module description <http://old.geotools.org/77692976."
+"html>`__ (in English), `unmaintained and removed <https://github.com/"
+"geotools/geotools/pull/2446/files>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/edigeo.rst:96
+msgid ""
+"`Sample of EDIGEO data <https://github.com/geotools/geotools/tree/"
+"affa340d16681f1bb78673d23fb38a6c1eb2b38a/modules/unsupported/edigeo/src/test/"
+"resources/org/geotools/data/edigeo/test-data>`__"
+msgstr ""

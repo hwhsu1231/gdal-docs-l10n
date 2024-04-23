@@ -1,0 +1,115 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/programs/argument_syntax.rst:5
+msgid "Syntax of arguments of command-line utilities"
+msgstr ""
+
+#: ../../../source/programs/argument_syntax.rst:7
+msgid ""
+"The following table describes the notation used to document the syntax of "
+"arguments of command-line utilities."
+msgstr ""
+
+#: ../../../source/programs/argument_syntax.rst:13
+msgid "Notation"
+msgstr ""
+
+#: ../../../source/programs/argument_syntax.rst:14
+msgid "Description"
+msgstr ""
+
+#: ../../../source/programs/argument_syntax.rst:16
+msgid "Text without brackets or braces"
+msgstr ""
+
+#: ../../../source/programs/argument_syntax.rst:17
+msgid "Text that must be typed as shown"
+msgstr ""
+
+#: ../../../source/programs/argument_syntax.rst:19
+msgid "``<value>``"
+msgstr ""
+
+#: ../../../source/programs/argument_syntax.rst:20
+msgid "Placeholder for which a value must be substituted."
+msgstr ""
+
+#: ../../../source/programs/argument_syntax.rst:22
+msgid "``[`` Text inside square brackets ``]``"
+msgstr ""
+
+#: ../../../source/programs/argument_syntax.rst:23
+msgid "Optional item."
+msgstr ""
+
+#: ../../../source/programs/argument_syntax.rst:25
+msgid "``{`` Text inside braces  ``}``"
+msgstr ""
+
+#: ../../../source/programs/argument_syntax.rst:26
+msgid "Set of required items, separated by a vertical bar."
+msgstr ""
+
+#: ../../../source/programs/argument_syntax.rst:28
+msgid "Vertical bar (``|``)"
+msgstr ""
+
+#: ../../../source/programs/argument_syntax.rst:29
+msgid ""
+"Separator between mutually exclusive items. At least one must be specified."
+msgstr ""
+
+#: ../../../source/programs/argument_syntax.rst:31
+msgid "Ellipsis (``...``)"
+msgstr ""
+
+#: ../../../source/programs/argument_syntax.rst:32
+msgid "Placed after an item that can be repeated."
+msgstr ""
+
+#: ../../../source/programs/argument_syntax.rst:36
+msgid "Example"
+msgstr ""
+
+#: ../../../source/programs/argument_syntax.rst:38
+msgid "Given the following synopsis:"
+msgstr ""
+
+#: ../../../source/programs/argument_syntax.rst:40
+msgid ""
+"my_utility [-wkt_format {WKT1|WKT2}] [-oo <NAME>=<VALUE>]...\n"
+"           <datasetname>"
+msgstr ""
+
+#: ../../../source/programs/argument_syntax.rst:45
+msgid "The following command lines are valid:"
+msgstr ""
+
+#: ../../../source/programs/argument_syntax.rst:47
+msgid "my_utility foo.tif"
+msgstr ""
+
+#: ../../../source/programs/argument_syntax.rst:52
+msgid "my_utility -wkt_format WKT1 foo.tif"
+msgstr ""
+
+#: ../../../source/programs/argument_syntax.rst:57
+msgid "my_utility -oo FOO=BAR -oo BAR=BAZ foo.tif"
+msgstr ""

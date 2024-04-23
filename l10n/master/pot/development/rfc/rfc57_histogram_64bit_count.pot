@@ -1,0 +1,240 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:5
+msgid "RFC 57: 64-bit bucket counts for histograms"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:7
+msgid "Author: Even Rouault"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:9
+msgid "Contact: even dot rouault at spatialys dot com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:11
+msgid "Status: Adopted, implemented"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:13
+msgid "Version: 2.0"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:16
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:18
+msgid ""
+"This RFC modifies the GDALRasterBand GetHistogram(), GetDefaultHistogram() "
+"and SetDefaultHistogram() methods to accept arrays of 64-bit integer instead "
+"of the current arrays of 32-bit integer for bucket counts. It also changes "
+"GetRasterSampleOverview() to take a 64-bit integer. This will fix issues "
+"when operating on large rasters that have more than 2 billion pixels."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:26
+msgid "Core changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:28
+msgid ""
+"The following methods of GDALRasterBand class are modified to take a "
+"GUIntBig\\* argument for GetHistogram() and SetDefaultHistograph(), "
+"GUIntBig*\\* for GetDefaultHistogram() and GUIntBig for "
+"GetRasterSampleOverview()"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:35
+msgid ""
+"virtual CPLErr  GetHistogram( double dfMin, double dfMax,\n"
+"                      int nBuckets, GUIntBig * panHistogram,\n"
+"                      int bIncludeOutOfRange, int bApproxOK,\n"
+"                      GDALProgressFunc, void *pProgressData );\n"
+"\n"
+"virtual CPLErr GetDefaultHistogram( double *pdfMin, double *pdfMax,\n"
+"                                    int *pnBuckets, GUIntBig ** "
+"ppanHistogram,\n"
+"                                    int bForce,\n"
+"                                    GDALProgressFunc, void *pProgressData);\n"
+"\n"
+"virtual CPLErr SetDefaultHistogram( double dfMin, double dfMax,\n"
+"                                    int nBuckets, GUIntBig *panHistogram );\n"
+"\n"
+"virtual GDALRasterBand *GetRasterSampleOverview( GUIntBig );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:50
+msgid "PAM serialization/deserialization is also updated."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:53
+msgid "C API changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:55
+msgid "Only additions :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:59
+msgid ""
+"CPLErr CPL_DLL CPL_STDCALL GDALGetRasterHistogramEx( GDALRasterBandH hBand,\n"
+"                                       double dfMin, double dfMax,\n"
+"                                       int nBuckets, GUIntBig "
+"*panHistogram,\n"
+"                                       int bIncludeOutOfRange, int "
+"bApproxOK,\n"
+"                                       GDALProgressFunc pfnProgress,\n"
+"                                       void * pProgressData );\n"
+"\n"
+"CPLErr CPL_DLL CPL_STDCALL GDALGetDefaultHistogramEx( GDALRasterBandH "
+"hBand,\n"
+"                                       double *pdfMin, double *pdfMax,\n"
+"                                       int *pnBuckets, GUIntBig "
+"**ppanHistogram,\n"
+"                                       int bForce,\n"
+"                                       GDALProgressFunc pfnProgress,\n"
+"                                       void * pProgressData );\n"
+"\n"
+"CPLErr CPL_DLL CPL_STDCALL GDALSetDefaultHistogramEx( GDALRasterBandH "
+"hBand,\n"
+"                                       double dfMin, double dfMax,\n"
+"                                       int nBuckets, GUIntBig "
+"*panHistogram );\n"
+"\n"
+"GDALRasterBandH CPL_DLL CPL_STDCALL\n"
+"                           GDALGetRasterSampleOverviewEx( GDALRasterBandH, "
+"GUIntBig );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:80
+msgid ""
+"The existing methods GDALGetRasterHistogram(), GDALGetDefaultHistogram() and "
+"GDALSetDefaultHistogram() are marked deprecated. They internally call the 64-"
+"bit methods, and, for GDALGetRasterHistogram() and "
+"GDALGetDefaultHistogram(), warn if a 32-bit overflow would occur, in which "
+"case the bucket count is set to INT_MAX."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:87
+msgid "Changes in drivers"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:89
+msgid ""
+"All in-tree drivers that use/implement the C++ histogram methods are "
+"modified: ECW, VRT, MEM and HFA."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:93
+msgid "Changes in utilities"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:95
+msgid "gdalinfo and gdalenhance are modified to use the modified methods."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:98
+msgid "Changes in SWIG bindings"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:100
+msgid ""
+"For Python bindings only, RasterBand.GetHistogram(), GetDefaultHistogram() "
+"and SetDefaultHistogram() use the new 64-bit C functions."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:104
+msgid ""
+"Other bindings could be updated, but likely need new typemaps for (int, "
+"GUIntBig*). In the meantime, they still use the 32-bit C functions."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:108
+msgid "Compatibility"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:110
+msgid "This modifies the C++ API and ABI."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:112
+msgid ""
+"Out-of-tree drivers must make sure to take into account the updated C++ API "
+"if they implement some of the 4 modified virtual methods."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:116
+msgid "Related ticket"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:118
+msgid "#5159"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:121
+msgid "Documentation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:123
+msgid ""
+"All new/modified methods/functions are documented. MIGRATION_GUIDE.TXT is "
+"updated with a new section for this RFC."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:127
+msgid "Testing"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:129
+msgid ""
+"Setting/getting 64 bit values is tested in gcore/pam.y and gdrivers/mem.py"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:133
+msgid "Implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:135
+msgid ""
+"Implementation will be done by Even Rouault (`Spatialys <http://spatialys."
+"com>`__)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:138
+msgid ""
+"The proposed implementation lies in the \"histogram_64bit_count\" branch of "
+"the `https://github.com/rouault/gdal2/tree/histogram_64bit_count <https://"
+"github.com/rouault/gdal2/tree/histogram_64bit_count>`__."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:142
+msgid ""
+"The list of changes : `https://github.com/rouault/gdal2/compare/"
+"histogram_64bit_count <https://github.com/rouault/gdal2/compare/"
+"histogram_64bit_count>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:146
+msgid "Voting history"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc57_histogram_64bit_count.rst:148
+msgid "+1 from DanielM, JukkaR and EvenR"
+msgstr ""

@@ -1,0 +1,322 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:5
+msgid "RFC 59 : GDAL/OGR utilities as a library"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:7
+msgid "Authors: Faza Mahamood"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:9
+msgid "Contact: fazamhd at gmail dot com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:11
+msgid "Status: Retracted in favor of :ref:`rfc-59.1`"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:14
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:16
+msgid ""
+"This RFC defines new function for each GDAL utility. The new utility "
+"functions can be used to work on in-memory datasets. The utility code is "
+"modified to call the new function. This RFC gives a general frame and "
+"principles, demonstrated with gdalinfo, but aimed at being extended with "
+"other utilities."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:23
+msgid "Rationale"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:25
+msgid ""
+"There is need for calling GDAL utilities from the code. But this involves "
+"using system calls and cannot work on in-memory datasets."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:29
+msgid "Changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:31
+msgid ""
+"New library libgdalutils is created. Both Unix and Windows build have been "
+"modified to take into account the new lib. The GDAL utilities are modified "
+"to use the new functions. New header file gdal_utils.h is created which "
+"contains the public declarations of GDAL utilities. The current header(still "
+"in progress) can be found `here <https://github.com/fazam/gdal/blob/gdalinfo/"
+"gdal/apps/gdal_utils.h>`__."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:41
+msgid ""
+"char CPL_DLL *GDALInfo( GDALDatasetH hDataset, GDALInfoOptions "
+"*psOptions );\n"
+"\n"
+"GDALInfoOptions CPL_DLL *GDALInfoOptionsNew( void );\n"
+"\n"
+"void CPL_DLL GDALInfoOptionsAddExtraMDDomains( GDALInfoOptions *psOptions,\n"
+"                                               const char *pszDomain );\n"
+"\n"
+"void CPL_DLL GDALInfoOptionsSetExtraMDDomains( GDALInfoOptions *psOptions,\n"
+"                                               char "
+"**papszExtraMDDomains );\n"
+"\n"
+"void CPL_DLL GDALInfoOptionsFree( GDALInfoOptions *psOptions );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:55
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:186
+msgid ""
+"GDALDatasetH CPL_DLL GDALTranslate(const char *pszDest, GDALDatasetH "
+"hSrcDataset, GDALTranslateOptions *psOptions, int *pbUsageError)\n"
+"\n"
+"GDALDatasetH CPL_DLL GDALWarp( const char *pszDest, GDALDatasetH hDstDS, int "
+"nSrcCount,\n"
+"                       GDALDatasetH *pahSrcDS, GDALWarpAppOptions "
+"*psOptions, int *pbUsageError )\n"
+"\n"
+"GDALDatasetH CPL_DLL OGR2OGR( const char *pszDest, GDALDatasetH hDstDS, "
+"GDALDatasetH hSrcDS,\n"
+"                              OGR2OGROptions *psOptions, int *pbUsageError )"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:64
+msgid "SWIG bindings (Python / Java / C# / Perl) changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:66
+msgid ""
+"For Python bindings only, new functions Info(), Translate() and Warp() are "
+"added in the gdal module which uses the new GDALInfo(), GDALTranslate() and "
+"GDALWarp() function respectively. Translate() is added in the ogr module "
+"which uses the new OGR2OGR() function."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:71
+msgid ""
+"gdal.Info() can be used either with setting the attributes of gdal."
+"InfoOptions() or inlined arguments of gdal.Info()."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:77
+msgid ""
+"options = gdal.InfoOptions()\n"
+"\n"
+"options.format = gdal.INFO_FORMAT_TEXT\n"
+"options.deserialize = True\n"
+"options.computeMinMax = False\n"
+"options.reportHistograms = False\n"
+"options.reportProj4 = True\n"
+"options.stats = False\n"
+"options.approxStats = True\n"
+"options.sample = False\n"
+"options.computeChecksum = False\n"
+"options.showGCPs = True\n"
+"options.showMetadata = True\n"
+"options.showRAT = False\n"
+"options.showColorTable = True\n"
+"options.listMDD = False\n"
+"options.showFileList = True\n"
+"options.allMetadata = TRUE\n"
+"options.extraMDDomains = ['TRE']\n"
+"\n"
+"gdal.Info(ds, options, deserialize = True)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:102
+msgid ""
+"gdal.Info(ds, options = None, format = _gdal.INFO_FORMAT_TEXT, deserialize = "
+"True,\n"
+"         computeMinMax = False, reportHistograms = False, reportProj4 = "
+"False,\n"
+"         stats = False, approxStats = True, sample = False, computeChecksum "
+"= False,\n"
+"         showGCPs = True, showMetadata = True, showRAT = True, "
+"showColorTable = True,\n"
+"         listMDD = False, showFileList = True, allMetadata = False,\n"
+"         extraMDDomains = None)\n"
+"\n"
+"gdal.Translate(destName, srcDS, options = None, format = 'GTiff', quiet = "
+"True,\n"
+"         outputType = GDT_Unknown, maskMode = _gdal.MASK_AUTO, bandList = "
+"None,\n"
+"         oXSizePixel = 0, oYSizePixel = 0, oXSizePct = 0.0, oYSizePct = "
+"0.0,\n"
+"         createOptions = None, srcWin = [0,0,0,0],strict = False,\n"
+"         unscale = False, scaleParams = None, exponent = None,\n"
+"         uLX = 0.0, uLY = 0.0, lRX = 0.0, lRY = 0.0, metadataOptions = "
+"None,\n"
+"         outputSRS = None, GCPs = None, ULLR = [0,0,0,0], setNoData = "
+"False,\n"
+"         unsetNoData = False, noDataReal = 0.0, rgbExpand = 0, maskBand = "
+"0,\n"
+"         stats = False, approxStats = False, errorOnPartiallyOutside = "
+"False,\n"
+"         errorOnCompletelyOutside = False, noRAT = False, resampling = "
+"None,\n"
+"         xRes = 0.0, yRes = 0.0, projSRS = None)\n"
+"\n"
+"gdal.Warp(destNameOrDestDS, srcDSOrSrcDSTab, options = None, minX = 0.0, "
+"minY = 0.0, maxX = 0.0,\n"
+"         maxY = 0.0, xRes = 0.0, yRes = 0.0, targetAlignedPixels = False, "
+"forcePixels = 0,\n"
+"         forceLines = 0, quiet = True, enableDstAlpha = False, "
+"enableSrcAlpha = False,\n"
+"         format = 'GTiff', createOutput = False, warpOptions = None, "
+"errorThreshold = -1,\n"
+"         warpMemoryLimit = 0.0, createOptions = None, outputType = "
+"GDT_Unknown,\n"
+"         workingType = GDT_Unknown, resampleAlg = GRA_NearestNeighbour,\n"
+"         srcNodata = None, dstNodata = None, multi = False, TO = None, "
+"cutlineDSName = None,\n"
+"         cLayer = None, cWHERE = None, cSQL = None, cropToCutline = False, "
+"overwrite = False,\n"
+"         copyMetadata = True, copyBandInfo = True, MDConflictValue = '*',\n"
+"         setColorInterpretation = False, destOpenOptions = None, OvLevel = "
+"-2)\n"
+"\n"
+"ogr.Translate(destNameOrDestDS, srcDS, options = None, accessMode = _ogr."
+"ACCESS_CREATION,\n"
+"         skipFailures = False, layerTransaction = -1, forceTransaction = "
+"False,\n"
+"         groupTransactions = 20000, FIDToFetch = -1, quiet = False,\n"
+"         format = 'ESRI Shapefile', layers = None, DSCO = None, LCO = None, "
+"transform = False,\n"
+"         addMissingFields = False, outputSRSDef = None, sourceSRSDef = "
+"None,\n"
+"         nullifyOutputSRS = False, exactFieldNameMatch = True, newLayerName "
+"= None,\n"
+"         WHERE = None, geomField = None, selFields = None, SQLStatement = "
+"None,\n"
+"         dialect = None, gType = -2, geomConversion = _ogr.GEOMTYPE_DEFAULT, "
+"geomOp = _ogr.GEOMOP_NONE,\n"
+"         geomOpParam = 0, fieldTypesToString = None, mapFieldType = None, "
+"unsetFieldWidth = False,\n"
+"         displayProgress = False, wrapDateline = False, dateLineOffset = 10, "
+"clipSrc = None, clipSrcDS = None,\n"
+"         clipSrcSQL = None, clipSrcLayer = None, clipSrcWhere = None, "
+"clipDst = None,\n"
+"         clipDstDS = None, clipDstSQL = None, clipDstLayer = None, "
+"clipDstWhere = None,\n"
+"         splitListFields = False, maxSplitListSubFields = -1, "
+"explodeCollections = False,\n"
+"         zField = None, fieldMap = None, coordDim = -1, destOpenOptions = "
+"None,\n"
+"         forceNullable = False, unsetDefault = False, unsetFid = False, "
+"preserveFID = False,\n"
+"         copyMD = True, metadataOptions = None, spatSRSDef = None, "
+"transformOrder = 0,\n"
+"         spatialFilter = None)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:151
+msgid "Utilities"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:153
+msgid "Utilities are modified to call the respective function."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:156
+msgid "Documentation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:158
+msgid "All new methods/functions are documented."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:161
+msgid "Test Suite"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:163
+msgid ""
+"gdal.Info method is tested in test_gdalinfo_lib.py. gdal.Translate method is "
+"tested in test_gdal_translate_lib.py. gdal.Warp method is tested in "
+"test_gdalwarp_lib.py. ogr.Translate method is tested in test_ogr2ogr_lib.py."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:169
+msgid "Compatibility Issues"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:171
+msgid ""
+"None expected. Command line utilities will keep the same interface. It will "
+"be checked by ensuring their tests in autotest/utilities still pass."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:176
+msgid "Open question"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:178
+msgid ""
+"What name should be given for librarified ogr2ogr? OGR2OGR() or "
+"OGRTranslate() ?"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:181
+msgid ""
+"The order of arguments in GDALTranslate(), GDALWarp() and OGR2OGR() is "
+"currently dest then source(s)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:194
+msgid ""
+"It is similar to GDALCreateCopy(const char\\* pszDestFilename, GDALDatasetH "
+"hSrcDS, ....), so at least there's a form of consistency at the API level. "
+"Any comments?"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:199
+msgid "Related ticket"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:202
+msgid "Implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:204
+msgid "Implementation will be done by Faza Mahamood."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:206
+msgid ""
+"The proposed implementation lies in the \"gdalinfo\" branch of the `https://"
+"github.com/fazam/gdal/tree/gdalinfo <https://github.com/fazam/gdal/tree/"
+"gdalinfo>`__."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:209
+msgid ""
+"The list of changes : `https://github.com/fazam/gdal/compare/gdalinfo "
+"<https://github.com/fazam/gdal/compare/gdalinfo>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc59_utilities_as_a_library.rst:213
+msgid "Voting history"
+msgstr ""

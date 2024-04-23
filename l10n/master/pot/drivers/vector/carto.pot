@@ -1,0 +1,297 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/carto.rst:5
+msgid "Carto"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:7
+msgid "CARTO"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:9
+msgid "libcurl"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:11
+msgid ""
+"This driver can connect to the services implementing the Carto API. GDAL/OGR "
+"must be built with Curl support in order for the Carto driver to be compiled."
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:14
+msgid "The driver supports read and write operations."
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:17
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:24
+msgid "Dataset name syntax"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:26
+msgid "The minimal syntax to open a Carto datasource is :"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:28
+msgid "Carto:[connection_name]"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:32
+msgid ""
+"For single-user accounts, connection name is the account name. For multi-"
+"user accounts, connection_name must be the user name, not the account name. "
+"Additional optional parameters can be specified after the ':' sign. "
+"Currently the following one is supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:37
+msgid ""
+"**tables=table_name1[,table_name2]\\***: A list of table names. This is "
+"necessary when you need to access to public tables for example."
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:40
+msgid "If several parameters are specified, they must be separated by a space."
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:43
+msgid "Authentication"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:45
+msgid ""
+"Most operations, in particular write operations, require an authenticated "
+"access. The only exception is read-only access to public tables."
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:48
+msgid ""
+"Authenticated access is obtained by specifying the API key given in the "
+"management interface of the Carto service. It is specified with the "
+"CARTO_API_KEY configuration option."
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:53
+msgid "Geometry"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:55
+msgid ""
+"The OGR driver will report as many geometry fields as available in the layer "
+"(except the 'the_geom_webmercator' field), following RFC 41."
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:59
+msgid "Filtering"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:61
+msgid ""
+"The driver will forward any spatial filter set with :cpp:func:`OGRLayer::"
+"SetSpatialFilter` to the server. It also makes the same for attribute "
+"filters set with :cpp:func:`SetAttributeFilter`."
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:67
+msgid "Paging"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:69
+msgid ""
+"Features are retrieved from the server by chunks of 500 by default. This "
+"number can be altered with the :config:`CARTO_PAGE_SIZE` configuration "
+"option."
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:73
+msgid "Write support"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:75
+msgid "Table creation and deletion is possible."
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:77
+msgid ""
+"Write support is only enabled when the datasource is opened in update mode."
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:80
+msgid ""
+"The mapping between the operations of the Carto service and the OGR concepts "
+"is the following :"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:83
+msgid ":cpp:func:`OGRFeature::CreateFeature` <==> ``INSERT`` operation"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:84
+msgid ":cpp:func:`OGRFeature::SetFeature` <==> ``UPDATE`` operation"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:85
+msgid ":cpp:func:`OGRFeature::DeleteFeature` <==> ``DELETE`` operation"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:86
+msgid ":cpp:func:`OGRDataSource::CreateLayer` <==> ``CREATE TABLE`` operation"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:87
+msgid ":cpp:func:`OGRDataSource::DeleteLayer` <==> ``DROP TABLE`` operation"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:89
+msgid ""
+"When inserting a new feature with :cpp:func:`OGRFeature::CreateFeature`, and "
+"if the command is successful, OGR will fetch the returned rowid and use it "
+"as the OGR FID."
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:93
+msgid ""
+"The above operations are by default issued to the server synchronously with "
+"the OGR API call. This however can cause performance penalties when issuing "
+"a lot of commands due to many client/server exchanges."
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:97
+msgid ""
+"So, on a newly created layer, the ``INSERT`` of :cpp:func:`OGRFeature::"
+"CreateFeature` operations are grouped together in chunks until they reach 15 "
+"MB (can be changed with the :config:`CARTO_MAX_CHUNK_SIZE` configuration "
+"option, with a value in MB), at which point they are transferred to the "
+"server. By setting :config:`CARTO_MAX_CHUNK_SIZE` to 0, immediate transfer "
+"occurs."
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:105
+msgid ""
+"Don't use :cpp:func:`OGRDataSource::DeleteLayer` and :cpp:func:"
+"`OGRDataSource::CreateLayer` to overwrite a table. Instead only call :cpp:"
+"func:`OGRDataSource::CreateLayer` with OVERWRITE=YES. This will avoid CARTO "
+"deleting maps that depend on this table"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:111
+msgid "SQL"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:113
+msgid ""
+"SQL commands provided to the :cpp:func:`OGRDataSource::ExecuteSQL` call are "
+"executed on the server side, unless the OGRSQL dialect is specified. You can "
+"use the full power of PostgreSQL + PostGIS SQL capabilities."
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:118
+msgid "Open options"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:120
+msgid "The following open options are available:"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:137
+msgid "Layer creation options"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:139
+msgid "The following layer creation options are available:"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:162
+msgid ""
+"**SRS**: Output SRS must be EPSG:4326. You can use ``-a_srs`` or ``-t_srs`` "
+"to assign or transform to 4326 before importing."
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:164
+msgid ""
+"**Geometry type**: Must be different than NONE. You can set to something "
+"generic with ``-nlt GEOMETRY``."
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:178
+msgid "Configuration options"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:180
+msgid ""
+"The following :ref:`configuration options <configoptions>` are available:"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:207
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:209
+msgid "Accessing data from a public table:"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:211
+msgid "ogrinfo -ro \"Carto:gdalautotest2 tables=tm_world_borders_simpl_0_3\""
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:215
+msgid "Creating and populating a table from a shapefile:"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:217
+msgid ""
+"ogr2ogr --config CARTO_API_KEY abcdefghijklmnopqrstuvw -f Carto \"Carto:"
+"myaccount\" myshapefile.shp"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:221
+msgid ""
+"Creating and populating a table from a CSV containing geometries on "
+"EPSG:4326:"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:223
+msgid ""
+"ogr2ogr --config CARTO_API_KEY abcdefghijklmnopqrstuvw -f Carto \"Carto:"
+"myaccount\" file.csv -a_srs 4326 -nlt GEOMETRY"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:229
+msgid ""
+"The ``-a_srs`` and ``-nlt`` must be provided to CARTODBFY since the "
+"information isn't extracted from the CSV."
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:233
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:235
+msgid "`Carto API overview <https://carto.com/docs/>`__"
+msgstr ""

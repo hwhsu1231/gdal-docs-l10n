@@ -1,0 +1,69 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/sgi.rst:5
+msgid "SGI -- SGI Image Format"
+msgstr ""
+
+#: ../../../source/drivers/raster/sgi.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/sgi.rst:7
+msgid "SGI"
+msgstr ""
+
+#: ../../../source/drivers/raster/sgi.rst:11
+msgid ""
+"The SGI driver currently supports the reading and writing of SGI Image files."
+msgstr ""
+
+#: ../../../source/drivers/raster/sgi.rst:14
+msgid ""
+"The driver currently supports 1, 2, 3, and 4 band images. The driver "
+"currently supports \"8 bit per channel value\" images. The driver supports "
+"both uncompressed and run-length encoded (RLE) images for reading, but "
+"created files are always RLE compressed.."
+msgstr ""
+
+#: ../../../source/drivers/raster/sgi.rst:19
+msgid "The GDAL SGI Driver was based on Paul Bourke's SGI image read code."
+msgstr ""
+
+#: ../../../source/drivers/raster/sgi.rst:21
+msgid "See Also:"
+msgstr ""
+
+#: ../../../source/drivers/raster/sgi.rst:23
+msgid ""
+"`Paul Bourke's SGI Image Read Code <http://astronomy.swin.edu.au/~pbourke/"
+"dataformats/sgirgb/>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/sgi.rst:25
+msgid ""
+"`SGI Image File Format Document <ftp://ftp.sgi.com/graphics/SGIIMAGESPEC>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/sgi.rst:28
+msgid "NOTE: Implemented as :source_file:`frmts/sgi/sgidataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/sgi.rst:31
+msgid "Driver capabilities"
+msgstr ""

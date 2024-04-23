@@ -1,0 +1,155 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/png.rst:5
+msgid "PNG -- Portable Network Graphics"
+msgstr ""
+
+#: ../../../source/drivers/raster/png.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/png.rst:7
+msgid "PNG"
+msgstr ""
+
+#: ../../../source/drivers/raster/png.rst:-1
+msgid "Driver built-in by default"
+msgstr ""
+
+#: ../../../source/drivers/raster/png.rst:9
+msgid "internal libpng provided"
+msgstr ""
+
+#: ../../../source/drivers/raster/png.rst:11
+msgid ""
+"GDAL includes support for reading, and creating .png files. Greyscale, "
+"pseudo-colored, Paletted, RGB and RGBA PNG files are supported as well as "
+"precisions of eight and sixteen bits per sample."
+msgstr ""
+
+#: ../../../source/drivers/raster/png.rst:15
+msgid ""
+"The GDAL PNG Driver is built using the libpng library. Also note that the "
+"GeoTIFF driver supports tiled TIFF with DEFLATE compressed tiles, which is "
+"the same compression algorithm that PNG at its core uses."
+msgstr ""
+
+#: ../../../source/drivers/raster/png.rst:19
+msgid ""
+"PNG files are linearly compressed, so random reading of large PNG files can "
+"be very inefficient (resulting in many restarts of decompression from the "
+"start of the file). The maximum dimension of a PNG file that can be created "
+"by GDAL is set to 1,000,000x1,000,000 pixels by libpng."
+msgstr ""
+
+#: ../../../source/drivers/raster/png.rst:24
+msgid ""
+"Text chunks are translated into metadata, typically with multiple lines per "
+"item. :ref:`raster.wld` with the extensions of .pgw, .pngw or .wld will be "
+"read. Single transparency values in greyscale files will be recognised as a "
+"nodata value in GDAL. Transparent index in paletted images are preserved "
+"when the color table is read."
+msgstr ""
+
+#: ../../../source/drivers/raster/png.rst:30
+msgid ""
+"PNG files can be created with a type of PNG, using the CreateCopy() method, "
+"requiring a prototype to read from. Writing includes support for the various "
+"image types, and will preserve transparency/nodata values. Georeferencing ."
+"wld files are written if creation option :co:`WORLDFILE` is set. All pixel "
+"types other than 16bit unsigned will be written as eight bit."
+msgstr ""
+
+#: ../../../source/drivers/raster/png.rst:36
+msgid ""
+"XMP metadata can be extracted from the file, and will be stored as XML raw "
+"content in the xml:XMP metadata domain."
+msgstr ""
+
+#: ../../../source/drivers/raster/png.rst:40
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/png.rst:49
+msgid "Color Profile Metadata"
+msgstr ""
+
+#: ../../../source/drivers/raster/png.rst:51
+msgid ""
+"GDAL can deal with the following color profile metadata in the COLOR_PROFILE "
+"domain:"
+msgstr ""
+
+#: ../../../source/drivers/raster/png.rst:54
+msgid ""
+"SOURCE_ICC_PROFILE (Base64 encoded ICC profile embedded in file. If "
+"available, other tags are ignored.)"
+msgstr ""
+
+#: ../../../source/drivers/raster/png.rst:56
+msgid ""
+"SOURCE_ICC_PROFILE_NAME : ICC profile name. sRGB is recognized as a special "
+"value."
+msgstr ""
+
+#: ../../../source/drivers/raster/png.rst:58
+msgid "SOURCE_PRIMARIES_RED (xyY in \"x,y,1\" format for red primary.)"
+msgstr ""
+
+#: ../../../source/drivers/raster/png.rst:59
+msgid "SOURCE_PRIMARIES_GREEN (xyY in \"x,y,1\" format for green primary)"
+msgstr ""
+
+#: ../../../source/drivers/raster/png.rst:60
+msgid "SOURCE_PRIMARIES_BLUE (xyY in \"x,y,1\" format for blue primary)"
+msgstr ""
+
+#: ../../../source/drivers/raster/png.rst:61
+msgid "SOURCE_WHITEPOINT (xyY in \"x,y,1\" format for whitepoint)"
+msgstr ""
+
+#: ../../../source/drivers/raster/png.rst:62
+msgid "PNG_GAMMA"
+msgstr ""
+
+#: ../../../source/drivers/raster/png.rst:64
+msgid ""
+"Note that these metadata properties can only be used on the original raw "
+"pixel data. If automatic conversion to RGB has been done, the color profile "
+"information cannot be used."
+msgstr ""
+
+#: ../../../source/drivers/raster/png.rst:68
+msgid "All these metadata tags can be used as creation options."
+msgstr ""
+
+#: ../../../source/drivers/raster/png.rst:70
+msgid "Creation Options:"
+msgstr ""
+
+#: ../../../source/drivers/raster/png.rst:116
+msgid "NOTE: Implemented as :source_file:`frmts/png/pngdataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/png.rst:118
+msgid ""
+"PNG support is implemented based on the libpng reference library. More "
+"information is available at http://www.libpng.org/pub/png."
+msgstr ""

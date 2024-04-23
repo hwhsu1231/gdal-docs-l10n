@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/palsar.rst:5
+msgid "JAXA PALSAR Processed Products"
+msgstr ""
+
+#: ../../../source/drivers/raster/palsar.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/palsar.rst:7
+msgid "JAXAPALSAR"
+msgstr ""
+
+#: ../../../source/drivers/raster/palsar.rst:11
+msgid ""
+"This driver provides enhanced support for processed PALSAR products from the "
+"JAXA PALSAR processor. This encompasses products acquired from the following "
+"organizations:"
+msgstr ""
+
+#: ../../../source/drivers/raster/palsar.rst:15
+msgid "JAXA (Japanese Aerospace eXploration Agency)"
+msgstr ""
+
+#: ../../../source/drivers/raster/palsar.rst:16
+msgid "AADN (Alaska Satellite Facility)"
+msgstr ""
+
+#: ../../../source/drivers/raster/palsar.rst:17
+msgid "ESA (European Space Agency)"
+msgstr ""
+
+#: ../../../source/drivers/raster/palsar.rst:19
+msgid ""
+"This driver does not support products created using the Vexcel processor (i."
+"e. products distributed by ERSDAC and affiliated organizations)."
+msgstr ""
+
+#: ../../../source/drivers/raster/palsar.rst:22
+msgid "Support is provided for the following features of PALSAR products:"
+msgstr ""
+
+#: ../../../source/drivers/raster/palsar.rst:24
+msgid "Reading Level 1.1 and 1.5 processed products"
+msgstr ""
+
+#: ../../../source/drivers/raster/palsar.rst:25
+msgid "Georeferencing for Level 1.5 products"
+msgstr ""
+
+#: ../../../source/drivers/raster/palsar.rst:26
+msgid "Basic metadata (sensor information, ground pixel spacing, etc.)"
+msgstr ""
+
+#: ../../../source/drivers/raster/palsar.rst:27
+msgid ""
+"Multi-channel data (i.e. dual-polarization or fully polarimetric datasets)"
+msgstr ""
+
+#: ../../../source/drivers/raster/palsar.rst:30
+msgid "This is a read-only driver."
+msgstr ""
+
+#: ../../../source/drivers/raster/palsar.rst:32
+msgid ""
+"To open a PALSAR product, select the volume directory file (for example, VOL-"
+"ALPSR000000000-P1.5_UA or VOL-ALPSR000000000-P1.1__A). The driver will then "
+"use the information contained in the volume directory file to find the "
+"various image files (the IMG-\\* files), as well as the Leader file. Note "
+"that the Leader file is essential for correct operation of the driver."
+msgstr ""
+
+#: ../../../source/drivers/raster/palsar.rst:40
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/palsar.rst:47
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/palsar.rst:49
+msgid ""
+"`RESTEC Sample Data <http://www.alos-restec.jp/en/staticpages/index.php/"
+"service-sampledata>`__"
+msgstr ""

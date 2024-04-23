@@ -1,0 +1,124 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/terragen.rst:5
+msgid "Terragen -- Terragen™ Terrain File"
+msgstr ""
+
+#: ../../../source/drivers/raster/terragen.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/terragen.rst:7
+msgid "Terragen"
+msgstr ""
+
+#: ../../../source/drivers/raster/terragen.rst:11
+msgid ""
+"Terragen terrain files store 16-bit elevation values with optional "
+"gridspacing (but not positioning). The file extension for Terragen "
+"heightfields is \"TER\" or \"TERRAIN\" (which in the former case is the same "
+"as Leveller, but the driver only recognizes Terragen files). The driver ID "
+"is \"Terragen\". The dataset is file-based and has only one elevation band. "
+"Void elevations are not supported. Pixels are considered points."
+msgstr ""
+
+#: ../../../source/drivers/raster/terragen.rst:20
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/terragen.rst:31
+msgid "Reading"
+msgstr ""
+
+#: ../../../source/drivers/raster/terragen.rst:33
+msgid ""
+"``dataset::GetProjectionRef()`` returns a local coordinate system using "
+"meters."
+msgstr ""
+
+#: ../../../source/drivers/raster/terragen.rst:36
+msgid "``band::GetUnitType()`` returns meters."
+msgstr ""
+
+#: ../../../source/drivers/raster/terragen.rst:38
+msgid ""
+"Elevations are ``Int16``. You must use the ``band::GetScale()`` and ``band::"
+"GetOffset()`` to convert them to meters."
+msgstr ""
+
+#: ../../../source/drivers/raster/terragen.rst:44
+msgid "Writing"
+msgstr ""
+
+#: ../../../source/drivers/raster/terragen.rst:46
+msgid ""
+"Use the ``Create`` call. Set the ``MINUSERPIXELVALUE`` option (a float) to "
+"the lowest elevation of your elevation data, and ``MAXUSERPIXELVALUE`` to "
+"the highest. The units must match the elevation units you will give to "
+"``band::SetUnitType()``."
+msgstr ""
+
+#: ../../../source/drivers/raster/terragen.rst:51
+msgid ""
+"Call ``dataset::SetProjection()`` and ``dataset::SetGeoTransform()`` with "
+"your coordinate system details. Otherwise, the driver will not encode "
+"physical elevations properly. Geographic (degree-based) coordinate systems "
+"will be converted to a local meter-based system."
+msgstr ""
+
+#: ../../../source/drivers/raster/terragen.rst:56
+msgid ""
+"To maintain precision, a best-fit baseheight and scaling will be used to use "
+"as much of the 16-bit range as possible."
+msgstr ""
+
+#: ../../../source/drivers/raster/terragen.rst:59
+msgid "Elevations are ``Float32``."
+msgstr ""
+
+#: ../../../source/drivers/raster/terragen.rst:64
+msgid "Roundtripping"
+msgstr ""
+
+#: ../../../source/drivers/raster/terragen.rst:66
+msgid ""
+"Errors per trip tend to be a few centimeters for elevations and up to one or "
+"two meters for ground extents if degree-based coordinate systems are "
+"written. Large degree-based DEMs incur unavoidable distortions since the "
+"driver currently only uses meters."
+msgstr ""
+
+#: ../../../source/drivers/raster/terragen.rst:72
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/terragen.rst:74
+msgid "Implemented as :source_file:`frmts/terragen/terragendataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/terragen.rst:75
+msgid ""
+"See `readme.txt <./readme.txt>`__ for installation and support information."
+msgstr ""
+
+#: ../../../source/drivers/raster/terragen.rst:77
+msgid ""
+"`Terragen Terrain File Specification <http://www.planetside.co.uk/terragen/"
+"dev/tgterrain.html>`__."
+msgstr ""

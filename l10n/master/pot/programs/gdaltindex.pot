@@ -1,0 +1,446 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/programs/gdaltindex.rst:5
+#: ../../../source/programs/gdaltindex.rst:11
+msgid "gdaltindex"
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:9
+msgid "Creates an OGR-supported dataset as a raster tileindex."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:14
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:16
+msgid ""
+"gdaltindex [--help] [--help-general]\n"
+"        [-overwrite] [-recursive] [-filename_filter <val>]...\n"
+"        [-min_pixel_size <val>] [-max_pixel_size <val>]\n"
+"        [-f <format>] [-tileindex <field_name>] [-write_absolute_path]\n"
+"        [-skip_different_projection] [-t_srs <target_srs>]\n"
+"        [-src_srs_name <field_name>] [-src_srs_format {AUTO|WKT|EPSG|PROJ}]\n"
+"        [-lyr_name <name>] [-lco <NAME>=<VALUE>]...\n"
+"        [-gti_filename <name>]\n"
+"        [-tr <xres> <yres>] [-te <xmin> <ymin> <xmax> <ymax>]\n"
+"        [-ot <datatype>] [-bandcount <val>] [-nodata <val>[,<val>...]]\n"
+"        [-colorinterp <val>[,<val>...]] [-mask]\n"
+"        [-mo <KEY>=<VALUE>]...\n"
+"        [-fetch_md <gdal_md_name> <fld_name> <fld_type>]...\n"
+"        <index_file> <file_or_dir> [<file_or_dir>]..."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:34
+msgid "Description"
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:36
+msgid ""
+"This program creates an OGR-supported dataset with a record for each input "
+"raster file, an attribute containing the filename, and a polygon geometry "
+"outlining the raster.  This output is suitable for use with `MapServer "
+"<http://mapserver.org/>`__ as a raster tileindex, or as input for the :ref:"
+"`GTI <raster.gti>` driver."
+msgstr ""
+
+#: ../../../source/programs/options/help.rst:3
+msgid "Show this help message and exit"
+msgstr ""
+
+#: ../../../source/programs/options/help_general.rst:3
+msgid ""
+"Gives a brief usage message for the generic GDAL commandline options and "
+"exit."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:49
+msgid "Overwrite the tile index if it already exists."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:55
+msgid ""
+"Whether directories specified in <file_or_dir> should be explored "
+"recursively."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:61
+msgid ""
+"Pattern that the filenames contained in directories pointed by <file_or_dir> "
+"should follow. '*' is a wildcard character that matches any number of any "
+"characters including none. '?' is a wildcard character that matches a single "
+"character. Comparisons are done in a case insensitive way. Several filters "
+"may be specified."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:68
+msgid "For example :``-filename_filter \"*.tif\" -filename_filter \"*.tiff\"``"
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:74
+msgid ""
+"Minimum pixel size in term of geospatial extent per pixel (resolution) that "
+"a raster should have to be selected. The pixel size is evaluated after "
+"reprojection of its extent to the target SRS defined by :option:`-t_srs`."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:83
+msgid ""
+"Maximum pixel size in term of geospatial extent per pixel (resolution) that "
+"a raster should have to be selected. The pixel size is evaluated after "
+"reprojection of its extent to the target SRS defined by :option:`-t_srs`."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:90
+msgid ""
+"The OGR format of the output tile index file. Starting with GDAL 2.3, if not "
+"specified, the format is guessed from the extension (previously was ESRI "
+"Shapefile)."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:96
+msgid ""
+"The output field name to hold the file path/location to the indexed rasters. "
+"The default tile index field name is ``location``."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:101
+msgid ""
+"The absolute path to the raster files is stored in the tile index file. By "
+"default the raster filenames will be put in the file exactly as they are "
+"specified on the command line."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:107
+msgid ""
+"Only files with same projection as files already inserted in the tileindex "
+"will be inserted (unless :option:`-t_srs` is specified). Default does not "
+"check projection and accepts all inputs."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:113
+msgid ""
+"Geometries of input files will be transformed to the desired target "
+"coordinate reference system. Default creates simple rectangular polygons in "
+"the same coordinate reference system as the input rasters."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:120
+msgid ""
+"The name of the field to store the SRS of each tile. This field name can be "
+"used as the value of the TILESRS keyword in MapServer"
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:125
+msgid ""
+"The format in which the SRS of each tile must be written. Types can be "
+"``AUTO``, ``WKT``, ``EPSG``, ``PROJ``. This option should be used together "
+"with :option:`-src_srs_format`."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:131
+msgid "Layer name to create/append to in the output tile index file."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:137
+msgid "Layer creation option (format specific)"
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:141
+msgid ""
+"The name of the output file to create/append to. The default dataset will be "
+"created if it doesn't already exist, otherwise it will append to the "
+"existing dataset."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:147
+msgid ""
+"The input GDAL raster files, can be multiple files separated by spaces. "
+"Wildcards my also be used. Stores the file locations in the same style as "
+"specified here, unless :option:`-write_absolute_path` option is also used."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:151
+msgid ""
+"Starting with GDAL 3.9, this can also be a directory name. :option:`-"
+"recursive` can also be used to recurse down to sub-directories."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:154
+msgid ""
+"It is also possible to use the generic option ``--optfile filelist.txt`` to "
+"specify a list of source files."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:159
+msgid "Options specific to use by the GDAL GTI driver"
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:161
+msgid ""
+"gdaltindex can be used to generate a tile index suitable for use by the :ref:"
+"`GTI <raster.gti>` driver. There are two possibilities:"
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:164
+msgid ""
+"either use directly a vector tile index generated by gdaltindex as the input "
+"of the GTI driver"
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:167
+msgid ""
+"or generate a small XML .gti wrapper file, for easier use with non-file-"
+"based formats such as databases, or for vector formats that do not support "
+"setting layer metadata items."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:171
+msgid ""
+"Formats that support layer metadata are for example GeoPackage (``-f "
+"GPKG``), FlatGeoBuf (``-f FlatGeoBuf``) or PostGIS (``-f PG``)"
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:174
+msgid ""
+"Setting :option:`-tr` and :option:`-ot` is recommended to avoid the GTI "
+"driver to have to deduce them by opening the first tile in the index. If the "
+"tiles have nodata or mask band,  :option:`-nodata` and :option:`-mask` "
+"should also be set."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:179
+msgid ""
+"In a GTI context, the extent of all tiles referenced in the tile index must "
+"be expressed in a single SRS. Consequently, if input tiles may have "
+"different SRS, either :option:`-t_srs` or :option:`-"
+"skip_different_projection` should be specified."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:189
+msgid ""
+"Filename of the XML Virtual Tile Index file to generate, that can be used as "
+"an input for the GDAL GTI / Virtual Raster Tile Index driver. This can be "
+"useful when writing the tile index in a vector format that does not support "
+"writing layer metadata items."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:198
+msgid "Target resolution in SRS unit per pixel."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:200
+msgid ""
+"Written in the XML Virtual Tile Index if :option:`-gti_filename` is "
+"specified, or as ``RESX`` and ``RESY`` layer metadata items for formats that "
+"support layer metadata."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:208
+msgid "Target extent in SRS unit."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:210
+msgid ""
+"Written in the XML Virtual Tile Index if :option:`-gti_filename` is "
+"specified, or as ``MINX``, ``MINY``, ``MAXX`` and ``MAXY`` layer metadata "
+"items for formats that support layer metadata."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:218
+msgid ""
+"Data type of the tiles of the tile index: ``Byte``, ``Int8``, ``UInt16``, "
+"``Int16``, ``UInt32``, ``Int32``, ``UInt64``, ``Int64``, ``Float32``, "
+"``Float64``, ``CInt16``, ``CInt32``, ``CFloat32`` or ``CFloat64``"
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:222
+msgid ""
+"Written in the XML Virtual Tile Index if :option:`-gti_filename` is "
+"specified, or as ``DATA_TYPE`` layer metadata item for formats that support "
+"layer metadata."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:230
+msgid "Number of bands of the tiles of the tile index."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:232
+msgid ""
+"Written in the XML Virtual Tile Index if :option:`-gti_filename` is "
+"specified, or as ``BAND_COUNT`` layer metadata item for formats that support "
+"layer metadata."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:236
+msgid ""
+"A mix of tiles with N and N+1 bands is allowed, provided that the color "
+"interpretation of the (N+1)th band is alpha. The N+1 value must be written "
+"as the band count in that situation."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:240
+msgid ""
+"If :option:`-nodata` or :option:`-colorinterp` are specified and have "
+"multiple values, the band count is also inferred from that number."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:247
+msgid "Nodata value of the tiles of the tile index."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:249
+msgid ""
+"Written in the XML Virtual Tile Index if :option:`-gti_filename` is "
+"specified, or as ``NODATA`` layer metadata item for formats that support "
+"layer metadata."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:257
+msgid ""
+"Color interpretation of of the tiles of the tile index: ``red``, ``green``, "
+"``blue``, ``alpha``, ``gray``, ``undefined``."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:260
+msgid ""
+"Written in the XML Virtual Tile Index if :option:`-gti_filename` is "
+"specified, or as ``COLOR_INTERPRETATION`` layer metadata item for formats "
+"that support layer metadata."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:268
+msgid "Whether tiles in the tile index have a mask band."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:270
+msgid ""
+"Written in the XML Virtual Tile Index if :option:`-gti_filename` is "
+"specified, or as ``MASK_BAND`` layer metadata item for formats that support "
+"layer metadata."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:278
+msgid ""
+"Write an arbitrary layer metadata item, for formats that support layer "
+"metadata. This option may be repeated."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:282
+msgid "This option cannot be used together :option:`-gti_filename`"
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:288
+msgid ""
+"Fetch a metadata item from the raster tile and write it as a field in the "
+"tile index."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:291
+msgid ""
+"<gdal_md_name> should be the name of the raster metadata item. ``{PIXEL_SIZE}"
+"`` may be used as a special name to indicate the pixel size."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:294
+msgid "<fld_name> should be the name of the field to create in the tile index."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:296
+msgid ""
+"<fld_type> should be the name of the type to create. One of ``String``, "
+"``Integer``, ``Integer64``, ``Real``, ``Date``, ``DateTime``"
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:299
+msgid "This option may be repeated."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:301
+msgid "For example: ``-fetch_md TIFFTAG_DATETIME creation_date DateTime``"
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:304
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:306
+msgid ""
+"Produce a shapefile (``doq_index.shp``) with a record for every image that "
+"the utility found in the ``doq`` folder. Each record holds information that "
+"points to the location of the image and also a bounding rectangle shape "
+"showing the bounds of the image:"
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:313
+msgid "gdaltindex doq_index.shp doq/*.tif"
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:315
+msgid ""
+"Perform the same command as before, but now we create a GeoPackage instead "
+"of a Shapefile."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:319
+msgid "gdaltindex -f GPKG doq_index.gpkg doq/*.tif"
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:321
+msgid ""
+"The :option:`-t_srs` option can also be used to transform all input rasters "
+"into the same output projection:"
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:326
+msgid ""
+"gdaltindex -t_srs EPSG:4326 -src_srs_name src_srs tile_index_mixed_srs.shp *."
+"tif"
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:328
+msgid ""
+"Make a tile index from files listed in a text file, with metadata suitable "
+"for use by the GDAL GTI / Virtual Raster Tile Index driver."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:333
+msgid ""
+"gdaltindex tile_index.gti.gpkg -datatype Byte -tr 60 60 -colorinterp Red,"
+"Green,Blue --optfile my_list.txt"
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:336
+msgid "C API"
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:338
+msgid "This utility is also callable from C with :cpp:func:`GDALTileIndex`."
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:341
+msgid "See also"
+msgstr ""
+
+#: ../../../source/programs/gdaltindex.rst:343
+msgid ""
+":ref:`raster_common_options` for other command-line options, and in "
+"particular the :ref:`--optfile <raster_common_options_optfile>` switch that "
+"can be used to specify a list of input datasets."
+msgstr ""

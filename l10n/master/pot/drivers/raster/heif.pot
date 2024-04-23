@@ -1,0 +1,142 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/heif.rst:5
+msgid "HEIF / HEIC -- ISO/IEC 23008-12:2017 High Efficiency Image File Format"
+msgstr ""
+
+#: ../../../source/drivers/raster/heif.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/heif.rst:9
+msgid "HEIF"
+msgstr ""
+
+#: ../../../source/drivers/raster/heif.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/raster/heif.rst:11
+msgid "libheif (>= 1.1), built against libde265"
+msgstr ""
+
+#: ../../../source/drivers/raster/heif.rst:13
+msgid ""
+"High Efficiency Image File Format (HEIF) is a container format for "
+"individual images and image sequences. The driver has mostly been developed "
+"and tested to be able to read images using the High Efficiency Video Coding "
+"(HEVC, ITU-T H.265) codec. Such images are usually called HEIC (HEVC in "
+"HEIF) files, and have the .heic extension. iOS 11 can generate such files."
+msgstr ""
+
+#: ../../../source/drivers/raster/heif.rst:19
+msgid ""
+"libheif 1.4 or later is needed to support images with more than 8-bits per "
+"channel."
+msgstr ""
+
+#: ../../../source/drivers/raster/heif.rst:21
+msgid ""
+"The driver can read EXIF metadata (exposed in the ``EXIF`` metadata domain) "
+"and XMP metadata (exposed in the ``xml:XMP`` metadata domain)"
+msgstr ""
+
+#: ../../../source/drivers/raster/heif.rst:24
+msgid ""
+"The driver will expose the thumbnail as an overview (when its number of "
+"bands matches the one of the full resolution image)"
+msgstr ""
+
+#: ../../../source/drivers/raster/heif.rst:27
+msgid ""
+"If a file contains several top-level images, they will be exposed as GDAL "
+"subdatasets."
+msgstr ""
+
+#: ../../../source/drivers/raster/heif.rst:30
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/heif.rst:-1
+msgid "Supports VirtualIO"
+msgstr ""
+
+#: ../../../source/drivers/raster/heif.rst:32
+msgid "if libheif >= 1.4"
+msgstr ""
+
+#: ../../../source/drivers/raster/heif.rst:36
+msgid "Built hints on Windows"
+msgstr ""
+
+#: ../../../source/drivers/raster/heif.rst:38
+msgid ""
+"Download source archives for libheif at https://github.com/strukturag/"
+"libheif and libde265 at https://github.com/strukturag/libde265"
+msgstr ""
+
+#: ../../../source/drivers/raster/heif.rst:42
+msgid ""
+"Unpack the archives (for example libde265-1.0.5.tar.gz and libheif-1.7.0.tar."
+"gz)"
+msgstr ""
+
+#: ../../../source/drivers/raster/heif.rst:44
+msgid "Build libde265:"
+msgstr ""
+
+#: ../../../source/drivers/raster/heif.rst:48
+msgid ""
+"cd libde265-1.0.5\n"
+"mkdir build\n"
+"cd build\n"
+"cmake -G \"Visual Studio 15 2017 Win64\" .. -DCMAKE_INSTALL_PREFIX=c:/dev/"
+"install-libheif\n"
+"cmake --build . --config Release --target install\n"
+"cd ..\n"
+"copy libde265\\de265.h c:/dev/install-libheif/include/libde265\n"
+"copy libde265\\de265-version.h c:/dev/install-libheif/include/libde265\n"
+"cd .."
+msgstr ""
+
+#: ../../../source/drivers/raster/heif.rst:58
+msgid "Build libheif with libde265 support:"
+msgstr ""
+
+#: ../../../source/drivers/raster/heif.rst:63
+msgid ""
+"cd libheif-1.7.0\n"
+"mkdir build\n"
+"cd build\n"
+"cmake -G \"Visual Studio 15 2017 Win64\" .. \\\n"
+"    -DCMAKE_INSTALL_PREFIX=c:/dev/install-libheif \\\n"
+"    -DLIBDE265_FOUND=ON \\\n"
+"    -DLIBDE265_CFLAGS=/Ic:/dev/install-libheif/include \\\n"
+"    -DLIBDE265_LIBRARIES=c:/dev/install-libheif/lib/libde265"
+msgstr ""
+
+#: ../../../source/drivers/raster/heif.rst:73
+msgid "Add in GDAL's nmake.local the following lines before building GDAL:"
+msgstr ""
+
+#: ../../../source/drivers/raster/heif.rst:77
+msgid ""
+"HEIF_INC = -Ic:\\dev\\install-libheif\\include\n"
+"HEIF_LIB = C:\\dev\\install-libheif\\lib\\heif.lib"
+msgstr ""

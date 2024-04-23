@@ -1,0 +1,247 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/programs/ogr_layer_algebra.rst:5
+msgid "ogr_layer_algebra.py"
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:11
+msgid "Performs various Vector layer algebraic operations."
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:16
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:18
+msgid ""
+"ogr_layer_algebra.py [--help] [--help-general]\n"
+"                    Union|Intersection|SymDifference|Identity|Update|Clip|"
+"Erase\n"
+"                    -input_ds <path> [-input_lyr <name>]\n"
+"                    -method_ds <path> [-method_lyr <name>]\n"
+"                    -output_ds <path> [-output_lyr <name>] [-overwrite]\n"
+"                    [-opt <NAME>=<VALUE>]...\n"
+"                    [-f <format_name>] [-dsco <NAME>=<VALUE>]... [-lco "
+"<NAME>=<VALUE>]...\n"
+"                    [-input_fields {NONE|ALL|<fld1>,<fl2>,...<fldN>}] [-"
+"method_fields {NONE|ALL|<fld1>,<fl2>,...<fldN>}]\n"
+"                    [-nlt <geom_type>] [-a_srs <srs_def>]"
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:31
+msgid "Description"
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:33
+msgid ""
+"The :program:`ogr_layer_algebra.py` provides a command line utility to "
+"perform various vector layer algebraic operations. The utility takes a "
+"vector input source , a method source and generates the output of the "
+"operation in the specified output file"
+msgstr ""
+
+#: ../../../source/programs/options/help.rst:3
+msgid "Show this help message and exit"
+msgstr ""
+
+#: ../../../source/programs/options/help_general.rst:3
+msgid ""
+"Gives a brief usage message for the generic GDAL commandline options and "
+"exit."
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:42
+msgid "Where <mode> is one of the seven available modes:"
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:44
+msgid "``Union``"
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:46
+msgid ""
+"A union is a set of features, which represent areas that are in either of "
+"the operand layers."
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:48
+msgid "``Intersection``"
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:50
+msgid ""
+"An intersection is a set of features, which represent the common areas of "
+"two layers."
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:52
+msgid "``SymDifference``"
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:54
+msgid ""
+"A symmetric difference is a set of features, which represent areas that are "
+"in operand layers but which do not intersect."
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:56
+msgid "``Identity``"
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:58
+msgid ""
+"The identity method identifies features in the input layer with features in "
+"the method layer possibly splitting features into several features. By "
+"default the result layer has attributes from both operand layers."
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:61
+msgid "``Update``"
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:63
+msgid ""
+"The update method creates a layer, which add features into the input layer "
+"from the method layer possibly cutting features in the input layer. By "
+"default the result layer has attributes only from the input layer."
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:66
+msgid "``Clip``"
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:68
+msgid ""
+"The clip method creates a layer, which has features from the input layer "
+"clipped to the areas of the features in the method layer. By default the "
+"result layer has attributes of the input layer."
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:71
+msgid "``Erase``"
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:73
+msgid ""
+"The erase method creates a layer, which has features from the input layer "
+"whose areas are erased by the features in the method layer. By default the "
+"result layer has attributes of the input layer."
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:78
+msgid ""
+"Input data set path for the operation to be performed. For operations "
+"involving 2 datasets, this is one of the dataset."
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:83
+msgid ""
+"Layer name of the ``input_ds`` for which the operations have to be performed "
+"( Optional )"
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:87
+msgid ""
+"Method data set path for the operation to be performed. This is usually the "
+"conditional data set supplied to the operation ( ex: clip , erase , update ) "
+"This is the Second data set in the operation ( ex : Union, Intersection , "
+"SymDifference )"
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:93
+msgid ""
+"Layer name of the ``method_ds`` for which the operations have to be "
+"performed ( Optional )"
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:97
+msgid ""
+"Output data set path for writing the result of the operations performed by "
+"ogr_layer_algebra"
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:101
+msgid ""
+"Layer name of the ``output_lyr_name`` where the output vector has to be "
+"written. ( Optional )"
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:105
+msgid ""
+"Indicates whether the ``output_ds`` have to be overwritten with the "
+"generated result of ogr_layer_algebra"
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:109
+msgid ""
+"Attributes for which the operation has to run on ``input_ds`` and "
+"``method_ds``"
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:113
+msgid ""
+"Select the output format.If not specified, the format is guessed from the "
+"extension (previously was ESRI Shapefile). Use the short format name"
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:119
+msgid "Dataset creation option (format specific)"
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:123
+msgid "Layer creation option (format specific)"
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:127
+msgid ""
+"Comma-delimited list of fields from input layer to copy to the output "
+"layer , if eligible according to the operation"
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:132
+msgid ""
+"Comma-delimited list of fields from method layer to copy to the output "
+"layer , if eligible according to the operation"
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:137
+msgid ""
+"Define the geometry type for the created layer. One of NONE, GEOMETRY, "
+"POINT, LINESTRING, POLYGON, GEOMETRYCOLLECTION, MULTIPOINT, MULTIPOLYGON, "
+"GEOMETRY25D, POINT25D, LINESTRING25D, POLYGON25D, GEOMETRYCOLLECTION25D, "
+"MULTIPOINT25D, MULTIPOLYGON25D."
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:144
+msgid "Assign an output SRS, but without reprojecting"
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:146
+msgid ""
+"The coordinate reference systems that can be passed are anything supported "
+"by the OGRSpatialReference.SetFromUserInput() call, which includes EPSG "
+"Projected, Geographic or Compound CRS (i.e. EPSG:4296), a well known text "
+"(WKT) CRS definition, PROJ.4 declarations, or the name of a .prj file "
+"containing a WKT CRS definition."
+msgstr ""
+
+#: ../../../source/programs/ogr_layer_algebra.rst:13
+msgid "ogr_layer_algebra"
+msgstr ""

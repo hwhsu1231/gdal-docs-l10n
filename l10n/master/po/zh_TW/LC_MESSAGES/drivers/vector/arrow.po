@@ -1,0 +1,131 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/arrow.rst:4
+msgid "(Geo)Arrow IPC File Format / Stream"
+msgstr ""
+
+#: ../../../source/drivers/vector/arrow.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/arrow.rst:8
+msgid "Arrow"
+msgstr ""
+
+#: ../../../source/drivers/vector/arrow.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/vector/arrow.rst:10
+msgid "Apache Arrow C++ library"
+msgstr ""
+
+#: ../../../source/drivers/vector/arrow.rst:12
+msgid ""
+"The Arrow IPC File Format (Feather) is a portable file format for storing "
+"Arrow tables or data frames (from languages like Python or R) that utilizes "
+"the Arrow IPC format internally."
+msgstr ""
+
+#: ../../../source/drivers/vector/arrow.rst:16
+msgid "The driver supports the 2 variants of the format:"
+msgstr ""
+
+#: ../../../source/drivers/vector/arrow.rst:18
+msgid ""
+"File or Random Access format, also known as Feather: for serializing a fixed "
+"number of record batches. Random access is required to read such files, but "
+"they can be generated using a streaming-only capable file. The recommended "
+"extension for such file is ``.arrow``"
+msgstr ""
+
+#: ../../../source/drivers/vector/arrow.rst:23
+msgid ""
+"Streaming IPC format: for sending an arbitrary length sequence of record "
+"batches. The format must generally be processed from start to end, and does "
+"not require random access. That format is not generally materialized as a "
+"file. If it is, the recommended extension is ``.arrows`` (with a trailing "
+"s). But the driver can support regular files as well as the /vsistdin/ and /"
+"vsistdout/ streaming files. On opening, it might difficult for the driver to "
+"detect that the content is specifically a Arrow IPC stream, especially if "
+"the extension is not ``.arrows``, and the metadata section is large. "
+"Prefixing the filename with ``ARROW_IPC_STREAM:`` (e.g \"ARROW_IPC_STREAM:/"
+"vsistdin/\") will cause the driver to unconditionally open the file as a "
+"streaming IPC format."
+msgstr ""
+
+#: ../../../source/drivers/vector/arrow.rst:35
+msgid ""
+"This driver also supports geometry columns using the GeoArrow specification."
+msgstr ""
+
+#: ../../../source/drivers/vector/arrow.rst:37
+msgid ""
+"The driver should be considered experimental as the GeoArrow specification "
+"is not finalized yet."
+msgstr ""
+
+#: ../../../source/drivers/vector/arrow.rst:40
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/arrow.rst:49
+msgid "Creation issues"
+msgstr ""
+
+#: ../../../source/drivers/vector/arrow.rst:51
+msgid "The driver supports creating only a single layer in a dataset."
+msgstr ""
+
+#: ../../../source/drivers/vector/arrow.rst:54
+msgid "Layer creation options"
+msgstr ""
+
+#: ../../../source/drivers/vector/arrow.rst:104
+msgid "Conda-forge package"
+msgstr ""
+
+#: ../../../source/drivers/vector/arrow.rst:106
+msgid ""
+"The driver can be installed as a plugin for the ``libgdal`` conda-forge "
+"package with:"
+msgstr ""
+
+#: ../../../source/drivers/vector/arrow.rst:110
+msgid "conda install -c conda-forge libgdal-arrow-parquet"
+msgstr ""
+
+#: ../../../source/drivers/vector/arrow.rst:114
+msgid "Links"
+msgstr ""
+
+#: ../../../source/drivers/vector/arrow.rst:116
+msgid ""
+"`Feather File Format <https://arrow.apache.org/docs/python/feather.html>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/arrow.rst:118
+msgid ""
+"`GeoArrow specification <https://github.com/geopandas/geo-arrow-spec>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/arrow.rst:120
+msgid "Related driver: :ref:`Parquet driver <vector.parquet>`"
+msgstr ""

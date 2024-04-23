@@ -1,0 +1,597 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/fits.rst:5
+msgid "FITS -- Flexible Image Transport System"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:7
+msgid "FITS"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:9
+msgid "libcfitsio"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:11
+msgid ""
+"FITS is a format used mainly by astronomers, but it is a relatively simple "
+"format that supports arbitrary image types and multi-spectral images, and so "
+"has found its way into GDAL. FITS support is implemented in terms of the "
+"standard `CFITSIO library <http://heasarc.gsfc.nasa.gov/docs/software/fitsio/"
+"fitsio.html>`__, which you must have on your system in order for FITS "
+"support to be enabled (see :ref:`notes on CFITSIO linking <notes-on-cfitsio-"
+"linking>`). Both reading and writing of FITS files is supported."
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:20
+msgid ""
+"Starting from version 3.0 georeferencing system support is implemented via "
+"the conversion of WCS (World Coordinate System) keywords. Only Latitude - "
+"Longitude systems (see the `FITS standard document <https://fits.gsfc.nasa."
+"gov/standard40/fits_standard40aa-le.pdf#subsection.8.3>`_) have been "
+"implemented, those for which remote sensing processing is commonly used. As "
+"3D Datum information is missing in FITS/WCS standard, Radii and target "
+"bodies are translated using the planetary extension proposed `here <https://"
+"agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2018EA000388>`_."
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:30
+msgid ""
+"Non-standard header keywords that are present in the FITS file will be "
+"copied to the dataset's metadata when the file is opened, for access via "
+"GDAL methods. Similarly, non-standard header keywords that the user defines "
+"in the dataset's metadata will be written to the FITS file when the GDAL "
+"handle is closed."
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:36
+msgid ""
+"Note to those familiar with the CFITSIO library: The automatic rescaling of "
+"data values, triggered by the presence of the BSCALE and BZERO header "
+"keywords in a FITS file, is disabled in GDAL < v3.0. Those header keywords "
+"are accessible and updatable via dataset metadata, in the same was as any "
+"other header keywords, but they do not affect reading/writing of data values "
+"from/to the file. Starting from version 3.0 BZERO and BSCALE keywords are "
+"managed via standard :cpp:func:`GDALRasterBand::GetOffset` / :cpp:func:"
+"`GDALRasterBand::SetOffset` and :cpp:func:`GDALRasterBand::GetScale` / :cpp:"
+"func:`GDALRasterBand::SetScale` GDAL functions and no more referred as "
+"metadata."
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:47
+msgid "Multiple image support"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:49
+msgid ""
+"Starting with GDAL 3.2, Multi-Extension FITS (MEF) files that contain one or "
+"more extensions following the primary HDU are supported. When more than 2 "
+"image HDUs are found, they are reported as subdatasets."
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:53
+msgid ""
+"The connection string for a given subdataset/HDU is ``FITS:\"filename.fits\":"
+"hdu_number``"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:56
+msgid "Binary table support"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:58
+msgid ""
+"Starting with GDAL 3.2, binary tables will be exposed as vector layers "
+"(update and creation support from GDAL 3.2.1)."
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:61
+msgid "The FITS data types are mapped to OGR data types as the following:"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:63
+msgid "Data types"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:66
+msgid "TFORM value"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:67
+msgid "TSCAL, TOFFSET value"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:68
+msgid "Occurrence count"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:69
+msgid "OGR field type"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:70
+msgid "OGR field subtype"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:71
+#: ../../../source/drivers/raster/fits.rst:76
+msgid "'L' (Logical)"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:72
+#: ../../../source/drivers/raster/fits.rst:77
+#: ../../../source/drivers/raster/fits.rst:82
+#: ../../../source/drivers/raster/fits.rst:177
+#: ../../../source/drivers/raster/fits.rst:182
+msgid "ignored"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:73
+#: ../../../source/drivers/raster/fits.rst:88
+#: ../../../source/drivers/raster/fits.rst:98
+#: ../../../source/drivers/raster/fits.rst:103
+#: ../../../source/drivers/raster/fits.rst:108
+#: ../../../source/drivers/raster/fits.rst:128
+#: ../../../source/drivers/raster/fits.rst:133
+#: ../../../source/drivers/raster/fits.rst:138
+#: ../../../source/drivers/raster/fits.rst:158
+#: ../../../source/drivers/raster/fits.rst:163
+#: ../../../source/drivers/raster/fits.rst:188
+#: ../../../source/drivers/raster/fits.rst:193
+#: ../../../source/drivers/raster/fits.rst:208
+#: ../../../source/drivers/raster/fits.rst:218
+#: ../../../source/drivers/raster/fits.rst:228
+msgid "1"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:74
+#: ../../../source/drivers/raster/fits.rst:84
+#: ../../../source/drivers/raster/fits.rst:89
+#: ../../../source/drivers/raster/fits.rst:99
+#: ../../../source/drivers/raster/fits.rst:104
+#: ../../../source/drivers/raster/fits.rst:129
+#: ../../../source/drivers/raster/fits.rst:134
+msgid "OFTInteger"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:75
+#: ../../../source/drivers/raster/fits.rst:80
+msgid "OFSTBoolean"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:78
+#: ../../../source/drivers/raster/fits.rst:93
+#: ../../../source/drivers/raster/fits.rst:123
+#: ../../../source/drivers/raster/fits.rst:153
+#: ../../../source/drivers/raster/fits.rst:168
+#: ../../../source/drivers/raster/fits.rst:173
+#: ../../../source/drivers/raster/fits.rst:198
+#: ../../../source/drivers/raster/fits.rst:203
+#: ../../../source/drivers/raster/fits.rst:213
+#: ../../../source/drivers/raster/fits.rst:223
+#: ../../../source/drivers/raster/fits.rst:233
+msgid "> 1"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:79
+#: ../../../source/drivers/raster/fits.rst:94
+#: ../../../source/drivers/raster/fits.rst:114
+#: ../../../source/drivers/raster/fits.rst:119
+#: ../../../source/drivers/raster/fits.rst:144
+#: ../../../source/drivers/raster/fits.rst:149
+msgid "OFTIntegerList"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:81
+msgid "'X' (bit)"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:83
+msgid "each bit mapped to a OGR field"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:85
+#: ../../../source/drivers/raster/fits.rst:90
+#: ../../../source/drivers/raster/fits.rst:95
+#: ../../../source/drivers/raster/fits.rst:105
+#: ../../../source/drivers/raster/fits.rst:110
+#: ../../../source/drivers/raster/fits.rst:120
+#: ../../../source/drivers/raster/fits.rst:125
+#: ../../../source/drivers/raster/fits.rst:130
+#: ../../../source/drivers/raster/fits.rst:135
+#: ../../../source/drivers/raster/fits.rst:140
+#: ../../../source/drivers/raster/fits.rst:145
+#: ../../../source/drivers/raster/fits.rst:150
+#: ../../../source/drivers/raster/fits.rst:155
+#: ../../../source/drivers/raster/fits.rst:160
+#: ../../../source/drivers/raster/fits.rst:165
+#: ../../../source/drivers/raster/fits.rst:170
+#: ../../../source/drivers/raster/fits.rst:175
+#: ../../../source/drivers/raster/fits.rst:180
+#: ../../../source/drivers/raster/fits.rst:185
+#: ../../../source/drivers/raster/fits.rst:195
+#: ../../../source/drivers/raster/fits.rst:205
+#: ../../../source/drivers/raster/fits.rst:210
+#: ../../../source/drivers/raster/fits.rst:215
+#: ../../../source/drivers/raster/fits.rst:220
+#: ../../../source/drivers/raster/fits.rst:225
+#: ../../../source/drivers/raster/fits.rst:230
+#: ../../../source/drivers/raster/fits.rst:235
+msgid "OFSTNone"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:86
+#: ../../../source/drivers/raster/fits.rst:91
+msgid "'B' (unsigned byte)"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:87
+#: ../../../source/drivers/raster/fits.rst:92
+msgid "1, 0 (unsigned byte) or 1, -128 (signed byte)"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:96
+#: ../../../source/drivers/raster/fits.rst:106
+#: ../../../source/drivers/raster/fits.rst:121
+msgid "'I' (16 bit signed integer)"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:97
+#: ../../../source/drivers/raster/fits.rst:112
+#: ../../../source/drivers/raster/fits.rst:127
+#: ../../../source/drivers/raster/fits.rst:142
+#: ../../../source/drivers/raster/fits.rst:157
+#: ../../../source/drivers/raster/fits.rst:167
+#: ../../../source/drivers/raster/fits.rst:187
+#: ../../../source/drivers/raster/fits.rst:197
+msgid "1, 0"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:100
+#: ../../../source/drivers/raster/fits.rst:115
+msgid "OFSTInt16"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:101
+#: ../../../source/drivers/raster/fits.rst:116
+msgid "'I' (16 bit integer, interpreted as unsigned)"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:102
+#: ../../../source/drivers/raster/fits.rst:117
+msgid "1, 32768"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:107
+msgid "other than (1,0) and (1,32768)"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:109
+#: ../../../source/drivers/raster/fits.rst:139
+#: ../../../source/drivers/raster/fits.rst:164
+#: ../../../source/drivers/raster/fits.rst:189
+#: ../../../source/drivers/raster/fits.rst:194
+#: ../../../source/drivers/raster/fits.rst:209
+msgid "OFTReal"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:111
+msgid "'I' (16 bit integer)"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:113
+#: ../../../source/drivers/raster/fits.rst:118
+#: ../../../source/drivers/raster/fits.rst:143
+#: ../../../source/drivers/raster/fits.rst:148
+msgid ">1"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:122
+msgid "other than (1, 0) and (1, 32768)"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:124
+#: ../../../source/drivers/raster/fits.rst:154
+#: ../../../source/drivers/raster/fits.rst:174
+#: ../../../source/drivers/raster/fits.rst:199
+#: ../../../source/drivers/raster/fits.rst:204
+#: ../../../source/drivers/raster/fits.rst:214
+msgid "OFTRealList"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:126
+#: ../../../source/drivers/raster/fits.rst:136
+#: ../../../source/drivers/raster/fits.rst:151
+msgid "'J' (32 bit signed integer)"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:131
+#: ../../../source/drivers/raster/fits.rst:146
+msgid "'J' (32 bit integer, interpreted as unsigned)"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:132
+#: ../../../source/drivers/raster/fits.rst:147
+msgid "1, 2147483648"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:137
+#: ../../../source/drivers/raster/fits.rst:152
+msgid "other than (1, 0) and (1, 2147483648)"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:141
+msgid "'J' (32 bit integer)"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:156
+#: ../../../source/drivers/raster/fits.rst:161
+#: ../../../source/drivers/raster/fits.rst:166
+#: ../../../source/drivers/raster/fits.rst:171
+msgid "'K' (64 bit signed integer)"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:159
+#: ../../../source/drivers/raster/fits.rst:169
+msgid "OFTInteger64"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:162
+#: ../../../source/drivers/raster/fits.rst:172
+#: ../../../source/drivers/raster/fits.rst:192
+#: ../../../source/drivers/raster/fits.rst:202
+msgid "other than (1, 0)"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:176
+#: ../../../source/drivers/raster/fits.rst:181
+msgid "'A' (character)"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:178
+msgid "if TFORM='Axxx' and no TDIM header"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:179
+msgid "OFTString"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:183
+msgid "TDIM for 2D field, or variable length ('PA')"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:184
+msgid "OFTStringList"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:186
+#: ../../../source/drivers/raster/fits.rst:191
+#: ../../../source/drivers/raster/fits.rst:196
+#: ../../../source/drivers/raster/fits.rst:201
+msgid "'E' (single precision floating point)"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:190
+#: ../../../source/drivers/raster/fits.rst:200
+msgid "OFSTFloat32"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:206
+#: ../../../source/drivers/raster/fits.rst:211
+msgid "'D' (double precision floating point)"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:207
+#: ../../../source/drivers/raster/fits.rst:212
+#: ../../../source/drivers/raster/fits.rst:217
+#: ../../../source/drivers/raster/fits.rst:222
+#: ../../../source/drivers/raster/fits.rst:227
+#: ../../../source/drivers/raster/fits.rst:232
+msgid "any"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:216
+#: ../../../source/drivers/raster/fits.rst:221
+msgid "'C' (single precision complex)"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:219
+#: ../../../source/drivers/raster/fits.rst:229
+msgid "OFTString whose value is of the form \"x + yj\""
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:224
+#: ../../../source/drivers/raster/fits.rst:234
+msgid "OFTStringList whose values are of the form \"x + yj\""
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:226
+#: ../../../source/drivers/raster/fits.rst:231
+msgid "'M' (double precision complex)"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:237
+msgid ""
+"Fields with a repeat count > 1 expressing fixed size arrays, or fields using "
+"array descriptors 'P' and 'Q' for variable length arrays are mapped to OGR "
+"OFTxxxxxList data types. The potential 2D structure of such field has no "
+"direct equivalence in OGR, so OGR will expose a linear structure. For fixed "
+"size arrays, the user can retrieve the value of the TDIMxx header in the "
+"layer metadata to recover the dimensionality of the field."
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:244
+msgid ""
+"Fields that have TSCAL and/or TZERO headers are automatically scaled and "
+"offset to the physical value (only applies to numeric data types)"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:247
+msgid ""
+"TNULL headers are used for integer numeric data types and for a single-"
+"occurence field to set a OGR field to NULL."
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:251
+msgid "Layer creation options"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:253
+msgid "The following layer creation options are available:"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:276
+msgid ""
+"When using ogr2ogr or :cpp:func:`GDALVectorTranslate` with a FITS source, "
+"the FITS header will be taken into account, in particular to help to "
+"determine the FITS data type of target columns."
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:281
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:283
+msgid "Listing subdatasets in a MEF .fits:"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:287
+msgid ""
+"$ gdalinfo ../autotest/gdrivers/data/fits/image_in_first_and_second_hdu."
+"fits\n"
+"\n"
+"Driver: FITS/Flexible Image Transport System\n"
+"Files: ../autotest/gdrivers/data/fits/image_in_first_and_second_hdu.fits\n"
+"Size is 512, 512\n"
+"Metadata:\n"
+"EXTNAME=FIRST_IMAGE\n"
+"Subdatasets:\n"
+"SUBDATASET_1_NAME=FITS:\"../autotest/gdrivers/data/fits/"
+"image_in_first_and_second_hdu.fits\":1\n"
+"SUBDATASET_1_DESC=HDU 1 (1x2, 1 band), FIRST_IMAGE\n"
+"SUBDATASET_2_NAME=FITS:\"../autotest/gdrivers/data/fits/"
+"image_in_first_and_second_hdu.fits\":2\n"
+"SUBDATASET_2_DESC=HDU 2 (1x3, 1 band)\n"
+"Corner Coordinates:\n"
+"Upper Left  (    0.0,    0.0)\n"
+"Lower Left  (    0.0,  512.0)\n"
+"Upper Right (  512.0,    0.0)\n"
+"Lower Right (  512.0,  512.0)\n"
+"Center      (  256.0,  256.0)"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:306
+msgid "Opening a given raster HDU:"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:310
+msgid ""
+"$ gdalinfo FITS:\"../autotest/gdrivers/data/fits/"
+"image_in_first_and_second_hdu.fits\":1\n"
+"\n"
+"Driver: FITS/Flexible Image Transport System\n"
+"Files: none associated\n"
+"Size is 1, 2\n"
+"Metadata:\n"
+"EXTNAME=FIRST_IMAGE\n"
+"Corner Coordinates:\n"
+"Upper Left  (    0.0,    0.0)\n"
+"Lower Left  (    0.0,    2.0)\n"
+"Upper Right (    1.0,    0.0)\n"
+"Lower Right (    1.0,    2.0)\n"
+"Center      (    0.5,    1.0)\n"
+"Band 1 Block=1x1 Type=Byte, ColorInterp=Undefined"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:325
+msgid "Listing potential binary tables in a FITS file:"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:329
+msgid "$ ogrinfo my.fits"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:332
+msgid "Converting a GeoPackage layer into a FITS binary table:"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:337
+msgid "$ ogr2ogr out.fits my.gpkg my_table"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:341
+msgid "Other"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:343
+msgid "NOTE: Implemented as :source_file:`frmts/fits/fitsdataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:348
+msgid "Notes on CFITSIO linking in GDAL"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:350
+msgid "Linux"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:352
+msgid "From source"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:353
+msgid ""
+"Install CFITSIO headers from your distro (eg, cfitsio-devel on Fedora; "
+"libcfitsio-dev on Debian-Ubuntu), then compile GDAL as usual. CFITSIO will "
+"be automatically detected and linked."
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:356
+msgid "From distros"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:357
+msgid ""
+"On Fedora/CentOS install CFITSIO then GDAL with dnf (yum): cfitsio is "
+"automatically linked."
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:360
+msgid "MacOSX"
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:361
+msgid ""
+"The last versions of the MacOSX packages are not linked against CFITSIO. "
+"Install CFITSIO as described in the `official documentation <https://heasarc."
+"gsfc.nasa.gov/docs/software/fitsio/fitsio_macosx.html>`__."
+msgstr ""
+
+#: ../../../source/drivers/raster/fits.rst:365
+msgid "Driver capabilities"
+msgstr ""

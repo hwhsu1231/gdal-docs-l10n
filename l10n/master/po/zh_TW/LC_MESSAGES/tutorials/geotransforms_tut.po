@@ -1,0 +1,102 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/tutorials/geotransforms_tut.rst:5
+msgid "Geotransform Tutorial"
+msgstr ""
+
+#: ../../../source/tutorials/geotransforms_tut.rst:8
+msgid "Introduction to Geotransforms:"
+msgstr ""
+
+#: ../../../source/tutorials/geotransforms_tut.rst:9
+msgid ""
+"A geotransform is an affine transformation from the image coordinate space "
+"(row, column), also known as (pixel, line) to the georeferenced coordinate "
+"space (projected or geographic coordinates)."
+msgstr ""
+
+#: ../../../source/tutorials/geotransforms_tut.rst:13
+msgid "A geotransform consists in a set of 6 coefficients:"
+msgstr ""
+
+#: ../../../source/tutorials/geotransforms_tut.rst:15
+msgid ""
+"``GT(0)`` x-coordinate of the upper-left corner of the upper-left pixel."
+msgstr ""
+
+#: ../../../source/tutorials/geotransforms_tut.rst:16
+msgid "``GT(1)`` w-e pixel resolution / pixel width."
+msgstr ""
+
+#: ../../../source/tutorials/geotransforms_tut.rst:17
+msgid "``GT(2)`` row rotation (typically zero)."
+msgstr ""
+
+#: ../../../source/tutorials/geotransforms_tut.rst:18
+msgid ""
+"``GT(3)`` y-coordinate of the upper-left corner of the upper-left pixel."
+msgstr ""
+
+#: ../../../source/tutorials/geotransforms_tut.rst:19
+msgid "``GT(4)`` column rotation (typically zero)."
+msgstr ""
+
+#: ../../../source/tutorials/geotransforms_tut.rst:20
+msgid ""
+"``GT(5)`` n-s pixel resolution / pixel height (negative value for a north-up "
+"image)."
+msgstr ""
+
+#: ../../../source/tutorials/geotransforms_tut.rst:23
+msgid ""
+"Transformation from image coordinate space to georeferenced coordinate space:"
+msgstr ""
+
+#: ../../../source/tutorials/geotransforms_tut.rst:25
+msgid ""
+"X_geo = GT(0) + X_pixel * GT(1) + Y_line * GT(2)\n"
+"Y_geo = GT(3) + X_pixel * GT(4) + Y_line * GT(5)"
+msgstr ""
+
+#: ../../../source/tutorials/geotransforms_tut.rst:30
+msgid ""
+"Note that the pixel/line coordinates in the above are from (0.0,0.0) at the "
+"top left corner of the top left pixel to (width_in_pixels,height_in_pixels) "
+"at the bottom right corner of the bottom right pixel. The pixel/line "
+"location of the center of the top left pixel would therefore be (0.5,0.5)."
+msgstr ""
+
+#: ../../../source/tutorials/geotransforms_tut.rst:35
+msgid "In case of north up images:"
+msgstr ""
+
+#: ../../../source/tutorials/geotransforms_tut.rst:36
+msgid "``GT(2)``, ``GT(4)`` coefficients are zero."
+msgstr ""
+
+#: ../../../source/tutorials/geotransforms_tut.rst:37
+msgid "``GT(1)``, ``GT(5)`` is the pixel size."
+msgstr ""
+
+#: ../../../source/tutorials/geotransforms_tut.rst:38
+msgid ""
+"``GT(0)``, ``GT(3)`` position is the top left corner of the top left pixel "
+"of the raster."
+msgstr ""

@@ -1,0 +1,59 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/ndf.rst:5
+msgid "NDF -- NLAPS Data Format"
+msgstr ""
+
+#: ../../../source/drivers/raster/ndf.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/ndf.rst:7
+msgid "NDF"
+msgstr ""
+
+#: ../../../source/drivers/raster/ndf.rst:11
+msgid ""
+"GDAL has limited support for reading NLAPS Data Format files. This is a "
+"format primarily used by the Eros Data Center for distribution of Landsat "
+"data. NDF datasets consist of a header file (often with the extension .H1) "
+"and one or more associated raw data files (often .I1, .I2, ...). To open a "
+"dataset select the header file, often with the extension .H1, .H2 or .HD."
+msgstr ""
+
+#: ../../../source/drivers/raster/ndf.rst:18
+msgid ""
+"The NDF driver only supports 8bit data. The only supported projection is "
+"UTM. NDF version 1 (NDF_VERSION=0.00) and NDF version 2 are both supported."
+msgstr ""
+
+#: ../../../source/drivers/raster/ndf.rst:22
+msgid "NOTE: Implemented as :source_file:`frmts/raw/ndfdataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/ndf.rst:24
+msgid ""
+"See Also: `NLAPS Data Format Specification <http://landsat.usgs.gov/"
+"documents/NLAPSII.pdf>`__."
+msgstr ""
+
+#: ../../../source/drivers/raster/ndf.rst:28
+msgid "Driver capabilities"
+msgstr ""

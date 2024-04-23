@@ -1,0 +1,453 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/zarr.rst:5
+#: ../../../source/drivers/raster/zarr.rst:9
+msgid "Zarr"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:11
+msgid ""
+"Built-in by default, but liblz4, libxz (lzma), libzstd and libblosc strongly "
+"recommended to get all compressors"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:14
+msgid ""
+"Zarr is a format for the storage of chunked, compressed, N-dimensional "
+"arrays. This format is supported for read and write access, and using the "
+"traditional 2D raster API or the newer multidimensional API"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:18
+msgid ""
+"The driver supports the Zarr V2 specification, and has experimental support "
+"for the in-progress Zarr V3 specification."
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:23
+msgid ""
+"The current implementation of Zarr V3 before GDAL 3.8 is incompatible with "
+"the latest evolutions of the Zarr V3 specification. GDAL 3.8 is compatible "
+"with the Zarr V3 specification at date 2023-May-7, and is not interoperable "
+"with Zarr V3 datasets produced by earlier GDAL versions."
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:29
+msgid ""
+"Local and cloud storage (see :ref:`virtual_file_systems`) are supported in "
+"read and write."
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:32
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:43
+msgid "Concepts"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:45
+msgid ""
+"A Zarr dataset is made of a hierarchy of nodes, with intermediate nodes "
+"being groups (:cpp:class:`GDALGroup`), and leafs being arrays (:cpp:class:"
+"`GDALMDArray`)."
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:49
+msgid "Dataset name"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:51
+msgid ""
+"For Zarr V2, the dataset name recognized by the Open() method of the driver "
+"is a directory that contains a :file:`.zgroup` file, a :file:`.zarray` file "
+"or a :file:`.zmetadata` file (consolidated metadata). For faster "
+"exploration, the driver will use consolidated metadata by default when found."
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:56
+msgid ""
+"For Zarr V3, the dataset name recognized by the Open() method of the driver "
+"is a directory that contains a :file:`zarr.json` file (root of the dataset)."
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:59
+msgid ""
+"For datasets on file systems where file listing is not reliable, as often "
+"with /vsicurl/, it is also possible to prefix the directory name with ``ZARR:"
+"``, and it is necessary to surround the /vsicurl/-prefixed URL with double "
+"quotes. e.g `ZARR:\"/vsicurl/https://example.org/foo.zarr\"`. Note that when "
+"passing such string in a command line shell, extra quoting might be "
+"necessary to preserve the double-quoting."
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:66
+msgid ""
+"For example with a Bash shell, the whole connection string needs to be "
+"surrounded with single-quote characters:"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:71
+msgid "gdalmdiminfo 'ZARR:\"/vsicurl/https://example.org/foo.zarr\"'"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:75
+msgid "Compression methods"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:77
+msgid ""
+"Compression methods available depend on how GDAL is built, and `libblosc "
+"<https://github.com/Blosc/c-blosc>`__ too."
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:80
+msgid "A full-feature build will show:"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:84
+msgid ""
+"$ gdalinfo --format Zarr\n"
+"\n"
+"[...]\n"
+"\n"
+"  Other metadata items:\n"
+"    COMPRESSORS=blosc,zlib,gzip,lzma,zstd,lz4\n"
+"    BLOSC_COMPRESSORS=blosclz,lz4,lz4hc,snappy,zlib,zstd"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:92
+msgid ""
+"For specific uses, it is also possible to register at run-time extra "
+"compressors and decompressors with :cpp:func:`CPLRegisterCompressor` and :"
+"cpp:func:`CPLRegisterDecompressor`."
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:96
+msgid "XArray _ARRAY_DIMENSIONS"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:98
+msgid ""
+"The driver support the ``_ARRAY_DIMENSIONS`` special attribute used by "
+"`XArray <http://xarray.pydata.org/en/stable/generated/xarray.open_zarr."
+"html>`__ to store the dimension names of an array."
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:103
+msgid "NCZarr extensions"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:105
+msgid ""
+"The driver support the `NCZarr v2 <https://www.unidata.ucar.edu/software/"
+"netcdf/documentation/NUG/nczarr_head.html>`__ extensions of storing the "
+"dimension names of an array (read-only)"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:110
+msgid "SRS encoding"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:112
+msgid ""
+"The Zarr specification has no provision for spatial reference system "
+"encoding. GDAL uses a ``_CRS`` attribute that is a dictionary that may "
+"contain one or several of the following keys: ``url`` (using a OGC CRS URL), "
+"``wkt`` (WKT:2019 used by default on writing, WKT1 also supported on "
+"reading.), ``projjson``. On reading, it will use ``url`` by default, if not "
+"found will fallback to ``wkt`` and then ``projjson``."
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:119
+msgid ""
+"{\n"
+"  \"_CRS\":{\n"
+"    \"wkt\":\"PROJCRS[\\\"NAD27 \\/ UTM zone 11N\\\",BASEGEOGCRS[\\\"NAD27\\"
+"\",DATUM[\\\"North American Datum 1927\\\",ELLIPSOID[\\\"Clarke 1866\\"
+"\",6378206.4,294.978698213898,LENGTHUNIT[\\\"metre\\\",1]]],PRIMEM[\\"
+"\"Greenwich\\\",0,ANGLEUNIT[\\\"degree\\\",0.0174532925199433]],ID[\\\"EPSG\\"
+"\",4267]],CONVERSION[\\\"UTM zone 11N\\\",METHOD[\\\"Transverse Mercator\\\","
+"ID[\\\"EPSG\\\",9807]],PARAMETER[\\\"Latitude of natural origin\\\",0,"
+"ANGLEUNIT[\\\"degree\\\",0.0174532925199433],ID[\\\"EPSG\\\",8801]],"
+"PARAMETER[\\\"Longitude of natural origin\\\",-117,ANGLEUNIT[\\\"degree\\"
+"\",0.0174532925199433],ID[\\\"EPSG\\\",8802]],PARAMETER[\\\"Scale factor at "
+"natural origin\\\",0.9996,SCALEUNIT[\\\"unity\\\",1],ID[\\\"EPSG\\\",8805]],"
+"PARAMETER[\\\"False easting\\\",500000,LENGTHUNIT[\\\"metre\\\",1],ID[\\"
+"\"EPSG\\\",8806]],PARAMETER[\\\"False northing\\\",0,LENGTHUNIT[\\\"metre\\"
+"\",1],ID[\\\"EPSG\\\",8807]]],CS[Cartesian,2],AXIS[\\\"easting\\\",east,"
+"ORDER[1],LENGTHUNIT[\\\"metre\\\",1]],AXIS[\\\"northing\\\",north,ORDER[2],"
+"LENGTHUNIT[\\\"metre\\\",1]],ID[\\\"EPSG\\\",26711]]\",\n"
+"\n"
+"    \"projjson\":{\n"
+"      \"$schema\":\"https:\\/\\/proj.org\\/schemas\\/v0.2\\/projjson.schema."
+"json\",\n"
+"      \"type\":\"ProjectedCRS\",\n"
+"      \"name\":\"NAD27 \\/ UTM zone 11N\",\n"
+"      \"base_crs\":{\n"
+"        \"name\":\"NAD27\",\n"
+"        \"datum\":{\n"
+"          \"type\":\"GeodeticReferenceFrame\",\n"
+"          \"name\":\"North American Datum 1927\",\n"
+"          \"ellipsoid\":{\n"
+"            \"name\":\"Clarke 1866\",\n"
+"            \"semi_major_axis\":6378206.4,\n"
+"            \"inverse_flattening\":294.978698213898\n"
+"          }\n"
+"        },\n"
+"        \"coordinate_system\":{\n"
+"          \"subtype\":\"ellipsoidal\",\n"
+"          \"axis\":[\n"
+"            {\n"
+"              \"name\":\"Geodetic latitude\",\n"
+"              \"abbreviation\":\"Lat\",\n"
+"              \"direction\":\"north\",\n"
+"              \"unit\":\"degree\"\n"
+"            },\n"
+"            {\n"
+"              \"name\":\"Geodetic longitude\",\n"
+"              \"abbreviation\":\"Lon\",\n"
+"              \"direction\":\"east\",\n"
+"              \"unit\":\"degree\"\n"
+"            }\n"
+"          ]\n"
+"        },\n"
+"        \"id\":{\n"
+"          \"authority\":\"EPSG\",\n"
+"          \"code\":4267\n"
+"        }\n"
+"      },\n"
+"      \"conversion\":{\n"
+"        \"name\":\"UTM zone 11N\",\n"
+"        \"method\":{\n"
+"          \"name\":\"Transverse Mercator\",\n"
+"          \"id\":{\n"
+"            \"authority\":\"EPSG\",\n"
+"            \"code\":9807\n"
+"          }\n"
+"        },\n"
+"        \"parameters\":[\n"
+"          {\n"
+"            \"name\":\"Latitude of natural origin\",\n"
+"            \"value\":0,\n"
+"            \"unit\":\"degree\",\n"
+"            \"id\":{\n"
+"              \"authority\":\"EPSG\",\n"
+"              \"code\":8801\n"
+"            }\n"
+"          },\n"
+"          {\n"
+"            \"name\":\"Longitude of natural origin\",\n"
+"            \"value\":-117,\n"
+"            \"unit\":\"degree\",\n"
+"            \"id\":{\n"
+"              \"authority\":\"EPSG\",\n"
+"              \"code\":8802\n"
+"            }\n"
+"          },\n"
+"          {\n"
+"            \"name\":\"Scale factor at natural origin\",\n"
+"            \"value\":0.9996,\n"
+"            \"unit\":\"unity\",\n"
+"            \"id\":{\n"
+"              \"authority\":\"EPSG\",\n"
+"              \"code\":8805\n"
+"            }\n"
+"          },\n"
+"          {\n"
+"            \"name\":\"False easting\",\n"
+"            \"value\":500000,\n"
+"            \"unit\":\"metre\",\n"
+"            \"id\":{\n"
+"              \"authority\":\"EPSG\",\n"
+"              \"code\":8806\n"
+"            }\n"
+"          },\n"
+"          {\n"
+"            \"name\":\"False northing\",\n"
+"            \"value\":0,\n"
+"            \"unit\":\"metre\",\n"
+"            \"id\":{\n"
+"              \"authority\":\"EPSG\",\n"
+"              \"code\":8807\n"
+"            }\n"
+"          }\n"
+"        ]\n"
+"      },\n"
+"      \"coordinate_system\":{\n"
+"        \"subtype\":\"Cartesian\",\n"
+"        \"axis\":[\n"
+"          {\n"
+"            \"name\":\"Easting\",\n"
+"            \"abbreviation\":\"\",\n"
+"            \"direction\":\"east\",\n"
+"            \"unit\":\"metre\"\n"
+"          },\n"
+"          {\n"
+"            \"name\":\"Northing\",\n"
+"            \"abbreviation\":\"\",\n"
+"            \"direction\":\"north\",\n"
+"            \"unit\":\"metre\"\n"
+"          }\n"
+"        ]\n"
+"      },\n"
+"      \"id\":{\n"
+"        \"authority\":\"EPSG\",\n"
+"        \"code\":26711\n"
+"      }\n"
+"    },\n"
+"\n"
+"    \"url\":\"http:\\/\\/www.opengis.net\\/def\\/crs\\/EPSG\\/0\\/26711\"\n"
+"  }\n"
+"}"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:247
+msgid "Particularities of the classic raster API"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:249
+msgid ""
+"If the Zarr dataset contains one single array with 2 dimensions, it will be "
+"exposed as a regular GDALDataset when using the classic raster API. If the "
+"dataset contains more than one such single array, or arrays with 3 or more "
+"dimensions, the driver will list subdatasets to access each array and/or 2D "
+"slices within arrays with 3 or more dimensions."
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:256
+msgid "Open options"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:258
+msgid "The following dataset open options are available:"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:320
+msgid "Multi-threaded caching"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:322
+msgid ""
+"The driver implements the :cpp:func:`GDALMDArray::AdviseRead` method. This "
+"proceed to multi-threaded decoding of the tiles that intersect the area of "
+"interest specified. A sufficient cache size must be specified. The call is "
+"blocking."
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:327
+msgid "The options that can be passed to the methods are:"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:329
+msgid ""
+"**CACHE_SIZE=value_in_byte**: Maximum RAM to use, expressed in number of "
+"bytes. If not specified, half of the remaining GDAL block cache size will be "
+"used. Note: the caching mechanism of Zarr array will not update this "
+"remaining block cache size."
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:334
+msgid ""
+"**NUM_THREADS=integer or ALL_CPUS**: Number of threads to use in parallel. "
+"If not specified, the :config:`GDAL_NUM_THREADS` configuration option will "
+"be taken into account."
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:339
+msgid "Creation options"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:341
+msgid ""
+"The following options are creation options of the classic raster API, or "
+"array-level creation options for the multidimensional API (must be prefixed "
+"with ``ARRAY:`` using :program:`gdalmdimtranslate`):"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:465
+msgid ""
+"The following options are creation options of the classic raster API, or "
+"dataset-level creation options for the multidimensional API :"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:479
+msgid ""
+"The following options are creation options of the classic raster API only:"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:511
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:513
+msgid "Get information on the dataset using the multidimensional tools:"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:517
+msgid "gdalmdiminfo my.zarr"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:520
+msgid "Convert a netCDF file to ZARR using the multidimensional tools:"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:524
+msgid "gdalmdimtranslate in.nc out.zarr -co ARRAY:COMPRESS=GZIP"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:527
+msgid ""
+"Convert a 2D slice (the one at index 0 of the non-2D dimension) of a 3D "
+"array to GeoTIFF:"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:531
+msgid "gdal_translate 'ZARR:\"my.zarr\":/group/myarray:0' out.tif"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:535
+msgid ""
+"The single quoting around the connection string is specific to the Bash "
+"shell to make sure that the double quoting is preserved."
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:540
+msgid "See Also:"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:542
+msgid ""
+"`Zarr format and its Python implementation <https://zarr.readthedocs.io/en/"
+"stable/>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/zarr.rst:543
+msgid ""
+"`(In progress) Zarr V3 specification <https://zarr-specs.readthedocs.io/en/"
+"core-protocol-v3.0-dev/>`__"
+msgstr ""

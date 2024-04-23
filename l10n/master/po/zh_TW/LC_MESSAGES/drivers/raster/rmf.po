@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/rmf.rst:5
+msgid "RMF -- Raster Matrix Format"
+msgstr ""
+
+#: ../../../source/drivers/raster/rmf.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/rmf.rst:7
+msgid "RMF"
+msgstr ""
+
+#: ../../../source/drivers/raster/rmf.rst:11
+msgid ""
+"RMF is a simple tiled raster format used in the GIS \"Integration\" and "
+"\"Panorama\" GIS. The format itself has very poor capabilities."
+msgstr ""
+
+#: ../../../source/drivers/raster/rmf.rst:14
+msgid ""
+"There are two flavors of RMF called MTW and RSW. MTW supports 16-bit integer "
+"and 32/64-bit floating point data in a single channel and aimed to store DEM "
+"data. RSW is a general purpose raster. It supports single channel "
+"colormapped or three channel RGB images. Only 8-bit data can be stored in "
+"RSW. Simple georeferencing can be provided for both image types."
+msgstr ""
+
+#: ../../../source/drivers/raster/rmf.rst:22
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/rmf.rst:33
+msgid "Metadata"
+msgstr ""
+
+#: ../../../source/drivers/raster/rmf.rst:35
+msgid "**ELEVATION_MINIMUM**: Minimum elevation value (MTW only)."
+msgstr ""
+
+#: ../../../source/drivers/raster/rmf.rst:36
+msgid "**ELEVATION_MAXIMUM**: Maximum elevation value (MTW only)."
+msgstr ""
+
+#: ../../../source/drivers/raster/rmf.rst:37
+msgid ""
+"**ELEVATION_UNITS**: Name of the units for raster values (MTW only). Can be "
+"\"m\" (meters), \"cm\" (centimeters), \"dm\" (decimeters), "
+"\"mm\" (millimeters)."
+msgstr ""
+
+#: ../../../source/drivers/raster/rmf.rst:40
+msgid ""
+"**ELEVATION_TYPE**: Could be either 0 (absolute elevation) or 1 (total "
+"elevation). MTW only."
+msgstr ""
+
+#: ../../../source/drivers/raster/rmf.rst:44
+msgid "Open Options"
+msgstr ""
+
+#: ../../../source/drivers/raster/rmf.rst:53
+msgid "Creation Options"
+msgstr ""
+
+#: ../../../source/drivers/raster/rmf.rst:105
+msgid "See Also:"
+msgstr ""
+
+#: ../../../source/drivers/raster/rmf.rst:107
+msgid "Implemented as :source_file:`frmts/rmf/rmfdataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/rmf.rst:108
+msgid "`\"Panorama\" GIS homepage <http://www.gisinfo.ru/index_en.htm>`__"
+msgstr ""

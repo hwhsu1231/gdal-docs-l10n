@@ -1,0 +1,186 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/pds.rst:5
+msgid "PDS -- Planetary Data System v3"
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:7
+msgid "PDS"
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:11
+msgid ""
+"PDS is a format used primarily by NASA to store and distribute solar, lunar "
+"and planetary imagery data. GDAL provides read-only access to PDS formatted "
+"imagery data."
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:15
+msgid ""
+"PDS files often have the extension .img, sometimes with an associated .lbl "
+"(label) file. When a .lbl file exists it should be used as the dataset name "
+"rather than the .img file."
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:19
+msgid ""
+"In addition to support for most PDS imagery configurations, this driver also "
+"reads georeferencing and coordinate system information as well as selected "
+"other header metadata."
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:23
+msgid ""
+"Implementation of this driver was supported by the United States Geological "
+"Survey."
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:27
+msgid ""
+"PDS3 datasets can incorporate a VICAR header. By default, GDAL will use the "
+"PDS driver in that situation. Starting with GDAL 3.1, if the :config:"
+"`GDAL_TRY_PDS3_WITH_VICAR` configuration option is set to YES, the dataset "
+"will be opened by the :ref:`VICAR <raster.vicar>` driver."
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:33
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:40
+msgid "Configuration options"
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:51
+msgid "Georeferencing"
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:53
+msgid ""
+"Due to ambiguities in the PDS specification, the georeferencing of some "
+"products is subtly or grossly incorrect. There are configuration variables "
+"which may be set for these products to correct the interpretation of the "
+"georeferencing. Some details are available in `ticket #5941 <http://trac."
+"osgeo.org/gdal/ticket/5941>`__ and `ticket #3940 <http://trac.osgeo.org/gdal/"
+"ticket/3940>`__."
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:60
+msgid ""
+"As a test, download both the label and image for the lunar `LOLA DEM <http://"
+"pds-geosciences.wustl.edu/missions/lro/lola.htm>`__ (digital elevation file) "
+"`LOLA PDS label <http://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/"
+"lrolol_1xxx/data/lola_gdr/cylindrical/img/ldem_4.lbl>`__ and `LOLA PDS v3 "
+"image <http://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/"
+"data/lola_gdr/cylindrical/img/ldem_4.img>`__. Using gdalinfo, the reported "
+"centered should be perfectly at 0.0, 0.0 meters in Cartesian space without "
+"any configuration options."
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:70
+msgid "$ gdalinfo ldem_4.lbl"
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:72
+msgid "Example conversion to GeoTiff:"
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:74
+msgid "$ gdal_translate ldem_4.lbl out_LOLA.tif"
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:76
+#: ../../../source/drivers/raster/pds.rst:103
+msgid ""
+"Example conversion and applying offset and multiplier values as defined in "
+"some PDS labels:"
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:79
+msgid "$ gdal_translate -ot Float32 -unscale ldem_4.lbl out_LOLA_32bit.tif"
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:83
+msgid ""
+"To show an example to correct an offset issue we can use the `MOLA DEM "
+"<http://pds-geosciences.wustl.edu/missions/mgs/megdr.html>`__ from the PDS. "
+"Download both the `MOLA PDS label <http://pds-geosciences.wustl.edu/mgs/mgs-"
+"m-mola-5-megdr-l3-v1/mgsl_300x/meg004/megt90n000cb.lbl>`__ and `MOLA PDS v3 "
+"image <http://pds-geosciences.wustl.edu/mgs/mgs-m-mola-5-megdr-l3-v1/"
+"mgsl_300x/meg004/megt90n000cb.img>`__. The MOLA labels currently contain a "
+"one pixel offset. To read this file correctly, use GDAL with these options."
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:92
+msgid ""
+"$ gdalinfo --config PDS_SampleProjOffset_Shift -0.5 --config "
+"PDS_LineProjOffset_Shift -0.5 megt90n000cb.lbl"
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:95
+msgid ""
+"Again with these optional parameters, the center should be perfectly 0.0, "
+"0.0 meters in Cartesian space."
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:98
+msgid "Example conversion for MOLA:"
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:100
+msgid ""
+"$ gdal_translate --config PDS_SampleProjOffset_Shift -0.5 --config "
+"PDS_LineProjOffset_Shift -0.5 megt90n000cb.lbl out_MOLA_4ppd.tif"
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:106
+msgid ""
+"$ gdal_translate -ot Float32 -unscale --config PDS_SampleProjOffset_Shift "
+"-0.5 --config PDS_LineProjOffset_Shift -0.5 megt90n000cb.lbl "
+"out_MOLA_4ppd_32bit.tif"
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:112
+msgid "PDS is part of a family of related formats including ISIS2 and ISIS3."
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:116
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:118
+msgid "Implemented as :source_file:`frmts/pds/pdsdataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:119
+msgid "`NASA Planetary Data System <http://pds.nasa.gov/>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:120
+msgid ":ref:`raster.isis2` driver."
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:121
+msgid ":ref:`raster.isis3` driver."
+msgstr ""

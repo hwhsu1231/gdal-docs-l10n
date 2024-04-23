@@ -1,0 +1,235 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/safe.rst:5
+msgid "SAFE -- Sentinel-1 SAFE XML Product"
+msgstr ""
+
+#: ../../../source/drivers/raster/safe.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/safe.rst:7
+msgid "SAFE"
+msgstr ""
+
+#: ../../../source/drivers/raster/safe.rst:11
+msgid ""
+"Driver for Sentinel products. Currently supports only Sentinel-1 SAR "
+"products. See also the :ref:`GDAL Sentinel-2 driver <raster.sentinel2>`"
+msgstr ""
+
+#: ../../../source/drivers/raster/safe.rst:14
+msgid ""
+"SENTINEL data products are distributed using a SENTINEL-specific variation "
+"of the Standard Archive Format for Europe (SAFE) format specification. The "
+"SAFE format has been designed to act as a common format for archiving and "
+"conveying data within ESA Earth Observation archiving facilities."
+msgstr ""
+
+#: ../../../source/drivers/raster/safe.rst:20
+msgid ""
+"The SAFE driver will be used if the manifest.safe or the containing "
+"directory is selected, and it can treat all the imagery as one consistent "
+"dataset."
+msgstr ""
+
+#: ../../../source/drivers/raster/safe.rst:24
+msgid ""
+"The SAFE driver also reads geolocation grid points from the metadata and "
+"represents them as GCPs on the dataset."
+msgstr ""
+
+#: ../../../source/drivers/raster/safe.rst:27
+msgid ""
+"ESA will be distributing other satellite datasets in this format; however, "
+"at this time this driver only supports specific Sentinel-1 SAR products. All "
+"other will be ignored, or result in various runtime errors."
+msgstr ""
+
+#: ../../../source/drivers/raster/safe.rst:33
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/safe.rst:40
+msgid "Multiple measurements"
+msgstr ""
+
+#: ../../../source/drivers/raster/safe.rst:42
+msgid ""
+"If the product contains multiple measurements (for example multiple "
+"polarizations), each one is available as a raster band - if the swath is the "
+"same. When the swath is the same, the geographic area is the same."
+msgstr ""
+
+#: ../../../source/drivers/raster/safe.rst:46
+msgid ""
+"If the product contains multiple swaths and multiple polatizations, the "
+"driver shows the first swath by default. To access other swaths, the user "
+"must select a specific subdataset."
+msgstr ""
+
+#: ../../../source/drivers/raster/safe.rst:50
+msgid ""
+"The syntax of subdataset naming and their content has been significantly "
+"change in GDAL 3.4."
+msgstr ""
+
+#: ../../../source/drivers/raster/safe.rst:54
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/drivers/raster/safe.rst:56
+msgid "Opening the Sentinel-1 product:"
+msgstr ""
+
+#: ../../../source/drivers/raster/safe.rst:60
+msgid ""
+"$ gdalinfo "
+"S1A_IW_GRDH_1SDV_20150705T064241_20150705T064306_006672_008EA0_24EE.SAFE/"
+"manifest.safe"
+msgstr ""
+
+#: ../../../source/drivers/raster/safe.rst:64
+msgid ""
+"Driver: SAFE/Sentinel-1 SAR SAFE Product\n"
+"Files: S1A_IW_GRDH_1SDV_20150705T064241_20150705T064306_006672_008EA0_24EE."
+"SAFE/manifest.safe\n"
+"       S1A_IW_GRDH_1SDV_20150705T064241_20150705T064306_006672_008EA0_24EE."
+"SAFE/measurement/s1a-iw-grd-"
+"vh-20150705t064241-20150705t064306-006672-008ea0-002.tiff\n"
+"       S1A_IW_GRDH_1SDV_20150705T064241_20150705T064306_006672_008EA0_24EE."
+"SAFE/measurement/s1a-iw-grd-"
+"vv-20150705t064241-20150705t064306-006672-008ea0-001.tiff\n"
+"Size is 256, 167\n"
+"Coordinate System is `'\n"
+"GCP Projection =\n"
+"GEOGCS[\"WGS 84\",\n"
+"    DATUM[\"WGS_1984\",\n"
+"        SPHEROID[\"WGS 84\",6378137,298.257223563,\n"
+"            AUTHORITY[\"EPSG\",\"7030\"]],\n"
+"        AUTHORITY[\"EPSG\",\"6326\"]],\n"
+"    PRIMEM[\"Greenwich\",0,\n"
+"        AUTHORITY[\"EPSG\",\"8901\"]],\n"
+"    UNIT[\"degree\",0.0174532925199433,\n"
+"        AUTHORITY[\"EPSG\",\"9122\"]],\n"
+"    AUTHORITY[\"EPSG\",\"4326\"]]\n"
+"GCP[  0]: Id=1, Info=\n"
+"          (0,0) -> (-8.03500070209827,39.6332161725022,141.853266630322)\n"
+"Metadata:\n"
+"  ACQUISITION_START_TIME=2015-07-05T06:42:41.504840\n"
+"  ACQUISITION_STOP_TIME=2015-07-05T06:43:06.503530\n"
+"  BEAM_MODE=IW\n"
+"  BEAM_SWATH=IW\n"
+"  FACILITY_IDENTIFIER=UPA_\n"
+"  LINE_SPACING=1.000655e+01\n"
+"  MISSION_ID=S1A\n"
+"  MODE=IW\n"
+"  ORBIT_DIRECTION=DESCENDING\n"
+"  ORBIT_NUMBER=6672\n"
+"  PIXEL_SPACING=1.000000e+01\n"
+"  PRODUCT_TYPE=GRD\n"
+"  SATELLITE_IDENTIFIER=SENTINEL-1\n"
+"  SENSOR_IDENTIFIER=SAR\n"
+"  SWATH=IW\n"
+"Subdatasets:\n"
+"  SUBDATASET_1_NAME=SENTINEL1_DS:"
+"S1A_IW_GRDH_1SDV_20150705T064241_20150705T064306_006672_008EA0_24EE.SAFE:"
+"IW_VH\n"
+"  SUBDATASET_1_DESC=Single band with IW swath and VH polarization\n"
+"  SUBDATASET_2_NAME=SENTINEL1_DS:"
+"S1A_IW_GRDH_1SDV_20150705T064241_20150705T064306_006672_008EA0_24EE.SAFE:"
+"IW_VV\n"
+"  SUBDATASET_2_DESC=Single band with IW swath and VV polarization\n"
+"  SUBDATASET_3_NAME=SENTINEL1_DS:"
+"S1A_IW_GRDH_1SDV_20150705T064241_20150705T064306_006672_008EA0_24EE.SAFE:IW\n"
+"  SUBDATASET_3_DESC=IW swath with all polarizations as bands\n"
+"Corner Coordinates:\n"
+"Upper Left  (    0.0,    0.0)\n"
+"Lower Left  (    0.0,  167.0)\n"
+"Upper Right (  256.0,    0.0)\n"
+"Lower Right (  256.0,  167.0)\n"
+"Center      (  128.0,   83.5)\n"
+"Band 1 Block=256x16 Type=UInt16, ColorInterp=Undefined\n"
+"  Metadata:\n"
+"    POLARISATION=VH\n"
+"    SWATH=IW\n"
+"Band 2 Block=256x16 Type=UInt16, ColorInterp=Undefined\n"
+"  Metadata:\n"
+"    POLARISATION=VV\n"
+"    SWATH=IW"
+msgstr ""
+
+#: ../../../source/drivers/raster/safe.rst:121
+msgid "It's not mandatory to open manifest.safe, just pass the folder name:"
+msgstr ""
+
+#: ../../../source/drivers/raster/safe.rst:125
+msgid ""
+"$ gdalinfo "
+"S1A_IW_GRDH_1SDV_20150705T064241_20150705T064306_006672_008EA0_24EE.SAFE"
+msgstr ""
+
+#: ../../../source/drivers/raster/safe.rst:127
+msgid "Opening a single measurement (for example IW/VH):"
+msgstr ""
+
+#: ../../../source/drivers/raster/safe.rst:131
+msgid ""
+"$ gdalinfo SENTINEL1_DS:"
+"S1A_IW_GRDH_1SDV_20150705T064241_20150705T064306_006672_008EA0_24EE.SAFE:"
+"IW_VV"
+msgstr ""
+
+#: ../../../source/drivers/raster/safe.rst:134
+msgid "or starting with GDAL 3.4"
+msgstr ""
+
+#: ../../../source/drivers/raster/safe.rst:138
+msgid "$ gdalinfo SENTINEL1_CALIB:UNCALIB:test.SAFE:IW_VV:AMPLITUDE"
+msgstr ""
+
+#: ../../../source/drivers/raster/safe.rst:141
+msgid "Data Calibration"
+msgstr ""
+
+#: ../../../source/drivers/raster/safe.rst:143
+msgid ""
+"Starting with GDAL 3.4, calibration is applied for SIGMA0, BETA0 and GAMMA "
+"calibration subdataset"
+msgstr ""
+
+#: ../../../source/drivers/raster/safe.rst:146
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/safe.rst:148
+msgid ""
+"`SAR Formats (ESA Sentinel Online) <https://sentinel.esa.int/web/sentinel/"
+"user-guides/sentinel-1-sar/data-formats/sar-formats>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/safe.rst:150
+msgid ""
+"`SAFE Specification (ESA Sentinel Online) <https://sentinel.esa.int/web/"
+"sentinel/user-guides/sentinel-1-sar/data-formats/safe-specification>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/safe.rst:152
+msgid ":ref:`GDAL Sentinel-2 driver <raster.sentinel2>`"
+msgstr ""

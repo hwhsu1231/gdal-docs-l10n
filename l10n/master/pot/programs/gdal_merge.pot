@@ -1,0 +1,269 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/programs/gdal_merge.rst:5
+msgid "gdal_merge.py"
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:9
+msgid "Mosaics a set of images."
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:14
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:16
+msgid ""
+"gdal_merge.py [--help] [--help-general]\n"
+"              [-o <out_filename>] [-of <out_format>] [-co "
+"<NAME>=<VALUE>]...\n"
+"              [-ps <pixelsize_x> <pixelsize_y>] [-tap] [-separate] [-q] [-v] "
+"[-pct]\n"
+"              [-ul_lr <ulx> <uly> <lrx> <lry>] [-init \"<value>[ <value>]..."
+"\"]\n"
+"              [-n <nodata_value>] [-a_nodata <output_nodata_value>]\n"
+"              [-ot <datatype>] [-createonly] <intput_file> [<intput_file>]..."
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:26
+msgid "Description"
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:28
+msgid ""
+"This utility will automatically mosaic a set of images.  All the images must "
+"be in the same coordinate system and have a matching number of bands, but "
+"they may be overlapping, and at different resolutions. In areas of overlap, "
+"the last image will be copied over earlier ones. Nodata/transparency values "
+"are considered on a band by band level, i.e. a nodata/transparent pixel on "
+"one source band will not set a nodata/transparent value on all bands for the "
+"target pixel in the resulting raster nor will it overwrite a valid pixel "
+"value."
+msgstr ""
+
+#: ../../../source/programs/options/help.rst:3
+msgid "Show this help message and exit"
+msgstr ""
+
+#: ../../../source/programs/options/help_general.rst:3
+msgid ""
+"Gives a brief usage message for the generic GDAL commandline options and "
+"exit."
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:42
+msgid ""
+"The name of the output file, which will be created if it does not already "
+"exist (defaults to \"out.tif\")."
+msgstr ""
+
+#: ../../../source/programs/options/of.rst:3
+msgid ""
+"Select the output format. Starting with GDAL 2.3, if not specified, the "
+"format is guessed from the extension (previously was GTiff). Use the short "
+"format name."
+msgstr ""
+
+#: ../../../source/programs/options/co.rst:5
+msgid ""
+"Many formats have one or more optional creation options that can be used to "
+"control particulars about the file created. For instance, the GeoTIFF driver "
+"supports creation options to control compression, and whether the file "
+"should be tiled."
+msgstr ""
+
+#: ../../../source/programs/options/co.rst:10
+msgid ""
+"The creation options available vary by format driver, and some simple "
+"formats have no creation options at all. A list of options supported for a "
+"format can be listed with the :ref:`--formats "
+"<raster_common_options_formats>` command line option but the documentation "
+"for the format is the definitive source of information on driver creation "
+"options. See :ref:`raster_drivers` format specific documentation for legal "
+"creation options for each format."
+msgstr ""
+
+#: ../../../source/programs/options/ot.rst:3
+msgid ""
+"Force the output image bands to have a specific data type supported by the "
+"driver, which may be one of the following: ``Byte``, ``Int8``, ``UInt16``, "
+"``Int16``, ``UInt32``, ``Int32``, ``UInt64``, ``Int64``, ``Float32``, "
+"``Float64``, ``CInt16``, ``CInt32``, ``CFloat32`` or ``CFloat64``."
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:53
+msgid ""
+"Pixel size to be used for the output file.  If not specified the resolution "
+"of the first input file will be used."
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:59
+msgid ""
+"(target aligned pixels) align the coordinates of the extent of the output "
+"file to the values of the -tr, such that the aligned extent includes the "
+"minimum extent. Alignment means that xmin / resx, ymin / resy, xmax / resx "
+"and ymax / resy are integer values."
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:66
+msgid ""
+"The extents of the output file. If not specified the aggregate extents of "
+"all input files will be used."
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:72
+msgid "Generate verbose output of mosaicing operations as they are done."
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:76
+msgid "Place each input file into a separate band."
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:80
+msgid ""
+"Grab a pseudo-color table from the first input image, and use it for the "
+"output. Merging pseudo-colored images this way assumes that all input files "
+"use the same color table."
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:86
+msgid "Ignore pixels from files being merged in with this pixel value."
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:90
+msgid "Assign a specified nodata value to output bands."
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:94
+msgid ""
+"Pre-initialize the output image bands with these values.  However, it is not "
+"marked as the nodata value in the output file.  If only one value is given, "
+"the same value is used in all the bands."
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:100
+msgid ""
+"The output file is created (and potentially pre-initialized) but no input "
+"image data is copied into it."
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:105
+msgid ""
+"gdal_merge.py is a Python script, and will only work if GDAL was built with "
+"Python support."
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:109
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:112
+msgid "Creating an image with the pixels in all bands initialized to 255"
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:116
+msgid "gdal_merge.py -init 255 -o out.tif in1.tif in2.tif"
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:120
+msgid "Creating an RGB image that shows blue in pixels with no data"
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:122
+msgid ""
+"The first two bands will be initialized to 0 and the third band will be "
+"initialized to 255."
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:127
+msgid "gdal_merge.py -init \"0 0 255\" -o out.tif in1.tif in2.tif"
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:131
+msgid "Passing a large list of files to :program:`gdal_merge`"
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:133
+msgid ""
+"A large list of files can be passed to :program:`gdal_merge` by listing them "
+"in a text file using:"
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:136
+msgid "ls -1 *.tif > tiff_list.txt"
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:140
+msgid "on Linux, or"
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:142
+msgid "dir /b /s *.tif > tiff_list.txt"
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:146
+msgid ""
+"on Windows. The text file can then be passed to :program:`gdal_merge` using "
+"`--optfile`:"
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:151
+msgid "gdal_merge.py -o mosaic.tif --optfile tiff_list.txt"
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:154
+msgid "Creating an RGB image by merging 3 different greyscale bands"
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:156
+msgid ""
+"Conduct \"merging by stacking\" with the :option:`-separate` flag. Given "
+"three greyscale files that cover the same area, you can run:"
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:159
+msgid "gdal_merge.py -separate 1.tif 2.tif 3.tif -o rgb.tif"
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:163
+msgid ""
+"This maps :file:`1.tif` to red, :file:`2.tif` to green and :file:`3.tif` to "
+"blue."
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:166
+msgid "Specifying overlap precedence"
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:168
+msgid ""
+"The last image in the input line comes out on top of the finished image "
+"stack. You might also need to use :option:`-n` to note which value should "
+"not be copied into the destination image if it is not already defined as "
+"nodata."
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:173
+msgid ""
+"gdal_merge.py -o merge.tif -n 0 image1.tif image2.tif image3.tif image4.tif"
+msgstr ""
+
+#: ../../../source/programs/gdal_merge.rst:11
+msgid "gdal_merge"
+msgstr ""

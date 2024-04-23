@@ -1,0 +1,325 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/pmtiles.rst:5
+msgid "PMTiles -- ProtoMaps Tiles"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:9
+msgid "PMTiles"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:13
+msgid ""
+"This driver supports reading and writing `PMTiles <https://github.com/"
+"protomaps/PMTiles>`__ datasets containing vector tiles, encoded in the "
+"MapVector Tiles (MVT) format."
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:16
+msgid ""
+"PMTiles is a single-file archive format for tiled data. A PMTiles archive "
+"can be hosted on a commodity storage platform such as S3, and enables low-"
+"cost, zero-maintenance map applications that are \"serverless\" - free of a "
+"custom tile backend or third party provider."
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:21
+msgid ""
+"This driver is compatible with all GDAL :ref:`network-based virtual file "
+"systems <network_based_file_systems>`"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:24
+msgid ""
+"The SRS is always the `Pseudo-Mercator <https://en.wikipedia.org/wiki/"
+"Web_Mercator_projection>`__ (a.k.a Google Mercator) projection, EPSG:3857."
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:27
+msgid ""
+"The supported datasets must contain a JSON metadata document following the "
+"`MBTiles specification <https://github.com/mapbox/mbtiles-spec/blob/"
+"master/1.3/spec.md#vector-tileset-metadata>`__, containing at least the "
+"``vector_layers`` array."
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:32
+msgid ""
+"Note that the driver will make no effort of stitching together geometries "
+"for linear or polygonal features that overlap several tiles. An application "
+"that wishes to eliminate those interrupts could potentially use the CLIP=NO "
+"open option to get larger boundaries, and use appropriate clipping graphic "
+"primitives to hide those discontinuities."
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:39
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:48
+msgid "Opening options"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:50
+msgid "The following open options are available:"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:58
+msgid ""
+"Vector tiles are generally produced with a buffer that provides overlaps "
+"between adjacent tiles, and can be used to display them properly. When using "
+"vector tiles as a vector layer source, like in OGR vector model, this "
+"padding is undesirable, hence the default behavior of clipping."
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:86
+msgid "Creation issues"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:88
+msgid ""
+"Tiles are generated with WebMercator (EPSG:3857) projection. Several layers "
+"can be written. It is possible to decide at which zoom level ranges a given "
+"layer is written."
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:92
+msgid ""
+"Part of the conversion is multi-threaded by default, using as many threads "
+"as there are cores. The number of threads used can be controlled with the :"
+"config:`GDAL_NUM_THREADS` configuration option."
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:96
+msgid ""
+"The driver implements also a direct translation mode when using :program:"
+"`ogr2ogr` with a MBTiles vector dataset as input and a PMTiles output "
+"dataset, without any argument: ``ogr2ogr out.pmtiles in.mbtiles``. In that "
+"mode, existing MVT tiles from the MBTiles files are used as such, contrary "
+"to the general writing mode that will involve computing them by discretizing "
+"geometry coordinates."
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:103
+msgid "Dataset creation options"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:129
+msgid ""
+"Maximum zoom level at which tiles are generated. Maximum supported value is "
+"22."
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:186
+msgid "Layer configuration"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:188
+msgid ""
+"The above mentioned CONF dataset creation option can be set to a string "
+"whose value is a JSon serialized document such as the below one:"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:191
+msgid ""
+"{\n"
+"    \"boundaries_lod0\": {\n"
+"        \"target_name\": \"boundaries\",\n"
+"        \"description\": \"Country boundaries\",\n"
+"        \"minzoom\": 0,\n"
+"        \"maxzoom\": 2\n"
+"    },\n"
+"    \"boundaries_lod1\": {\n"
+"        \"target_name\": \"boundaries\",\n"
+"        \"minzoom\": 3,\n"
+"        \"maxzoom\": 5\n"
+"    }\n"
+"}"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:207
+msgid ""
+"*boundaries_lod0* and *boundaries_lod1* are the name of the OGR layers that "
+"are created into the target MVT dataset. They are mapped to the MVT target "
+"layer *boundaries*."
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:211
+msgid ""
+"It is also possible to get the same behavior with the below layer creation "
+"options, although that is not convenient in the ogr2ogr use case."
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:216
+msgid "Layer creation options"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:243
+msgid "/vsipmtiles/ virtual file system"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:245
+msgid ""
+"The /vsipmtiles/ virtual file system offers a view of the content of a "
+"PMTiles dataset has a file hierarchy, with the following structure:"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:250
+msgid ""
+"/pmtiles_header.json: JSON view of the PMTiles header\n"
+"/metadata.json: JSON metadata document stored in the dataset\n"
+"/{z}/: Directory with tiles for zoom level z\n"
+"/{z}/{x}/: Directory with tiles for zoom level z and x\n"
+"/{z}/{x}/{y}.{ext}: Tile data"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:256
+msgid ""
+"The :source_file:`swig/python/gdal-utils/osgeo_utils/samples/gdal_ls.py` "
+"and :source_file:`swig/python/gdal-utils/osgeo_utils/samples/gdal_cp.py` "
+"sample utilities can be used to explore and extract data from a PMTiles "
+"dataset"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:261
+msgid "Listing the content of a dataset:"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:263
+msgid ""
+"python gdal_ls.py -lr \"/vsipmtiles//vsicurl/https://protomaps.github.io/"
+"PMTiles/protomaps(vector)ODbL_firenze.pmtiles\""
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:267
+#: ../../../source/drivers/vector/pmtiles.rst:289
+msgid "outputs:"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:271
+msgid ""
+"-r--r--r--  1 unknown unknown          809 2023-05-29 09:06 /vsipmtiles//"
+"vsicurl/https://protomaps.github.io/PMTiles/protomaps(vector)ODbL_firenze."
+"pmtiles/pmtiles_header.json\n"
+"-r--r--r--  1 unknown unknown         1872 2023-05-29 09:06 /vsipmtiles//"
+"vsicurl/https://protomaps.github.io/PMTiles/protomaps(vector)ODbL_firenze."
+"pmtiles/metadata.json\n"
+"dr-xr-xr-x  1 unknown unknown            0 2023-05-29 09:06 /vsipmtiles//"
+"vsicurl/https://protomaps.github.io/PMTiles/protomaps(vector)ODbL_firenze."
+"pmtiles/0/\n"
+"dr-xr-xr-x  1 unknown unknown            0 2023-05-29 09:06 /vsipmtiles//"
+"vsicurl/https://protomaps.github.io/PMTiles/protomaps(vector)ODbL_firenze."
+"pmtiles/0/0/\n"
+"-r--r--r--  1 unknown unknown          588 2023-05-29 09:06 /vsipmtiles//"
+"vsicurl/https://protomaps.github.io/PMTiles/protomaps(vector)ODbL_firenze."
+"pmtiles/0/0/0.mvt\n"
+"dr-xr-xr-x  1 unknown unknown            0 2023-05-29 09:06 /vsipmtiles//"
+"vsicurl/https://protomaps.github.io/PMTiles/protomaps(vector)ODbL_firenze."
+"pmtiles/1/\n"
+"dr-xr-xr-x  1 unknown unknown            0 2023-05-29 09:06 /vsipmtiles//"
+"vsicurl/https://protomaps.github.io/PMTiles/protomaps(vector)ODbL_firenze."
+"pmtiles/1/1/\n"
+"-r--r--r--  1 unknown unknown          590 2023-05-29 09:06 /vsipmtiles//"
+"vsicurl/https://protomaps.github.io/PMTiles/protomaps(vector)ODbL_firenze."
+"pmtiles/1/1/0.mvt\n"
+"[ ... snip ... ]\n"
+"-r--r--r--  1 unknown unknown          771 2023-05-29 09:06 /vsipmtiles//"
+"vsicurl/https://protomaps.github.io/PMTiles/protomaps(vector)ODbL_firenze."
+"pmtiles/14/8707/5974.mvt"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:283
+msgid "Displaying the metadata JSON file:"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:285
+msgid ""
+"python swig/python/gdal-utils/osgeo_utils/samples/gdal_cp.py \"/vsipmtiles//"
+"vsicurl/https://protomaps.github.io/PMTiles/protomaps(vector)ODbL_firenze."
+"pmtiles/metadata.json\" /vsistdout/ | jq ."
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:291
+msgid ""
+"{\n"
+"  \"attribution\": \"<a href=\\\"https://protomaps.com\\\" target=\\"
+"\"_blank\\\">Protomaps</a> © <a href=\\\"https://www.openstreetmap.org\\\" "
+"target=\\\"_blank\\\"> OpenStreetMap</a>\",\n"
+"  \"name\": \"protomaps 2023-01-18T07:49:39Z\",\n"
+"  \"type\": \"baselayer\",\n"
+"  \"vector_layers\": [\n"
+"    {\n"
+"      \"fields\": {},\n"
+"      \"id\": \"earth\"\n"
+"    },\n"
+"    {\n"
+"      \"fields\": {\n"
+"        \"boundary\": \"string\",\n"
+"        \"landuse\": \"string\",\n"
+"        \"leisure\": \"string\",\n"
+"        \"name\": \"string\",\n"
+"        \"natural\": \"string\"\n"
+"      },\n"
+"      \"id\": \"natural\"\n"
+"    },\n"
+"    { \"... snip ...\": {} },\n"
+"    {\n"
+"      \"fields\": {\n"
+"        \"pmap:min_admin_level\": \"number\"\n"
+"      },\n"
+"      \"id\": \"boundaries\"\n"
+"    },\n"
+"    {\n"
+"      \"fields\": {},\n"
+"      \"id\": \"mask\"\n"
+"    }\n"
+"  ]\n"
+"}"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:327
+msgid "Extracting all content in a local directory:"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:329
+msgid ""
+"python swig/python/gdal-utils/osgeo_utils/samples/gdal_cp.py -r \"/"
+"vsipmtiles//vsicurl/https://protomaps.github.io/PMTiles/"
+"protomaps(vector)ODbL_firenze.pmtiles\" out_pmtiles"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:335
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:337
+msgid "`PMTiles specification <https://github.com/protomaps/PMTiles>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:338
+msgid ":ref:`Mapbox Vector tiles driver <vector.mvt>`"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:339
+msgid ":ref:`MBTiles driver <raster.mbtiles>`"
+msgstr ""

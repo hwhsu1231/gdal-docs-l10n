@@ -1,0 +1,86 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/memory.rst:4
+#: ../../../source/drivers/vector/memory.rst:6
+msgid "Memory"
+msgstr ""
+
+#: ../../../source/drivers/vector/memory.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/memory.rst:10
+msgid ""
+"This driver implements read and write access layers of features contained "
+"entirely in memory. This is primarily useful as a high performance, and "
+"highly malleable working data store. All update options, geometry types, and "
+"field types are supported."
+msgstr ""
+
+#: ../../../source/drivers/vector/memory.rst:15
+msgid ""
+"There is no way to open an existing Memory datastore. It must be created "
+"with CreateDataSource() and populated and used from that handle. When the "
+"datastore is closed all contents are freed and destroyed."
+msgstr ""
+
+#: ../../../source/drivers/vector/memory.rst:19
+msgid ""
+"The driver does not implement spatial or attribute indexing, so spatial and "
+"attribute queries are still evaluated against all features. Fetching "
+"features by feature id should be very fast (just an array lookup and feature "
+"copy)."
+msgstr ""
+
+#: ../../../source/drivers/vector/memory.rst:25
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/memory.rst:32
+msgid "Creation Issues"
+msgstr ""
+
+#: ../../../source/drivers/vector/memory.rst:34
+msgid ""
+"Any name may be used for a created datasource. There are no datasource or "
+"layer creation options supported. Layer names need to be unique, but are not "
+"otherwise constrained."
+msgstr ""
+
+#: ../../../source/drivers/vector/memory.rst:38
+msgid ""
+"Before GDAL 2.1, feature ids passed to CreateFeature() are preserved "
+"*unless* they exceed 10000000 in which case they will be reset to avoid a "
+"requirement for an excessively large and sparse feature array. Starting with "
+"GDAL 2.1, sparse IDs can be handled."
+msgstr ""
+
+#: ../../../source/drivers/vector/memory.rst:43
+msgid ""
+"New fields can be added or removed to a layer that already has features."
+msgstr ""
+
+#: ../../../source/drivers/vector/memory.rst:46
+msgid "Layer creation options"
+msgstr ""
+
+#: ../../../source/drivers/vector/memory.rst:48
+msgid "The following layer creation options are available:"
+msgstr ""

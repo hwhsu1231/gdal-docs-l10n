@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/esrijson.rst:4
+msgid "ESRIJSON / FeatureService driver"
+msgstr ""
+
+#: ../../../source/drivers/vector/esrijson.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/esrijson.rst:6
+msgid "ESRIJSON"
+msgstr ""
+
+#: ../../../source/drivers/vector/esrijson.rst:10
+msgid ""
+"(Note: prior to GDAL 2.3, the functionality of this driver was available in "
+"the GeoJSON driver. They are now distinct drivers)"
+msgstr ""
+
+#: ../../../source/drivers/vector/esrijson.rst:13
+msgid ""
+"This driver can read the JSON output of Feature Service requests following "
+"the `GeoServices REST Specification <http://www.esri.com/industries/landing-"
+"pages/geoservices/geoservices.html>`__, like implemented by `ArcGIS Server "
+"REST API <http://help.arcgis.com/en/arcgisserver/10.0/apis/rest/index."
+"html>`__. The driver can scroll through such result sets that are spread "
+"over multiple pages (for ArcGIS servers >= 10.3). This is automatically "
+"enabled if URL does not contain an explicit *resultOffset* parameter. If it "
+"contains this parameter and scrolling is still desired, the :oo:"
+"`FEATURE_SERVER_PAGING` open option must be set to YES. The page size can be "
+"explicitly set with the *resultRecordCount* parameter (but is subject to a "
+"server limit). If it is not set, OGR will set it to the maximum value "
+"allowed by the server."
+msgstr ""
+
+#: ../../../source/drivers/vector/esrijson.rst:27
+msgid ""
+"Note: for paged requests to work properly, it is generally necessary to add "
+"a sort clause on a field, typically the OBJECTID with a "
+"\"&orderByFields=OBJECTID+ASC\" parameter in the URL, so that the server "
+"returns the results in a reliable way."
+msgstr ""
+
+#: ../../../source/drivers/vector/esrijson.rst:33
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/esrijson.rst:40
+msgid "Datasource"
+msgstr ""
+
+#: ../../../source/drivers/vector/esrijson.rst:42
+msgid "The driver accepts three types of sources of data:"
+msgstr ""
+
+#: ../../../source/drivers/vector/esrijson.rst:44
+msgid ""
+"Uniform Resource Locator (`URL <http://en.wikipedia.org/wiki/URL>`__) - a "
+"Web address to perform `HTTP <http://en.wikipedia.org/wiki/HTTP>`__ request."
+msgstr ""
+
+#: ../../../source/drivers/vector/esrijson.rst:47
+msgid ""
+"Plain text file with ESRIJSON data - identified from the file extension .json"
+msgstr ""
+
+#: ../../../source/drivers/vector/esrijson.rst:49
+msgid "Text passed directly and encoded in ESRI JSON"
+msgstr ""
+
+#: ../../../source/drivers/vector/esrijson.rst:51
+msgid ""
+"Starting with GDAL 2.3, the URL/filename/text might be prefixed with "
+"ESRIJSON: to avoid any ambiguity with other drivers."
+msgstr ""
+
+#: ../../../source/drivers/vector/esrijson.rst:55
+msgid "Open options"
+msgstr ""
+
+#: ../../../source/drivers/vector/esrijson.rst:65
+msgid "Example"
+msgstr ""
+
+#: ../../../source/drivers/vector/esrijson.rst:67
+msgid ""
+"Read the result of a FeatureService request against a GeoServices REST "
+"server (note that this server does not support paging):"
+msgstr ""
+
+#: ../../../source/drivers/vector/esrijson.rst:72
+msgid ""
+"ogrinfo -ro -al \"https://sampleserver6.arcgisonline.com/arcgis/rest/"
+"services/PoolPermits/FeatureServer/0/query?resultRecordCount=10&f=pjson\""
+msgstr ""
+
+#: ../../../source/drivers/vector/esrijson.rst:75
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/vector/esrijson.rst:77
+msgid ":ref:`GeoJSON driver <vector.geojson>`"
+msgstr ""
+
+#: ../../../source/drivers/vector/esrijson.rst:78
+msgid ""
+"`GeoServices REST Specification <http://www.esri.com/industries/landing-"
+"pages/geoservices/geoservices.html>`__"
+msgstr ""

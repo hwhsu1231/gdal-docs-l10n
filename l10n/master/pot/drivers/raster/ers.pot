@@ -1,0 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/ers.rst:5
+msgid "ERS -- ERMapper .ERS"
+msgstr ""
+
+#: ../../../source/drivers/raster/ers.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/ers.rst:7
+msgid "ERS"
+msgstr ""
+
+#: ../../../source/drivers/raster/ers.rst:11
+msgid ""
+"GDAL supports reading and writing raster files with .ers header files, with "
+"some limitations. The .ers ascii format is used by ERMapper for labeling raw "
+"data files, as well as for providing extended metadata, and georeferencing "
+"for some other file formats. The .ERS format, or variants are also used to "
+"hold descriptions of ERMapper algorithms, but these are not supported by "
+"GDAL."
+msgstr ""
+
+#: ../../../source/drivers/raster/ers.rst:18
+msgid ""
+"The PROJ, DATUM and UNITS values found in the ERS header are reported in the "
+"ERS metadata domain."
+msgstr ""
+
+#: ../../../source/drivers/raster/ers.rst:22
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/ers.rst:33
+msgid "Creation Issues"
+msgstr ""
+
+#: ../../../source/drivers/raster/ers.rst:35
+msgid "Creation Options:"
+msgstr ""
+
+#: ../../../source/drivers/raster/ers.rst:64
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/ers.rst:66
+msgid "Implemented as :source_file:`frmts/ers/ersdataset.cpp`."
+msgstr ""

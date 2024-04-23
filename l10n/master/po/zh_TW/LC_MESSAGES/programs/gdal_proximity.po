@@ -1,0 +1,158 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/programs/gdal_proximity.rst:5
+msgid "gdal_proximity.py"
+msgstr ""
+
+#: ../../../source/programs/gdal_proximity.rst:9
+msgid "Produces a raster proximity map."
+msgstr ""
+
+#: ../../../source/programs/gdal_proximity.rst:14
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../source/programs/gdal_proximity.rst:16
+msgid ""
+"gdal_proximity.py [--help] [--help-general]\n"
+"                  <srcfile> <dstfile> [-srcband <n>] [-dstband <n>]\n"
+"                  [-of <format>] [-co <name>=<value>]...\n"
+"                  [-ot Byte/UInt16/UInt32/Float32/etc]\n"
+"                  [-values <n>,<n>,<n>] [-distunits {PIXEL|GEO}]\n"
+"                  [-maxdist <n>] [-nodata <n>] [-use_input_nodata {YES|NO}]\n"
+"                  [-fixed-buf-val <n>]"
+msgstr ""
+
+#: ../../../source/programs/gdal_proximity.rst:27
+msgid "Description"
+msgstr ""
+
+#: ../../../source/programs/gdal_proximity.rst:29
+msgid ""
+"The :program:`gdal_proximity.py` script generates a raster proximity map "
+"indicating the distance from the center of each pixel to the center of the "
+"nearest pixel identified as a target pixel.  Target pixels are those in the "
+"source raster for which the raster pixel value is in the set of target pixel "
+"values."
+msgstr ""
+
+#: ../../../source/programs/options/help.rst:3
+msgid "Show this help message and exit"
+msgstr ""
+
+#: ../../../source/programs/options/help_general.rst:3
+msgid ""
+"Gives a brief usage message for the generic GDAL commandline options and "
+"exit."
+msgstr ""
+
+#: ../../../source/programs/gdal_proximity.rst:40
+msgid "The source raster file used to identify target pixels."
+msgstr ""
+
+#: ../../../source/programs/gdal_proximity.rst:44
+msgid ""
+"The destination raster file to which the proximity map will be written. It "
+"may be a pre-existing file of the same size as srcfile. If it does not exist "
+"it will be created."
+msgstr ""
+
+#: ../../../source/programs/gdal_proximity.rst:50
+msgid "Identifies the band in the source file to use (default is 1)."
+msgstr ""
+
+#: ../../../source/programs/gdal_proximity.rst:54
+msgid "Identifies the band in the destination file to use (default is 1)."
+msgstr ""
+
+#: ../../../source/programs/options/of.rst:3
+msgid ""
+"Select the output format. Starting with GDAL 2.3, if not specified, the "
+"format is guessed from the extension (previously was GTiff). Use the short "
+"format name."
+msgstr ""
+
+#: ../../../source/programs/options/co.rst:5
+msgid ""
+"Many formats have one or more optional creation options that can be used to "
+"control particulars about the file created. For instance, the GeoTIFF driver "
+"supports creation options to control compression, and whether the file "
+"should be tiled."
+msgstr ""
+
+#: ../../../source/programs/options/co.rst:10
+msgid ""
+"The creation options available vary by format driver, and some simple "
+"formats have no creation options at all. A list of options supported for a "
+"format can be listed with the :ref:`--formats "
+"<raster_common_options_formats>` command line option but the documentation "
+"for the format is the definitive source of information on driver creation "
+"options. See :ref:`raster_drivers` format specific documentation for legal "
+"creation options for each format."
+msgstr ""
+
+#: ../../../source/programs/gdal_proximity.rst:62
+msgid ""
+"Specify a data type supported by the driver, which may be one of the "
+"following: ``Byte``, ``UInt16``, ``Int16``, ``UInt32``, ``Int32``, "
+"``Float32`` (default), or ``Float64``."
+msgstr ""
+
+#: ../../../source/programs/gdal_proximity.rst:68
+msgid ""
+"A list of target pixel values in the source image to be considered target "
+"pixels. If not specified, all non-zero pixels will be considered target "
+"pixels."
+msgstr ""
+
+#: ../../../source/programs/gdal_proximity.rst:73
+msgid ""
+"Indicate whether distances generated should be in pixel or georeferenced "
+"coordinates (default PIXEL)."
+msgstr ""
+
+#: ../../../source/programs/gdal_proximity.rst:78
+msgid ""
+"The maximum distance to be generated. The nodata value will be used for "
+"pixels beyond this distance. If a nodata value is not provided, the output "
+"band will be queried for its nodata value. If the output band does not have "
+"a nodata value, then the value 65535 will be used. Distance is interpreted "
+"in pixels unless -distunits GEO is specified."
+msgstr ""
+
+#: ../../../source/programs/gdal_proximity.rst:86
+msgid "Specify a nodata value to use for the destination proximity raster."
+msgstr ""
+
+#: ../../../source/programs/gdal_proximity.rst:90
+msgid ""
+"Indicate whether nodata pixels in the input raster should be nodata in the "
+"output raster (default NO)."
+msgstr ""
+
+#: ../../../source/programs/gdal_proximity.rst:94
+msgid ""
+"Specify a value to be applied to all pixels that are within the -maxdist of "
+"target pixels (including the target pixels) instead of a distance value."
+msgstr ""
+
+#: ../../../source/programs/gdal_proximity.rst:11
+msgid "gdal_proximity"
+msgstr ""

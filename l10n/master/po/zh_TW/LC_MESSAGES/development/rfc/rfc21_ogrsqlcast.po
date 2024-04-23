@@ -1,0 +1,266 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:5
+msgid "RFC 21: OGR SQL type cast and field name alias"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:7
+msgid "Author: Tamas Szekeres"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:9
+msgid "Contact: szekerest@gmail.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:11
+msgid "Status: Adopted"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:14
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:16
+msgid ""
+"This proposal provides support for changing the column name and the column "
+"type in the OGR SQL select list."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:19
+msgid ""
+"The main motivation of this change is to provide better control when "
+"transferring the OGR_STYLE special field from each data source to the other. "
+"For example we can use ogr2ogr for this purpose using the following command "
+"line:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:26
+msgid ""
+"ogr2ogr -f \"ESRI Shapefile\" -sql \"select *, OGR_STYLE from rivers\" "
+"rivers.shp rivers.tab"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:28
+msgid ""
+"The shape driver will truncate the OGR_STYLE field to 80 characters by "
+"default in length that may not be enough to hold the actual value. So as to "
+"fix this issue we might want to specify the desired length in the select "
+"list, like:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:35
+msgid ""
+"ogr2ogr -f \"ESRI Shapefile\" -sql \"select *, CAST(OGR_STYLE AS "
+"character(255)) from rivers\" rivers.shp rivers.tab"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:37
+msgid ""
+"In some cases it would also be useful to change the name of the field in the "
+"target data source:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:42
+msgid ""
+"ogr2ogr -f \"ESRI Shapefile\" -sql \"select *, CAST(OGR_STYLE AS "
+"character(255)) AS 'STYLE' from rivers\" rivers.shp rivers.tab"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:45
+msgid "Main concepts"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:47
+msgid ""
+"To support these new features we will extend the current OGR SQL syntax. The "
+"proposed addition will keep the syntax conform to the SQL92 specification:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:53
+msgid ""
+"SELECT <field-list> FROM <table_def>\n"
+"     [LEFT JOIN <table_def>\n"
+"      ON [<table_ref>.]<key_field> = [<table_ref>.].<key_field>]*\n"
+"     [WHERE <where-expr>]\n"
+"     [ORDER BY <sort specification list>]\n"
+"\n"
+"<field-list> ::= <column-spec> [ { , <column-spec> }... ]\n"
+"\n"
+"<column-spec> ::= <field-spec> [ <as clause> ]\n"
+"                 | CAST ( <field-spec> AS <data type> ) [ <as clause> ]\n"
+"\n"
+"<field-spec> ::= [DISTINCT] <field_ref>\n"
+"                 | <field_func> ( [DISTINCT] <field-ref> )\n"
+"                 | Count(*)\n"
+"\n"
+"<as clause> ::= [ AS ] <column_name>\n"
+"\n"
+"<data type> ::= character [ ( field_length ) ]\n"
+"                | float [ ( field_length ) ]\n"
+"                | numeric [ ( field_length [, field_precision ] ) ]\n"
+"                | integer [ ( field_length ) ]\n"
+"                | date [ ( field_length ) ]\n"
+"                | time [ ( field_length ) ]\n"
+"                | timestamp [ ( field_length ) ]\n"
+"\n"
+"<field-func> ::= AVG | MAX | MIN | SUM | COUNT\n"
+"\n"
+"<field_ref>  ::= [<table_ref>.]field_name\n"
+"\n"
+"<sort specification list> ::=\n"
+"              <sort specification> [ { <comma> <sort specification> }... ]\n"
+"\n"
+"<sort specification> ::= <sort key> [ <ordering specification> ]\n"
+"\n"
+"<sort key> ::=  <field_ref>\n"
+"\n"
+"<ordering specification> ::= ASC | DESC\n"
+"\n"
+"<table_def> ::= ['<datasource name>'.]table_name [table_alias]\n"
+"\n"
+"<table_ref> ::= table_name | table_alias"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:95
+msgid ""
+"This RFC doesn't address implementing conversion to the 'integer list', "
+"'double list' and 'string list' OGR data types, which doesn't conform to the "
+"SQL92 specification and the necessary conversion routines are missing in the "
+"OGR code."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:101
+msgid "Implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:103
+msgid ""
+"To implement the addition the following changes should be made in the OGR "
+"codebase:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:106
+msgid ""
+"In ogr_swq.h I'll have to add to 4 fields to swq_col_def to hold the "
+"field_alias the target_type, the field_length, and field_precision"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:109
+msgid ""
+"In ogr_swq.h SWQ_DATE, SWQ_TIME, SWQ_TIMESTAMP will be added to "
+"swq_field_type enum."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:112
+msgid ""
+"In swq.c I'll have to change swq_select_preparse to take care of the field "
+"alias and the CAST specification."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:115
+msgid ""
+"A new function (swq_parse_typename) will be added to parse the supported "
+"typenames."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:118
+msgid ""
+"In ogr_gensql.cpp the .ctor of OGRGenSQLResultsLayer will be changed to set "
+"up the field name and the field length to the target data source"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:122
+msgid ""
+"In ogr_gensql.cpp TranslateFeature will be modified to take care of the type "
+"change if specified."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:126
+msgid "Backward Compatibility"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:128
+msgid ""
+"The backward compatibility for the current SQL syntax will be retained. This "
+"addition doesn't require changes in the OGR C and SWIG API."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:132
+msgid "Documentation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:134
+msgid ""
+"The OGR SQL document will be updated to reflect the new features. I'll take "
+"care of updating the OGR Style Documentation with the support of "
+"transferring the styles between the data sources."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:139
+msgid "Implementation Staffing"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:141
+msgid "Tamas Szekeres will implement the RFC in the development version."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:143
+msgid ""
+"Frank Warmerdam will implement the regression test scripts according to this "
+"new functionality."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:147
+msgid "References"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:149
+msgid ""
+"Tracking bug for this feature (containing all of the proposed code changes): "
+"#2171"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:153
+msgid "Voting History"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:155
+msgid "Frank Warmerdam +1"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:157
+msgid "Daniel Morissette +1"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:159
+msgid "Howard Butler +1"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:161
+msgid "Even Rouault +1"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:163
+msgid "Tamas Szekeres +1"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc21_ogrsqlcast.rst:165
+msgid "Andrey Kiselev +0"
+msgstr ""

@@ -1,0 +1,987 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:5
+msgid "RFC 41 : Support for multiple geometry fields in OGR"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:8
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:10
+msgid ""
+"Add read/write support in the OGR data model for features with multiple "
+"geometry fields."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:14
+msgid "Motivation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:16
+msgid ""
+"The OGR data model is currently tied to a single geometry field per feature, "
+"feature definition and layer. But a number of data formats support multiple "
+"geometry fields. The OGC Simple Feature Specifications also do not limit to "
+"one geometry field per layer (e.g. §7.1.4 of `OGC 06-104r4 \"OpenGIS® "
+"Implementation Standard for Geographic information - Simple feature access -"
+"Part 2: SQL option <http://portal.opengeospatial.org/files/?"
+"artifact_id=25354>`__)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:24
+msgid ""
+"There are workarounds : using geometries of type GEOMETRYCOLLECTION, or "
+"advertizing as many layers as there are geometry columns in the layer (like "
+"currently done in the PostGIS or SQLite drivers). All those approach are at "
+"best workarounds that suffer from limitations :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:29
+msgid ""
+"GEOMETRYCOLLECTION approach : no way to know the name/semantics of each sub-"
+"geometry. All sub-geometries must be expressed in the same SRS. No way of "
+"guaranteeing that the GEOMETRYCOLLECTION has always the same number of sub-"
+"geometries or that there are of a consistent geometry type."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:34
+msgid ""
+"one layer per geometry column approach : only appropriate for read-only "
+"scenarios. Cannot work in write scenarios."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:37
+msgid ""
+"The purpose of this RFC is to make support for multiple geometry fields per "
+"feature to be properly taken into account in the OGR data model."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:41
+msgid "Proposed solution"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:43
+msgid ""
+"(Note: alternative solutions have also been studied. They are explained in a "
+"following section of this RFC.)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:46
+msgid ""
+"To sum it up, geometry fields will be treated similarly as attribute fields "
+"are handled at the OGRFeatureDefn and OGRFeature levels, but they will be "
+"kept separate. Attribute fields and geometry fields will have their own "
+"separate indexing in the feature definition."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:51
+msgid ""
+"This choice has been mainly made to maximize backward compatibility, while "
+"offering new capabilities."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:54
+msgid ""
+"Its involves creating a OGRGeomFieldDefn class, and changes in OGRFieldDefn, "
+"OGRFeatureDefn, OGRFeature and OGRLayer classes."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:58
+msgid "OGRGeomFieldDefn class"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:60
+msgid ""
+"The OGRGeomFieldDefn is a new class. Its structure is directly inspired from "
+"the OGRFieldDefn class."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:65
+msgid ""
+"class CPL_DLL OGRGeomFieldDefn\n"
+"{\n"
+"protected:\n"
+"        char                *pszName;\n"
+"        OGRwkbGeometryType   eGeomType; /* all values possible except "
+"wkbNone */\n"
+"        OGRSpatialReference* poSRS;\n"
+"\n"
+"        int                 bIgnore;\n"
+"\n"
+"public:\n"
+"                            OGRGeomFieldDefn(char *pszName,\n"
+"                                             OGRwkbGeometryType eGeomType);\n"
+"        virtual            ~OGRGeomFieldDefn();\n"
+"\n"
+"        void                SetName( const char * );\n"
+"        const char         *GetNameRef();\n"
+"\n"
+"        OGRwkbGeometryType  GetType();\n"
+"        void                SetType( OGRwkbGeometryType eTypeIn );\n"
+"\n"
+"        virtual OGRSpatialReference* GetSpatialRef();\n"
+"        void                 SetSpatialRef(OGRSpatialReference* poSRS);\n"
+"\n"
+"        int                 IsIgnored();\n"
+"        void                SetIgnored( int bIgnoreIn );\n"
+"};"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:92
+msgid ""
+"One can notice that the member variables were to be found at OGRLayer level "
+"previously."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:95
+msgid ""
+"The SRS object is ref-counted. The reference count is increased in the "
+"constructor and in SetSpatialRef(), and decreased in the destructor."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:98
+msgid ""
+"GetSpatialRef() is deliberately set virtual, so that lazy evaluation can be "
+"implemented (getting SRS can have a noticeable cost in some driver "
+"implementations, like reading an extra file, or issuing a SQL request)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:103
+msgid "OGRFeatureDefn class"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:105
+msgid "The OGRFeatureDefn class will be extended as the following :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:109
+msgid ""
+"class CPL_DLL OGRFeatureDefn\n"
+"{\n"
+"  protected:\n"
+"        // Remove OGRwkbGeometryType eGeomType and bIgnoreGeometry and\n"
+"        // add instead the following :\n"
+"\n"
+"        int nGeomFieldCount;\n"
+"        OGRGeomFieldDefn* papoGeomFieldDefn;\n"
+"  public:\n"
+"        virtual int         GetGeomFieldCount();\n"
+"        virtual OGRGeomFieldDefn *GetGeomFieldDefn( int i );\n"
+"        virtual int         GetGeomFieldIndex( const char * );\n"
+"\n"
+"        virtual void        AddGeomFieldDefn( OGRGeomFieldDefn * );\n"
+"        virtual OGRErr      DeleteGeomFieldDefn( int iGeomField );\n"
+"\n"
+"        // Route OGRwkbGeometryType GetGeomType() and void SetGeomType()\n"
+"        // on the first geometry field definition.\n"
+"\n"
+"        // Same for IsGeometryIgnored() and SetGeometryIgnored()\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:131
+msgid ""
+"At instantiation, OGRFeatureDefn would create a default geometry field "
+"definition of name \"\" and type wkbUnknown. If SetGeomType() is called, "
+"this will be routed on papoGeomFieldDefn[0]. If only one geometry field "
+"definition exists, SetGeomType(wkbNone) will remove it."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:136
+msgid ""
+"GetGeomType() will be routed on papoGeomFieldDefn[0] if it exists. Otherwise "
+"it will return wkbNone."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:139
+msgid ""
+"It is strongly advised that there is name uniqueness among the combined set "
+"of regular field names and the geometry field names. Failing to do so will "
+"result in unspecified behavior in SQL queries. This advice will not be "
+"checked by the code (it is currently not done for regular fields)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:145
+msgid ""
+"Another change is to make all the existing methods of OGRFeatureDefn virtual "
+"(and change private visibility to protected), so this class can be "
+"subclassed if needed. This will enable lazy creation of the object. "
+"Justification: establishing the full feature definition can be costly. But "
+"applications may want to list all the layers of a datasource, and only "
+"present some information that is important, but cheap to establish. In the "
+"past, OGRLayer::GetName() and OGRLayer::GetGeomType() have been introduced "
+"in order to workaround for that."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:154
+msgid ""
+"Note also that ReorderGeomFieldDefns() is not foreseen for the moment. It "
+"could be added in a later step, should the need arises. "
+"DeleteGeomFieldDefn() is mostly there for the own benefit of OGRFeatureDefn "
+"itself when calling SetGeomType(wkbNone)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:160
+msgid "OGRFeature class"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:162
+msgid "The OGRFeature class will be extended as following :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:166
+msgid ""
+"class CPL_DLL OGRFeature\n"
+"{\n"
+"  private:\n"
+"        // Remove poGeometry field and add instead\n"
+"        OGRGeometry** papoGeometries; /* size is given by poFDefn-"
+">GetGeomFieldCount() */\n"
+"\n"
+"  public:\n"
+"\n"
+"        int                 GetGeomFieldCount();\n"
+"        OGRGeomFieldDefn   *GetGeomFieldDefnRef( int iField );\n"
+"        int                 GetGeomFieldIndex( const char * pszName);\n"
+"\n"
+"        OGRGeometry*        GetGeomFieldRef(int iField);\n"
+"        OGRErr              SetGeomFieldDirectly( int iField, OGRGeometry "
+"* );\n"
+"        OGRErr              SetGeomField( int iField, OGRGeometry * );\n"
+"\n"
+"        // Route SetGeometryDirectly(), SetGeometry(), GetGeometryRef(),\n"
+"        // StealGeometry() on the first geometry field in the array\n"
+"\n"
+"        // Modify implementation of SetFrom() to replicate all geometries\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:188
+msgid ""
+"Note: before RFC41, SetGeometry() or SetGeometryDirectly() could work on a "
+"feature whose feature definition had a GetGeomType() == wkbNone (which was "
+"inconsistent). This will be no longer the case since the size of the "
+"papoGeometries array is now based on GetGeomFieldCount(), and when "
+"GetGeomType() == wkbNone, the geometry field count is 0. The VRT and CSV "
+"drivers will be fixed to declare their geometry type consistently."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:196
+msgid "OGRLayer class"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:198
+msgid "Impact on OGRLayer class :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:200
+msgid ""
+"Spatial filter: the option considered is to only allow one spatial filter at "
+"the time."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:203
+msgid ""
+"the need for spatial filters applied simultaneously on several geometry "
+"fields is not obvious."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:205
+msgid ""
+"the m_poFilterGeom protected member is used more than 250 times in the OGR "
+"code base, so turning it into an array would be a tedious task..."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:209
+msgid "Additions:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:213
+msgid ""
+"protected:\n"
+"    int m_iGeomFieldFilter // specify the index on which the spatial\n"
+"                           // filter is active.\n"
+"\n"
+"public:\n"
+"    virtual void        SetSpatialFilter( int iGeomField, OGRGeometry * );\n"
+"    virtual void        SetSpatialFilterRect( int iGeomField,\n"
+"                                            double dfMinX, double dfMinY,\n"
+"                                            double dfMaxX, double dfMaxY );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:225
+msgid ""
+"GetNextFeature() implementation must check the m_iGeomFieldFilter index\n"
+"in order to select the appropriate geometry field."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:228
+msgid ""
+"GetGeomType() : unchanged. For other fields, use GetLayerDefn()-"
+">GetGeomField(i)->GetType()"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:231
+msgid ""
+"GetSpatialRef(): Currently the default implementation returns NULL. It will "
+"be changed to return GetLayerDefn()->GetGeomField(0)->GetSpatialRef() (if "
+"there is at least one geometry field). New drivers are encouraged not to "
+"specialize GetSpatialRef() anymore, but to appropriately set the SRS of "
+"their first geometry field. For other fields, use GetLayerDefn()-"
+">GetGeomField(i)->GetSpatialRef()."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:239
+msgid ""
+"Caveat: as SRS wasn't previously stored at the OGRFeatureDefn level, all "
+"existing drivers, if not updated, will have GetGeomField(0)->GetSpatialRef() "
+"returning NULL. The test_ogrsf utility will check and warn about this. "
+"Update of existing drivers will be made progressively. In the mean time, "
+"using OGRLayer::GetSpatialRef() will be advized to get the SRS of the first "
+"geometry field in a reliable way."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:247
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:258
+msgid "add :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:251
+msgid ""
+"virtual OGRErr GetExtent(int iGeomField, OGREnvelope *psExtent,\n"
+"                         int bForce = TRUE);"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:256
+msgid "Default implementation would call GetExtent() if iGeomField == 0"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:262
+msgid "virtual OGRErr CreateGeomField(OGRGeomFieldDefn *poField);"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:264
+msgid ""
+"no DeleteGeomField(), ReorderGeomFields() or AlterGeomFieldDefn() for now. "
+"Could be added later if the need arises."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:267
+msgid ""
+"GetGeometryColumn() : unchanged. Routed onto the first geometry field. For "
+"other fields, use GetLayerDefn()->GetGeomField(i)->GetNameRef()"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:271
+msgid ""
+"SetIgnoredFields() : iterate over the geometry fields in addition to regular "
+"fields. The special \"OGR_GEOMETRY\" value will only apply to the first "
+"geometry field."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:275
+msgid ""
+"Intersection(), Union(), etc... : unchanged. Later improvements could use "
+"the papszOptions parameter to specify an alternate geometry field"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:278
+msgid ""
+"TestCapability(): add a OLCCreateGeomField capability to inform if "
+"CreateGeomField() is implemented."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:282
+msgid "OGRDataSource class"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:284
+msgid "Impact on OGRDataSource class :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:286
+msgid ""
+"CreateLayer() : signature will be unchanged. If more than one geometry "
+"fields are needed, OGRLayer::CreateGeomField() must be used. If the name of "
+"the first geometry field must be specified, for datasources supporting "
+"ODsCCreateGeomFieldAfterCreateLayer, using code should call CreateLayer() "
+"with eGType = wkbNone and then add all geometry fields with OGRLayer::"
+"CreateGeomField()."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:293
+msgid ""
+"CopyLayer() : adapted to replicate all geometry fields (if supported by "
+"target layer)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:296
+msgid ""
+"ExecuteSQL() : takes a spatial filter. In the case of the generic OGR SQL "
+"implementation, this filter is a facility. It could also as well be applied "
+"on the returned layer object. So there is no real need for adding a way of "
+"specifying the geometry field at the ExecuteSQL() API level."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:302
+msgid ""
+"TestCapability(): add a ODsCCreateGeomFieldAfterCreateLayer capability to "
+"inform if CreateGeomField() is implemented after layer creation and that "
+"CreateLayer() can be safely called with eGType = wkbNone."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:308
+msgid "Explored alternative solutions"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:310
+msgid ""
+"( This paragraph can be skipped if you are totally convinced by the proposed "
+"approach detailed above :-) )"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:313
+msgid ""
+"A possible alternative solution would have been to extend the existing "
+"OGRFieldDefn object with information related to the geometry. That would "
+"have involved adding a OFTGeometry value in the OGRFieldType enumeration, "
+"and adding the OGRwkbGeometryType eGeomType and OGRSpatialReference\\* poSRS "
+"members to OGRFieldDefn. At OGRFeature class level, the OGRField union could "
+"have been extended with a OGRGeometry\\* field. Similarly at OGRLayer level, "
+"CreateField() could have been used to create new geometry fields."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:322
+msgid ""
+"The main drawback of this approach, which seems the most natural way, is "
+"backward compatibility. This would have affected all places in OGR own code "
+"or external code where fields are retrieved and geometry is not expected. "
+"For example, in code like the following (very common in the CreateFeature() "
+"of most drivers, or in user code consuming features returned by "
+"GetNextFeature()) :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:331
+msgid ""
+"switch( poFieldDefn->GetType() )\n"
+"{\n"
+"        case OFTInteger: something1(poField->GetFieldAsInteger()); break;\n"
+"        case OFTReal: something2(poField->GetFieldAsDouble()): break;\n"
+"        default: something3(poField->GetFieldAsString()); break;\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:338
+msgid ""
+"This would lead, for legacy code, to geometry being handled as regular "
+"field. We could imagine that GetFieldAsString() converts the geometry as "
+"WKT, but it is doubtfull that this would really be desired. Fundamentally, "
+"the handling of attribute and geometry fields is different in most use cases."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:344
+msgid ""
+"(On the other side, if we introduce 64bit integer as a OGR type (this is an "
+"RFC that is waiting for implementation...), the above code would still "
+"produce a meaningful result. The string reprentation of a 64bit integer is "
+"not that bad as a default behavior.)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:349
+msgid ""
+"GetFieldCount() would also take into account geometry fields, but in most "
+"cases, you would need to subtract them."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:352
+msgid ""
+"A possible way of avoiding the above compatibility issue would be to have 2 "
+"sets of API at OGRFeatureDefn and OGRFeature level. The current one, that "
+"would ignore the geometry fields, and an \"extended\" one that would take "
+"them into account. For example, OGRFeatureDefn::GetFieldCountEx(), "
+"OGRFeatureDefn::GetFieldIndexEx(), OGRFeatureDefn::GetFieldDefnEx(), "
+"OGRFeature::GetFieldEx(), OGRFeature::SetFieldAsXXXEx() would take into "
+"account both attribute and geometry fields. The annoying thing with that "
+"approach is the duplication of the ~ 20 methods GetField() and SetFieldXXX() "
+"in OGRFeature."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:364
+msgid "C API"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:366
+msgid "The following functions are added to the C API :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:370
+msgid ""
+"/* OGRGeomFieldDefnH */\n"
+"\n"
+"typedef struct OGRGeomFieldDefnHS *OGRGeomFieldDefnH;\n"
+"\n"
+"OGRGeomFieldDefnH    CPL_DLL OGR_GFld_Create( const char *, "
+"OGRwkbGeometryType ) CPL_WARN_UNUSED_RESULT;\n"
+"void                 CPL_DLL OGR_GFld_Destroy( OGRGeomFieldDefnH );\n"
+"\n"
+"void                 CPL_DLL OGR_GFld_SetName( OGRGeomFieldDefnH, const char "
+"* );\n"
+"const char           CPL_DLL *OGR_GFld_GetNameRef( OGRGeomFieldDefnH );\n"
+"\n"
+"OGRwkbGeometryType   CPL_DLL OGR_GFld_GetType( OGRGeomFieldDefnH );\n"
+"void                 CPL_DLL OGR_GFld_SetType( OGRGeomFieldDefnH, "
+"OGRwkbGeometryType );\n"
+"\n"
+"OGRSpatialReferenceH CPL_DLL OGR_GFld_GetSpatialRef( OGRGeomFieldDefnH );\n"
+"void                 CPL_DLL OGR_GFld_SetSpatialRef( OGRGeomFieldDefnH,\n"
+"                                                     OGRSpatialReferenceH "
+"hSRS );\n"
+"\n"
+"int                  CPL_DLL OGR_GFld_IsIgnored( OGRGeomFieldDefnH hDefn );\n"
+"void                 CPL_DLL OGR_GFld_SetIgnored( OGRGeomFieldDefnH hDefn, "
+"int );\n"
+"\n"
+"/* OGRFeatureDefnH */\n"
+"\n"
+"int               CPL_DLL OGR_FD_GetGeomFieldCount( OGRFeatureDefnH "
+"hFDefn );\n"
+"OGRGeomFieldDefnH CPL_DLL OGR_FD_GetGeomFieldDefn( OGRFeatureDefnH hFDefn, "
+"int i );\n"
+"int               CPL_DLL OGR_FD_GetGeomFieldIndex( OGRFeatureDefnH hFDefn, "
+"const char * );\n"
+"\n"
+"void              CPL_DLL OGR_FD_AddGeomFieldDefn( OGRFeatureDefnH hFDefn, "
+"OGRGeomFieldDefnH );\n"
+"OGRErr            CPL_DLL OGR_FD_DeleteGeomFieldDefn( OGRFeatureDefnH "
+"hFDefn, int iGeomField );\n"
+"\n"
+"/* OGRFeatureH */\n"
+"\n"
+"int               CPL_DLL OGR_F_GetGeomFieldCount( OGRFeatureH hFeat );\n"
+"OGRGeomFieldDefnH CPL_DLL OGR_F_GetGeomFieldDefnRef( OGRFeatureH hFeat, int "
+"iField );\n"
+"int               CPL_DLL OGR_F_GetGeomFieldIndex( OGRFeatureH hFeat, const "
+"char * pszName);\n"
+"\n"
+"OGRGeometryH      CPL_DLL OGR_F_GetGeomFieldRef( OGRFeatureH hFeat, int "
+"iField );\n"
+"OGRErr            CPL_DLL OGR_F_SetGeomFieldDirectly( OGRFeatureH hFeat, int "
+"iField, OGRGeometryH );\n"
+"OGRErr            CPL_DLL OGR_F_SetGeomField( OGRFeatureH hFeat, int iField, "
+"OGRGeometryH );\n"
+"\n"
+"/* OGRLayerH */\n"
+"\n"
+"void     CPL_DLL OGR_L_SetSpatialFilterEx( OGRLayerH, int iGeomField, "
+"OGRGeometryH );\n"
+"void     CPL_DLL OGR_L_SetSpatialFilterRectEx( OGRLayerH, int iGeomField,\n"
+"                                               double dfMinX, double "
+"dfMinY,\n"
+"                                               double dfMaxX, double "
+"dfMaxY );\n"
+"OGRErr   CPL_DLL OGR_L_GetExtentEx( OGRLayerH, int iGeomField,\n"
+"                                    OGREnvelope *psExtent, int bForce );\n"
+"OGRErr   CPL_DLL OGR_L_CreateGeomField( OGRLayerH, OGRGeomFieldDefnH "
+"hFieldDefn );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:420
+msgid "OGR SQL engine"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:422
+msgid ""
+"Currently, \"SELECT fieldname1[, ...fieldnameN] FROM layername\" returns the "
+"specified fields, as well as the associated geometry. This behavior is "
+"clearly not following the behavior of spatial RDBMS where the geometry field "
+"must be explicitly specified."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:427
+msgid ""
+"The following compromise between backward compatibility and the new "
+"capabilities of this RFC is adopted :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:430
+msgid ""
+"if no geometry field is explicitly specified in the SELECT clause, and there "
+"is only one geometry fields associated with the layer, then return it "
+"implicitly"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:433
+msgid ""
+"otherwise, only return the explicitly mentioned geometry fields (or all "
+"geometry fields if \"*\" is used)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:437
+msgid "Limitations"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:439
+msgid "Geometries from joined layers will not be fetched, as currently."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:440
+msgid ""
+"UNION ALL will only handle the default geometry, as currently. (could be "
+"extended in later work.)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:442
+msgid ""
+"The special fields OGR_GEOMETRY, OGR_GEOM_WKT and OGR_GEOM_AREA will operate "
+"on the first geometry field. It does not seem wise to extend this ad-hoc "
+"syntax. A better alternative will be the OGR SQLite dialect (with Spatialite "
+"support), once it is updated to support multi-geometry (not in the scope of "
+"this RFC)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:449
+msgid "Drivers"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:452
+msgid "Updated drivers in the context of this RFC"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:454
+msgid "PostGIS:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:456
+msgid ""
+"a ad-hoc form of support already exists. Tables with multiple geometries are "
+"reported currently as layers called \"table_name(geometry_col_name)\" (as "
+"many layers as geometry columns). This behavior will be changed so that the "
+"table is reported only once as a OGR layer."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:462
+msgid "PGDump:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:464
+msgid "add write support for multi-geometry tables."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:466
+msgid "Memory:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:468
+msgid "updated as a simple illustration of the new capabilities."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:470
+msgid "Interlis:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:472
+msgid ""
+"updated to support multiple geometry fields (as well as other changes "
+"unrelated to this RFC)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:476
+msgid "Other candidate drivers (upgrade not originally covered by this RFC)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:478
+msgid ""
+"GML driver : currently, only one geometry per feature reported. Possibility "
+"of changing this by hand-editing of the .gfs file --> implemented post RFC "
+"in GDAL 1.11"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:481
+msgid "SQLite driver :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:483
+msgid "currently, same behavior as current PostGIS driver."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:484
+msgid ""
+"both the driver and the SQLite dialect could be updated to support multi-"
+"geometry layers. --> implemented post RFC in GDAL 2.0"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:487
+msgid ""
+"Google Fusion Tables driver : currently, only the first found geometry "
+"column used. Possibility of specifying \"table_name(geometry_column_name)\" "
+"as the layer name passed to GetLayerByName()."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:491
+msgid ""
+"VRT : some thoughts needed to find the syntax to support multiple "
+"geometries. Impacted XML syntax : . at OGRVRTLayer element level : "
+"GeometryType, LayerSRS, GeomField, SrcRegion, ExtentXMin/YMin/XMax/YMax, . "
+"at OGRVRTWarpedLayer element level : add new element to select the geometry "
+"field . at OGRVRTUnionLayer element level : GeometryType, LayerSRS, "
+"ExtentXMin/YMin/XMax/YMax --> implemented post RFC in GDAL 1.11"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:498
+msgid ""
+"CSV : currently, take geometries from column named \"WKT\". To be extended "
+"to support multiple geometry columns. Not sure worth the effort. Could be "
+"done with the extended VRT driver. --> implemented post RFC in GDAL 1.11"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:502
+msgid ""
+"WFS : currently, only single-geometry layers supported. The standard allows "
+"multi-geometry. Would require GML driver support first."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:504
+msgid "Other RDBMS based drivers: MySQL ?, MSSQLSpatial ? Oracle Spatial ?"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:507
+msgid "Utilities"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:510
+msgid "ogrinfo"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:512
+msgid ""
+"ogrinfo will be updated to report information related to multi-geometry "
+"support. Output is expected to be unchanged w.r.t current output in the case "
+"of single-geometry datasource."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:516
+msgid "Expected output for multi-geometry datasource:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:520
+msgid ""
+"$ ogrinfo PG:dbname=mydb\n"
+"INFO: Open of `PG:dbname=mydb'\n"
+"      using driver `PostgreSQL' successful.\n"
+"1: test_multi_geom (Polygon, Point)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:527
+msgid ""
+"$ ogrinfo PG:dbname=mydb -al\n"
+"INFO: Open of `PG:dbname=mydb'\n"
+"      using driver `PostgreSQL' successful.\n"
+"\n"
+"Layer name: test_multi_geom\n"
+"Geometry (polygon_geometry): Polygon\n"
+"Geometry (centroid_geometry): Point\n"
+"Feature Count: 10\n"
+"Extent (polygon_geometry): (400000,4500000) - (500000, 5000000)\n"
+"Extent (centroid_geometry): (2,48) - (3,49)\n"
+"Layer SRS WKT (polygon_geometry):\n"
+"PROJCS[\"WGS 84 / UTM zone 31N\",\n"
+"    GEOGCS[\"WGS 84\",\n"
+"        DATUM[\"WGS_1984\",\n"
+"            SPHEROID[\"WGS 84\",6378137,298.257223563,\n"
+"                AUTHORITY[\"EPSG\",\"7030\"]],\n"
+"            AUTHORITY[\"EPSG\",\"6326\"]],\n"
+"        PRIMEM[\"Greenwich\",0,\n"
+"            AUTHORITY[\"EPSG\",\"8901\"]],\n"
+"        UNIT[\"degree\",0.0174532925199433,\n"
+"            AUTHORITY[\"EPSG\",\"9122\"]],\n"
+"        AUTHORITY[\"EPSG\",\"4326\"]],\n"
+"    PROJECTION[\"Transverse_Mercator\"],\n"
+"    PARAMETER[\"latitude_of_origin\",0],\n"
+"    PARAMETER[\"central_meridian\",3],\n"
+"    PARAMETER[\"scale_factor\",0.9996],\n"
+"    PARAMETER[\"false_easting\",500000],\n"
+"    PARAMETER[\"false_northing\",0],\n"
+"    UNIT[\"metre\",1,\n"
+"        AUTHORITY[\"EPSG\",\"9001\"]],\n"
+"    AXIS[\"Easting\",EAST],\n"
+"    AXIS[\"Northing\",NORTH],\n"
+"    AUTHORITY[\"EPSG\",\"32631\"]]\n"
+"Layer SRS WKT (centroid_geometry):\n"
+"GEOGCS[\"WGS 84\",\n"
+"    DATUM[\"WGS_1984\",\n"
+"        SPHEROID[\"WGS 84\",6378137,298.257223563,\n"
+"            AUTHORITY[\"EPSG\",\"7030\"]],\n"
+"        AUTHORITY[\"EPSG\",\"6326\"]],\n"
+"    PRIMEM[\"Greenwich\",0,\n"
+"        AUTHORITY[\"EPSG\",\"8901\"]],\n"
+"    UNIT[\"degree\",0.0174532925199433,\n"
+"        AUTHORITY[\"EPSG\",\"9122\"]],\n"
+"    AUTHORITY[\"EPSG\",\"4326\"]]\n"
+"FID Column = ogc_fid\n"
+"Geometry Column 1 = polygon_geometry\n"
+"Geometry Column 2 = centroid_geometry\n"
+"area: Real\n"
+"OGRFeature(test_multi_geom):1\n"
+"  area (Real) = 500\n"
+"  polygon_geometry = POLYGON ((400000 4500000,400000 5000000,500000 "
+"5000000,500000 4500000,400000 4500000))\n"
+"  centroid_geometry = POINT(2.5 48.5)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:580
+msgid ""
+"A \"-geomfield\" option will be added to specify on which field the -spat "
+"option applies."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:584
+msgid "ogr2ogr"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:586
+msgid "Enhancements :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:588
+msgid ""
+"will translate multi-geometry layers into multi-geometry layers if supported "
+"by output layer (OLCCreateGeomField capability). In case it is not "
+"supported, only translates the first geometry."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:591
+msgid ""
+"\"-select\" option. If only attribute field names are specified, all input "
+"geometries will be implicitly selected (backward compatible behavior). If "
+"one or several geometry field names are specified, only those ones will be "
+"selected."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:595
+msgid ""
+"add a \"-geomfield\" option to specify on which field the -spat option "
+"applies"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:597
+msgid ""
+"the various geometry transformations (reprojection, clipping, etc.) will be "
+"applied on all geometry fields."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:601
+msgid "test_ogrsf"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:603
+msgid "Will be enhanced with a few consistency checks :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:605
+msgid ""
+"OGRLayer::GetSpatialRef() == OGRFeatureDefn::GetGeomField(0)->GetSpatialRef()"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:607
+msgid ""
+"OGRLayer::GetGeomType() == OGRFeatureDefn::GetGeomField(0)->GetGeomType()"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:609
+msgid ""
+"OGRLayer::GetGeometryColumn() == OGRFeatureDefn::GetGeomField(0)-"
+">GetNameRef()"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:612
+msgid "Spatial filtering tests will loop over all geometry fields."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:615
+msgid "Documentation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:617
+msgid ""
+"In addition to function level documentation, the new capability will be "
+"documented in the :ref:`vector_data_model` and :ref:`vector_api_tut` "
+"documents."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:621
+msgid "Python and other language bindings"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:623
+msgid ""
+"The new C API will be mapped to SWIG bindings. It will be only tested with "
+"the Python bindings. No new typemaps are expected, so this should work with "
+"other languages in a straightforward way."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:628
+msgid "Compatibility"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:630
+msgid ""
+"Changes are only additions to the existing API, and existing behavior should "
+"be preserved, so this will be backwards compatible."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:633
+msgid "C++ ABI changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:635
+msgid ""
+"Change of behavior in PostGIS driver w.r.t GDAL 1.10 for tables with "
+"multiple geometries."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:639
+msgid "Implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:641
+msgid ""
+"Even Rouault will implement the above described changes for GDAL 1.11 "
+"release, except the upgrade of the Interlis driver that will be done by "
+"Pirmin Kalberer."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:646
+msgid "Funding"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:648
+msgid ""
+"This work is funded by the `Federal Office of Topography (swisstopo), COGIS "
+"<http://www.swisstopo.admin.ch/internet/swisstopo/en/home/swisstopo/org/"
+"kogis.html>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:652
+msgid "Voting history"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc41_multiple_geometry_fields.rst:654
+msgid "+1 from EvenR, FrankW, HowardB, DanielM and TamasS"
+msgstr ""

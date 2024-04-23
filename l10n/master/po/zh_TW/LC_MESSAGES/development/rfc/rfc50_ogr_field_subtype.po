@@ -1,0 +1,331 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:5
+msgid "RFC 50: OGR field subtypes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:7
+msgid "Author: Even Rouault"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:9
+msgid "Contact: even dot rouault at spatialys dot com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:11
+msgid "Status: Adopted, implemented in GDAL 2.0"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:14
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:16
+msgid ""
+"This RFC aims at adding the capability of specifying sub-types to OGR "
+"fields, like boolean, 16 bit integers or 32 bit floating point values. The "
+"sub-type of a field definition is an additional attribute that specifies a "
+"hint or a restriction to the main type. The subtype can be used by "
+"applications and drivers that know how to handle it, and can generally be "
+"safely ignored by applications and drivers that do not."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:24
+msgid "Core changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:27
+msgid "Field subtypes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:29
+msgid "The OGRFieldSubType enumeration is added :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:33
+msgid ""
+"/**\n"
+" * List of field subtypes. A subtype represents a hint, a restriction of "
+"the\n"
+" * main type, that is not strictly necessary to consult.\n"
+" * This list is likely to be extended in the\n"
+" * future ... avoid coding applications based on the assumption that all\n"
+" * field types can be known.\n"
+" * Most subtypes only make sense for a restricted set of main types.\n"
+" * @since GDAL 2.0\n"
+" */\n"
+"typedef enum\n"
+"{\n"
+"    /** No subtype. This is the default value */        OFSTNone = 0,\n"
+"    /** Boolean integer. Only valid for OFTInteger and OFTIntegerList.*/\n"
+"                                                        OFSTBoolean = 1,\n"
+"    /** Signed 16-bit integer. Only valid for OFTInteger and OFTIntegerList. "
+"*/\n"
+"                                                        OFSTInt16 = 2,\n"
+"    /** Single precision (32 bit) floatint point. Only valid for OFTReal and "
+"OFTRealList. */\n"
+"                                                        OFSTFloat32 = 3,\n"
+"                                                        OFSTMaxSubType = 3\n"
+"} OGRFieldSubType;"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:55
+msgid "New attributes and methods"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:57
+msgid "In OGRFieldDefn class :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:61
+msgid ""
+"OGRFieldSubType     eSubType;\n"
+"\n"
+"OGRFieldSubType     GetSubType() { return eSubType; }\n"
+"void                SetSubType( OGRFieldSubType eSubTypeIn );\n"
+"static const char  *GetFieldSubTypeName( OGRFieldSubType );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:67
+msgid ""
+"OGRFeature::SetField() will check that the passed value is in the accepted "
+"range for boolean and int16 subtypes. If not, it will emit a warning and "
+"correct/clamp the value to fit the subtype."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:72
+msgid "C API changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:74
+msgid "Only additions :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:78
+msgid ""
+"OGRFieldSubType CPL_DLL OGR_Fld_GetSubType( OGRFieldDefnH );\n"
+"void   CPL_DLL OGR_Fld_SetSubType( OGRFieldDefnH, OGRFieldSubType );\n"
+"const char CPL_DLL *OGR_GetFieldSubTypeName( OGRFieldSubType );\n"
+"int CPL_DLL OGR_AreTypeSubTypeCompatible( OGRFieldType eType,\n"
+"                                          OGRFieldSubType eSubType );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:85
+msgid "Changes in OGR SQL"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:87
+msgid ""
+"Subtypes are preserved when a field name (or \\*) is specified in the list "
+"of fields of a SELECT"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:89
+msgid "CAST(xxx AS BOOLEAN) and CAST(xxx AS SMALLINT) are now supported."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:90
+msgid ""
+"The field list of a SELECT can now accept boolean expressions, such as "
+"\"SELECT x IS NULL, x >= 5 FROM foo\""
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:92
+msgid ""
+"The WHERE clause of a SELECT can now accept boolean fields, such as \"SELECT "
+"\\* FROM foo WHERE a_boolean_field\""
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:96
+msgid "Changes in drivers"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:98
+msgid "GeoJSON: can read/write OFSTBoolean"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:99
+msgid "GML: can read/write OFSTBoolean, OFSTInt16 and OFSTFloat32"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:100
+msgid ""
+"CSV: can read/write OFSTBoolean (explicitly with CSVT or with "
+"autodetection), OFSTInt16 and OFSTFloat32 (explicitly with CSVT)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:102
+msgid "PG: can read/write OFSTBoolean, OFSTInt16 and OFSTFloat32"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:103
+msgid "PGDump: can write OFSTBoolean, OFSTInt16 and OFSTFloat32"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:104
+msgid "GeoPackage: can read/write OFSTBoolean, OFSTInt16 and OFSTFloat32"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:105
+msgid "SQLite: can read/write OFSTBoolean and OFSTInt16"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:106
+msgid "SQLite dialect: can read/write OFSTBoolean, OFSTInt16 and OFSTFloat32"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:107
+msgid "FileGDB: can read/write OFSTInt16 and OFSTFloat32"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:108
+msgid "OpenFileGDB: can read OFSTInt16 and OFSTFloat32"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:109
+msgid "VRT: 'subtype' property added to be able to handle any subtype."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:112
+msgid "Changes in utilities"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:114
+msgid ""
+"ogrinfo: the output of ogrinfo is slightly modified in presence of a "
+"subtype. A field with a non-default subtype will be described as "
+"\"field_type(field_subtype)\". For example"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:120
+msgid ""
+"Had to open data source read-only.\n"
+"INFO: Open of `out.gml'\n"
+"      using driver `GML' successful.\n"
+"\n"
+"Layer name: test\n"
+"Geometry: None\n"
+"Feature Count: 2\n"
+"Layer SRS WKT:\n"
+"(unknown)\n"
+"short: Integer(Int16) (0.0)\n"
+"b: Integer(Boolean) (0.0)\n"
+"OGRFeature(test):0\n"
+"  short (Integer(Int16)) = -32768\n"
+"  b (Integer(Boolean)) = 1"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:136
+msgid "Changes in SWIG bindings"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:138
+msgid "Addition of :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:140
+msgid "ogr.OFSTNone, ogr.OFSTBoolean, ogr.OFSTInt16 and ogr.OFSTFloat32"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:141
+msgid "ogr.GetFieldSubTypeName()"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:142
+msgid "FieldDefn.GetSubType()"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:143
+msgid "FieldDefn.SetSubType()"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:146
+msgid "Compatibility"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:148
+msgid ""
+"This should have no impact on read-only operations done by applications. "
+"Update operations could be impacted if an out-of-range value for the subtype "
+"is written (but such a behavior probably already caused issues, either "
+"ignored or notified by the backend)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:154
+msgid "Documentation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:156
+msgid ""
+"All new methods are documented. Driver documentation is updated when "
+"necessary."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:160
+msgid "Testing"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:162
+msgid "The various aspects of this RFC are tested:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:164
+msgid "core changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:165
+msgid "OGR SQL changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:166
+msgid "driver changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:169
+msgid "Implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:171
+msgid ""
+"Implementation will be done by Even Rouault (`Spatialys <http://spatialys."
+"com>`__), and sponsored by `CartoDB <https://cartodb.com>`__."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:175
+msgid ""
+"The proposed implementation lies in the \"ogr_field_subtype\" branch of the "
+"`https://github.com/rouault/gdal2/tree/ogr_field_subtype <https://github.com/"
+"rouault/gdal2/tree/ogr_field_subtype>`__ repository."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:180
+msgid ""
+"The list of changes : `https://github.com/rouault/gdal2/compare/"
+"ogr_field_subtype <https://github.com/rouault/gdal2/compare/"
+"ogr_field_subtype>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:184
+msgid "Voting history"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc50_ogr_field_subtype.rst:186
+msgid "+1 JukkaR, TamasS, FrankW and EvenR"
+msgstr ""

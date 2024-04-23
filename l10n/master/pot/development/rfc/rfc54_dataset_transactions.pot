@@ -1,0 +1,906 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:5
+msgid "RFC 54: Dataset transactions"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:7
+msgid "Authors: Even Rouault"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:9
+msgid "Contact: even dot rouault at spatialys.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:11
+msgid "Status: Adopted, implemented in GDAL 2.0"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:14
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:16
+msgid ""
+"This RFC introduces an API to offer a transaction mechanism at dataset level "
+"and uses it in the PostgreSQL, SQLite and GPKG drivers. It also reworks "
+"significantly how transactions are handled in the PostgreSQL driver. It also "
+"introduces a generic mechanism to implement an emulation of transactions for "
+"datasources that would not natively support it, and uses it in the FileGDB "
+"driver."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:24
+msgid "Rationale"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:26
+msgid ""
+"The current abstraction offers a transaction API at the layer level. "
+"However, this is generally misleading since, when it is implemented in DBMS "
+"with BEGIN/COMMIT/ROLLBACK sql statements (PostgreSQL, SQLite, GPKG, PGDump, "
+"MSSQLSpatial), the semantics is really a transaction at database level that "
+"spans over all layers/tables. So even if calling StartTransaction() on a "
+"layer, it also extends on the changes done on other layers. In a very few "
+"drivers StartTransaction()/CommitTransaction() is sometimes used as a "
+"mechanism to do bulk insertion. This is for example the case of WFS, "
+"CartoDB, GFT, GME. For some of them, it could rather be at dataset level too "
+"since potentially multiple layer modifications could be stacked together."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:38
+msgid ""
+"Furthermode some use cases require updating several layers consistently, "
+"hence the need for a real database level transaction abstraction."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:41
+msgid ""
+"The current situation of various drivers is the following (some of the below "
+"observations resulting from the analysis are kept mainly for the benefit of "
+"developers that would need to work in the drivers) :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:46
+msgid "PostgreSQL"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:48
+msgid "A few facts about cursors used to run GetNextFeature() requests:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:50
+msgid ""
+"Cursors are needed for retrieval of huge amount of data without being memory "
+"bound."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:52
+msgid "Cursors need transactions to run."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:53
+msgid ""
+"Default cursors (WITHOUT HOLD) cannot be used outside of the transaction "
+"that created tem"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:55
+msgid ""
+"You cannot modify the structure of a table while the transaction (yes, the "
+"transaction, not the cursor) is still active and if you do that on another "
+"connection, it hangs until the other connection commits or rollbacks)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:59
+msgid ""
+"Within a transaction, deleted/modified rows are only visible if they are "
+"done before declaring the cursor."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:61
+msgid ""
+"Cursors WITH HOLD: may be used outside of transaction but cause a copy of "
+"the table to be done --> bad for performance"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:64
+msgid "Current flaws are :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:66
+msgid ""
+"one cannot do interleaved layer reading (beyond the first 500 features "
+"fetched, can be easily seen with OGR_PG_CURSOR_PAGE=1) due to the underlying "
+"implicit transaction created to read layer A being closed when the reading "
+"of layer B starts."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:70
+msgid ""
+"GetFeature() flushes the current transaction and starts a new one to do a "
+"cursor SELECT. Which is unnecessary since we retrieve only one record"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:73
+msgid ""
+"SetAttributeFilter() issues a ResetReading() which currently "
+"FlushSoftTransaction() the ongoing transaction. Can be annoying in a "
+"scenario with long update where you need transactional guarantee"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:77
+msgid "What works :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:79
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:90
+msgid "Transaction support at the layer level forwarded to datasource."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:80
+msgid "Interleaved writing works (even with copy mode)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:83
+msgid "SQLite/GPKG"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:85
+msgid ""
+"Mechanisms used to read table content (sqlite3_prepare() / sqlite3_step()) "
+"do not need transactions."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:87
+msgid ""
+"Step sees structure modifications (e.g. column addition) if run after "
+"prepared statement but before first step."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:89
+msgid "Step sees row modifications/additions as soon as they occur."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:93
+msgid "MySQL"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:95
+msgid ""
+"Cannot do interleaved layer reading (reading in one layer resets the other "
+"reading) because of the use of mysql_use_result() that can work with one "
+"single request at a time. mysql_store_result() would be a solution but "
+"requires ingesting the whole result set into memory, which is inpractical "
+"for big layers."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:100
+msgid ""
+"step does not set row changes once the query has started (if done through "
+"another connection, because if done through ExecuteSQL() the long "
+"transaction is interrupted)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:103
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:110
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:117
+msgid "No transaction support"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:106
+msgid "OCI"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:108
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:115
+msgid "Interleaved layer reading works"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:109
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:116
+msgid "Changes done after SELECT seem not to be seen."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:113
+msgid "FileGDB"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:120
+msgid "Proposed changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:123
+msgid "GDALDataset changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:125
+msgid ""
+"The following methods are added to GDALDataset (and usable by OGRDataSource "
+"which inherits from GDALDataset)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:130
+msgid ""
+"/************************************************************************/\n"
+"/*                           StartTransaction()                         */\n"
+"/************************************************************************/\n"
+"\n"
+"/**\n"
+" \\brief For datasources which support transactions, StartTransaction "
+"creates a transaction.\n"
+"\n"
+" If starting the transaction fails, will return\n"
+" OGRERR_FAILURE. Datasources which do not support transactions will\n"
+" always return OGRERR_UNSUPPORTED_OPERATION.\n"
+"\n"
+" Nested transactions are not supported.\n"
+"\n"
+" All changes done after the start of the transaction are definitely applied "
+"in the\n"
+" datasource if CommitTransaction() is called. They may be canceled by "
+"calling\n"
+" RollbackTransaction() instead.\n"
+"\n"
+" At the time of writing, transactions only apply on vector layers.\n"
+"\n"
+" Datasets that support transactions will advertise the ODsCTransactions "
+"capability.\n"
+" Use of transactions at dataset level is generally preferred to transactions "
+"at\n"
+" layer level, whose scope is rarely limited to the layer from which it was "
+"started.\n"
+"\n"
+" In case StartTransaction() fails, neither CommitTransaction() or "
+"RollbackTransaction()\n"
+" should be called.\n"
+"\n"
+" If an error occurs after a successful StartTransaction(), the whole\n"
+" transaction may or may not be implicitly canceled, depending on drivers. (e."
+"g.\n"
+" the PG driver will cancel it, SQLite/GPKG not). In any case, in the event "
+"of an\n"
+" error, an explicit call to RollbackTransaction() should be done to keep "
+"things balanced.\n"
+"\n"
+" By default, when bForce is set to FALSE, only \"efficient\" transactions "
+"will be\n"
+" attempted. Some drivers may offer an emulation of transactions, but "
+"sometimes\n"
+" with significant overhead, in which case the user must explicitly allow for "
+"such\n"
+" an emulation by setting bForce to TRUE. Drivers that offer emulated "
+"transactions\n"
+" should advertise the ODsCEmulatedTransactions capability (and not "
+"ODsCTransactions).\n"
+"\n"
+" This function is the same as the C function GDALDatasetStartTransaction().\n"
+"\n"
+" @param bForce can be set to TRUE if an emulation, possibly slow, of a "
+"transaction\n"
+"               mechanism is acceptable.\n"
+"\n"
+" @return OGRERR_NONE on success.\n"
+" @since GDAL 2.0\n"
+"*/\n"
+"OGRErr GDALDataset::StartTransaction(CPL_UNUSED int bForce);\n"
+"\n"
+"\n"
+"/************************************************************************/\n"
+"/*                           CommitTransaction()                        */\n"
+"/************************************************************************/\n"
+"\n"
+"/**\n"
+" \\brief For datasources which support transactions, CommitTransaction "
+"commits a transaction.\n"
+"\n"
+" If no transaction is active, or the commit fails, will return\n"
+" OGRERR_FAILURE. Datasources which do not support transactions will\n"
+" always return OGRERR_UNSUPPORTED_OPERATION.\n"
+"\n"
+" Depending on drivers, this may or may not abort layer sequential readings "
+"that\n"
+" are active.\n"
+"\n"
+" This function is the same as the C function "
+"GDALDatasetCommitTransaction().\n"
+"\n"
+" @return OGRERR_NONE on success.\n"
+" @since GDAL 2.0\n"
+"*/\n"
+"OGRErr GDALDataset::CommitTransaction();\n"
+"\n"
+"/************************************************************************/\n"
+"/*                           RollbackTransaction()                      */\n"
+"/************************************************************************/\n"
+"\n"
+"/**\n"
+" \\brief For datasources which support transactions, RollbackTransaction "
+"will roll\n"
+" back a datasource to its state before the start of the current "
+"transaction.\n"
+"\n"
+" If no transaction is active, or the rollback fails, will return\n"
+" OGRERR_FAILURE. Datasources which do not support transactions will\n"
+" always return OGRERR_UNSUPPORTED_OPERATION.\n"
+"\n"
+" This function is the same as the C function "
+"GDALDatasetRollbackTransaction().\n"
+"\n"
+" @return OGRERR_NONE on success.\n"
+" @since GDAL 2.0\n"
+"*/\n"
+"OGRErr GDALDataset::RollbackTransaction();"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:218
+msgid ""
+"Note: in the GDALDataset class itself, those methods have an empty "
+"implementation that returns OGRERR_UNSUPPORTED_OPERATION."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:221
+msgid "Those 3 methods are mapped at the C level as :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:225
+msgid ""
+"OGRErr CPL_DLL GDALDatasetStartTransaction(GDALDatasetH hDS, int bForce);\n"
+"OGRErr CPL_DLL GDALDatasetCommitTransaction(GDALDatasetH hDS);\n"
+"OGRErr CPL_DLL GDALDatasetRollbackTransaction(GDALDatasetH hDS);"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:229
+msgid "Two news dataset capabilities are added :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:231
+msgid ""
+"ODsCTransactions: True if this datasource supports (efficient) transactions."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:233
+msgid ""
+"ODsCEmulatedTransactions: True if this datasource supports transactions "
+"through emulation."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:237
+msgid "Emulated transactions"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:239
+msgid ""
+"A new function OGRCreateEmulatedTransactionDataSourceWrapper() is added for "
+"used by drivers that do not natively support transactions but want an "
+"emulation of them. It could potentially be adopted by any datasource whose "
+"data is supported by files/directories."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:246
+msgid ""
+"/** Returns a new datasource object that adds transactional behavior to an "
+"existing datasource.\n"
+" *\n"
+" * The provided poTransactionBehaviour object should implement driver-"
+"specific\n"
+" * behavior for transactions.\n"
+" *\n"
+" * The generic mechanisms offered by the wrapper class do not cover "
+"concurrent\n"
+" * updates (though different datasource connections) to the same datasource "
+"files.\n"
+" *\n"
+" * There are restrictions on what can be accomplished. For example it is "
+"not\n"
+" * allowed to have a unreleased layer returned by ExecuteSQL() before "
+"calling\n"
+" * StartTransaction(), CommitTransaction() or RollbackTransaction().\n"
+" *\n"
+" * Layer structural changes are not allowed after StartTransaction() if the\n"
+" * layer definition object has been returned previously with "
+"GetLayerDefn().\n"
+" *\n"
+" * @param poBaseDataSource the datasource to which to add transactional "
+"behavior.\n"
+" * @param poTransactionBehaviour an implementation of the "
+"IOGRTransactionBehaviour interface.\n"
+" * @param bTakeOwnershipDataSource whether the returned object should own "
+"the\n"
+" *                                 passed poBaseDataSource (and thus destroy "
+"it\n"
+" *                                 when it is destroyed itself).\n"
+" * @param bTakeOwnershipTransactionBehavior whether the returned object "
+"should own\n"
+" *                                           the passed "
+"poTransactionBehaviour\n"
+" *                                           (and thus destroy it when\n"
+" *                                           it is destroyed itself).\n"
+" * @return a new datasource handle\n"
+" * @since GDAL 2.0\n"
+" */\n"
+"OGRDataSource CPL_DLL* OGRCreateEmulatedTransactionDataSourceWrapper(\n"
+"                                OGRDataSource* poBaseDataSource,\n"
+"                                IOGRTransactionBehaviour* "
+"poTransactionBehaviour,\n"
+"                                int bTakeOwnershipDataSource,\n"
+"                                int bTakeOwnershipTransactionBehavior);"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:279
+msgid ""
+"The definition of the IOGRTransactionBehaviour interface is the following:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:284
+msgid ""
+"/** IOGRTransactionBehaviour is an interface that a driver must implement\n"
+" *  to provide emulation of transactions.\n"
+" *\n"
+" * @since GDAL 2.0\n"
+" */\n"
+"class CPL_DLL IOGRTransactionBehaviour\n"
+"{\n"
+"    public:\n"
+"\n"
+"        /** Start a transaction.\n"
+"        *\n"
+"        * The implementation may update the poDSInOut reference by closing\n"
+"        * and reopening the datasource (or assigning it to NULL in case of "
+"error).\n"
+"        * In which case bOutHasReopenedDS must be set to TRUE.\n"
+"        *\n"
+"        * The implementation can for example backup the existing files/"
+"directories\n"
+"        * that compose the current datasource.\n"
+"        *\n"
+"        * @param poDSInOut datasource handle that may be modified\n"
+"        * @param bOutHasReopenedDS output boolean to indicate if datasource "
+"has been closed\n"
+"        * @return OGRERR_NONE in case of success\n"
+"        */\n"
+"       virtual OGRErr StartTransaction(OGRDataSource*& poDSInOut,\n"
+"                                       int& bOutHasReopenedDS) = 0;\n"
+"\n"
+"        /** Commit a transaction.\n"
+"        *\n"
+"        * The implementation may update the poDSInOut reference by closing\n"
+"        * and reopening the datasource (or assigning it to NULL in case of "
+"error).\n"
+"        * In which case bOutHasReopenedDS must be set to TRUE.\n"
+"        *\n"
+"        * The implementation can for example remove the backup it may have "
+"done\n"
+"        * at StartTransaction() time.\n"
+"        *\n"
+"        * @param poDSInOut datasource handle that may be modified\n"
+"        * @param bOutHasReopenedDS output boolean to indicate if datasource "
+"has been closed\n"
+"        * @return OGRERR_NONE in case of success\n"
+"        */\n"
+"       virtual OGRErr CommitTransaction(OGRDataSource*& poDSInOut,\n"
+"                                        int& bOutHasReopenedDS) = 0;\n"
+"\n"
+"        /** Rollback a transaction.\n"
+"        *\n"
+"        * The implementation may update the poDSInOut reference by closing\n"
+"        * and reopening the datasource (or assigning it to NULL in case of "
+"error).\n"
+"        * In which case bOutHasReopenedDS must be set to TRUE.\n"
+"        *\n"
+"        * The implementation can for example restore the backup it may have "
+"done\n"
+"        * at StartTransaction() time.\n"
+"        *\n"
+"        * @param poDSInOut datasource handle that may be modified\n"
+"        * @param bOutHasReopenedDS output boolean to indicate if datasource "
+"has been closed\n"
+"        * @return OGRERR_NONE in case of success\n"
+"        */\n"
+"       virtual OGRErr RollbackTransaction(OGRDataSource*& poDSInOut,\n"
+"                                          int& bOutHasReopenedDS) = 0;\n"
+"};"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:343
+msgid "OPGRLayer changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:345
+msgid ""
+"At the OGRLayer level, the documentation of GetNextFeature() receives the "
+"following additional information to clarify its semantics :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:350
+msgid ""
+"Features returned by GetNextFeature() may or may not be affected by "
+"concurrent\n"
+"modifications depending on drivers. A guaranteed way of seeing modifications "
+"in\n"
+"effect is to call ResetReading() on layers where GetNextFeature() has been "
+"called,\n"
+"before reading again. Structural changes in layers (field addition, "
+"deletion, ...)\n"
+"when a read is in progress may or may not be possible depending on drivers.\n"
+"If a transaction is committed/aborted, the current sequential reading may or "
+"may\n"
+"not be valid after that operation and a call to ResetReading() might be "
+"needed."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:359
+msgid "PG driver changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:361
+msgid ""
+"Dataset level transactions have been implemented, and use of implicitly "
+"created transactions reworked."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:364
+msgid "Interleaved layer reading is now possible."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:366
+msgid ""
+"GetFeature() has been modified to run without a cursor or a transaction, and "
+"all other calls to transactions have been checked/modified to not reset "
+"accidentally a transaction initiated by the user."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:370
+msgid ""
+"Below the new behavior as described in the updated drv_pg_advanced.html help "
+"page :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:375
+msgid ""
+"Efficient sequential reading in PostgreSQL requires to be done within a "
+"transaction\n"
+"(technically this is a CURSOR WITHOUT HOLD).\n"
+"So the PG driver will implicitly open such a transaction if none is "
+"currently\n"
+"opened as soon as a feature is retrieved. This transaction will be released "
+"if\n"
+"ResetReading() is called (provided that no other layer is still being "
+"read).\n"
+"\n"
+"If within such an implicit transaction, an explicit dataset level "
+"StartTransaction()\n"
+"is issued, the PG driver will use a SAVEPOINT to emulate properly the "
+"transaction\n"
+"behavior while making the active cursor on the read layer still opened.\n"
+"\n"
+"If an explicit transaction is opened with dataset level StartTransaction()\n"
+"before reading a layer, this transaction will be used for the cursor that "
+"iterates\n"
+"over the layer. When explicitly committing or rolling back the transaction, "
+"the\n"
+"cursor will become invalid, and ResetReading() should be issued again to "
+"restart\n"
+"reading from the beginning.\n"
+"\n"
+"As calling SetAttributeFilter() or SetSpatialFilter() implies an implicit\n"
+"ResetReading(), they have the same effect as ResetReading(). That is to "
+"say,\n"
+"while an implicit transaction is in progress, the transaction will be "
+"committed\n"
+"(if no other layer is being read), and a new one will be started again at "
+"the next\n"
+"GetNextFeature() call. On the contrary, if they are called within an "
+"explicit\n"
+"transaction, the transaction is maintained.\n"
+"\n"
+"With the above rules, the below examples show the SQL instructions that are\n"
+"run when using the OGR API in different scenarios.\n"
+"\n"
+"\n"
+"lyr1->GetNextFeature()             BEGIN (implicit)\n"
+"                                   DECLARE cur1 CURSOR FOR SELECT * FROM "
+"lyr1\n"
+"                                   FETCH 1 IN cur1\n"
+"\n"
+"lyr1->SetAttributeFilter('xxx')\n"
+"     --> lyr1->ResetReading()      CLOSE cur1\n"
+"                                   COMMIT (implicit)\n"
+"\n"
+"lyr1->GetNextFeature()             BEGIN (implicit)\n"
+"                                   DECLARE cur1 CURSOR  FOR SELECT * FROM "
+"lyr1 WHERE xxx\n"
+"                                   FETCH 1 IN cur1\n"
+"\n"
+"lyr2->GetNextFeature()             DECLARE cur2 CURSOR  FOR SELECT * FROM "
+"lyr2\n"
+"                                   FETCH 1 IN cur2\n"
+"\n"
+"lyr1->GetNextFeature()             FETCH 1 IN cur1\n"
+"\n"
+"lyr2->GetNextFeature()             FETCH 1 IN cur2\n"
+"\n"
+"lyr1->CreateFeature(f)             INSERT INTO cur1 ...\n"
+"\n"
+"lyr1->SetAttributeFilter('xxx')\n"
+"     --> lyr1->ResetReading()      CLOSE cur1\n"
+"                                   COMMIT (implicit)\n"
+"\n"
+"lyr1->GetNextFeature()             DECLARE cur1 CURSOR  FOR SELECT * FROM "
+"lyr1 WHERE xxx\n"
+"                                   FETCH 1 IN cur1\n"
+"\n"
+"lyr1->ResetReading()               CLOSE cur1\n"
+"\n"
+"lyr2->ResetReading()               CLOSE cur2\n"
+"                                   COMMIT (implicit)\n"
+"\n"
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+"\n"
+"ds->StartTransaction()             BEGIN\n"
+"\n"
+"lyr1->GetNextFeature()             DECLARE cur1 CURSOR FOR SELECT * FROM "
+"lyr1\n"
+"                                   FETCH 1 IN cur1\n"
+"\n"
+"lyr2->GetNextFeature()             DECLARE cur2 CURSOR FOR SELECT * FROM "
+"lyr2\n"
+"                                   FETCH 1 IN cur2\n"
+"\n"
+"lyr1->CreateFeature(f)             INSERT INTO cur1 ...\n"
+"\n"
+"lyr1->SetAttributeFilter('xxx')\n"
+"     --> lyr1->ResetReading()      CLOSE cur1\n"
+"                                   COMMIT (implicit)\n"
+"\n"
+"lyr1->GetNextFeature()             DECLARE cur1 CURSOR  FOR SELECT * FROM "
+"lyr1 WHERE xxx\n"
+"                                   FETCH 1 IN cur1\n"
+"\n"
+"lyr1->ResetReading()               CLOSE cur1\n"
+"\n"
+"lyr2->ResetReading()               CLOSE cur2\n"
+"\n"
+"ds->CommitTransaction()            COMMIT\n"
+"\n"
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+"\n"
+"ds->StartTransaction()             BEGIN\n"
+"\n"
+"lyr1->GetNextFeature()             DECLARE cur1 CURSOR FOR SELECT * FROM "
+"lyr1\n"
+"                                   FETCH 1 IN cur1\n"
+"\n"
+"lyr1->CreateFeature(f)             INSERT INTO cur1 ...\n"
+"\n"
+"ds->CommitTransaction()            CLOSE cur1 (implicit)\n"
+"                                   COMMIT\n"
+"\n"
+"lyr1->GetNextFeature()             FETCH 1 IN cur1      ==> Error since the "
+"cursor was closed with the commit. Explicit ResetReading() required before\n"
+"\n"
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+"\n"
+"lyr1->GetNextFeature()             BEGIN (implicit)\n"
+"                                   DECLARE cur1 CURSOR FOR SELECT * FROM "
+"lyr1\n"
+"                                   FETCH 1 IN cur1\n"
+"\n"
+"ds->StartTransaction()             SAVEPOINT savepoint\n"
+"\n"
+"lyr1->CreateFeature(f)             INSERT INTO cur1 ...\n"
+"\n"
+"ds->CommitTransaction()            RELEASE SAVEPOINT savepoint\n"
+"\n"
+"lyr1->ResetReading()               CLOSE cur1\n"
+"                                   COMMIT (implicit)\n"
+"\n"
+"\n"
+"Note: in reality, the PG drivers fetches 500 features at once. The FETCH 1\n"
+"is for clarity of the explanation."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:493
+msgid ""
+"It is recommended to do operations within explicit transactions for ease of "
+"mind (some troubles fixing ogr_pg.py, but which does admittedly weird things "
+"like reopening connections, which does not fly very well with 'implicit' "
+"transactions)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:499
+msgid "GPKG and SQLite driver changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:501
+msgid ""
+"Dataset level transactions have been implemented. A few fixes made here and "
+"there to avoid resetting accidentally a transaction initiated by the user."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:506
+msgid "FileGDB driver changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:508
+msgid ""
+"The FileGDB driver uses the above described emulation to offer a transaction "
+"mechanism. This works by backing up the current state of a geodatabase when "
+"StartTransaction(force=TRUE) is called. If the transaction is committed, the "
+"backup copy is destroyed. If the transaction is rolled back, the backup copy "
+"is restored. So this might be costly when operating on huge geodatabases. "
+"Note that this emulation has an unspecified behavior in case of concurrent "
+"updates (with different connections in the same or another process)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:518
+msgid "SWIG bindings (Python / Java / C# / Perl) changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:520
+msgid "The following additions have been done :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:522
+msgid "Dataset.StartTransaction(int force=FALSE)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:523
+msgid "Dataset.CommitTransaction()"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:524
+msgid "Dataset.RollbackTransaction()"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:525
+msgid "ogr.ODsCTransactions constant"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:526
+msgid "ogr.ODsCEmulatedTransactions constant"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:529
+msgid "Utilities"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:531
+msgid ""
+"ogr2ogr now uses dataset transactions (instead of layer transactions) if "
+"ODsCTransactions is advertized."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:535
+msgid "Documentation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:537
+msgid ""
+"New/modified API are documented. MIGRATION_GUIDE.TXT updated with mention to "
+"below compatibility issues."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:541
+msgid "Test Suite"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:543
+msgid "The test suite is extended to test"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:545
+msgid "updated drivers: PG, GPKG, SQLite, FileGDB"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:546
+msgid "use of database transactions by ogr2ogr"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:549
+msgid "Compatibility Issues"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:551
+msgid ""
+"As described above, subtle behavior changes can be observed with the PG "
+"driver, related to implicit transactions that were flushed before and are no "
+"longer now, but this should hopefully be restricted to non-typical use "
+"cases. So some cases that \"worked\" before might no longer work, but the "
+"new behavior should hopefully be more understandable."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:558
+msgid ""
+"The PG and SQLite drivers could accept apparently nested calls to "
+"StartTransaction() (at the layer level). This is no longer possible since "
+"they are now redirected to dataset transactions, that explicitly do not "
+"support it."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:564
+msgid "Out of scope"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:566
+msgid ""
+"The following drivers that implement BEGIN/COMMIT/ROLLBACK could be later "
+"enhanced to support dataset transactions: OCI, MySQL, MSSQLSpatial."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:570
+msgid "GFT, CartoDB, WFS could also benefit for dataset transactions."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:572
+msgid ""
+"VRT currently supports layer transactions (if the underlying dataset support "
+"it, and excluding union layers). If dataset transaction were to be "
+"implemented, should it consist in forwarding dataset transaction to source "
+"dataset(s) ? Implementation might be complicated in case the same dataset is "
+"used by multiple sources, but more fundamentally one cannot guarantee ACID "
+"on multiple datasets."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:580
+msgid "Related tickets"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:582
+msgid ""
+"A proposed revision on how transactions are implemented in the PG driver was "
+"proposed a long time ago (`https://trac.osgeo.org/gdal/ticket/1265 <https://"
+"trac.osgeo.org/gdal/ticket/1265>`__) to solve some of the above issues. The "
+"patch no longer applies but it is expected that the changes done for this "
+"RFC cover the issues that the ticket wanted to address."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:590
+msgid "Implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:592
+msgid ""
+"Implementation will be done by Even Rouault (`Spatialys <http://spatialys."
+"com>`__), and sponsored by `LINZ (Land Information New Zealand) <http://www."
+"linz.govt.nz/>`__."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:596
+msgid ""
+"The proposed implementation lies in the \"rfc54_dataset_transactions\" "
+"branch of the `https://github.com/rouault/gdal2/tree/"
+"rfc54_dataset_transactions <https://github.com/rouault/gdal2/tree/"
+"rfc54_dataset_transactions>`__ repository."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:601
+msgid ""
+"The list of changes: `https://github.com/rouault/gdal2/compare/"
+"rfc54_dataset_transactions <https://github.com/rouault/gdal2/compare/"
+"rfc54_dataset_transactions>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:605
+msgid "Voting history"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc54_dataset_transactions.rst:607
+msgid "+1 from JukkaR, HowardB and EvenR"
+msgstr ""

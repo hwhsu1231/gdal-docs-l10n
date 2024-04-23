@@ -1,0 +1,66 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/isce.rst:5
+msgid "ISCE -- ISCE"
+msgstr ""
+
+#: ../../../source/drivers/raster/isce.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/isce.rst:7
+msgid "ISCE"
+msgstr ""
+
+#: ../../../source/drivers/raster/isce.rst:11
+msgid ""
+"Driver for the image formats used in the JPL's Interferometric synthetic "
+"aperture radar Scientific Computing Environment (ISCE). Only images with "
+"data types mappable to GDAL data types are supported."
+msgstr ""
+
+#: ../../../source/drivers/raster/isce.rst:15
+msgid ""
+"Image properties are stored under the ISCE metadata domain, but there is "
+"currently no support to access underlying components elements and their "
+"properties. Likewise, ISCE domain metadata will be saved as properties in "
+"the image XML file."
+msgstr ""
+
+#: ../../../source/drivers/raster/isce.rst:20
+msgid "Georeferencing is not yet implemented."
+msgstr ""
+
+#: ../../../source/drivers/raster/isce.rst:22
+msgid "The ACCESS_MODE property is not currently honored."
+msgstr ""
+
+#: ../../../source/drivers/raster/isce.rst:24
+msgid ""
+"The only creation option currently is SCHEME, which value (BIL, BIP, BSQ) "
+"determine the interleaving (default is BIP)."
+msgstr ""
+
+#: ../../../source/drivers/raster/isce.rst:27
+msgid "NOTE: Implemented as :source_file:`frmts/raw/iscedataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/isce.rst:30
+msgid "Driver capabilities"
+msgstr ""

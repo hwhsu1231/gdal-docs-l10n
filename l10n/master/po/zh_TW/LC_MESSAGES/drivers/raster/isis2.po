@@ -1,0 +1,96 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/isis2.rst:5
+msgid "ISIS2 -- USGS Astrogeology ISIS Cube (Version 2)"
+msgstr ""
+
+#: ../../../source/drivers/raster/isis2.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/isis2.rst:7
+msgid "ISIS2"
+msgstr ""
+
+#: ../../../source/drivers/raster/isis2.rst:11
+msgid ""
+"ISIS2 is a format used by the USGS Planetary Cartography group to store and "
+"distribute planetary imagery data. GDAL provides read and write access to "
+"ISIS2 formatted imagery data."
+msgstr ""
+
+#: ../../../source/drivers/raster/isis2.rst:15
+msgid ""
+"ISIS2 files often have the extension .cub, sometimes with an associated .lbl "
+"(label) file. When a .lbl file exists it should be used as the dataset name "
+"rather than the .cub file."
+msgstr ""
+
+#: ../../../source/drivers/raster/isis2.rst:19
+msgid ""
+"In addition to support for most ISIS2 imagery configurations, this driver "
+"also reads georeferencing and coordinate system information as well as "
+"selected other header metadata."
+msgstr ""
+
+#: ../../../source/drivers/raster/isis2.rst:23
+msgid ""
+"Implementation of this driver was supported by the United States Geological "
+"Survey."
+msgstr ""
+
+#: ../../../source/drivers/raster/isis2.rst:26
+msgid "ISIS2 is part of a family of related formats including PDS and ISIS3."
+msgstr ""
+
+#: ../../../source/drivers/raster/isis2.rst:29
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/isis2.rst:40
+msgid "Creation Issues"
+msgstr ""
+
+#: ../../../source/drivers/raster/isis2.rst:42
+msgid ""
+"Currently the ISIS2 writer writes a very minimal header with only the image "
+"structure information. No coordinate system, georeferencing or other "
+"metadata is captured."
+msgstr ""
+
+#: ../../../source/drivers/raster/isis2.rst:47
+msgid "Creation Options"
+msgstr ""
+
+#: ../../../source/drivers/raster/isis2.rst:64
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/isis2.rst:66
+msgid "Implemented as :source_file:`frmts/pds/isis2dataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/isis2.rst:67
+msgid ":ref:`raster.pds` driver"
+msgstr ""
+
+#: ../../../source/drivers/raster/isis2.rst:68
+msgid ":ref:`raster.isis3` driver"
+msgstr ""

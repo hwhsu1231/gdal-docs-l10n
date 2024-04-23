@@ -1,0 +1,316 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/programs/gdaltransform.rst:5
+#: ../../../source/programs/gdaltransform.rst:11
+msgid "gdaltransform"
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:9
+msgid "Transforms coordinates"
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:14
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:16
+msgid ""
+"gdaltransform [--help] [--help-general]\n"
+"    [-i] [-s_srs <srs_def>] [-t_srs <srs_def>] [-to <NAME>=<VALUE>]...\n"
+"    [-s_coord_epoch <epoch>] [-t_coord_epoch <epoch>]\n"
+"    [-ct <proj_string>] [-order <n>] [-tps] [-rpc] [-geoloc]\n"
+"    [-gcp <pixel> <line> <easting> <northing> [elevation]]...\n"
+"    [-output_xy] [-E] [-field_sep <sep>] [-ignore_extra_input]\n"
+"    [<srcfile> [<dstfile>]]"
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:28
+msgid "Description"
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:30
+msgid ""
+"The gdaltransform utility reprojects a list of coordinates into any "
+"supported projection,including GCP-based transformations."
+msgstr ""
+
+#: ../../../source/programs/options/help.rst:3
+msgid "Show this help message and exit"
+msgstr ""
+
+#: ../../../source/programs/options/help_general.rst:3
+msgid ""
+"Gives a brief usage message for the generic GDAL commandline options and "
+"exit."
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:39
+msgid ""
+"Set source spatial reference. The coordinate systems that can be passed are "
+"anything supported by the OGRSpatialReference.SetFromUserInput() call, which "
+"includes EPSG PCS and GCSes (i.e. EPSG:4296), PROJ.4 declarations (as "
+"above), or the name of a .prj file containing well known text."
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:49
+msgid ""
+"Assign a coordinate epoch, linked with the source SRS. Useful when the "
+"source SRS is a dynamic CRS. Only taken into account if :option:`-s_srs` is "
+"used."
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:53
+#: ../../../source/programs/gdaltransform.rst:72
+msgid ""
+"Before PROJ 9.4, :option:`-s_coord_epoch` and :option:`-t_coord_epoch` are "
+"mutually exclusive, due to lack of support for transformations between two "
+"dynamic CRS."
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:58
+msgid ""
+"set target spatial reference. The coordinate systems that can be passed are "
+"anything supported by the OGRSpatialReference.SetFromUserInput() call, which "
+"includes EPSG PCS and GCSes (i.e. EPSG:4296), PROJ.4 declarations (as "
+"above), or the name of a .prj file containing well known text."
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:68
+msgid ""
+"Assign a coordinate epoch, linked with the output SRS. Useful when the "
+"output SRS is a dynamic CRS. Only taken into account if :option:`-t_srs` is "
+"used."
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:77
+msgid ""
+"A PROJ string (single step operation or multiple step string starting with "
+"+proj=pipeline), a WKT2 string describing a CoordinateOperation, or a urn:"
+"ogc:def:coordinateOperation:EPSG::XXXX URN overriding the default "
+"transformation from the source to the target CRS. It must take into account "
+"the axis order of the source and target CRS."
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:87
+msgid ""
+"set a transformer option suitable to pass to :cpp:func:"
+"`GDALCreateGenImgProjTransformer2`."
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:91
+msgid ""
+"order of polynomial used for warping (1 to 3). The default is to select a "
+"polynomial order based on the number of GCPs."
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:96
+msgid "Force use of thin plate spline transformer based on available GCPs."
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:100
+msgid "Force use of RPCs."
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:104
+msgid "Force use of Geolocation Arrays."
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:108
+msgid "Inverse transformation: from destination to source."
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:112
+msgid ""
+"Provide a GCP to be used for transformation (generally three or more are "
+"required)"
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:116
+msgid "Restrict output to \"x y\" instead of \"x y z\""
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:122
+msgid ""
+"Set this flag to avoid extra non-numeric content at end of input lines to be "
+"appended to the output lines."
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:129
+msgid ""
+"Enable Echo mode, where input coordinates are prepended to the output lines."
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:135
+msgid ""
+"Defines the field separator, to separate different values. It defaults to "
+"the space character."
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:140
+msgid ""
+"Raster dataset with source projection definition or GCPs. If not given, "
+"source projection/GCPs are read from the command-line :option:`-s_srs` or :"
+"option:`-gcp` parameters."
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:144
+msgid ""
+"Note that only the SRS and/or GCPs of this input file is taken into account, "
+"and not its pixel content."
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:148
+msgid "Raster dataset with destination projection definition."
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:150
+msgid ""
+"Coordinates are read as pairs, triples (for 3D,) or (since GDAL 3.0.0,) "
+"quadruplets (for X,Y,Z,time) of numbers per line from standard input, "
+"transformed, and written out to standard output in the same way. All "
+"transformations offered by gdalwarp are handled, including gcp-based ones."
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:155
+msgid ""
+"Starting with GDAL 3.9, additional non-numeric content (typically point "
+"name) at the end of an input line will also be appended to the output line, "
+"unless the :option:`-ignore_extra_input` is added."
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:159
+msgid ""
+"Note that input and output must always be in decimal form.  There is "
+"currently no support for DMS input or output."
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:162
+msgid ""
+"If an input image file is provided, input is in pixel/line coordinates on "
+"that image.  If an output file is provided, output is in pixel/line "
+"coordinates on that image."
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:167
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:170
+msgid "Reprojection Example"
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:172
+msgid "Simple reprojection from one projected coordinate system to another:"
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:174
+msgid ""
+"gdaltransform -s_srs EPSG:28992 -t_srs EPSG:31370\n"
+"177502 311865"
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:179
+msgid ""
+"Produces the following output in meters in the \"Belge 1972 / Belgian "
+"Lambert 72\" projection:"
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:182
+msgid "244296.724777415 165937.350217148 0"
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:187
+msgid "Image RPC Example"
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:189
+msgid ""
+"The following command requests an RPC based transformation using the RPC "
+"model associated with the named file.  Because the -i (inverse) flag is "
+"used, the transformation is from output georeferenced (WGS84) coordinates "
+"back to image coordinates."
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:195
+msgid ""
+"gdaltransform -i -rpc 06OCT20025052-P2AS-005553965230_01_P001.TIF\n"
+"125.67206 39.85307 50"
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:200
+msgid "Produces this output measured in pixels and lines on the image:"
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:202
+msgid "3499.49282422381 2910.83892848414 50"
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:207
+msgid "X,Y,Z,time transform"
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:209
+msgid ""
+"15-term time-dependent Helmert coordinate transformation from ITRF2000 to "
+"ITRF93 for a coordinate at epoch 2000.0"
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:212
+msgid ""
+"gdaltransform -ct \"+proj=pipeline +step +proj=unitconvert +xy_in=deg \\\n"
+"+xy_out=rad +step +proj=cart +step +proj=helmert +convention=position_vector "
+"\\\n"
+"+x=0.0127 +dx=-0.0029 +rx=-0.00039 +drx=-0.00011 +y=0.0065 +dy=-0.0002 \\\n"
+"+ry=0.00080 +dry=-0.00019 +z=-0.0209 +dz=-0.0006 +rz=-0.00114 +drz=0.00007 "
+"\\\n"
+"+s=0.00195 +ds=0.00001 +t_epoch=1988.0 +step +proj=cart +inv +step \\\n"
+"+proj=unitconvert +xy_in=rad +xy_out=deg\"\n"
+"2 49 0 2000"
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:222
+msgid ""
+"Produces this output measured in longitude degrees, latitude degrees and "
+"ellipsoid height in meters:"
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:224
+msgid "2.0000005420366 49.0000003766711 -0.0222802283242345"
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:229
+msgid "Ground control points"
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:231
+msgid ""
+"Where is the address \"370 S. 300 E.\" in Salt Lake City, given we know some "
+"nearby corners' coordinates?"
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:234
+msgid ""
+"echo 300 -370 my address | gdaltransform \\\n"
+"-gcp 0   -500 -111.89114803 40.75846686 \\\n"
+"-gcp 0   0    -111.89114717 40.76932606 \\\n"
+"-gcp 500 0    -111.87685039 40.76940631\n"
+"\n"
+"-111.8825697384 40.761338402 0 my address"
+msgstr ""

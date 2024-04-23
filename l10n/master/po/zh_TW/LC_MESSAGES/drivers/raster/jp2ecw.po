@@ -1,0 +1,338 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/jp2ecw.rst:5
+msgid "JP2ECW -- ERDAS JPEG2000 (.jp2)"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:7
+msgid "JP2ECW"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:9
+msgid "ECW SDK"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:11
+msgid ""
+"GDAL supports reading and writing JPEG2000 files using the ERDAS ECW/JP2 SDK "
+"developed by Hexagon Geospatial (formerly Intergraph, ERDAS, ERMapper). "
+"Support is optional and requires linking in the libraries available from the "
+"ECW/JP2 SDK Download page."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:16
+msgid ""
+"Coordinate system and georeferencing transformations are read, and some "
+"degree of support is included for GeoJP2 (tm) (GeoTIFF-in-JPEG2000), ERDAS "
+"GML-in-JPEG2000, and the new GML-in-JPEG2000 specification developed at OGC."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:22
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:33
+msgid "Licensing"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:35
+msgid ""
+"The ERDAS ECW/JP2 SDK v5.x is available under multiple license types. For "
+"Desktop usage, decoding any sized ECW/JP2 image is made available free of "
+"charge. To compress, deploy on a Server platform, or decode unlimited sized "
+"files on Mobile platforms a license must be purchased from Hexagon "
+"Geospatial."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:42
+msgid "History"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:44
+msgid "v3.x - Last release, 2006"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:45
+msgid "v4.x - Last release, 2012"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:46
+msgid "v5.x - Active development, 2013 - current"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:49
+msgid "Georeferencing"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:51
+msgid ""
+"Georeferencing information can come from different sources : internal "
+"(GeoJP2 or GMLJP2 boxes), worldfile .j2w/.wld sidecar files, or PAM "
+"(Persistent Auxiliary metadata) .aux.xml sidecar files. By default, "
+"information is fetched in following order (first listed is the most "
+"prioritary): PAM, GeoJP2, GMLJP2, WORLDFILE."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:57
+msgid ""
+"Starting with GDAL 2.2, the allowed sources and their priority order can be "
+"changed with the :config:`GDAL_GEOREF_SOURCES` configuration option (or :oo:"
+"`GEOREF_SOURCES` open option) whose value is a comma-separated list of the "
+"following keywords : PAM, GEOJP2, GMLJP2, INTERNAL (shortcut for GEOJP2,"
+"GMLJP2), WORLDFILE, NONE. First mentioned sources are the most prioritary "
+"over the next ones. A non mentioned source will be ignored."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:64
+msgid ""
+"For example setting it to \"WORLDFILE,PAM,INTERNAL\" will make a "
+"geotransformation matrix from a potential worldfile prioritary over PAM or "
+"internal JP2 boxes. Setting it to \"PAM,WORLDFILE,GEOJP2\" will use the "
+"mentioned sources and ignore GMLJP2 boxes."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:70
+msgid "Option Options"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:72
+msgid "The following open options are available:"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:88
+msgid "Creation Options:"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:90
+msgid ""
+"Note: Only Licensing and compression target need to be specified. The ECW/"
+"JP2 SDK will default all other options to recommended settings based on the "
+"input characteristics. Changing other options can *substantially* impact "
+"decoding speed and compatibility with other JPEG2000 toolkits."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:250
+msgid ""
+"<GDALMultiDomainMetadata>\n"
+"  <Metadata>\n"
+"    <MDI key=\"foo\">bar</MDI>\n"
+"  </Metadata>\n"
+"  <Metadata domain='aux_domain'>\n"
+"    <MDI key=\"foo\">bar</MDI>\n"
+"  </Metadata>\n"
+"  <Metadata domain='a_xml_domain' format='xml'>\n"
+"    <arbitrary_xml_content>\n"
+"    </arbitrary_xml_content>\n"
+"  </Metadata>\n"
+"</GDALMultiDomainMetadata>"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:263
+msgid ""
+"If there are metadata domain whose name starts with \"xml:BOX\\_\", they "
+"will be written each as separate JP2 XML box."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:266
+msgid ""
+"If there is a metadata domain whose name is \"xml:XMP\", its content will be "
+"written as a JP2 UUID XMP box."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:277
+msgid ""
+"\"JPEG2000 format does not support creation of GDAL overviews since the "
+"format is already considered to be optimized for \"arbitrary overviews\". "
+"JP2ECW driver also arranges JP2 codestream to allow optimal access to power "
+"of two overviews. This is controlled with the creation option LEVELS.\""
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:284
+msgid "Create support"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:286
+msgid ""
+"While the driver advertises the Create() capability, contrary to most other "
+"drivers that implement it, the implementation of RasterIO() and WriteBlock() "
+"in the JP2ECW driver does not support arbitrary random writing. Data must be "
+"written in the dataset from top to bottom, whole line(s) at a time."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:293
+msgid "Configuration Options"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:295
+msgid ""
+"The ERDAS ECW/JP2 SDK supports a variety of `runtime configuration options "
+"<http://trac.osgeo.org/gdal/wiki/ConfigOptions>`__ to control various "
+"features. Most of these are exposed as GDAL configuration options. See the "
+"ECW/JP2 SDK documentation for full details on the meaning of these options."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:301
+msgid ":copy-config:`ECW_CACHE_MAXMEM`"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:303
+msgid ":copy-config:`ECW_TEXTURE_DITHER`"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:335
+msgid "Metadata"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:337
+msgid ""
+"XMP metadata can be extracted from JPEG2000 files, and will be stored as XML "
+"raw content in the xml:XMP metadata domain."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:341
+msgid ""
+"ECW/JP2 SDK v5.1+ also advertises JPEG2000 structural information as generic "
+"File Metadata reported under \"JPEG2000\" metadata domain (-mdd):"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:344
+msgid "**ALL_COMMENTS**: Generic comment text field"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:345
+msgid ""
+"**PROFILE**: Profile type (0,1,2). Refer to ECW/JP2 SDK documentation for "
+"more info"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:347
+msgid "**TILES_X**: Number of tiles on X (horizontal) Axis"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:348
+msgid "**TILES_Y**: Number of tiles on Y (vertical) Axis"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:349
+msgid "**TILE_WIDTH**: Tile size on X Axis"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:350
+msgid "**TILE_HEIGHT**: Tile size on Y Axis"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:351
+msgid ""
+"**PRECINCT_SIZE_X**: Precinct size for each resolution level (smallest to "
+"largest) on X Axis"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:353
+msgid ""
+"**PRECINCT_SIZE_Y**: Precinct size for each resolution level (smallest to "
+"largest) on Y Axis"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:355
+msgid "**CODE_BLOCK_SIZE_X**: Code block size on X Axis"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:356
+msgid "**CODE_BLOCK_SIZE_Y**: Code block size on Y Axis"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:357
+msgid ""
+"**PRECISION**: Precision / Bit-depth of each component eg. 8,8,8 for 8bit 3 "
+"band imagery."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:359
+msgid "**RESOLUTION_LEVELS**: Number of resolution levels"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:360
+msgid "**QUALITY_LAYERS**: Number of quality layers"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:361
+msgid "**PROGRESSION_ORDER**: Progression order (RPCL, LRCP, CPRL, RLCP)"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:362
+msgid "**TRANSFORMATION_TYPE**: Filter transformation used (9x7, 5x3)"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:363
+msgid "**USE_SOP**: Start of Packet marker detected (TRUE/FALSE)"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:364
+msgid "**USE_EPH**: End of Packet header marker detected (TRUE/FALSE)"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:365
+msgid "**GML_JP2_DATA**: OGC GML GeoReferencing box detected (TRUE/FALSE)"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:366
+msgid "**COMPRESSION_RATE_TARGET**: Target compression rate used on encoding"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:369
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:371
+msgid "Implemented as :source_file:`frmts/ecw/ecwdataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:372
+msgid ""
+"ECW/JP2 SDK available at `www.hexagongeospatial.com <http://"
+"hexagongeospatial.com/products/data-management-compression/ecw/erdas-ecw-jp2-"
+"sdk>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:374
+msgid ""
+"Further product information available in the `User Guide <http://"
+"hexagongeospatial.com/products/data-management-compression/ecw/erdas-ecw-jp2-"
+"sdk/literature>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:376
+msgid ""
+"Support for non-GDAL specific issues should be directed to the `Hexagon "
+"Geospatial public forum <https://sgisupport.intergraph.com/infocenter/index?"
+"page=forums&forum=507301383c17ef4e013d8dfa30c2007ef1>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2ecw.rst:379
+msgid "`GDAL ECW Build Hints <http://trac.osgeo.org/gdal/wiki/ECW>`__"
+msgstr ""

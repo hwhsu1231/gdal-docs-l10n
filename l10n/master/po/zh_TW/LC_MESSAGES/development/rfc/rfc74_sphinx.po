@@ -1,0 +1,238 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:5
+msgid "RFC 74: Migrate gdal.org to RTD-style Sphinx infrastructure"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:8
+msgid "Author:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:8
+msgid "Howard Butler"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:10
+msgid "Contact:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:10
+msgid "howard@hobu.co"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:11
+msgid "Started:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:11
+msgid "2019-May-19"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:12
+msgid "Status:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:12
+msgid "*Adopted*"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:16
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:18
+msgid ""
+"The document proposes migrating the GDAL documentation from a Doxygen to "
+"`Sphinx <http://www.sphinx-doc.org/en/master/>`__ in `ReadTheDocs <https://"
+"readthedocs.org>`__ format."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:23
+msgid "Motivation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:25
+msgid ""
+"Casual contribution to the GDAL documentation is challenging. Wiki-style "
+"contribution is possible through the Trac instance, but that requires "
+"getting an OSGeo login, which is a high bar, and the Trac information is "
+"disconnected from the primary documentation. Other projects such as PROJ and "
+"`MapServer <https://mapserver.org>`__ have seen significant uptick in "
+"contributed documentation by adopting Sphinx-based systems, and we hope the "
+"adoption of this approach for GDAL will ignite a renaissance of "
+"documentation contribution as it did for those projects."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:34
+msgid ""
+"The current approach has some significant deficiencies that have not been "
+"overcome by waiting for new versions of Doxygen to arrive. These include:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:38
+msgid ""
+"The Doxygen build buries the source of the documentation deep into the "
+"source tree, which makes it hard to find where to properly add information."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:41
+msgid ""
+"The structure of the website is indirect from the source code that creates "
+"it."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:43
+msgid ""
+"New features such as convenient mobile-friendly styling, alternative "
+"serializations such as PDF, and tighter API and user-level documentation "
+"integration are not within easy reach."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:46
+msgid ""
+"Editing of raw HTML means that convenient output of other serialization "
+"types, such as PDF, Windows Compiled Help, or manpage output is challenging."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:51
+msgid "Proposal"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:53
+msgid ""
+"The GDAL team will refactor the GDAL.org website to be based on Sphinx with "
+"the following properties:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:56
+msgid "Convert the bulk of the existing documentation to reStructuredText"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:57
+msgid ""
+"Adapt the `ReadTheDocs theme <https://sphinx-rtd-theme.readthedocs.io/en/"
+"stable/>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:59
+msgid ""
+"Apply an \"Edit this Page on GitHub\" link to every page on the site for "
+"convenient contribution"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:61
+msgid ""
+"Utilize `GitHub Pages <https://pages.github.com/>`__ to host gdal.org, with "
+"updates being regenerated and committed to a repository by `Azure Pipelines "
+"<https://dev.azure.com/osgeo/gdal/_build>`__ continuous integration."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:66
+msgid ""
+"Output a PDF serialization of the website for documentation version "
+"posterity."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:70
+msgid "Considerations"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:72
+msgid ""
+"Numerous hard links to driver pages exist in source code. Care must be taken "
+"to attempt to preserve these links as well as possible with redirects to "
+"adapt to any new organization."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:75
+msgid ""
+"Porting of existing Trac content to the new data structure will allow "
+"decommission of that piece of infrastructure. Significant content porting "
+"investment may be required to achieve this."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:78
+msgid ""
+"Doxygen API-style documents are still valuable, and we propose to keep a "
+"rendering of them at ``/doxygen`` for users who wish to continue with that "
+"approach. Internal API documentation will continue to use Doxygen, and it "
+"will be reflected into the Sphinx website using the Breathe capability."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:83
+msgid ""
+"Initial content organization will attempt to mimic the existing website as "
+"well as can be achieved, but no requirement to maintain adherence to the "
+"previous structure is required if other organization approaches are more "
+"convenient given the features and capabilities of Sphinx."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:88
+msgid ""
+"Existing translations will not be ported. Adaptation and continuation of "
+"porting of translations is beyond the scope of this RFC, but there are "
+"capabilities for managing translations in Sphinx (MapServer.org provides an "
+"excellent example), and follow-on contributors can keep moving forward with "
+"the architecture once the initial effort is complete."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:94
+msgid ""
+"Content may be missed during the transition. Please file tickets in GitHub "
+"for any items that became more difficult to find or are gone after the "
+"transition."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:99
+msgid "Logistics"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:101
+msgid ""
+"A current example of the site lives at `https://gdal.dev <https://gdal."
+"dev>`__ This example is set to noindex. Once the RFC is passed, adaptation "
+"of the infrastructure that builds it will be migrated to `https://gdal.org "
+"<https://gdal.org>`__ and the example website will be completely "
+"decommissioned. Currently, `https://github.com/hobu/gdal <https://github.com/"
+"hobu/gdal>`__ ``doc-sprint`` branch is the fork that drives this content. It "
+"will be squash-merged to the main repository at the passing of the RFC."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:110
+msgid "References:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:112
+msgid "`issue #1204 <https://github.com/OSGeo/gdal/issues/1204>`__."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:113
+msgid ""
+"`2019 OSGeo Community Code Sprint <https://wiki.osgeo.org/wiki/"
+"OSGeo_Community_Sprint_2019>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:117
+msgid "Voting history"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc74_sphinx.rst:119
+msgid "+1 from KurtS, HowardB, DanielM, NormanB, JukkaR and EvenR."
+msgstr ""

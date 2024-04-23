@@ -1,0 +1,327 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:5
+msgid "RFC 56: OFTTime/OFTDateTime millisecond accuracy"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:7
+msgid "Author: Even Rouault"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:9
+msgid "Contact: even dot rouault at spatialys dot com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:11
+msgid "Status: Adopted, implemented"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:13
+msgid "Version: 2.0"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:16
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:18
+msgid ""
+"This RFC aims at adding millisecond accuracy to OFTTime and OFTDateTime "
+"fields, as a number of formats support it explicitly or implicitly : "
+"MapInfo, GPX, Atom (GeoRSS driver), GeoPackage, SQLite, PostgreSQL, CSV, "
+"GeoJSON, ODS, XLSX, KML (potentially GML too)..."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:24
+msgid "Core changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:26
+msgid "The OGRField enumeration is modified as such :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:30
+msgid ""
+"typedef union {\n"
+"    [... unchanged ... ]\n"
+"\n"
+"    struct {\n"
+"        GInt16  Year;\n"
+"        GByte   Month;\n"
+"        GByte   Day;\n"
+"        GByte   Hour;\n"
+"        GByte   Minute;\n"
+"        GByte   TZFlag; /* 0=unknown, 1=localtime(ambiguous),\n"
+"                           100=GMT, 104=GMT+1, 80=GMT-5, etc */\n"
+"        GByte   Reserved; /* must be set to 0 */\n"
+"        float   Second; /* with millisecond accuracy. at the end of the "
+"structure, so as to keep it 12 bytes on 32 bit */\n"
+"    } Date;\n"
+"} OGRField;"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:46
+msgid ""
+"So the \"GByte Second\" field is removed and replaced by a padding Byte "
+"reserved for potential later uses. A \"float Second\" field is added."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:49
+msgid ""
+"On 32 bit builds, the size of OGRField is now 12 bytes instead of 8 bytes. "
+"On 64 bit builds, the size of OGRField remains 16 bytes."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:53
+msgid "New/modified methods"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:55
+msgid ""
+"OGRFeature::SetFieldAsDateTime() methods that took a int nSecond now take a "
+"float fSecond parameter. The GetFieldAsDateTime() method that took a int\\* "
+"pnSecond is kept, and a new GetFieldAsDateTime() method that takes a "
+"float\\* pfSecond is added."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:60
+msgid "In OGRFeature class :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:64
+msgid ""
+"int                 GetFieldAsDateTime( int i,\n"
+"                                 int *pnYear, int *pnMonth, int *pnDay,\n"
+"                                 int *pnHour, int *pnMinute, int *pnSecond,\n"
+"                                 int *pnTZFlag ); /* unchanged from GDAL 1.X "
+"*/\n"
+"int                 GetFieldAsDateTime( int i,\n"
+"                                 int *pnYear, int *pnMonth, int *pnDay,\n"
+"                                 int *pnHour, int *pnMinute, float "
+"*pfSecond,\n"
+"                                 int *pnTZFlag ); /* new */\n"
+"void                SetField( int i, int nYear, int nMonth, int nDay,\n"
+"                              int nHour=0, int nMinute=0, float fSecond=0."
+"f,\n"
+"                              int nTZFlag = 0 ); /* modified */\n"
+"void                SetField( const char *pszFName,\n"
+"                              int nYear, int nMonth, int nDay,\n"
+"                              int nHour=0, int nMinute=0, float fSecond=0."
+"f,\n"
+"                              int nTZFlag = 0 ); /* modified */"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:80
+msgid ""
+"OGRFeature::GetFieldAsString() is modified to output milliseconds if the "
+"Second member of OGRField.Date is not integral"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:83
+msgid "OGRParseDate() is modified to parse second as floating point number."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:85
+msgid ""
+"The following utility functions have their signature modified to take a "
+"OGRField (instead of the full year, month, day, hour, minute, second, TZFlag "
+"decomposition) and accept decimal seconds as input/output :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:91
+msgid ""
+"int CPL_DLL OGRParseXMLDateTime( const char* pszXMLDateTime,\n"
+"                                 OGRField* psField );\n"
+"int CPL_DLL OGRParseRFC822DateTime( const char* pszRFC822DateTime,\n"
+"                                    OGRField* psField );\n"
+"char CPL_DLL * OGRGetRFC822DateTime(const OGRField* psField);\n"
+"char CPL_DLL * OGRGetXMLDateTime(const OGRField* psField);"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:99
+msgid "C API changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:101
+msgid "Only additions :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:105
+msgid ""
+"int   CPL_DLL OGR_F_GetFieldAsDateTimeEx( OGRFeatureH hFeat, int iField,\n"
+"                                int *pnYear, int *pnMonth, int *pnDay,\n"
+"                                int *pnHour, int *pnMinute, float "
+"*pfSecond,\n"
+"                                int *pnTZFlag );\n"
+"void   CPL_DLL OGR_F_SetFieldDateTimeEx( OGRFeatureH, int,\n"
+"                                       int, int, int, int, int, float, int );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:113
+msgid "Changes in drivers"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:115
+msgid "The following drivers now accept milliseconds as input/output :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:117
+msgid "GeoJSON"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:118
+msgid "CSV"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:119
+msgid "PG"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:120
+msgid "PGDump (output only)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:121
+msgid "CartoDB"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:122
+msgid "GeoPackage"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:123
+msgid "SQLite"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:124
+msgid "MapInfo .tab and .mif"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:125
+msgid "LIBKML"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:126
+msgid "ODS"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:127
+msgid "XLSX"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:128
+msgid "GeoRSS (Atom format)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:129
+msgid "GPX"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:132
+msgid "Changes in SWIG bindings"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:134
+msgid ""
+"Feature.GetFieldAsDateTime() and Feature.SetFieldAsDateTime() now takes/"
+"returns a floating point number for seconds"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:138
+msgid "Compatibility"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:140
+msgid "This modifies the C/C++ API and ABI."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:142
+msgid ""
+"Output of above mentioned drivers will now include milliseconds if a "
+"DateTime/Time field has such precision."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:146
+msgid "Related ticket"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:148
+msgid ""
+"The need came from `http://trac.osgeo.org/gdal/ticket/2680 <http://trac."
+"osgeo.org/gdal/ticket/2680>`__ for MapInfo driver."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:153
+msgid "Documentation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:155
+msgid ""
+"All new/modified methods are documented. MIGRATION_GUIDE.TXT is updated with "
+"a new section for this RFC."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:159
+msgid "Testing"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:161
+msgid "The various aspects of this RFC are tested:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:163
+msgid "core changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:164
+msgid "driver changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:167
+msgid "Implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:169
+msgid ""
+"Implementation will be done by Even Rouault (`Spatialys <http://spatialys."
+"com>`__)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:172
+msgid ""
+"The proposed implementation lies in the \"subsecond_accuracy\" branch of the "
+"`https://github.com/rouault/gdal2/tree/subsecond_accuracy <https://github."
+"com/rouault/gdal2/tree/subsecond_accuracy>`__ repository."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:177
+msgid ""
+"The list of changes : `https://github.com/rouault/gdal2/compare/"
+"subsecond_accuracy <https://github.com/rouault/gdal2/compare/"
+"subsecond_accuracy>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:181
+msgid "Voting history"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc56_millisecond_precision.rst:183
+msgid "+1 from DanielM, JukkaR and EvenR"
+msgstr ""

@@ -1,0 +1,1089 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:5
+msgid "RFC 86: Column-oriented read API for vector layers"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:8
+msgid "Author:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:8
+msgid "Even Rouault"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:9
+msgid "Contact:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:9
+msgid "even.rouault @ spatialys.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:10
+msgid "Started:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:10
+msgid "2022-May-24"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:11
+msgid "Updated:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:11
+msgid "2022-June-14"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:12
+msgid "Status:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:12
+msgid "Adopted"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:13
+msgid "Target:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:13
+msgid "GDAL 3.6"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:17
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:19
+msgid ""
+"This RFC describes the addition of new methods to the :cpp:class:`OGRLayer` "
+"class to retrieve batches of features with a column-oriented memory layout, "
+"that suits formats that have that organization or downstream consumers that "
+"expect data to be presented in such a way, in particular the `Apache Arrow "
+"<https://arrow.apache.org/docs/>`_, `Pandas <https://pandas.pydata.org/>`_ / "
+"`GeoPandas <https://geopandas.org/>`_ ecosystem, R spatial packages, and "
+"many modern (data analytics focused) databases / engines which are column "
+"oriented (eg Snowflake, Google BigQuery, ..)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:28
+msgid "Motivation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:30
+msgid ""
+"Currently, to retrieve feature information, users must iterate over each "
+"feature of a layer with GetNextFeature(), which returns a C++ object, on "
+"which query attributes and geometries are retrieved with various \"get\" "
+"methods. When invoked from binding languages, a overhead typically occurs "
+"each time the other language calls native code. So to retrieve all "
+"information on a layer made of N_features and N_fields, you need of the "
+"order of N_features * N_fields calls. That overhead is significant. See "
+"below :ref:`rfc-86-benchmarks`."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:38
+msgid ""
+"Another inconvenience of the C API is that processings that involve many "
+"rows of a same field (e.g computing statistics on a field) may require data "
+"to be contiguously placed in RAM, for the most efficient processing (use of "
+"vectorized CPU instruction). The current OGR API does not allow that "
+"directly, and require the users to shuffle itself data into appropriate data "
+"structures. Similarly the above mentioned frameworks (Arrow, Pandas/"
+"GeoPandas) require such memory layouts, and currently require reorganizing "
+"data when reading from OGR. The `pyogrio <https://github.com/geopandas/"
+"pyogrio>`_ project is for example an attempt at addressing that need."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:48
+msgid ""
+"Furthermore, the :ref:`vector.arrow` and :ref:`vector.parquet` drivers, "
+"whose file organization is columnar, and batch oriented, have been added in "
+"GDAL 3.5.0. Consequently a columnar-oriented API will enable the best "
+"performance for those formats."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:54
+msgid "Details"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:56
+msgid ""
+"The new proposed API implements the `Apache Arrow C Stream interface "
+"<https://arrow.apache.org/docs/format/CStreamInterface.html>`_. Reading that "
+"document, as well of the first paragraphs of the `Apache Arrow C data "
+"interface <https://arrow.apache.org/docs/format/CDataInterface.html>`_. "
+"(details on the various data types can be skipped) is strongly encouraged "
+"for a better understanding of the rest of this RFC."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:63
+msgid ""
+"The Arrow C Stream interface is currently marked as experimental, but it has "
+"not evolved since its introduction in Nov 2020 and is already used in ABI "
+"sensitive places like the interface between the Arrow R bindings and DuckDB."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:67
+msgid ""
+"This interface consists of a set of C structures, ArrowArrayStream, that "
+"provides two main callbacks to get:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:70
+msgid ""
+"a ArrowSchema with the get_schema() callback. A ArrowSchema describes a set "
+"of field descriptions (name, type, metadata). All OGR data types have a "
+"corresponding Arrow data type."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:74
+msgid ""
+"a sequence of ArrowArray with the get_next() callback. A ArrowArray captures "
+"a set of values for a specific column/field in a subset of features. This is "
+"the equivalent of a `Series <https://arrow.apache.org/docs/python/pandas."
+"html#series>`_ in a Pandas DataFrame. This is a potentially hiearchical "
+"structure that can aggregate sub arrays, and in OGR usage, the main array "
+"will be a StructArray which is the collection of OGR attribute and geometry "
+"fields. The layout of buffers and children arrays per data type is detailed "
+"in the `Arrow Columnar Format <https://arrow.apache.org/docs/format/Columnar."
+"html>`_."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:84
+msgid ""
+"If a layer consists of 4 features with 2 fields (one of integer type, one of "
+"floating-point type), the representation as a ArrowArray is *conceptually* "
+"the following one:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:88
+msgid ""
+"array.children[0].buffers[1] = { 1, 2, 3, 4 };\n"
+"array.children[1].buffers[1] = { 1.2, 2.3, 3.4, 4.5 };"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:93
+msgid ""
+"The content of a whole layer can be seen as a sequence of record batches, "
+"each record batches being an ArrowArray of a subset of features. Instead of "
+"iterating over individual features, one iterates over a batch of several "
+"features at once."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:98
+msgid ""
+"The ArrowArrayStream, ArrowSchema, ArrowArray structures are defined in a "
+"ogr_recordbatch.h public header file, directly derived from https://github."
+"com/apache/arrow/blob/main/cpp/src/arrow/c/abi.h to get API/ABI "
+"compatibility with Apache Arrow C++. This header file must be explicitly "
+"included when the related array batch API is used."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:103
+msgid "The following virtual method is added to the OGRLayer class:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:105
+msgid ""
+"virtual bool OGRLayer::GetArrowStream(struct ArrowArrayStream* out_stream,\n"
+"                                      CSLConstList papszOptions = nullptr);"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:110
+msgid "This method is also available in the C API as OGR_L_GetArrowStream()."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:112
+msgid ""
+"out_stream is a pointer to a ArrowArrayStream structure, that can be in a "
+"uninitialized state (the method will ignore any initial content)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:115
+msgid ""
+"On successful return, and when the stream interfaces is no longer needed, it "
+"must must be freed with out_stream->release(out_stream)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:118
+msgid ""
+"There are extra precautions to take into account in a OGR context. Unless "
+"otherwise specified by a particular driver implementation, the "
+"ArrowArrayStream structure, and the ArrowSchema or ArrowArray objects its "
+"callbacks have returned, should no longer be used (except for potentially "
+"being released) after the OGRLayer from which it was initialized has been "
+"destroyed (typically at dataset closing). Furthermore, unless otherwise "
+"specified by a particular driver implementation, only one ArrowArrayStream "
+"can be active at a time on a given layer (that is the last active one must "
+"be explicitly released before a next one is asked). Changing filter state, "
+"ignored columns, modifying the schema or using ResetReading()/"
+"GetNextFeature() while using a ArrowArrayStream is strongly discouraged and "
+"may lead to unexpected results. As a rule of thumb, no OGRLayer methods that "
+"affect the state of a layer should be called on a layer, while an "
+"ArrowArrayStream on it is active."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:132
+msgid "A potential usage can be:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:134
+msgid ""
+"struct ArrowArrayStream stream;\n"
+"if( !poLayer->GetArrowStream(&stream, nullptr))\n"
+"{\n"
+"    fprintf(stderr, \"GetArrowStream() failed\\n\");\n"
+"    exit(1);\n"
+"}\n"
+"struct ArrowSchema schema;\n"
+"if( stream.get_schema(&stream, &schema) == 0 )\n"
+"{\n"
+"    // Do something useful\n"
+"    schema.release(&schema);\n"
+"}\n"
+"while( true )\n"
+"{\n"
+"    struct ArrowArray array;\n"
+"    // Look for an error (get_next() returning a non-zero code), or\n"
+"    // end of iteration (array.release == nullptr)\n"
+"    //\n"
+"    if( stream.get_next(&stream, &array) != 0 ||\n"
+"        array.release == nullptr )\n"
+"    {\n"
+"        break;\n"
+"    }\n"
+"    // Do something useful\n"
+"    array.release(&array);\n"
+"}\n"
+"stream.release(&stream);"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:164
+msgid ""
+"The papszOptions that may be provided is a NULL terminated list of key=value "
+"strings, that may be driver specific."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:167
+msgid "OGRLayer has a base implementation of GetArrowStream() that is such:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:169
+msgid ""
+"The get_schema() callback returns a schema whose top-level object returned "
+"is of type Struct, and whose children consist in the FID column, all OGR "
+"attribute fields and geometry fields to Arrow fields. The FID column may be "
+"omitted by providing the INCLUDE_FID=NO option."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:174
+msgid ""
+"When get_schema() returns 0, and the schema is no longer needed, it must be "
+"released with the following procedure, to take into account that it might "
+"have been released by other code, as documented in the Arrow C data "
+"interface:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:179
+msgid ""
+"if( out_schema->release )\n"
+"    out_schema->release(out_schema)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:185
+msgid "The get_next() callback retrieve the next record batch over the layer."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:187
+msgid ""
+"out_array is a pointer to a ArrowArray structure, that can be in a "
+"uninitialized state (the method will ignore any initial content)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:190
+msgid ""
+"The default implementation uses GetNextFeature() internally to retrieve "
+"batches of up to 65,536 features (configurable with the "
+"MAX_FEATURES_IN_BATCH=num option). The starting address of buffers allocated "
+"by the default implementation is aligned on 64-byte boundaries."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:195
+msgid ""
+"The default implementation outputs geometries as WKB in a binary field, "
+"whose corresponding entry in the schema is marked with the metadata item "
+"``ARROW:extension:name`` set to ``ogc.wkb``. Specialized implementations may "
+"output by default other formats (particularly the Arrow driver that can "
+"return geometries encoded according to the GeoArrow specification (using a "
+"list of coordinates). The GEOMETRY_ENCODING=WKB option can be passed to "
+"force the use of WKB (through the default implementation)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:203
+msgid ""
+"The method may take into account ignored fields set with SetIgnoredFields() "
+"(the default implementation does), and should take into account filters set "
+"with SetSpatialFilter() and SetAttributeFilter(). Note however that "
+"specialized implementations may fallback to the default (slower) "
+"implementation when filters are set."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:208
+msgid ""
+"Mixing calls to GetNextFeature() and get_next() is not recommended, as the "
+"behavior will be unspecified (but it should not crash)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:211
+msgid ""
+"When get_next() returns 0, and the array is no longer needed, it must be "
+"released with the following procedure, to take into account that it might "
+"have been released by other code, as documented in the Arrow C data "
+"interface:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:216
+msgid ""
+"if( out_array->release )\n"
+"    out_array->release(out_array)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:221
+msgid ""
+"Drivers that have a specialized implementation should advertise the new "
+"OLCFastGetArrowStream layer capability."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:225
+msgid "Other remarks"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:227
+msgid ""
+"Using directly (as a producer or a consumer) a ArrowArray is admittedly not "
+"trivial, and requires good intimacy with the Arrow C data interface and "
+"columnar array specifications, to know, in which buffer of an array, data is "
+"to be read, which data type void* buffers should be cast to, how to use "
+"buffers that contain null/not_null information, how to use offset buffers "
+"for data types of type List, etc."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:233
+msgid ""
+"For the consuming side, the new API will be best used with the (Py)Arrow, "
+"Pandas, GeoPandas, Numpy libraries which offer easier and safer access to "
+"record batches. The study of the gdal_array._RecordBatchAsNumpy() method "
+"added to the SWIG Python bindings can give a good hint of how to use an "
+"ArrowArray object, in conjunction with the associated ArrowSchema. DuckDB is "
+"also another example of using the ArrowArray interface: https://github.com/"
+"duckdb/duckdb/blob/master/src/common/types/data_chunk.cpp"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:240
+msgid ""
+"It is not expected that most drivers will have a dedicated implementation of "
+"GetArrowStream() or its callbacks. Implementing it requires a non-trivial "
+"effort, and significant gains are to be expected only for those for which I/"
+"O is very fast, and thus in-memory shuffling of data takes a substantial "
+"time relatively to the total time (I/O + shuffling)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:246
+msgid ""
+"Potential future work, not in the scope of this RFC, could be the addition "
+"of a column-oriented method to write new features, a WriteRecordBatch() "
+"method."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:250
+msgid "Impacted drivers"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:252
+msgid ""
+"Arrow and Parquet: get_schema() and get_next() have a specialized "
+"implementation in those drivers that directly map to methods of the arrow-"
+"cpp library that bridges at near zero cost (no data copying) the internal C+"
+"+ implementation with the C data interface."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:257
+msgid ""
+"FlatGeoBuf and GeoPackage: a specialized implementation of get_next() has "
+"been done, which saves going through the OGRFeature abstraction. See below "
+"benchmarks for measurement of the efficiency."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:262
+msgid "Bindings"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:264
+msgid ""
+"Per this RFC, only the Python bindings are extended to map the new "
+"functionality."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:266
+msgid "The ogr.Layer class receives the following new methods:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:268
+msgid ""
+"GetArrowStreamAsPyArrow(): wrapper over OGRLayer::GetArrowStream() that has "
+"a ``schema`` property with the C ArrowSchema into a corresponding PyArrow "
+"Schema object and which implements a Python iterator exposing the C "
+"ArrowArray returned by the get_next() callback as a corresponding PyArrow "
+"Array object. This is a almost zero-cost call."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:274
+msgid ""
+"GetArrowStreamAsNumPy(): wrapper over OGRLayer::GetArrowStream() which "
+"implements a Python iterator exposing the C ArrowArray returned by the "
+"get_next() callback as a Python dictionary whose keys are field names and "
+"values a Numpy array representing the values of the ArrowArray. The mapping "
+"of types is done for all Arrow data types returned by the base "
+"implementation of OGRLayer::GetArrowStream(), but may not cover \"exotic\" "
+"data types that can be returned by specialized implementations such as the "
+"one in the Arrow/Parquet driver. For numeric data types, the Numpy array is "
+"a zero-copy adaptation of the C buffer. For other data types, a copy is "
+"involved, with potentially arrays of Python objects."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:289
+msgid "Benchmarks"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:291
+msgid ""
+"The test programs referenced in :ref:`rfc-86-annexes` have been run on a "
+"dataset with 3.3 millions features, with 13 fields each (2 fields of type "
+"Integer, 8 of type String, 3 of type DateTime) and polygon geometries."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:295
+msgid ""
+":ref:`rfc-86-bench-ogr-py`, :ref:`rfc-86-bench-fiona` and :ref:`rfc-86-bench-"
+"ogr-cpp` have similar functionality: iterating over features with "
+"GetNextFeature()."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:298
+msgid ""
+":ref:`rfc-86-bench-pyogrio-raw` does a little more by building Arrow arrays."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:300
+msgid ""
+":ref:`rfc-86-bench-pyogrio`, :ref:`rfc-86-bench-geopandas` and :ref:`rfc-86-"
+"bench-ogr-to-geopandas` have all similar functionality: building a GeoPandas "
+"GeoDataFrame"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:303
+msgid ""
+":ref:`rfc-86-bench-ogr-batch-cpp` can be used to measure the raw performance "
+"of the proposed GetArrowStream() API."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:306
+msgid "nz-building-outlines.fgb (FlatGeoBuf, 1.8 GB)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:309
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:331
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:350
+msgid "Bench program"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:309
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:331
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:350
+msgid "Timing (s)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:311
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:333
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:352
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:427
+msgid "bench_ogr.cpp"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:311
+msgid "6.3"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:312
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:334
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:353
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:485
+msgid "bench_ogr.py"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:312
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:353
+msgid "71"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:313
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:335
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:354
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:518
+msgid "bench_fiona.py"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:313
+msgid "68"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:314
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:336
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:355
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:539
+msgid "bench_pyogrio_raw.py"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:314
+msgid "40"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:315
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:337
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:356
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:555
+msgid "bench_pyogrio.py"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:315
+msgid "108"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:316
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:338
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:357
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:570
+msgid "bench_geopandas.py"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:316
+msgid "232"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:317
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:339
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:358
+msgid "bench_ogr_batch.cpp (driver impl.)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:317
+msgid "4.5"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:318
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:340
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:359
+msgid "bench_ogr_batch.cpp (base impl.)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:318
+msgid "14"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:319
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:341
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:360
+msgid "bench_ogr_to_geopandas.py (driver impl.)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:319
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:360
+msgid "10"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:320
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:342
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:361
+msgid "bench_ogr_to_geopandas.py (base impl.)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:320
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:342
+msgid "20"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:323
+msgid ""
+"\"driver impl.\" means that the specialized implementation of "
+"GetArrowStream() is used. \"base impl.\" means that the generic "
+"implementation of GetArrowStream(), using GetNextFeature() underneath, is "
+"used."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:328
+msgid "nz-building-outlines.parquet (GeoParquet, 436 MB)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:333
+msgid "6.4"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:334
+msgid "72"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:335
+msgid "70"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:336
+msgid "46"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:337
+msgid "115"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:338
+msgid "228"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:339
+msgid "1.6"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:340
+msgid "13.8"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:341
+msgid "6.8"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:345
+msgid ""
+"Note: Fiona slightly modified to accept Parquet driver as a recognized one."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:347
+msgid "nz-building-outlines.gpkg (GeoPackage, 1.7 GB)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:352
+msgid "7.6"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:354
+msgid "63"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:355
+msgid "41"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:356
+msgid "103"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:357
+msgid "227"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:358
+msgid "4.8"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:359
+msgid "15.5"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:361
+msgid "21"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:365
+msgid "This demonstrates that:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:367
+msgid ""
+"the new API can yield significant performance gains to ingest a OGR layer as "
+"a GeoPandas GeoDataFrame, of the order of a 4x - 10x speed-up compared to "
+"pyogrio, even without a specialized implementation of GetArrowStream(), and "
+"with formats that have a natural row organization (FlatGeoBuf, GeoPackage)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:373
+msgid ""
+"the Parquet driver is where this shines most due to the file organization "
+"being columnar, and its native access layer being ArrowArray compatible."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:376
+msgid ""
+"for drivers that don't have a specialized implementation of GetArrowStream() "
+"and whose layout is row oriented, the GetNextFeature() approach is (a bit) "
+"faster than GetArrowStream()."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:381
+msgid "Backward compatibility"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:383
+msgid "Only API additions, fully backward compatible."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:385
+msgid "The C++ ABI changes due to the addition of virtual methods."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:388
+msgid "New dependencies"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:390
+msgid "For libgdal: none"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:392
+msgid ""
+"The Apache Arrow C data interface just defines 2 C structures. GDAL itself "
+"does not need to link against the Apache Arrow C++ libraries (it might link "
+"against them, if the Arrow and/or Parquet drivers are enabled, but that's "
+"orthogonal to the topic discussed in this RFC)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:397
+msgid ""
+"For Python bindings: none at compile time. At runtime, pyarrow is imported "
+"by GetArrowStreamAsPyArrow(). The GetArrowStreamAsNumPy() method is "
+"implemented internally by the gdal_array module, and thus is only available "
+"if Numpy is available at compile time and runtime."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:404
+msgid "Documentation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:406
+msgid ""
+"New methods are documented, and a new documentation page will be added in "
+"the documentation."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:410
+msgid "Testing"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:412
+msgid "New methods are tested."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:415
+msgid "Related PRs:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:417
+msgid ""
+"https://github.com/OSGeo/gdal/compare/master...rouault:arrow_batch_new?"
+"expand=1"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:422
+msgid "Annexes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:429
+msgid "Use of traditional GetNextFeature() and related API from C"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:431
+msgid ""
+"#include \"gdal_priv.h\"\n"
+"#include \"ogr_api.h\"\n"
+"#include \"ogrsf_frmts.h\"\n"
+"\n"
+"int main(int argc, char* argv[])\n"
+"{\n"
+"    GDALAllRegister();\n"
+"    GDALDataset* poDS = GDALDataset::Open(argv[1]);\n"
+"    OGRLayer* poLayer = poDS->GetLayer(0);\n"
+"    OGRLayerH hLayer = OGRLayer::ToHandle(poLayer);\n"
+"    OGRFeatureDefnH hFDefn = OGR_L_GetLayerDefn(hLayer);\n"
+"    int nFields = OGR_FD_GetFieldCount(hFDefn);\n"
+"    std::vector<OGRFieldType> aeTypes;\n"
+"    for( int i = 0; i < nFields; i++ )\n"
+"        aeTypes.push_back(OGR_Fld_GetType(OGR_FD_GetFieldDefn(hFDefn, i)));\n"
+"    int nYear, nMonth, nDay, nHour, nMin, nSecond, nTZ;\n"
+"    while( true )\n"
+"    {\n"
+"        OGRFeatureH hFeat = OGR_L_GetNextFeature(hLayer);\n"
+"        if( hFeat == nullptr )\n"
+"            break;\n"
+"        OGR_F_GetFID(hFeat);\n"
+"        for( int i = 0; i < nFields; i++ )\n"
+"        {\n"
+"            if( aeTypes[i] == OFTInteger )\n"
+"                OGR_F_GetFieldAsInteger(hFeat, i);\n"
+"            else if( aeTypes[i] == OFTInteger64 )\n"
+"                OGR_F_GetFieldAsInteger64(hFeat, i);\n"
+"            else if( aeTypes[i] == OFTReal )\n"
+"                OGR_F_GetFieldAsDouble(hFeat, i);\n"
+"            else if( aeTypes[i] == OFTString )\n"
+"                OGR_F_GetFieldAsString(hFeat, i);\n"
+"            else if( aeTypes[i] == OFTDateTime )\n"
+"                OGR_F_GetFieldAsDateTime(hFeat, i, &nYear, &nMonth, &nDay, "
+"&nHour, &nMin, &nSecond, &nTZ);\n"
+"        }\n"
+"        OGRGeometryH hGeom = OGR_F_GetGeometryRef(hFeat);\n"
+"        if( hGeom )\n"
+"        {\n"
+"            int size = OGR_G_WkbSize(hGeom);\n"
+"            GByte* pabyWKB = static_cast<GByte*>(malloc(size));\n"
+"            OGR_G_ExportToIsoWkb( hGeom, wkbNDR, pabyWKB);\n"
+"            CPLFree(pabyWKB);\n"
+"        }\n"
+"        OGR_F_Destroy(hFeat);\n"
+"    }\n"
+"    delete poDS;\n"
+"    return 0;\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:487
+msgid ""
+"Use of traditional GetNextFeature() and related API from Python (port of "
+"bench_ogr.cpp)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:489
+msgid ""
+"from osgeo import ogr\n"
+"import sys\n"
+"\n"
+"ds = ogr.Open(sys.argv[1])\n"
+"lyr = ds.GetLayer(0)\n"
+"lyr_defn = lyr.GetLayerDefn()\n"
+"fld_count = lyr_defn.GetFieldCount()\n"
+"types = [lyr_defn.GetFieldDefn(i).GetType() for i in range(fld_count)]\n"
+"for f in lyr:\n"
+"    f.GetFID()\n"
+"    for i in range(fld_count):\n"
+"        fld_type = types[i]\n"
+"        if fld_type == ogr.OFTInteger:\n"
+"            f.GetFieldAsInteger(i)\n"
+"        elif fld_type == ogr.OFTReal:\n"
+"            f.GetFieldAsDouble(i)\n"
+"        elif fld_type == ogr.OFTString:\n"
+"            f.GetFieldAsString(i)\n"
+"        else:\n"
+"            f.GetField(i)\n"
+"    geom = f.GetGeometryRef()\n"
+"    if geom:\n"
+"        geom.ExportToWkb()"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:520
+msgid ""
+"Use of the Fiona Python library which uses the OGR C GetNextFeature() "
+"underneath to expose them as GeoJSON features holded by a Python dictionary."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:523
+msgid ""
+"import sys\n"
+"import fiona\n"
+"\n"
+"with fiona.open(sys.argv[1], 'r') as features:\n"
+"    for f in features:\n"
+"        pass"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:532
+msgid ""
+"Changing the above loop to ``list(features)`` to accumulate features has a "
+"significant negative impact on memory usage on big datasets, and on memory "
+"usage."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:541
+msgid ""
+"Use of the pyogrio Python library which uses the OGR C GetNextFeature() "
+"underneath to expose a layer as a set of Arrow arrays."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:544
+msgid ""
+"import sys\n"
+"from pyogrio.raw import read\n"
+"\n"
+"read(sys.argv[1])"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:557
+msgid ""
+"Use of the pyogrio Python library which uses the OGR C GetNextFeature() "
+"underneath to expose a layer as GeoPandas GeoDataFrame (which involves "
+"parsing WKB as GEOS objects)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:560
+msgid ""
+"import sys\n"
+"from pyogrio import read_dataframe\n"
+"\n"
+"read_dataframe(sys.argv[1])"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:572
+msgid ""
+"Use of the GeoPandas Python library which uses Fiona underneath to expose a "
+"layer as GeoPandas GeoDataFrame."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:575
+msgid ""
+"import sys\n"
+"import geopandas\n"
+"\n"
+"gdf = geopandas.read_file(sys.argv[1])"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:585
+msgid "bench_ogr_batch.cpp"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:587
+msgid "Use of the proposed GetNextRecordBatch() API from C++"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:589
+msgid ""
+"#include \"gdal_priv.h\"\n"
+"#include \"ogr_api.h\"\n"
+"#include \"ogrsf_frmts.h\"\n"
+"#include \"ogr_recordbatch.h\"\n"
+"\n"
+"int main(int argc, char* argv[])\n"
+"{\n"
+"    GDALAllRegister();\n"
+"    GDALDataset* poDS = GDALDataset::Open(argv[1]);\n"
+"    OGRLayer* poLayer = poDS->GetLayer(0);\n"
+"    OGRLayerH hLayer = OGRLayer::ToHandle(poLayer);\n"
+"    struct ArrowArrayStream stream;\n"
+"    if( !OGR_L_GetArrowStream(hLayer, &stream, nullptr))\n"
+"    {\n"
+"        CPLError(CE_Failure, CPLE_AppDefined, \"OGR_L_GetArrowStream() "
+"failed\\n\");\n"
+"        exit(1);\n"
+"    }\n"
+"    while( true )\n"
+"    {\n"
+"        struct ArrowArray array;\n"
+"        if( stream.get_next(&stream, &array) != 0 ||\n"
+"            array.release == nullptr )\n"
+"        {\n"
+"            break;\n"
+"        }\n"
+"        array.release(&array);\n"
+"    }\n"
+"    stream.release(&stream);\n"
+"    delete poDS;\n"
+"    return 0;\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:626
+msgid "bench_ogr_to_geopandas.py"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:628
+msgid ""
+"Use of the proposed GetNextRecordBatchAsPyArrow API from Python, to build a "
+"GeoPandas GeoDataFrame from the concatenation of the returned arrays."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:631
+msgid ""
+"import sys\n"
+"from osgeo import ogr\n"
+"import pyarrow as pa\n"
+"\n"
+"def layer_as_geopandas(lyr):\n"
+"    stream = lyr.GetArrowStreamAsPyArrow()\n"
+"    schema = stream.schema\n"
+"\n"
+"    geom_field_name = None\n"
+"    for field in schema:\n"
+"        field_md = field.metadata\n"
+"        if (field_md and field_md.get(b'ARROW:extension:name', None) == "
+"b'ogc.wkb') or field.name == lyr.GetGeometryColumn():\n"
+"            geom_field_name = field.name\n"
+"            break\n"
+"\n"
+"    fields = [field for field in schema]\n"
+"    schema_without_geom = pa.schema(list(filter(lambda f: f.name != "
+"geom_field_name, fields)))\n"
+"    batches_without_geom = []\n"
+"    non_geom_field_names = [f.name for f in filter(lambda f: f.name != "
+"geom_field_name, fields)]\n"
+"    if geom_field_name:\n"
+"        schema_geom = pa.schema(list(filter(lambda f: f.name == "
+"geom_field_name, fields)))\n"
+"        batches_with_geom = []\n"
+"    for record_batch in stream:\n"
+"        arrays_without_geom = [record_batch.field(field_name) for field_name "
+"in non_geom_field_names]\n"
+"        batch_without_geom = pa.RecordBatch.from_arrays(arrays_without_geom, "
+"schema=schema_without_geom)\n"
+"        batches_without_geom.append(batch_without_geom)\n"
+"        if geom_field_name:\n"
+"            batch_with_geom = pa.RecordBatch.from_arrays([record_batch."
+"field(geom_field_name)], schema=schema_geom)\n"
+"            batches_with_geom.append(batch_with_geom)\n"
+"\n"
+"    table = pa.Table.from_batches(batches_without_geom)\n"
+"    df = table.to_pandas()\n"
+"    if geom_field_name:\n"
+"        from geopandas.array import from_wkb\n"
+"        import geopandas as gp\n"
+"        geometry = from_wkb(pa.Table.from_batches(batches_with_geom)[0])\n"
+"        gdf = gp.GeoDataFrame(df, geometry=geometry)\n"
+"        return gdf\n"
+"    else:\n"
+"        return df\n"
+"\n"
+"\n"
+"if __name__ == '__main__':\n"
+"    ds = ogr.Open(sys.argv[1])\n"
+"    lyr = ds.GetLayer(0)\n"
+"    print(layer_as_geopandas(lyr))"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:682
+msgid "Voting history"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc86_column_oriented_api.rst:684
+msgid "+1 from PSC members MateuszL, JukkaR, HowardB and EvenR"
+msgstr ""

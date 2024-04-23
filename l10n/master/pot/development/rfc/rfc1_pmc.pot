@@ -1,0 +1,194 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:5
+msgid "RFC 1: Project Management Committee Guidelines"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:7
+msgid "Author: Frank Warmerdam"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:9
+msgid "Contact: warmerdam@pobox.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:11
+msgid "Status: Adopted"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:14
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:16
+msgid ""
+"This document describes how the GDAL/OGR Project Management Committee "
+"determines membership, and makes decisions on GDAL/OGR project issues."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:19
+msgid ""
+"In brief the committee votes on proposals on gdal-dev. Proposals are "
+"available for review for at least two days, and a single veto is sufficient "
+"to delay progress though ultimately a majority of members can pass a "
+"proposal."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:25
+msgid "Detailed Process"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:27
+msgid ""
+"Proposals are written up and submitted on the gdal-dev mailing list for "
+"discussion and voting, by any interested party, not just committee members."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:30
+msgid ""
+"Proposals need to be available for review for at least two business days "
+"before a final decision can be made."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:32
+msgid ""
+"Respondents may vote \"+1\" to indicate support for the proposal and a "
+"willingness to support implementation."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:34
+msgid ""
+"Respondents may vote \"-1\" to veto a proposal, but must provide clear "
+"reasoning and alternate approaches to resolving the problem within the two "
+"days."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:37
+msgid ""
+"A vote of -0 indicates mild disagreement, but has no effect. A 0 indicates "
+"no opinion. A +0 indicate mild support, but has no effect."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:39
+msgid ""
+"Anyone may comment on proposals on the list, but only members of the Project "
+"Management Committee's votes will be counted."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:41
+msgid ""
+"A proposal will be accepted if it receives +2 (including the proposer) and "
+"no vetos (-1)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:43
+msgid ""
+"If a proposal is vetoed, and it cannot be revised to satisfy all parties, "
+"then it can be resubmitted for an override vote in which a majority of all "
+"eligible voters indicating +1 is sufficient to pass it. Note that this is a "
+"majority of all committee members, not just those who actively vote."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:48
+msgid ""
+"Upon completion of discussion and voting the proposer should announce "
+"whether they are proceeding (proposal accepted) or are withdrawing their "
+"proposal (vetoed)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:51
+msgid "The Chair gets a vote."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:52
+msgid ""
+"The Chair is responsible for keeping track of who is a member of the Project "
+"Management Committee."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:54
+msgid ""
+"Addition and removal of members from the committee, as well as selection of "
+"a Chair should be handled as a proposal to the committee. The selection of a "
+"new Chair also requires approval of the OSGeo board."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:58
+msgid "The Chair adjudicates in cases of disputes about voting."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:61
+msgid "When is Vote Required?"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:63
+msgid "Anything that could cause backward compatibility issues."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:64
+msgid "Adding substantial amounts of new code."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:65
+msgid "Changing inter-subsystem APIs, or objects."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:66
+msgid "Issues of procedure."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:67
+msgid "When releases should take place."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:68
+msgid "Anything that might be controversial."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:71
+msgid "Observations"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:73
+msgid "The Chair is the ultimate adjudicator if things break down."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:74
+msgid ""
+"The absolute majority rule can be used to override an obstructionist veto, "
+"but it is intended that in normal circumstances vetoers need to be convinced "
+"to withdraw their veto. We are trying to reach consensus."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:80
+msgid "Bootstrapping"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:82
+msgid ""
+"Frank Warmerdam is declared initial Chair of the Project Management "
+"Committee."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc1_pmc.rst:85
+msgid ""
+"Daniel Morissette, Frank Warmerdam, Andrey Kiselev and Howard Butler are "
+"declared to be the founding Project Management Committee. The current "
+"membership list can be found on the :ref:`psc` page."
+msgstr ""

@@ -1,0 +1,220 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/parquet.rst:4
+msgid "(Geo)Parquet"
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:8
+msgid "Parquet"
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:10
+msgid "Parquet component of the Apache Arrow C++ library"
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:12
+msgid ""
+"From https://parquet.apache.org/: \"Apache Parquet is an open source, column-"
+"oriented data file format designed for efficient data storage and retrieval. "
+"It provides efficient data compression and encoding schemes with enhanced "
+"performance to handle complex data in bulk. Parquet is available in multiple "
+"languages including Java, C++, Python, etc...\""
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:17
+msgid ""
+"This driver also supports geometry columns using the GeoParquet "
+"specification."
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:19
+msgid ""
+"The GeoParquet 1.0.0 specification is supported since GDAL 3.8.0. The "
+"GeoParquet 1.1.0 specification is supported since GDAL 3.9.0."
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:23
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:32
+msgid "Open options"
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:54
+msgid "Creation issues"
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:56
+msgid "The driver supports creating only a single layer in a dataset."
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:59
+msgid "Layer creation options"
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:64
+msgid ""
+"Compression method. Available values depend on how the Parquet library was "
+"compiled. Defaults to SNAPPY when available, otherwise NONE."
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:146
+msgid ""
+"Note however that enabling this option involves creating a temporary "
+"GeoPackage file (in the same directory as the final Parquet file), and thus "
+"requires temporary storage (possibly up to several times the size of the "
+"final Parquet file, depending on Parquet compression) and additional "
+"processing time."
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:152
+msgid ""
+"The efficiency of spatial filtering depends on the ROW_GROUP_SIZE. If it is "
+"too large, too many features that are not spatially close will be grouped "
+"together. If it is too small, the file size will increase, and extra "
+"processing time will be necessary to browse through the row groups."
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:157
+msgid ""
+"Note also that when this option is enabled, the Arrow writing API (which is "
+"for example triggered when using ogr2ogr to convert from Parquet to "
+"Parquet), fallbacks to the generic implementation, which does not support "
+"advanced Arrow types (lists, maps, etc.)."
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:163
+msgid "SQL support"
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:165
+msgid ""
+"SQL statements are run through the OGR SQL engine. Statistics can be used to "
+"speed-up evaluations of SQL requests like: \"SELECT MIN(colname), "
+"MAX(colname), COUNT(colname) FROM layername\""
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:170
+msgid "Dataset/partitioning read support"
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:172
+msgid ""
+"Starting with GDAL 3.6.0, the driver can read directories that contain "
+"several Parquet files, and expose them as a single layer. This support is "
+"only enabled if the driver is built against the ``arrowdataset`` C++ library."
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:176
+msgid "Note that no optimization is currently done regarding filtering."
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:179
+msgid "Metadata"
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:183
+msgid ""
+"Layer metadata can be read and written. It is serialized as JSON content in "
+"a ``gdal:metadata`` domain."
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:187
+msgid "Multithreading"
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:189
+msgid ""
+"Starting with GDAL 3.6.0, the driver will use up to 4 threads for reading "
+"(or the maximum number of available CPUs returned by :cpp:func:"
+"`CPLGetNumCPUs()` if it is lower by 4). This number can be configured with "
+"the configuration option :config:`GDAL_NUM_THREADS`, which can be set to an "
+"integer value or ``ALL_CPUS``."
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:196
+msgid "Validation script"
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:198
+msgid ""
+"The :source_file:`swig/python/gdal-utils/osgeo_utils/samples/"
+"validate_geoparquet.py` Python script can be used to check compliance of a "
+"Parquet file against the GeoParquet specification."
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:202
+msgid "To validate only metadata:"
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:206
+msgid "python3 validate_geoparquet.py my_geo.parquet"
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:209
+msgid "To validate metadata and check content of geometry column(s):"
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:213
+msgid "python3 validate_geoparquet.py --check-data my_geo.parquet"
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:217
+msgid "Conda-forge package"
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:219
+msgid ""
+"The driver can be installed as a plugin for the ``libgdal`` conda-forge "
+"package with:"
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:223
+msgid "conda install -c conda-forge libgdal-arrow-parquet"
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:227
+msgid "Links"
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:229
+msgid "`Apache Parquet home page <https://parquet.apache.org/>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:231
+msgid "`Parquet file format <https://github.com/apache/parquet-format>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:233
+msgid ""
+"`GeoParquet specification <https://github.com/opengeospatial/geoparquet>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/parquet.rst:235
+msgid "Related driver: :ref:`Arrow driver <vector.arrow>`"
+msgstr ""

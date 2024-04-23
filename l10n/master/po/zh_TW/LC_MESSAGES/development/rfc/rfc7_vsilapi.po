@@ -1,0 +1,206 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:5
+msgid "RFC 7: Use VSILFILE for VSI*L Functions"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:7
+msgid "Author: Even Rouault (Eric Doenges is original author)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:9
+msgid "Contact: even dot rouault at spatialys.com, Eric.Doenges@gmx.net"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:11
+msgid "Status: Adopted"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:14
+msgid "Purpose"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:16
+msgid ""
+"To change the API for the VSI*L family of functions to use a new data-type "
+"VSILFILE instead of the current FILE."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:20
+msgid "Background, Rationale"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:22
+msgid ""
+"Currently, GDAL offers two APIs to abstract file access functions (referred "
+"to as VSI\\* and VSI\\ *L in this document). Both APIs claim to operate on "
+"FILE pointers; however, the VSI*\\ L functions can only operate on FILE "
+"pointers created by the VSIFOpenL function. This is because VSIFOpenL "
+"returns a pointer to an internal C++ class typecast to a FILE pointer, not "
+"an actual FILE pointer. This makes it impossible for the compiler to warn "
+"when the VSI\\* and VSI*L functions are inappropriately mixed."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:32
+msgid "Proposed Fix"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:34
+msgid ""
+"A new opaque data-type VSILFILE shall be declared. All VSI\\ *L functions "
+"shall be changed to use this new type instead of FILE. Additionally, any "
+"GDAL code that uses the VSI*\\ L functions must be changed to use this data-"
+"type as well."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:40
+msgid "RawRasterBand changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:42
+msgid ""
+"The 2 constructors are changed to accept a void\\* fpRaw instead of a FILE\\*"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:44
+msgid ""
+"A new member VSILFILE\\* fpRawL is added. The existing member FILE\\* fpRaw "
+"is kept. The constructors will set the adequate member according to the "
+"value of the bIsVSIL parameter."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:47
+msgid "A new method VSILFILE\\* GetFPL() is added."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:48
+msgid ""
+"The old FILE\\* GetFP() is adapted to have same behavior as before (can "
+"return a standard FILE handle or a VSI*L handle depending on the handle that "
+"was passed to the constructor)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:52
+msgid ""
+"Those changes are meant to minimize the need for casting when using "
+"RawRasterBand. Backward API compatibility is preserved."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:56
+msgid "Compatibility Issues, Transition timeline"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:58
+msgid ""
+"In order to allow the compiler to detect inappropriate parameters passed to "
+"any of the VSI*L functions, VSILFILE will be declared with the help of an "
+"empty forward declaration, i.e."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:64
+msgid "typedef struct _VSILFILE VSILFILE"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:66
+msgid "with the struct \\_VSILFILE itself left undefined."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:68
+msgid ""
+"However, this would break source compatibility for any existing code using "
+"the VSI*L API. Therefore, for now, VSILFILE is defined to be an alias of "
+"FILE, unless the VSIL_STRICT_ENFORCE macro is defined."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:74
+msgid ""
+"#ifdef VSIL_STRICT_ENFORCE\n"
+"typedef struct _VSILFILE VSILFILE;\n"
+"#else\n"
+"typedef FILE VSILFILE;\n"
+"#endif"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:80
+msgid ""
+"In a future release (GDAL 2.0 ?), the behavior will be changed to enforce "
+"the new strong typing."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:83
+msgid ""
+"Any future development done since the adoption of this RFC should use "
+"VSILFILE when dealing with the VSIF*L API."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:87
+msgid "Questions"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:89
+msgid "Should we define VSIL_STRICT_ENFORCE by default when DEBUG is defined ?"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:92
+msgid ""
+"This would make life easier for GDAL developers to use the appropriate "
+"typing, but not affect API/ABI when using release mode."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:96
+msgid "Implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:98
+msgid ""
+"The whole source tree ( port, gcore, frmts, ogr, swig/include ) will be "
+"altered adequatly so that the compilation works in VSIL_STRICT_ENFORCE mode. "
+"Ticket #3799 contains a patch with the implementation. The compilation "
+"doesn't add any new warning. The autotest suite still works after this "
+"change."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:104
+msgid ""
+"The GeoRaster and JPIPKAK drivers have been modified during the conversion "
+"process, but I'm not in position to compile them. Testing appreciated. All "
+"other drivers that have been altered in the conversion process have been "
+"compiled."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:109
+msgid ""
+"In the conversion process, a misuse of POSIX FILE API with a large file "
+"handler was discovered in the ceos2 driver, but the function happened to be "
+"unusued."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:114
+msgid "Voting History"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc7_vsilapi.rst:118
+msgid ""
+"* Frank Warmerdam +1\n"
+"* Tamas Szekeres +1\n"
+"* Daniel Morissette +1\n"
+"* Howard Butler +1\n"
+"* Even Rouault +1"
+msgstr ""

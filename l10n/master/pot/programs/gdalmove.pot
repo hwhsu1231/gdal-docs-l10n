@@ -1,0 +1,111 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/programs/gdalmove.rst:5
+msgid "gdalmove.py"
+msgstr ""
+
+#: ../../../source/programs/gdalmove.rst:9
+msgid "Transform georeferencing of raster file in place."
+msgstr ""
+
+#: ../../../source/programs/gdalmove.rst:14
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../source/programs/gdalmove.rst:16
+msgid ""
+"gdalmove.py [--help] [--help-general]\n"
+"            [-s_srs <srs_defn>] -t_srs <srs_defn>\n"
+"            [-et <max_pixel_err>] <target_file>"
+msgstr ""
+
+#: ../../../source/programs/gdalmove.rst:23
+msgid "Description"
+msgstr ""
+
+#: ../../../source/programs/gdalmove.rst:25
+msgid ""
+"The :program:`gdalmove.py` script transforms the bounds of a raster file "
+"from one coordinate system to another, and then updates the coordinate "
+"system and geotransform of the file. This is done without altering pixel "
+"values at all. It is loosely similar to using gdalwarp to transform an image "
+"but avoiding the resampling step in order to avoid image damage. It is "
+"generally only suitable for transformations that are effectively linear in "
+"the area of the file."
+msgstr ""
+
+#: ../../../source/programs/gdalmove.rst:32
+msgid ""
+"If no error threshold value (:option:`-et`) is provided then the file is not "
+"actually updated, but the errors that would be incurred are reported. If :"
+"option:`-et` is provided then the file is only modify if the apparent error "
+"being introduced is less than the indicate threshold (in pixels)."
+msgstr ""
+
+#: ../../../source/programs/gdalmove.rst:37
+msgid ""
+"Currently the transformed geotransform is computed based on the "
+"transformation of the top left, top right, and bottom left corners. A "
+"reduced overall error could be produced using a least squares fit of at "
+"least all four corner points."
+msgstr ""
+
+#: ../../../source/programs/options/help.rst:3
+msgid "Show this help message and exit"
+msgstr ""
+
+#: ../../../source/programs/options/help_general.rst:3
+msgid ""
+"Gives a brief usage message for the generic GDAL commandline options and "
+"exit."
+msgstr ""
+
+#: ../../../source/programs/gdalmove.rst:45
+msgid ""
+"Override the coordinate system of the file with the indicated coordinate "
+"system definition. Optional. If not provided the source coordinate system is "
+"read from the source file."
+msgstr ""
+
+#: ../../../source/programs/gdalmove.rst:51
+msgid ""
+"Defines the target coordinate system. This coordinate system will be written "
+"to the file after an update."
+msgstr ""
+
+#: ../../../source/programs/gdalmove.rst:56
+msgid ""
+"The error threshold (in pixels) beyond which the file will not be updated. "
+"If not provided no update will be applied to the file, but errors will be "
+"reported."
+msgstr ""
+
+#: ../../../source/programs/gdalmove.rst:60
+msgid "<target_file>"
+msgstr ""
+
+#: ../../../source/programs/gdalmove.rst:62
+msgid ""
+"The file to be operated on. To update this must be a file format that "
+"supports in place updates of the geotransform and SRS."
+msgstr ""
+
+#: ../../../source/programs/gdalmove.rst:11
+msgid "gdalmove"
+msgstr ""

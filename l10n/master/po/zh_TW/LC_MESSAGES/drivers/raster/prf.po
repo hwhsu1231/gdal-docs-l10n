@@ -1,0 +1,92 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/prf.rst:5
+msgid "PHOTOMOD Raster File"
+msgstr ""
+
+#: ../../../source/drivers/raster/prf.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/prf.rst:7
+msgid "PRF"
+msgstr ""
+
+#: ../../../source/drivers/raster/prf.rst:11
+msgid ""
+"PRF or MegaTIFF is an internal format of PHOTOMOD software for storing large "
+"images."
+msgstr ""
+
+#: ../../../source/drivers/raster/prf.rst:14
+msgid ""
+"This format was developed to store images larger than 4 GB. As a basis for "
+"storing data used TIFF or JPEG2000 format. Raster is split into fragments "
+"(tiles) such that each fragment does not exceeded a predefined size (e.g., "
+"less than 1 GB). An overview file also added to process raster data on a "
+"small scales."
+msgstr ""
+
+#: ../../../source/drivers/raster/prf.rst:20
+msgid ""
+"PRF files has two variations: 'prf' for imagery data and 'x-dem' for "
+"elevation data. Files can be georeferenced, but projection information can "
+"be stored only in external files (\\*.prj)."
+msgstr ""
+
+#: ../../../source/drivers/raster/prf.rst:24
+msgid "Image format has the following structure:"
+msgstr ""
+
+#: ../../../source/drivers/raster/prf.rst:26
+msgid "the header XML file 'image_name.prf'/'image_name.x-dem'"
+msgstr ""
+
+#: ../../../source/drivers/raster/prf.rst:27
+msgid "folder 'image_name' with raster subtiles"
+msgstr ""
+
+#: ../../../source/drivers/raster/prf.rst:28
+msgid ""
+"files \\*.tif/*.jp2/*.demtif inside folder 'image_name', containing raster "
+"fragments and the overview image"
+msgstr ""
+
+#: ../../../source/drivers/raster/prf.rst:31
+msgid ""
+"The driver support the data type among Byte, UInt16, UInt32, Float32 or "
+"Float64."
+msgstr ""
+
+#: ../../../source/drivers/raster/prf.rst:35
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/prf.rst:40
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/prf.rst:42
+msgid "`Racurs company home page <http://www.racurs.ru>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/prf.rst:43
+msgid "`PHOTOMOD Lite home page <http://www.racurs.ru/index.php?page=453>`__"
+msgstr ""

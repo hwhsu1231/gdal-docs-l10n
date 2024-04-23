@@ -1,0 +1,72 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/blx.rst:5
+msgid "BLX -- Magellan BLX Topo File Format"
+msgstr ""
+
+#: ../../../source/drivers/raster/blx.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/blx.rst:7
+msgid "BLX"
+msgstr ""
+
+#: ../../../source/drivers/raster/blx.rst:11
+msgid ""
+"BLX is the format for storing topographic data in Magellan GPS units. This "
+"driver supports both reading and writing. In addition the 4 overview levels "
+"inherent in the BLX format can be used with the driver."
+msgstr ""
+
+#: ../../../source/drivers/raster/blx.rst:15
+msgid ""
+"The BLX format is tile based, for the moment the tile size is fixed to "
+"128x128 size. Furthermore the dimensions must be a multiple of the tile size."
+msgstr ""
+
+#: ../../../source/drivers/raster/blx.rst:19
+msgid ""
+"The data type is fixed to Int16 and the value for undefined values is fixed "
+"to -32768. In the BLX format undefined values are only really supported on "
+"tile level. For undefined pixels in non-empty tiles see the FILLUNDEF/"
+"FILLUNDEFVAL options."
+msgstr ""
+
+#: ../../../source/drivers/raster/blx.rst:25
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/blx.rst:34
+msgid "Georeferencing"
+msgstr ""
+
+#: ../../../source/drivers/raster/blx.rst:36
+msgid ""
+"The BLX projection is fixed to WGS84 and georeferencing from BLX is "
+"supported in the form of one tiepoint and pixelsize."
+msgstr ""
+
+#: ../../../source/drivers/raster/blx.rst:40
+msgid "Creation Issues"
+msgstr ""
+
+#: ../../../source/drivers/raster/blx.rst:42
+msgid "Creation Options:"
+msgstr ""

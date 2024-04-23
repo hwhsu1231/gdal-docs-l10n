@@ -1,0 +1,154 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/dwg.rst:4
+msgid "AutoCAD DWG"
+msgstr ""
+
+#: ../../../source/drivers/vector/dwg.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/dwg.rst:6
+msgid "DWG"
+msgstr ""
+
+#: ../../../source/drivers/vector/dwg.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/vector/dwg.rst:8
+msgid "Open Design Alliance Teigha library"
+msgstr ""
+
+#: ../../../source/drivers/vector/dwg.rst:10
+msgid ""
+"OGR supports reading most versions of AutoCAD DWG when built with the Open "
+"Design Alliance Teigha library. DWG is an binary working format used for "
+"AutoCAD drawings. A reasonable effort has been made to make the OGR DWG "
+"driver work similarly to the OGR DXF driver which shares a common data "
+"model. The entire contents of the .dwg file is represented as a single layer "
+"named \"entities\"."
+msgstr ""
+
+#: ../../../source/drivers/vector/dwg.rst:17
+msgid ""
+"DWG files are considered to have no georeferencing information through OGR. "
+"Features will all have the following generic attributes:"
+msgstr ""
+
+#: ../../../source/drivers/vector/dwg.rst:20
+msgid "Layer: The name of the DXF layer. The default layer is \"0\"."
+msgstr ""
+
+#: ../../../source/drivers/vector/dwg.rst:21
+msgid ""
+"SubClasses: Where available, a list of classes to which an element belongs."
+msgstr ""
+
+#: ../../../source/drivers/vector/dwg.rst:23
+msgid ""
+"ExtendedEntity: Where available, extended entity attributes all appended to "
+"form a single text attribute."
+msgstr ""
+
+#: ../../../source/drivers/vector/dwg.rst:25
+msgid "Linetype: Where available, the line type used for this entity."
+msgstr ""
+
+#: ../../../source/drivers/vector/dwg.rst:26
+msgid "EntityHandle: The hexadecimal entity handle. A sort of feature id."
+msgstr ""
+
+#: ../../../source/drivers/vector/dwg.rst:27
+msgid "Text: The text of labels."
+msgstr ""
+
+#: ../../../source/drivers/vector/dwg.rst:29
+msgid ""
+"A reasonable attempt is made to preserve line color, line width, text size "
+"and orientation via OGR feature styling information when translating "
+"elements. Currently no effort is made to preserve fill styles or complex "
+"line style attributes."
+msgstr ""
+
+#: ../../../source/drivers/vector/dwg.rst:34
+msgid ""
+"The :config:`OGR_ARC_STEPSIZE` and :config:`OGR_ARC_MAX_GAP` configurations "
+"options control the approximation of arcs, ellipses, circles and rounded "
+"polylines as linestrings."
+msgstr ""
+
+#: ../../../source/drivers/vector/dwg.rst:39
+msgid "Configuration options"
+msgstr ""
+
+#: ../../../source/drivers/vector/dwg.rst:41
+msgid ""
+"The following :ref:`configuration options <configoptions>` are available:"
+msgstr ""
+
+#: ../../../source/drivers/vector/dwg.rst:53
+msgid ""
+"A new layer will be available called blocks. It will contain one or more "
+"features for each block defined in the file. In addition to the usual "
+"attributes, they will also have a BlockName attribute indicate what block "
+"they are part of."
+msgstr ""
+
+#: ../../../source/drivers/vector/dwg.rst:57
+msgid ""
+"The entities layer will have new attributes BlockName, BlockScale, "
+"BlockAngle and BlockAttributes."
+msgstr ""
+
+#: ../../../source/drivers/vector/dwg.rst:59
+msgid ""
+"BlockAttributes will be a list of (tag x value) pairs of all visible "
+"attributes (JSON encoded)."
+msgstr ""
+
+#: ../../../source/drivers/vector/dwg.rst:61
+msgid ""
+"block referenced will populate these new fields with the corresponding "
+"information (they are null for all other entities)."
+msgstr ""
+
+#: ../../../source/drivers/vector/dwg.rst:63
+msgid ""
+"block references will not have block geometry inlined - instead they will "
+"have a point geometry for the insertion point."
+msgstr ""
+
+#: ../../../source/drivers/vector/dwg.rst:66
+msgid ""
+"The intention is that with :config:`DWG_INLINE_BLOCKS` disabled, the block "
+"references will remain as references and the original block definitions will "
+"be available via the blocks layer."
+msgstr ""
+
+#: ../../../source/drivers/vector/dwg.rst:89
+msgid "Building"
+msgstr ""
+
+#: ../../../source/drivers/vector/dwg.rst:91
+msgid ""
+"See :ref:`ODA platform support <vector.oda>` for building GDAL with ODA "
+"support."
+msgstr ""

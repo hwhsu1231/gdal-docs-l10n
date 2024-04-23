@@ -1,0 +1,187 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc52_strict_sql_quoting.rst:5
+msgid "RFC 52: Strict OGR SQL quoting"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc52_strict_sql_quoting.rst:7
+msgid "Author: Even Rouault"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc52_strict_sql_quoting.rst:9
+msgid "Contact: even dot rouault at spatialys dot com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc52_strict_sql_quoting.rst:11
+msgid "Status: adopted, implemented in GDAL 2.0"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc52_strict_sql_quoting.rst:14
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc52_strict_sql_quoting.rst:16
+msgid ""
+"This RFC proposes that OGR SQL enforces strict quoting rules for SQL "
+"literals and identifiers"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc52_strict_sql_quoting.rst:20
+msgid "Details"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc52_strict_sql_quoting.rst:22
+msgid ""
+"Currently the OGR SQL engine deals indifferently with single quote "
+"characters (') and double quote characters (\"), although they can be used "
+"in 2 different contexts :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc52_strict_sql_quoting.rst:26
+msgid "to specify string literals"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc52_strict_sql_quoting.rst:27
+msgid "to specify column or table names (when they need quoting)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc52_strict_sql_quoting.rst:29
+msgid ""
+"SQL 92 mandates that string literals are surrounded with single quote "
+"characters whereas quoted identifiers (column, table names) are surrounded "
+"with double quote characters."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc52_strict_sql_quoting.rst:33
+msgid ""
+"From `http://savage.net.au/SQL/sql-92.bnf.html <http://savage.net.au/SQL/"
+"sql-92.bnf.html>`__:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc52_strict_sql_quoting.rst:38
+msgid ""
+"<delimited identifier>     ::= <double quote> <delimited identifier body> "
+"<double quote>\n"
+"<character string literal> ::= <quote> [ <character representation> ... ] "
+"<quote>"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc52_strict_sql_quoting.rst:41
+msgid ""
+"Current OGR behavior is generally fine, except in some situations when "
+"specifying columns in a SELECT statement or in a WHERE expression. The OGR "
+"SQL engine tries to determine the intent with the following rule : if the "
+"quoted string matches a column name, then it is assumed to be a column "
+"identifier, otherwise a string literal. But sometimes (see `http://trac."
+"osgeo.org/gdal/ticket/5428 <http://trac.osgeo.org/gdal/ticket/5428>`__), "
+"there are situations where filters such as \"MyField\" = 'MYFIELD' are "
+"needed, and currently they always evaluate to TRUE."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc52_strict_sql_quoting.rst:50
+msgid ""
+"To avoid any ambiguities and more conformant to SQL, string literals should "
+"be single-quoted, and identifiers (column/table names) unquoted or "
+"surrounded by double-quote character if conflicting with reserved keywords."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc52_strict_sql_quoting.rst:56
+msgid "Implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc52_strict_sql_quoting.rst:58
+msgid ""
+"Implementation will be done by Even Rouault (`Spatialys <http://spatialys."
+"com>`__)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc52_strict_sql_quoting.rst:61
+msgid ""
+"The proposed implementation lies in the \"rfc52_stricter_sql\" branch of the "
+"`https://github.com/rouault/gdal2/tree/rfc52_stricter_sql <https://github."
+"com/rouault/gdal2/tree/rfc52_stricter_sql>`__ repository."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc52_strict_sql_quoting.rst:66
+msgid ""
+"The list of changes : `https://github.com/rouault/gdal2/compare/"
+"rfc52_stricter_sql <https://github.com/rouault/gdal2/compare/"
+"rfc52_stricter_sql>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc52_strict_sql_quoting.rst:70
+msgid "Compatibility"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc52_strict_sql_quoting.rst:72
+msgid ""
+"This change affects compatibility in the sense that users that relied on the "
+"current permissive behavior will have to adapt their SQL expressions. This "
+"might be quite tricky to detect as it will not always cause obvious runtime "
+"failures. For example \" SELECT "
+"'i_thought_this_would_be_interpreted_as_a_column_name_but_now_it_is_a_string_litteral' "
+"FROM atable \" will run without error but not produce the previously "
+"expected result. So applications will have to review how they build SQL "
+"filters ( SetAttributeFilter() ) and expressions ( ExecuteSQL() )"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc52_strict_sql_quoting.rst:81
+msgid ""
+"Expressions fixed to be compliant with stricter rules will also work with "
+"older GDAL versions."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc52_strict_sql_quoting.rst:84
+msgid ""
+"A prominent warning should also be put on the OGR SQL documentation page to "
+"advertise the change of behavior"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc52_strict_sql_quoting.rst:88
+msgid "Discussion"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc52_strict_sql_quoting.rst:90
+msgid ""
+"Tests done with SQLite show that it is sometimes tolerant to misuse of quote "
+"characters, but in the reverse way as current OGR. So it will accept SELECT "
+"\"non_existing_column\" FROM 'atable' and interpret it as SELECT "
+"'non_existing_column' FROM \"atable\". On the contrary, PostgreSQL will not "
+"accept it. I'd be rather inclined to follow PostgreSQL stricter approach to "
+"keep things simple and understandable: \"string literals should be single-"
+"quoted, and identifiers (column/table names) unquoted or surrounded by "
+"double-quote character\""
+msgstr ""
+
+#: ../../../source/development/rfc/rfc52_strict_sql_quoting.rst:100
+msgid "Testing"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc52_strict_sql_quoting.rst:102
+msgid "The Python autotest suite will be fixed to still pass."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc52_strict_sql_quoting.rst:105
+msgid "Voting history"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc52_strict_sql_quoting.rst:107
+msgid "+1 from JukkaR, TamasS, DanielM and EvenR"
+msgstr ""

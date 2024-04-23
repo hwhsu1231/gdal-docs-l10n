@@ -1,0 +1,495 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:5
+msgid "RFC 22: RPC Georeferencing"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:7
+msgid "Author: Frank Warmerdam"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:9
+msgid "Contact: warmerdam@pobox.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:11
+msgid "Status: Adopted, Implemented"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:14
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:16
+msgid ""
+"It is proposed that GDAL support an additional mechanism for geolocation of "
+"imagery based on rational polynomial coefficients (RPCs) represented as "
+"metadata."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:20
+msgid ""
+"Many modern raw satellite products are distributed with RPCs, including "
+"products from GeoEye, and DigitalGlobe. RPCs provide a higher systematic "
+"description of georeferencing over an image, and also contain information on "
+"the viewing geometry that in theory makes orthocorrection (given a DEM) and "
+"some 3D operations like building height computation possible."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:28
+msgid "RPC Domain Metadata"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:30
+msgid ""
+"Datasets with RPCs will include the following dataset level metadata items "
+"in the \"RPC\" domain to identify the rational polynomials."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:33
+msgid ""
+"ERR_BIAS: Error - Bias. The RMS bias error in meters per horizontal axis of "
+"all points in the image (-1.0 if unknown)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:35
+msgid ""
+"ERR_RAND: Error - Random. RMS random error in meters per horizontal axis of "
+"each point in the image (-1.0 if unknown)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:37
+msgid "LINE_OFF: Line Offset"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:38
+msgid "SAMP_OFF: Sample Offset"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:39
+msgid "LAT_OFF: Geodetic Latitude Offset"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:40
+msgid "LONG_OFF: Geodetic Longitude Offset"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:41
+msgid "HEIGHT_OFF: Geodetic Height Offset"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:42
+msgid "LINE_SCALE: Line Scale"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:43
+msgid "SAMP_SCALE: Sample Scale"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:44
+msgid "LAT_SCALE: Geodetic Latitude Scale"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:45
+msgid "LONG_SCALE: Geodetic Longitude Scale"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:46
+msgid "HEIGHT_SCALE: Geodetic Height Scale"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:47
+msgid ""
+"LINE_NUM_COEFF (1-20): Line Numerator Coefficients. Twenty coefficients for "
+"the polynomial in the Numerator of the rn equation. (space separated)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:50
+msgid ""
+"LINE_DEN_COEFF (1-20): Line Denominator Coefficients. Twenty coefficients "
+"for the polynomial in the Denominator of the rn equation. (space separated)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:53
+msgid ""
+"SAMP_NUM_COEFF (1-20): Sample Numerator Coefficients. Twenty coefficients "
+"for the polynomial in the Numerator of the cn equation. (space separated)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:56
+msgid ""
+"SAMP_DEN_COEFF (1-20): Sample Denominator Coefficients. Twenty coefficients "
+"for the polynomial in the Denominator of the cn equation. (space separated)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:60
+msgid ""
+"These fields are directly derived from the document prospective GeoTIFF RPC "
+"document at:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:63
+msgid ""
+"`http://geotiff.maptools.org/rpc_prop.html <http://geotiff.maptools.org/"
+"rpc_prop.html>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:65
+msgid ""
+"The line and pixel offset expressed with LINE_OFF and SAMP_OFF are with "
+"respect to the center of the pixel (#5993)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:69
+msgid "Updating NITF Driver"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:71
+msgid ""
+"Already supports RPCs in this model, but will be modified to put them in the "
+"RPC domain instead of the primary metadata domain."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:73
+msgid "Add support for reading Digital Globe .RPB files."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:74
+msgid "No support for writing RPCs for now."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:77
+msgid "Updating GeoTIFF Driver"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:79
+msgid "Upgrade to support reading Digital Globe .RPB files."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:80
+msgid "Possible support reading Space Imaging (GeoEye?) rpc.txt files."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:81
+msgid ""
+"Support reading RPC TIFF tag (per `http://geotiff.maptools.org/rpc_prop.html "
+"<http://geotiff.maptools.org/rpc_prop.html>`__)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:83
+msgid "Support writing RPC TIFF tag."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:84
+msgid "Support writing .RPB files (if RPB=YES or PROFILE not GDALGeoTIFF)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:87
+msgid "Changes to GenImgProj Transformer"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:89
+msgid ""
+"Currently it is difficult to reliably create a warp transformer based on "
+"RPCs using GDALGenImgProjTransformer() as it will use a geotransform in "
+"preference to RPCs if available. Many images with useful RPC information "
+"also include a geotransform (approximate or accurate). It is therefore "
+"proposed to modify the GDALCreateGenImgProjTransformer() function to make it "
+"practical to provide more direction in the creation of the transformer. The "
+"proposed new function is:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:99
+msgid ""
+"void *\n"
+"GDALCreateGenImgProjTransformer2( GDALDatasetH hSrcDS, GDALDatasetH hDstDS,\n"
+"                                  char **papszOptions );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:103
+msgid "Supported Options:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:105
+msgid "SRC_SRS: WKT SRS to be used as an override for hSrcDS."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:106
+msgid "DST_SRS: WKT SRS to be used as an override for hDstDS."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:107
+msgid "GCPS_OK: If false, GCPs will not be used, default is TRUE."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:108
+msgid ""
+"MAX_GCP_ORDER: the maximum order to use for GCP derived polynomials if "
+"possible. The default is to autoselect based on the number of GCPs. A value "
+"of -1 triggers use of Thin Plate Spline instead of polynomials."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:112
+msgid ""
+"METHOD: may have a value which is one of GEOTRANSFORM, GCP_POLYNOMIAL, "
+"GCP_TPS, GEOLOC_ARRAY, RPC to force only one geolocation method to be "
+"considered on the source dataset."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:115
+msgid "RPC_HEIGHT: A fixed height to be used with RPC calculations."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:117
+msgid ""
+"This replaces the older function which did not include support for passing "
+"arbitrary options, and was thus not easily extended. The old function will "
+"be re-implemented with a call to the new functions."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:121
+msgid ""
+"The most important addition is the METHOD option which can be set to "
+"specifically use one of the image to georeferenced coordinate system methods "
+"instead of leaving it up to the code to pick the one it thinks is best."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:127
+msgid "Changes to gdalwarp and gdaltransform"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:129
+msgid ""
+"In order to facilitate passing transformer options into the updated "
+"GDALCreateGenImgProjTransformer2(), the gdalwarp and gdaltransform programs "
+"(built on this function) will be updated to include a -to (transformer "
+"option) switch, and to use the new function."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:135
+msgid "Preserving Geolocation Through Translation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:137
+msgid ""
+"The RPC information needs to be copied and preserved through translations "
+"that do not alter the spatial arrangement of the data. To that end RPC "
+"metadata copying will be added to:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:141
+msgid "VRT driver's CreateCopy()."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:142
+msgid "GDALDriver's default CreateCopy()."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:143
+msgid "GDALPamDataset::CopyInfo()"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:144
+msgid ""
+"gdal_translate will be updated to copy RPC metadata to the intermediate "
+"internal VRT if, and only if, no resizing or subsetting is being done."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:149
+msgid "Changes to RPC Transformer"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:151
+msgid ""
+"Implement iterative \"back transform\" from pixel/line to lat/long/height "
+"instead of simple linear approximator."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:153
+msgid ""
+"Add support for RPC_HEIGHT offset, so all Z values to transformer are "
+"assumed to be relative to this offset (normally really and average elevation "
+"for the scene)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:156
+msgid "Make RPC Transformer serializable (in VRT files, etc)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:159
+msgid "Backward Compatibility Issues"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:161
+msgid ""
+"Previously the NITF driver returned RPC metadata in the default domain. With "
+"the implementation of this RFC for GDAL 1.6.0 any applications using this "
+"metadata would need to consult the RPC domain instead. The RPC\\_ prefix on "
+"the metadata values has also been removed."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:166
+msgid ""
+"The GDALCreateGenImgProjTransformer() function is preserved, so no "
+"compatibility issues are anticipated by the addition of the new generalized "
+"factory."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:171
+msgid "SWIG Bindings Issues"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:173
+msgid ""
+"The raw access is by the established metadata api, so no changes are needed "
+"for this."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:175
+msgid ""
+"The Warp API is only bound at a high level, so there should be no changes in "
+"this regard."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:177
+msgid ""
+"For testing purposes it is desirable to provide a binding around the GDAL "
+"transformer API. The following planned binding is based loosely on "
+"OGRCoordinateTransformation API binding. So far I have only found the "
+"TransformPoint( bDstToSrc, x, y, z ) entry point to be useful in Python and "
+"even that ends up returning a (bSuccess, (x, y, z)) result which is somewhat "
+"awkward. Is there a better way of doing this?"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:186
+msgid ""
+"/************************************************************************/\n"
+"/*                             Transformer                              */\n"
+"/************************************************************************/\n"
+"\n"
+"%rename (Transformer) GDALTransformerInfoShadow;\n"
+"class GDALTransformerInfoShadow {\n"
+"private:\n"
+"  GDALTransformerInfoShadow();\n"
+"public:\n"
+"%extend {\n"
+"\n"
+"  GDALTransformerInfoShadow( GDALDatasetShadow *src, GDALDatasetShadow "
+"*dst,\n"
+"                             char **options ) {\n"
+"    GDALTransformerInfoShadow *obj = (GDALTransformerInfoShadow*)\n"
+"       GDALCreateGenImgProjTransformer2( (GDALDatasetH)src, "
+"(GDALDatasetH)dst,\n"
+"                                         options );\n"
+"    return obj;\n"
+"  }\n"
+"\n"
+"  ~GDALTransformerInfoShadow() {\n"
+"    GDALDestroyTransformer( self );\n"
+"  }\n"
+"\n"
+"// Need to apply argin typemap second so the numinputs=1 version gets "
+"applied\n"
+"// instead of the numinputs=0 version from argout.\n"
+"%apply (double argout[ANY]) {(double inout[3])};\n"
+"%apply (double argin[ANY]) {(double inout[3])};\n"
+"  int TransformPoint( int bDstToSrc, double inout[3] ) {\n"
+"    int nRet, nSuccess = TRUE;\n"
+"\n"
+"    nRet = GDALUseTransformer( self, bDstToSrc,\n"
+"                               1, &inout[0], &inout[1], &inout[2],\n"
+"                               &nSuccess );\n"
+"\n"
+"    return nRet && nSuccess;\n"
+"  }\n"
+"%clear (double inout[3]);\n"
+"\n"
+"  int TransformPoint( double argout[3], int bDstToSrc,\n"
+"                      double x, double y, double z = 0.0 ) {\n"
+"    int nRet, nSuccess = TRUE;\n"
+"\n"
+"    argout[0] = x;\n"
+"    argout[1] = y;\n"
+"    argout[2] = z;\n"
+"    nRet = GDALUseTransformer( self, bDstToSrc,\n"
+"                               1, &argout[0], &argout[1], &argout[2],\n"
+"                               &nSuccess );\n"
+"\n"
+"    return nRet && nSuccess;\n"
+"  }\n"
+"\n"
+"#ifdef SWIGCSHARP\n"
+"  %apply (double *inout) {(double*)};\n"
+"  %apply (double *inout) {(int*)};\n"
+"#endif\n"
+"  int TransformPoints( int bDstToSrc,\n"
+"                       int nCount, double *x, double *y, double *z,\n"
+"                       int *panSuccess ) {\n"
+"    int nRet;\n"
+"\n"
+"    nRet = GDALUseTransformer( self, bDstToSrc, nCount, x, y, z, "
+"panSuccess );\n"
+"\n"
+"    return nRet;\n"
+"  }\n"
+"#ifdef SWIGCSHARP\n"
+"  %clear (double*);\n"
+"  %clear (int*);\n"
+"#endif\n"
+"\n"
+"} /*extend */\n"
+"};"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:260
+msgid "Documentation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:262
+msgid ""
+"In addition to standard API documentation, the RPC metadata mechanism will "
+"be introduced into the \"GDAL Data Model\" document."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:266
+msgid "Implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:268
+msgid ""
+"This work will be implemented by Frank Warmerdam with support from the "
+"Canadian Nuclear Safety Commission."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:272
+msgid "Testing"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:274
+msgid ""
+"A test script for the transformer API covering RPC, GCP_TPS, GCP_POLYNOMIAL, "
+"GEOLOC and GEOTRANSFORM methods will be implemented."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc22_rpc.rst:276
+msgid ""
+"A test script for reading and writing RPB, and GeoTIFF RPC tags will be "
+"written."
+msgstr ""

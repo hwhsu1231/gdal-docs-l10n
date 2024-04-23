@@ -1,0 +1,576 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/sqlite.rst:4
+msgid "SQLite / Spatialite RDBMS"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:6
+msgid "SQLite"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:8
+msgid "libsqlite3 or libspatialite"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:10
+msgid ""
+"OGR optionally supports spatial and non-spatial tables stored in SQLite 3.x "
+"database files. SQLite is a \"light weight\" single file based RDBMS engine "
+"with fairly complete SQL semantics and respectable performance."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:14
+msgid ""
+"The driver can handle \"regular\" SQLite databases, as well as Spatialite "
+"databases (spatial enabled SQLite databases). The type of an existing "
+"database can be checked from the SQLITE debug info value \"OGR style SQLite "
+"DB found/ SpatiaLite DB found/SpatiaLite v4 DB found\" obtained by running "
+"``ogrinfo db.sqlite --debug on``"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:20
+msgid ""
+"Starting with GDAL 2.2, the SQLite driver can also read databases with :ref:"
+"`RasterLite2 raster coverages <raster.rasterlite2>`."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:23
+msgid ""
+"The SQLite database is essentially typeless, but the SQLite driver will "
+"attempt to classify attributes field as text, integer or floating point "
+"based on the contents of the first record in a table. Datetime field types "
+"are also handled."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:28
+msgid ""
+"Starting with GDAL 2.2, the \"JSonStringList\", \"JSonIntegerList\", "
+"\"JSonInteger64List\" and \"JSonRealList\" SQLite declaration types are used "
+"to map the corresponding OGR StringList, IntegerList, Integer64List and "
+"RealList types. The field values are then encoded as JSon arrays, with "
+"proper CSV escaping."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:34
+msgid ""
+"SQLite databases often do not work well over NFS, or some other networked "
+"file system protocols due to the poor support for locking. It is safest to "
+"operate only on SQLite files on a physical disk of the local system."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:39
+msgid ""
+"SQLite is an optionally compiled in driver. It is not compiled in by default."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:42
+msgid ""
+"By default, SQL statements are passed directly to the SQLite database "
+"engine. It's also possible to request the driver to handle SQL commands "
+"with :ref:`OGR SQL <ogr_sql_dialect>` engine, by passing **\"OGRSQL\"** "
+"string to the ExecuteSQL() method, as name of the SQL dialect."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:47
+msgid ""
+"The :config:`OGR_SQLITE_SYNCHRONOUS` configuration option has been added. "
+"When set to OFF, this issues a 'PRAGMA synchronous = OFF' command to the "
+"SQLite database. This has the advantage of speeding-up some write operations "
+"(e.g. on EXT4 filesystems), but at the expense of data safety w.r.t system/"
+"OS crashes. So use it carefully in production environments and read the "
+"SQLite `related documentation <http://www.sqlite.org/pragma."
+"html#pragma_synchronous>`__."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:55
+msgid ""
+"Any SQLite `pragma <http://www.sqlite.org/pragma.html>`__ can be specified "
+"with the :config:`OGR_SQLITE_PRAGMA` configuration option. The syntax is "
+"``OGR_SQLITE_PRAGMA = \"pragma_name=pragma_value[,"
+"pragma_name2=pragma_value2]*\"``."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:61
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:70
+msgid "\"Regular\" SQLite databases"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:72
+msgid ""
+"The driver looks for a geometry_columns table laid out as defined loosely "
+"according to OGC Simple Features standards, particularly as defined in `FDO "
+"RFC 16 <http://trac.osgeo.org/fdo/wiki/FDORfc16>`__. If found it is used to "
+"map tables to layers."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:77
+msgid ""
+"If geometry_columns is not found, each table is treated as a layer. Layers "
+"with a WKT_GEOMETRY field will be treated as spatial tables, and the "
+"WKT_GEOMETRY column will be read as Well Known Text geometry."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:81
+msgid ""
+"If geometry_columns is found, it will be used to lookup spatial reference "
+"systems in the spatial_ref_sys table."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:84
+msgid ""
+"While the SQLite driver supports reading spatial data from records, there is "
+"no support for spatial indexing, so spatial queries will tend to be slow "
+"(use Spatialite for that). Attributes queries may be fast, especially if "
+"indexes are built for appropriate attribute columns using the \"CREATE INDEX "
+"ON ( )\" SQL command."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:90
+msgid ""
+"The driver also supports reading and writing the following non-linear "
+"geometry types :CIRCULARSTRING, COMPOUNDCURVE, CURVEPOLYGON, MULTICURVE and "
+"MULTISURFACE. Note: this is not true for Spatialite databases, since those "
+"geometry types are not supported by current Spatialite versions."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:97
+msgid "Tables with multiple geometry columns"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:99
+msgid ""
+"Layers with multiple geometry columns can be created, modified or read, "
+"following new API described in :ref:`rfc-41`"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:103
+msgid "REGEXP operator"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:105
+msgid ""
+"By default, the REGEXP operator has no implementation in SQLite. With "
+"OGRbuilt against the PCRE library, the REGEXP operator is available in SQL "
+"statements run by OGR."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:110
+msgid "Using the SpatiaLite library (Spatial extension for SQLite)"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:112
+msgid ""
+"The SQLite driver can read and write SpatiaLite databases. Creating or "
+"updating a spatialite database requires explicit linking against SpatiaLite "
+"library (version >= 2.3.1). Explicit linking against SpatiaLite library also "
+"provides access to functions provided by this library, such as spatial "
+"indexes, spatial functions, etc..."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:118
+msgid "A few examples :"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:122
+msgid ""
+"# Duplicate the sample database provided with SpatiaLite\n"
+"ogr2ogr -f SQLite testspatialite.sqlite test-2.3.sqlite  -dsco "
+"SPATIALITE=YES\n"
+"\n"
+"# Make a request with a spatial filter. Will work faster if spatial index "
+"has\n"
+"# been created and explicit linking against SpatiaLite library.\n"
+"ogrinfo testspatialite.sqlite Towns -spat 754000 4692000 770000 4924000"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:130
+msgid "Opening with 'VirtualShape:'"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:132
+msgid "(Require Spatialite support)"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:134
+msgid ""
+"It is possible to open on-the-fly a shapefile as a VirtualShape with "
+"Spatialite. The syntax to use for the datasource is \"VirtualShape:/path/to/"
+"shapefile.shp\" (the shapefile must be a \"real\" file)."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:139
+msgid ""
+"This gives the capability to use the spatial operations of Spatialite (note "
+"that spatial indexes on virtual tables are not available)."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:143
+msgid "The SQLite SQL dialect"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:145
+msgid ""
+"The SQLite SQL engine can be used to run SQL queries on any OGR datasource "
+"if using the :ref:`sql_sqlite_dialect`."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:149
+msgid "The VirtualOGR SQLite extension"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:151
+msgid ""
+"The GDAL/OGR library can be loaded as a `SQLite extension <http://www.sqlite."
+"org/lang_corefunc.html#load_extension>`__. The extension is loaded with the "
+"load_extension(gdal_library_name) SQL function, where gdal_library_name is "
+"typically libgdal.so on Unix/Linux, gdal110.dll on Windows, etc.."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:157
+msgid ""
+"After the extension is loaded, a virtual table, corresponding to a OGR "
+"layer, can be created with one of the following SQL statement :"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:162
+msgid ""
+"CREATE VIRTUAL TABLE table_name USING VirtualOGR(datasource_name);\n"
+"CREATE VIRTUAL TABLE table_name USING VirtualOGR(datasource_name, "
+"update_mode);\n"
+"CREATE VIRTUAL TABLE table_name USING VirtualOGR(datasource_name, "
+"update_mode, layer_name);\n"
+"CREATE VIRTUAL TABLE table_name USING VirtualOGR(datasource_name, "
+"update_mode, layer_name, expose_ogr_style);"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:167
+msgid "where :"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:169
+msgid "*datasource_name* is the connection string to any OGR datasource."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:170
+msgid ""
+"*update_mode* = 0 for read-only mode (default value) or 1 for update mode."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:172
+msgid "*layer_name* = the name of a layer of the opened datasource."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:173
+msgid ""
+"*expose_ogr_style* = 0 to prevent the OGR_STYLE special from being displayed "
+"(default value) or 1 to expose it."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:176
+msgid ""
+"Note: *layer_name* does not need to be specified if the datasource has only "
+"one single layer."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:179
+msgid "From the sqlite3 console, a typical use case is :"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:183
+msgid ""
+"sqlite> SELECT load_extension('libgdal.so');\n"
+"\n"
+"sqlite> SELECT load_extension('mod_spatialite.so');\n"
+"\n"
+"sqlite> CREATE VIRTUAL TABLE poly USING VirtualOGR('poly.shp');\n"
+"\n"
+"sqlite> SELECT *, ST_Area(GEOMETRY) FROM POLY;\n"
+"215229.266|168.0|35043411||215229.265625\n"
+"247328.172|179.0|35043423||247328.171875\n"
+"261752.781|171.0|35043414||261752.78125\n"
+"547597.188|173.0|35043416||547597.2109375\n"
+"15775.758|172.0|35043415||15775.7578125\n"
+"101429.977|169.0|35043412||101429.9765625\n"
+"268597.625|166.0|35043409||268597.625\n"
+"1634833.375|158.0|35043369||1634833.390625\n"
+"596610.313|165.0|35043408||596610.3359375\n"
+"5268.813|170.0|35043413||5268.8125"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:201
+msgid ""
+"Alternatively, you can use the *ogr_datasource_load_layers(datasource_name[, "
+"update_mode[, prefix]])* function to automatically load all the layers of a "
+"datasource."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:207
+msgid ""
+"sqlite> SELECT load_extension('libgdal.so');\n"
+"\n"
+"sqlite> SELECT load_extension('mod_spatialite.so');\n"
+"\n"
+"sqlite> SELECT ogr_datasource_load_layers('poly.shp');\n"
+"1\n"
+"sqlite> SELECT * FROM sqlite_master;\n"
+"table|poly|poly|0|CREATE VIRTUAL TABLE \"poly\" USING VirtualOGR('poly.shp', "
+"0, 'poly')"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:216
+msgid ""
+"Refer to the :ref:`sql_sqlite_dialect` for an overview of the capabilities "
+"of VirtualOGR tables."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:220
+msgid "Creation Issues"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:222
+msgid ""
+"The SQLite driver supports creating new SQLite database files, or adding "
+"tables to existing ones."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:226
+msgid "Transaction support"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:228
+msgid ""
+"The driver implements transactions at the database level, per :ref:`rfc-54`"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:231
+msgid "Relationships"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:235
+msgid ""
+"Relationship retrieval is supported. Relationships will be reported for "
+"tables which utilize FOREIGN KEY constraints."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:238
+msgid ""
+"Relationship creation is supported since GDAL 3.7, for one-to-many "
+"relationships only."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:241
+msgid "Dataset open options"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:267
+msgid ""
+"The other database must be of a type recognized by this driver, so its "
+"geometry blobs are properly recognized (so typically not a GeoPackage one)"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:271
+msgid "Database creation options"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:289
+msgid ""
+"Please note: OGR must be linked against *libspatialite* in order to support "
+"insert/write on SpatiaLite; if not, *read-only* mode is enforced."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:293
+msgid ""
+"Attempting to perform any insert/write on SpatiaLite skipping the "
+"appropriate library support simply produces broken (corrupted) DB-files."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:297
+msgid ""
+"Important notice: when the underlying *libspatialite* is v.2.3.1 (or any "
+"previous version) any Geometry will be casted to 2D [XY], because earlier "
+"versions of this library are simply able to support 2D [XY] dimensions. "
+"Version 2.4.0 (or any subsequent) is required in order to support 2.5D [XYZ]."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:317
+msgid "Layer creation options"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:416
+msgid "Configuration options"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:418
+msgid ""
+"The following :ref:`configuration options <configoptions>` are available:"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:498
+msgid "Performance hints"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:500
+msgid ""
+"SQLite is a Transactional DBMS; while many INSERT statements are executed in "
+"close sequence, BEGIN TRANSACTION and COMMIT TRANSACTION statements have to "
+"be invoked appropriately (with the OGR_L_StartTransaction() / "
+"OGR_L_CommitTransaction()) in order to get optimal performance. By default, "
+"if no transaction is explicitly started, SQLite will autocommit on every "
+"statement, which will be slow. If using ogr2ogr, its default behavior is to "
+"COMMIT a transaction every 100000 inserted rows. The **-gt** argument allows "
+"explicitly setting the number of rows for each transaction."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:510
+msgid ""
+"SQLite usually has a very minimal memory foot-print; just about 20MB of RAM "
+"are reserved to store the internal Page Cache [merely 2000 pages]. This "
+"value too may well be inappropriate under many circumstances, most notably "
+"when accessing some really huge DB-file containing many tables related to a "
+"corresponding Spatial Index. Explicitly setting a much more generously "
+"dimensioned internal Page Cache may often help to get a noticeably better "
+"performance. You can explicitly set the internal Page Cache size using the "
+"configuration option :config:`OGR_SQLITE_CACHE` *value* [*value* being "
+"measured in MB]; if your HW has enough available RAM, defining a Cache size "
+"as big as 512MB (or even 1024MB) may sometimes help a lot in order to get "
+"better performance."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:523
+msgid ""
+"Setting the :config:`OGR_SQLITE_SYNCHRONOUS` configuration option to *OFF* "
+"might also increase performance when creating SQLite databases (although at "
+"the expense of integrity in case of interruption/crash )."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:528
+msgid ""
+"If many source files will be collected into the same Spatialite table, it "
+"can be much faster to initialize the table without a spatial index by using -"
+"lco :lco:`SPATIAL_INDEX=NO` and to create spatial index with a separate "
+"command after all the data are appended. Spatial index can be created with "
+"ogrinfo command"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:536
+msgid ""
+"ogr2ogr -f SQLite -dsco SPATIALITE=YES db.sqlite first.shp -nln the_table -"
+"lco SPATIAL_INDEX=NO\n"
+"ogr2ogr -append db.sqlite second.shp -nln the_table\n"
+"...\n"
+"ogr2ogr -append db.sqlite last.shp -nln the_table\n"
+"ogrinfo db.sqlite -sql \"SELECT CreateSpatialIndex('the_table','GEOMETRY')\""
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:542
+msgid ""
+"If a database has gone through editing operations, it might be useful to run "
+"a `VACUUM <https://sqlite.org/lang_vacuum.html>`__ query to compact and "
+"optimize it."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:548
+msgid "ogrinfo db.sqlite -sql \"VACUUM\""
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:552
+msgid "Example"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:554
+msgid "Convert a non-spatial SQLite table into a GeoPackage:"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:556
+msgid ""
+"ogr2ogr \\\n"
+"  -f \"GPKG\" output.gpkg \\\n"
+"  input.sqlite \\\n"
+"  -sql \\\n"
+"  \"SELECT\n"
+"     *,\n"
+"     MakePoint(longitude, latitude, 4326) AS geometry\n"
+"   FROM\n"
+"     my_table\" \\\n"
+"  -nln \"location\" \\\n"
+"  -s_srs \"EPSG:4326\""
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:570
+msgid "Perform a join between 2 SQLite/Spatialite databases:"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:572
+msgid ""
+"ogrinfo my_spatial.db \\\n"
+"    -sql \"SELECT poly.id, other.foo FROM poly JOIN other_schema.other USING "
+"(id)\" \\\n"
+"    -oo PRELUDE_STATEMENTS=\"ATTACH DATABASE 'other.db' AS other_schema\""
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:579
+msgid "Credits"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:581
+msgid ""
+"Development of the OGR SQLite driver was supported by `DM Solutions Group "
+"<http://www.dmsolutions.ca/>`__ and `GoMOOS <http://www.gomoos.org/>`__."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:584
+msgid ""
+"Full support for SpatiaLite was contributed by A.Furieri, with funding from "
+"`Regione Toscana <http://www.regione.toscana.it/>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:588
+msgid "Links"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:590
+msgid "`http://www.sqlite.org <http://www.sqlite.org/>`__: Main SQLite page."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:591
+msgid ""
+"https://www.gaia-gis.it/fossil/libspatialite/index: SpatiaLite extension to "
+"SQLite."
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:592
+msgid ""
+"`FDO RFC 16 <http://trac.osgeo.org/fdo/wiki/FDORfc16>`__: FDO Provider for "
+"SQLite"
+msgstr ""
+
+#: ../../../source/drivers/vector/sqlite.rst:594
+msgid ":ref:`RasterLite2 driver <raster.rasterlite2>`"
+msgstr ""

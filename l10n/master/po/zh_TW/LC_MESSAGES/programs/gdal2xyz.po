@@ -1,0 +1,164 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/programs/gdal2xyz.rst:5
+msgid "gdal2xyz.py"
+msgstr ""
+
+#: ../../../source/programs/gdal2xyz.rst:9
+msgid "Translates a raster file into `xyz` format."
+msgstr ""
+
+#: ../../../source/programs/gdal2xyz.rst:14
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../source/programs/gdal2xyz.rst:16
+msgid ""
+"gdal2xyz [--help] [--help-general]\n"
+"    [-skip <factor>]\n"
+"    [-srcwin <xoff> <yoff> <xsize> <ysize>]\n"
+"    [-b <band>]... [-allbands]\n"
+"    [-skipnodata]\n"
+"    [-csv]\n"
+"    [-srcnodata <value>] [-dstnodata <value>]\n"
+"    <src_dataset> <dst_dataset>"
+msgstr ""
+
+#: ../../../source/programs/gdal2xyz.rst:28
+msgid "Description"
+msgstr ""
+
+#: ../../../source/programs/gdal2xyz.rst:30
+msgid ""
+"The :program:`gdal2xyz` utility can be used to translate a raster file into "
+"xyz format. `gdal2xyz` can be used as an alternative to `gdal_translate "
+"of=xyz`. Features include:"
+msgstr ""
+
+#: ../../../source/programs/gdal2xyz.rst:33
+msgid "Select more then one band"
+msgstr ""
+
+#: ../../../source/programs/gdal2xyz.rst:34
+msgid "Skip or replace nodata value"
+msgstr ""
+
+#: ../../../source/programs/gdal2xyz.rst:35
+msgid "Return the output as numpy arrays."
+msgstr ""
+
+#: ../../../source/programs/options/help.rst:3
+msgid "Show this help message and exit"
+msgstr ""
+
+#: ../../../source/programs/options/help_general.rst:3
+msgid ""
+"Gives a brief usage message for the generic GDAL commandline options and "
+"exit."
+msgstr ""
+
+#: ../../../source/programs/gdal2xyz.rst:43
+msgid "How many rows/cols to skip in each iteration."
+msgstr ""
+
+#: ../../../source/programs/gdal2xyz.rst:47
+msgid ""
+"Selects a subwindow from the source image for copying based on pixel/line "
+"location."
+msgstr ""
+
+#: ../../../source/programs/gdal2xyz.rst:51
+msgid ""
+"Select band *band* from the input spectral bands for output. Bands are "
+"numbered from 1 in the order spectral bands are specified. Multiple **-b** "
+"switches may be used. When no -b switch is used, the first band will be "
+"used. In order to use all input bands set `-allbands` or `-b 0`."
+msgstr ""
+
+#: ../../../source/programs/gdal2xyz.rst:59
+msgid "Select all input bands."
+msgstr ""
+
+#: ../../../source/programs/gdal2xyz.rst:63
+msgid "Use comma instead of space as a delimiter."
+msgstr ""
+
+#: ../../../source/programs/gdal2xyz.rst:67
+msgid "Exclude the output lines with nodata value (as determined by srcnodata)"
+msgstr ""
+
+#: ../../../source/programs/gdal2xyz.rst:71
+msgid ""
+"The nodata value of the dataset (for skipping or replacing) Default (`None`) "
+"- Use the dataset nodata value; `Sequence`/`Number` - Use the given nodata "
+"value (per band or per dataset)."
+msgstr ""
+
+#: ../../../source/programs/gdal2xyz.rst:77
+msgid ""
+"Replace source nodata with a given nodata. Has an effect only if not setting "
+"`-skipnodata`. Default(`None`) - Use `srcnodata`, no replacement; `Sequence`/"
+"`Number` - Replace the `srcnodata` with the given nodata value (per band or "
+"per dataset)."
+msgstr ""
+
+#: ../../../source/programs/gdal2xyz.rst:83
+msgid "Show help message and exit."
+msgstr ""
+
+#: ../../../source/programs/gdal2xyz.rst:87
+msgid ""
+"The source dataset name. It can be either file name, URL of data source or "
+"subdataset name for multi-dataset files."
+msgstr ""
+
+#: ../../../source/programs/gdal2xyz.rst:92
+msgid "The destination file name."
+msgstr ""
+
+#: ../../../source/programs/gdal2xyz.rst:96
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/programs/gdal2xyz.rst:100
+msgid "gdal2xyz -b 1 -b 2 -dstnodata 0 input.tif output.txt"
+msgstr ""
+
+#: ../../../source/programs/gdal2xyz.rst:103
+msgid ""
+"To create a text file in `xyz` format from the input file `input.tif`. The "
+"first columns, x and y, are the coordinates of the centers of each cell. The "
+"remaining columns represent the first and second bands. We also replace the "
+"dataset nodata values with zeros."
+msgstr ""
+
+#: ../../../source/programs/gdal2xyz.rst:110
+msgid "Caveats"
+msgstr ""
+
+#: ../../../source/programs/gdal2xyz.rst:112
+msgid ""
+"gdal2xyz output values with a limited precision. Use ``gdal_translate -of "
+"XYZ`` if more precision is desired."
+msgstr ""
+
+#: ../../../source/programs/gdal2xyz.rst:11
+msgid "gdal2xyz"
+msgstr ""

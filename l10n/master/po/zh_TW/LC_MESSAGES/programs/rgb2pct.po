@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/programs/rgb2pct.rst:5
+msgid "rgb2pct.py"
+msgstr ""
+
+#: ../../../source/programs/rgb2pct.rst:9
+msgid "Convert a 24bit RGB image to 8bit paletted."
+msgstr ""
+
+#: ../../../source/programs/rgb2pct.rst:14
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../source/programs/rgb2pct.rst:16
+msgid ""
+"rgb2pct.py [--help] [--help-general]\n"
+"           [-n colors | -pct palette_file] [-of format] <source_file> "
+"<dest_file>"
+msgstr ""
+
+#: ../../../source/programs/rgb2pct.rst:22
+msgid "Description"
+msgstr ""
+
+#: ../../../source/programs/rgb2pct.rst:24
+msgid ""
+"This utility will compute an optimal pseudo-color table for a given RGB "
+"image using a median cut algorithm on a downsampled RGB histogram.   Then it "
+"converts the image into a pseudo-colored image using the color table. This "
+"conversion utilizes Floyd-Steinberg dithering (error diffusion) to maximize "
+"output image visual quality."
+msgstr ""
+
+#: ../../../source/programs/options/help.rst:3
+msgid "Show this help message and exit"
+msgstr ""
+
+#: ../../../source/programs/options/help_general.rst:3
+msgid ""
+"Gives a brief usage message for the generic GDAL commandline options and "
+"exit."
+msgstr ""
+
+#: ../../../source/programs/rgb2pct.rst:36
+msgid ""
+"Select the number of colors in the generated color table.  Defaults to 256.  "
+"Must be between 2 and 256."
+msgstr ""
+
+#: ../../../source/programs/rgb2pct.rst:41
+msgid ""
+"Extract the color table from <palette_file> instead of computing it. Can be "
+"used to have a consistent color table for multiple files. The <palette_file> "
+"must be either a raster file in a GDAL supported format with a palette or a "
+"color file in a supported format (txt, qml, qlr)."
+msgstr ""
+
+#: ../../../source/programs/rgb2pct.rst:48
+msgid ""
+"Select the output format. Starting with GDAL 2.3, if not specified, the "
+"format is guessed from the extension (previously was GTiff). Use the short "
+"format name. Only output formats supporting pseudo-color tables should be "
+"used."
+msgstr ""
+
+#: ../../../source/programs/rgb2pct.rst:55
+msgid "The input RGB file."
+msgstr ""
+
+#: ../../../source/programs/rgb2pct.rst:59
+msgid "The output pseudo-colored file that will be created."
+msgstr ""
+
+#: ../../../source/programs/rgb2pct.rst:61
+msgid ""
+"NOTE: rgb2pct.py is a Python script, and will only work if GDAL was built "
+"with Python support."
+msgstr ""
+
+#: ../../../source/programs/rgb2pct.rst:64
+msgid "Example"
+msgstr ""
+
+#: ../../../source/programs/rgb2pct.rst:66
+msgid ""
+"If it is desired to hand create the palette, likely the simplest text format "
+"is the GDAL VRT format.  In the following example a VRT was created in a "
+"text editor with a small 4 color palette with the RGBA colors "
+"238/238/238/255, 237/237/237/255, 236/236/236/255 and 229/229/229/255."
+msgstr ""
+
+#: ../../../source/programs/rgb2pct.rst:73
+msgid ""
+"rgb2pct.py -pct palette.vrt rgb.tif pseudo-colored.tif\n"
+"more < palette.vrt\n"
+"<VRTDataset rasterXSize=\"226\" rasterYSize=\"271\">\n"
+"    <VRTRasterBand dataType=\"Byte\" band=\"1\">\n"
+"        <ColorInterp>Palette</ColorInterp>\n"
+"        <ColorTable>\n"
+"        <Entry c1=\"238\" c2=\"238\" c3=\"238\" c4=\"255\"/>\n"
+"        <Entry c1=\"237\" c2=\"237\" c3=\"237\" c4=\"255\"/>\n"
+"        <Entry c1=\"236\" c2=\"236\" c3=\"236\" c4=\"255\"/>\n"
+"        <Entry c1=\"229\" c2=\"229\" c3=\"229\" c4=\"255\"/>\n"
+"        </ColorTable>\n"
+"    </VRTRasterBand>\n"
+"</VRTDataset>"
+msgstr ""
+
+#: ../../../source/programs/rgb2pct.rst:11
+msgid "rgb2pct"
+msgstr ""

@@ -1,0 +1,225 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/programs/gdal_pansharpen.rst:5
+msgid "gdal_pansharpen.py"
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:9
+msgid "Perform a pansharpen operation."
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:11
+msgid "(Since GDAL 2.1)"
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:16
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:18
+msgid ""
+"gdal_pansharpen [--help] [--help-general]\n"
+"                <pan_dataset>\n"
+"                <spectral_dataset>[,band=<num>] [<spectral_dataset>[,"
+"band=<num>]]...\n"
+"                <out_dataset>\n"
+"                [-of <format>] [-b <band>]... [-w <weight_val>]...\n"
+"                [-r {nearest|bilinear|cubic|cubicspline|lanczos|average}]\n"
+"                [-threads {ALL_CPUS|<number>}] [-bitdepth <val>] [-nodata "
+"<val>]\n"
+"                [-spat_adjust {union|intersection|none|nonewithoutwarning}]\n"
+"                [-co <NAME>=<VALUE>]... [-q]"
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:31
+msgid "Description"
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:33
+msgid ""
+"The :program:`gdal_pansharpen.py` script performs a pan-sharpening "
+"operation. It can create a \"classic\" output dataset (such as GeoTIFF), or "
+"a VRT dataset describing the pan-sharpening operation."
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:37
+msgid "More details can be found in the :ref:`gdal_vrttut_pansharpen` section."
+msgstr ""
+
+#: ../../../source/programs/options/help.rst:3
+msgid "Show this help message and exit"
+msgstr ""
+
+#: ../../../source/programs/options/help_general.rst:3
+msgid ""
+"Gives a brief usage message for the generic GDAL commandline options and "
+"exit."
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:43
+msgid ""
+"Select the output format. Starting with GDAL 2.3, if not specified, the "
+"format is guessed from the extension (previously was ``GTiff``). Use the "
+"short format name. ``VRT`` can also be used."
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:49
+msgid ""
+"Select band *band* from the input spectral bands for output. Bands are "
+"numbered from 1 in the order spectral bands are specified. Multiple **-b** "
+"switches may be used. When no -b switch is used, all input spectral bands "
+"are set for output."
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:56
+msgid ""
+"Specify a weight for the computation of the pseudo panchromatic value. There "
+"must be as many -w switches as input spectral bands."
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:61
+msgid "Select a resampling algorithm. ``cubic`` is the default."
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:65
+msgid ""
+"Specify number of threads to use to do the resampling and pan-sharpening "
+"itself. Can be an integer number or ``ALL_CPUS``."
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:70
+msgid ""
+"Specify the bit depth of the panchromatic and spectral bands (e.g. 12). If "
+"not specified, the NBITS metadata item from the panchromatic band will be "
+"used if it exists."
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:76
+msgid ""
+"Specify nodata value for bands. Used for the resampling and pan-sharpening "
+"computation itself. If not set, deduced from the input bands, provided they "
+"have a consistent setting."
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:82
+msgid ""
+"Select behavior when bands have not the same extent. See "
+"*SpatialExtentAdjustment* documentation in :ref:`gdal_vrttut_pansharpen` "
+"``union`` is the default."
+msgstr ""
+
+#: ../../../source/programs/options/co.rst:5
+msgid ""
+"Many formats have one or more optional creation options that can be used to "
+"control particulars about the file created. For instance, the GeoTIFF driver "
+"supports creation options to control compression, and whether the file "
+"should be tiled."
+msgstr ""
+
+#: ../../../source/programs/options/co.rst:10
+msgid ""
+"The creation options available vary by format driver, and some simple "
+"formats have no creation options at all. A list of options supported for a "
+"format can be listed with the :ref:`--formats "
+"<raster_common_options_formats>` command line option but the documentation "
+"for the format is the definitive source of information on driver creation "
+"options. See :ref:`raster_drivers` format specific documentation for legal "
+"creation options for each format."
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:90
+msgid "Suppress progress monitor and other non-error output."
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:94
+msgid "Dataset with panchromatic band (first band will be used)."
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:98
+msgid ""
+"Dataset with one or several spectral bands. If the band option is not "
+"specified, all bands of the datasets are taken into account. Otherwise, only "
+"the specified (num)th band. The same dataset can be repeated several times."
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:105
+msgid "Output dataset"
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:107
+msgid "Bands should be in the same projection."
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:110
+msgid "Example"
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:112
+msgid "With spectral bands in a single dataset :"
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:114
+msgid "gdal_pansharpen.py panchro.tif multispectral.tif pansharpened_out.tif"
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:118
+msgid "With a few spectral bands from a single dataset, reordered :"
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:120
+msgid ""
+"gdal_pansharpen.py panchro.tif multispectral.tif,band=3 multispectral.tif,"
+"band=2 multispectral.tif,band=1 pansharpened_out.tif"
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:124
+msgid "With spectral bands in several datasets :"
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:126
+msgid ""
+"gdal_pansharpen.py panchro.tif band1.tif band2.tif band3.tif "
+"pansharpened_out.tif"
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:130
+msgid "Specify weights:"
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:132
+msgid ""
+"gdal_pansharpen.py -w 0.7 -w 0.2 -w 0.1 panchro.tif multispectral.tif "
+"pansharpened_out.tif"
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:136
+msgid ""
+"Specify RGB bands from a RGBNir multispectral dataset while computing the "
+"pseudo panchromatic intensity on the 4 RGBNir bands:"
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:139
+msgid ""
+"gdal_pansharpen.py -b 1 -b 2 -b 3 panchro.tif rgbnir.tif pansharpened_out.tif"
+msgstr ""
+
+#: ../../../source/programs/gdal_pansharpen.rst:13
+msgid "gdal_pansharpen"
+msgstr ""

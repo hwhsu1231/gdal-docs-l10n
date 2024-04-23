@@ -1,0 +1,59 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/gxf.rst:5
+msgid "GXF -- Grid eXchange File"
+msgstr ""
+
+#: ../../../source/drivers/raster/gxf.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/gxf.rst:7
+msgid "GXF"
+msgstr ""
+
+#: ../../../source/drivers/raster/gxf.rst:11
+msgid ""
+"This is a raster exchange format propagated by Geosoft, and made a standard "
+"in the gravity/magnetics field. GDAL supports reading (but not writing) "
+"GXF-3 files, including support for georeferencing information, and "
+"projections."
+msgstr ""
+
+#: ../../../source/drivers/raster/gxf.rst:16
+msgid ""
+"By default, the datatype returned for GXF datasets by GDAL is Float32. You "
+"can specify the datatype by setting the GXF_DATATYPE configuration option "
+"(Float64 supported currently)"
+msgstr ""
+
+#: ../../../source/drivers/raster/gxf.rst:20
+msgid ""
+"Details on the supporting code, and format can be found on the `GXF-3 "
+"<https://web.archive.org/web/20130730111701/http://home.gdal.org/projects/"
+"gxf/index.html>`__ page."
+msgstr ""
+
+#: ../../../source/drivers/raster/gxf.rst:23
+msgid "NOTE: Implemented as :source_file:`frmts/gxf/gxfdataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/gxf.rst:26
+msgid "Driver capabilities"
+msgstr ""

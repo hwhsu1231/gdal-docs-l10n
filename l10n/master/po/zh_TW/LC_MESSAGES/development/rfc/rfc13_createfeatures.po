@@ -1,0 +1,245 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:5
+msgid ""
+"RFC 13: Improved Feature Insertion/Update/Delete Performance in Batch Mode"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:9
+msgid ""
+"Author: Konstantin Baumann\n"
+"\n"
+"Contact: konstantin.baumann@hpi.uni-potsdam.de\n"
+"\n"
+"Status: Withdrawn"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:15
+msgid "*Withdrawn*"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:17
+msgid ""
+"I have withdrawn this RFC based on some comments from `Frank <http://lists."
+"osgeo.org/pipermail/gdal-dev/2007-May/013132.html>`__ and `Tamas <http://"
+"lists.osgeo.org/pipermail/gdal-dev/2007-May/013130.html>`__ on GDAL-dev."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:23
+msgid "*Summary*"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:25
+msgid ""
+"Some OGR drivers can dramatically increase the speed of and optimize the "
+"insertion, update, and deletion of a set of features, if the driver knows, "
+"that there is a whole set of features that should/could be inserted, "
+"updated, or deleted at once (instead of just one by one)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:30
+msgid "*CreateFeatures()*"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:32
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:61
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:90
+msgid ""
+"The following new virtual method is added to the OGRLayer class, with an "
+"analogous C function:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:37
+msgid ""
+"virtual OGRErr CreateFeatures( OGRFeature** papoFeatures, int "
+"iFeatureCount );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:39
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:68
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:97
+msgid "A default implementation is given as below:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:43
+msgid ""
+"OGRErr OGRLayer::CreateFeatures(\n"
+"    OGRFeature **papoFeatures,\n"
+"    int iFeatureCount\n"
+") {\n"
+"    for(int i = 0; i < iFeatureCount; ++i) {\n"
+"        OGRErr error = CreateFeature( papoFeatures[i] );\n"
+"        if( error != OGRERR_NONE ) return error;\n"
+"    }\n"
+"    return OGRERR_NONE;\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:54
+msgid "This triggers the old behavior of an unoptimized insertion."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:56
+msgid ""
+"Individual drivers can override the default implementation and can implement "
+"an optimized algorithm for inserting a set of features."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:59
+msgid "*SetFeatures()*"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:66
+msgid ""
+"virtual OGRErr SetFeatures( OGRFeature** papoFeatures, int iFeatureCount );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:72
+msgid ""
+"OGRErr OGRLayer::SetFeatures(\n"
+"    OGRFeature **papoFeatures,\n"
+"    int iFeatureCount\n"
+") {\n"
+"    for(int i = 0; i < iFeatureCount; ++i) {\n"
+"        OGRErr error = SetFeature( papoFeatures[i] );\n"
+"        if( error != OGRERR_NONE ) return error;\n"
+"    }\n"
+"    return OGRERR_NONE;\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:83
+msgid "This triggers the old behavior of an unoptimized update."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:85
+msgid ""
+"Individual drivers can override the default implementation and can implement "
+"an optimized algorithm for updating a set of features."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:88
+msgid "*DeleteFeatures()*"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:95
+msgid "virtual OGRErr DeleteFeatures( long *panFIDs, int iFIDCount );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:101
+msgid ""
+"OGRErr OGRLayer::DeleteFeatures(\n"
+"    long *panFIDs,\n"
+"    int iFIDCount\n"
+") {\n"
+"    for(int i = 0; i < iFIDCount; ++i) {\n"
+"        OGRErr error = DeleteFeature( panFIDs[i] );\n"
+"        if( error != OGRERR_NONE ) return error;\n"
+"    }\n"
+"    return OGRERR_NONE;\n"
+"}"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:112
+msgid "This triggers the old behavior of an unoptimized deletion."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:114
+msgid ""
+"Individual drivers can override the default implementation and can implement "
+"an optimized algorithm for deleting a set of features."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:117
+msgid "*C API functions*"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:119
+msgid "The following C functions are added:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:123
+msgid ""
+"OGRErr OGR_L_CreateFeatures( OGRFeature** papoFeatures, int "
+"iFeatureCount );\n"
+"OGRErr OGR_L_SetFeatures( OGRFeature** papoFeatures, int iFeatureCount );\n"
+"OGRErr OGR_L_DeleteFeatures( long* panFIDs, int iFIDCount );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:127
+msgid ""
+"However, there are some issues with adding plain C arrays to the public OGR "
+"interface due to the SWIG based wrapping, see for example `GDAL-Dev Mail "
+"from Tamas <http://lists.gdal.org/pipermail/gdal-dev/2007-May/013092."
+"html>`__..."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:132
+msgid "*Additional Notes*"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:134
+msgid ""
+"Based in this new interface functions, I was able to increase the insertion "
+"speed of features in the MySQL driver from 40 per second to up to 800-2000 "
+"per second. I think other drivers can benefit from this change, too."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:139
+msgid "See also ticket #1633."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:141
+msgid "*Implementation Plan*"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:143
+msgid "A patch for the describe additions can be trivially provided."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:145
+msgid ""
+"I can provide another patch based on this interface which contains the "
+"optimized implementation for the MySQL driver."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:148
+msgid "*History*"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:150
+msgid "14-May-2007: initial version created"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:152
+msgid "15-May-2007: SetFeatures() added"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:154
+msgid "16-May-2007: DeleteFeatures() added"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:156
+msgid "17-May-2007: C API functions added; SWIG wrapping issues mentioned"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc13_createfeatures.rst:158
+msgid "23-May-2007: Withdrawn due some concerns on GDAL-dev"
+msgstr ""

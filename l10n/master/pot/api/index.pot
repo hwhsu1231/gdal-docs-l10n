@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/api/index.rst:115
+msgid "Go"
+msgstr ""
+
+#: ../../../source/api/index.rst:115
+msgid "Julia"
+msgstr ""
+
+#: ../../../source/api/index.rst:115
+msgid "Lua"
+msgstr ""
+
+#: ../../../source/api/index.rst:115
+msgid "Original Node.js bindings"
+msgstr ""
+
+#: ../../../source/api/index.rst:115
+msgid "Node.js fork with full Promise-based async and TypeScript support"
+msgstr ""
+
+#: ../../../source/api/index.rst:115
+msgid "Perl"
+msgstr ""
+
+#: ../../../source/api/index.rst:115
+msgid "PHP"
+msgstr ""
+
+#: ../../../source/api/index.rst:115
+msgid "R"
+msgstr ""
+
+#: ../../../source/api/index.rst:115
+msgid "Rust"
+msgstr ""
+
+#: ../../../source/api/index.rst:135
+msgid "Fiona"
+msgstr ""
+
+#: ../../../source/api/index.rst:135
+msgid "Rasterio"
+msgstr ""
+
+#: ../../../source/api/index.rst:143
+msgid "Godal"
+msgstr ""
+
+#: ../../../source/api/index.rst:5
+msgid "API"
+msgstr ""
+
+#: ../../../source/api/index.rst:10
+msgid "`Full Doxygen output <../doxygen/index.html>`_"
+msgstr ""
+
+#: ../../../source/api/index.rst:13
+msgid "C API"
+msgstr ""
+
+#: ../../../source/api/index.rst:26
+msgid "C++ API"
+msgstr ""
+
+#: ../../../source/api/index.rst:29
+msgid "Raster API"
+msgstr ""
+
+#: ../../../source/api/index.rst:40
+msgid "Vector API"
+msgstr ""
+
+#: ../../../source/api/index.rst:51
+msgid "Spatial reference system API"
+msgstr ""
+
+#: ../../../source/api/index.rst:59
+msgid "Multi-dimensional array API"
+msgstr ""
+
+#: ../../../source/api/index.rst:72
+msgid "Miscellaneous C++ API"
+msgstr ""
+
+#: ../../../source/api/index.rst:81
+msgid "Python API"
+msgstr ""
+
+#: ../../../source/api/index.rst:99
+msgid "`Java API <../java/index.html>`_"
+msgstr ""
+
+#: ../../../source/api/index.rst:103
+msgid "GDAL/OGR In Other Languages"
+msgstr ""
+
+#: ../../../source/api/index.rst:105
+msgid ""
+"There is a set of generic `SWIG <http://www.swig.org/>`__ interface files in "
+"the GDAL source tree (subdirectory swig) and a set of language bindings "
+"based on those. Currently active ones are:"
+msgstr ""
+
+#: ../../../source/api/index.rst:113
+msgid ""
+"There are also other bindings that are developed outside of the GDAL source "
+"tree (**note**: those offer APIs not strictly coupled to the GDAL/OGR C/C++ "
+"API). These include bindings for"
+msgstr ""
+
+#: ../../../source/api/index.rst:129
+msgid ""
+"For Perl, since GDAL 3.5 the link `Perl <https://trac.osgeo.org/gdal/wiki/"
+"GdalOgrInPerl>`__ is deprecated, use above link instead."
+msgstr ""
+
+#: ../../../source/api/index.rst:133
+msgid ""
+"There are also more Pythonic ways of using the vector/OGR functions with"
+msgstr ""
+
+#: ../../../source/api/index.rst:141
+msgid "There is a more idiomatic Golang way of using the raster functions with"
+msgstr ""
+
+#: ../../../source/api/index.rst:150
+msgid ""
+"API is omitted in this PDF document. You can consult it on https://gdal.org/"
+"api/index.html"
+msgstr ""

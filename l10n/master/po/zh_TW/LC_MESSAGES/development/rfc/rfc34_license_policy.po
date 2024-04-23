@@ -1,0 +1,432 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:5
+msgid "RFC 34: License Policy Enforcement"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:7
+msgid "Authors: Frank Warmerdam"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:9
+msgid "Contact: warmerdam@pobox.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:11
+msgid "Status: Development"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:14
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:16
+msgid ""
+"This document proposes the addition of a new mechanisms so that applications "
+"and end users can define a license policy, and so that GDAL can help avoid "
+"license conflicts between proprietary and reciprocally licensed applications "
+"and format drivers."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:22
+msgid "Definitions"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:24
+msgid ""
+"Reciprocal FOSS License: A open source software license, such as the GPL, "
+"that requires all other software components linked into the same executable "
+"and distributed beyond the creator to also be offered under open source "
+"terms."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:29
+msgid ""
+"Non-Reciprocal FOSS License: A open source software license, such as MIT, "
+"BSD or LGPL, that does not place any requirements on other linked components "
+"in the same executable at distribution time."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:33
+msgid ""
+"Proprietary License: Software provided under terms that do not adhere to the "
+"requirements of the open source definition, such as libraries from Oracle "
+"(OCI), Lizardtech (MrSID) and Erdas (ECW). While often offered for zero "
+"cost, these components are incompatible with reciprocal FOSS licenses and "
+"may place a variety of other restrictions on the distributor or end user."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:41
+msgid "Rationale"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:43
+msgid ""
+"GDAL/OGR is distributed under the Non-Reciprocal MIT open source license "
+"which facilitates it's use by proprietary and open source applications, and "
+"facilitates the inclusion of proprietary format drivers along side the open "
+"source format drivers. However, it is still a license violation to "
+"distribute reciprocally licensed applications (like QGIS and GRASS) which "
+"use GDAL with proprietary licensed drivers (such as the MrSID, ECW or Oracle "
+"drivers). Likewise, it is a license violation to distribute proprietary "
+"applications with reciprocally licensed drivers such as the GDAL GRASS "
+"driver, or the PDF driver."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:53
+msgid ""
+"This RFC, and the improvements it promotes are intended to facilitate users, "
+"applications and drivers setting and following license policies to avoid "
+"unintentional license violations. One area this can be particularly helpful "
+"is broad software distributions like `OSGeo4W <http://osgeo4w.osgeo.org>`__."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:60
+msgid "Approach"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:62
+msgid ""
+"The general approach proposed is that drivers will declare their license "
+"category, and applications or end users will declare a policy for what sorts "
+"of drivers may be used in combination with them. The GDALDriverManager and "
+"OGRDriverRegistrar classes will apply this information to avoid "
+"unintentional license violations."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:69
+msgid "Drivers"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:71
+msgid ""
+"Drivers will declare one of these three driver specific licensing policies "
+"via the \"LICENSE_POLICY\" (DMD_LICENSE_POLICY) metadata item on the driver:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:75
+msgid ""
+"\"RECIPROCAL\": the driver is available under a reciprocal FOSS license such "
+"as the GPL, and should not be mixed with proprietary drivers or applications."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:78
+msgid ""
+"\"NONRECIPROCAL\": the driver is available under a non-reciprocal FOSS "
+"license such as MIT, or LGPL. This is the default if no licensing policy is "
+"declared and is the natural policy of drivers provided as part of GDAL "
+"without outside dependencies."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:82
+msgid ""
+"\"PROPRIETARY\": the driver, usually due to use of proprietary libraries, "
+"has some licensing restrictions which make it ineligible for distribution "
+"with reciprocally licensed software. This would include MrSID, ECW, and "
+"Oracle related drivers."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:88
+msgid "Application License Policy"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:90
+msgid ""
+"Applications are encouraged to set one of the following licensing policies "
+"reflective of the applications nature. The policy should be set as the value "
+"of the GDAL_APPLICATION_LICENSE_POLICY configuration variable, typically via "
+"a call to GDALSetConfigOption() *before* the call to GDALAllRegister() or "
+"OGRRegisterAll()."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:96
+msgid ""
+"\"RECIPROCAL\": the application is licensed under a reciprocal license such "
+"as the GPL, and no proprietary drivers should be loaded."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:98
+msgid ""
+"\"PROPRIETARY\": the application has some licensing restrictions which make "
+"it ineligible for distribution with reciprocally licensed software. Care "
+"will be taken to avoid loading reciprocally licensed drivers, such as the "
+"GRASS and PDF drivers."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:102
+msgid ""
+"\"DEFAULT\": the application does not apply any licensing restrictions. This "
+"is typical of non-GPL open source applications such as MapServer, and will "
+"be the default policy if nothing is declared."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:107
+msgid "User License Policy"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:109
+msgid ""
+"The restrictions on mixing proprietary and reciprocally licensed software "
+"generally applies at the point of distribution. In particular, it is not "
+"intended to prevent the end user from assembling a variety of components for "
+"their own use as they see fit, for their own use. To that end it is "
+"important to provide a mechanism for the end user to deliberately override "
+"the restrictions on mixing reciprocally licensed, and proprietary "
+"components. This is accomplished via the GDAL_LICENSE_POLICY configuration "
+"variable which might typically be set via the environment or via the --"
+"config commandline switch to most GDAL applications. It may have the "
+"following values:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:120
+msgid ""
+"\"USE_ALL\": do not discard any drivers based on licensing restrictions."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:122
+msgid ""
+"\"PREFER_PROPRIETARY\": If there is a conflict between proprietary and "
+"reciprocally licensed drivers, use the proprietary ones."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:124
+msgid ""
+"\"PREFER_RECIPROCAL\": If there is a conflict between proprietary and "
+"reciprocally licensed drivers, use the reciprocally licensed ones."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:127
+msgid ""
+"In addition to setting this via config variables, there will also be a "
+"configure / nmake.opt declaration to alter the default GDAL_LICENSE_POLICY. "
+"Thus a local build could be configured to USE_ALL at build time instead of "
+"having to set environment variables or commandline switches. This would not "
+"be suitable for software that will be redistributed."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:135
+msgid "Policy Logic"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:137
+msgid ""
+"If the user selected a GDAL_LICENSE_POLICY of \"USE_ALL\" then no drivers "
+"are unloaded on the basis of licensing."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:139
+msgid ""
+"If the user selected a GDAL_LICENSE_POLICY of \"PREFER_PROPRIETARY\" or "
+"\"PREFER_RECIPROCAL\" then ignore the GDAL_APPLICATION_LICENSE_POLICY."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:141
+msgid ""
+"if the application select a GDAL_APPLICATION_LICENSE_POLICY of "
+"\"PROPRIETARY\" or \"RECIPROCAL\" then use that."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:143
+msgid ""
+"In the absence of a user or application level policy, default to a policy of "
+"\"PREFER_PROPRIETARY\"."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:146
+msgid ""
+"The policy will be applied in the GDALDriverManager::AutoSkipDrivers() "
+"method and in the newly introduced OGRSFDriverManager::AutoSkipDrivers() "
+"method. The AutoSkipDrivers() method is already used to unload drivers based "
+"on GDAL_SKIP (and soon OGR_SKIP) and is generally called after the "
+"preliminary registration of drivers."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:153
+msgid "Strict Link Level Compliance"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:155
+msgid ""
+"The GPL, the leading reciprocal license, talks about distribution of GPL "
+"applications with proprietary code linked in. In a literal sense we may "
+"still have running processes with mixed code linked in. Instead of "
+"addressing the problem at the point of linking we are disabling use of "
+"incompatible components at runtime. There is some small risk that this may "
+"be considered not to be compliant with the requirements of the GPL license "
+"in a literal sense, though it is clear we are making every reasonable effort "
+"to enforce it in a practical sense."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:164
+msgid ""
+"In the situation of standalone software packages being distributed with "
+"GDAL, it may still be best for those preparing the package to completely "
+"omit any components incompatible with the license of the applications. This "
+"RFC is primarily intended to support complex mixed-component distributions "
+"such as OSGeo4W."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:171
+msgid "Drivers Affected"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:173
+msgid "I believe the following drivers should be marked as \"PROPRIETARY\":"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:175
+msgid "ECW"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:176
+msgid "JP2ECW"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:177
+msgid "MRSID"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:178
+msgid "JP2MRSID"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:179
+msgid "MG4Lidar"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:180
+msgid "GEORASTER"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:181
+msgid "JP2KAK"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:182
+msgid "JPIPKAK"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:183
+msgid "ArcObjects"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:184
+msgid "OCI"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:185
+msgid "FileGDB"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:186
+msgid "FME"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:187
+msgid "ArcSDE (raster and vector)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:189
+msgid "I believe the following drivers should be marked as \"RECIPROCAL\":"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:191
+msgid "grass (raster and vector)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:192
+msgid "EPSILON"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:193
+msgid "MySQL (depending on active license terms!)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:194
+msgid "PDF"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:196
+msgid "Unresolved:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:198
+msgid ""
+"The OGR SOSI driver should probably be marked as proprietary currently as it "
+"relies on linking with binary objects with unknown licencing terms, even if "
+"apparently the ultimate goal seems to open source them."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:202
+msgid ""
+"I'm a bit confused by :ref:`raster.msg`. Seems that it relies on third party "
+"stuff with both proprietary and GPL code."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:205
+msgid ""
+"I am unsure about the ODBC based drivers. I suppose PGEO and MSSQLSPATIAL "
+"drivers ought to be marked proprietary too? Might it depend on the actual "
+"license terms of the odbc library?"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:209
+msgid "Please let me know of other drivers needing marking."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:212
+msgid "SWIG Bindings"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:214
+msgid ""
+"Some (all?) swig bindings automatically call GDALAllRegister() and/or "
+"OGRRegisterAll() at the point the bindings are loaded making it hard to set "
+"the application level GDAL_LICENSE_POLICY in a script before the "
+"registration takes place. To address that I believe we should expose the "
+"AutoSkipDrivers() methods via SWIG so that scripts can set the policy and "
+"then \"clean\" the drivers based on the policy in force."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:222
+msgid "Test Suite"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:224
+msgid "How to test?"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:227
+msgid "Documentation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:229
+msgid "How to document?"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:232
+msgid "Implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc34_license_policy.rst:234
+msgid ""
+"Frank Warmerdam will do the core implementation in trunk. Driver maintainers "
+"may need to update the metadata for particular drivers."
+msgstr ""

@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/sxf.rst:4
+msgid "Storage and eXchange Format - SXF"
+msgstr ""
+
+#: ../../../source/drivers/vector/sxf.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/sxf.rst:6
+msgid "SXF"
+msgstr ""
+
+#: ../../../source/drivers/vector/sxf.rst:10
+msgid ""
+"This driver reads SXF files, open format often associated with Russian GIS "
+"Software Panorama."
+msgstr ""
+
+#: ../../../source/drivers/vector/sxf.rst:13
+msgid ""
+"The driver is read only, but supports deletion of data source. The driver "
+"supports SXF binary files version 3.0 and higher."
+msgstr ""
+
+#: ../../../source/drivers/vector/sxf.rst:16
+msgid "The SXF layer support the following capabilities:"
+msgstr ""
+
+#: ../../../source/drivers/vector/sxf.rst:18
+msgid "Strings as UTF8"
+msgstr ""
+
+#: ../../../source/drivers/vector/sxf.rst:19
+msgid "Random Read"
+msgstr ""
+
+#: ../../../source/drivers/vector/sxf.rst:20
+msgid "Fast Feature Count"
+msgstr ""
+
+#: ../../../source/drivers/vector/sxf.rst:21
+msgid "Fast Get Extent"
+msgstr ""
+
+#: ../../../source/drivers/vector/sxf.rst:22
+msgid "Fast Set Next By Index"
+msgstr ""
+
+#: ../../../source/drivers/vector/sxf.rst:24
+msgid ""
+"The driver uses classifiers (RSC files) to map feature from SXF to layers. "
+"Features that do not belong to any layer are put to the layer named "
+"\"Not_Classified\". The layers with zero features are not present in data "
+"source."
+msgstr ""
+
+#: ../../../source/drivers/vector/sxf.rst:29
+msgid ""
+"To be used automatically, the RSC file should have the same name as SXF "
+"file. User can provide RSC file path using config option "
+"**SXF_RSC_FILENAME**. This config option overrides the use of same name RSC."
+msgstr ""
+
+#: ../../../source/drivers/vector/sxf.rst:34
+msgid ""
+"The RSC file usually stores long and short layer name. The long name is "
+"usually in Russian, and short in English. The **SXF_LAYER_FULLNAME** config "
+"option allows choosing which layer names to use. If SXF_LAYER_FULLNAME is "
+"TRUE - the driver uses long names, if FALSE - short."
+msgstr ""
+
+#: ../../../source/drivers/vector/sxf.rst:40
+msgid ""
+"The attributes are read from SXF file. Maximum number of fields is created "
+"for the same layer features with different number of attributes. If "
+"attribute has a code mapped to RSC file, driver adds only the code (don't "
+"get real value from RSC, as the value type may differ from field type)."
+msgstr ""
+
+#: ../../../source/drivers/vector/sxf.rst:46
+msgid ""
+"If config option **SXF_SET_VERTCS** set to ON, the layers spatial reference "
+"will include vertical coordinate system description if exist."
+msgstr ""
+
+#: ../../../source/drivers/vector/sxf.rst:49
+msgid "Since GDAL 3.1 config options can be passed as driver open options."
+msgstr ""
+
+#: ../../../source/drivers/vector/sxf.rst:52
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/sxf.rst:59
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/vector/sxf.rst:61
+msgid "`Panorama web page <http://gisinfo.ru>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/sxf.rst:62
+msgid ""
+"`SXF binary format description v.4 (rus) - pdf <http://gistoolkit.ru/"
+"download/doc/sxf4bin.pdf>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/sxf.rst:64
+msgid ""
+"`SXF binary format description v.4 (rus) - doc <http://gistoolkit.ru/"
+"download/classifiers/formatsxf.zip>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/sxf.rst:66
+msgid ""
+"`SXF format description v.3 (rus) <http://loi.sscc.ru/gis/formats/Format-geo/"
+"sxf/sxf3-231.txt>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/sxf.rst:68
+msgid ""
+"`RSC format description (rus) <http://gistoolkit.ru/download/classifiers/"
+"formatrsc.zip>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/sxf.rst:70
+msgid ""
+"`Test spatial data in SXF format (rus) <http://www.gisinfo.ru/price/"
+"price_map.htm>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/sxf.rst:72
+msgid ""
+"`Some RSC files (rus) <http://www.gisinfo.ru/classifiers/classifiers.htm>`__"
+msgstr ""

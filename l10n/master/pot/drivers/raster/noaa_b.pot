@@ -1,0 +1,50 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/noaa_b.rst:5
+msgid "NOAA_B -- NOAA GEOCON/NADCON5 .b format"
+msgstr ""
+
+#: ../../../source/drivers/raster/noaa_b.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/noaa_b.rst:9
+msgid "NOAA_B"
+msgstr ""
+
+#: ../../../source/drivers/raster/noaa_b.rst:13
+msgid ""
+"GDAL supports reading geodetic grids in the NOAA .b binary format used for "
+"GEOCON and NADCON5 grids."
+msgstr ""
+
+#: ../../../source/drivers/raster/noaa_b.rst:17
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/noaa_b.rst:24
+msgid "See also"
+msgstr ""
+
+#: ../../../source/drivers/raster/noaa_b.rst:26
+msgid ""
+"`Format specification <https://geodesy.noaa.gov/library/pdfs/"
+"NOAA_TR_NOS_NGS_0063.pdf>`__: See paragraph 10.2, \".b grids (GEOCON and "
+"NADCON 5.0)\""
+msgstr ""

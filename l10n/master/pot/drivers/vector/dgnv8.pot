@@ -1,0 +1,279 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/dgnv8.rst:4
+msgid "Microstation DGN v8"
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:8
+msgid "DGNv8"
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:10
+msgid "Open Design Alliance Teigha library"
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:12
+msgid ""
+"Microstation DGN files from Microstation version 8.0 are supported for "
+"reading and writing. Each model of the file is represented by a OGR layer."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:16
+msgid ""
+"This driver requires to be built against the (non open source) Open Design "
+"Alliance Teigha library."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:19
+msgid ""
+"DGN files are considered to have no georeferencing information through OGR. "
+"Features will all have the following generic attributes:"
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:22
+msgid "Type: The integer type code as listed below in supported elements."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:23
+msgid "Level: The DGN level number."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:24
+msgid "GraphicGroup: The graphic group number."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:25
+msgid "ColorIndex: The color index from the dgn palette."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:26
+msgid "Weight: The drawing weight (thickness) for the element."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:27
+msgid "Style: The style value for the element."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:28
+msgid ""
+"ULink: User data linkage (multiple user data linkages may exist for each "
+"element)."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:31
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:40
+msgid "Supported Elements"
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:42
+msgid "The following element types are supported in reading:"
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:44
+msgid "Cell Header (2): used for polygons with holes"
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:45
+msgid "Line (3): Line (2 points) geometry."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:46
+msgid "Line String (4): Multi segment line geometry."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:47
+msgid "Shape (6): Polygon geometry."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:48
+msgid "TextNode (7): Container of Text elements."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:49
+msgid "Curve (11): Approximated as a line geometry."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:50
+msgid "ComplexString (12): Treated as line string or compound curve."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:51
+msgid "ComplexShape (14): Treated as polygon or curve polygon."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:52
+msgid "Ellipse (15): Approximated as a line geometry or a circular string."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:53
+msgid "Arc (16): Approximated as a line geometry or a circular string."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:54
+msgid "Text (17): Treated as a point geometry."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:55
+msgid "B-Spline (21): Treated as a line geometry."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:56
+msgid "PointString (22): Treated as multi point."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:57
+msgid "Shared cell reference (35): Treated as point."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:59
+msgid ""
+"Generally speaking any concept of complex objects, and cells as associated "
+"components is lost. Each component of a complex object or cell is treated as "
+"a independent feature."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:64
+msgid "User data linkage"
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:66
+msgid ""
+"A DGN element may have multiple user data linkages. Each linkage has a user "
+"id, application id and a number of words of data. The user data linkage "
+"output reports the data for each different application id."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:70
+msgid ""
+"For unknown application ids, the raw data is reported as hexadecimal words "
+"(16bit). Is up to the user how to decode the user data, depending on the "
+"application id."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:75
+msgid "Styling Information"
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:77
+msgid ""
+"Some drawing information about features can be extracted from the "
+"ColorIndex, Weight and Style generic attributes; however, for all features "
+"an OGR style string has been prepared with the values encoded in ready-to-"
+"use form for applications supporting OGR style strings."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:82
+msgid ""
+"The various kinds of linear geometries will carry style information "
+"indicating the color, thickness and line style (i.e. dotted, solid, etc)."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:86
+msgid ""
+"Polygons (Shape elements) will carry styling information for the edge as "
+"well as a fill color if provided. Fill patterns are not supported."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:89
+msgid ""
+"Text elements will contain the text, angle, color and size information "
+"(expressed in ground units) in the style string."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:93
+msgid "Metadata"
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:95
+msgid ""
+"The various metadata items that can be set in the DGN header with the "
+"dataset creation options (see below) can be retrieved in the \"DGN\" "
+"metadata domain."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:100
+msgid "Creation Issues"
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:102
+msgid "DGN files may be written with OGR with limitations:"
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:104
+msgid ""
+"Output features have the usual fixed DGN attributes. Attempts to create any "
+"other fields will fail."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:106
+msgid ""
+"Translation from OGR feature style strings back into DGN representation "
+"information is limited to a few properties of LABEL (text, font name, size, "
+"angle, color), PEN (color) and BRUSH (fill color) tools."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:110
+msgid ""
+"POINT geometries that are not text (Text is NULL, and the feature style "
+"string is not a LABEL) will be translated as a degenerate (0 length) line "
+"element."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:113
+msgid ""
+"Geometries which fall outside the \"design plane\" of the seed file will be "
+"discarded, or corrupted in unpredictable ways."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:117
+msgid "Dataset creation options"
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:201
+msgid "Layer creation options"
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:215
+msgid "Building"
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:217
+msgid ""
+"See :ref:`ODA platform support <vector.oda>` for building GDAL with ODA "
+"support."
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:226
+msgid ":ref:`DGN (v7) driver <vector.dgn>`"
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:227
+msgid ":ref:`ogr_feature_style`"
+msgstr ""

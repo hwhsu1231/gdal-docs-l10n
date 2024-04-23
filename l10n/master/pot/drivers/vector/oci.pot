@@ -1,0 +1,305 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/oci.rst:4
+msgid "Oracle Spatial"
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:6
+msgid "OCI"
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:8
+msgid "OCI library"
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:10
+msgid ""
+"This driver supports reading and writing data in Oracle Spatial (8.1.7 or "
+"later) Object-Relational format. The Oracle Spatial driver is not normally "
+"built into OGR, but may be built in on platforms where the Oracle client "
+"libraries are available."
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:15
+msgid ""
+"When opening a database, its name should be specified in the form \"OCI:"
+"userid/password@database_instance:table,table\". The list of tables is "
+"optional. The database_instance portion may be omitted when accessing the "
+"default local database instance. See the `Oracle Help Center <https://docs."
+"oracle.com/search/?q=oci%20driver>`_ for more information about the OCI "
+"driver."
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:22
+msgid ""
+"If the list of tables is not provided, then all tables appearing in "
+"ALL_SDO_GEOM_METADATA will be treated by OGR as layers with the table names "
+"as the layer names. Non-spatial tables or spatial tables not listed in the "
+"ALL_SDO_GEOM_METADATA view [#]_ are not accessible unless explicitly listed "
+"in the datasource name. Even in databases where all desired layers are in "
+"the ALL_SDO_GEOM_METADATA view, it may be desirable to list only the tables "
+"to be used as this can substantially reduce initialization time in databases "
+"with many tables."
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:31
+msgid ""
+"If the table has an integer column called OGR_FID it will be used as the "
+"feature id by OGR (and it will not appear as a regular attribute). When "
+"loading data into Oracle Spatial OGR will always create the OGR_FID field."
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:36
+msgid ""
+"When reading data from one or more views, the view names should be specified "
+"in the form \"OCI:userid/password@database_instance:view,view\". What is "
+"written above regarding tables, applies to views as well."
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:41
+msgid ""
+"It is the database user that is responsible for updating the "
+"ALL_SDO_GEOM_METADATA view, by inserting an appropriate row into the "
+"USER_SDO_GEOM_METADATA view. This is why it is possible that the table you "
+"want to read from is not listed in the ALL_SDO_GEOM_METADATA."
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:48
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:55
+msgid "SQL Issues"
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:57
+msgid ""
+"By default, the Oracle driver passes SQL statements directly to Oracle "
+"rather than evaluating them internally when using the ExecuteSQL() call on "
+"the OGRDataSource, or the -sql command option to ogr2ogr. Attribute query "
+"expressions are also passed through to Oracle."
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:62
+msgid ""
+"As well two special commands are supported via the ExecuteSQL() interface. "
+"These are \"**DELLAYER:<table_name>**\" to delete a layer, and \"**VALLAYER:"
+"<table_name>**\" to apply the SDO_GEOM.VALIDATE_GEOMETRY() check to a layer. "
+"Internally these pseudo-commands are translated into more complex SQL "
+"commands for Oracle."
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:68
+msgid ""
+"It is also possible to request the driver to handle SQL commands with :ref:"
+"`OGR SQL <ogr_sql_dialect>` engine, by passing **\"OGRSQL\"** string to the "
+"ExecuteSQL() method, as name of the SQL dialect."
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:73
+msgid "Caveats"
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:75
+msgid ""
+"The type recognition logic is currently somewhat impoverished. No effort is "
+"made to preserve real width information for integer and real fields."
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:78
+msgid ""
+"Various types such as objects, and BLOBs in Oracle will be completely "
+"ignored by OGR."
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:80
+msgid ""
+"Currently the OGR transaction semantics are not properly mapped onto "
+"transaction semantics in Oracle."
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:82
+msgid ""
+"If an attribute called OGR_FID exists in the schema for tables being read, "
+"it will be used as the FID. Random (FID based) reads on tables without an "
+"identified (and indexed) FID field can be very slow. To force use of a "
+"particular field name the :config:`OCI_FID` configuration option (e.g. "
+"environment variable) can be set to the target field name."
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:88
+msgid ""
+"Curved geometry types are converted to linestrings or linear rings in six "
+"degree segments when reading. The driver has no support for writing curved "
+"geometries."
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:91
+msgid ""
+"There is no support for point cloud (SDO_PC), TIN (SDO_TIN) and annotation "
+"text data types in Oracle Spatial."
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:93
+msgid ""
+"It might be necessary to define the environment variable NLS_LANG to "
+"\"American_America.UTF8\" to avoid issues with floating point numbers being "
+"truncated to integer on non-English environments."
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:96
+msgid ""
+"For developers: when running the driver under the memory error detection "
+"tool Valgrind, specifying the database_instance, typically to localhost, or "
+"with the TWO_TASK environment variable seems to be compulsory, otherwise "
+"\"TNS:permission denied\" errors will be reported)"
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:101
+msgid ""
+"The logic for finding the specified table or view first checks whether a "
+"table with the given name exists, then a view, and then tries again with "
+"quoted names. This may result in one or more errors of the following type "
+"written to the output: \"ORA-04043: object <object_name> does not exist\", "
+"even if the object actually is found later on."
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:109
+msgid "Creation Issues"
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:111
+msgid ""
+"The Oracle Spatial driver does not support creation of new datasets "
+"(database instances), but it does allow creation of new layers within an "
+"existing database."
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:115
+msgid ""
+"Upon closing the OGRDataSource newly created layers will have a spatial "
+"index automatically built. At this point the USER_SDO_GEOM_METADATA table "
+"will also be updated with bounds for the table based on the features that "
+"have actually been written. One consequence of this is that once a layer has "
+"been loaded it is generally not possible to load additional features outside "
+"the original extents without manually modifying the DIMINFO information in "
+"USER_SDO_GEOM_METADATA and rebuilding the spatial index."
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:125
+msgid "Configuration options"
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:127
+msgid ""
+"The following :ref:`configuration options <configoptions>` are available:"
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:136
+msgid "Layer Creation Options"
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:289
+msgid "Layer Open Options"
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:308
+msgid "Example"
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:310
+msgid ""
+"Simple translation of a shapefile into Oracle. The table 'ABC' will be "
+"created with the features from abc.shp and attributes from abc.dbf."
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:315
+msgid "% ogr2ogr -f OCI OCI:warmerda/password@gdal800.dreadfest.com abc.shp"
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:317
+msgid ""
+"This second example loads a political boundaries layer from VPF (via the :"
+"ref:`OGDI driver <vector.ogdi>`), and renames the layer from the cryptic "
+"OGDI layer name to something more sensible. If an existing table of the "
+"desired name exists it is overwritten."
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:324
+msgid ""
+"% ogr2ogr  -f OCI OCI:warmerda/password \\\n"
+"        gltp:/vrf/usr4/mpp1/v0eur/vmaplv0/eurnasia \\\n"
+"        -lco OVERWRITE=yes -nln polbndl_bnd 'polbndl@bnd(*)_line'"
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:328
+msgid ""
+"This example shows using ogrinfo to evaluate an SQL query statement within "
+"Oracle. More sophisticated Oracle Spatial specific queries may also be used "
+"via the -sql commandline switch to ogrinfo."
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:334
+msgid ""
+"ogrinfo -ro OCI:warmerda/password -sql \"SELECT pop_1994 from canada where "
+"province_name = 'Alberta'\""
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:336
+msgid "This example shows hows to list information about an Oracle view."
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:340
+msgid ""
+"ogrinfo -ro -so OCI:username/password@host_name:port_number/service_name:"
+"MY_SCHEMA.MY_VIEW MY_SCHEMA.MY_VIEW"
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:342
+msgid ""
+"This example shows hows to convert certain columns from an Oracle view to a "
+"GeoPackage file, explicitly assigning the layer name and the coordinate "
+"reference system, and converting timestamps to UTC."
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:348
+msgid ""
+"ogr2ogr -f GPKG output.gpkg -nln new_layer_name -nlt POLYGON -s_srs "
+"EPSG:25832 -t_srs EPSG:25832 -dsco DATETIME_FORMAT=UTC OCI:username/"
+"password@host_name:port_number/service_name:MY_SCHEMA.MY_VIEW -sql \"SELECT "
+"COLUMN_A, COLUMN_B, GEOMETRY FROM MY_SCHEMA.MY_VIEW\""
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:351
+msgid "Credits"
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:353
+msgid ""
+"I would like to thank `SRC, LLC <http://www.extendthereach.com/>`__ for its "
+"financial support of the development of this driver."
+msgstr ""

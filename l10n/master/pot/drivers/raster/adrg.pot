@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/adrg.rst:5
+msgid "ADRG -- ADRG/ARC Digitized Raster Graphics (.gen/.thf)"
+msgstr ""
+
+#: ../../../source/drivers/raster/adrg.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/adrg.rst:7
+msgid "ADRG"
+msgstr ""
+
+#: ../../../source/drivers/raster/adrg.rst:11
+msgid ""
+"Supported by GDAL for read access. Creation is possible, but it must be "
+"considered as experimental and a means of testing read access (although "
+"files created by the driver can be read successfully on another GIS software)"
+msgstr ""
+
+#: ../../../source/drivers/raster/adrg.rst:16
+msgid ""
+"An ADRG dataset is made of several files. The file recognised by GDAL is the "
+"General Information File (.GEN). GDAL will also need the image file (.IMG), "
+"where the actual data is."
+msgstr ""
+
+#: ../../../source/drivers/raster/adrg.rst:20
+msgid ""
+"The Transmission Header File (.THF) can also be used as an input to GDAL. If "
+"the THF references more than one image, GDAL will report the images it is "
+"composed of as subdatasets. If the THF references just one image, GDAL will "
+"open it directly."
+msgstr ""
+
+#: ../../../source/drivers/raster/adrg.rst:25
+msgid ""
+"Overviews, legends and insets are not used. Polar zones (ARC zone 9 and 18) "
+"are not supported (due to the lack of test data)."
+msgstr ""
+
+#: ../../../source/drivers/raster/adrg.rst:28
+msgid ""
+"See also : the `ADRG specification (MIL-A-89007) <http://earth-info.nga.mil/"
+"publications/specs/printed/89007/89007_ADRG.pdf>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/adrg.rst:33
+msgid "Driver capabilities"
+msgstr ""

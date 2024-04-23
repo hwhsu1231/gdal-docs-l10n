@@ -1,0 +1,375 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/grib.rst:5
+msgid "GRIB -- WMO General Regularly-distributed Information in Binary form"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:7
+msgid "GRIB"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:11
+msgid ""
+"GDAL supports GRIB1 (reading) and GRIB2 (reading and writing) format raster "
+"data, with support for common coordinate system, georeferencing and other "
+"metadata. GRIB format is commonly used for distribution of Meteorological "
+"information, and is propagated by the World Meteorological Organization."
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:17
+msgid ""
+"The GDAL GRIB driver is based on a modified version of the degrib "
+"application which is written primarily by Arthur Taylor of NOAA NWS NDFD "
+"(MDL). The degrib application (and the GDAL GRIB driver) are built on the "
+"g2clib grib decoding library written primarily by John Huddleston of NOAA "
+"NWS NCEP."
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:23
+msgid ""
+"GRIB2 files without projection on lon/lat grids have the peculiarity of "
+"using longitudes in the [0,360] range and wrapping around the antimeridian "
+"as opposed to the usual wrapping around the prime meridian of other raster "
+"datasets. Starting with GDAL 3.4.0, when reading such files, a transparent "
+"conversion of the longitudes to [-180,180] will be performed and the data "
+"will be rewrapped around the prime meridian - the split&swap mode. This "
+"behavior can be disabled by setting the :config:"
+"`GRIB_ADJUST_LONGITUDE_RANGE` configuration option to `NO`."
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:32
+msgid ""
+"There are several encoding schemes for raster data in GRIB format. Most "
+"common ones should be supported including PNG encoding. JPEG2000 encoded "
+"GRIB files will generally be supported if GDAL is also built with JPEG2000 "
+"support via one of the GDAL JPEG2000 drivers."
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:37
+msgid ""
+"GRIB files may a be represented in GDAL as having many bands, with some sets "
+"of bands representing a time sequence. GRIB bands are represented as Float64 "
+"(double precision floating point) regardless of the actual values. GRIB "
+"metadata is captured as per-band metadata and used to set band descriptions, "
+"similar to this:"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:45
+msgid ""
+"Description = 100000[Pa] ISBL=\"Isobaric surface\"\n"
+"  GRIB_UNIT=[gpm]\n"
+"  GRIB_COMMENT=Geopotential height [gpm]\n"
+"  GRIB_ELEMENT=HGT\n"
+"  GRIB_SHORT_NAME=100000-ISBL\n"
+"  GRIB_REF_TIME=  1201100400 sec UTC\n"
+"  GRIB_VALID_TIME=  1201104000 sec UTC\n"
+"  GRIB_FORECAST_SECONDS=3600 sec"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:54
+msgid ""
+"GRIB2 files may also include an extract of other metadata, such as the "
+"`identification section <http://www.nco.ncep.noaa.gov/pmb/docs/grib2/"
+"grib2_doc/grib2_sect1.shtml>`__, `product definition <http://www.nco.ncep."
+"noaa.gov/pmb/docs/grib2/grib2_doc/grib2_sect4.shtml>`__ template number "
+"(GRIB_PDS_PDTN, octet 8-9), and the product definition template values "
+"(GRIB_PDS_TEMPLATE_NUMBERS, octet 10+) as metadata like this:"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:65
+msgid ""
+"GRIB_DISCIPLINE=0(Meteorological)\n"
+"GRIB_IDS=CENTER=7(US-NCEP) SUBCENTER=0 MASTER_TABLE=8 LOCAL_TABLE=1 "
+"SIGNF_REF_TIME=1(Start_of_Forecast) REF_TIME=2017-10-20T06:00:00Z "
+"PROD_STATUS=0(Operational) TYPE=1(Forecast)\n"
+"GRIB_PDS_PDTN=32\n"
+"GRIB_PDS_TEMPLATE_NUMBERS=5 7 2 0 0 0 0 0 1 0 0 0 0 1 0 31 1 29 67 140 2 0 0 "
+"238 217\n"
+"GRIB_PDS_TEMPLATE_ASSEMBLED_VALUES=5 7 2 0 0 0 0 1 0 1 31 285 17292 2 61145"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:71
+msgid ""
+"GRIB_DISCIPLINE was added in GDAL 2.3.0 and is the `Discipline <http://www."
+"nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_table0-0.shtml>`__ field of "
+"the Section 0 of the message."
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:75
+msgid ""
+"GRIB_IDS was added in GDAL 2.3.0 and is the `identification section <http://"
+"www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_table0-0.shtml>`__ / "
+"Section 1 of the message."
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:79
+msgid ""
+"GRIB_PDS_TEMPLATE_ASSEMBLED_VALUES was added in GDAL 2.3.0, and use template "
+"definitions to assemble several bytes that make a template item into a 16 or "
+"32 bit signed/unsigned integers, whereas GRIB_PDS_TEMPLATE_NUMBERS expose "
+"raw bytes"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:85
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:94
+msgid "Configuration options"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:96
+msgid ""
+"This paragraph lists the configuration options that can be set to alter the "
+"default behavior of the GRIB driver."
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:124
+msgid "Open options"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:148
+msgid "GRIB2 write support"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:150
+msgid ""
+"GRIB2 write support is available since GDAL 2.3.0, through the "
+"CreateCopy() / gdal_translate interface."
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:153
+msgid ""
+"Each band of the input dataset is translated as a GRIB2 message, and all of "
+"them are concatenated in a single file, conforming to the usual practice."
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:157
+msgid ""
+"The input dataset must be georeferenced, and the supported projections are: "
+"Geographic Longitude/Latitude, Mercator 1SP/2SP, Transverse Mercator, Polar "
+"Stereographic, Lambert Conformal Conic 1SP/2SP, Albers Conic Equal Area and "
+"Lambert Azimuthal Equal Area."
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:162
+msgid ""
+"A number of creation options are available as detailed in below sections. "
+"Those creation options are valid for all bands. But it is possible to "
+"override those global settings in a per-band way, by defining creation "
+"options that use the same key and are prefixed by BAND_X\\_ where X is the "
+"band number between 1 and the total number of bands. For example "
+"BAND_1_PDS_PDTN"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:170
+msgid "Product identification and definition"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:172
+msgid ""
+"Users are strongly advised to provide necessary information to appropriately "
+"fill the `Section 0 / \"Indicator\" <http://www.nco.ncep.noaa.gov/pmb/docs/"
+"grib2/grib2_doc/grib2_sect0.shtml>`__, `Section 1 / \"Identification "
+"section\" <http://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_sect1."
+"shtml>`__ and `Section 4 / \"Product definition section\" <http://www.nco."
+"ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_sect4.shtml>`__ with the "
+"following creation options. Otherwise, GDAL will fill with default values, "
+"but readers might have trouble exploiting GRIB2 datasets generating with "
+"those defaults."
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:190
+msgid "0: Meteorological Products. Default value"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:191
+msgid "1: Hydrological Products"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:192
+msgid "2: Land Surface Products"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:193
+msgid "3, 4: Space Products"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:194
+msgid "10: Oceanographic Product"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:313
+msgid "Data encoding"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:315
+msgid ""
+"In GRIB2, a number of data encoding schemes exist (see `Section 5 / \"Data "
+"representation section\" <http://www.nco.ncep.noaa.gov/pmb/docs/grib2/"
+"grib2_doc/grib2_sect5.shtml>`__). By default, GDAL will select an "
+"appropriate data encoding that will preserve the range of input data. with "
+"the :co:`DATA_ENCODING`, :co:`NBITS`, :co:`DECIMAL_SCALE_FACTOR`, :co:"
+"`JPEG2000_DRIVER`, :co:`COMPRESSION_RATIO` and :co:"
+"`SPATIAL_DIFFERENCING_ORDER` creation options."
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:323
+msgid ""
+"Users can override those defaults with the following creation options are:"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:333
+msgid ""
+"In AUTO mode, COMPLEX_PACKING is selected if input band has a nodata value. "
+"Otherwise if input band datatype is Float32 or Float64, IEEE_FLOATING_POINT "
+"is selected. Otherwise SIMPLE_PACKING is selected."
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:337
+msgid ""
+"`SIMPLE_PACKING <http://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/"
+"grib2_temp5-0.shtml>`__: use integer representation internally, with offset "
+"and decimal and/or binary scaling. So can be used for any datatype."
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:340
+msgid ""
+"COMPLEX_PACKING: evolution of SIMPLE_PACKING with nodata handling. By "
+"default, a `non-spatial differencing encoding is used <http://www.nco.ncep."
+"noaa.gov/pmb/docs/grib2/grib2_doc/grib2_temp5-2.shtml>`__, but if "
+"SPATIAL_DIFFERENCING_ORDER=1 or 2, `complex packing with spatial "
+"differencing <http://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/"
+"grib2_temp5-3.shtml>`__ is used"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:347
+msgid ""
+"`IEEE_FLOATING_POINT <http://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/"
+"grib2_temp5-4.shtml>`__: store values as IEEE-754 single or double precision "
+"numbers."
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:349
+msgid ""
+"`PNG <http://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/grib2_temp5-41."
+"shtml>`__: uses the same preparation steps as SIMPLE_PACKING but with PNG "
+"encoding of the integer values."
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:352
+msgid ""
+"`JPEG2000 <http://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc/"
+"grib2_temp5-40.shtml>`__: uses the same preparation steps as SIMPLE_PACKING "
+"but with JPEG2000 encoding of the integer values."
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:409
+msgid "Data units"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:411
+msgid ""
+"Internally GRIB stores values in the units of the international system (ie "
+"Metric system). So temperatures must be stored as Kelvin degrees. But on the "
+"reading side of the driver, fields with temperatures are exposed in Celsius "
+"degrees (unless the :config:`GRIB_NORMALIZE_UNITS` configuration option is "
+"set to NO). For consistency, the writing side of the driver also assumed "
+"that temperature (detected if the first value of a product definition "
+"template, ie the *Parameter category* is 0=Temperature) values in the input "
+"dataset will be in Celsius degrees, and will automatically offset them to "
+"Kelvin degrees. It is possible to control that behavior using the :co:"
+"`INPUT_UNIT` creation option:"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:430
+msgid "GRIB2 to GRIB2 conversions"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:432
+msgid ""
+"If GRIB2 to GRIB2 translation is done with gdal_translate (or CreateCopy()), "
+"the GRIB_DISCIPLINE, GRIB_IDS, GRIB_PDS_PDTN and GRIB_PDS_TEMPLATE_NUMBERS "
+"metadata items of the bands of the source dataset are used by default "
+"(unless creation options override them)."
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:437
+msgid ""
+"DECIMAL_SCALE_FACTOR and NBITS will also be attempted to be retrieved from "
+"the GRIB special metadata domain."
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:441
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:445
+msgid ""
+"gdal_translate in.tif out.grb2 -of GRIB \\\n"
+"    -co \"IDS=CENTER=8(US-NWSTG) SIGNF_REF_TIME=1(Start_of_Forecast) "
+"REF_TIME=2008-02-21T17:00:00Z PROD_STATUS=0(Operational) TYPE=1(Forecast)\" "
+"\\\n"
+"    -co \"PDS_PDTN=8\" \\\n"
+"    -co \"PDS_TEMPLATE_ASSEMBLED_VALUES=0 5 2 0 0 255 255 1 43 1 0 0 255 -1 "
+"-2147483647 2008 2 23 12 0 0 1 0 3 255 1 12 1 0\""
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:451
+msgid "See Also:"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:453
+msgid ""
+"`NOAA NWS NDFD \"degrib\" GRIB2 Decoder <https://www.weather.gov/mdl/"
+"degrib_archive>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:455
+msgid ""
+"`NOAA NWS NCEP g2clib grib decoding library <http://www.nco.ncep.noaa.gov/"
+"pmb/codes/GRIB2/>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:457
+msgid ""
+"`WMO GRIB1 Format Documents <http://www.wmo.int/pages/prog/www/WDM/Guides/"
+"Guide-binary-2.html>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:459
+msgid ""
+"`NCEP WMO GRIB2 Documentation <http://www.nco.ncep.noaa.gov/pmb/docs/grib2/"
+"grib2_doc/>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:463
+msgid "Credits"
+msgstr ""
+
+#: ../../../source/drivers/raster/grib.rst:465
+msgid ""
+"Support for GRIB2 write capabilities has been funded by Meteorological "
+"Service of Canada."
+msgstr ""

@@ -1,0 +1,183 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc85_policy_code_additions.rst:5
+msgid "RFC 85: Policy regarding substantial code additions"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc85_policy_code_additions.rst:8
+msgid "Authors:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc85_policy_code_additions.rst:8
+msgid "Howard Butler, Even Rouault"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc85_policy_code_additions.rst:10
+msgid "Started:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc85_policy_code_additions.rst:10
+msgid "2022-01-17"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc85_policy_code_additions.rst:11
+msgid "Status:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc85_policy_code_additions.rst:11
+msgid "Adopted"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc85_policy_code_additions.rst:15
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc85_policy_code_additions.rst:17
+msgid ""
+"This document describes the policies that the GDAL project will apply to "
+"assess substantial code additions, typically new drivers, in particular "
+"coming from new contributors to the project."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc85_policy_code_additions.rst:22
+msgid "Motivation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc85_policy_code_additions.rst:24
+msgid ""
+"The GDAL project has historically been quite open to new code additions, "
+"including drivers that rely on proprietary licensed and/or closed-source "
+"SDKs (called \"binary SDK\" in the rest of this document). This approach is "
+"part of its strengths, but also comes at a price, with the software becoming "
+"larger and larger, and with contributions sometimes being abandoned by their "
+"authors without new maintainers."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc85_policy_code_additions.rst:31
+msgid ""
+"Being a free & open-source project, the GDAL project will apply stronger "
+"scrutiny to code that requires a binary SDK and encourage contributors to "
+"submit code additions that do not depend on such binary SDK, or license SDKs "
+"under free & open-source license terms."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc85_policy_code_additions.rst:37
+msgid "Policy"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc85_policy_code_additions.rst:39
+msgid ""
+"Drivers require a designated responsible contact, tracked in https://github."
+"com/OSGeo/gdal/wiki/Maintainers-per-sub-system"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc85_policy_code_additions.rst:42
+msgid ""
+"Contributions should follow other RFCs describing development rules, and "
+"come with test scripts and sufficient documentation, covering usage and "
+"build instructions."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc85_policy_code_additions.rst:45
+msgid ""
+"If the driver require a binary SDK not downloadable without cost, or that "
+"requires a complicated registration process, the GDAL team is unlikely to "
+"support driver inclusion."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc85_policy_code_additions.rst:48
+msgid ""
+"GDAL supports multiple operating systems, and new drivers should support as "
+"many as is practical. At a minimum, drivers should work with the latest and "
+"OS-vendor supported releases of operating systems the driver is documented "
+"to work with."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc85_policy_code_additions.rst:52
+msgid ""
+"If the binary SDK is no longer supported, or modernized to work with current "
+"compilers and GDAL, the driver can be dropped. This rule also applies to "
+"open-source dependencies that are no longer maintained or are superseded by "
+"other alternatives."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc85_policy_code_additions.rst:56
+msgid ""
+"If the driver has unaddressed bugs, is breaking continuous integration (CI), "
+"has caused CI bits to be disabled, or has not caught up to API modifications "
+"requiring updates (extremely rare), the driver will be dropped from build "
+"scripts, and thus will not be built without significant user intervention."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc85_policy_code_additions.rst:61
+msgid ""
+"If critical/blocking issues reported in a driver are not addressed within a "
+"2 month time-frame, it can be dropped from the tree entirely by a designated "
+"GDAL maintainer for all releases going forward."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc85_policy_code_additions.rst:65
+msgid ""
+"Contributors of significant code additions are expected to participate in "
+"the day-to-day life of the GDAL project, and need to monitor closely the "
+"communication channels of the project: issue tracker, mailing lists, etc."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc85_policy_code_additions.rst:69
+msgid ""
+"Maintainers are expected to support their contributions by triaging bug "
+"reports, reviewing related pull requests and RFCs, making functional "
+"enhancements, testing releases, and improving documentation, tests, and "
+"infrastructure."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc85_policy_code_additions.rst:73
+msgid ""
+"In addition, maintainers are expected to respond in a timely manner to wider "
+"project changes (CI, build scripts, upgrade of dependencies, build tools, "
+"documentation, etc.) as it pertains to their contributions."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc85_policy_code_additions.rst:77
+msgid ""
+"New contributions may require a significant review effort from a GDAL "
+"committer (ie someone with direct modification rights to the source "
+"repository). While the project has funded maintainers, it must be understood "
+"that they might not be immediately available to do reviews of significant "
+"code additions. Contributors may contract GDAL committers to have such task "
+"done within a more predictable timeline."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc85_policy_code_additions.rst:83
+msgid ""
+"The above rules are not exhaustive. The PSC reserves the right to reject a "
+"proposed code addition depending on its particular nature and other "
+"contextual elements."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc85_policy_code_additions.rst:87
+msgid "Voting history"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc85_policy_code_additions.rst:89
+msgid ""
+"+1 from PSC members MateuszL, KurtS, TamasS, SeanG, HowardB, JukkaR and "
+"EvenR."
+msgstr ""

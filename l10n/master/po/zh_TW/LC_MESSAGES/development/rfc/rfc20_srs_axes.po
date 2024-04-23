@@ -1,0 +1,379 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:5
+msgid "RFC 20: OGRSpatialReference Axis Support"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:7
+msgid "Author: Frank Warmerdam"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:9
+msgid "Contact: warmerdam@pobox.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:11
+msgid "Status: Adopted"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:14
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:16
+msgid ""
+"The OGRSpatialReference and OGRCoordinateTransformation classes assume that "
+"all coordinate systems use (easting, northing) coordinate order (or in "
+"geographic terms (longitude, latitude)). In practice some coordinate systems "
+"use alternate axis orientations (such as the Krovak projection), and some "
+"standards (GML, WMS 1.3, WCS 1.1) require honouring the EPSG declaration "
+"that all it's geographic coordinates have (latitude, longitude) coordinate "
+"ordering."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:24
+msgid ""
+"This RFC attempts to extend the OGRSpatialReference, and "
+"OGRCoordinateTransformation classes to support alternate axis orientations, "
+"and to update selected drivers (GML, WMS, WCS, GMLJP2) to properly support "
+"axis ordering."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:30
+msgid "WKT Axis Representation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:32
+msgid ""
+"The OGC WKT SRS format (per OGC 01-???) already indicates a way of defining "
+"coordinate system axes as shown in this example:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:37
+msgid ""
+"GEOGCS[\"WGS 84\",\n"
+"    DATUM[\"WGS_1984\",\n"
+"        SPHEROID[\"WGS 84\",6378137,298.257223563,\n"
+"            AUTHORITY[\"EPSG\",\"7030\"]],\n"
+"        TOWGS84[0,0,0,0,0,0,0],\n"
+"        AUTHORITY[\"EPSG\",\"6326\"]],\n"
+"    PRIMEM[\"Greenwich\",0,\n"
+"        AUTHORITY[\"EPSG\",\"8901\"]],\n"
+"    UNIT[\"degree\",0.0174532925199433,\n"
+"        AUTHORITY[\"EPSG\",\"9108\"]],\n"
+"    AXIS[\"Lat\",NORTH],\n"
+"    AXIS[\"Long\",EAST],\n"
+"    AUTHORITY[\"EPSG\",\"4326\"]]"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:51
+msgid ""
+"There is one AXIS definition per axis with order relating to position within "
+"a tuple. The first argument is the user name for the axis and exact values "
+"are not specified. The second argument is a direction and may be one of "
+"NORTH, SOUTH, EAST or WEST."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:57
+msgid "Dilemma"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:59
+msgid ""
+"The core challenge of this RFC is adding support for axes orders, including "
+"honouring EPSG desired axis order for geographic coordinate systems where "
+"appropriate without breaking existing files and code that make extensive use "
+"of EPSG coordinate systems but override axis orientations and assume they "
+"should be treated as long, lat regardless of what EPSG says."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:66
+msgid ""
+"In particular, we come up with appropriate policies and mechanisms to decide "
+"when a file in a geographic coordinate system like EPSG:4326 is to be "
+"treated as lat/long and when it should be long/lat. Because of the extensive "
+"existing practice it behooves us to err on the side of past practice, and "
+"require \"opting in\" to honouring EPSG axis ordering."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:73
+msgid "The Hack"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:75
+msgid ""
+"The main mechanism by I propose to work around the dilemma is to "
+"differentiate between geographic coordinate systems with the AXIS values set "
+"and those without. In particular, a WKT coordinate system with the EPSG "
+"authority code (ie. 4326) set, but no axis declarations will be assumed to "
+"be long, lat even though that is contrary to the definition from EPSG of "
+"4326. Only in cases where we really *know* we want to honour EPSG's axis "
+"order will we actually populate the axis declarations indicating lat, long."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:84
+msgid ""
+"The hope is that this will let us continue to (mis)use EPSG:4326 definitions "
+"without necessary honouring the EPSG axis ordering except in specific "
+"circumstances."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:89
+msgid "OGRSpatialReference"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:92
+msgid "New Enumeration"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:97
+msgid ""
+"typedef enum {\n"
+"  OAO_Unknown = 0,\n"
+"  OAO_North = 1,\n"
+"  OAO_South = 2,\n"
+"  OAO_East = 3,\n"
+"  OAO_West = 4\n"
+"} OGRAxisOrientation;"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:106
+msgid "New methods"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:110
+msgid ""
+"const char *GetAxis( const char *pszTargetKey, int iAxis,\n"
+"                     OGRAxisOrientation *peOrientation );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:113
+msgid "Fetch information about one axis (iAxis is zero based)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:117
+msgid ""
+"OGRErr      SetAxes( const char *pszTargetKey,\n"
+"                     const char *pszXAxisName, OGRAxisOrientation "
+"eXAxisOrientation,\n"
+"                     const char *pszYAxisName, OGRAxisOrientation "
+"eYAxisOrientation,\n"
+"                     const char *pszZAxisName=NULL, OGRAxisOrientation "
+"eZAxisOrientation = OAO_Unknown );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:122
+msgid "Defines the X and Y axes for a given target key (PROJCS or GEOGCS)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:126
+msgid "int         EPSGTreatsAsLatLong();"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:128
+msgid ""
+"Returns true based on the EPSG code if EPSG would like this coordinate "
+"system to be treated as lat/long. This is useful in contexts like WMS 1.3 "
+"where EPSG:4326 needs to be interpreted as lat/long due to the standard."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:135
+msgid "OGRErr      importFromEPSGA( int );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:137
+msgid ""
+"This works like importFromEPSG() but will assign the EPSG defined AXIS "
+"definition."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:140
+msgid ""
+"Note that OGRSpatialReference::StripNodes( \"AXIS\" ); can be used to strip "
+"axis definitions where they are not desired."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:144
+msgid "importFromURN"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:146
+msgid ""
+"Modify importFromURN() to set AXIS values properly for EPSG and OGC "
+"geographic coordinate systems. So urn:...:EPSG: will be assumed to really "
+"honour EPSG conventions."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:151
+msgid "SetWellKnownGeogCS()"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:153
+msgid "This method appears to be the only code"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:155
+msgid ""
+"Modify SetWellKnownGeogCS() to *not* set AXIS values, and strip AXIS values "
+"out of any other hardcoded WKT definitions."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:159
+msgid "importFromEPSG()"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:161
+msgid ""
+"importFromEPSG() will continue to *not* set AXIS values for GEOGCS "
+"coordinate systems."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:163
+msgid ""
+"importFromEPSG() will now set axis values for projected coordinate systems "
+"(at least in cases like Krovak where it is a non-default axis orientation)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:166
+msgid ""
+"importFromEPSG() will be implemented by calling importFromEPSGA() and "
+"stripping off axis definitions from the geographic portion of the returned "
+"definition."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:171
+msgid "SetFromUserInput()"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:173
+msgid ""
+"This method will have one new option which is a value prefixed by EPSGA: "
+"will be passed to importFromEPSGA() (similarly to EPSG:n being passed to "
+"importFromEPSG())."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:178
+msgid "OGRCoordinateTransformation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:180
+msgid ""
+"If AXIS values are set on source and/or destination coordinate system, the "
+"OGRCoordinateTransformation code will take care of converting into normal "
+"easting/northing before calling PROJ."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:184
+msgid ""
+"The CPL config option \"GDAL_IGNORE_AXIS_ORIENTATION\" may also be set to "
+"\"TRUE\" to disable OGRCoordinateTransformation's checking, and application "
+"of axis orientation changes. Effectively this is a backdoor to disable the "
+"core effects of the RFC."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:190
+msgid "Drivers Affected"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:192
+msgid ""
+"GMLJP2 (classes in gcore/gdalgmlcoverage.cpp and gcore/gdaljp2metadata.cpp)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:194
+msgid "WCS (based on interpretation of urns)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:195
+msgid ""
+"WMS (maybe? actually, I suspect we don't actually get the coordinate system "
+"from the capabalities)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:197
+msgid "OGR GML (maybe? only GML3 affected?)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:198
+msgid ""
+"BSB, SAR_CEOS, ENVISAT, HDF4, JDEM, L1B, LAN, SRTMHGT: Like "
+"SetWellKnownGeogCS() these all include lat/long AXIS specifications in their "
+"hardcoded WGS84 coordinate systems. These need to be removed so they will "
+"default to being interpreted as long/lat."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:204
+msgid "Versions"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:206
+msgid ""
+"Work will be in trunk for GDAL/OGR 1.6.0 with the following exceptions which "
+"will be address in 1.5.x:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:209
+msgid ""
+"Existing use of AXIS specifier will for geographic coordinate systems will "
+"be stripped from SetWellKnownGeogCS() and the various drivers with hard "
+"coded WKT strings."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:212
+msgid ""
+"Some sort of hack will need to be introduced into the GMLJP2 (and possibly "
+"WCS) code to flip EPSG authority lat/long values (details to be worked out)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:217
+msgid "Implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:219
+msgid ""
+"Implementation would be done by Frank Warmerdam. Some aspects (such as "
+"properly capturing axis ordering for projected coordinate systems) might not "
+"be implemented immediately."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:224
+msgid "Compatibility Issues"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:226
+msgid ""
+"The greatest concern is that any existing WKT coordinate systems with LAT/"
+"LONG axis ordering (in VRT files, or .aux.xml files for instance) will be "
+"interpreted differently by GDAL/OGR 1.6.0 than they were by 1.5.0. This "
+"could easily occur if files in formats like BSB, or HDF4 were copied to a "
+"format using WKT coordinate systems (such as JPEG with a .aux.xml file). To "
+"partially mitigate this I am proposing that AXIS definitions be removed from "
+"GDAL 1.5.1."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:235
+msgid "Supporting Information"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc20_srs_axes.rst:237
+msgid ""
+"OSGeo Wiki Summary: `http://wiki.osgeo.org/index.php/Axis_Order_Confusion "
+"<http://wiki.osgeo.org/index.php/Axis_Order_Confusion>`__"
+msgstr ""

@@ -1,0 +1,810 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/netcdf.rst:4
+msgid "NetCDF: Network Common Data Form - Vector"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:8
+msgid "netCDF"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:10
+msgid "libnetcdf"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:12
+msgid ""
+"The netCDF driver supports read and write (creation from scratch and in some "
+"cases append operations) to vector datasets (you can find documentation for "
+"the :ref:`raster side <raster.netcdf>`)"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:16
+msgid ""
+"NetCDF is an interface for array-oriented data access and is used for "
+"representing scientific data."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:19
+msgid ""
+"The driver handles the \"point\", \"profile\" and \"trajectory\" (single "
+"trajectory) `feature types <http://cfconventions.org/cf-conventions/v1.6.0/"
+"cf-conventions.html#_features_and_feature_types>`__ of the CF 1.6 "
+"convention. For CF-1.7 and below (as well as non-CF files), it also supports "
+"a more custom approach for non-point geometries."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:24
+msgid ""
+"The driver also supports writing and reading from CF-1.8 convention "
+"compliant files that have simple geometry information encoded within them."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:28
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:37
+msgid "Conventions and Data Formats"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:38
+msgid ""
+"The netCDF vector driver supports reading and writing netCDF files following "
+"the Climate and Forecast (CF) Metadata Conventions. Vector datasets can be "
+"written using the simple geometry specification of the CF-1.8 convention, or "
+"by using the CF-1.6 convention and by writing non-point geometry items as "
+"WKT."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:43
+msgid "Distinguishing the Two Formats"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:44
+msgid ""
+"Upon reading a netCDF file, the driver will attempt to read the global "
+"*Conventions* attribute. If i's value is *CF-1.8* or higher (in this exact "
+"format, as specified in the CF convention), then the driver will check if "
+"the netCDF file has *CF-1.8* geometries contained within it. If the "
+"*Conventions* attribute has a value lower than CF-1.8 or no CF-1.8 "
+"geometries, the driver will try to detect \"point\", \"profile\" and "
+"\"trajectory\" (single trajectory) feature types."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:49
+msgid "CF-1.8 Writing Limitations"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:50
+msgid ""
+"Writing to a CF-1.8 netCDF dataset poses some limitations. Only writing the "
+"feature types specified by the CF-1.8 standard (see section `Geometry "
+"<#geometry>`__ for more details) are supported, and measured features are "
+"only partially supported. Other geometries, such as non-simple curve "
+"geometries, are not supported in any way."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:54
+msgid "CF-1.8 datasets also do not support the *append* access mode."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:56
+msgid ""
+"There are what are considered *reserved variable names* for CF-1.8 datasets. "
+"These variable names are used by the driver to store its metadata. Refrain "
+"from using these names as layer names to avoid naming conflicts when writing "
+"datasets with multiple layers."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:59
+msgid ""
+"Suppose a layer in a CF-1.8 dataset has the name LAYER with a field with "
+"name FIELD. Then the following names would be considered *reserved*:"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:61
+msgid "*LAYER_node_coordinates*: used to store point information"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:62
+msgid ""
+"*LAYER_node_count*: used to store per shape point count information (not "
+"created if LAYER has a geometry type of Point)"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:63
+msgid ""
+"*LAYER_part_node_count*: used to store per part point count information "
+"(only created if LAYER consists of MultiLineStrings, MultiPolygons, or has "
+"at least one Polygon with interior rings)"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:64
+msgid ""
+"*LAYER_interior_ring*: used to store interior ring information (only created "
+"if LAYER consists of at least one Polygon with interior rings)"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:65
+msgid "*LAYER_field_FIELD*: used to store field information for FIELD."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:67
+msgid "These names are the only reserved names applying to CF-1.8 datasets."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:69
+msgid "CF-1.6/WKT datasets are not limited to the aforementioned restrictions."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:72
+msgid "Mapping of concepts"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:75
+msgid "Field types"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:77
+msgid ""
+"On creation of netCDF files, the mapping between OGR field types and netCDF "
+"type is the following :"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:81
+#: ../../../source/drivers/vector/netcdf.rst:120
+msgid "OGR field type"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:81
+#: ../../../source/drivers/vector/netcdf.rst:120
+msgid "netCDF type"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:83
+#: ../../../source/drivers/vector/netcdf.rst:124
+msgid "String(1)"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:83
+msgid "char"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:84
+#: ../../../source/drivers/vector/netcdf.rst:125
+#: ../../../source/drivers/vector/netcdf.rst:126
+msgid "String"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:84
+msgid "char (bi-dimensional), or string for NC4"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:85
+#: ../../../source/drivers/vector/netcdf.rst:122
+#: ../../../source/drivers/vector/netcdf.rst:123
+#: ../../../source/drivers/vector/netcdf.rst:128
+#: ../../../source/drivers/vector/netcdf.rst:129
+msgid "Integer"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:85
+#: ../../../source/drivers/vector/netcdf.rst:129
+msgid "int"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:86
+msgid "Integer(Boolean)"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:86
+#: ../../../source/drivers/vector/netcdf.rst:122
+msgid "byte"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:87
+#: ../../../source/drivers/vector/netcdf.rst:127
+msgid "Integer(Int16)"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:87
+#: ../../../source/drivers/vector/netcdf.rst:127
+msgid "short"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:88
+#: ../../../source/drivers/vector/netcdf.rst:131
+#: ../../../source/drivers/vector/netcdf.rst:132
+msgid "Integer64"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:88
+msgid "int64 for NC4, or double for NC3 as a fallback"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:89
+#: ../../../source/drivers/vector/netcdf.rst:133
+#: ../../../source/drivers/vector/netcdf.rst:135
+msgid "Real"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:89
+#: ../../../source/drivers/vector/netcdf.rst:135
+msgid "double"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:90
+#: ../../../source/drivers/vector/netcdf.rst:134
+msgid "Real(Float32)"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:90
+#: ../../../source/drivers/vector/netcdf.rst:134
+msgid "float"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:91
+#: ../../../source/drivers/vector/netcdf.rst:130
+msgid "Date"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:91
+msgid "int (with units=\"days since 1970-1-1\")"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:92
+#: ../../../source/drivers/vector/netcdf.rst:136
+msgid "DateTime"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:92
+#: ../../../source/drivers/vector/netcdf.rst:136
+msgid "double (with units=\"seconds since 1970-1-1 0:0:0\")"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:95
+msgid ""
+"The driver also writes the following attributes for each OGR fields / netCDF "
+"variables."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:98
+msgid ""
+"*ogr_field_name*: OGR field name (useful if the netCDF variable name is "
+"different, due to collision)"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:100
+msgid ""
+"*ogr_field_type*: OGR field type (such as String,Integer,Date,DateTime,"
+"etc...)"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:102
+msgid ""
+"*ogr_field_width*: OGR field width. Only set if it is non-zero, except for "
+"strings"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:104
+msgid "*ogr_field_precision*: OGR field precision. Only set if it is non-zero"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:106
+msgid ""
+"*standard_name*\": (GDAL >= 3.7) OGR field alternative name, if it is "
+"compatible of the convention for the value of standard_name."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:108
+msgid ""
+"*long_name*: (GDAL >= 3.7) OGR field comment, or if not set, OGR field "
+"alternative name if it is not compatible of standard_name, or \"Field "
+"{ogr_field_name}\" otherwise."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:112
+msgid ""
+"They are written by default (unless the `WRITE_GDAL_TAGS "
+"<#WRITE_GDAL_TAGS>`__ dataset creation option is set to NO). They are not "
+"required for reading, but may help to better identify field characteristics"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:117
+msgid "On reading, the mapping is the following :"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:123
+msgid "ubyte (NC4 only)"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:124
+msgid "char (mono dimensional)"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:125
+msgid "char (bi dimensional)"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:126
+msgid "string (NC4 only)"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:128
+msgid "ushort (NC4 only)"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:130
+msgid "int or double (with units=\"days since 1970-1-1\")"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:131
+msgid "uint (NC4 only)"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:132
+msgid "int64 (NC4 only)"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:133
+msgid "uint64 (NC4 only)"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:140
+msgid "Layers"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:141
+msgid ""
+"In the CF-1.8 compliant driver, a single layer corresponds to a single "
+"**geometry container** within a CF-1.8 compliant netCDF file. A geometry "
+"container, per the CF-1.8 specification, is referred to by another variable "
+"(presumably a data variable) through the **geometry** attribute. When "
+"reading a CF-1.8 compliant netCDF file, all geometry containers within the "
+"netCDF file will be present in the opened dataset as separate layers. "
+"Similarly, when writing to a CF-1.8 dataset, each layer will be written to a "
+"geometry container whose variable name is that of the source layer. When "
+"writing to a CF-1.8 dataset specifically, multiple layers are always enabled "
+"and are always in a single netCDF file, regardless of the :dsco:"
+"`MULTIPLE_LAYERS` option."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:151
+msgid ""
+"When working with files made with older versions of the driver (pre CF-1.8), "
+"a single netCDF file generally corresponds to a single OGR layer, provided "
+"that it contains only mono-dimensional variables, indexed by the same "
+"dimension (or bi-dimensional variables of type char). For netCDF v4 files "
+"with multiple groups, each group may be seen as a separate OGR layer. On "
+"writing, the :dsco:`MULTIPLE_LAYERS` dataset creation option can be used to "
+"control whether multiple layers is disabled, or if multiple layers should go "
+"in separate files, or separate groups."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:161
+msgid "Strings"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:163
+msgid ""
+"Variable length strings are not natively supported in netCDF v3 format. To "
+"work around that, OGR uses bi-dimensional char variables, whose first "
+"dimension is the record dimension, and second dimension the maximum width of "
+"the string."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:168
+msgid ""
+"By default, OGR implements a \"auto-grow\" mode in writing, where the "
+"maximum width of the variable used to store a OGR string field is extended "
+"when needed."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:172
+msgid ""
+"For WKT datasets, this leads to a full rewrite of already written records; "
+"although this process is transparent for the user, it can slow down the "
+"creation process in non-linear ways. A similar mechanism is used to handle "
+"layers with geometry types other than point to store the ISO WKT "
+"representation of the geometries."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:178
+msgid ""
+"For CF-1.8 datasets, growing the string width dimension is a relatively "
+"inexpensive process which does not involve recopying of records, but "
+"involves only a simple integer reassignment. Because of how inexpensive "
+"dimension growth is with CF-1.8 datasets, auto growth of the string width "
+"dimension is always on."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:183
+msgid ""
+"When using a netCDF v4 output format (NC4), strings will be by default "
+"written as netCDF v4 variable length strings."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:187
+msgid "Geometry"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:189
+msgid ""
+"Supported feature types when reading from a CF-1.8 convention compliant "
+"netCDF file include OGRPoint, OGRLineString, OGRPolygon, OGRMultiPoint, "
+"OGRMultiLineString, and OGRMultiPolygon. Due to slight ambiguities present "
+"in the CF-1.8 convention concerning Polygons versus MultiPolygons, the "
+"driver will in most cases default to assuming a MultiPolygon for the "
+"geometry of a layer with **geometry_type** polygon. The one exception where "
+"a Polygon type will be used is when the attribute **part_node_count** is not "
+"present within that layer's geometry container. Per convention requirements, "
+"the driver supports reading and writing from geometries with X, Y, and Z "
+"axes. Writing from source layers with features containing an M axis is also "
+"partially supported. The X, Y, and Z information of a measured feature will "
+"be able to be captured in a CF-1.8 netCDF file, but the measure information "
+"will be lost completely."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:200
+msgid ""
+"When working with a CF-1.6/WKT dataset, layers with a geometry type of Point "
+"or Point25D will cause the implicit creation of x,y(,z) variables for a "
+"projected coordinate system, or lon,lat(,z) variables for geographic "
+"coordinate systems. For other geometry types, a variable \"ogc_wkt\" ( bi-"
+"dimensional char for NC3 output, or string for NC4 output) is created and "
+"used to store the geometry as a ISO WKT string."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:209
+msgid "\"Profile\" feature type"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:211
+msgid ""
+"The driver can handle \"profile\" feature type, i.e. phenomenons that happen "
+"at a few positions along a vertical line at a fixed horizontal position. In "
+"that representation, some variables are indexed by the profile, and others "
+"by the observation."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:216
+msgid ""
+"More precisely, the driver supports reading and writing profiles organized "
+"accordingly with the \"`Indexed ragged array representation <http://"
+"cfconventions.org/cf-conventions/v1.6.0/cf-conventions."
+"html#_indexed_ragged_array_representation_of_profiles>`__\" of profiles."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:221
+msgid ""
+"On reading, the driver will collect values of variables indexed by the "
+"profile dimension and expose them as long as variables indexed by the "
+"observation dimension, based on a variable such as \"parentIndex\" with an "
+"attribute \"instance_dimension\" pointing to the profile dimension."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:226
+msgid ""
+"On writing, the `FEATURE_TYPE <#FEATURE_TYPE>`__\\ =PROFILE layer creation "
+"option must be set and the driver will need to be instructed which OGR "
+"fields are indexed either by the profile or by the observation dimension. "
+"The list of fields indexed by the profile can be specified with the "
+"`PROFILE_VARIABLES <#PROFILE_VARIABLES>`__ layer creation options (other "
+"fields are assumed to be indexed by the observation dimension). Fields "
+"indexed by the profile are the horizontal geolocation (created implicitly), "
+"and other user attributes such as the location name, etc. Care should be "
+"taken into selecting which variables are indexed by the profile dimension: "
+"given 2 OGR features (taking into account only the variables indexed by the "
+"profile dimension), if they have different values for such variables, they "
+"will be considered to belong to different profiles."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:240
+msgid ""
+"In the below example, the station_name and time variables may be indexed by "
+"the profile dimension (the geometry is assumed to be also indexed by the "
+"profile dimension), since all records that have the same value for one of "
+"those variables have same values for the other ones, whereas temperature and "
+"Z should be indexed by the default dimension."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:247
+msgid "station_name"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:247
+msgid "time"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:247
+msgid "geometry"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:247
+msgid "temperature"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:247
+msgid "Z"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:249
+#: ../../../source/drivers/vector/netcdf.rst:251
+msgid "Paris"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:249
+#: ../../../source/drivers/vector/netcdf.rst:251
+msgid "2016-03-01T00:00:00Z"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:249
+#: ../../../source/drivers/vector/netcdf.rst:251
+msgid "POINT (2 49)"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:249
+msgid "25"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:249
+#: ../../../source/drivers/vector/netcdf.rst:250
+msgid "100"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:250
+#: ../../../source/drivers/vector/netcdf.rst:252
+msgid "Vancouver"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:250
+#: ../../../source/drivers/vector/netcdf.rst:252
+msgid "2016-04-01T12:00:00Z"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:250
+#: ../../../source/drivers/vector/netcdf.rst:252
+msgid "POINT (-123 49.25)"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:250
+msgid "5"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:251
+msgid "3"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:251
+#: ../../../source/drivers/vector/netcdf.rst:252
+msgid "500"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:252
+msgid "-15"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:255
+msgid ""
+"An integer field, with the name of the profile dimension (whose default name "
+"is \"profile\", which can be altered with the `PROFILE_DIM_NAME "
+"<#PROFILE_DIM_NAME>`__ layer creation option), will be used to store the "
+"automatically computed id of profile sites (unless a integer OGR field with "
+"the same name exits)."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:261
+msgid ""
+"The size of the profile dimension defaults to 100 for non-NC4 output format, "
+"and is extended automatically in case of additional profiles (with similar "
+"performance issues as growing strings). For NC4 output format, the profile "
+"dimension is of unlimited size by default."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:267
+msgid "Dataset creation options"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:292
+msgid "Whether to write GDAL specific information as netCDF attributes."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:301
+msgid ""
+"The following option will only have effect when simultaneously specifying :"
+"dsco:`GEOMETRY_ENCODING=WKT`:"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:316
+msgid "Layer creation options"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:318
+msgid "The following option applies to both dataset types:"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:327
+msgid ""
+"The following options require a dataset with :dsco:`GEOMETRY_ENCODING=WKT`:"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:389
+msgid "The following option requires a dataset with GEOMETRY_ENCODING=CF_1.8:"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:420
+msgid "XML configuration file"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:422
+msgid ""
+"A XML configuration file conforming to the schema specified in :source_file:"
+"`frmts/netcdf/data/netcdf_config.xsd` can be used for very precise control "
+"on the output format, in particular to set all needed attributes (such as "
+"units) to conform to the `NetCDF CF-1.6 convention <http://cfconventions.org/"
+"cf-conventions/v1.6.0/cf-conventions.html>`__."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:429
+msgid ""
+"It has been designed in particular, but not exclusively, to be usable in use "
+"cases involving the `MapServer OGR output <http://mapserver.org/output/"
+"ogr_output.html>`__."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:433
+msgid "Such a file can be used to :"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:435
+msgid "set dataset and layer creation options."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:436
+msgid "set global netCDF attributes."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:437
+msgid "map OGR field names to netCDF variable names."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:438
+msgid "set netCDF attributes attached to netCDF variables."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:440
+msgid ""
+"The scope of effect is either globally, when elements are defined as direct "
+"children of the root <Configuration> node, or specifically to a given layer, "
+"when defined as children of a <Layer> node."
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:444
+msgid ""
+"The filename is specified with the CONFIG_FILE dataset creation option. "
+"Alternatively, the content of the file can be specified inline as the value "
+"of the option (it must then begin strictly with the \"<Configuration\" "
+"characters)"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:449
+msgid "The following example shows all possibilities and precedence rules:"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:453
+msgid ""
+"<Configuration>\n"
+"    <DatasetCreationOption name=\"FORMAT\" value=\"NC4\"/>\n"
+"    <DatasetCreationOption name=\"MULTIPLE_LAYERS\" "
+"value=\"SEPARATE_GROUPS\"/>\n"
+"    <LayerCreationOption name=\"RECORD_DIM_NAME\" value=\"observation\"/>\n"
+"<!-- applies to all layers -->\n"
+"    <Attribute name=\"copyright\" value=\"Copyright(C) 2016 Example\"/>\n"
+"    <Field name=\"weight\">  <!-- edit user field/variable -->\n"
+"        <Attribute name=\"units\" value=\"kg\"/>\n"
+"        <Attribute name=\"maximum\" value=\"10\" type=\"double\"/>\n"
+"    </Field>\n"
+"    <Field netcdf_name=\"z\"> <!-- edit predefined variable -->\n"
+"        <Attribute name=\"long_name\" value=\"Elevation\"/>\n"
+"    </Field>\n"
+"<!-- start of layer specific definitions -->\n"
+"    <Layer name=\"1st_layer\" netcdf_name=\"firstlayer\"> <!-- OGR layer "
+"\"1st_layer\" is renamed as \"firstlayer\" netCDF group -->\n"
+"        <LayerCreationOption name=\"FEATURE_TYPE\" value=\"POINT\"/>\n"
+"        <Attribute name=\"copyright\" value=\"Public domain\"/> <!-- "
+"override global one -->\n"
+"        <Attribute name=\"description\" value=\"This is my first layer\"/> "
+"<!-- additional attribute -->\n"
+"        <Field name=\"1st_field\" netcdf_name=\"firstfield\"/> <!-- rename "
+"OGR field \"1st_field\" as the \"firstfield\" netCDF variable -->\n"
+"        <Field name=\"weight\"/> <!-- cancel above global customization -->\n"
+"        <Field netcdf_name=\"lat\"> <!-- edit predefined variable -->\n"
+"            <Attribute name=\"long_name\" value=\"\"/> <!-- remove "
+"predefined attribute -->\n"
+"        </Field>\n"
+"    </Layer>\n"
+"    <Layer name=\"sounding\">\n"
+"        <LayerCreationOption name=\"FEATURE_TYPE\" value=\"PROFILE\"/>\n"
+"        <Field name=\"station_name\" main_dim=\"profile\"/> <!-- the "
+"corresponding netCDF variable will be indexed against the profile dimension, "
+"instead of the observation dimension -->\n"
+"        <Field name=\"time\" main_dim=\"profile\"/> <!-- the corresponding "
+"netCDF variable will be indexed against the profile dimension, instead of "
+"the observation dimension -->\n"
+"    </Layer>\n"
+"</Configuration>"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:484
+msgid ""
+"The effect on the output can be checked by running the **ncdump** utility"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:488
+msgid "Further Reading"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:490
+msgid ":ref:`Raster side of the netCDF driver. <raster.netcdf>`"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:491
+msgid ""
+"`NetCDF CF-1.6 convention <http://cfconventions.org/cf-conventions/v1.6.0/cf-"
+"conventions.html>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:493
+msgid ""
+"`NetCDF CF-1.8 convention draft <https://github.com/cf-convention/cf-"
+"conventions/blob/master/ch07.adoc>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:495
+msgid ""
+"`NetCDF compiled libraries <http://www.unidata.ucar.edu/downloads/netcdf/"
+"index.jsp>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:497
+msgid ""
+"`NetCDF Documentation <http://www.unidata.ucar.edu/software/netcdf/docs/>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:501
+msgid "Credits"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:503
+msgid ""
+"Development of the read/write vector capabilities for netCDF was funded by "
+"`Meteorological Service of Canada <https://www.ec.gc.ca/meteo-weather/>`__ , "
+"`World Ozone and Ultraviolet Radiation Data Centre <http://woudc.org>`__, "
+"and the `US Geological Survey <https://www.usgs.gov>`__."
+msgstr ""

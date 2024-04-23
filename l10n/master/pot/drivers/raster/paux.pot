@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/paux.rst:5
+msgid "PAux -- PCI .aux Labelled Raw Format"
+msgstr ""
+
+#: ../../../source/drivers/raster/paux.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/paux.rst:7
+msgid "PAux"
+msgstr ""
+
+#: ../../../source/drivers/raster/paux.rst:11
+msgid ""
+"GDAL includes a partial implementation of the PCI .aux labelled raw raster "
+"file for read, write and creation. To open a PCI labelled file, select the "
+"raw data file itself. The .aux file (which must have a common base name) "
+"will be checked for automatically."
+msgstr ""
+
+#: ../../../source/drivers/raster/paux.rst:16
+msgid ""
+"The format type for creating new files is ``PAux``. All PCI data types (8U, "
+"16U, 16S, and 32R) are supported. Currently georeferencing, projections, and "
+"other metadata is ignored."
+msgstr ""
+
+#: ../../../source/drivers/raster/paux.rst:20
+msgid "Creation Options:"
+msgstr ""
+
+#: ../../../source/drivers/raster/paux.rst:32
+msgid "NOTE: Implemented as :source_file:`frmts/raw/pauxdataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/paux.rst:34
+msgid ""
+"See Also: `PCI's .aux Format Description <http://www.pcigeomatics.com/cgi-"
+"bin/pcihlp/"
+"GDB%7CSupported+File+Formats%7CRaw+Binary+Image+Format+(RAW)%7CRaw+."
+"aux+Format>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/paux.rst:38
+msgid "Driver capabilities"
+msgstr ""

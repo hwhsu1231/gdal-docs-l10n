@@ -1,0 +1,436 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:5
+msgid "RFC 63 : Sparse datasets improvements"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:7
+msgid "Author: Even Rouault"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:9
+msgid "Contact: even.rouault at spatialys.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:11
+msgid "Status: Adopted, implemented"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:13
+msgid "Version: 2.2"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:16
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:18
+msgid ""
+"This RFC covers an improvement to manage sparse datasets, that is to say "
+"datasets that contain substantial empty regions."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:22
+msgid "Approach"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:24
+msgid ""
+"There are use cases where one needs to read or generate a dataset that "
+"covers a large spatial extent, but in which significant parts are not "
+"covered by data. There is no way in the GDAL API to quickly know which areas "
+"are covered or not by data, hence requiring to process all pixels, which is "
+"rather inefficient. Whereas some formats like GeoTIFF, VRT or GeoPackage can "
+"potentially give such an information without processing pixels."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:32
+msgid ""
+"It is thus proposed to add a new method GetDataCoverageStatus() in the "
+"GDALRasterBand class, that takes as input a window of interest and returns "
+"whether it is made of data, empty blocks or a mix of them."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:36
+msgid ""
+"This method will be used by the GDALDatasetCopyWholeRaster() method (used by "
+"CreateCopy() / gdal_translate) to avoid processing sparse regions when the "
+"output driver instructs it to do so."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:41
+msgid "C++ API"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:43
+msgid "In GDALRasterBand class, a new virtual method is added :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:47
+msgid ""
+" virtual int IGetDataCoverageStatus( int nXOff, int nYOff,\n"
+"                                     int nXSize, int nYSize,\n"
+"                                     int nMaskFlagStop,\n"
+"                                     double* pdfDataPct);\n"
+"\n"
+"\n"
+"/**\n"
+" * \\brief Get the coverage status of a sub-window of the raster.\n"
+" *\n"
+" * Returns whether a sub-window of the raster contains only data, only "
+"empty\n"
+" * blocks or a mix of both. This function can be used to determine quickly\n"
+" * if it is worth issuing RasterIO / ReadBlock requests in datasets that "
+"may\n"
+" * be sparse.\n"
+" *\n"
+" * Empty blocks are blocks that contain only pixels whose value is the "
+"nodata\n"
+" * value when it is set, or whose value is 0 when the nodata value is not "
+"set.\n"
+" *\n"
+" * The query is done in an efficient way without reading the actual pixel\n"
+" * values. If not possible, or not implemented at all by the driver,\n"
+" * GDAL_DATA_COVERAGE_STATUS_UNIMPLEMENTED | GDAL_DATA_COVERAGE_STATUS_DATA "
+"will\n"
+" * be returned.\n"
+" *\n"
+" * The values that can be returned by the function are the following,\n"
+" * potentially combined with the binary or operator :\n"
+" * <ul>\n"
+" * <li>GDAL_DATA_COVERAGE_STATUS_UNIMPLEMENTED : the driver does not "
+"implement\n"
+" * GetDataCoverageStatus(). This flag should be returned together with\n"
+" * GDAL_DATA_COVERAGE_STATUS_DATA.</li>\n"
+" * <li>GDAL_DATA_COVERAGE_STATUS_DATA: There is (potentially) data in the "
+"queried\n"
+" * window.</li>\n"
+" * <li>GDAL_DATA_COVERAGE_STATUS_EMPTY: There is nodata in the queried "
+"window.\n"
+" * This is typically identified by the concept of missing block in formats "
+"that\n"
+" * supports it.\n"
+" * </li>\n"
+" * </ul>\n"
+" *\n"
+" * Note that GDAL_DATA_COVERAGE_STATUS_DATA might have false positives and\n"
+" * should be interpreted more as hint of potential presence of data. For "
+"example\n"
+" * if a GeoTIFF file is created with blocks filled with zeroes (or set to "
+"the\n"
+" * nodata value), instead of using the missing block mechanism,\n"
+" * GDAL_DATA_COVERAGE_STATUS_DATA will be returned. On the contrary,\n"
+" * GDAL_DATA_COVERAGE_STATUS_EMPTY should have no false positives.\n"
+" *\n"
+" * The nMaskFlagStop should be generally set to 0. It can be set to a\n"
+" * binary-or'ed mask of the above mentioned values to enable a quick exiting "
+"of\n"
+" * the function as soon as the computed mask matches the nMaskFlagStop. For\n"
+" * example, you can issue a request on the whole raster with nMaskFlagStop "
+"=\n"
+" * GDAL_DATA_COVERAGE_STATUS_EMPTY. As soon as one missing block is "
+"encountered,\n"
+" * the function will exit, so that you can potentially refine the requested "
+"area\n"
+" * to find which particular region(s) have missing blocks.\n"
+" *\n"
+" * @see GDALGetDataCoverageStatus()\n"
+" *\n"
+" * @param nXOff The pixel offset to the top left corner of the region\n"
+" * of the band to be queried. This would be zero to start from the left "
+"side.\n"
+" *\n"
+" * @param nYOff The line offset to the top left corner of the region\n"
+" * of the band to be queried. This would be zero to start from the top.\n"
+" *\n"
+" * @param nXSize The width of the region of the band to be queried in "
+"pixels.\n"
+" *\n"
+" * @param nYSize The height of the region of the band to be queried in "
+"lines.\n"
+" *\n"
+" * @param nMaskFlagStop 0, or a binary-or'ed mask of possible values\n"
+" * GDAL_DATA_COVERAGE_STATUS_UNIMPLEMENTED,\n"
+" * GDAL_DATA_COVERAGE_STATUS_DATA and GDAL_DATA_COVERAGE_STATUS_EMPTY. As "
+"soon\n"
+" * as the computation of the coverage matches the mask, the computation will "
+"be\n"
+" * stopped. *pdfDataPct will not be valid in that case.\n"
+" *\n"
+" * @param pdfDataPct Optional output parameter whose pointed value will be "
+"set\n"
+" * to the (approximate) percentage in [0,100] of pixels in the queried\n"
+" * sub-window that have valid values. The implementation might not always "
+"be\n"
+" * able to compute it, in which case it will be set to a negative value.\n"
+" *\n"
+" * @return a binary-or'ed combination of possible values\n"
+" * GDAL_DATA_COVERAGE_STATUS_UNIMPLEMENTED,\n"
+" * GDAL_DATA_COVERAGE_STATUS_DATA and GDAL_DATA_COVERAGE_STATUS_EMPTY\n"
+" *\n"
+" * @note Added in GDAL 2.2\n"
+" */"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:128
+msgid ""
+"This method has a dumb default implementation that returns "
+"GDAL_DATA_COVERAGE_STATUS_UNIMPLEMENTED \\| GDAL_DATA_COVERAGE_STATUS_DATA"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:132
+msgid "The public API is made of :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:137
+msgid ""
+"/** Flag returned by GDALGetDataCoverageStatus() when the driver does not\n"
+" * implement GetDataCoverageStatus(). This flag should be returned together\n"
+" * with GDAL_DATA_COVERAGE_STATUS_DATA */\n"
+"#define GDAL_DATA_COVERAGE_STATUS_UNIMPLEMENTED 0x01\n"
+"\n"
+"/** Flag returned by GDALGetDataCoverageStatus() when there is "
+"(potentially)\n"
+" * data in the queried window. Can be combined with the binary or operator\n"
+" * with GDAL_DATA_COVERAGE_STATUS_UNIMPLEMENTED or\n"
+" * GDAL_DATA_COVERAGE_STATUS_EMPTY */\n"
+"#define GDAL_DATA_COVERAGE_STATUS_DATA          0x02\n"
+"\n"
+"/** Flag returned by GDALGetDataCoverageStatus() when there is nodata in "
+"the\n"
+" * queried window. This is typically identified by the concept of missing "
+"block\n"
+" * in formats that supports it.\n"
+" * Can be combined with the binary or operator with\n"
+" * GDAL_DATA_COVERAGE_STATUS_DATA */\n"
+"#define GDAL_DATA_COVERAGE_STATUS_EMPTY         0x04\n"
+"\n"
+"\n"
+"C++ :\n"
+"\n"
+"int  GDALRasterBand::GetDataCoverageStatus( int nXOff,\n"
+"                                            int nYOff,\n"
+"                                            int nXSize,\n"
+"                                            int nYSize,\n"
+"                                            int nMaskFlagStop,\n"
+"                                            double* pdfDataPct)\n"
+"\n"
+"C :\n"
+"int GDALGetDataCoverageStatus( GDALRasterBandH hBand,\n"
+"                               int nXOff, int nYOff,\n"
+"                               int nXSize,\n"
+"                               int nYSize,\n"
+"                               int nMaskFlagStop,\n"
+"                               double* pdfDataPct);"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:173
+msgid ""
+"GDALRasterBand::GetDataCoverageStatus() does basic checks on the validity of "
+"the window before calling IGetDataCoverageStatus()"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:177
+msgid "Changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:179
+msgid ""
+"GDALDatasetCopyWholeRaster() and GDALRasterBandCopyWholeRaster() accepts a "
+"SKIP_HOLES option that can be set to YES by the output driver to cause "
+"GetDataCoverageStatus() to be called on each chunk of the source dataset to "
+"determine if contains only holes or not."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:185
+msgid "Drivers"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:187
+msgid ""
+"This RFC upgrades the GeoTIFF and VRT drivers to implement the "
+"IGetDataCoverageStatus() method."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:190
+msgid ""
+"The GeoTIFF driver has also receive a number of prior enhancements, related "
+"to that topic, for example to accept the SPARSE_OK=YES creation option in "
+"CreateCopy() mode (or the SPARSE_OK open option in update mode)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:195
+msgid "Extract of the documentation of the driver:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:199
+msgid ""
+"GDAL makes a special interpretation of a TIFF tile or strip whose offset\n"
+"and byte count are set to 0, that is to say a tile or strip that has no "
+"corresponding\n"
+"allocated physical storage. On reading, such tiles or strips are considered "
+"to\n"
+"be implicitly set to 0 or to the nodata value when it is defined. On "
+"writing, it\n"
+"is possible to enable generating such files through the Create() interface "
+"by setting\n"
+"the SPARSE_OK creation option to YES. Then, blocks that are never written\n"
+"through the IWriteBlock()/IRasterIO() interfaces will have their offset and\n"
+"byte count set to 0. This is particularly useful to save disk space and time "
+"when\n"
+"the file must be initialized empty before being passed to a further "
+"processing\n"
+"stage that will fill it.\n"
+"To avoid ambiguities with another sparse mechanism discussed in the next "
+"paragraphs,\n"
+"we will call such files with implicit tiles/strips \"TIFF sparse files\". "
+"They will\n"
+"be likely *not* interoperable with TIFF readers that are not GDAL based and\n"
+"would consider such files with implicit tiles/strips as defective.\n"
+"\n"
+"Starting with GDAL 2.2, this mechanism is extended to the CreateCopy() and\n"
+"Open() interfaces (for update mode) as well. If the SPARSE_OK creation "
+"option\n"
+"(or the SPARSE_OK open option for Open()) is set to YES, even an attempt to\n"
+"write a all 0/nodata block will be detected so that the tile/strip is not\n"
+"allocated (if it was already allocated, then its content will be replaced "
+"by\n"
+"the 0/nodata content).\n"
+"\n"
+"Starting with GDAL 2.2, in the case where SPARSE_OK is *not* defined (or "
+"set\n"
+"to its default value FALSE), for uncompressed files whose nodata value is "
+"not\n"
+"set, or set to 0, in Create() and CreateCopy() mode, the driver will delay "
+"the\n"
+"allocation of 0-blocks until file closing, so as to be able to write them "
+"at\n"
+"the very end of the file, and in a way compatible of the filesystem sparse "
+"file\n"
+"mechanisms (to be distinguished from the TIFF sparse file extension "
+"discussed\n"
+"earlier). That is that all the empty blocks will be seen as properly "
+"allocated\n"
+"from the TIFF point of view (corresponding strips/tiles will have valid "
+"offsets\n"
+"and byte counts), but will have no corresponding physical storage. Provided "
+"that\n"
+"the filesystem supports such sparse files, which is the case for most Linux\n"
+"popular filesystems (ext2/3/4, xfs, btfs, ...) or NTFS on Windows. If the "
+"file\n"
+"system does not support sparse files, physical storage will be\n"
+"allocated and filled with zeros."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:236
+msgid "Bindings"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:238
+msgid ""
+"The Python bindings has a mapping of GDALGetDataCoverageStatus(). Other "
+"bindings could be updated (need to figure out how to return both a status "
+"flag and a percentage)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:243
+msgid "Utilities"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:245
+msgid "No direct changes in utilities."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:248
+msgid "Results"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:250
+msgid ""
+"With this new capability, a VRT of size 200 000 x 200 000 pixels that "
+"contains 2 regions of 20x20 pixels each can be gdal_translated as a sparse "
+"tiled GeoTIFF in 2 seconds. The resulting GeoTIFF can be itself translated "
+"into another sparse tiled GeoTIFF in the same time."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:256
+msgid "Future work"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:258
+msgid ""
+"Future work using the new capability could be done in overview building or "
+"warping. Other drivers could also benefit from that new capability: "
+"GeoPackage, ERDAS Imagine, ..."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:263
+msgid "Documentation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:265
+msgid "The new method is documented."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:268
+msgid "Test Suite"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:270
+msgid ""
+"Tests of the VRT and GeoTIFF drivers are enhanced to test their "
+"IGetDataCoverageStatus() implementation."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:274
+msgid "Compatibility Issues"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:276
+msgid "C++ ABI change. No functional incompatibility foreseen."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:279
+msgid "Implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:281
+msgid "The implementation will be done by Even Rouault."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:283
+msgid ""
+"The proposed implementation is in `https://github.com/rouault/gdal2/tree/"
+"sparse_datasets <https://github.com/rouault/gdal2/tree/sparse_datasets>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:286
+msgid ""
+"Changes can be seen with `https://github.com/OSGeo/gdal/compare/trunk..."
+"rouault:sparse_datasets?expand=1 <https://github.com/OSGeo/gdal/compare/"
+"trunk...rouault:sparse_datasets?expand=1>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:290
+msgid "Voting history"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc63_sparse_datasets_improvements.rst:292
+msgid "+1 from EvenR and DanielM"
+msgstr ""

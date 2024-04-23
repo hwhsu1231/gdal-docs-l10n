@@ -1,0 +1,132 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/s102.rst:5
+msgid "S102 -- S-102 Bathymetric Surface Product"
+msgstr ""
+
+#: ../../../source/drivers/raster/s102.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/s102.rst:7
+msgid "S102"
+msgstr ""
+
+#: ../../../source/drivers/raster/s102.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/raster/s102.rst:9
+msgid "libhdf5"
+msgstr ""
+
+#: ../../../source/drivers/raster/s102.rst:13
+msgid ""
+"This driver provides read-only support for bathymetry data in the S-102 "
+"format, which is a specific product profile in an HDF5 file"
+msgstr ""
+
+#: ../../../source/drivers/raster/s102.rst:16
+msgid ""
+"S-102 files have two image bands representing depth (band 1), uncertainty "
+"(band 2) values for each cell in a raster grid area."
+msgstr ""
+
+#: ../../../source/drivers/raster/s102.rst:19
+msgid ""
+"Note that positive values of depth mean values *below* the reference surface "
+"of the vertical datum. The :oo:`DEPTH_OR_ELEVATION` open option can be set "
+"to ``ELEVATION`` to expose depth values as elevation values, by negating "
+"their sign (i.e. positive values of elevation mean values above the "
+"reference surface)"
+msgstr ""
+
+#: ../../../source/drivers/raster/s102.rst:24
+msgid "Georeferencing is reported."
+msgstr ""
+
+#: ../../../source/drivers/raster/s102.rst:26
+msgid "Nodata, minimum and maximum values for each band are also reported."
+msgstr ""
+
+#: ../../../source/drivers/raster/s102.rst:29
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/s102.rst:36
+msgid "Open options"
+msgstr ""
+
+#: ../../../source/drivers/raster/s102.rst:54
+msgid ""
+"This is the default behavior of most GDAL formats, but the native "
+"organization of the data in S-102 products is to have the first line of the "
+"grid being the southern-most one. This native organization can be exposed by "
+"the driver by setting this option to NO (in which case the 6th term of the "
+"geotransform matrix will be positive)"
+msgstr ""
+
+#: ../../../source/drivers/raster/s102.rst:61
+msgid "Spatial metadata support"
+msgstr ""
+
+#: ../../../source/drivers/raster/s102.rst:63
+msgid ""
+"Starting with GDAL 3.9, GDAL can handle QualityOfSurvey spatial metadata."
+msgstr ""
+
+#: ../../../source/drivers/raster/s102.rst:65
+msgid ""
+"When such spatial metadata is present, the subdataset list will include a "
+"name of the form ``S102:\"{filename}\":QualityOfSurvey``"
+msgstr ""
+
+#: ../../../source/drivers/raster/s102.rst:68
+msgid ""
+"The ``/QualityOfSurvey/featureAttributeTable`` dataset is exposed as a GDAL "
+"Raster Attribute Table associated to the GDAL raster band. The pixel values "
+"of the raster match the ``id`` column of the Raster Attribute Table."
+msgstr ""
+
+#: ../../../source/drivers/raster/s102.rst:73
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/s102.rst:75
+msgid "Implemented as :source_file:`frmts/hdf5/s102dataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/s102.rst:76
+msgid ""
+"`S-102 Bathymetric Surface Product Specification <https://registry.iho.int/"
+"productspec/view.do?"
+"idx=199&product_ID=S-102&statusS=5&domainS=20&category=product_ID&searchValue=>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/s102.rst:77
+msgid ":ref:`BAG driver <raster.bag>`"
+msgstr ""
+
+#: ../../../source/drivers/raster/s102.rst:78
+msgid ":ref:`S-104 driver <raster.s104>`"
+msgstr ""
+
+#: ../../../source/drivers/raster/s102.rst:79
+msgid ":ref:`S-111 driver <raster.s111>`"
+msgstr ""

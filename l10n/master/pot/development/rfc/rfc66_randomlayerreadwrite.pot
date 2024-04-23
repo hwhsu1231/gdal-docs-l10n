@@ -1,0 +1,416 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:5
+msgid "RFC 66 : OGR random layer read/write capabilities"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:7
+msgid "Author: Even Rouault"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:9
+msgid "Contact: even.rouault at spatialys.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:11
+msgid "Status: Implemented"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:13
+msgid "Implementing version: 2.2"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:16
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:18
+msgid ""
+"This RFC introduces a new API to be able to iterate over vector features at "
+"dataset level, in addition to the existing capability of doing it at the "
+"layer level. The existing capability of writing features in layers in random "
+"order, that is supported by most drivers with output capabilities, is "
+"formalized with a new dataset capability flag."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:25
+msgid "Rationale"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:27
+msgid ""
+"Some vector formats mix features that belong to different layers in an "
+"interleaved way, which make the current feature iteration per layer rather "
+"inefficient (this requires for each layer to read the whole file). One "
+"example of such drivers is the OSM driver. For this driver, a hack had been "
+"developed in the past to be able to use the OGRLayer::GetNextFeature() "
+"method, but with a really particular semantics. See \"Interleaved reading\" "
+"paragraph of :ref:`vector.osm` for more details. A similar need arises with "
+"the development of a new driver, GMLAS (for GML Application Schemas), that "
+"reads GML files with arbitrary element nesting, and thus can return them in "
+"a apparent random order, because it works in a streaming way. For example, "
+"let's consider the following simplified XML content :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:42
+msgid ""
+"<A>\n"
+"    ...\n"
+"    <B>\n"
+"        ...\n"
+"    </B>\n"
+"    ...\n"
+"</A>"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:50
+msgid ""
+"The driver will be first able to complete the building of feature B before "
+"emitting feature A. So when reading sequences of this pattern, the driver "
+"will emit features in the order B,A,B,A,..."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:55
+msgid "Changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:58
+msgid "C++ API"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:60
+msgid "Two new methods are added at the GDALDataset level :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:62
+msgid "GetNextFeature():"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:66
+msgid ""
+"/**\n"
+" \\brief Fetch the next available feature from this dataset.\n"
+"\n"
+" The returned feature becomes the responsibility of the caller to\n"
+" delete with OGRFeature::DestroyFeature().\n"
+"\n"
+" Depending on the driver, this method may return features from layers in a\n"
+" non sequential way. This is what may happen when the\n"
+" ODsCRandomLayerRead capability is declared (for example for the\n"
+" OSM and GMLAS drivers). When datasets declare this capability, it is "
+"strongly\n"
+" advised to use GDALDataset::GetNextFeature() instead of\n"
+" OGRLayer::GetNextFeature(), as the later might have a slow, incomplete or "
+"stub\n"
+" implementation.\n"
+"\n"
+" The default implementation, used by most drivers, will\n"
+" however iterate over each layer, and then over each feature within this\n"
+" layer.\n"
+"\n"
+" This method takes into account spatial and attribute filters set on layers "
+"that\n"
+" will be iterated upon.\n"
+"\n"
+" The ResetReading() method can be used to start at the beginning again.\n"
+"\n"
+" Depending on drivers, this may also have the side effect of calling\n"
+" OGRLayer::GetNextFeature() on the layers of this dataset.\n"
+"\n"
+" This method is the same as the C function GDALDatasetGetNextFeature().\n"
+"\n"
+" @param ppoBelongingLayer a pointer to a OGRLayer* variable to receive the\n"
+"                          layer to which the object belongs to, or NULL.\n"
+"                          It is possible that the output of "
+"*ppoBelongingLayer\n"
+"                          to be NULL despite the feature not being NULL.\n"
+" @param pdfProgressPct    a pointer to a double variable to receive the\n"
+"                          percentage progress (in [0,1] range), or NULL.\n"
+"                          On return, the pointed value might be negative if\n"
+"                          determining the progress is not possible.\n"
+" @param pfnProgress       a progress callback to report progress (for\n"
+"                          GetNextFeature() calls that might have a long "
+"duration)\n"
+"                          and offer cancellation possibility, or NULL\n"
+" @param pProgressData     user data provided to pfnProgress, or NULL\n"
+" @return a feature, or NULL if no more features are available.\n"
+" @since GDAL 2.2\n"
+"*/\n"
+"\n"
+"OGRFeature* GDALDataset::GetNextFeature( OGRLayer** ppoBelongingLayer,\n"
+"                                         double* pdfProgressPct,\n"
+"                                         GDALProgressFunc pfnProgress,\n"
+"                                         void* pProgressData )"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:115
+msgid "and ResetReading():"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:119
+msgid ""
+"/**\n"
+" \\brief Reset feature reading to start on the first feature.\n"
+"\n"
+" This affects GetNextFeature().\n"
+"\n"
+" Depending on drivers, this may also have the side effect of calling\n"
+" OGRLayer::ResetReading() on the layers of this dataset.\n"
+"\n"
+" This method is the same as the C function GDALDatasetResetReading().\n"
+"\n"
+" @since GDAL 2.2\n"
+"*/\n"
+"void        GDALDataset::ResetReading();"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:134
+msgid "New capabilities"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:136
+msgid "The following 2 new dataset capabilities are added :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:140
+msgid ""
+"#define ODsCRandomLayerRead     \"RandomLayerRead\"   /**< Dataset "
+"capability for GetNextFeature() returning features from random layers */\n"
+"#define ODsCRandomLayerWrite    \"RandomLayerWrite \" /**< Dataset "
+"capability for supporting CreateFeature on layer in random order */"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:144
+msgid "C API"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:146
+msgid "The above 2 new methods are available in the C API with :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:150
+msgid ""
+"OGRFeatureH CPL_DLL GDALDatasetGetNextFeature( GDALDatasetH hDS,\n"
+"                                               OGRLayerH* phBelongingLayer,\n"
+"                                               double* pdfProgressPct,\n"
+"                                               GDALProgressFunc "
+"pfnProgress,\n"
+"                                               void* pProgressData )\n"
+"\n"
+"void CPL_DLL GDALDatasetResetReading( GDALDatasetH hDS );"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:159
+msgid "Discussion about a few design choices of the new API"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:161
+msgid ""
+"Compared to OGRLayer::GetNextFeature(), GDALDataset::GetNextFeature() has a "
+"few differences :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:164
+msgid ""
+"it returns the layer which the feature belongs to. Indeed, there's no easy "
+"way from a feature to know which layer it belongs too (since in the data "
+"model, features can exist outside of any layer). One possibility would be to "
+"correlate the OGRFeatureDefn\\* object of the feature with the one of the "
+"layer, but that is a bit inconvenient to do (and theoretically, one could "
+"imagine several layers sharing the same feature definition object, although "
+"this probably never happen in any in-tree driver)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:172
+msgid ""
+"even if the feature returned is not NULL, the returned layer might be NULL. "
+"This is just a provision for now, since that cannot currently happen. This "
+"could be interesting to address schema-less datasources where basically each "
+"feature could have a different schema (GeoJSON for example) without really "
+"belonging to a clearly identified layer."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:177
+msgid ""
+"it returns a progress percentage. When using OGRLayer API, one has to count "
+"the number of features returned with the total number returned by "
+"GetFeatureCount(). For the use cases we want to address knowing quickly the "
+"total number of features of the dataset is not doable. But knowing the "
+"position of the file pointer regarding the total size of the size is easy. "
+"Hence the decision to make GetNextFeature() return the progress percentage. "
+"Regarding the choice of the range [0,1], this is to be consistent with the "
+"range accepted by GDAL progress functions."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:186
+msgid ""
+"it accepts a progress and cancellation callback. One could wonder why this "
+"is needed given that GetNextFeature() is an \"elementary\" method and that "
+"it can already returns the progress percentage. However, in some "
+"circumstances, it might take a rather long time to complete a "
+"GetNextFeature() call. For example in the case of the OSM driver, as an "
+"optimization you can ask the driver to return features of a subset of "
+"layers. For example all layers except nodes. But generally the nodes are at "
+"the beginning of the file, so before you get the first feature, you have "
+"typically to process 70% of the whole file. In the GMLAS driver, the first "
+"GetNextFeature() call is also the opportunity to do a preliminary quick scan "
+"of the file to determine the SRS of geometry columns, hence having progress "
+"feedback is welcome."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:199
+msgid ""
+"The progress percentage output is redundant with the progress callback "
+"mechanism, and the latter could be used to get the former, however it may be "
+"a bit convoluted. It would require doing things like:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:205
+msgid ""
+"int MyProgress(double pct, const char* msg, void* user_data)\n"
+"{\n"
+"    *(double*)user_data = pct;\n"
+"    return TRUE;\n"
+"}\n"
+"\n"
+"myDS->GetNextFeature(&poLayer, MyProgress, &pct)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:214
+msgid "SWIG bindings (Python / Java / C# / Perl) changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:216
+msgid ""
+"GDALDatasetGetNextFeature is mapped as gdal::Dataset::GetNextFeature() and "
+"GDALDatasetResetReading as gdal::Dataset::ResetReading()."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:219
+msgid ""
+"Regarding gdal::Dataset::GetNextFeature(), currently only Python has been "
+"modified to return both the feature and its belonging layer. Other bindings "
+"just return the feature for now (would need specialized typemaps)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:225
+msgid "Drivers"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:227
+msgid "The OSM and GMLAS driver are updated to implement the new API."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:229
+msgid ""
+"Existing drivers that support ODsCRandomLayerWrite are updated to advertise "
+"it (that is most drivers that have layer creation capabilities, with the "
+"exceptions of KML, JML and GeoJSON)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:234
+msgid "Utilities"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:236
+msgid ""
+"ogr2ogr / GDALVectorTranslate() is changed internally to remove the hack "
+"that was used for the OSM driver to use the new API, when "
+"ODsCRandomLayerRead is advertized. It checks if the output driver advertises "
+"ODsCRandomLayerWrite, and if it does not, emit a warning, but still goes on "
+"proceeding with the conversion using random layer reading/writing."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:243
+msgid ""
+"ogrinfo is extended to accept a -rl (for random layer) flag that instructs "
+"it to use the GDALDataset::GetNextFeature() API. It was considered to use it "
+"automatically when ODsCRandomLayerRead was advertized, but the output can be "
+"quite... random and thus not very practical for the user."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:250
+msgid "Documentation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:252
+msgid "All new methods/functions are documented."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:255
+msgid "Test Suite"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:257
+msgid ""
+"The specialized GetNextFeature() implementation of the OSM and GMLAS driver "
+"is tested in their respective tests. The default implementation of "
+"GDALDataset::GetNextFeature() is tested in the MEM driver tests."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:262
+msgid "Compatibility Issues"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:264
+msgid "None for existing users of the C/C++ API."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:266
+msgid ""
+"Since there is a default implementation, the new functions/methods can be "
+"safely used on drivers that don't have a specialized implementation."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:269
+msgid ""
+"The addition of the new virtual methods GDALDataset::ResetReading() and "
+"GDALDataset::GetNextFeature() may cause issues for out-of-tree drivers that "
+"would already use internally such method names, but with different "
+"semantics, or signatures. We have encountered such issues with a few in-tree "
+"drivers, and fixed them."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:276
+msgid "Implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:278
+msgid ""
+"The implementation will be done by Even Rouault, and is mostly triggered by "
+"the needs of the new GMLAS driver (initial development funded by the "
+"European Earth observation programme Copernicus)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:282
+msgid ""
+"The proposed implementation is in `https://github.com/rouault/gdal2/tree/"
+"gmlas_randomreadwrite <https://github.com/rouault/gdal2/tree/"
+"gmlas_randomreadwrite>`__ (commit: `https://github.com/rouault/gdal2/"
+"commit/8447606d68b9fac571aa4d381181ecfffed6d72c <https://github.com/rouault/"
+"gdal2/commit/8447606d68b9fac571aa4d381181ecfffed6d72c>`__)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:288
+msgid "Voting history"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc66_randomlayerreadwrite.rst:290
+msgid "+1 from TamasS, HowardB, JukkaR, DanielM and EvenR."
+msgstr ""

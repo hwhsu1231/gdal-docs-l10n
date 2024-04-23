@@ -1,0 +1,77 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/srtmhgt.rst:5
+msgid "SRTMHGT -- SRTM HGT Format"
+msgstr ""
+
+#: ../../../source/drivers/raster/srtmhgt.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/srtmhgt.rst:7
+msgid "SRTMHGT"
+msgstr ""
+
+#: ../../../source/drivers/raster/srtmhgt.rst:11
+msgid ""
+"The SRTM HGT driver currently supports the reading of SRTM-3 and SRTM-1 V2 "
+"(HGT) files. The files must be named like NXXEYYY.hgt, or starting with GDAL "
+"2.1.2, NXXEYYY[.something].hgt"
+msgstr ""
+
+#: ../../../source/drivers/raster/srtmhgt.rst:15
+msgid ""
+"Starting with GDAL 2.2, the driver can directly read .hgt.zip files provided "
+"that they are named like NXXEYYY[.something].hgt.zip and contain a NXXEYYY."
+"hgt file. For previous versions, use /vsizip//path/to/NXXEYYY[.something]."
+"hgt.zip/NXXEYYY.hgt syntax"
+msgstr ""
+
+#: ../../../source/drivers/raster/srtmhgt.rst:20
+msgid ""
+"The driver does support creating new files, but the input data must be "
+"exactly formatted as a SRTM-3 or SRTM-1 cell. That is the size, and bounds "
+"must be appropriate for a cell."
+msgstr ""
+
+#: ../../../source/drivers/raster/srtmhgt.rst:24
+msgid "See Also:"
+msgstr ""
+
+#: ../../../source/drivers/raster/srtmhgt.rst:26
+msgid ""
+"`SRTM documentation <http://dds.cr.usgs.gov/srtm/version2_1/Documentation>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/srtmhgt.rst:28
+msgid "`SRTM FAQ <http://www2.jpl.nasa.gov/srtm/faq.html>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/srtmhgt.rst:29
+msgid "`SRTM data <http://dds.cr.usgs.gov/srtm/version2_1/>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/srtmhgt.rst:31
+msgid "NOTE: Implemented as :source_file:`frmts/srtmhgt/srtmhgtdataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/srtmhgt.rst:34
+msgid "Driver capabilities"
+msgstr ""

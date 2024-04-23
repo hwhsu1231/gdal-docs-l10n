@@ -1,0 +1,75 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/pds.rst:4
+msgid "PDS - Planetary Data Systems TABLE"
+msgstr ""
+
+#: ../../../source/drivers/vector/pds.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/pds.rst:6
+msgid "PDS"
+msgstr ""
+
+#: ../../../source/drivers/vector/pds.rst:10
+msgid ""
+"This driver reads TABLE objects from PDS datasets. Note there is a GDAL PDS "
+"driver to read the raster IMAGE objects from PDS datasets."
+msgstr ""
+
+#: ../../../source/drivers/vector/pds.rst:13
+msgid ""
+"The driver must be provided with the product label file (even when the "
+"actual data is placed in a separate file)."
+msgstr ""
+
+#: ../../../source/drivers/vector/pds.rst:16
+msgid ""
+"If the label file contains a *TABLE* object, it will be read as the only "
+"layer of the dataset. If no *TABLE* object is found, the driver will look "
+"for all objects containing the TABLE string and read each one in a layer."
+msgstr ""
+
+#: ../../../source/drivers/vector/pds.rst:21
+msgid ""
+"ASCII and BINARY tables are supported. The driver can retrieve the field "
+"descriptions from inline COLUMN objects or from a separate file pointed by "
+"^STRUCTURE."
+msgstr ""
+
+#: ../../../source/drivers/vector/pds.rst:25
+msgid ""
+"If the table has a LONGITUDE and LATITUDE columns of type REAL and with "
+"UNIT=DEGREE, they will be used to return POINT geometries."
+msgstr ""
+
+#: ../../../source/drivers/vector/pds.rst:29
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/pds.rst:34
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/vector/pds.rst:36
+msgid ""
+"`Description of PDS format <https://pds.jpl.nasa.gov/tools/standards-"
+"reference.shtml>`__ (see Annex A.29 from StdRef_20090227_v3.8.pdf)"
+msgstr ""

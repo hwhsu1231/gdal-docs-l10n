@@ -1,0 +1,178 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:5
+msgid "RFC 55: Refined SetFeature() and DeleteFeature() semantics"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:7
+msgid "Authors: Even Rouault"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:9
+msgid "Contact: even dot rouault at spatialys.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:11
+msgid "Status: Adopted, implemented in GDAL 2.0"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:14
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:16
+msgid ""
+"This RFC refines the semantics of SetFeature() and DeleteFeature() so as to "
+"be able to distinguish nominal case, attempts of updating/deleting non-"
+"existing features, from failures to update/delete existing features."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:21
+msgid "Rationale"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:23
+msgid ""
+"Currently, depending on the drivers, calling SetFeature() or DeleteFeature() "
+"on a non-existing feature may succeed, or fail. It is generally not "
+"desirable that those functions return the OGRERR_NONE code, as in most "
+"situations, it might be a sign of invalid input. Therefore the "
+"OGRERR_NON_EXISTING_FEATURE return code is introduced so that drivers can "
+"inform the calling code that it has attempted to update or delete a non-"
+"existing feature."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:32
+msgid "Changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:34
+msgid "#define OGRERR_NON_EXISTING_FEATURE 9 is added to ogr_core.h"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:37
+msgid "Updated drivers"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:39
+msgid ""
+"The following drivers are updated to implement the new semantics: "
+"PostgreSQL, CartoDB, SQLite, GPKG, MySQL, OCI, FileGDB, Shape, MITAB"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:42
+msgid "Note: MSSQL could also likely be updated"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:45
+msgid "Caveats"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:47
+msgid ""
+"The behavior of the shapefile driver is a bit particular, in that, its "
+"SetFeature() implementation accepts to recreate a feature that had been "
+"deleted (and its CreateFeature() implementation ignores any set FID on the "
+"passed feature to append a new feature). So OGRERR_NON_EXISTING_FEATURE will "
+"effictively been returned only if the FID is negative or greater or equal to "
+"the maximum feature count."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:55
+msgid "SWIG bindings (Python / Java / C# / Perl) changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:57
+msgid ""
+"OGRERR_NON_EXISTING_FEATURE is added. All OGRERR_xxxx constants are exposed "
+"to the Python bindings"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:61
+msgid "Utilities"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:63
+msgid "No impact"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:66
+msgid "Documentation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:68
+msgid ""
+"Documentation of SetFeature() and DeleteFeature() mentions the new error "
+"code. MIGRATION_GUIDE.TXT updated with mention to below compatibility issues."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:73
+msgid "Test Suite"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:75
+msgid ""
+"The test suite is extended to test the modified drivers. test_ogrsf also "
+"tests the behavior of drivers updating/deleting non-existing features."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:79
+msgid "Compatibility Issues"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:81
+msgid ""
+"Code that expected update or deleting of non-existing features to succeed "
+"will have to be updated."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:85
+msgid "Implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:87
+msgid ""
+"Implementation will be done by Even Rouault (`Spatialys <http://spatialys."
+"com>`__), and sponsored by `LINZ (Land Information New Zealand) <http://www."
+"linz.govt.nz/>`__."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:91
+msgid ""
+"The proposed implementation lies in the "
+"\"rfc55_refined_setfeature_deletefeature_semantics\" branch of the `https://"
+"github.com/rouault/gdal2/tree/"
+"rfc55_refined_setfeature_deletefeature_semantics <https://github.com/rouault/"
+"gdal2/tree/rfc55_refined_setfeature_deletefeature_semantics>`__ repository."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:96
+msgid ""
+"The list of changes: `https://github.com/rouault/gdal2/compare/"
+"rfc55_refined_setfeature_deletefeature_semantics <https://github.com/rouault/"
+"gdal2/compare/rfc55_refined_setfeature_deletefeature_semantics>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:100
+msgid "Voting history"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc55_refined_setfeature_deletefeature_semantics.rst:102
+msgid "+1 from from DanielM, HowardB, JukkaR and EvenR"
+msgstr ""

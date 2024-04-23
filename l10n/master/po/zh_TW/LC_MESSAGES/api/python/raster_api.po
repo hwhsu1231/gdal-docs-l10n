@@ -1,0 +1,2276 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/api/python/raster_api.rst:4
+msgid "Python Raster API"
+msgstr ""
+
+#: ../../../source/api/python/raster_api.rst:6
+msgid ""
+"This page contains classes, methods, functions that relate to the GDAL :ref:"
+"`raster_data_model`:"
+msgstr ""
+
+#: ../../../source/api/python/raster_api.rst:8
+msgid "`Driver`_"
+msgstr ""
+
+#: ../../../source/api/python/raster_api.rst:9
+msgid "`Dataset`_"
+msgstr ""
+
+#: ../../../source/api/python/raster_api.rst:10
+msgid "`Band`_"
+msgstr ""
+
+#: ../../../source/api/python/raster_api.rst:11
+msgid "`Other`_"
+msgstr ""
+
+#: ../../../source/api/python/raster_api.rst:16
+msgid "Driver"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Driver:1
+msgid "Python proxy of a :cpp:class:`GDALDriver`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Driver.CopyFiles:1
+msgid "Copy all the files associated with a :py:class:`Dataset`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.Checksum:0 osgeo.gdal.Band.ComputeBandStats:0
+#: osgeo.gdal.Band.ComputeRasterMinMax:0 osgeo.gdal.Band.ComputeStatistics:0
+#: osgeo.gdal.Band.CreateMaskBand:0 osgeo.gdal.Band.Fill:0
+#: osgeo.gdal.Band.GetActualBlockSize:0 osgeo.gdal.Band.GetDataCoverageStatus:0
+#: osgeo.gdal.Band.GetHistogram:0 osgeo.gdal.Band.GetOverview:0
+#: osgeo.gdal.Band.GetStatistics:0 osgeo.gdal.Band.ReadAsArray:0
+#: osgeo.gdal.Band.SetCategoryNames:0 osgeo.gdal.Band.SetColorInterpretation:0
+#: osgeo.gdal.Band.SetColorTable:0 osgeo.gdal.Band.SetDefaultHistogram:0
+#: osgeo.gdal.Band.SetNoDataValue:0 osgeo.gdal.Band.SetOffset:0
+#: osgeo.gdal.Band.SetScale:0 osgeo.gdal.Band.SetStatistics:0
+#: osgeo.gdal.Band.SetUnitType:0 osgeo.gdal.Band.WriteArray:0
+#: osgeo.gdal.Dataset.AddBand:0 osgeo.gdal.Dataset.AddFieldDomain:0
+#: osgeo.gdal.Dataset.AddRelationship:0 osgeo.gdal.Dataset.BuildOverviews:0
+#: osgeo.gdal.Dataset.CopyLayer:0 osgeo.gdal.Dataset.CreateLayer:0
+#: osgeo.gdal.Dataset.CreateMaskBand:0 osgeo.gdal.Dataset.DeleteFieldDomain:0
+#: osgeo.gdal.Dataset.DeleteLayer:0 osgeo.gdal.Dataset.DeleteRelationship:0
+#: osgeo.gdal.Dataset.ExecuteSQL:0 osgeo.gdal.Dataset.GetFieldDomain:0
+#: osgeo.gdal.Dataset.GetFieldDomainNames:0
+#: osgeo.gdal.Dataset.GetGeoTransform:0 osgeo.gdal.Dataset.GetLayer:0
+#: osgeo.gdal.Dataset.GetLayerByIndex:0 osgeo.gdal.Dataset.GetRasterBand:0
+#: osgeo.gdal.Dataset.GetRelationshipNames:0
+#: osgeo.gdal.Dataset.IsLayerPrivate:0 osgeo.gdal.Dataset.ReadAsArray:0
+#: osgeo.gdal.Dataset.ReleaseResultSet:0 osgeo.gdal.Dataset.SetGCPs:0
+#: osgeo.gdal.Dataset.SetGeoTransform:0 osgeo.gdal.Dataset.SetProjection:0
+#: osgeo.gdal.Dataset.SetSpatialRef:0 osgeo.gdal.Dataset.SetStyleTable:0
+#: osgeo.gdal.Dataset.TestCapability:0 osgeo.gdal.Dataset.UpdateFieldDomain:0
+#: osgeo.gdal.Dataset.UpdateRelationship:0 osgeo.gdal.Dataset.WriteArray:0
+#: osgeo.gdal.Driver.CopyFiles:0 osgeo.gdal.Driver.Create:0
+#: osgeo.gdal.Driver.CreateCopy:0 osgeo.gdal.Driver.CreateMultiDimensional:0
+#: osgeo.gdal.Driver.Delete:0 osgeo.gdal.Driver.Rename:0 osgeo.gdal.Open:0
+#: osgeo.gdal.OpenEx:0 osgeo.gdal.OpenShared:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Driver.CopyFiles:3 osgeo.gdal.Driver.Rename:4
+msgid "new path for the dataset"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Driver.CopyFiles:5 osgeo.gdal.Driver.Rename:6
+msgid "old path for the dataset"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.Checksum:0 osgeo.gdal.Band.ComputeBandStats:0
+#: osgeo.gdal.Band.ComputeStatistics:0 osgeo.gdal.Band.CreateMaskBand:0
+#: osgeo.gdal.Band.DeleteNoDataValue:0 osgeo.gdal.Band.Fill:0
+#: osgeo.gdal.Band.GetActualBlockSize:0 osgeo.gdal.Band.GetBand:0
+#: osgeo.gdal.Band.GetBlockSize:0 osgeo.gdal.Band.GetCategoryNames:0
+#: osgeo.gdal.Band.GetDataCoverageStatus:0
+#: osgeo.gdal.Band.GetDefaultHistogram:0 osgeo.gdal.Band.GetHistogram:0
+#: osgeo.gdal.Band.GetMaximum:0 osgeo.gdal.Band.GetMinimum:0
+#: osgeo.gdal.Band.GetNoDataValue:0 osgeo.gdal.Band.GetNoDataValueAsInt64:0
+#: osgeo.gdal.Band.GetNoDataValueAsUInt64:0 osgeo.gdal.Band.GetOffset:0
+#: osgeo.gdal.Band.GetRasterCategoryNames:0
+#: osgeo.gdal.Band.GetRasterColorInterpretation:0
+#: osgeo.gdal.Band.GetRasterColorTable:0 osgeo.gdal.Band.GetScale:0
+#: osgeo.gdal.Band.GetStatistics:0 osgeo.gdal.Band.SetCategoryNames:0
+#: osgeo.gdal.Band.SetColorInterpretation:0 osgeo.gdal.Band.SetColorTable:0
+#: osgeo.gdal.Band.SetDefaultHistogram:0 osgeo.gdal.Band.SetNoDataValue:0
+#: osgeo.gdal.Band.SetOffset:0 osgeo.gdal.Band.SetScale:0
+#: osgeo.gdal.Band.SetStatistics:0 osgeo.gdal.Band.SetUnitType:0
+#: osgeo.gdal.Band.WriteArray:0 osgeo.gdal.Dataset.AddBand:0
+#: osgeo.gdal.Dataset.AddFieldDomain:0 osgeo.gdal.Dataset.AddRelationship:0
+#: osgeo.gdal.Dataset.CreateMaskBand:0 osgeo.gdal.Dataset.DeleteFieldDomain:0
+#: osgeo.gdal.Dataset.DeleteLayer:0 osgeo.gdal.Dataset.DeleteRelationship:0
+#: osgeo.gdal.Dataset.ExecuteSQL:0 osgeo.gdal.Dataset.FlushCache:0
+#: osgeo.gdal.Dataset.GetGCPs:0 osgeo.gdal.Dataset.GetGeoTransform:0
+#: osgeo.gdal.Dataset.GetRasterBand:0 osgeo.gdal.Dataset.IsLayerPrivate:0
+#: osgeo.gdal.Dataset.RollbackTransaction:0
+#: osgeo.gdal.Dataset.StartTransaction:0 osgeo.gdal.Dataset.TestCapability:0
+#: osgeo.gdal.Dataset.UpdateFieldDomain:0
+#: osgeo.gdal.Dataset.UpdateRelationship:0 osgeo.gdal.Dataset.WriteArray:0
+#: osgeo.gdal.Driver.CopyFiles:0 osgeo.gdal.Driver.Delete:0
+#: osgeo.gdal.Driver.Rename:0
+msgid "Returns"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.CreateMaskBand:7 osgeo.gdal.Band.DeleteNoDataValue:3
+#: osgeo.gdal.Band.Fill:9 osgeo.gdal.Band.SetCategoryNames:7
+#: osgeo.gdal.Band.SetColorInterpretation:7 osgeo.gdal.Band.SetColorTable:7
+#: osgeo.gdal.Band.SetDefaultHistogram:11 osgeo.gdal.Band.SetNoDataValue:8
+#: osgeo.gdal.Band.SetOffset:7 osgeo.gdal.Band.SetScale:7
+#: osgeo.gdal.Band.SetUnitType:7 osgeo.gdal.Dataset.AddBand:10
+#: osgeo.gdal.Driver.CopyFiles:8 osgeo.gdal.Driver.Delete:7
+#: osgeo.gdal.Driver.Rename:9
+msgid ":py:const:`CE_None` on success or :py:const:`CE_Failure` on failure."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.Checksum:0 osgeo.gdal.Band.ComputeBandStats:0
+#: osgeo.gdal.Band.ComputeRasterMinMax:0 osgeo.gdal.Band.ComputeStatistics:0
+#: osgeo.gdal.Band.CreateMaskBand:0 osgeo.gdal.Band.DeleteNoDataValue:0
+#: osgeo.gdal.Band.Fill:0 osgeo.gdal.Band.GetActualBlockSize:0
+#: osgeo.gdal.Band.GetBand:0 osgeo.gdal.Band.GetBlockSize:0
+#: osgeo.gdal.Band.GetCategoryNames:0 osgeo.gdal.Band.GetColorInterpretation:0
+#: osgeo.gdal.Band.GetColorTable:0 osgeo.gdal.Band.GetDataCoverageStatus:0
+#: osgeo.gdal.Band.GetDefaultHistogram:0 osgeo.gdal.Band.GetHistogram:0
+#: osgeo.gdal.Band.GetMaskBand:0 osgeo.gdal.Band.GetMaskFlags:0
+#: osgeo.gdal.Band.GetMaximum:0 osgeo.gdal.Band.GetMinimum:0
+#: osgeo.gdal.Band.GetNoDataValue:0 osgeo.gdal.Band.GetNoDataValueAsInt64:0
+#: osgeo.gdal.Band.GetNoDataValueAsUInt64:0 osgeo.gdal.Band.GetOffset:0
+#: osgeo.gdal.Band.GetOverview:0 osgeo.gdal.Band.GetOverviewCount:0
+#: osgeo.gdal.Band.GetRasterCategoryNames:0
+#: osgeo.gdal.Band.GetRasterColorInterpretation:0
+#: osgeo.gdal.Band.GetRasterColorTable:0 osgeo.gdal.Band.GetScale:0
+#: osgeo.gdal.Band.GetStatistics:0 osgeo.gdal.Band.GetUnitType:0
+#: osgeo.gdal.Band.HasArbitraryOverviews:0 osgeo.gdal.Band.IsMaskBand:0
+#: osgeo.gdal.Band.ReadAsArray:0 osgeo.gdal.Band.SetCategoryNames:0
+#: osgeo.gdal.Band.SetColorInterpretation:0 osgeo.gdal.Band.SetColorTable:0
+#: osgeo.gdal.Band.SetDefaultHistogram:0 osgeo.gdal.Band.SetNoDataValue:0
+#: osgeo.gdal.Band.SetOffset:0 osgeo.gdal.Band.SetScale:0
+#: osgeo.gdal.Band.SetStatistics:0 osgeo.gdal.Band.SetUnitType:0
+#: osgeo.gdal.Band.WriteArray:0 osgeo.gdal.Dataset.AbortSQL:0
+#: osgeo.gdal.Dataset.AddBand:0 osgeo.gdal.Dataset.AddFieldDomain:0
+#: osgeo.gdal.Dataset.AddRelationship:0 osgeo.gdal.Dataset.BuildOverviews:0
+#: osgeo.gdal.Dataset.CopyLayer:0 osgeo.gdal.Dataset.CreateLayer:0
+#: osgeo.gdal.Dataset.CreateMaskBand:0 osgeo.gdal.Dataset.DeleteFieldDomain:0
+#: osgeo.gdal.Dataset.DeleteLayer:0 osgeo.gdal.Dataset.DeleteRelationship:0
+#: osgeo.gdal.Dataset.ExecuteSQL:0 osgeo.gdal.Dataset.FlushCache:0
+#: osgeo.gdal.Dataset.GetFieldDomain:0 osgeo.gdal.Dataset.GetFieldDomainNames:0
+#: osgeo.gdal.Dataset.GetGCPCount:0 osgeo.gdal.Dataset.GetGCPProjection:0
+#: osgeo.gdal.Dataset.GetGCPs:0 osgeo.gdal.Dataset.GetGeoTransform:0
+#: osgeo.gdal.Dataset.GetLayer:0 osgeo.gdal.Dataset.GetLayerByIndex:0
+#: osgeo.gdal.Dataset.GetLayerCount:0 osgeo.gdal.Dataset.GetNextFeature:0
+#: osgeo.gdal.Dataset.GetProjection:0 osgeo.gdal.Dataset.GetProjectionRef:0
+#: osgeo.gdal.Dataset.GetRasterBand:0 osgeo.gdal.Dataset.GetRelationship:0
+#: osgeo.gdal.Dataset.GetRootGroup:0 osgeo.gdal.Dataset.GetSpatialRef:0
+#: osgeo.gdal.Dataset.GetStyleTable:0 osgeo.gdal.Dataset.GetSubDatasets:0
+#: osgeo.gdal.Dataset.IsLayerPrivate:0 osgeo.gdal.Dataset.ReadAsArray:0
+#: osgeo.gdal.Dataset.RollbackTransaction:0
+#: osgeo.gdal.Dataset.SetGeoTransform:0 osgeo.gdal.Dataset.SetProjection:0
+#: osgeo.gdal.Dataset.SetSpatialRef:0 osgeo.gdal.Dataset.StartTransaction:0
+#: osgeo.gdal.Dataset.TestCapability:0 osgeo.gdal.Dataset.UpdateFieldDomain:0
+#: osgeo.gdal.Dataset.UpdateRelationship:0 osgeo.gdal.Dataset.WriteArray:0
+#: osgeo.gdal.Driver.CopyFiles:0 osgeo.gdal.Driver.Create:0
+#: osgeo.gdal.Driver.CreateCopy:0 osgeo.gdal.Driver.CreateMultiDimensional:0
+#: osgeo.gdal.Driver.Delete:0 osgeo.gdal.Driver.Rename:0 osgeo.gdal.Open:0
+#: osgeo.gdal.OpenEx:0 osgeo.gdal.OpenShared:0
+msgid "Return type"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Driver.Create:1
+msgid ""
+"Create a new :py:class:`Dataset` with this driver. See :cpp:func:"
+"`GDALDriver::Create`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Driver.Create:4 osgeo.gdal.Driver.CreateCopy:4
+#: osgeo.gdal.Driver.CreateMultiDimensional:4
+msgid "Path of the dataset to create."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Driver.Create:6
+msgid "Width of created raster in pixels. Set to zero for vector datasets."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Driver.Create:8
+msgid "Height of created raster in pixels. Set to zero for vector datasets."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Driver.Create:10
+msgid "Number of bands. Set to zero for vector datasets."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Driver.Create:12
+msgid "Raster data type. Set to :py:const:`GDT_Unknown` for vector datasets."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Driver.Create:14 osgeo.gdal.Driver.CreateCopy:11
+msgid "List of driver-specific options"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetDataCoverageStatus:23 osgeo.gdal.Band.GetHistogram:24
+#: osgeo.gdal.Band.GetMaskFlags:7 osgeo.gdal.Band.GetUnitType:7
+#: osgeo.gdal.Band.ReadAsArray:40 osgeo.gdal.Dataset.AddBand:14
+#: osgeo.gdal.Dataset.BuildOverviews:20 osgeo.gdal.Dataset.CreateLayer:18
+#: osgeo.gdal.Dataset.ExecuteSQL:37 osgeo.gdal.Dataset.ReadAsArray:43
+#: osgeo.gdal.Dataset.TestCapability:10 osgeo.gdal.Dataset.WriteArray:31
+#: osgeo.gdal.Driver.Create:20 osgeo.gdal.Driver.CreateMultiDimensional:16
+#: osgeo.gdal.GetDriverCount:5
+msgid "Examples"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Driver.CreateCopy:1
+msgid ""
+"Create a copy of a :py:class:`Dataset`. See :cpp:func:`GDALDriver::"
+"CreateCopy`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Driver.CreateCopy:6
+msgid "The Dataset being duplicated."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Driver.CreateCopy:8
+msgid ""
+"Indicates whether the copy must be strictly equivalent or if it may be "
+"adapted as needed for the output format."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.ComputeStatistics:7 osgeo.gdal.Band.GetHistogram:14
+#: osgeo.gdal.Band.ReadAsArray:32 osgeo.gdal.Band.WriteArray:13
+#: osgeo.gdal.Dataset.BuildOverviews:10 osgeo.gdal.Dataset.ReadAsArray:32
+#: osgeo.gdal.Dataset.WriteArray:22 osgeo.gdal.Driver.CreateCopy:13
+msgid "A progress callback function"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.ComputeStatistics:9 osgeo.gdal.Band.GetHistogram:16
+#: osgeo.gdal.Band.ReadAsArray:34 osgeo.gdal.Band.WriteArray:15
+#: osgeo.gdal.Dataset.BuildOverviews:12 osgeo.gdal.Dataset.ReadAsArray:34
+#: osgeo.gdal.Dataset.WriteArray:24 osgeo.gdal.Driver.CreateCopy:15
+msgid "Optional data to be passed to callback function"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Driver.CreateMultiDimensional:1
+msgid ""
+"Create a new multidimensional dataset. See :cpp:func:`GDALDriver::"
+"CreateMultiDimensional`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Driver.CreateMultiDimensional:6
+msgid "Driver-specific options regarding the creation of the root group."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Driver.CreateMultiDimensional:9
+msgid "List of driver-specific options regarding the creation of the Dataset."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Driver.Delete:1
+msgid "Delete a :py:class:`Dataset`. See :cpp:func:`GDALDriver::Delete`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Driver.Delete:4
+msgid "Path of the dataset to delete."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Driver.Deregister:1
+msgid ""
+"Deregister the driver. See :cpp:func:`GDALDriverManager::DeregisterDriver`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Driver.HelpTopic:1 osgeo.gdal.Driver.LongName:1
+#: osgeo.gdal.Driver.ShortName:1
+msgid "p.q(const).char"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Driver.HelpTopic:3
+msgid ""
+"The URL for driver documentation, relative to the GDAL documentation "
+"directory. See :cpp:func:`GDALGetDriverHelpTopic`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.DataType:0 osgeo.gdal.Band.XSize:0
+#: osgeo.gdal.Band.YSize:0 osgeo.gdal.ColorEntry.c1:0
+#: osgeo.gdal.ColorEntry.c2:0 osgeo.gdal.ColorEntry.c3:0
+#: osgeo.gdal.ColorEntry.c4:0 osgeo.gdal.Dataset.RasterCount:0
+#: osgeo.gdal.Dataset.RasterXSize:0 osgeo.gdal.Dataset.RasterYSize:0
+#: osgeo.gdal.Driver.HelpTopic:0 osgeo.gdal.Driver.LongName:0
+#: osgeo.gdal.Driver.ShortName:0 osgeo.gdal.GCP.GCPLine:0
+#: osgeo.gdal.GCP.GCPPixel:0 osgeo.gdal.GCP.GCPX:0 osgeo.gdal.GCP.GCPY:0
+#: osgeo.gdal.GCP.GCPZ:0 osgeo.gdal.GCP.Id:0 osgeo.gdal.GCP.Info:0
+msgid "type"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Driver.HelpTopic:6
+msgid "HelpTopic"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Driver.LongName:3
+msgid "The long name of the driver. See :cpp:func:`GDALGetDriverLongName`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Driver.LongName:6
+msgid "LongName"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Driver.Register:1
+msgid ""
+"Register the driver for use. See :cpp:func:`GDALDriverManager::"
+"RegisterDriver`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Driver.Rename:1
+msgid "Rename a :py:class:`Dataset`. See :cpp:func:`GDALDriver::Rename`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Driver.ShortName:3
+msgid ""
+"The short name of a :py:class:`Driver` that can be passed to :py:func:"
+"`GetDriverByName`. See :cpp:func:`GDALGetDriverShortName`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Driver.ShortName:7
+msgid "ShortName"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.AllRegister:1
+msgid ""
+"Register all known configured GDAL drivers. Automatically called when the :"
+"py:mod:`gdal` module is loaded. Does not need to be called in user code "
+"unless a driver was deregistered and needs to be re-registered. See :cpp:"
+"func:`GDALAllRegister`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.AllRegister:7
+msgid ":py:func:`Driver.Register`"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.GetDriverCount:1
+msgid ""
+"Return the number of registered drivers. See :cpp:func:`GDALGetDriverCount`."
+msgstr ""
+
+#: ../../../source/api/python/raster_api.rst:36
+msgid "Dataset"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset:1
+msgid "Python proxy of a :cpp:class:`GDALDataset`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset:3
+msgid ""
+"Since GDAL 3.8, a Dataset can be used as a context manager. When exiting the "
+"context, the Dataset will be closed and data will be written to disk."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.AbortSQL:1
+msgid "Abort any SQL statement running in the data store."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.AbortSQL:3
+msgid "Not implemented by all drivers. See :cpp:func:`GDALDataset::AbortSQL`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.AbortSQL:5
+msgid ""
+":py:const:`ogr.OGRERR_NONE` on success or :py:const:`ogr."
+"OGRERR_UNSUPPORTED_OPERATION` if AbortSQL is not supported for this dataset."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.AddBand:1
+msgid "Adds a band to a :py:class:`Dataset`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.AddBand:3
+msgid "Not supported by all drivers."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.AddBand:5
+msgid "the data type of the pixels in the new band"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.AddBand:7
+msgid ""
+"an optional dict or list of format-specific ``NAME=VALUE`` option strings."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.AddFieldDomain:1
+msgid "Add a :py:class:`ogr.FieldDomain` to the dataset."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.AddFieldDomain:3
+msgid ""
+"Only a few drivers support this operation. See :cpp:func:`GDALDataset::"
+"AddFieldDomain`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.AddFieldDomain:5
+msgid "The field domain to add"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.AddFieldDomain:8 osgeo.gdal.Dataset.AddRelationship:8
+msgid "``True`` if the field domain was added, ``False`` in case of error."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.AddRelationship:1
+msgid "Add a :py:class:`Relationship` to the dataset."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.AddRelationship:3
+msgid "See :cpp:func:`GDALDataset::AddRelationship`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.AddRelationship:5
+msgid "The relationship to add"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.AdviseRead:1
+msgid "Advise driver of upcoming read requests."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.AdviseRead:3
+msgid "See :cpp:func:`GDALDataset::AdviseRead`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.BuildOverviews:1
+msgid "Build raster overview(s) for all bands."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.BuildOverviews:3
+msgid "See :cpp:func:`GDALDataset::BuildOverviews`"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.BuildOverviews:5
+msgid ""
+"The resampling method to use. See :cpp:func:`GDALDataset::BuildOveriews`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.BuildOverviews:7
+msgid ""
+"A list of overview levels (decimation factors) to build, or an empty list to "
+"clear existing overviews."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.BuildOverviews:14
+msgid "A dict or list of key=value options"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.BuildOverviews:17 osgeo.gdal.Dataset.CreateMaskBand:8
+#: osgeo.gdal.Dataset.SetGeoTransform:8 osgeo.gdal.Dataset.SetProjection:7
+#: osgeo.gdal.Dataset.SetSpatialRef:6
+msgid ""
+":py:const:`CE_Failure` if an error occurs, otherwise :py:const:`CE_None`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.ClearStatistics:1
+msgid "Clear statistics"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.ClearStatistics:3
+msgid "See :cpp:func:`GDALDatset::ClearStatistics`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.Close:1
+msgid "Closes opened dataset and releases allocated resources."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.Close:3
+msgid ""
+"This method can be used to force the dataset to close when one more "
+"references to the dataset are still reachable. If :py:meth:`Close` is never "
+"called, the dataset will be closed automatically during garbage collection."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.Close:8
+msgid ""
+"In most cases, it is preferable to open or create a dataset using a context "
+"manager instead of calling :py:meth:`Close` directly."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.CommitTransaction:1
+msgid "Commits a transaction, for `Datasets` that support transactions."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.CommitTransaction:3
+msgid "See :cpp:func:`GDALDataset::CommitTransaction`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.CopyLayer:1
+msgid "Duplicate an existing :py:class:`ogr.Layer`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.CopyLayer:3
+msgid "See :cpp:func:`GDALDAtaset::CopyLayer`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.CopyLayer:5
+msgid "source layer"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.CopyLayer:7
+msgid "name of the layer to create"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.CopyLayer:9
+msgid "a dict or list of name=value driver-specific creation options"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.CopyLayer:12
+msgid "ogr.Layer, or ``None`` if an error occurs"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.CreateLayer:1
+msgid "Create a new layer in a vector Dataset."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.CreateLayer:3
+msgid ""
+"the name for the new layer.  This should ideally not match any existing "
+"layer on the datasource."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.CreateLayer:6
+msgid ""
+"the coordinate system to use for the new layer, or ``None`` if no coordinate "
+"system is available."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.CreateLayer:9
+msgid ""
+"geometry type for the layer.  Use :py:const:`ogr.wkbUnknown` if there are no "
+"constraints on the types geometry to be written."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.CreateLayer:12
+msgid "Driver-specific dict or list of name=value options"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.CreateLayer:15
+msgid "ogr.Layer or ``None`` on failure."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.CreateMaskBand:1
+msgid "Adds a mask band to the dataset."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.CreateMaskBand:3
+msgid "See :cpp:func:`GDALDataset::CreateMaskBand`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.DeleteFieldDomain:1
+msgid "Removes a field domain from the Dataset."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.DeleteFieldDomain:3
+msgid "Name of the field domain to delete"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.DeleteFieldDomain:6
+msgid "``True`` if the field domain was removed, otherwise ``False``."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.DeleteLayer:1
+msgid "Delete the indicated layer from the Dataset."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.DeleteLayer:3 osgeo.gdal.Dataset.GetLayer:3
+msgid "Name or 0-based index of the layer to delete."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.DeleteLayer:6
+msgid ""
+":py:const:`ogr.OGRERR_NONE` on success or :py:const:`ogr."
+"OGRERR_UNSUPPORTED_OPERATION` if DeleteLayer is not supported for this "
+"dataset."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.DeleteRelationship:1
+msgid "Removes a relationship from the Dataset."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.DeleteRelationship:3
+msgid "Name of the relationship to remove."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.DeleteRelationship:6
+msgid "``True`` if the relationship  was removed, otherwise ``False``."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.ExecuteSQL:1
+msgid "Execute a SQL statement against the dataset"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.ExecuteSQL:7
+msgid "The result of a SQL query is:"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.ExecuteSQL:4
+msgid ""
+"None (or an exception if exceptions are enabled) for statements that are in "
+"error"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.ExecuteSQL:6
+msgid "or None for statements that have no results set,"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.ExecuteSQL:7
+msgid ""
+"or a :py:class:`ogr.Layer` handle representing a results set from the query."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.ExecuteSQL:9
+msgid ""
+"Note that this :py:class:`ogr.Layer` is in addition to the layers in the "
+"data store and must be released with :py:meth:`ReleaseResultSet` before the "
+"data source is closed (destroyed)."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.ExecuteSQL:13
+msgid ""
+"Starting with GDAL 3.7, this method can also be used as a context manager, "
+"as a convenient way of automatically releasing the returned result layer."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.ExecuteSQL:16
+msgid ""
+"For more information on the SQL dialect supported internally by OGR review "
+"the OGR SQL document (:ref:`ogr_sql_sqlite_dialect`) Some drivers (i.e. "
+"Oracle and PostGIS) pass the SQL directly through to the underlying RDBMS."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.ExecuteSQL:21
+msgid "The SQLITE dialect can also be used (:ref:`sql_sqlite_dialect`)"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.ExecuteSQL:23
+msgid "the SQL statement to execute (e.g \"SELECT * FROM layer\")"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.ExecuteSQL:24
+msgid "a geometry which represents a spatial filter. Can be None"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.ExecuteSQL:25
+msgid ""
+"allows control of the statement dialect. If set to None or empty string, the "
+"OGR SQL engine will be used, except for RDBMS drivers that will use their "
+"dedicated SQL engine, unless OGRSQL is explicitly passed as the dialect. The "
+"SQLITE dialect can also be used."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.ExecuteSQL:29
+msgid ""
+"whether the returned layer should keep a (strong) reference on the current "
+"dataset. Cf example 2 for a use case."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.ExecuteSQL:32
+msgid ""
+"a ogr.Layer containing the results of the query, that will be automatically "
+"released when the context manager goes out of scope."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.ExecuteSQL:38
+msgid "Use as a context manager:"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.ExecuteSQL:43
+msgid ""
+"Use keep_ref_on_ds=True to return an object that keeps a reference to its "
+"dataset:"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.FlushCache:1
+msgid "Flush all write-cached data to disk."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.FlushCache:3
+msgid "See :cpp:func:`GDALDataset::FlushCache`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.FlushCache:5
+msgid "`gdal.CE_None` in case of success"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetDriver:1
+msgid "Fetch the driver used to open or create this :py:class:`Dataset`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetFieldDomain:1
+msgid "Get a field domain from its name."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetFieldDomain:3
+msgid "The name of the field domain"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetFieldDomain:6
+msgid "ogr.FieldDomain, or ``None`` if it is not found."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetFieldDomainNames:1
+msgid "Get a list of the names of all field domains stored in the dataset."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetFieldDomainNames:3
+msgid "Driver-specific options determining how attributes should be retrieved."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetFieldDomainNames:7
+msgid "list, or ``None`` if no field domains are stored in the dataset."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetFileList:1
+msgid ""
+"Returns a list of files believed to be part of this dataset. See :cpp:func:"
+"`GDALGetFileList`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetGCPCount:1
+msgid "Get number of GCPs. See :cpp:func:`GDALGetGCPCount`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetGCPProjection:1
+msgid "Return a WKT representation of the GCP spatial reference."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetGCPSpatialRef:1
+msgid "Get output spatial reference system for GCPs."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetGCPSpatialRef:3
+msgid "See :cpp:func:`GDALGetGCPSpatialRef`"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetGCPs:1
+msgid "Get the GCPs. See :cpp:func:`GDALGetGCPs`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetGCPs:3
+msgid "a tuple of :py:class:`GCP` objects."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetGeoTransform:1
+msgid "Fetch the affine transformation coefficients."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetGeoTransform:3
+msgid "See :cpp:func:`GDALGetGeoTransform`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetGeoTransform:5
+msgid ""
+"if ``True``, return ``None`` instead of the default transformation if the "
+"transformation for this :py:class:`Dataset` has not been defined."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetGeoTransform:9
+msgid "a 6-member tuple representing the transformation coefficients"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetLayer:1
+msgid "Get the indicated layer from the Dataset"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetLayer:6
+msgid "ogr.Layer, or ``None`` on error"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetLayerByIndex:1
+msgid "Fetch a layer by index."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetLayerByIndex:3
+msgid "A layer number between 0 and ``GetLayerCount() - 1``"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetLayerCount:1
+msgid "Get the number of layers in this dataset."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetNextFeature:1
+msgid "Fetch the next available feature from this dataset."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetNextFeature:3
+msgid ""
+"This method is intended for the few drivers where :py:meth:`OGRLayer."
+"GetNextFeature` is not efficient, but in general :py:meth:`OGRLayer."
+"GetNextFeature` is a more natural API."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetNextFeature:7
+msgid "See :cpp:func:`GDALDataset::GetNextFeature`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetProjection:1
+msgid ""
+"Return a WKT representation of the dataset spatial reference. Equivalent to :"
+"py:meth:`GetProjectionRef`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetProjectionRef:1
+msgid "Return a WKT representation of the dataset spatial reference."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetRasterBand:1
+msgid ""
+"Fetch a :py:class:`Band` band from a :py:class:`Dataset`. See :cpp:func:"
+"`GDALGetRasterBand`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetRasterBand:3
+msgid "the index of the band to fetch, from 1 to :py:attr:`RasterCount`"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetRasterBand:6
+msgid "the :py:class:`Band`, or ``None`` on error."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetRelationship:1
+msgid "Get a relationship from its name."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetRelationship:3
+msgid "Relationship, or ``None`` if not found."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetRelationshipNames:1
+msgid "Get a list of the names of all relationships stored in the dataset."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetRelationshipNames:3
+msgid ""
+"driver-specific options determining how the relationships should be retrieved"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetRootGroup:1
+msgid ""
+"Return the root :py:class:`Group` of this dataset. Only value for "
+"multidimensional datasets."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetSpatialRef:1
+msgid "Fetch the spatial reference for this dataset."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetStyleTable:1
+msgid "Returns dataset style table."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetSubDatasets:1
+msgid "Return a list of Subdatasets."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetTiledVirtualMemArray:1
+msgid ""
+"Return a NumPy array for the dataset, seen as a virtual memory mapping with "
+"a tile organization. If there are several bands and tile_organization = gdal."
+"GTO_TIP, an element is accessed with array[tiley][tilex][y][x][band]. If "
+"there are several bands and tile_organization = gdal.GTO_BIT, an element is "
+"accessed with array[tiley][tilex][band][y][x]. If there are several bands "
+"and tile_organization = gdal.GTO_BSQ, an element is accessed with array[band]"
+"[tiley][tilex][y][x]. If there is only one band, an element is accessed with "
+"array[tiley][tilex][y][x]. Any reference to the array must be dropped before "
+"the last reference to the related dataset is also dropped."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.GetVirtualMemArray:1
+msgid ""
+"Return a NumPy array for the dataset, seen as a virtual memory mapping. If "
+"there are several bands and band_sequential = True, an element is accessed "
+"with array[band][y][x]. If there are several bands and band_sequential = "
+"False, an element is accessed with array[y][x][band]. If there is only one "
+"band, an element is accessed with array[y][x]. Any reference to the array "
+"must be dropped before the last reference to the related dataset is also "
+"dropped."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.IsLayerPrivate:1
+msgid "Index o layer to check"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.IsLayerPrivate:4
+msgid "``True`` if the layer is a private or system table, ``False`` otherwise"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.XSize:1 osgeo.gdal.Band.YSize:1
+#: osgeo.gdal.Dataset.RasterCount:1 osgeo.gdal.Dataset.RasterXSize:1
+#: osgeo.gdal.Dataset.RasterYSize:1
+msgid "int"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.RasterCount:4
+msgid "The number of bands in this dataset."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.RasterCount:6
+msgid "RasterCount"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.RasterXSize:4
+msgid "Raster width in pixels. See :cpp:func:`GDALGetRasterXSize`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.RasterXSize:6
+msgid "RasterXSize"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.RasterYSize:4
+msgid "Raster height in pixels. See :cpp:func:`GDALGetRasterYSize`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.RasterYSize:6
+msgid "RasterYSize"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.ReadAsArray:1
+msgid "Read a window from raster bands into a NumPy array."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.Checksum:4 osgeo.gdal.Band.ReadAsArray:3
+#: osgeo.gdal.Dataset.ReadAsArray:3
+msgid ""
+"The pixel offset to left side of the region of the band to be read. This "
+"would be zero to start from the left side."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.Checksum:7 osgeo.gdal.Band.ReadAsArray:6
+#: osgeo.gdal.Dataset.ReadAsArray:6
+msgid ""
+"The line offset to top side of the region of the band to be read. This would "
+"be zero to start from the top side."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.Checksum:10 osgeo.gdal.Band.ReadAsArray:9
+#: osgeo.gdal.Dataset.ReadAsArray:9
+msgid ""
+"The number of pixels to read in the x direction. By default, equal to the "
+"number of columns in the raster."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.Checksum:13 osgeo.gdal.Band.ReadAsArray:12
+#: osgeo.gdal.Dataset.ReadAsArray:12
+msgid ""
+"The number of rows to read in the y direction. By default, equal to the "
+"number of bands in the raster."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.ReadAsArray:15 osgeo.gdal.Dataset.ReadAsArray:15
+msgid ""
+"The number of columns in the returned array. If not equal to ``win_xsize``, "
+"the returned values will be determined by ``resample_alg``."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.ReadAsArray:19 osgeo.gdal.Dataset.ReadAsArray:19
+msgid ""
+"The number of rows in the returned array. If not equal to ``win_ysize``, the "
+"returned values will be determined by ``resample_alg``."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.ReadAsArray:23 osgeo.gdal.Dataset.ReadAsArray:23
+msgid "The data type of the returned array"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.ReadAsArray:25 osgeo.gdal.Dataset.ReadAsArray:25
+msgid ""
+"Optional buffer into which values will be read. If ``buf_obj`` is specified, "
+"then ``buf_xsize``/``buf_ysize``/``buf_type`` should generally not be "
+"specified."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.ReadAsArray:29 osgeo.gdal.Dataset.ReadAsArray:29
+msgid ""
+"Specifies the resampling algorithm to use when the size of the read window "
+"and the buffer are not equal."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.ReadAsArray:36
+msgid ""
+"Indexes of bands from which data should be read. By default, data will be "
+"read from all bands."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.ReleaseResultSet:1
+msgid ""
+"Release :py:class:`ogr.Layer` returned by :py:meth:`ExecuteSQL` (when not "
+"called as a context manager)"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.ReleaseResultSet:3
+msgid "The sql_lyr object is invalidated after this call."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.ReleaseResultSet:5
+msgid ":py:class:`ogr.Layer` got with :py:meth:`ExecuteSQL`"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.ResetReading:1
+msgid "Reset feature reading to start on the first feature."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.ResetReading:3
+msgid "This affects :py:meth:`GetNextFeature`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.ResetReading:5
+msgid ""
+"Depending on drivers, this may also have the side effect of calling :py:meth:"
+"`OGRLayer.ResetReading` on the layers of this dataset."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.RollbackTransaction:1
+msgid ""
+"Roll back a Dataset to its state before the start of the current transaction."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.RollbackTransaction:3
+msgid "For datasets that support transactions."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.RollbackTransaction:5
+msgid ""
+"If no transaction is active, or the rollback fails, will return :py:const:"
+"`OGRERR_FAILURE`. Datasources which do not support transactions will always "
+"return :py:const:`OGRERR_UNSUPPORTED_OPERATION`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.SetGCPs:1
+msgid "Assign GCPs."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.SetGCPs:3
+msgid "See :cpp:func:`GDALSetGCPs`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.SetGCPs:5
+msgid "a list of :py:class:`GCP` objects"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.SetGCPs:7
+msgid "spatial reference of the GCPs"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.SetGeoTransform:1
+msgid "Set the affine transformation coefficients."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.SetGeoTransform:3
+msgid ""
+"See :py:meth:`GetGeoTransform` for details on the meaning of the "
+"coefficients."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.SetProjection:1 osgeo.gdal.Dataset.SetSpatialRef:1
+msgid "Set the spatial reference system for this dataset."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.SetProjection:3
+msgid "See :cpp:func:`GDALDataset::SetProjection`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.SetProjection:5
+msgid "The projection string in OGC WKT or PROJ.4 format"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.SetStyleTable:1
+msgid "Set dataset style table"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.StartTransaction:1
+msgid "Creates a transaction. See :cpp:func:`GDALDataset::StartTransaction`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.StartTransaction:3
+msgid ""
+"If starting the transaction fails, will return :py:const:`ogr."
+"OGRERR_FAILURE`. Datasources which do not support transactions will always "
+"return :py:const:`OGRERR_UNSUPPORTED_OPERATION`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.TestCapability:1
+msgid "Test if a capability is available."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.TestCapability:3
+msgid "Name of the capability (e.g., :py:const:`ogr.ODsCTransactions`)"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.TestCapability:6
+msgid ""
+"``True`` if the capability is available, ``False`` if invalid or unavailable"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.UpdateFieldDomain:1
+msgid "Update an existing field domain by replacing its definition."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.UpdateFieldDomain:3
+msgid "The existing field domain with matching name will be replaced."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.UpdateFieldDomain:5
+msgid "Requires the :py:const:`ogr.ODsCUpdateFieldDomain` datasset capability."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.UpdateFieldDomain:7
+msgid "Updated field domain."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.UpdateFieldDomain:10
+#: osgeo.gdal.Dataset.UpdateRelationship:10
+msgid "``True`` in case of success"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.UpdateRelationship:1
+msgid "Update an existing relationship by replacing its definition."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.UpdateRelationship:3
+msgid "The existing relationship with matching name will be replaced."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.UpdateRelationship:5
+msgid "Requires the :py:const:`gdal.GDsCUpdateFieldDomain` dataset capability."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.UpdateRelationship:7
+msgid "Updated relationship"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.WriteArray:1
+msgid "Write the contents of a NumPy array to a Dataset."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.WriteArray:3
+msgid "Two- or three-dimensional array containing values to write"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.WriteArray:5 osgeo.gdal.Dataset.WriteArray:5
+msgid ""
+"The pixel offset to left side of the region of the band to be written. This "
+"would be zero to start from the left side."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.WriteArray:8 osgeo.gdal.Dataset.WriteArray:8
+msgid ""
+"The line offset to top side of the region of the band to be written. This "
+"would be zero to start from the top side."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.WriteArray:11
+msgid ""
+"Indexes of bands to which data should be written. By default, it is assumed "
+"that the Dataset contains the same number of bands as levels in ``array``."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Dataset.WriteArray:15
+msgid ""
+"Interleaving, \"band\" or \"pixel\". For band-interleaved writing, ``array`` "
+"should have shape ``(nband, ny, nx)``. For pixel- interleaved-writing, "
+"``array`` should have shape ``(ny, nx, nbands)``."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.WriteArray:11 osgeo.gdal.Dataset.WriteArray:20
+msgid "Resampling algorithm. Placeholder argument, not currently supported."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.WriteArray:18 osgeo.gdal.Dataset.WriteArray:27
+msgid "Error code, or ``gdal.CE_None`` if no error occurred."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Open:1
+msgid ""
+"Opens a raster file as a :py:class:`Dataset` using default options. See :cpp:"
+"func:`GDALOpen`. For more control over how the file is opened, use :py:func:"
+"`OpenEx`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Open:5 osgeo.gdal.OpenEx:4 osgeo.gdal.OpenShared:5
+msgid "name of the file to open"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Open:10 osgeo.gdal.OpenShared:10
+msgid "Dataset, or ``None`` on failure"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Open:12
+msgid ":py:func:`OpenEx`, :py:func:`OpenShared`"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.OpenEx:1
+msgid ""
+"Open a raster or vector file as a :py:class:`Dataset`. See :cpp:func:"
+"`GDALOpenEx`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.OpenEx:6
+msgid ""
+"Flags controlling how the Dataset is opened. Multiple ``gdal.OF_XXX`` flags "
+"may be combined using the ``|`` operator. See :cpp:func:`GDALOpenEx`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.OpenEx:9
+msgid "A list of the names of drivers that may attempt to open the dataset."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.OpenEx:11
+msgid "A dict or list of name=value driver-specific opening options."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.OpenEx:13
+msgid "A list of filenames that are auxiliary to the main filename"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.OpenEx:16
+msgid "Dataset, or ``None`` on failure."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.OpenEx:18
+msgid ":py:func:`Open`, :py:func:`OpenShared`"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.OpenShared:1
+msgid ""
+"Open a raster file as a :py:class:`Dataset`. If the file has already been "
+"opened in the current thread, return a reference to the already-opened :py:"
+"class:`Dataset`.  See :cpp:func:`GDALOpenShared`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.OpenShared:12
+msgid ":py:func:`Open`, :py:func:`OpenEx`"
+msgstr ""
+
+#: ../../../source/api/python/raster_api.rst:50
+msgid "Band"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band:1
+msgid "Python proxy of a :cpp:class:`GDALRasterBand`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.Checksum:1
+msgid ""
+"Computes a checksum from a region of a RasterBand. See :cpp:func:"
+"`GDALChecksumImage`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.Checksum:17
+msgid "checksum value, or -1 in case of error"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.ComputeBandStats:1
+msgid ""
+"Computes the mean and standard deviation of values in this Band. See :cpp:"
+"func:`GDALComputeBandStats`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.ComputeBandStats:4
+msgid "Step between scanlines used to compute statistics."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.ComputeBandStats:7
+msgid "tuple of length 2 with value of mean and standard deviation"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.ComputeBandStats:10
+msgid ""
+":py:meth:`ComputeRasterMinMax`, :py:meth:`ComputeStatistics`, :py:meth:"
+"`GetMaximum`, :py:meth:`GetMinimum`, :py:meth:`GetStatistics`, :py:meth:"
+"`SetStatistics`"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.ComputeRasterMinMax:1
+msgid ""
+"Computes the minimum and maximum values for this Band. See :cpp:func:"
+"`GDALComputeRasterMinMax`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.ComputeRasterMinMax:4
+msgid ""
+"If ``False``, read all pixels in the band. If ``True``, check :py:meth:"
+"`GetMinimum`/:py:meth:`GetMaximum` or read a subsample."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.ComputeRasterMinMax:7
+msgid ""
+"If ``True``, return ``None`` on error. Otherwise, return a tuple with NaN "
+"values."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.ComputeRasterMinMax:13
+msgid ""
+":py:meth:`ComputeBandStats`, :py:meth:`ComputeStatistics`, :py:meth:"
+"`GetMaximum`, :py:meth:`GetMinimum`, :py:meth:`GetStatistics`, :py:meth:"
+"`SetStatistics`"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.ComputeStatistics:1
+msgid ""
+"Compute image statistics. See :cpp:func:`GDALRasterBand::ComputeStatistics`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.ComputeStatistics:4
+msgid ""
+"If ``True``, compute statistics based on overviews or a subset of tiles."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.ComputeStatistics:12 osgeo.gdal.Band.GetStatistics:12
+msgid ""
+"a list with the min, max, mean, and standard deviation of values in the Band."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.ComputeStatistics:16
+msgid ""
+":py:meth:`ComputeBandStats`, :py:meth:`ComputeRasterMinMax`, :py:meth:"
+"`GetMaximum`, :py:meth:`GetMinimum`, :py:meth:`GetStatistics`, :py:meth:"
+"`SetStatistics`"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.CreateMaskBand:1
+msgid ""
+"Add a mask band to the current band. See :cpp:func:`GDALRasterBand::"
+"CreateMaskBand`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.DataType:1
+msgid "GDALDataType"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.DataType:3
+msgid "DataType"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.DeleteNoDataValue:1
+msgid "Remove the nodata value for this band."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.Fill:1
+msgid ""
+"Fill this band with a constant value. See :cpp:func:`GDALRasterBand::Fill`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.Fill:4
+msgid "real component of the fill value"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.Fill:6
+msgid "imaginary component of the fill value"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.FlushCache:1
+msgid "Flush raster data cache. See :cpp:func:`GDALRasterBand::FlushCache`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetActualBlockSize:1
+msgid ""
+"Fetch the actual block size for a given block offset. See :cpp:func:"
+"`GDALRasterBand::GetActualBlockSize`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetActualBlockSize:4
+msgid ""
+"the horizontal block offset for which to calculate the number of valid "
+"pixels, with zero indicating the left most block, 1 the next block and so "
+"forth."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetActualBlockSize:8
+msgid ""
+"the vertical block offset, with zero indicating the top most block, 1 the "
+"next block and so forth."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetActualBlockSize:12
+msgid "tuple with the x and y dimensions of the block"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetBand:1
+msgid "Return the index of this band. See :cpp:func:`GDALRasterBand::GetBand`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetBand:4
+msgid "the (1-based) index of this band"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetBlockSize:1
+msgid ""
+"Fetch the natural block size of this band. See :cpp:func:`GDALRasterBand::"
+"GetBlockSize`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetBlockSize:4
+msgid "list with the x and y dimensions of a block"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetCategoryNames:1
+msgid ""
+"Fetch the list of category names for this raster. See :cpp:func:"
+"`GDALRasterBand::GetCategoryNames`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetCategoryNames:4
+msgid "A list of category names, or ``None``"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetColorInterpretation:1
+msgid ""
+"Get the :cpp:enum:`GDALColorInterp` value for this band. See :cpp:func:"
+"`GDALRasterBand::GetColorInterpretation`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetColorTable:1
+msgid ""
+"Get the color table associated with this band. See :cpp:func:"
+"`GDALRasterBand::GetColorTable`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetColorTable:4
+msgid "ColorTable or ``None``"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetDataCoverageStatus:1
+msgid ""
+"Determine whether a sub-window of the Band contains only data, only empty "
+"blocks, or a mix of both. See :cpp:func:`GDALRasterBand::"
+"GetDataCoverageStatus`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetDataCoverageStatus:15
+msgid ""
+"First value represents a bitwise-or value of the following constants - :py:"
+"const:`gdalconst.GDAL_DATA_COVERAGE_STATUS_DATA` - :py:const:`gdalconst."
+"GDAL_DATA_COVERAGE_STATUS_EMPTY` - :py:const:`gdalconst."
+"GDAL_DATA_COVERAGE_STATUS_UNIMPLEMENTED` Second value represents the "
+"approximate percentage in [0, 100] of pixels in the window that have valid "
+"values"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetDataset:1
+msgid ""
+"Fetch the :py:class:`Dataset` associated with this Band. See :cpp:func:"
+"`GDALRasterBand::GetDataset`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetDefaultHistogram:1
+msgid ""
+"Fetch the default histogram for this band. See :cpp:func:`GDALRasterBand::"
+"GetDefaultHistogram`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetDefaultHistogram:4
+msgid ""
+"List with the following four elements: - lower bound of histogram - upper "
+"bound of histogram - number of buckets in histogram - tuple with counts for "
+"each bucket"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetHistogram:1
+msgid "Compute raster histogram. See :cpp:func:`GDALRasterBand::GetHistogram`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetHistogram:4
+msgid "the lower bound of the histogram"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetHistogram:6
+msgid "the upper bound of the histogram"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetHistogram:8
+msgid "the number of buckets int he histogram"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetHistogram:10
+msgid "if ``True``, add out-of-range values into the first and last buckets"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetHistogram:12
+msgid ""
+"if ``True``, compute an approximate histogram by using subsampling or "
+"overviews"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetHistogram:19
+msgid ""
+"list with length equal to ``buckets``. If ``approx_ok`` is ``False``, each "
+"the value of each list item will equal the number of pixels in that bucket."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetMaskBand:1
+msgid ""
+"Return the mask band associated with this band. See :cpp:func:"
+"`GDALRasterBand::GetMaskBand`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetMaskFlags:1
+msgid ""
+"Return the status flags of the mask band. See :cpp:func:`GDALRasterBand::"
+"GetMaskFlags`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetMaximum:1
+msgid ""
+"Fetch a previously stored maximum value for this band. See :cpp:func:"
+"`GDALRasterBand::GetMaximum`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetMaximum:4
+msgid "The stored maximum value, or ``None`` if no value has been stored."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetMinimum:1
+msgid ""
+"Fetch a previously stored maximum value for this band. See :cpp:func:"
+"`GDALRasterBand::GetMinimum`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetMinimum:4
+msgid "The stored minimum value, or ``None`` if no value has been stored."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetNoDataValue:1
+msgid ""
+"Fetch the nodata value for this band. Unlike :cpp:func:`GDALRasterBand::"
+"GetNoDataValue`, this method handles 64-bit integer data types."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetNoDataValue:5
+msgid "The nodata value, or ``None`` if it has not been set."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetNoDataValueAsInt64:1
+msgid ""
+"Fetch the nodata value for this band. See :cpp:func:`GDALRasterBand::"
+"GetNoDataValueAsInt64`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetNoDataValueAsInt64:4
+msgid ""
+"The nodata value, or ``None`` if it has not been set or the data type of "
+"this band is not :py:const:`gdal.GDT_Int64`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetNoDataValueAsUInt64:1
+msgid ""
+"Fetch the nodata value for this band. See :cpp:func:`GDALRasterBand::"
+"GetNoDataValueAsUInt64`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetNoDataValueAsUInt64:4
+msgid ""
+"The nodata value, or ``None`` if it has not been set or the data type of "
+"this band is not :py:const:`gdal.GDT_UInt64`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetOffset:1
+msgid ""
+"Fetch the raster value offset. See :cpp:func:`GDALRasterBand::GetOffset`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetOffset:4
+msgid "The offset value, or ``0.0``."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetOverview:1
+msgid "Fetch a raster overview. See :cpp:func:`GDALRasterBand::GetOverview`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetOverview:4
+msgid "Overview index between 0 and ``GetOverviewCount() - 1``."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetOverviewCount:1
+msgid ""
+"Return the number of overview layers available. See :cpp:func:"
+"`GDALRasterBand::GetOverviewCount`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetRasterCategoryNames:1
+msgid ""
+"Fetch the list of category names for this band. See :cpp:func:"
+"`GDALRasterBand::GetCategoryNames`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetRasterCategoryNames:4
+msgid "The list of names, or ``None`` if no names exist."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetRasterColorInterpretation:1
+msgid ""
+"Return the color interpretation code for this band. See :cpp:func:"
+"`GDALRasterBand::GetColorInterpretation`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetRasterColorInterpretation:4
+msgid "The color interpretation code (default :py:const:`gdal.GCI_Undefined`)"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetRasterColorTable:1
+msgid ""
+"Fetch the color table associated with this band. See :cpp:func:"
+"`GDALRasterBand::GetColorTable`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetRasterColorTable:4
+msgid "The :py:class:`ColorTable`, or ``None`` if it has not been defined."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetScale:1
+msgid "Fetch the band scale value. See :cpp:func:`GDALRasterBand::GetScale`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetScale:4
+msgid "The scale value, or ``1.0``."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetStatistics:1
+msgid ""
+"Return the minimum, maximum, mean, and standard deviation of all pixel "
+"values in this band. See :cpp:func:`GDALRasterBand::GetStatistics`"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetStatistics:5
+msgid ""
+"If ``True``, allow overviews or a subset of image tiles to be used in "
+"computing the statistics."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetStatistics:8
+msgid ""
+"If ``False``, only return a result if it can be obtained without scanning "
+"the image, i.e. from pre-existing metadata."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetStatistics:16
+msgid ""
+":py:meth:`ComputeBandStats`, :py:meth:`ComputeRasterMinMax`, :py:meth:"
+"`GetMaximum`, :py:meth:`GetMinimum`, :py:meth:`GetStatistics`"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetTiledVirtualMemArray:1
+msgid ""
+"Return a NumPy array for the band, seen as a virtual memory mapping with a "
+"tile organization. An element is accessed with array[tiley][tilex][y][x]. "
+"Any reference to the array must be dropped before the last reference to the "
+"related dataset is also dropped."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetUnitType:1
+msgid ""
+"Return a name for the units of this raster's values. See :cpp:func:"
+"`GDALRasterBand::GetUnitType`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.GetVirtualMemArray:1
+#: osgeo.gdal.Band.GetVirtualMemAutoArray:1
+msgid ""
+"Return a NumPy array for the band, seen as a virtual memory mapping. An "
+"element is accessed with array[y][x]. Any reference to the array must be "
+"dropped before the last reference to the related dataset is also dropped."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.HasArbitraryOverviews:1
+msgid ""
+"Check for arbitrary overviews. See :cpp:func:`GDALRasterBand::"
+"HasArbitraryOverviews`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.IsMaskBand:1
+msgid ""
+"Returns whether the band is a mask band. See :cpp:func:`GDALRasterBand::"
+"IsMaskBand`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.ReadAsArray:1
+msgid "Read a window of this raster band into a NumPy array."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.ReadAsMaskedArray:1
+msgid "Read a window of this raster band into a NumPy masked array."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.ReadAsMaskedArray:3
+msgid "Values of the mask will be ``True`` where pixels are invalid."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.ReadAsMaskedArray:5
+msgid "See :py:meth:`ReadAsArray` for a description of arguments."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.SetCategoryNames:1
+msgid ""
+"Set the category names for this band. See :cpp:func:`GDALRasterBand::"
+"SetCategoryNames`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.SetColorInterpretation:1
+msgid ""
+"Set color interpretation of the band See :cpp:func:`GDALRasterBand::"
+"SetColorInterpretation`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.SetColorInterpretation:4
+msgid "A color interpretation code such as :py:const:`gdal.GCI_RedBand`"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.SetColorTable:1
+msgid ""
+"Set the raster color table. See :cpp:func:`GDALRasterBand::SetColorTable`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.SetDefaultHistogram:1
+msgid ""
+"Set default histogram. See :cpp:func:`GDALRasterBand::SetDefaultHistogram`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.SetDefaultHistogram:4
+msgid "minimum value"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.SetDefaultHistogram:6
+msgid "maximum value"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.SetDefaultHistogram:8
+msgid "list of pixel counts for each bucket"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.SetDefaultHistogram:14
+msgid ":py:meth:`SetHistogram`"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.SetNoDataValue:1
+msgid ""
+"Set the nodata value for this band. Unlike :cpp:func:`GDALRasterBand::"
+"SetNoDataValue`, this method handles 64-bit integer types."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.SetNoDataValue:5
+msgid "The nodata value to set"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.SetOffset:1
+msgid "Set scaling offset. See :cpp:func:`GDALRasterBand::SetOffset`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.SetOffset:10
+msgid ":py:meth:`SetScale`"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.SetRasterCategoryNames:1
+msgid "Deprecated.  Alternate name for :py:meth:`SetCategoryNames`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.SetRasterColorInterpretation:1
+msgid "Deprecated.  Alternate name for :py:meth:`SetColorInterpretation`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.SetRasterColorTable:1
+msgid "Deprecated. Alternate name for :py:meth:`SetColorTable`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.SetScale:1
+msgid "Set scaling ratio. See :cpp:func:`GDALRasterBand::SetScale`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.SetScale:10
+msgid ":py:meth:`SetOffset`"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.SetStatistics:1
+msgid "Set statistics on band. See :cpp:func:`GDALRasterBand::SetStatistics`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.SetStatistics:13
+msgid ""
+":py:const:`CE_None` on apparent success or :py:const:`CE_Failure` on "
+"failure.  This method cannot detect whether metadata will be properly saved "
+"and so may return :py:const:`gdal.`CE_None` even if the statistics will "
+"never be saved."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.SetStatistics:19
+msgid ""
+":py:meth:`ComputeBandStats`, :py:meth:`ComputeRasterMinMax`, :py:meth:"
+"`ComputeStatistics`, :py:meth:`GetMaximum`, :py:meth:`GetMinimum`, :py:meth:"
+"`GetStatistics`"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.SetUnitType:1
+msgid "Set unit type. See :cpp:func:`GDALRasterBand::SetUnitType`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.WriteArray:1
+msgid "Write the contents of a NumPy array to a Band."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.WriteArray:3
+msgid "Two-dimensional array containing values to write"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.WriteRaster:1
+msgid "Write the contents of a buffer to a dataset."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.XSize:3
+msgid "XSize"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.Band.YSize:3
+msgid "YSize"
+msgstr ""
+
+#: ../../../source/api/python/raster_api.rst:62
+msgid "Other"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.RasterAttributeTable:1
+msgid "Proxy of C++ GDALRasterAttributeTableShadow class."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.ColorTable:1
+msgid "Proxy of C++ GDALColorTableShadow class."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.ColorEntry:1
+msgid "Proxy of C++ GDALColorEntry class."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.ColorEntry.c1:1 osgeo.gdal.ColorEntry.c2:1
+#: osgeo.gdal.ColorEntry.c3:1 osgeo.gdal.ColorEntry.c4:1
+msgid "short"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.ColorEntry.c1:3
+msgid "c1"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.ColorEntry.c2:3
+msgid "c2"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.ColorEntry.c3:3
+msgid "c3"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.ColorEntry.c4:3
+msgid "c4"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.GCP:1
+msgid "Proxy of C++ GDAL_GCP class."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.GCP.GCPLine:1 osgeo.gdal.GCP.GCPPixel:1 osgeo.gdal.GCP.GCPX:1
+#: osgeo.gdal.GCP.GCPY:1 osgeo.gdal.GCP.GCPZ:1
+msgid "double"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.GCP.GCPLine:3
+msgid "GCPLine"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.GCP.GCPPixel:3
+msgid "GCPPixel"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.GCP.GCPX:3
+msgid "GCPX"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.GCP.GCPY:3
+msgid "GCPY"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.GCP.GCPZ:3
+msgid "GCPZ"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.GCP.Id:1 osgeo.gdal.GCP.Info:1
+msgid "p.char"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.GCP.Id:3
+msgid "Id"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.GCP.Info:3
+msgid "Info"
+msgstr ""

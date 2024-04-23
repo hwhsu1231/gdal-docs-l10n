@@ -1,0 +1,254 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:5
+msgid ""
+"RFC 70: Guessing output format from output file name extension for utilities"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:8
+msgid "Author:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:8
+msgid "Even Rouault"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:9
+msgid "Contact:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:9
+msgid "even.rouault@spatialys.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:10
+msgid "Started:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:10
+msgid "Aug 2017"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:11
+msgid "Status:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:11
+msgid "Adopted, implemented"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:12
+msgid "Implementation version:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:12
+msgid "2.3.0"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:16
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:18
+msgid ""
+"This proposal is to add syntaxic sugar to make GDAL and OGR command line "
+"utilities, so they take into account the extension of the output filename to "
+"guess which output driver to use, when it is not explicitly specified with -"
+"f / -of switch."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:24
+msgid "Motivation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:26
+msgid ""
+"Currently command line utilities require to explicitly specify the output "
+"format when not wishing to use the default format (generally GeoTIFF for "
+"raster, and Shapefile for vector). But this is rather counter-intuitive. For "
+"example \"gdal_translate in.tif out.png\" will generate a GeoTIFF, and "
+"\"ogr2ogr out.gpkg in.shp\" a shapefile. So you have to specify respectively "
+"-of PNG and -f GPKG to get the expected result."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:34
+msgid ""
+"Guessing the output format from the extension of the output filename is for "
+"example a behavior found in ImageMagick convert utility, or in OpenJPEG "
+"opj_compress/opj_decompress utilities."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:39
+msgid "Changes in C/C++ and Python utilities"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:41
+msgid ""
+"Command line utilities, when neither -f nor -of are specified (note: since "
+"r39878 both switches can be indifferently used), will loop through the "
+"registered drivers and check if one or several drivers, with output "
+"capabilities, declare to recognize the extension of the output filename."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:46
+msgid ""
+"When one and only one driver declares this extension (.tif, .png, .jpg etc), "
+"it will be used automatically"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:48
+msgid ""
+"When several drivers declare this extension (for example KML and LIBKML for ."
+"kml), the utility will select the first registered driver (except netCDF "
+"instead of GMT for .nc files), and a warning is emitted specifying which "
+"driver is used"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:52
+msgid ""
+"When no driver declares this extension, and the extension is not empty (e.g "
+"a .mpg filename), the utility will error out"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:55
+msgid "For completeness:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:57
+msgid ""
+"When there's no extension, and no prefix is recognized (see below), the "
+"default output driver will be silently used, as currently"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:60
+msgid ""
+"Since at least GDAL 1.10, the base of this logic already exists since a "
+"warning is emitted for C/C++ utilities, when the extension of the output "
+"format is known to be recognized by another driver than the default output "
+"driver."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:65
+msgid ""
+"Similarly, for vector output, if doing something like \"ogr2ogr PG:"
+"dbname=mydb out.shp\", a PG:dbname=mydb directory is created with "
+"shapefiles, instead of ingesting the shapefile into PostgreSQL. A warning is "
+"emitted in that case since the PG driver declares the PG: prefix in its "
+"metadata. The new behavior will be to imply the -update switch in such "
+"situation."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:72
+msgid ""
+"When the utilities are available as library functions (GDALTranslate(), "
+"etc.), output format guessing will also be applied if the -f/-of switch is "
+"not specified"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:77
+msgid "Changes in SWIG bindings"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:79
+msgid ""
+"For librarified utilities (gdal.Translate, etc.), the format argument now "
+"defaults to None."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:83
+msgid "Potential issues"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:85
+msgid ""
+"There might be some fragility with the new logic in the situation where a "
+"GDAL version has only one driver that supports extension xxx, but a later "
+"version adds another driver that also supports extension xxx (or another "
+"distribution of the same version has a plugin that handles xxx). So scripts "
+"that did \"gdal_translate in out.xxx\" would now error out in the next "
+"version since several drivers are available."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:92
+msgid ""
+"Bottom line: always specify the output driver when reliability/"
+"reproducibility is desired."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:95
+msgid ""
+"This RFC mostly helps for interactive conversions where the less you type "
+"the better."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:99
+msgid "Backward compatibility"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:101
+msgid ""
+"This will break scripts that use an output filename whose extension is "
+"matched by a driver which is not the default one. This incompatibility is "
+"rather unlikely since previous GDAL versions already emit a warning in this "
+"situation (for C/C++ utilities only. for Python utilities default driver is "
+"silently used), so people have likely specified the output driver if they "
+"really want to do \"gdal_translate in.tif out.png -of GTiff\"."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:109
+msgid "MIGRATION_GUIDE.TXT will mention those potential caveats."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:112
+msgid "Testing"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:114
+msgid ""
+"The existing autotest suite should continue to pass (with a few changes "
+"related to tests for the current behavior)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:118
+msgid "Implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:120
+msgid "Implementation will be done by Even Rouault"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:122
+msgid ""
+"Proposed implementation is in `https://github.com/rouault/gdal2/tree/rfc70 "
+"<https://github.com/rouault/gdal2/tree/rfc70>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:125
+msgid ""
+"Diff: `https://github.com/OSGeo/gdal/compare/trunk...rouault:rfc70 <https://"
+"github.com/OSGeo/gdal/compare/trunk...rouault:rfc70>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:129
+msgid "Voting history"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc70_output_format_guess.rst:131
+msgid "+1 from JukkaR, TamasS, DanielM and EvenR"
+msgstr ""

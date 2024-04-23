@@ -1,0 +1,75 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/cmake.rst:5
+msgid "Using GDAL in CMake projects"
+msgstr ""
+
+#: ../../../source/development/cmake.rst:9
+msgid ""
+"The recommended way to use the GDAL library 3.5 or higher in a CMake project "
+"is to link to the imported library target ``GDAL::GDAL`` provided by the "
+"CMake configuration which comes with the library. Typical usage is:"
+msgstr ""
+
+#: ../../../source/development/cmake.rst:13
+msgid ""
+"find_package(GDAL CONFIG REQUIRED)\n"
+"\n"
+"target_link_libraries(MyApp PRIVATE GDAL::GDAL)"
+msgstr ""
+
+#: ../../../source/development/cmake.rst:19
+msgid ""
+"By adding the imported library target ``GDAL::GDAL`` to the target link "
+"libraries, CMake will also pass the include directories to the compiler."
+msgstr ""
+
+#: ../../../source/development/cmake.rst:23
+msgid ""
+"The CMake command ``find_package`` will look for the configuration in a "
+"number of places. The lookup can be adjusted for all packages by setting the "
+"cache variable or environment variable ``CMAKE_PREFIX_PATH``. In particular, "
+"CMake will consult (and set) the cache variable ``GDAL_DIR``."
+msgstr ""
+
+#: ../../../source/development/cmake.rst:29
+msgid ""
+"Before GDAL 3.5, you can use the following to create the imported library "
+"target ``GDAL::GDAL``:"
+msgstr ""
+
+#: ../../../source/development/cmake.rst:31
+msgid ""
+"find_package(GDAL CONFIG QUIET)\n"
+"if(NOT TARGET GDAL::GDAL)\n"
+"    find_package(GDAL REQUIRED)\n"
+"    if(NOT TARGET GDAL::GDAL)\n"
+"        add_library(GDAL IMPORTED)\n"
+"        if(DEFINED GDAL_LIBRARIES)\n"
+"            target_link_libraries(GDAL INTERFACE \"${GDAL_LIBRARIES}\")\n"
+"            add_library(GDAL::GDAL ALIAS GDAL)\n"
+"        else()\n"
+"            message(FATAL_ERROR \"Missing GDAL_LIBRARIES\")\n"
+"        endif()\n"
+"    endif()\n"
+"endif()\n"
+"\n"
+"target_link_libraries(MyApp PRIVATE GDAL::GDAL)"
+msgstr ""

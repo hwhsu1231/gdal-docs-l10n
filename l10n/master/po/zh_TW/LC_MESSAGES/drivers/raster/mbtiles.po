@@ -1,0 +1,503 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/mbtiles.rst:5
+#: ../../../source/drivers/raster/mbtiles.rst:7
+msgid "MBTiles"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:9
+msgid "libsqlite3"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:11
+msgid ""
+"The MBTiles driver allows reading rasters in the MBTiles format, which is a "
+"specification for storing tiled map data in SQLite databases."
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:15
+msgid ""
+"Starting with GDAL 2.1, the MBTiles driver has creation and write support "
+"for MBTiles raster datasets."
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:18
+msgid ""
+"Starting with GDAL 2.3, the MBTiles driver has read and write support for "
+"MBTiles vector datasets. For standalone Mapbox Vector Tile files or set of "
+"MVT files, see the :ref:`MVT <vector.mvt>` driver. Note: vector write "
+"support requires GDAL to be built with GEOS."
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:23
+msgid ""
+"GDAL/OGR must be compiled with OGR SQLite driver support, and JPEG and PNG "
+"drivers."
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:26
+msgid ""
+"The SRS is always the `Pseudo-Mercator <https://en.wikipedia.org/wiki/"
+"Web_Mercator_projection>`__ (a.k.a Google Mercator) projection, EPSG:3857."
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:29
+msgid ""
+"Starting with GDAL 2.3, the driver will open a dataset as RGBA. For previous "
+"versions, the driver will try to determine the number of bands by probing "
+"the content of one tile. It is possible to alter this behavior by defining "
+"the :config:`MBTILES_BAND_COUNT` configuration option (or starting with GDAL "
+"2.1, the :oo:`BAND_COUNT` open option) to the number of bands. The values "
+"supported are 1, 2, 3 or 4. Four band (Red,Green,Blue,Alpha) dataset gives "
+"the maximum compatibility with the various encodings of tiles that can be "
+"stored."
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:38
+msgid ""
+"The driver will use the 'bounds' metadata in the metadata table and do "
+"necessary tile clipping, if needed, to respect that extent. However that "
+"information being optional, if omitted, the driver will use the extent of "
+"the tiles at the maximum zoom level. The user can also specify the :oo:"
+"`USE_BOUNDS=NO` open option to force the use of the actual extent of tiles "
+"at the maximum zoom level. Or it can specify any of MINX/MINY/MAXX/MAXY to "
+"have a custom extent."
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:46
+msgid ""
+"The driver can retrieve pixel attributes encoded according to the UTFGrid "
+"specification available in some MBTiles files. They can be obtained with the "
+"gdallocationinfo utility, or with a GetMetadataItem(\"Pixel_iCol_iLine\", "
+"\"LocationInfo\") call on a band object."
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:53
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:64
+msgid "Configuration options"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:66
+#: ../../../source/drivers/raster/mbtiles.rst:76
+msgid "The following open options are available:"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:74
+msgid "Opening options"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:78
+#: ../../../source/drivers/raster/mbtiles.rst:257
+msgid "Raster and vector:"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:116
+#: ../../../source/drivers/raster/mbtiles.rst:276
+msgid "Raster only:"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:158
+msgid "Vector only:"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:178
+msgid "Raster creation issues"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:180
+msgid ""
+"Depending of the number of bands of the input dataset and the tile format "
+"selected, the driver will do the necessary conversions to be compatible with "
+"the tile format. When using the CreateCopy() API (such as with :ref:"
+"`gdal_translate`), automatic reprojection of the input dataset to EPSG:3857 "
+"(Pseudo-Mercator) will be done, with selection of the appropriate zoom level."
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:187
+msgid ""
+"Fully transparent tiles will not be written to the database, as allowed by "
+"the format."
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:190
+msgid ""
+"The driver implements the Create() and IWriteBlock() methods, so that "
+"arbitrary writing of raster blocks is possible, enabling the direct use of "
+"MBTiles as the output dataset of utilities such as gdalwarp."
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:194
+msgid ""
+"On creation, raster blocks can be written only if the geotransformation "
+"matrix has been set with SetGeoTransform() This is effectively needed to "
+"determine the zoom level of the full resolution dataset based on the pixel "
+"resolution, dataset and tile dimensions."
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:199
+msgid ""
+"Technical/implementation note: in the general case, GDAL blocks do not "
+"exactly match a single MBTiles tile. In which case, each GDAL block will "
+"overlap four MBTiles tiles. This is easily handled on the read side, but on "
+"creation/update side, such configuration could cause numerous decompression/ "
+"recompression of tiles to be done, which might cause unnecessary quality "
+"loss when using lossy compression (JPEG). To avoid that, the driver will "
+"create a temporary database next to the main MBTiles file to store partial "
+"MBTiles tiles in a lossless (and uncompressed) way. Once a tile has received "
+"data for its four quadrants and for all the bands (or the dataset is closed "
+"or explicitly flushed with FlushCache()), those uncompressed tiles are "
+"definitely transferred to the MBTiles file with the appropriate compression. "
+"All of this is transparent to the user of GDAL API/utilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:214
+msgid "Tile formats"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:216
+msgid ""
+"MBTiles can store tiles in PNG, JPEG or WEBP (since 3.8). Support for those "
+"tile formats depend if the underlying drivers are available in GDAL. By "
+"default, GDAL will PNG tiles."
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:220
+msgid ""
+"It is possible to select the tile format by setting the creation/open option "
+"TILE_FORMAT to one of PNG, PNG8, JPEG or WEBP. When using JPEG, the alpha "
+"channel will not be stored."
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:224
+msgid ""
+"PNG8 can be selected to use 8-bit PNG with a color table up to 256 colors. "
+"On creation, an optimized color table is computed for each tile. The DITHER "
+"option can be set to YES to use Floyd/Steinberg dithering algorithm, which "
+"spreads the quantization error on neighbouring pixels for better rendering "
+"(note however than when zooming in, this can cause non desirable visual "
+"artifacts). Setting it to YES will generally cause less effective "
+"compression. Note that at that time, such an 8-bit PNG formulation is only "
+"used for fully opaque tiles, as the median-cut algorithm currently "
+"implemented to compute the optimal color table does not support alpha "
+"channel (even if PNG8 format would potentially allow color table with "
+"transparency). So when selecting PNG8, non fully opaque tiles will be stored "
+"as 32-bit PNG."
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:238
+msgid "Vector creation issues"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:240
+msgid ""
+"Tiles are generated with WebMercator (EPSG:3857) projection. It is possible "
+"to decide at which zoom level ranges a given layer is written. Several "
+"layers can be written but the driver has only write-once support for vector "
+"data. For writing several vector datasets into MBTiles file an intermediate "
+"format like GeoPackage must be used as a container so that all layers can be "
+"converted at the same time. Write-once support means also that existing "
+"vector layers can't be edited."
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:248
+msgid ""
+"Part of the conversion is multi-threaded by default, using as many threads "
+"as there are cores. The number of threads used can be controlled with the :"
+"config:`GDAL_NUM_THREADS` configuration option."
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:253
+msgid "Creation options"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:255
+msgid "The following creation options are available:"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:341
+msgid "Vector only (GDAL >= 2.3):"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:439
+msgid "Layer configuration (vector)"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:441
+msgid ""
+"The above mentioned CONF dataset creation option can be set to a string "
+"whose value is a JSon serialized document such as the below one:"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:446
+msgid ""
+"{\n"
+"    \"boundaries_lod0\": {\n"
+"        \"target_name\": \"boundaries\",\n"
+"        \"description\": \"Country boundaries\",\n"
+"        \"minzoom\": 0,\n"
+"        \"maxzoom\": 2\n"
+"    },\n"
+"    \"boundaries_lod1\": {\n"
+"        \"target_name\": \"boundaries\",\n"
+"        \"minzoom\": 3,\n"
+"        \"maxzoom\": 5\n"
+"    }\n"
+"}"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:460
+msgid ""
+"*boundaries_lod0* and *boundaries_lod1* are the name of the OGR layers that "
+"are created into the target MVT dataset. They are mapped to the MVT target "
+"layer *boundaries*."
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:464
+msgid ""
+"It is also possible to get the same behavior with the below layer creation "
+"options, although that is not convenient in the ogr2ogr use case."
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:469
+msgid "Layer creation options (vector)"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:496
+msgid "Overviews (raster)"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:498
+msgid ""
+"gdaladdo / BuildOverviews() can be used to compute overviews. Only power-of-"
+"two overview factors (2,4,8,16,...) are supported."
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:501
+msgid ""
+"If more overview levels are specified than available, the extra ones are "
+"silently ignored."
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:504
+msgid ""
+"Overviews can also be cleared with the -clean option of gdaladdo (or "
+"BuildOverviews() with nOverviews=0)"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:508
+msgid "Vector tiles"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:510
+msgid ""
+"Starting with GDAL 2.3, the MBTiles driver can read MBTiles files containing "
+"vector tiles conforming to the Mapbox Vector Tile format (format=pbf)."
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:514
+msgid ""
+"The driver requires the 'metadata' table to contain a name='json' entry, "
+"that has a 'vector_layers' array describing layers and their schema. See :"
+"ref:`metadata.json <mvt_metadata_json>`"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:518
+msgid ""
+"Note: The driver will make no effort of stitching together geometries for "
+"features that overlap several tiles."
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:522
+msgid "Examples:"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:524
+msgid "Accessing a remote MBTiles raster :"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:528
+msgid ""
+"$ gdalinfo /vsicurl/http://a.tiles.mapbox.com/v3/kkaefer.iceland.mbtiles"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:530
+#: ../../../source/drivers/raster/mbtiles.rst:592
+msgid "Output:"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:534
+msgid ""
+"Driver: MBTiles/MBTiles\n"
+"Files: /vsicurl/http://a.tiles.mapbox.com/v3/kkaefer.iceland.mbtiles\n"
+"Size is 16384, 16384\n"
+"Coordinate System is:\n"
+"PROJCS[\"WGS 84 / Pseudo-Mercator\",\n"
+"    GEOGCS[\"WGS 84\",\n"
+"        DATUM[\"WGS_1984\",\n"
+"            SPHEROID[\"WGS 84\",6378137,298.257223563,\n"
+"                AUTHORITY[\"EPSG\",\"7030\"]],\n"
+"            AUTHORITY[\"EPSG\",\"6326\"]],\n"
+"        PRIMEM[\"Greenwich\",0,\n"
+"            AUTHORITY[\"EPSG\",\"8901\"]],\n"
+"        UNIT[\"degree\",0.0174532925199433,\n"
+"            AUTHORITY[\"EPSG\",\"9122\"]],\n"
+"        AUTHORITY[\"EPSG\",\"4326\"]],\n"
+"    PROJECTION[\"Mercator_1SP\"],\n"
+"    PARAMETER[\"central_meridian\",0],\n"
+"    PARAMETER[\"scale_factor\",1],\n"
+"    PARAMETER[\"false_easting\",0],\n"
+"    PARAMETER[\"false_northing\",0],\n"
+"    UNIT[\"metre\",1,\n"
+"        AUTHORITY[\"EPSG\",\"9001\"]],\n"
+"    AXIS[\"X\",EAST],\n"
+"    AXIS[\"Y\",NORTH],\n"
+"    EXTENSION[\"PROJ4\",\"+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 "
+"+lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  "
+"+no_defs\"],\n"
+"    AUTHORITY[\"EPSG\",\"3857\"]]\n"
+"Origin = (-3757031.250000000000000,11271093.750000000000000)\n"
+"Pixel Size = (152.873992919921875,-152.873992919921875)\n"
+"Image Structure Metadata:\n"
+"  INTERLEAVE=PIXEL\n"
+"Corner Coordinates:\n"
+"Upper Left  (-3757031.250,11271093.750) ( 33d44'59.95\"W, 70d36'45.36\"N)\n"
+"Lower Left  (-3757031.250, 8766406.250) ( 33d44'59.95\"W, 61d36'22.97\"N)\n"
+"Upper Right (-1252343.750,11271093.750) ( 11d14'59.98\"W, 70d36'45.36\"N)\n"
+"Lower Right (-1252343.750, 8766406.250) ( 11d14'59.98\"W, 61d36'22.97\"N)\n"
+"Center      (-2504687.500,10018750.000) ( 22d29'59.97\"W, 66d30'47.68\"N)\n"
+"Band 1 Block=256x256 Type=Byte, ColorInterp=Red\n"
+"  Overviews: 8192x8192, 4096x4096, 2048x2048, 1024x1024, 512x512\n"
+"  Mask Flags: PER_DATASET ALPHA\n"
+"  Overviews of mask band: 8192x8192, 4096x4096, 2048x2048, 1024x1024, "
+"512x512\n"
+"Band 2 Block=256x256 Type=Byte, ColorInterp=Green\n"
+"  Overviews: 8192x8192, 4096x4096, 2048x2048, 1024x1024, 512x512\n"
+"  Mask Flags: PER_DATASET ALPHA\n"
+"  Overviews of mask band: 8192x8192, 4096x4096, 2048x2048, 1024x1024, "
+"512x512\n"
+"Band 3 Block=256x256 Type=Byte, ColorInterp=Blue\n"
+"  Overviews: 8192x8192, 4096x4096, 2048x2048, 1024x1024, 512x512\n"
+"  Mask Flags: PER_DATASET ALPHA\n"
+"  Overviews of mask band: 8192x8192, 4096x4096, 2048x2048, 1024x1024, "
+"512x512\n"
+"Band 4 Block=256x256 Type=Byte, ColorInterp=Alpha\n"
+"  Overviews: 8192x8192, 4096x4096, 2048x2048, 1024x1024, 512x512"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:585
+msgid ""
+"Reading pixel attributes encoded according to the UTFGrid specification :"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:590
+msgid ""
+"$ gdallocationinfo /vsicurl/http://a.tiles.mapbox.com/v3/mapbox.geography-"
+"class.mbtiles -wgs84 2 49 -b 1 -xml"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:596
+msgid ""
+"<Report pixel=\"33132\" line=\"22506\">\n"
+"  <BandReport band=\"1\">\n"
+"    <LocationInfo>\n"
+"      <Key>74</Key>\n"
+"      <JSon>{\"admin\":\"France\",\"flag_png\":"
+"\"iVBORw0KGgoAAAANSUhEUgAAAGQAAABDEAIAAAC1uevOAAAACXBIWXMAAABIAAAASABGyWs+AAAABmJLR0T///////8JWPfcAAABPklEQVR42u3cMRLBQBSA4Zc9CgqcALXC4bThBA5gNFyFM+wBVNFqjYTszpfi1Sm+"
+"+bOv2ETEdNK2pc/"
+"T9ny977rCn+fx8rjtc7dMmybnxXy9KncGWGCBBRZYYIEFFlhggQUWWGCBBRZYYIE1/"
+"GzSLB0CLLAUCyywwAILLLDAAgsssGyFlcAqnJRiKRZYYIEFFlhggQUWWGDZCsFSLLDAAgsssP4DazQowVIssMACy1ZYG6wP30qxwFIssMACCyywwOr/"
+"HAYWWIplKwQLLLDAAgssZyywwAILLLDAqh6We4VgKZatECywFAsssMACCyywwAILLLBshWCBpVhggQUWWGCBBRZYYIFlKwQLLMUCCyywwAILLLBG+T8ZsMBSLFshWIoFFlhg/"
+"fp8BhZYigUWWGB9C+t9ggUWWGD5FA44XxBz7mcwZM9VAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDExLTA5LTAyVDIzOjI5OjIxLTA0OjAwcQbBWgAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxMS0wMi0yOFQyMTo0ODozMS0wNTowMJkeu+wAAABSdEVYdHN2ZzpiYXNlLXVyaQBmaWxlOi8vL2hvbWUvYWovQ29kZS90bS1tYXN0ZXIvZXhhbXBsZXMvZ2VvZ3JhcGh5LWNsYXNzL2ZsYWdzL0ZSQS5zdmen2JoeAAAAAElFTkSuQmCC\"}"
+"</JSon>\n"
+"    </LocationInfo>\n"
+"    <Value>238</Value>\n"
+"  </BandReport>\n"
+"</Report>"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:606
+msgid "Converting a dataset to MBTiles and adding overviews :"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:610
+msgid ""
+"$ gdal_translate my_dataset.tif my_dataset.mbtiles -of MBTILES\n"
+"$ gdaladdo -r average my_dataset.mbtiles 2 4 8 16"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:613
+msgid "Opening a vector MBTiles:"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:617
+msgid ""
+"$ ogrinfo /home/even/gdal/data/mvt/out.mbtiles\n"
+"INFO: Open of `/home/even/gdal/data/mvt/out.mbtiles'\n"
+"      using driver `MBTiles' successful.\n"
+"Metadata:\n"
+"  ZOOM_LEVEL=5\n"
+"  name=out.mbtiles\n"
+"  description=out.mbtiles\n"
+"  version=2\n"
+"  minzoom=0\n"
+"  maxzoom=5\n"
+"  center=16.875000,44.951199,5\n"
+"  bounds=-180.000000,-85.051129,180.000000,83.634101\n"
+"  type=overlay\n"
+"  format=pbf\n"
+"1: ne_10m_admin_1_states_provinces_shpgeojson (Multi Polygon)"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:633
+msgid "Converting a GeoPackage to a Vector tile MBTILES:"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:637
+msgid "$ ogr2ogr -f MBTILES target.mbtiles source.gpkg -dsco MAXZOOM=10"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:640
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:642
+msgid "`MBTiles specification <https://github.com/mapbox/mbtiles-spec>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:643
+msgid ""
+"`UTFGrid specification <https://github.com/mapbox/utfgrid-spec/blob/"
+"master/1.0/utfgrid.md>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/mbtiles.rst:645
+msgid ":ref:`Mapbox Vector tiles driver <vector.mvt>`"
+msgstr ""

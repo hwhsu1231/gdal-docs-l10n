@@ -1,0 +1,168 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/csw.rst:4
+msgid "CSW - OGC CSW (Catalog Service for the Web)"
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:6
+msgid "CSW"
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:8
+msgid "libcurl"
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:10
+msgid ""
+"This driver can connect to a OGC CSW service. It supports CSW 2.0.2 "
+"protocol. GDAL/OGR must be built with Curl support in order to the CSW "
+"driver to be compiled. And the GML driver should be set-up for read support "
+"(thus requiring GDAL/OGR to be built with Xerces or Expat support)."
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:16
+msgid "It retrieves records with Dublin Core metadata."
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:19
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:24
+msgid "Dataset name syntax"
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:26
+msgid ""
+"The minimal syntax to open a CSW datasource is : *CSW:* and the URL open "
+"option, or *CSW:http://path/to/CSW/endpoint*"
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:30
+msgid "Filtering"
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:32
+msgid ""
+"The driver will forward any spatial filter set with SetSpatialFilter() to "
+"the server. It also makes its best effort to do the same for attribute "
+"filters set with SetAttributeFilter() when possible (turning OGR SQL "
+"language into OGC filter description)."
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:37
+msgid ""
+"The *anytext* field can be queried to do a search in any text field. Note "
+"that we always return it as null content however in OGR side, to avoid "
+"duplicating information."
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:42
+msgid "Issues"
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:44
+msgid ""
+"Some servers do not respect EPSG axis order, in particular latitude, "
+"longitude order for WGS 84 geodetic coordinates, so it might be needed to "
+"specify the :config:`GML_INVERT_AXIS_ORDER_IF_LAT_LONG=NO` configuration "
+"option in those cases."
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:50
+msgid "Open options"
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:86
+msgid "Configuration options"
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:88
+msgid ""
+"The following :ref:`configuration options <configoptions>` are available:"
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:91
+msgid ":copy-config:`GML_INVERT_AXIS_ORDER_IF_LAT_LONG`"
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:94
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:96
+msgid "Listing all the records of a CSW server:"
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:100
+msgid "ogrinfo -ro -al -noextent CSW:http://catalog.data.gov/csw"
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:102
+msgid ""
+"Listing all the records of a CSW server with spatial and an attribute filter "
+"on a give field:"
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:107
+msgid ""
+"ogrinfo -ro -al -noextent CSW:http://catalog.data.gov/csw -spat 2 49 2 49 -"
+"where \"subject LIKE '%mineralogy%'\""
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:109
+msgid ""
+"Listing all the records of a CSW server that matches a text on any text "
+"field:"
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:114
+msgid ""
+"ogrinfo -ro -al -q CSW:http://catalog.data.gov/csw -spat 2 49 2 49 -where "
+"\"anytext LIKE '%France%'\""
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:116
+msgid "Listing all the records of a CSW server as ISO 19115/19119:"
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:120
+msgid ""
+"ogrinfo -ro -al -q CSW:http://catalog.data.gov/csw -oo OUTPUT_SCHEMA=gmd"
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:123
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:125
+msgid "`OGC CSW Standard <http://www.opengeospatial.org/standards/cat>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:126
+msgid ":ref:`GML driver documentation <vector.gml>`"
+msgstr ""

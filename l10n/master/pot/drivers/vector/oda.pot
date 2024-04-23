@@ -1,0 +1,412 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/oda.rst:4
+msgid "Open Design Alliance - ODA Platform"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:6
+msgid ""
+"ODA Platform (previously named Teigha) is required to enable GDAL support "
+"for reading AutoCAD DWG and Microstation DGN v8 files. GDAL/OGR must be "
+"built with ODA support in order to enable these drivers."
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:10
+msgid "ODA required products"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:12
+msgid ""
+"ODA Platform includes several SDK. Drawings SDK provides access to all data "
+"in .dwg and .dgn through an object-oriented API. It is required to compile "
+"GDAL. Since Kernel SDK is required by all products, these two products must "
+"be downloaded:"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:15
+msgid "Kernel"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:16
+msgid "Drawings"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:18
+msgid ""
+"These libraries are not publicly available. You have to became a member to "
+"get access to the libraries. Upon authentication the libraries are available "
+"from: `ODA Member Downloads <https://www.opendesign.com/members/"
+"memberfiles>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:23
+msgid "Get the libraries"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:25
+msgid ""
+"To selected the appropriate files to download, consider the following ODA "
+"name conventions (for Linux):"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:27
+msgid "lnx - Linux"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:28
+msgid "X86, X64 - indicates X86 or X64 platform"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:29
+msgid "4.4, 4.7, 4.8, 4.9, 5.2, 5.3, 6.3, 7.2, 8.3 - GCC versions"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:30
+msgid "dll - indicates a shared library version"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:31
+msgid "pic - compiled with Position Independent Code option"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:33
+msgid ""
+"ODA archives also contains a release suffix in order to distinguish between "
+"releases, like 21.2 or 21.6."
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:35
+msgid ""
+"To download the required files for Linux, the following files could be "
+"downloaded:"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:37
+msgid "`Kernel_lnxX64_7.2dll_21.6.tar.gz`"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:38
+msgid "`Drawings_lnxX64_7.2dll_21.6.tar.gz`"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:40
+msgid "In this example, the files names are:"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:42
+msgid "`lnx` for Linux"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:43
+msgid "`X64` for X64 architecture"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:44
+msgid "`7.2` for gcc 7.2"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:45
+msgid "`dll` for shared library version"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:46
+msgid "`21.6` ODA 2021 release, build 6"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:49
+msgid "Compiling the libraries"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:51
+msgid "The libraries must be merged before compiling."
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:53
+msgid ""
+"cd ~/dev/cpp/ODA21.6\n"
+"mkdir base_7.2\n"
+"tar xvzf Kernel_lnxX64_7.2dll_21.6.tar.gz -C base_7.2\n"
+"tar xvzf Drawings_lnxX64_7.2dll_21.6.tar.gz -C base_7.2"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:60
+msgid ""
+"To compile, an activation key is required. It can be requested from ODA "
+"Products Activation. The activation key must be copied to `ThirdParty/"
+"activation/`."
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:65
+msgid "cp OdActivationInfo base_7.2/ThirdParty/activation/"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:67
+msgid "Compile the ODA libraries with:"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:71
+msgid ""
+"cd base_7.2\n"
+"./configure\n"
+"make -j8"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:75
+msgid ""
+"Make sure your gcc major version matches ODA libs gcc version. On Ubuntu, "
+"for example, you can install different gcc/g++ versions, like 7, 8 and 9. "
+"Switch between them with:"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:79
+msgid ""
+"sudo update-alternatives --config gcc\n"
+"sudo update-alternatives --config g++"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:83
+msgid "ODA libraries path"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:85
+msgid ""
+"After compiling ODA, the resulting libs are in a non standard search path. "
+"There is no `make install` included to copy the libraries to a standard "
+"location. This might be an issue."
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:89
+msgid ""
+"You have different alternative options to compile and run GDAL/OGR with ODA:"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:91
+msgid "copy the ODA libraries to a standard location"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:92
+msgid ""
+"set LD_LIBRARY_PATH (like `LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/jgr/dev/"
+"cpp/ODA21.6/base_7.2/bin/lnxX64_7.2dll`)."
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:93
+msgid ""
+"Adding ODA folder to the system library path (`echo \"/home/jgr/dev/cpp/"
+"ODA21.6/base_7.2/bin/lnxX64_7.2dll\" | sudo tee -a /etc/ld.so.conf.d/z_gdal-"
+"ODA.conf`)"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:94
+msgid ""
+"Setting a run time path (`rpath`) when compiling GDAL (like `LDFLAGS=\"-Wl,-"
+"rpath=/home/jgr/dev/cpp/ODA21.6/base_7.2/bin/lnxX64_7.2dll\"`)."
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:97
+msgid "ODA library names"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:99
+msgid ""
+"Some ODA library names do not conform the usual Linux standard `lib*.so`. If "
+"you don't use `rpath`, for the other alternatives listed above, you might "
+"have to create symbolic links from the actual names. Example:"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:103
+msgid ""
+"cd ~/dev/cpp/ODA21.6/base_7.2/bin/lnxX64_7.2dll\n"
+"for f in *.tx\n"
+"do\n"
+"   echo \"Processing $f\"\n"
+"   ln -s $f lib$f.so\n"
+"done\n"
+"sudo ldconfig"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:111
+msgid "Check with `ldconfig -v` if all ODA libraries are now visible."
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:115
+msgid "Compiling GDAL"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:117
+msgid ""
+"After compiling ODA libraries, GDAL can be build using two additional "
+"options:"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:119
+msgid "`--with-teigha=/home/jgr/dev/cpp/ODA21.6/base_7.2`"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:120
+msgid "`--with-teigha-plt=lnxX64_7.2dll`"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:122
+msgid ""
+"The value of `--with-teigha` is the full path of the folder where the "
+"libraries were merged and compiled."
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:124
+msgid ""
+"The value of `--with-teigha-plt` must match the platform name used by ODA. "
+"The platform name is the folder name under `Platforms`:"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:128
+msgid ""
+"ls -l Platforms/\n"
+"lnxX64_7.2dll"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:132
+msgid "GDAL compilation"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:134
+msgid ""
+"Use your own GDAL build configuration and add the previous mentioned "
+"options. After running `configure`, make sure that `Teigha (DWG and DGNv8)` "
+"support is configured."
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:136
+msgid "As an example, compiling GDAL can be:"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:140
+msgid ""
+"cd gdal\n"
+"./autogen.sh\n"
+"./configure --without-libtool LDFLAGS=\"-L/usr/lib/x86_64-linux-gnu\" --with-"
+"python=python3 --with-proj=/usr/local --with-pg=yes --with-poppler --with-"
+"teigha=/home/jgr/dev/cpp/ODA21.6/base_7.2 --with-teigha-plt=lnxX64_7.2dll\n"
+"make -j8\n"
+"sudo make install\n"
+"sudo ldconfig\n"
+"# Python support\n"
+"cd swig/python\n"
+"python3 setup.py build\n"
+"sudo python3 setup.py install"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:151
+msgid ""
+"We added `LDFLAGS=\"-L/usr/lib/x86_64-linux-gnu\"` to use system libs over "
+"ODA's `libpcre`, `libcurl`, etc."
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:154
+msgid "Testing"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:156
+msgid ""
+"After compiling GDAL, you can check if the new drivers `DGNV8` and `DWG` are "
+"supported with:"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:160
+msgid ""
+"./apps/ogrinfo --formats | grep 'AutoCAD\\|Microstation'\n"
+"DGN -vector- (rw+v): Microstation DGN\n"
+"DWG -vector- (ro): AutoCAD DWG\n"
+"DGNV8 -vector- (rw+): Microstation DGNv8\n"
+"DXF -vector- (rw+v): AutoCAD DXF\n"
+"CAD -raster,vector- (rovs): AutoCAD Driver"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:167
+msgid ""
+"If a file is DGNv8, you will see that driver in action when opening the file:"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:171
+msgid ""
+"ogrinfo ~/dev/cpp/gdal/autotest/ogr/data/dgnv8/test_dgnv8.dgn\n"
+"INFO: Open of `/home/jgr/dev/cpp/gdal/autotest/ogr/data/dgnv8/test_dgnv8."
+"dgn'\n"
+"      using driver `DGNV8' successful.\n"
+"1: my_model"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:177
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:179
+msgid ""
+"If you find linking errors, you can set `LD_LIBRARY_PATH` or `LDFLAGS` "
+"environment variables to make sure you are able to get the ODA libraries "
+"from their location."
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:181
+msgid "Use `ldconfig -v` to check if ODA's library folder is listed."
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:183
+msgid "For example, you can try:"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:187
+msgid ""
+"export LD_LIBRARY_PATH=/home/jgr/dev/cpp/ODA21.6/base_7.2/bin/lnxX64_7.2dll\n"
+"./configure --without-libtool LDFLAGS=\"-L/usr/lib/x86_64-linux-gnu\" --with-"
+"python=python3 --with-proj=/usr/local --with-pg=yes --with-poppler --with-"
+"teigha=/home/jgr/dev/cpp/ODA21.6/base_7.2 --with-teigha-plt=lnxX64_7.2dll"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:190
+msgid "You can force a run time location (with `rpath`) with:"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:194
+msgid ""
+"./configure --without-libtool LDFLAGS=\"-L/usr/lib/x86_64-linux-gnu -Wl,-"
+"rpath=/home/jgr/dev/cpp/ODA21.6/base_7.2/bin/lnxX64_7.2dll\" --with-"
+"python=python3 --with-proj=/usr/local --with-pg=yes --with-poppler --with-"
+"teigha=/home/jgr/dev/cpp/ODA21.6/base_7.2 --with-teigha-plt=lnxX64_7.2dll"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:197
+msgid "Adjust these settings, according to your build environment."
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:200
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:202
+msgid "`Introducing the ODA Platform <https://www.opendesign.com/products>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:203
+msgid ":ref:`AutoCAD DWG <vector.dwg>`"
+msgstr ""
+
+#: ../../../source/drivers/vector/oda.rst:204
+msgid ":ref:`Microstation DGN v8 <vector.dgnv8>`"
+msgstr ""

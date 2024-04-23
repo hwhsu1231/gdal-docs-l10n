@@ -1,0 +1,255 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/kml.rst:4
+msgid "KML - Keyhole Markup Language"
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:6
+msgid "KML"
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:8
+msgid "(read support needs libexpat)"
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:10
+msgid ""
+"Keyhole Markup Language (KML) is an XML-based language for managing the "
+"display of 3D geospatial data. KML has been accepted as an OGC standard, and "
+"is supported in one way or another on the major GeoBrowsers. Note that KML "
+"by specification uses only a single projection, EPSG:4326. All OGR KML "
+"output will be presented in EPSG:4326. As such OGR will create layers in the "
+"correct coordinate system and transform any geometries."
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:17
+msgid ""
+"At this time, only vector layers are handled by the KML driver. *(there are "
+"additional scripts supplied with the GDAL project that can build other kinds "
+"of output)*"
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:22
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:31
+msgid "KML Reading"
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:33
+msgid ""
+"KML reading is only available if GDAL/OGR is built with the Expat XML "
+"Parser, otherwise only KML writing will be supported."
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:36
+msgid ""
+"Supported geometry types are ``Point``, ``Linestring``, ``Polygon``, "
+"``MultiPoint``, ``MultiLineString``, ``MultiPolygon`` and ``MultiGeometry``. "
+"There are limitations, for example: the nested nature of folders in a source "
+"KML file is lost; folder ``<description>`` tags will not carry through to "
+"output. Folders containing multiple geometry types, like POINT and POLYGON, "
+"are supported."
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:44
+msgid "KML Writing"
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:46
+msgid ""
+"Since not all features of KML are able to be represented in the Simple "
+"Features geometry model, you will not be able to generate many KML-specific "
+"attributes from within GDAL/OGR. Please try a few test files to get a sense "
+"of what is possible."
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:51
+msgid ""
+"When outputting KML, the OGR KML driver will translate each OGR Layer into a "
+"KML Folder (you may encounter unexpected behavior if you try to mix the "
+"geometry types of elements in a layer, e.g. ``LINESTRING`` and ``POINT`` "
+"data)."
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:56
+msgid ""
+"The KML Driver will rename some layers, or source KML folder names, into new "
+"names it considers valid, for example '``Layer #0``', the default name of "
+"the first unnamed Layer, becomes ``'Layer__0'``."
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:60
+msgid ""
+"KML is mix of formatting and feature data. The <description> tag of a "
+"Placemark will be displayed in most geobrowsers as an HTML-filled balloon. "
+"When writing KML, Layer element attributes are added as simple schema "
+"fields. This best preserves feature type information."
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:65
+msgid ""
+"Limited support is available for fills, line color and other styling "
+"attributes. Please try a few sample files to get a better sense of actual "
+"behavior."
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:70
+msgid "Encoding issues"
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:72
+msgid "Expat library supports reading the following built-in encodings :"
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:74
+msgid "US-ASCII"
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:75
+msgid "UTF-8"
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:76
+msgid "UTF-16"
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:77
+msgid "ISO-8859-1"
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:78
+msgid "Windows-1252"
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:80
+msgid ""
+"The content returned by OGR will be encoded in UTF-8, after the conversion "
+"from the encoding mentioned in the file header is."
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:86
+msgid ""
+"If your KML file is not encoded in one of the previous encodings, it will "
+"not be parsed by the KML driver. You may convert it into one of the "
+"supported encoding with the *iconv* utility for example and change "
+"accordingly the *encoding* parameter value in the XML header."
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:88
+msgid ""
+"When writing a KML file, the driver expects UTF-8 content to be passed in."
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:92
+msgid "Creation Options"
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:94
+msgid "The following dataset creation options are supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:118
+msgid "ogr2ogr -f KML output.kml input.shp -dsco AltitudeMode=absolute"
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:127
+msgid "VSI Virtual File System API support"
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:129
+msgid ""
+"The driver supports reading and writing to files managed by VSI Virtual File "
+"System API, which include \"regular\" files, as well as files in the /"
+"vsizip/ (read-write) , /vsigzip/ (read-write) , /vsicurl/ (read-only) "
+"domains."
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:134
+msgid "Writing to /dev/stdout or /vsistdout/ is also supported."
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:137
+msgid "Example"
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:139
+msgid ""
+"The ogr2ogr utility can be used to dump the results of a PostGIS query to "
+"KML:"
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:144
+msgid ""
+"ogr2ogr -f KML output.kml PG:'host=myserver dbname=warmerda' -sql \"SELECT "
+"pop_1994 from canada where province_name = 'Alberta'\""
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:146
+msgid "How to dump contents of .kml file as OGR sees it:"
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:150
+msgid "ogrinfo -ro somedisplay.kml"
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:153
+msgid "Caveats"
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:155
+msgid ""
+"Google Earth seems to have some limits regarding the number of coordinates "
+"in complex geometries like polygons. If the problem appears, then "
+"problematic geometries are displayed completely or partially covered by "
+"vertical stripes. Unfortunately, there are no exact number given in the KML "
+"specification about this limitation, so the KML driver will not warn about "
+"potential problems. One of possible and tested solutions is to simplify a "
+"line or a polygon to remove some coordinates. Here is the whole discussion "
+"about this issue on the `Google KML Developer Forum <http://groups.google."
+"com/group/kml-support>`__, in the `polygon displays with vertical stripes "
+"<http://groups.google.com/group/kml-support-getting-started/browse_thread/"
+"thread/e6995b8073e69c41>`__ thread."
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:169
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:171
+msgid "`KML Specification <https://developers.google.com/kml/?csw=1>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:172
+msgid ""
+"`KML Tutorial <https://developers.google.com/kml/documentation/kml_tut>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/kml.rst:174
+msgid ":ref:`LIBKML driver <vector.libkml>` An alternative GDAL KML driver"
+msgstr ""

@@ -1,0 +1,207 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/community/service_providers.rst:5
+msgid "GDAL Service Providers"
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:7
+msgid ""
+"GDAL is developed and supported by a rich ecosystem of businesses and "
+"individuals around the world."
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:10
+msgid ""
+"In this page we provide a list of service providers who can assist you in "
+"getting the best out of your GDAL investment. Their services can range from "
+"training and technical support to help you get started, all the way to "
+"specialized development and support services to advance the software and "
+"support your organization's mission-critical applications."
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:20
+msgid ""
+"This list is non-exhaustive, and there are quite likely other service "
+"providers in your region of the world who are not listed here. If you think "
+"your organization should be listed here, please submit a pull request to add "
+"it to this page."
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:26
+msgid ""
+"We take responsibility for the accuracy, reliability or completeness of the "
+"provided information for Core Contributors only."
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:32
+msgid "Service Providers order is randomized on page load."
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:35
+msgid "Core Contributors"
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:37
+msgid ""
+"Core Contributor organizations have GDAL Committers and/or PSC members as "
+"part of their team and as such they are the closest to the core development "
+"of the software and are usually the best to go to for support."
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:41
+msgid ""
+"They are close enough to the architecture to know what is possible, and to "
+"ensure that any improvement to be made to GDAL gets done in the right way "
+"and will be included in future releases of the software."
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:45
+msgid ""
+"They wrote the software that you use, so you can trust them to help you get "
+"the most out of it."
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:50
+msgid "|logo_spatialys|"
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:0
+msgid "logo_spatialys"
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:54
+msgid ""
+"`Spatialys`_ (France) is a company founded by Even Rouault that is dedicated "
+"to providing to its clients the best of its expertise around Open Source "
+"geospatial software - such as GDAL/OGR, PROJ, MapServer, and QGIS - and Open "
+"standards."
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:60
+msgid "|logo_hobu|"
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:0
+msgid "logo_hobu"
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:64
+msgid ""
+"`Hobu, Inc.`_ (United States) is a `sam.gov <https://sam.gov>`__-registered "
+"company founded by Howard Butler with more than twenty years experience "
+"supporting the creation, enhancement, and management of geospatial open "
+"source geospatial software such as `PDAL <https://pdal.io>`__, GDAL/OGR, "
+"PROJ, and open standards such as `GeoJSON <https://datatracker.ietf.org/doc/"
+"html/rfc7946>`__, `PROJJSON <https://proj.org/en/latest/specifications/"
+"projjson.html>`__, and `Cloud Optimized Point Cloud <https://copc.io/>`__."
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:74
+msgid "Contributors"
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:76
+msgid ""
+"The Contributors listed here usually have power users and experienced "
+"integrators as part of their team who are recognized in the GDAL community "
+"for their contributions to various aspects of the software over the years "
+"and are very well positioned to assist you with GDAL."
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:83
+msgid "None listed yet."
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:87
+msgid "Other Service Providers"
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:89
+msgid ""
+"The service providers in this category offer services around GDAL and "
+"related Open Source technologies."
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:94
+msgid "|logo_faunalia|"
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:0
+msgid "logo_faunalia"
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:98
+msgid ""
+"`Faunalia`_ (Italy) is a company that operates since more than 15 years in "
+"the field of Geographic Information Systems (GIS) based on free and open "
+"source software (chiefly QGIS, PostGIS, and more). Our main customers are "
+"public administrations, private companies, associations. Faunalia has its "
+"main branch in Italy, and operates worldwide. Faunalia provides training "
+"services on GDAL."
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:102
+msgid "|logo_kartoza|"
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:0
+msgid "logo_kartoza"
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:106
+msgid ""
+"`Kartoza`_ (South Africa) is a South Africa-based Free and Open Source GIS "
+"(FOSSGIS) service provider. We use GIS software to solve complex location-"
+"related problems for individuals, businesses and governments around the "
+"world. Kartoza provides training services on GDAL."
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:110
+msgid "|logo_mundialis|"
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:0
+msgid "logo_mundialis"
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:114
+msgid ""
+"`mundialis`_ (Germany) is specialized in the processing of massive "
+"geospatial and remote sensing data. Our services centered on the Open Source "
+"geospatial systems GRASS GIS, actinia and QGIS are incorporated into our "
+"process chains, projects and tailored solutions. We analyse satellite, "
+"aerial and drone imagery for land degradation and landuse change. We offer "
+"support and training for GRASS GIS and GDAL."
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:155
+msgid ""
+"Search for GDAL service providers with the `OSGeo Service Providers <https://"
+"www.osgeo.org/service-providers/>`__"
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:158
+msgid "How to Add a Company"
+msgstr ""
+
+#: ../../../source/community/service_providers.rst:160
+msgid ""
+"The steps to add a company to the service providers list are outlined in "
+"the :ref:`rfc-79` document."
+msgstr ""

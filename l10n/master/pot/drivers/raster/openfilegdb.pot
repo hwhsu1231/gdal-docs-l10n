@@ -1,0 +1,179 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/openfilegdb.rst:4
+msgid "ESRI File Geodatabase raster (OpenFileGDB)"
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:8
+msgid "OpenFileGDB"
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:12
+msgid ""
+"The OpenFileGDB driver provides read access to raster layers of File "
+"Geodatabases (.gdb directories). The dataset name must be the directory/"
+"folder name, and it must end with the .gdb extension."
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:16
+msgid ""
+"It can also read directly zipped .gdb directories (with .gdb.zip extension), "
+"provided they contain a .gdb directory at their first level."
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:19
+msgid "The driver supports:"
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:21
+msgid "reading CRS information"
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:22
+msgid "reading geotransform"
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:23
+msgid "exposing overviews"
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:24
+msgid "exposing nodata mask band or nodata value"
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:25
+msgid "uncompressed, LZ77, JPEG and JPEG2000 compression methods."
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:26
+msgid "exposing value attribute tables as GDAL Raster attribute tables."
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:28
+msgid ""
+"Support for FileGDB created by ArcGIS v10 has been added in GDAL 3.7 Support "
+"for FileGDB created by ArcGIS v9 has been added in GDAL 3.8"
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:32
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:39
+msgid "Connection string"
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:41
+msgid ""
+"When a File Geodatabase contains several raster layers, the raster layer "
+"that must be opened is specified with the following connection string"
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:46
+msgid "OpenFileGDB:\"/path/to/my.gdb\":name_of_raster_layer"
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:48
+msgid ""
+"When opening a dataset with pointing only to the .gdb directory, and if it "
+"contains several raster layers, a list of subdatasets is returned by the "
+"driver"
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:52
+msgid "Open options"
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:59
+msgid ""
+"In AUTO mode, the driver will expose a dataset nodata mask band, unless the "
+"band data type is Float32 or Float64, in which case a nodata value is used."
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:62
+msgid ""
+"In MASK mode, the driver will expose a dataset nodata mask band for all data "
+"types."
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:65
+msgid ""
+"In NONE mode, the driver will not expose a nodata mask band or a nodata "
+"value."
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:68
+msgid ""
+"When specifying a numeric nodata value (``nan`` accepted for Float32 or "
+"Float64), it is used as the band nodata value. The nodata value should be "
+"selected outside the range of valid values (but within the range of the data "
+"type)."
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:74
+msgid "Metadata"
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:76
+msgid ""
+"The ``xml:documentation`` and ``xml:definition`` metadata domains contain "
+"the XML content from the ``GDB_Items`` table related to the raster layer."
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:80
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:82
+msgid "List raster layers from a FileGDB"
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:86
+msgid "gdalinfo /path/to/my.gdb"
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:88
+msgid "Open a given subdataset:"
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:92
+msgid "gdalinfo OpenFileGDB:\"/path/to/my.gdb\":name_of_raster_layer"
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:96
+msgid "Links"
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:98
+msgid ":ref:`OpenFileGDB vector <vector.openfilegdb>` documentation page"
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:102
+msgid "Credits"
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:104
+msgid ""
+"Thanks to Richard Barnes and his ArcRescue tool for the deciphering of the "
+"band_types field which indicates the compression method and the data type."
+msgstr ""

@@ -1,0 +1,759 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/selafin.rst:4
+msgid "Selafin files"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:6
+msgid "Selafin"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:10
+msgid ""
+"OGR supports reading from 2D Selafin/Seraphin files. Selafin/Seraphin is the "
+"generic output and input format of geographical files in the open-source "
+"`Telemac hydraulic model <http://www.opentelemac.org>`__. The file format is "
+"suited to the description of numerical attributes for a set of point "
+"features at different time steps. Those features usually correspond to the "
+"nodes in a finite-element model. The file also holds a connectivity table "
+"which describes the elements formed by those nodes and which can also be "
+"read by the driver."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:19
+msgid ""
+"The driver supports the use of VSI virtual files as Selafin datasources."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:21
+msgid ""
+"The driver offers full read-write support on Selafin files. However, due to "
+"the particular nature of Selafin files where element (polygon) features and "
+"node (point) features are closely related, writing on Selafin layers can "
+"lead to counter-intuitive results. In a general way, writing on any layer of "
+"a Selafin data-source will cause side effects on all the other layers. Also, "
+"it is very important **not to open the same datasource more than once in "
+"update mode**. Having two processes write at the same time on a single "
+"datasource can lead to irreversible data corruption. The driver issues a "
+"warning each time a datasource is opened in update mode."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:33
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:42
+msgid "Magic bytes"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:44
+msgid ""
+"There is no generic extension to Selafin files. The adequate format is "
+"tested by looking at a dozen of magic bytes at the beginning of the file:"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:48
+msgid ""
+"The first four bytes of the file should contain the values (in hexadecimal): "
+"00 00 00 50. This actually indicates the start of a string of length 80 in "
+"the file."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:51
+msgid ""
+"At position 84 in the file, the eight next bytes should read (in "
+"hexadecimal): 00 00 00 50 00 00 00 04."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:54
+msgid ""
+"Files which match those two criteria are considered to be Selafin files and "
+"the driver will report it has opened them successfully."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:58
+msgid "Format"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:60
+msgid ""
+"Selafin format is designed to hold data structures in a portable and compact "
+"way, and to allow efficient random access to the data. To this purpose, "
+"Selafin files are binary files with a generic structure."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:65
+msgid "Elements"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:67
+msgid ""
+"Selafin files are made of the juxtaposition of elements. Elements have one "
+"of the following types:"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:70
+msgid "integer,"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:71
+msgid "string,"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:72
+msgid "floating point values,"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:73
+msgid "arrays of integers,"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:74
+msgid "arrays of floating point values."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:77
+msgid "Element"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:77
+msgid "Internal representation"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:77
+msgid "Comments"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:80
+msgid "Integer"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:80
+#: ../../../source/drivers/vector/selafin.rst:91
+msgid "a b c d"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:80
+msgid ""
+"Integers are stored on 4 bytes in big-endian format (most significant byte "
+"first). The value of the integer is 2\\ :sup:`24`.a+2\\ :su p:`16`.b+2\\ :"
+"sup:`8`. c+d."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:91
+msgid "Floating point"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:91
+msgid ""
+"Floating point values are stored on 4 bytes in IEEE 754 format and under big-"
+"endian convention (most significant byte first). Endianness is detected at "
+"run time only once when the first floating point value is read."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:103
+msgid "String"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:103
+#: ../../../source/drivers/vector/selafin.rst:121
+#: ../../../source/drivers/vector/selafin.rst:142
+msgid "Length 1 2 ... Length"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:103
+msgid "Strings are stored in three parts:"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:106
+msgid ""
+"an integer holding the length (in characters) of the string, over 4 bytes;"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:111
+msgid "the sequence of characters of the string, each character on one byte;"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:116
+msgid "the same integer with the length of the string repeated"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:121
+msgid "Array of integers"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:121
+msgid "Arrays of integers are stored in three parts:"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:125
+#: ../../../source/drivers/vector/selafin.rst:147
+msgid ""
+"an integer holding the length (in bytes, thus 4 times the number of "
+"elements) of the array, over 4 bytes;"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:132
+msgid ""
+"the sequence of integers in the array, each integer on 4 bytes as described "
+"earlier;"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:138
+#: ../../../source/drivers/vector/selafin.rst:160
+msgid "the same integer with the length of the array repeated"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:142
+msgid "Array of floating point values"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:142
+msgid "Arrays of floating point values are stored in three parts:"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:154
+msgid ""
+"the sequence of floating point values in the array, each one on 4 bytes as "
+"described earlier;"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:166
+msgid "Full structure"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:168
+msgid ""
+"The header of a Selafin file holds the following elements in that exact "
+"order:"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:171
+msgid ""
+"a *string* of 80 characters with the title of the study; the last 8 "
+"characters shall be \"SERAPHIN\" or \"SERAFIN\" or \"SERAFIND\";"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:173
+msgid ""
+"an *array of integers* of exactly 2 elements, the first one being the number "
+"of variables (attributes) *nVar*, and the second is ignored;"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:175
+msgid ""
+"*nVar strings* with the names of the variables, each one with length 32;"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:177
+msgid "an *array of integers* of exactly 10 elements:"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:179
+msgid "the third element is the x-coordinate of the origin of the model;"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:180
+msgid "the fourth element is the y-coordinate of the origin of the model;"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:181
+msgid ""
+"the tenth element *isDate* indicates if the date of the model has to be read "
+"(see later);"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:183
+msgid ""
+"in addition, the second element being unused by hydraulic software at the "
+"moment, it is used by the driver to store the spatial reference system of "
+"the datasource, in the form of a single integer with the EPSG number of the "
+"projection;"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:188
+msgid ""
+"if *isDate*\\ =1, an *array of integers* of exactly 6 elements, with the "
+"starting date of the model (year, month, day, hour, minute, second);"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:191
+msgid "an *array of integers* of exactly 4 elements:"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:193
+msgid "the first element is the number of elements *nElements*,"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:194
+msgid "the second element is the number of points *nPoints*,"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:195
+msgid ""
+"the third element is the number of points per element\\ *nPointsPerElement*,"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:197
+msgid "the fourth element must be 1;"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:199
+msgid ""
+"an *array of integers* of exactly *nElements*nPointsPerElement* elements, "
+"with each successive set of *nPointsPerElement* being the list of the number "
+"of the points (number starting with 1) constituting an element;"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:203
+msgid ""
+"an *array of integers* of exactly *nPoints* elements ignored by the driver "
+"(the elements shall be 0 for inner points and another value for the border "
+"points where a limit condition is applied);"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:206
+msgid ""
+"an *array of floating point values* of exactly *nPoints* elements with the x-"
+"coordinates of the points;"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:208
+msgid ""
+"an *array of floating point values* of exactly *nPoints* elements with the y-"
+"coordinates of the points;"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:211
+msgid ""
+"The rest of the file actually holds the data for each successive time step. "
+"A time step contains the following elements:"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:214
+msgid ""
+"a *array of floating point values* of exactly 1 element, being the date of "
+"the time step relative to the starting date of the simulation (usually in "
+"seconds);"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:217
+msgid ""
+"*nVar array of floating point values*, each with exactly *nPoints* elements, "
+"with the values of each attribute for each point at the current time step."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:222
+msgid "Mapping between file and layers"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:225
+msgid "Layers in a Selafin datasource"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:227
+msgid "The Selafin driver accepts only Selafin files as data sources."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:229
+msgid ""
+"Each Selafin file can hold one or several time steps. All the time steps are "
+"read by the driver and two layers are generated for each time step:"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:232
+msgid ""
+"one layer with the nodes (points) and their attributes: its name is the base "
+"name of the data source, followed by \"_p\" (for Points);"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:234
+msgid ""
+"one layer with the elements (polygons) and their attributes calculated as "
+"the averages of the values of the attributes of their vertices: its name is "
+"the base name of the data source, followed by \"_e\" (for Elements)."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:239
+msgid ""
+"Finally, either the number of the time step, or the calculated date of the "
+"time step (based on the starting date and the number of seconds elapsed), is "
+"added to the name. A data source in a file called Results may therefore be "
+"read as several layers:"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:244
+msgid ""
+"``Results_p2014_05_01_20_00_00``, meaning that the layers holds the "
+"attributes for the nodes and that the results hold for the time step at 8:00 "
+"PM, on May 1st, 2014;"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:247
+msgid ""
+"``Results_e2014_05_01_20_00_00``, meaning that the layers holds the "
+"attributes for the elements and that the results hold for the time step at "
+"8:00 PM, on May 1st, 2014;"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:250
+msgid ""
+"``Results_p2014_05_01_20_15_00``, meaning that the layers holds the "
+"attributes for the elements and that the results hold for the time step at "
+"8:15 PM, on May 1st, 2014;"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:253
+msgid "..."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:256
+msgid "Constraints on layers"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:258
+msgid ""
+"Because of the `format of the Selafin file <#format>`__, the layers in a "
+"single Selafin datasource are not independent from each other. Changing one "
+"layer will most certainly have side effects on all other layers. The driver "
+"updates all the layers to match the constraints:"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:263
+msgid ""
+"All the point layers have the same number of features. When a feature is "
+"added or removed in one layer, it is also added or removed in all other "
+"layers."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:266
+msgid ""
+"Features in different point layers share the same geometry. When the "
+"position of one point is changed, it is also changed in all other layers."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:269
+msgid ""
+"All the element layers have the same number of features. When a feature is "
+"added or removed in one layer, it is also added or removed in all other "
+"layers."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:272
+msgid ""
+"All the polygons in element layers have the same number of vertices. The "
+"number of vertices is fixed when the first feature is added to an element "
+"layer, and can not be changed afterwards without recreating the datasource "
+"from scratch."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:276
+msgid ""
+"Features in different element layers share the same geometry. When an "
+"element is added or removed in one layer, it is also added or removed in all "
+"other layers."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:279
+msgid ""
+"Every vertex of every feature in an element layer has a corresponding point "
+"feature in the point layers. When an element feature is added, if its "
+"vertices do not exist yet, they are created in the point layers."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:283
+msgid ""
+"Points and elements layers only support attributes of type \"REAL\". The "
+"format of real numbers (width and precision) can not be changed."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:287
+msgid "Layer filtering specification"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:289
+msgid ""
+"As a single Selafin files may hold millions of layers, and the user is "
+"generally interested in only a few of them, the driver supports syntactic "
+"sugar to filter the layers before they are read."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:293
+msgid ""
+"When the datasource is specified, it may be followed immediately by a *layer "
+"filtering specification.*, as in ``Results[0:10]``. The effects of the layer "
+"filtering specification is to indicate which time steps shall be loaded from "
+"all Selafin files."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:298
+msgid ""
+"The layer filtering specification is a comma-separated sequence of range "
+"specifications, delimited by square brackets and maybe preceded by the "
+"character 'e' or 'p'. The effect of characters 'e' and 'p' is to select "
+"respectively either only elements or only nodes. If no character is added, "
+"both nodes and elements are selected. Each range specification is:"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:305
+msgid ""
+"either a single number, representing one single time step (whose numbers "
+"start with 0),"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:307
+msgid ""
+"or a set of two numbers separated by a colon: in that case, all the time "
+"steps between and including those two numbers are selected; if the first "
+"number is missing, the range starts from the beginning of the file (first "
+"time step); if the second number is missing, the range goes to the end of "
+"the file (last time step);"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:313
+msgid ""
+"Numbers can also be negative. In this case, they are counted from the end of "
+"the file, -1 being the last time step."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:316
+msgid "Some examples of layer filtering specifications:"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:319
+msgid "[0]"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:319
+msgid "First time step only, but return both points and elements"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:320
+msgid "[e:9]"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:320
+msgid "First 10 time steps only, and only layers with elements"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:321
+msgid "[p-4:]"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:321
+msgid "Last 4 time steps only, and only layers with nodes"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:322
+msgid "[3,10,-2:-1]"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:322
+msgid ""
+"4\\ :sup:`th`, 11\\ :sup:`th`, and last two time steps, for both nodes and "
+"elements"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:326
+msgid "Datasource creation options"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:328
+msgid ""
+"Datasource creation options can be specified with the \"``-dsco``\" flag in "
+"ogr2ogr."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:345
+msgid ""
+"An example of datasource creation option is: ``-dsco TITLE=\"My simulation\" "
+"-dsco DATE=2014-05-01_10:00:00``."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:349
+msgid "Layer creation options"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:351
+msgid ""
+"Layer creation options can be specified with the \"``-lco``\" flag in "
+"ogr2ogr."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:361
+msgid "An example of datasource creation option is: ``-lco DATE=24000``."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:364
+msgid "Notes about the creation and the update of a Selafin datasource"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:366
+msgid ""
+"The driver supports creating and writing to Selafin datasources, but there "
+"are some caveats when doing so."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:369
+msgid ""
+"When a new datasource is created, it does not contain any layer, feature or "
+"attribute."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:372
+msgid ""
+"When a new layer is created, it automatically inherits the same number of "
+"features and attributes as the other layers of the same type (points or "
+"elements) already in the datasource. The features inherit the same geometry "
+"as their corresponding ones in other layers. The attributes are set to 0. If "
+"there was no layer in the datasource yet, the new layer is created with no "
+"feature and attribute.In any case, when a new layer is created, two layers "
+"are actually added: one for points and one for elements."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:381
+msgid ""
+"New features and attributes can be added to the layers or removed. The "
+"behavior depends on the type of layer (points or elements). The following "
+"table explains the behavior of the driver in the different cases."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:387
+msgid "Operation"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:387
+msgid "Points layers"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:387
+msgid "Element layers"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:389
+msgid "Change the geometry of a feature"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:389
+msgid ""
+"The coordinates of the point are changed in the current layer and all other "
+"layers in the datasource."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:389
+msgid ""
+"The coordinates of all the vertices of the element are changed in the "
+"current layer and all other layers in the datasource. It is not possible to "
+"change the number of vertices. The order of the vertices matters."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:390
+msgid "Change the attributes of a feature"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:390
+msgid "The attributes of the point are changed in the current layer only."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:390
+msgid "No effect."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:391
+msgid "Add a new feature"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:391
+msgid ""
+"A new point is added at the end of the list of features, for this layer and "
+"all other layers. Its attributes are set to the values of the new feature."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:391
+msgid ""
+"The operation is only allowed if the new feature has the same number of "
+"vertices as the other features in the layer. The vertices are checked to see "
+"if they currently exist in the set of points. A vertex is considered equal "
+"to a point if its distance is less than some maximum distance, approximately "
+"equal to 1/1000\\ :sup:`th` of the average distance between two points in "
+"the points layers. When a corresponding point is found, it is used as a "
+"vertex for the element. If no point is found, a new is created in all "
+"associated layers."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:392
+msgid "Delete a feature"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:392
+msgid ""
+"The point is removed from the current layer and all point layers in the "
+"datasource. All elements using this point as a vertex are also removed from "
+"all element layers in the datasource."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:392
+msgid ""
+"The element is removed from the current layer and all element layers in the "
+"datasource."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:395
+msgid ""
+"Typically, this implementation of operations is exactly what you'll expect. "
+"For example, ogr2ogr can be used to reproject the file without changing the "
+"inner link between points and elements."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:399
+msgid ""
+"It should be noted that update operations on Selafin datasources are very "
+"slow. This is because the format does no allow for quick insertions or "
+"deletion of features and the file must be recreated for each operation."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:405
+msgid "VSI Virtual File System API support"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:407
+msgid ""
+"The driver supports reading and writing to files managed by VSI Virtual File "
+"System API, which include \"regular\" files, as well as files in the /"
+"vsizip/ (read-write) , /vsigzip/ (read-only) , /vsicurl/ (read-only) domains."
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:413
+msgid "Other notes"
+msgstr ""
+
+#: ../../../source/drivers/vector/selafin.rst:415
+msgid ""
+"There is no SRS specification in the Selafin standard. The implementation of "
+"SRS is an addition of the driver and stores the SRS in an unused data field "
+"in the file. Future software using the Selafin standard may use this field "
+"and break the SRS specification. In this case, Selafin files will still be "
+"readable by the driver, but their writing will overwrite a value which may "
+"have another purpose."
+msgstr ""

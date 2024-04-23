@@ -1,0 +1,446 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/georaster.rst:5
+msgid "Oracle Spatial GeoRaster"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:7
+msgid "GeoRaster"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:9
+msgid "Oracle client libraries"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:11
+msgid ""
+"This driver supports reading and writing raster data in Oracle Spatial "
+"GeoRaster format (10g or later). The Oracle Spatial GeoRaster driver is "
+"optionally built as a GDAL plugin, but it requires Oracle client libraries."
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:16
+msgid "When opening a GeoRaster, its name should be specified in the form:"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:18
+msgid "georaster:<user>{,/}<pwd>{,@}[db],[schema.][table],[column],[where]"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:19
+msgid "georaster:<user>{,/}<pwd>{,@}[db],<rdt>,<rid>"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:21
+msgid "Where:"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:23
+msgid "user   = Oracle server user's name login"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:24
+msgid "pwd    = user password"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:25
+msgid "db     = Oracle server identification (database name)"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:26
+msgid "schema = name of a schema"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:28
+msgid ""
+"table  = name of a GeoRaster table (table that contains GeoRaster columns)"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:29
+msgid "column = name of a column data type MDSYS.SDO_GEORASTER"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:31
+msgid ""
+"where  = a simple where clause to identify one or multiples GeoRaster(s)"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:32
+msgid "rdt    = name of a raster data table"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:33
+msgid "rid    = numeric identification of one GeoRaster"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:35
+msgid "Examples:"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:37
+msgid "geor:scott,tiger,demodb,table,column,id=1"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:38
+msgid "geor:scott,tiger,demodb,table,column,\"id = 1\""
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:39
+msgid "\"georaster:scott/tiger@demodb,table,column,gain>10\""
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:40
+msgid "\"georaster:scott/tiger@demodb,table,column,city='Brasilia'\""
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:41
+msgid "georaster:scott,tiger,,rdt_10$,10"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:42
+msgid "geor:scott/tiger,,rdt_10$,10"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:44
+msgid "Note: do note use space around the field values and the commas."
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:46
+msgid ""
+"Note: like in the last two examples, the database name field could be left "
+"empty (\",,\") and the TNSNAME will be used."
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:49
+msgid ""
+"Note: If  the query results in more than one GeoRaster it will be treated as "
+"a GDAL metadata's list of sub-datasets (see below)"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:53
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:64
+msgid "Browsing the database for GeoRasters"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:66
+msgid ""
+"By providing some basic information the GeoRaster driver is capable of "
+"listing the existing rasters stored on the server:"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:69
+msgid ""
+"To list all the GeoRaster table on the server that belongs to that user name "
+"and database:"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:72
+msgid "gdalinfo georaster:scott/tiger@db1"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:76
+msgid "To list all the GeoRaster type columns that exist in that table:"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:78
+msgid "gdalinfo georaster:scott/tiger@db1,table_name"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:82
+msgid "That will list all the GeoRaster objects stored in that table."
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:84
+msgid "gdalinfo georaster:scott/tiger@db1,table_name,georaster_column"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:88
+msgid ""
+"That will list all the GeoRaster existing on that table according to a Where "
+"clause."
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:91
+msgid ""
+"gdalinfo georaster:scott/tiger@db1,table_name,georaster_column,"
+"city='Brasilia'"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:96
+msgid ""
+"Note that the result of those queries are returned as GDAL metadata sub-"
+"datasets, e.g.:"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:99
+msgid ""
+"gdalinfo georaster:scott/tiger\n"
+"# Driver: GeoRaster/Oracle Spatial GeoRaster\n"
+"# Subdatasets:\n"
+"# SUBDATASET_1_NAME=georaster:scott,tiger,,LANDSAT\n"
+"# SUBDATASET_1_DESC=Table:LANDSAT\n"
+"# SUBDATASET_2_NAME=georaster:scott,tiger,,GDAL_IMPORT\n"
+"# SUBDATASET_2_DESC=Table:GDAL_IMPORT"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:110
+msgid "Creation Options"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:150
+msgid ""
+"gdal_translate -of georaster landsat_823.tif geor:scott/tiger@orcl,landsat,"
+"raster \\\n"
+"  -co DESCRIPTION=\"(ID NUMBER, NAME VARCHAR2(40), RASTER MDSYS."
+"SDO_GEORASTER)\" \\\n"
+"  -co INSERT=\"VALUES (1,'Scene 823',SDO_GEOR.INIT())\""
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:161
+msgid ""
+"gdal_translate -of georaster landsat_825.tif geor:scott/tiger@orcl,landsat,"
+"raster \\\n"
+"  -co INSERT=\"(ID, RASTER) VALUES (2,SDO_GEOR.INIT())\""
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:255
+msgid ""
+"When this value is set to FALSE, then the bin function to use is the one "
+"generated dynamically as previously described."
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:268
+msgid "A valid function defined in the GeoRaster metadata."
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:269
+msgid "The same bin function generated when :co:`GENSTATS_USEBIN` is FALSE."
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:281
+msgid ""
+"A NODATA value is used for cells whose values are either not known or "
+"meaningless"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:365
+msgid "Importing GeoRaster"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:367
+msgid ""
+"During the process of importing raster into a GeoRaster object it is "
+"possible to give the driver a simple SQL table definition and also a SQL "
+"insert/values clause to inform the driver about the table to be created and "
+"the values to be added to the newly created row. The following example does "
+"that:"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:373
+msgid ""
+"gdal_translate -of georaster Newpor.tif georaster:scott/tiger,,landsat,scene "
+"\\\n"
+"  -co \"DESCRIPTION=(ID NUMBER, SITE VARCHAR2(45), SCENE MDSYS."
+"SDO_GEORASTER)\" \\\n"
+"  -co \"INSERT=VALUES(1,'West fields', SDO_GEOR.INIT())\" \\\n"
+"  -co \"BLOCKXSIZE=512\" -co \"BLOCKYSIZE=512\" -co \"BLOCKBSIZE=3\" \\\n"
+"  -co \"INTERLEAVE=PIXEL\" -co \"COMPRESS=JPEG-F\""
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:381
+msgid ""
+"Note that the create option DESCRIPTION requires to inform table name (in "
+"bold). And column name (underlined) should match the description:"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:384
+msgid ""
+"gdal_translate -of georaster landsat_1.tif georaster:scott/tiger,,landsat,"
+"scene \\\n"
+"  -co \"DESCRIPTION=(ID NUMBER, SITE VARCHAR2(45), SCENE MDSYS."
+"SDO_GEORASTER)\" \\\n"
+"  -co \"INSERT=VALUES(1,'West fields', SDO_GEOR.INIT())\""
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:390
+msgid ""
+"If the table \"landsat\" exist, the option \"DESCRIPTION\" is ignored. The "
+"driver can only update one GeoRaster column per run of "
+"gdal_translate. Oracle create default names and values for RDT and RID "
+"during the initialization of the SDO_GEORASTER object but user are also able "
+"to specify a name and value of their choice."
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:396
+msgid ""
+"gdal_translate -of georaster landsat_1.tif georaster:scott/tiger,,landsat,"
+"scene \\\n"
+"  -co \"INSERT=VALUES(10,'Main building', SDO_GEOR.INIT('RDT', 10))\""
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:401
+msgid ""
+"If no information is given about where to store the raster the driver will "
+"create (if doesn't exist already) a default table named GDAL_IMPORT with "
+"just one GeoRaster column named RASTER and a table GDAL_RDT as the RDT, the "
+"RID will be given automatically by the server, example:"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:406
+msgid "gdal_translate -of georaster input.tif “geor:scott/tiger@dbdemo”"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:411
+msgid "Exporting GeoRaster"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:413
+msgid ""
+"A GeoRaster can be identified by a Where clause or by a pair of RDT & RID:"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:415
+msgid ""
+"gdal_translate -of gtiff geor:scott/tiger@dbdemo,landsat,scene,id=54 output."
+"tif\n"
+"gdal_translate -of gtiff geor:scott/tiger@dbdemo,st_rdt_1,130 output.tif"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:421
+msgid "Cross schema access"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:423
+msgid ""
+"As long as the user was granted full access the GeoRaster table and the "
+"Raster Data Table, e.g.:"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:428
+msgid ""
+"% sqlplus scott/tiger\n"
+"SQL> grant select,insert,update,delete on gdal_import to spock;\n"
+"SQL> grant select,insert,update,delete on gdal_rdt to spock;"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:432
+msgid ""
+"It is possible to an user access to extract and load GeoRaster from another "
+"user/schema by informing the schema name as showed here:"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:435
+msgid "Browsing:"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:437
+msgid ""
+"gdalinfo geor:spock/lion@orcl,scott.\n"
+"gdalinfo geor:spock/lion@orcl,scott.gdal_import,raster,\"t.raster.rasterid > "
+"100\"\n"
+"gdalinfo geor:spock/lion@orcl,scott.gdal_import,raster,t.raster.rasterid=101"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:443
+msgid "Extracting:"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:445
+msgid ""
+"gdal_translate geor:spock/lion@orcl,scott.gdal_import,raster,t.raster."
+"rasterid=101out.tif\n"
+"gdal_translate geor:spock/lion@orcl,gdal_rdt,101 out.tif"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:450
+msgid ""
+"Note: On the above example that accessing by RDT/RID doesn't need schame "
+"name as long as the users is granted full access to both tables."
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:454
+msgid "Loading:"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:456
+msgid ""
+"gdal_translate -of georaster input.tif geor:spock/lion@orcl,scott.\n"
+"gdal_translate -of georaster input.tif geor:spock/lion@orcl,scott.cities,"
+"image \\\n"
+"  -co INSERT=\"(1,'Rio de Janeiro',sdo_geor.init('cities_rdt'))\""
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:463
+msgid "General use of GeoRaster"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:465
+msgid ""
+"GeoRaster can be used in any GDAL command line tool with all the available "
+"options. Like a image subset extraction or re-project:"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:468
+msgid ""
+" % gdal_translate -of gtiff geor:scott/tiger@dbdemo,landsat,scene,id=54 "
+"output.tif \\\n"
+" -srcwin 0 0 800 600\n"
+" % gdalwarp -of png geor:scott/tiger@dbdemo,st_rdt_1,130 output.png\n"
+"-t_srs EPSG:9000913"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:475
+msgid ""
+"Two different GeoRaster can be used as input and output on the same "
+"operation:"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:477
+msgid ""
+"% gdal_translate -of georaster geor:scott/tiger@dbdemo,landsat,scene,id=54 "
+"\\\n"
+"geor:scott/tiger@proj1,projview,image -co INSERT=\"VALUES (102, SDO_GEOR."
+"INIT())\""
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:482
+msgid ""
+"Applications that use GDAL can theoretically read and write from GeoRaster "
+"just like any other format but most of then are more inclined to try to "
+"access files on the file system so one alternative is to create VRT to "
+"represent the GeoRaster description, e.g.:"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:486
+msgid ""
+"% gdal_translate -of VRT geor:scott/tiger@dbdemo,landsat,scene,id=54 view_54."
+"vrt\n"
+"% openenv view_54.vrt"
+msgstr ""

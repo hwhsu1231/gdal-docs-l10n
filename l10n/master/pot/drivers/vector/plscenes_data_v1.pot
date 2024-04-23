@@ -1,0 +1,312 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:4
+msgid "PLScenes (Planet Labs Scenes), Data V1 API"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:8
+msgid ""
+"The driver supports read-only operations to list scenes and their metadata "
+"as a vector layer per item-types: \"PSOrthoTile\", \"REOrthoTile\", "
+"\"PSScene3Band\", \"PSScene4Band\", \"REScene\", \"Landsat8L1G\", "
+"\"Sentinel2L1C\". It can also access raster scenes."
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:14
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:19
+msgid "Dataset name syntax"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:21
+msgid "The minimal syntax to open a datasource is :"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:25
+msgid "PLScenes:[options]"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:27
+msgid ""
+"Additional optional parameters can be specified after the ':' sign. "
+"Currently the following one is supported :"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:30
+msgid "**version**\\ =data_v1: To specify the API version to request."
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:31
+msgid ""
+"**api_key**\\ =value: To specify the Planet API KEY. It is mandatory, unless "
+"it is supplied through the open option API_KEY, or the configuration option :"
+"config:`PL_API_KEY`."
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:34
+msgid ""
+"**follow_links**\\ =YES/NO: Whether assets links should be followed for each "
+"scene (vector). Getting assets links require a HTTP request per scene, which "
+"might be costly when enumerating through a lot of products. Defaults to NO."
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:38
+msgid ""
+"**scene**\\ =scene_id: To specify the scene ID, when accessing raster data. "
+"Optional for vector layer access."
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:40
+msgid ""
+"**itemtypes**\\ =name: To specify the item types name. Optional for vector "
+"layer access. Mandatory for raster access."
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:42
+msgid ""
+"**asset**\\ =value: To specify the asset type (for raster fetching). Default "
+"is \"visual\". Optional for vector layer access. If the option is not "
+"specified and the 'visual' asset category does not exist for the scene (or "
+"if the value is set to 'list'), the returned dataset will have subdatasets "
+"for the available asset categories."
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:47
+msgid ""
+"**medata**\\ =YES/NO: (Raster only) Whether scene metadata should be fetch "
+"from the API and attached to the raster dataset. Defaults to YES."
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:51
+msgid "If several parameters are specified, they must be separated by a comma."
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:54
+msgid "Open options"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:56
+msgid "The following open options are available :"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:120
+msgid "Configuration options"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:122
+msgid ""
+"The following :ref:`configuration options <configoptions>` are available:"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:125
+msgid ":copy-config:`PL_API_KEY`"
+msgstr ""
+
+#: ../../../source/drivers/raster/plmosaic.rst:-1
+msgid "PL_API_KEY=value: To specify the Planet API key."
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:133
+msgid "Attributes"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:135
+msgid ""
+"The layer field definition is built from the \"plscensconf.json\" file in "
+"the GDAL configuration. The links to downloadable products are in "
+"*asset_XXXXX_location* attributes where XXXXX is the asset category id, when "
+"they are active. Otherwise they should be activated by sending a POST "
+"request to the URL in the *asset_XXXXX_activate_link* attribute (what the "
+"raster driver does automatically)"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:143
+msgid "Geometry"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:145
+msgid ""
+"The footprint of each scene is reported as a MultiPolygon with a longitude/"
+"latitude WGS84 coordinate system (EPSG:4326)."
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:149
+msgid "Filtering"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:151
+msgid ""
+"The driver will forward any spatial filter set with SetSpatialFilter() to "
+"the server. It also makes the same for simple attribute filters set with "
+"SetAttributeFilter(). Note that not all attributes support all comparison "
+"operators. Refer to comparator column in `Metadata properties <https://www."
+"planet.com/docs/v0/scenes/#metadata>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:158
+msgid "Paging"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:160
+msgid ""
+"Features are retrieved from the server by chunks of 250 by default (and this "
+"is the maximum value accepted by the server). This number can be altered "
+"with the :config:`PLSCENES_PAGE_SIZE` configuration option."
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:166
+msgid "Vector layer (scene metadata) examples"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:168
+msgid "Listing all scenes available (with the rights of the account) :"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:172
+msgid "ogrinfo -ro -al \"PLScenes:\" -oo API_KEY=some_value"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:174
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:180
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:235
+msgid "or"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:178
+msgid "ogrinfo -ro -al \"PLScenes:api_key=some_value\""
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:184
+msgid "ogrinfo -ro -al \"PLScenes:\" --config PL_API_KEY some_value"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:186
+msgid ""
+"Listing all scenes available on PSOrthoTile item types, under a point of "
+"(lat,lon)=(40,-100) :"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:191
+msgid ""
+"ogrinfo -ro -al \"PLScenes:\" -oo API_KEY=some_value PSOrthoTile -spat -100 "
+"40 -100 40"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:193
+msgid ""
+"Listing all scenes available within a bounding box (lat,lon)=(40,-100) to "
+"(lat,lon)=(39,-99)"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:198
+msgid ""
+"ogrinfo -ro -al \"PLScenes:\" -oo API_KEY=some_value -spat -100 40 -99 39"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:200
+msgid "Listing all scenes available matching criteria :"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:204
+msgid ""
+"ogrinfo -ro -al \"PLScenes:\" -oo API_KEY=some_value PSOrthoTile -where "
+"\"acquired >= '2015/03/26 00:00:00' AND cloud_cover < 10\""
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:206
+msgid "List all downloadable scenes:"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:210
+msgid ""
+"ogrinfo -ro -al -q \"PLScenes:\" -oo API_KEY=some_value PSOrthoTile -where "
+"\"permissions='assets:download'\""
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:213
+msgid "Raster access"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:215
+msgid ""
+"Scenes can be accessed as raster datasets, provided that the scene ID is "
+"specified with the 'scene' parameter / :oo:`SCENE` open option. The "
+"'itemtypes' parameter / :oo:`ITEMTYPES` open option must also be specified. "
+"The asset type (visual, analytic, ...) can be specified with the 'asset' "
+"parameter / :oo:`ASSET` open option. The scene id is the content of the "
+"value of the 'id' field of the features."
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:222
+msgid ""
+"If the product is not already generated on the server, it will be activated, "
+"and the driver will wait for it to be available. The length of this retry "
+"can be configured with the :oo:`ACTIVATION_TIMEOUT` open option."
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:227
+msgid "Raster access examples"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:229
+msgid "Displaying raster metadata :"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:233
+msgid ""
+"gdalinfo \"PLScenes:scene=scene_id,itemtypes=itemypes,asset=analytic\" -oo "
+"API_KEY=some_value"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:239
+msgid ""
+"gdalinfo \"PLScenes:\" -oo API_KEY=some_value -oo ITEMTYPES=itemtypes -oo "
+"SCENE=scene_id -oo ASSET=analytic"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:241
+msgid "Converting/downloading a whole file:"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:245
+msgid ""
+"gdal_translate \"PLScenes:\" -oo API_KEY=some_value -oo SCENE=scene_id \\\n"
+"                -oo ITEMTYPES=itemtypes -oo ASSET=analytic -oo "
+"RANDOM_ACCESS=NO out.tif"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:249
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:251
+msgid ":ref:`General documentation page for PLScenes driver <vector.plscenes>`"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:253
+msgid ""
+"`Documentation of Planet Scenes Data API v1 <https://developers.planet.com/"
+"docs/apis/data/>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/plscenes_data_v1.rst:255
+msgid ":ref:`Raster PLMosaic / Planet Mosaics API driver <raster.plmosaic>`"
+msgstr ""

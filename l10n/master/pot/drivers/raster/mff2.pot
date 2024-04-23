@@ -1,0 +1,336 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/mff2.rst:5
+msgid "MFF2 -- Vexcel MFF2 Image"
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:7
+msgid "MFF2"
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:11
+msgid ""
+"GDAL supports MFF2 Image raster file format for read, update, and creation. "
+"The MFF2 (Multi-File Format 2) format was designed to fit into Vexcel "
+"Hierarchical Key-Value (HKV) databases, which can store binary data as well "
+"as ASCII parameters. This format is primarily used internally to the Vexcel "
+"InSAR processing system."
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:17
+msgid ""
+"To select an MFF2 dataset, select the directory containing the ``attrib``, "
+"and ``image_data`` files for the dataset."
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:20
+msgid ""
+"Currently only latitude/longitude and UTM projection are supported (georef."
+"projection.name = ll or georef.projection.name = utm), with the affine "
+"transform computed from the lat/long control points. In any event, if GCPs "
+"are available in a georef file, they are returned with the dataset."
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:26
+msgid ""
+"Newly created files (with a type of ``MFF2``) are always just raw rasters "
+"with no georeferencing information. For read, and creation all data types "
+"(real, integer and complex in bit depths of 8, 16, 32) should be supported."
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:31
+msgid ""
+"IMPORTANT: When creating a new MFF2, be sure to set the projection before "
+"setting the geotransform (this is necessary because the geotransform is "
+"stored internally as 5 latitude-longitude ground control points, and the "
+"projection is needed to do the conversion)."
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:36
+msgid "NOTE: Implemented as :source_file:`frmts/raw/hkvdataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:39
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:50
+msgid "Format Details"
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:53
+msgid "MFF2 Top-level Structure"
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:55
+msgid ""
+"An MFF2 \"file\" is actually a set of files stored in a directory containing "
+"an ASCII header file entitled \"attrib\", and binary image data entitled "
+"\"image_data\". Optionally, there may be an ASCII \"georef\" file containing "
+"georeferencing and projection information, and an \"image_data_ovr\" (for "
+"\"image_data\" binary image data) file containing tiled overviews of the "
+"image in TIFF format. The ASCII files are arranged in key=value pairs. The "
+"allowable pairs for each file are described below."
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:65
+msgid "The \"attrib\" File"
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:67
+msgid ""
+"As a minimum, the \"attrib\" file must specify the image extents, pixel size "
+"in bytes, pixel encoding and datatype, and pixel byte order. For example,"
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:73
+msgid ""
+"extent.cols    = 800\n"
+"extent.rows    = 1040\n"
+"pixel.size     = 32\n"
+"pixel.encoding = { unsigned twos_complement *ieee_754 }\n"
+"pixel.field    = { *real complex }\n"
+"pixel.order    = { lsbf *msbf }\n"
+"version        = 1.1"
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:81
+msgid ""
+"specifies an image that is 1040 lines by 800 pixels in extent. The pixels "
+"are 32 bits of real data in \"most significant byte first\" (msbf) order, "
+"encoded according to the ieee_754 specification. In MFF2, when a value must "
+"belong to a certain subset (eg. pixel.order must be either lsbf or msbf), "
+"all options are displayed between curly brackets, and the one appropriate "
+"for the current file is indicated with a \"*\"."
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:88
+msgid ""
+"The file may also contain the following lines indicating the number of "
+"channels of data, and how they are interleaved within the binary data file."
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:94
+msgid ""
+"channel.enumeration = 1\n"
+"channel.interleave = { *pixel tile sequential }"
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:98
+msgid "The \"image_data\" File"
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:100
+msgid ""
+"The \"image_data\" file consists of raw binary data, with extents, pixel "
+"encoding, and number of channels as indicated in the \"attrib\" file."
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:104
+msgid "The \"georef\" File"
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:106
+msgid ""
+"The \"georef\" file is used to describe the geocoding and projection "
+"information for the binary data. For example,"
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:111
+msgid ""
+"top_left.latitude            = 32.93333333333334\n"
+"top_left.longitude           = 130.0\n"
+"top_right.latitude           = 32.93333333333334\n"
+"top_right.longitude          = 130.5\n"
+"bottom_left.latitude         = 32.50000000000001\n"
+"bottom_left.longitude        = 130.0\n"
+"bottom_right.latitude        = 32.50000000000001\n"
+"bottom_right.longitude       = 130.5\n"
+"centre.latitude              = 32.71666666666668\n"
+"centre.longitude             = 130.25\n"
+"projection.origin_longitude  = 0\n"
+"projection.name              = ll\n"
+"spheroid.name                = wgs-84"
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:125
+msgid ""
+"describes an orthogonal latitude/longitude (ll) projected image, with "
+"latitudes and longitudes based on the wgs-84 ellipsoid."
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:128
+msgid ""
+"Since MFF2 version 1.1, top_left refers to the top left corner of the top "
+"left pixel. top_right refers to the top right corner of the top right pixel. "
+"bottom_left refers to the bottom left corner of the bottom left pixel. "
+"bottom_right refers to the bottom right corner of the bottom right pixel. "
+"centre refers to the centre of the four corners defined above (center of the "
+"image)."
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:135
+msgid ""
+"Mathematically, for an Npix by Nline image, the corners and centre in (pixel,"
+"line) coordinates for MFF2 version 1.1 are:"
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:140
+msgid ""
+"top_left: (0,0)\n"
+"top_right: (Npix,0)\n"
+"bottom_left: (0,Nline)\n"
+"bottom_right: (Npix,Nline)\n"
+"centre: (Npix/2.0,Nline/2.0)"
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:146
+msgid ""
+"These calculations are done using floating point arithmetic (i.e. centre "
+"coordinates may take on non-integer values)."
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:149
+msgid ""
+"Note that the corners are always expressed in latitudes/longitudes, even for "
+"projected images."
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:153
+msgid "Supported projections"
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:155
+msgid ""
+"ll- Orthogonal latitude/longitude projected image, with latitude parallel to "
+"the rows, longitude parallel to the columns. Parameters: spheroid name, "
+"projection.origin_longitude (longitude at the origin of the projection "
+"coordinates). If not set, this should default to the central longitude of "
+"the output image based on its projection boundaries."
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:162
+msgid ""
+"utm- Universal Transverse Mercator projected image. Parameters: spheroid "
+"name, projection.origin_longitude (central meridian for the utm projection). "
+"The central meridian must be the meridian at the centre of a UTM zone, i.e. "
+"3 degrees, 9 degrees, 12 degrees, etc. If this is not specified or set a "
+"valid UTM central meridian, the reader should reset the value to the nearest "
+"valid central meridian based on the central longitude of the output image. "
+"The latitude at the origin of the UTM projection is always 0 degrees."
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:172
+msgid "Recognized ellipsoids"
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:174
+msgid ""
+"MFF2 format associates the following names with ellipsoid equatorial radius "
+"and inverse flattening parameters:"
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:179
+msgid ""
+"airy-18304:            6377563.396      299.3249646\n"
+"modified-airy4:        6377340.189      299.3249646\n"
+"australian-national4:  6378160          298.25\n"
+"bessel-1841-namibia4:  6377483.865      299.1528128\n"
+"bessel-18414:          6377397.155      299.1528128\n"
+"clarke-18584:          6378294.0        294.297\n"
+"clarke-18664:          6378206.4        294.9786982\n"
+"clarke-18804:          6378249.145      293.465\n"
+"everest-india-18304:   6377276.345      300.8017\n"
+"everest-sabah-sarawak4:6377298.556      300.8017\n"
+"everest-india-19564:   6377301.243      300.8017\n"
+"everest-malaysia-19694:6377295.664      300.8017\n"
+"everest-malay-sing4:   6377304.063      300.8017\n"
+"everest-pakistan4:     6377309.613      300.8017\n"
+"modified-fisher-19604: 6378155          298.3\n"
+"helmert-19064:         6378200          298.3\n"
+"hough-19604:           6378270          297\n"
+"hughes4:               6378273.0        298.279\n"
+"indonesian-1974:       6378160          298.247\n"
+"international-1924:    6378388          297\n"
+"iugc-67:               6378160.0        298.254\n"
+"iugc-75:               6378140.0        298.25298\n"
+"krassovsky-1940:       6378245          298.3\n"
+"kaula:                 6378165.0        292.308\n"
+"grs-80:                6378137          298.257222101\n"
+"south-american-1969:   6378160          298.25\n"
+"wgs-72:                6378135          298.26\n"
+"wgs-84:                6378137          298.257223563\n"
+"ev-wgs-84:             6378137          298.252841\n"
+"ev-bessel:             6377397          299.1976073"
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:211
+msgid "Explanation of fields"
+msgstr ""
+
+#: ../../../source/drivers/raster/mff2.rst:215
+msgid ""
+"channel.enumeration:  (optional- only needed for multiband)\n"
+"Number of channels of data (eg. 3 for rgb)\n"
+"\n"
+"channel.interleave = { *pixel tile sequential } :  (optional- only\n"
+"needed for multiband)\n"
+"\n"
+"For multiband data, indicates how the channels are interleaved.  *pixel\n"
+"indicates that data is stored red value, green value, blue value, red\n"
+"value, green value, blue value etc. as opposed to (line of red values)\n"
+"(line of green values) (line of blue values) or (entire red channel)\n"
+"(entire green channel) (entire blue channel)\n"
+"\n"
+"extent.cols:\n"
+"Number of columns of data.\n"
+"\n"
+"extent.rows:\n"
+"Number of rows of data.\n"
+"\n"
+"pixel.encoding = { *unsigned twos-complement ieee-754 }:\n"
+"Combines with pixel.size and pixel.field to give the data type:\n"
+"(encoding, field, size)- type\n"
+"(unsigned, real, 8)- unsigned byte data\n"
+"(unsigned, real, 16)- unsigned int 16 data\n"
+"(unsigned, real, 32)- unsigned int 32 data\n"
+"(twos-complement, real, 16)- signed int 16 data\n"
+"(twos-complement, real, 32)- signed int 32 data\n"
+"(twos-complement, complex, 64)- complex signed int 32 data\n"
+"(ieee-754, real, 32)- real 32 bit floating point data\n"
+"(ieee-754, real, 64)- real 64 bit floating point data\n"
+"(ieee-754, complex, 64)- complex 32 bit floating point data\n"
+"(ieee-754, complex, 128)- complex 64 bit floating point data\n"
+"\n"
+"pixel.size:\n"
+"Size of one pixel of one channel (bits).\n"
+"\n"
+"pixel.field = { *real complex }:\n"
+"Whether the data is real or complex.\n"
+"\n"
+"pixel.order = { *lsbf msbf }:\n"
+"Byte ordering of the data (least or most significant byte first).\n"
+"\n"
+"version: (only in newer versions- if not present, older version is\n"
+"assumed) Version of mff2."
+msgstr ""

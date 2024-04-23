@@ -1,0 +1,56 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/doq2.rst:5
+msgid "DOQ2 -- New Labelled USGS DOQ"
+msgstr ""
+
+#: ../../../source/drivers/raster/doq2.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/doq2.rst:7
+msgid "DOQ2"
+msgstr ""
+
+#: ../../../source/drivers/raster/doq2.rst:11
+msgid ""
+"Support for read access, including reading of an affine georeferencing "
+"transform, capture of the projection string and reading of other auxiliary "
+"fields as metadata. This format is the new, labelled DOQ (Digital Ortho "
+"Quad) format from the USGS."
+msgstr ""
+
+#: ../../../source/drivers/raster/doq2.rst:16
+msgid "This driver was implemented by Derrick J Brashear."
+msgstr ""
+
+#: ../../../source/drivers/raster/doq2.rst:18
+msgid "NOTE: Implemented as :source_file:`frmts/raw/doq2dataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/doq2.rst:20
+msgid ""
+"See Also: `USGS DOQ Standards <http://rockyweb.cr.usgs.gov/nmpstds/doqstds."
+"html>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/doq2.rst:24
+msgid "Driver capabilities"
+msgstr ""

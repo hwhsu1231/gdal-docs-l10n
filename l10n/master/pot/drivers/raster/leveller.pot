@@ -1,0 +1,131 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/leveller.rst:5
+msgid "Leveller -- Daylon Leveller Heightfield"
+msgstr ""
+
+#: ../../../source/drivers/raster/leveller.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/leveller.rst:7
+msgid "Leveller"
+msgstr ""
+
+#: ../../../source/drivers/raster/leveller.rst:11
+msgid ""
+"Leveller heightfields store 32-bit elevation values. Format versions 4 "
+"through 9 are supported with various caveats (see below). The file extension "
+"for Leveller heightfields is \"TER\" (which is the same as Terragen, but the "
+"driver only recognizes Leveller files)."
+msgstr ""
+
+#: ../../../source/drivers/raster/leveller.rst:16
+msgid ""
+"Blocks are organized as pixel-high scanlines (rows), with the first scanline "
+"at the top (north) edge of the DEM, and adjacent pixels on each line "
+"increasing from left to right (west to east)."
+msgstr ""
+
+#: ../../../source/drivers/raster/leveller.rst:20
+msgid ""
+"The band type is always Float32, even though format versions 4 and 5 "
+"physically use 16.16 fixed-point. The driver auto-converts them to floating-"
+"point."
+msgstr ""
+
+#: ../../../source/drivers/raster/leveller.rst:25
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/leveller.rst:36
+msgid "Reading"
+msgstr ""
+
+#: ../../../source/drivers/raster/leveller.rst:38
+msgid ""
+"``dataset::GetProjectionRef()`` will return only a local coordinate system "
+"for file versions 4 through 6."
+msgstr ""
+
+#: ../../../source/drivers/raster/leveller.rst:41
+msgid ""
+"``dataset::GetGeoTransform()`` returns a simple world scaling with a "
+"centered origin for formats 4 through 6. For versions 7 and higher, it "
+"returns a real-world transform except for rotations. The identity transform "
+"is not considered an error condition; Leveller documents often use them."
+msgstr ""
+
+#: ../../../source/drivers/raster/leveller.rst:47
+msgid ""
+"``band::GetUnitType()`` will report the measurement units used by the file "
+"instead of converting unusual types to meters. A list of unit types is in "
+"the ``levellerdataset.cpp`` module."
+msgstr ""
+
+#: ../../../source/drivers/raster/leveller.rst:51
+msgid ""
+"``band::GetScale()`` and ``band::GetOffset()`` will return the physical-to-"
+"logical (i.e., raw to real-world) transform for the elevation data."
+msgstr ""
+
+#: ../../../source/drivers/raster/leveller.rst:56
+msgid "Writing"
+msgstr ""
+
+#: ../../../source/drivers/raster/leveller.rst:58
+msgid ""
+"The ``dataset::Create()`` call is supported, but for version 7 files only."
+msgstr ""
+
+#: ../../../source/drivers/raster/leveller.rst:61
+msgid ""
+"``band::SetUnitType()`` can be set to any of the unit types listed in the "
+"``levellerdataset.cpp`` module."
+msgstr ""
+
+#: ../../../source/drivers/raster/leveller.rst:64
+msgid "``dataset::SetGeoTransform()`` should not include rotation data."
+msgstr ""
+
+#: ../../../source/drivers/raster/leveller.rst:66
+msgid ""
+"As with the Terragen driver, the ``MINUSERPIXELVALUE`` option must be "
+"specified. This lets the driver correctly map from logical (real-world) "
+"elevations to physical elevations."
+msgstr ""
+
+#: ../../../source/drivers/raster/leveller.rst:70
+msgid ""
+"Header information is written out on the first call to ``band::IWriteBlock``."
+msgstr ""
+
+#: ../../../source/drivers/raster/leveller.rst:74
+msgid "See Also:"
+msgstr ""
+
+#: ../../../source/drivers/raster/leveller.rst:76
+msgid "Implemented as :source_file:`frmts/leveller/levellerdataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/leveller.rst:77
+msgid ""
+"Visit `Daylon Graphics <http://www.daylongraphics.com>`__ for the Leveller "
+"SDK, which documents the Leveller format."
+msgstr ""

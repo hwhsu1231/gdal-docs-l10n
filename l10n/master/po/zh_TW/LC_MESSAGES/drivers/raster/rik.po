@@ -1,0 +1,59 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/rik.rst:5
+msgid "RIK -- Swedish Grid Maps"
+msgstr ""
+
+#: ../../../source/drivers/raster/rik.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/rik.rst:7
+msgid "RIK"
+msgstr ""
+
+#: ../../../source/drivers/raster/rik.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/raster/rik.rst:9
+msgid "(internal zlib is used if necessary)"
+msgstr ""
+
+#: ../../../source/drivers/raster/rik.rst:11
+msgid ""
+"Supported by GDAL for read access. This format is used in maps issued by the "
+"swedish organization Lantmäteriet. Supports versions 1, 2 and 3 of the RIK "
+"format, but only 8 bits per pixel."
+msgstr ""
+
+#: ../../../source/drivers/raster/rik.rst:15
+msgid ""
+"This driver is based on the work done in the `TRikPanel <http://sourceforge."
+"net/projects/trikpanel/>`__ project."
+msgstr ""
+
+#: ../../../source/drivers/raster/rik.rst:18
+msgid "NOTE: Implemented as :source_file:`frmts/rik/rikdataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/rik.rst:21
+msgid "Driver capabilities"
+msgstr ""

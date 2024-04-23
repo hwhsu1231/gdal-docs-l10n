@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/ceos.rst:5
+msgid "CEOS -- CEOS Image"
+msgstr ""
+
+#: ../../../source/drivers/raster/ceos.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/ceos.rst:7
+msgid "CEOS"
+msgstr ""
+
+#: ../../../source/drivers/raster/ceos.rst:11
+msgid ""
+"This is a simple, read-only reader for ceos image files. To use, select the "
+"main imagery file. This driver reads only the image data, and does not "
+"capture any metadata, or georeferencing."
+msgstr ""
+
+#: ../../../source/drivers/raster/ceos.rst:15
+msgid ""
+"This driver is known to work with CEOS data produced by Spot Image, but will "
+"have problems with many other data sources. In particular, it will only work "
+"with eight bit unsigned data."
+msgstr ""
+
+#: ../../../source/drivers/raster/ceos.rst:19
+msgid ""
+"See the separate :ref:`raster.sar_ceos` driver for access to SAR CEOS data "
+"products."
+msgstr ""
+
+#: ../../../source/drivers/raster/ceos.rst:22
+msgid "NOTE: Implemented as :source_file:`frmts/ceos/ceosdataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/ceos.rst:25
+msgid "Driver capabilities"
+msgstr ""

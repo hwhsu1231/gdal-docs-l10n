@@ -1,0 +1,118 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/mrsid.rst:5
+msgid "MrSID -- Multi-resolution Seamless Image Database"
+msgstr ""
+
+#: ../../../source/drivers/raster/mrsid.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/mrsid.rst:7
+msgid "MrSID"
+msgstr ""
+
+#: ../../../source/drivers/raster/mrsid.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/raster/mrsid.rst:9
+msgid "MrSID SDK"
+msgstr ""
+
+#: ../../../source/drivers/raster/mrsid.rst:11
+msgid ""
+"MrSID is a wavelet-based image compression technology which can utilize both "
+"lossy and lossless encoding. This technology was acquired in its original "
+"form from Los Alamos National Laboratories (LANL), where it was developed "
+"under the aegis of the U.S. government for storing fingerprints for the FBI. "
+"Now it is developed and distributed by Extensis."
+msgstr ""
+
+#: ../../../source/drivers/raster/mrsid.rst:18
+msgid ""
+"This driver supports reading of MrSID image files using Extensis' decoding "
+"software development kit (DSDK). **This DSDK is not free software, you "
+"should contact Extensis to obtain it (see link at end of this page).** If "
+"you are using GCC, please, ensure that you have the same compiler as was "
+"used for DSDK compilation. It is C++ library, so you may get "
+"incompatibilities in C++ name mangling between different GCC versions (2.95."
+"x and 3.x)."
+msgstr ""
+
+#: ../../../source/drivers/raster/mrsid.rst:26
+msgid ""
+"Latest versions of the DSDK also support decoding JPEG2000 file format, so "
+"this driver can be used for JPEG2000 too."
+msgstr ""
+
+#: ../../../source/drivers/raster/mrsid.rst:30
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/mrsid.rst:37
+msgid "Metadata"
+msgstr ""
+
+#: ../../../source/drivers/raster/mrsid.rst:39
+msgid ""
+"MrSID metadata transparently translated into GDAL metadata strings. Files in "
+"MrSID format contain a set of standard metadata tags such as: IMAGE__WIDTH "
+"(contains the width of the image), IMAGE__HEIGHT (contains the height of the "
+"image), IMAGE__XY_ORIGIN (contains the x and y coordinates of the origin), "
+"IMAGE__INPUT_NAME (contains the name or names of the files used to create "
+"the MrSID image) etc. GDAL's metadata keys cannot contain characters \\`:' "
+"and \\`=', but standard MrSID tags always contain double colons in tag "
+"names. These characters replaced in GDAL with \\`_' during translation. So "
+"if you are using other software to work with MrSID be ready that names of "
+"metadata keys will be shown differently in GDAL."
+msgstr ""
+
+#: ../../../source/drivers/raster/mrsid.rst:51
+msgid ""
+"XMP metadata can be extracted from JPEG2000 files, and will be stored as XML "
+"raw content in the xml:XMP metadata domain."
+msgstr ""
+
+#: ../../../source/drivers/raster/mrsid.rst:56
+msgid "Georeference"
+msgstr ""
+
+#: ../../../source/drivers/raster/mrsid.rst:58
+msgid ""
+"MrSID images may contain georeference and coordinate system information in "
+"form of GeoTIFF GeoKeys, translated in metadata records. All those GeoKeys "
+"properly extracted and used by the driver. Unfortunately, there is one "
+"caveat: old MrSID encoders has a bug which resulted in wrong GeoKeys, stored "
+"in MrSID files. This bug was fixed in MrSID software version 1.5, but if you "
+"have older encoders or files, created with older encoders, you cannot use "
+"georeference information from them."
+msgstr ""
+
+#: ../../../source/drivers/raster/mrsid.rst:67
+msgid "See Also:"
+msgstr ""
+
+#: ../../../source/drivers/raster/mrsid.rst:69
+msgid "Implemented as :source_file:`frmts/mrsid/mrsiddataset.cpp`."
+msgstr ""
+
+#: ../../../source/drivers/raster/mrsid.rst:70
+msgid "`Extensis web site <http://www.extensis.com/support/developers>`__"
+msgstr ""

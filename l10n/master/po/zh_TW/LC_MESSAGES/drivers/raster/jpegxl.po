@@ -1,0 +1,136 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/raster/jpegxl.rst:5
+msgid "JPEGXL -- JPEG-XL File Format"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpegxl.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpegxl.rst:9
+msgid "JPEGXL"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpegxl.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpegxl.rst:11
+msgid "libjxl"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpegxl.rst:13
+msgid ""
+"The JPEG-XL format is supported for reading, and batch writing "
+"(CreateCopy()), but not update in place."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpegxl.rst:16
+msgid ""
+"The driver supports reading and writing: - georeferencing: encoded as a "
+"GeoJP2 UUID box within a JUMBF box. - XMP in the xml:XMP metadata domain - "
+"EXIF in the EXIF metadata domain - color profile in the COLOR_PROFILE "
+"metadata domain."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpegxl.rst:22
+msgid ""
+"Reading or writing involves ingesting the whole uncompressed image in "
+"memory. Compression is in particular very memory hungry with current libjxl "
+"implementation. For large images (let's say width or height larger than "
+"10,000 pixels), using JPEGXL compression as a :ref:`raster.gtiff` codec is "
+"thus recommended."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpegxl.rst:27
+msgid ""
+"The number of worker threads for multi-threaded compression and "
+"decompression can be set with the :config:`GDAL_NUM_THREADS` configuration "
+"option to an integer value or ``ALL_CPUS`` (the later is the default)."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpegxl.rst:32
+msgid ""
+"Support for reading and writing XMP and EXIF, and writing georeferencing, "
+"requires a libjxl version build from its main branch, post 0.6.1 release."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpegxl.rst:36
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpegxl.rst:45
+msgid "Color Profile Metadata"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpegxl.rst:47
+msgid ""
+"GDAL can deal with the following color profile metadata in the COLOR_PROFILE "
+"domain:"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpegxl.rst:50
+msgid "SOURCE_ICC_PROFILE (Base64 encoded ICC profile embedded in file.)"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpegxl.rst:53
+msgid "Open Options"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpegxl.rst:55
+msgid "The following open options are available:"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpegxl.rst:67
+msgid "Creation Options"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpegxl.rst:69
+msgid ""
+"With libjxl 0.6.1, only 1 (greyscale), 2 band (greyscale + alpha), 3 band "
+"(RGB) or 4 band (RGBA) source images are supported. With later libjxl "
+"versions, any number of bands can be written. Supported data types are Byte, "
+"UInt16 and Float32."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpegxl.rst:74
+msgid ""
+"When copying from a (regular) JPEG file, and not specifying lossy "
+"compression options, its content is re-encoded in a lossless way, and with "
+"reconstruction data that enables to recreate a JPEG file from the JPEGXL "
+"codestream."
+msgstr ""
+
+#: ../../../source/drivers/raster/jpegxl.rst:78
+msgid "The following creation options are available:"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpegxl.rst:191
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpegxl.rst:193
+msgid "`JPEG-XL home page <https://jpeg.org/jpegxl/>`__"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpegxl.rst:194
+msgid "`libjxl <https://github.com/libjxl/libjxl/>`__"
+msgstr ""

@@ -1,0 +1,502 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:5
+msgid "RFC 78: gdal-utils package"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:8
+msgid "Author:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:8
+msgid "Idan Miara"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:9
+msgid "Contact:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:9
+msgid "idan@miara.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:10
+msgid "Started:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:10
+msgid "2020-Dec-3"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:11
+msgid "Last updated:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:11
+msgid "2021-March-26"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:12
+msgid "Status:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:12
+msgid "Adopted, implemented in GDAL 3.3"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:16
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:18
+msgid ""
+"This RFC suggests to put all the GDAL python modules (formly scripts), "
+"except from the GDAL core SWIG bindings, into their own distribution on "
+"pypi. The GDAL python sub-package `osgeo.utils` (introduced in GDAL 3.2) "
+"would be renamed into a package named `osgeo_utils`."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:22
+msgid ""
+"The standalone python scripts from GDAL <= 3.1 were transformed to `osgeo."
+"utils` in GDAL 3.2. For backwards compatibility these scripts still exist "
+"and function as tiny wrappers around the python modules. Users of these "
+"scripts would not be effected from this RFC as the scripts would continue to "
+"function in GDAL 3.3 in the same way as in GDAL <= 3.2."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:27
+msgid ""
+"To allow maximum backwards compatibility, The `osgeo` package (which "
+"includes the GDAL core SWIG bindings) and the `osgeo_utils` package will "
+"continue to be distributed in a single `sdist` named `gdal` in `pypi`."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:30
+msgid ""
+"In addition, a new pure python `wheel` distribution named `gdal-utils` will "
+"be available in `pypi` under the name `gdal-utils`."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:33
+msgid ""
+"This will allow users who wish to upgrade the utils without upgrading the "
+"bindings to do so with `pip install --upgrade gdal-utils` (see more details "
+"in the following sections)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:37
+msgid "Motivation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:47
+msgid ""
+"Making gdal Python developers life easier on Windows (and maybe other "
+"platforms):"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:40
+msgid ""
+"The straightforward way of cloning `gdal` and adding `gdal/swig/python` to "
+"Python path (In PyCharm: marking the it as a `Source Root`) won't work "
+"because the `pyc` files are missing from `gdal/swig/python/osgeo`, thus by "
+"adding `osgeo` to Python path we would be masking a binary installation of "
+"gdal that might be already installed (i.e. `osgeo4w` or Christoph Gohlke's "
+"binary Windows wheels). Workarounds, like copying the `pyc` files to the "
+"`osgeo` dir, cause their own problems, like: * Switching interpreters that "
+"have different versions of `gdal` causes more problems. * Non clean git "
+"working tree so committing the changes to git is harder. By moving the `gdal-"
+"utils` into another root this problem is completely avoid."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:79
+msgid "Allow mixing `gdal` and `gdal-utils` versions"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:50
+msgid ""
+"As the Python code evolves semi-independently of the GDAL core and is not "
+"directly dependent on a specific GDAL version, one might want use the latest "
+"`gdal-utils` package with an older version of `gdal` core bindings, or vice "
+"versa. Currently, One would need to mix the contents different `gdal` "
+"packages to do so."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:54
+msgid ""
+"As the `gdal` package is platform specific, and requires compilation, In "
+"some distributions upgrading to a new GDAL version might take more time, so "
+"one could upgrade the `gdal-utils` package easily and independently of "
+"upgrading the `gdal` package, using `pip install --upgrade gdal-utils`."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:58
+msgid ""
+"On the other hand, if we drop another Python version, like we just did with "
+"Python 2.7, One might be still be able to use newer gdal core bindings "
+"(which might still support an older version of Python) with an older `gdal-"
+"utils`, Which might drop Python versions sooner."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:62
+msgid "Reasons why users wouldn't be able to upgrade to recent GDAL:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:64
+msgid ""
+"They use some LTS distribution (like Debian), or application (like QGIS LTS)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:65
+msgid ""
+"Recent GDAL is not available for their platform or distribution (even if not "
+"LTS)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:66
+msgid ""
+"Their code dependents on some binary gdal-plugin which is available for a "
+"specific GDAL version."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:68
+msgid ""
+"A concrete example would be someone who uses QGIS (or QGIS LTS) that "
+"currently comes with GDAL 3.1, and wants to use the neat stuff added to "
+"`gdal_calc`, With this RFC he could just `pip install --upgrade gdal-utils`. "
+"Because this package package is Pure Python, upgrades should be easy."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:72
+msgid ""
+"Although each version of `gdal-utils` would only be tested against the "
+"equivalent version of `gdal`, In most cases different versions would still "
+"be compatible, but without guarantee."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:75
+msgid ""
+"This RFC would make further testing the compatibility between different "
+"versions of these packages easier and could be considered the first step "
+"into making the `gdal-utils` package completely independent of the `gdal` "
+"package. It would also potentially allow forward compatibility in case we "
+"ever decide to remove the utils from the `gdal` wheel and keep them only in "
+"the `gdal-utils` wheel."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:82
+msgid "Package Names and PyPi release:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:84
+msgid ""
+"This RFC suggests to keep the all-in-one package and in addition to "
+"distribute a utils only package, In order to keep the required changes from "
+"users to a minimum and at the same time allow mixing versions:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:87
+msgid "https://pypi.org/project/GDAL/"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:89
+msgid ""
+"Distribution of a single `pypi.org` wheel named `gdal` will be retained and "
+"will includes both packages. This will insure smooth transition and maximum "
+"backwards compatibility."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:92
+msgid "https://pypi.org/project/gdal-utils/"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:94
+msgid ""
+"A new `pypi.org` package is introduced to include with just the "
+"`osgeo_utils` package, which will allow upgrading the utils without "
+"upgrading the bindings."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:97
+msgid ""
+"To be consistent with the `gdal` `pypi` package name, the utils `pypi` "
+"package is named `gdal-utils`."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:99
+msgid ""
+"the name `osgeo_utils` is consistent with the `osgeo` namespace and module "
+"names."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:101
+msgid ""
+"pip install gdal\n"
+"pip install gdal-utils"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:106
+msgid ""
+"from osgeo import gdal\n"
+"from osgeo_utils import gdal_calc, ogr_foo, osr_bar"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:114
+msgid "How to upgrade the utils without upgrading the bindings:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:116
+msgid ""
+"> If someone installs the \"gdal\" all-in-one package and the \"gdal-utils\" "
+"one. Wouldn't that conflict ?"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:118
+msgid ""
+"`pip install` a wheel overwrites whichever files already exist (even if "
+"installed by a different package) If you `pip install gdal` then `pip "
+"install gdal-utils` you'd get the utils from `gdal-utils`. If later you do "
+"again `pip install gdal` with a different version then you'd get the utils "
+"from `gdal` again, and so on. (it doesn't seem that it matters which version "
+"is a bigger number, just which one you installed later)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:123
+msgid ""
+"If you `pip install gdal` then `pip install gdal-utils` and then `pip "
+"uninstall gdal-utils` then the utils would be uninstalled and you'd be left "
+"with gdal without utils. Then you could `pip install gdal-utils` or `pip "
+"install gdal --ignore-installed` to get them back again (`--ignore-"
+"installed` is not required if you install a different version)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:129
+msgid "Limitations and scope"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:131
+msgid ""
+"The scope of this RFC is the GDAL Python code, except for the SWIG bindings. "
+"There is no effect on any other language supported by GDAL. Because gdal "
+"core is tested using the Python SWIG bindings - this RFC does not suggest "
+"changing them in any way. Binary wheel distribution - discussed in the past "
+"and related to ideas in this RFC."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:138
+msgid "`gdal` and `gdal-utils` Compatibility"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:140
+msgid ""
+"This RFC suggests that `gdal-utils` would continue to be only tested against "
+"the same version of `gdal`. In most cases different versions would still be "
+"compatible, but without guarantee."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:143
+msgid ""
+"A minimum energy approach might keep `gdal-utils` compatible with some "
+"`gdal` versions != `x.y`. `gdal-utils` might officially drop support of some "
+"too old version of GDAL by specifying a newer minimum version of GDAL in the "
+"`setup.py` of `gdal-utils`."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:147
+msgid ""
+"For maximum backwards compatibility and because we would only test `gdal` "
+"against the same version of `gdal-utils` - `osgeo` and `osgeo_utils` will "
+"continue to be distributed inside a single wheel in addition to the new "
+"separate wheel for the utils only."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:151
+msgid ""
+"In cases were an `gdal-utils` module or function actually does need a "
+"minimum specific version of `gdal` (i.e. dependence on a new GDAL C API) "
+"Compatibility could be checked at runtime by comparing to `osgeo."
+"__version__`."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:155
+msgid "Versioning"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:157
+msgid ""
+"As development of `gdal-utils` will be still tied with the development of "
+"GDAL and will be released together with the same `x.y.z` version number. In "
+"case a hotfix to `gdal-utils` is required for some reason, a `x.y.z.p` "
+"version might be used, Which will not effect the distribution of version "
+"`z+1`, i.e. `3.3.0` < `3.3.0.1` < `3.3.1`."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:164
+msgid "Backward compatibility issues:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:166
+msgid "`osgeo.utils` will need be replaced with `osgeo_utils`"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:167
+msgid ""
+"This is the only breaking change, only for GDAL=3.2, and only a single "
+"character."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:168
+msgid ""
+"`swig/python/scripts` - users of the gdal scripts (which are thin wrappers "
+"around the utils) wouldn't be effected."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:172
+msgid "Folder structure change"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:174
+msgid ""
+"`gdal/swig/python/osgeo/utils` -> `gdal/swig/python/gdal-utils/osgeo_utils`"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:176
+msgid ""
+"`gdal/swig/python/osgeo/setup.py` - was updated to include the utils from "
+"the new location under the `gdal-utils` folder."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:178
+msgid ""
+"`gdal/swig/python/gdal-utils/setup.py` - additional setup was added for "
+"`gdal-utils`."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:181
+msgid "CI Impacts:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:183
+msgid ""
+"`gdal-utils` wheel building could be added to the CI, i.e. like in https://"
+"github.com/OSGeo/gdal/pull/3579 No other CI Impacts."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:187
+msgid "Impacts on GDAL core"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:189
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:194
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:199
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:204
+msgid "None."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:192
+msgid "SWIG binding changes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:197
+msgid "Security implications"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:202
+msgid "Performance impact"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:207
+msgid "Documentation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:209
+msgid "Implications of this change shell documented in the README."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:212
+msgid "Testing"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:214
+msgid "Minor changes were made to pytest."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:217
+msgid "Previous discussions"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:219
+msgid "This topic has been discussed in the past in :"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:221
+msgid ""
+"http://osgeo-org.1560.x6.nabble.com/gdal-dev-Call-for-discussion-on-RFC77-"
+"Drop-Python-2-support-td5449659.html"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:224
+msgid "Related PRs:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:226
+msgid "https://gdal.org/development/rfc/rfc77_drop_python2_support.html"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:227
+msgid "https://github.com/OSGeo/gdal/pull/3131"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:228
+msgid "https://github.com/OSGeo/gdal/pull/3117"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:229
+msgid "https://github.com/OSGeo/gdal/pull/3247"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:232
+msgid "Voting history"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:234
+msgid ""
+"http://osgeo-org.1560.x6.nabble.com/gdal-dev-Motion-RFC-78-gdal-utils-"
+"package-td5482707.html"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:236
+msgid "+1 from EvenR, HowardB"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:237
+msgid "+0 from KurtS, JukkaR"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:238
+msgid "-0 from SeanG"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:241
+msgid "Credits"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc78_gdal_utils_package.rst:243
+msgid "Implemented by the author of this RFC, Idan Miara."
+msgstr ""

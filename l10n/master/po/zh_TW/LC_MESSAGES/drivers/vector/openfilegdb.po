@@ -1,0 +1,449 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/openfilegdb.rst:4
+msgid "ESRI File Geodatabase vector (OpenFileGDB)"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:6
+msgid "OpenFileGDB"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:10
+msgid ""
+"The OpenFileGDB driver provides read, write and update access to vector "
+"layers of File Geodatabases (.gdb directories) created by ArcGIS 10 and "
+"above (it has also read-only support for ArcGIS 9.x geodatabases). The "
+"dataset name must be the directory/folder name, and it must end with the ."
+"gdb extension."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:16
+msgid ""
+"It can also read directly zipped .gdb directories (with .gdb.zip extension), "
+"provided they contain a .gdb directory at their first level."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:19
+msgid ""
+"A specific .gdbtable file (including \"system\" tables) can also be opened "
+"directly."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:22
+msgid "Curve in geometries are supported with GDAL >= 2.2."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:24
+msgid "Write and update capabilities are supported since GDAL >= 3.6"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:26
+msgid ""
+"The driver also supports :ref:`raster layers<raster.openfilegdb>` since GDAL "
+"3.7"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:29
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:33
+msgid "3.6"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:40
+msgid "Spatial filtering"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:42
+msgid ""
+"Since GDAL 3.2, the driver can use the native .spx spatial indices for "
+"spatial filtering."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:45
+msgid ""
+"In earlier versions, it uses the minimum bounding rectangle included at the "
+"beginning of the geometry blobs to speed up spatial filtering. By default, "
+"it also builds on the fly a in-memory spatial index during the first "
+"sequential read of a layer. Following spatial filtering operations on that "
+"layer will then benefit from that spatial index. The building of this in-"
+"memory spatial index can be disabled by setting the :config:"
+"`OPENFILEGDB_IN_MEMORY_SPI` configuration option to NO."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:54
+msgid "SQL support"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:56
+msgid ""
+"SQL statements are run through the OGR SQL engine. When attribute indexes (."
+"atx files) exist, the driver will use them to speed up WHERE clauses or "
+"SetAttributeFilter() calls."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:61
+msgid "Special SQL requests"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:63
+msgid ""
+"\"GetLayerDefinition a_layer_name\" and \"GetLayerMetadata a_layer_name\" "
+"can be used as special SQL requests to get respectively the definition and "
+"metadata of a FileGDB table as XML content (only available in Geodatabases "
+"created with ArcGIS 10 or above)"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:68
+msgid ""
+"The \"CREATE INDEX idx_name ON layer_name(field_name)\" SQL request can be "
+"used to create an attribute index. idx_name must have 16 characters or less, "
+"start with a letter and contain only alphanumeric characters or underscore."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:72
+msgid ""
+"The \"RECOMPUTE EXTENT ON layer_name\" SQL request can be used to trigger an "
+"update of the layer extent in layer metadata. This is useful when updating "
+"or deleting features that modify the general layer extent."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:76
+msgid ""
+"The \"REPACK\" or \"REPACK layer_name\" SQL requests can be used "
+"respectively to compact the whole database or a given layer. This is useful "
+"when doing editions (updates or feature deletions) that may leave holes in ."
+"gdbtable files. The REPACK command causes the .gdbtable to be rewritten "
+"without holes. Note that compaction does not involve extent recomputation."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:83
+msgid "Configuration options"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:85
+msgid ""
+"The following :ref:`configuration options <configoptions>` are available:"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:103
+msgid "Dataset open options"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:113
+msgid "Dataset Creation Options"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:115
+msgid "None."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:118
+msgid "Layer Creation Options"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:144
+msgid ""
+"On reading, this information is exposed in the ALIAS_NAME layer metadata "
+"item (GDAL >= 3.8)."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:165
+msgid ""
+"**XYTOLERANCE, ZTOLERANCE, MTOLERANCE**\\=value: These parameters control "
+"the snapping tolerance used for advanced ArcGIS features like network and "
+"topology rules. They won't effect any OGR operations, but they will by used "
+"by ArcGIS. The units of the parameters are the units of the coordinate "
+"reference system."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:171
+msgid ""
+"ArcMap 10.0 and OGR defaults for XYTOLERANCE are 0.001m (or equivalent) for "
+"projected coordinate systems, and 0.000000008983153° for geographic "
+"coordinate systems. ArcMap 10.0 and OGR defaults for ZTOLERANCE and "
+"MTOLERANCE are 0.0001."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:176
+msgid ""
+"**XORIGIN, YORIGIN, ZORIGIN, MORIGIN, XYSCALE, ZSCALE, ZORIGIN**\\=value: "
+"These parameters control the `coordinate precision grid <http://help.arcgis."
+"com/en/sdk/10.0/java_ao_adf/conceptualhelp/engine/index."
+"html#//00010000037m000000>`__ inside the file geodatabase. The dimensions of "
+"the grid are determined by the origin, and the scale. The origin defines the "
+"location of a reference grid point in space. The scale is the reciprocal of "
+"the resolution. So, to get a grid with an origin at 0 and a resolution of "
+"0.001 on all axes, you would set all the origins to 0 and all the scales to "
+"1000."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:186
+msgid ""
+"*Important*: The domain specified by ``(xmin=XORIGIN, ymin=YORIGIN, "
+"xmax=(XORIGIN + 9E+15 / XYSCALE), ymax=(YORIGIN + 9E+15 / XYSCALE))`` needs "
+"to encompass every possible coordinate value for the feature class. If "
+"features are added with coordinates that fall outside the domain, errors "
+"will occur in ArcGIS with spatial indexing, feature selection, and exporting "
+"data."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:193
+msgid "ArcMap 10.0 and OGR defaults:"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:195
+msgid ""
+"For geographic coordinate systems: XORIGIN=-400, YORIGIN=-400, "
+"XYSCALE=1000000000"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:197
+msgid ""
+"For projected coordinate systems: XYSCALE=10000 for the default XYTOLERANCE "
+"of 0.001m. XORIGIN and YORIGIN change based on the coordinate system, but "
+"the OGR default of -2147483647 is suitable with the default XYSCALE for all "
+"coordinate systems."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:201
+msgid "ZORIGIN and MORIGIN: -100000"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:202
+msgid "ZSCALE and MSCALE: 10000"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:234
+msgid "64-bit integer field support"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:238
+msgid ""
+"On creation, 64-bit integer field support requires setting the :lco:"
+"`TARGET_ARCGIS_VERSION` layer creation option to "
+"``ARCGIS_PRO_3_2_OR_LATER``. Note that Esri `recommends <https://pro.arcgis."
+"com/en/pro-app/latest/help/data/geodatabases/overview/arcgis-field-data-"
+"types.htm#ESRI_SECTION2_8BF2454C879941258DC44AF6BB31F386>`__ to restrict the "
+"range of 64-bit integer values to [-9007199254740991, 9007199254740991] for "
+"the larger compatibility. GDAL will allow writing values outside of that "
+"range without warning, and can also read them fine."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:246
+msgid "Field domains"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:250
+msgid "Coded and range field domains are supported."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:253
+msgid "Relationships"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:257
+msgid "Relationship retrieval, creation, deletion and updating is supported."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:260
+msgid "Hiearchical organization"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:264
+msgid ""
+"The hierarchical organization of tables and feature classes as top-level "
+"element or within a feature dataset can be explored using the methods :cpp:"
+"func:`GDALDataset::GetRootGroup`, :cpp:func:`GDALGroup::GetGroupNames`, :cpp:"
+"func:`GDALGroup::OpenGroup`, :cpp:func:`GDALGroup::GetVectorLayerNames` and :"
+"cpp:func:`GDALGroup::OpenVectorLayer`"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:271
+msgid "Transaction support"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:273
+msgid ""
+"The driver implements transactions at the database level, through an "
+"emulation (as per :ref:`rfc-54`). This works by backing up the current state "
+"of the modified parts of a geodatabase after StartTransaction(force=TRUE) is "
+"called. If the transaction is committed, the backup copy is destroyed. If "
+"the transaction is rolled back, the backup copy is restored."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:280
+msgid ""
+"Note that this emulation has an unspecified behavior in case of concurrent "
+"updates (with different connections in the same or another process)."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:285
+msgid "Geometry coordinate precision"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:287
+msgid "3.9"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:289
+msgid ""
+"The driver supports reading and writing the geometry coordinate precision, "
+"using the XYResolution, ZResolution and MResolution members of the :cpp:"
+"class:`OGRGeomCoordinatePrecision` settings of the :cpp:class:"
+"`OGRGeomFieldDefn`. ``XYScale`` is computed as 1.0 / ``XYResolution`` (and "
+"similarly for the Z and M components). The tolerance setting is computed as "
+"being one tenth of the resolution"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:296
+msgid ""
+"On reading, the coordinate precision grid parameters are returned as format "
+"specific options of :cpp:class:`OGRGeomCoordinatePrecision` with the "
+"``FileGeodatabase`` format key, with the following option key names: "
+"``XYScale``, ``XYTolerance``, ``XYOrigin``, ``ZScale``, ``ZTolerance``, "
+"``ZOrigin``, ``MScale``, ``MTolerance``, ``MOrigin``. On writing, they are "
+"also honored (they will have precedence over XYResolution, ZResolution and "
+"MResolution)."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:304
+msgid ""
+"On layer creation, the XORIGIN, YORIGIN, ZORIGIN, MORIGIN, XYSCALE, ZSCALE, "
+"ZORIGIN, XYTOLERANCE, ZTOLERANCE, MTOLERANCE layer creation options will be "
+"used in priority over the settings of :cpp:class:"
+"`OGRGeomCoordinatePrecision`."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:309
+msgid "Comparison with the FileGDB driver"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:311
+msgid "(Comparison done with a FileGDB driver using FileGDB API SDK 1.4)"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:313
+msgid "Advantages of the OpenFileGDB driver:"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:315
+msgid "Can read ArcGIS 9.X Geodatabases, and not only 10 or above."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:316
+msgid "Can open layers with any spatial reference system."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:317
+msgid "Thread-safe (i.e. datasources can be processed in parallel)."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:318
+msgid ""
+"Uses the VSI Virtual File API, enabling the user to read a Geodatabase in a "
+"ZIP file or stored on a HTTP server."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:320
+msgid "Faster on databases with a big number of fields."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:321
+msgid "Does not depend on a third-party library."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:322
+msgid "Robust against corrupted Geodatabase files."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:324
+msgid "Drawbacks of the OpenFileGDB driver:"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:326
+msgid ""
+"Cannot read data from compressed data in CDF format (Compressed Data Format)."
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:330
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:332
+msgid "Read layer from FileGDB and load into PostGIS:"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:336
+msgid ""
+"ogr2ogr -overwrite -f \"PostgreSQL\" PG:\"host=myhost user=myuser "
+"dbname=mydb password=mypass\" \"C:\\somefolder\\BigFileGDB.gdb\" "
+"\"MyFeatureClass\""
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:338
+msgid "Get detailed info for FileGDB:"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:342
+msgid "ogrinfo -al \"C:\\somefolder\\MyGDB.gdb\""
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:344
+msgid "Get detailed info for a zipped FileGDB:"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:348
+msgid "ogrinfo -al \"C:\\somefolder\\MyGDB.gdb.zip\""
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:351
+msgid "Links"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:353
+msgid ":ref:`OpenFileGDB raster <raster.openfilegdb>` documentation page"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:354
+msgid ":ref:`FileGDB driver <vector.filegdb>`, relying on the FileGDB API SDK"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:355
+msgid ""
+"Reverse-engineered specification of the `FileGDB format <https://github.com/"
+"rouault/dump_gdbtable/wiki/FGDB-Spec>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:360
+msgid "Credits"
+msgstr ""
+
+#: ../../../source/drivers/vector/openfilegdb.rst:362
+msgid ""
+"Edition/write capabilities of the driver have been funded by the following "
+"organizations: Provincie Zuid-Holland, Provincie Gelderland and Gemeente "
+"Amsterdam."
+msgstr ""

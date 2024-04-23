@@ -1,0 +1,182 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/api/gdalwarp_cpp.rst:5
+msgid "Warper C++ API"
+msgstr ""
+
+#: ../../../source/api/gdalwarp_cpp.rst:0
+msgid "Defines"
+msgstr ""
+
+#: ../../../source/api/gdalwarp_cpp.rst:0
+msgid "Typedefs"
+msgstr ""
+
+#: ../../../source/api/gdalwarp_cpp.rst:0
+msgid "Enums"
+msgstr ""
+
+#: ../../../source/api/gdalwarp_cpp.rst:0
+msgid "Functions"
+msgstr ""
+
+#: ../../../source/api/gdalwarp_cpp.rst:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../../source/api/gdalwarp_cpp.rst:0
+msgid "Returns"
+msgstr ""
+
+#: ../../../source/api/gdalwarp_cpp.rst:-1
+msgid ""
+"     GDALDatasetH src_ds = GDALOpen(\"source.tif\");\n"
+"     GDALDatasetH warped_ds = GDALAutoCreateWarpedVRT( src_ds, ... );\n"
+"     GDALReleaseDataset(src_ds); // src_ds is not \"owned\" fully by "
+"warped_ds.\n"
+"Do NOT use GDALClose(src_ds) here\n"
+"     ...\n"
+"     ...\n"
+"     GDALReleaseDataset(warped_ds); // or GDALClose(warped_ds);"
+msgstr ""
+
+#: ../../../source/api/gdalwarp_cpp.rst:-1
+msgid ""
+"GDALDatasetH src_ds = GDALOpen(\"source.tif\");\n"
+"GDALDatasetH warped_ds = GDALAutoCreateWarpedVRT( src_ds, ... );\n"
+"...\n"
+"...\n"
+"GDALReleaseDataset(warped_ds); // or GDALClose(warped_ds);\n"
+"GDALReleaseDataset(src_ds); // or GDALClose(src_ds);"
+msgstr ""
+
+#: ../../../source/api/gdalwarp_cpp.rst:0
+msgid "Public Members"
+msgstr ""
+
+#: ../../../source/api/gdalwarp_cpp.rst:-1
+msgid ""
+"Example with nodata values at (1, 2, 3) and target alpha band requested.\n"
+"<ul>\n"
+"<li>input pixel = (1, 2, 3) ==> output pixel = (0, 0, 0, 0)</li>\n"
+"<li>input pixel = (1, 2, 127) ==> output pixel = (1, 2, 127, 255)</li>\n"
+"</ul>"
+msgstr ""
+
+#: ../../../source/api/gdalwarp_cpp.rst:0
+msgid "Public Functions"
+msgstr ""
+
+#: ../../../source/api/gdalwarp_cpp.rst:-1
+msgid ""
+"float dfPixelValue;\n"
+"int   nBand = 2-1;  // Band indexes are zero based.\n"
+"int   nPixel = 3; // Zero based.\n"
+"int   nLine = 4;  // Zero based.\n"
+"\n"
+"assert( nPixel >= 0 && nPixel < poKern->nSrcXSize );\n"
+"assert( nLine >= 0 && nLine < poKern->nSrcYSize );\n"
+"assert( nBand >= 0 && nBand < poKern->nBands );\n"
+"dfPixelValue = ((float *) poKern->papabySrcImage[nBand])\n"
+"                               [nPixel + nLine * poKern->nSrcXSize];"
+msgstr ""
+
+#: ../../../source/api/gdalwarp_cpp.rst:-1
+msgid ""
+"int   bIsValid = TRUE;\n"
+"int   nBand = 2-1;  // Band indexes are zero based.\n"
+"int   nPixel = 3; // Zero based.\n"
+"int   nLine = 4;  // Zero based.\n"
+"\n"
+"assert( nPixel >= 0 && nPixel < poKern->nSrcXSize );\n"
+"assert( nLine >= 0 && nLine < poKern->nSrcYSize );\n"
+"assert( nBand >= 0 && nBand < poKern->nBands );\n"
+"\n"
+"if( poKern->papanBandSrcValid != NULL\n"
+"    && poKern->papanBandSrcValid[nBand] != NULL )\n"
+"{\n"
+"    GUInt32 *panBandMask = poKern->papanBandSrcValid[nBand];\n"
+"    int    iPixelOffset = nPixel + nLine * poKern->nSrcXSize;\n"
+"\n"
+"    bIsValid = CPLMaskGet(panBandMask, iPixelOffset)\n"
+"}"
+msgstr ""
+
+#: ../../../source/api/gdalwarp_cpp.rst:-1
+msgid ""
+"float fDensity = 1.0;\n"
+"int nPixel = 3;  // Zero based.\n"
+"int nLine = 4;   // Zero based.\n"
+"\n"
+"assert( nPixel >= 0 && nPixel < poKern->nSrcXSize );\n"
+"assert( nLine >= 0 && nLine < poKern->nSrcYSize );\n"
+"if( poKern->pafUnifiedSrcDensity != NULL )\n"
+"  fDensity = poKern->pafUnifiedSrcDensity\n"
+"                               [nPixel + nLine * poKern->nSrcXSize];"
+msgstr ""
+
+#: ../../../source/api/gdalwarp_cpp.rst:-1
+msgid ""
+"float dfPixelValue;\n"
+"int   nBand = 2-1;  // Band indexes are zero based.\n"
+"int   nPixel = 3; // Zero based.\n"
+"int   nLine = 4;  // Zero based.\n"
+"\n"
+"assert( nPixel >= 0 && nPixel < poKern->nDstXSize );\n"
+"assert( nLine >= 0 && nLine < poKern->nDstYSize );\n"
+"assert( nBand >= 0 && nBand < poKern->nBands );\n"
+"dfPixelValue = ((float *) poKern->papabyDstImage[nBand])\n"
+"                               [nPixel + nLine * poKern->nSrcYSize];"
+msgstr ""
+
+#: ../../../source/api/gdalwarp_cpp.rst:-1
+msgid ""
+"float fDensity = 1.0;\n"
+"int   nPixel = 3; // Zero based.\n"
+"int   nLine = 4;  // Zero based.\n"
+"\n"
+"assert( nPixel >= 0 && nPixel < poKern->nDstXSize );\n"
+"assert( nLine >= 0 && nLine < poKern->nDstYSize );\n"
+"if( poKern->pafDstDensity != NULL )\n"
+"  fDensity = poKern->pafDstDensity[nPixel + nLine * poKern->nDstXSize];"
+msgstr ""
+
+#: ../../../source/api/gdalwarp_cpp.rst:0
+msgid "Public Static Functions"
+msgstr ""
+
+#: ../../../source/api/gdalwarp_cpp.rst:0
+msgid "Protected Functions"
+msgstr ""
+
+#: ../../../source/api/gdalwarp_cpp.rst:0
+msgid "Private Functions"
+msgstr ""
+
+#: ../../../source/api/gdalwarp_cpp.rst:0
+msgid "Private Members"
+msgstr ""
+
+#: ../../../source/api/gdalwarp_cpp.rst:0
+msgid "Private Static Functions"
+msgstr ""
+
+#: ../../../source/api/gdalwarp_cpp.rst:0
+msgid "Friends"
+msgstr ""

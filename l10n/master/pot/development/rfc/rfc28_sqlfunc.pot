@@ -1,0 +1,318 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:5
+msgid "RFC 28: OGR SQL Generalized Expressions"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:7
+msgid "Author: Frank Warmerdam"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:9
+msgid "Contact: warmerdam@pobox.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:11
+msgid "Status: Adopted, Implemented"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:14
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:16
+msgid ""
+"The OGR SQL evaluation engine currently does not allow general purpose "
+"functions to be applied to columns in SELECT statements. Some special "
+"purpose functions are supported (ie. CAST, COUNT, AVG, MAX, MIN, and SUM), "
+"but not as part of more general expressions and generally in very "
+"constrained arrangements. It is the intent of this work item to extend the "
+"OGR SQL engine to support fairly general purpose expression evaluation in "
+"the output field list of OGR SQL SELECT statements and to implement a few "
+"preliminary processing functions in a fashion compatible with standard SQL. "
+"As well, expressions used in WHERE clauses will be generalized to support "
+"evaluation of non-logical operations, such as math and functions. For "
+"example, after implementation it is intended the following could be "
+"evaluated."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:31
+msgid ""
+"SELECT CONCAT(first_name, ' ', last_name) AS full_name FROM customers\n"
+"SELECT id, \"Regional Road\" AS roadtypename FROM roads where roadtype=3\n"
+"SELECT (subtotal+salestax) as totalcost from invoice_info where 100 <= "
+"(subtotal+salestax)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:35
+msgid ""
+"A prototype implementation is now available for review in `http://svn.osgeo."
+"org/gdal/sandbox/warmerdam/gdal-rfc28 <http://svn.osgeo.org/gdal/sandbox/"
+"warmerdam/gdal-rfc28>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:39
+msgid "Technical Approach"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:41
+msgid ""
+"Currently logical expressions take a very constrained format with the base "
+"elements having to be of the form * <constant_value>*. As part of the "
+"generalization non-logical expressions will be supported and the left and "
+"right side of operators will be equally treated. The current OGR SQL parser "
+"is ad hoc and cannot be practically extended to this generalized form of "
+"expression. So at this point we will move to a yacc/bison based parser "
+"grammar for expressions."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:49
+msgid ""
+"Since it is not really practical to continue to use the existing ad hoc "
+"SELECT parsing when parts of the SELECT statement are expressions, the yacc/"
+"bison based parser will also be used to parse the whole SELECT statement."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:54
+msgid ""
+"The current expression node will be generalized to have 0-n children (for "
+"arguments to functions), and to treat field references and constant values "
+"as distinct leaf nodes rather than embedding this information in a node "
+"defining an operation."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:59
+msgid ""
+"It should be noted that as a side effect WHERE clauses will also support "
+"more general expressions - not just logical comparisons. For instance:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:62
+msgid "SELECT \\* WHERE (subtotal+salestax) > 100.0"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:65
+msgid "New Functions"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:67
+msgid "Math: +, -, \\*, /, \\*\\*"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:68
+msgid "String: CONCAT, SUBSTR"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:71
+msgid "SELECT Rules"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:75
+msgid ""
+"SELECT <field-list> FROM <table_def>\n"
+"     [LEFT JOIN <table_def>\n"
+"      ON [<table_ref>.]<key_field> = [<table_ref>.].<key_field>]*\n"
+"     [WHERE <where-expr>]\n"
+"     [ORDER BY <sort specification list>]\n"
+"\n"
+"<field-list> ::= <column-spec> [ { , <column-spec> }... ]\n"
+"\n"
+"<column-spec> ::= <field-spec> [ <as clause> ]\n"
+"                 | CAST ( <field-spec> AS <data type> ) [ <as clause> ]\n"
+"\n"
+"<field-spec> ::= [DISTINCT] <field_ref>\n"
+"                 | <cumm-field-func> ( [DISTINCT] <field-ref> )\n"
+"                 | <field-expr>\n"
+"                 | Count(*)\n"
+"\n"
+"<field-expr> ::= <field_ref>\n"
+"                 | <constant-value>\n"
+"                 | <field-expr> <field-operator> <field-expr>\n"
+"                 | <field-func> ( <field-expr-list> )\n"
+"                 | ( <field-expr> )\n"
+"\n"
+"<field-expr-list> ::= field-expr\n"
+"                 |  field-expr , field-expr-list\n"
+"                 |  <empty>\n"
+"\n"
+"<as clause> ::= [ AS ] <column_name>\n"
+"\n"
+"<data type> ::= character [ ( field_length ) ]\n"
+"                | float [ ( field_length ) ]\n"
+"                | numeric [ ( field_length [, field_precision ] ) ]\n"
+"                | integer [ ( field_length ) ]\n"
+"                | date [ ( field_length ) ]\n"
+"                | time [ ( field_length ) ]\n"
+"                | timestamp [ ( field_length ) ]\n"
+"\n"
+"<cumm-field-func> ::= AVG | MAX | MIN | SUM | COUNT\n"
+"\n"
+"<field-operator> ::= '+' | '-' | '/' | '*' | '||'\n"
+"\n"
+"<field-func> ::= CONCAT | SUBSTR\n"
+"\n"
+"<field_ref>  ::= [<table_ref>.]field_name"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:120
+msgid "Special Notes"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:122
+msgid ""
+"The existing CAST, and column summary functions COUNT, AVG, MIN, MAX and SUM "
+"will be treated more-or-less as functions but constrained to be root "
+"operations on column definitions and treated as a special case (still)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:127
+msgid "Compatibility Implications"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:129
+msgid ""
+"Some identifiers that were previously allowed as unquoted field names will "
+"likely now have to be quoted as they will be keywords in the grammar. The "
+"keyword set is:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:133
+msgid "IN"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:134
+msgid "LIKE"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:135
+msgid "NULL"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:136
+msgid "IS"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:137
+msgid "SELECT"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:138
+msgid "LEFT"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:139
+msgid "JOIN"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:140
+msgid "WHERE"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:141
+msgid "ON"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:142
+msgid "ORDER"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:143
+msgid "BY"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:144
+msgid "FROM"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:145
+msgid "AS"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:146
+msgid "ASC"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:147
+msgid "DESC"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:148
+msgid "DISTINCT"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:149
+msgid "CAST"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:151
+msgid ""
+"The previous implementation was written in C and avoided all use of GDAL/OGR "
+"services so that it could be easily used in other contexts, including as the "
+"where clause evaluator of the OGDI library. After this update the code is C+"
+"+, and direct use of CPL error and other services has been directly "
+"incorporated. This means the implementation used by GDAL and OGDI will "
+"diverge."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:158
+msgid ""
+"For the most part the change results in some OGR SQL statements to work that "
+"would previously have generated an error."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:162
+msgid "Performance Implications"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:164
+msgid ""
+"I am hopeful that the evaluation speed will not be significantly different "
+"for simple selections, but each output field will need to be evaluated as an "
+"expression (with presumably one value-from-field node)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:169
+msgid "Implementation Plan"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:171
+msgid ""
+"Frank Warmerdam will implement, test and document for the GDAL/OGR 1.8 "
+"release."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:175
+msgid "Testing"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:177
+msgid ""
+"All existing OGR SQL test suite tests should pass. A new autotest/ogr/"
+"ogr_sql_rfc28.py script will be introduced to test new functionality."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:182
+msgid "Documentation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc28_sqlfunc.rst:184
+msgid ""
+"The :ref:`OGR SQL <ogr_sql_dialect>` document will be extended to describe "
+"the new capabilities."
+msgstr ""

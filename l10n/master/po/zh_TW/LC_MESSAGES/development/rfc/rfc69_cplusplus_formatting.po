@@ -1,0 +1,471 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:5
+msgid "RFC 69: C/C++ Code Formatting"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:7
+msgid ""
+"This document proposes and describes desired code formatting style used "
+"across C and C++ source code in GDAL."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:11
+msgid "Author:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:11
+msgid "Kurt Schwehr"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:12
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:14
+msgid "Contact:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:12
+msgid "schwehr@google.com / schwehr@gmail.com"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:13
+msgid "Co-Author:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:13
+msgid "Alessandro Pasotti"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:14
+msgid "elpaso@itopen.it"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:15
+msgid "Started:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:15
+msgid "2017-May-04"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:16
+msgid "Status:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:16
+msgid "Adpoted, implemented"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:19
+msgid ""
+"This RFC is based on `GEOS RFC 4 <https://trac.osgeo.org/geos/wiki/RFC4>`__ "
+"by Mateusz Łoskot."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:24
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:26
+msgid ""
+"The document proposes and describes desired default code formatting style "
+"guidelines for GDAL programming in C and C++ languages."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:29
+msgid ""
+"The goal of this document is to initiate process to reach an agreement for "
+"the default code formatting style."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:33
+msgid "Motivation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:35
+msgid ""
+"There is a need to decide on format of GDAL source code and apply such "
+"globally consistent format to GDAL C/C++ codebase."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:38
+msgid ""
+"A uniform, codebase-wide formatting style makes reading and comprehending "
+"existing code easier, writing code focused on important aspects of new "
+"developments and more pleasant, removes burden during a patch or pull "
+"request code reviews and prevents `bikeshedding religious arguments <http://"
+"wiki.c2.com/?WhereDoTheBracesGo>`__. Even in small projects, contributing "
+"developers discover the problems of working without an agreed upon code "
+"format."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:46
+msgid ""
+"The utility of such guidelines has been proven by many open source software "
+"projects."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:49
+msgid ""
+"The scope of the proposal is specifically limited to formatting style "
+"guidelines. It is not an intention to develop a general coding guide "
+"covering other aspects of writing software like naming, etc."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:54
+msgid "Proposal"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:56
+msgid ""
+"It is important to make effortless for developers to produce properly "
+"formatted code."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:59
+msgid ""
+"The proposal suggests to use `clang-format <https://clang.llvm.org/docs/"
+"ClangFormat.html>`__ version 3.8 or higher to define C++ code formatting "
+"rules for GDAL code."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:63
+msgid ""
+"The ``clang-format`` is a tool to automatically format C/C++ code, so that "
+"developers don't need to worry about style issues. Unlike other tools which "
+"use own parsers, ``clang-format`` uses the Clang tokenizer and supports the "
+"same C++ source code as the Clang compiler. This guarantees correct output "
+"is produced and offers unique features (eg. wrapping long lines whether of "
+"code, strings, arrays - something which AStyle has no way of doing)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:71
+msgid ""
+"The style settings can be defined in a ``.clang-format`` configuration file, "
+"however to make it as easy as possible, we will use the default style (LLVM "
+"style?)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:75
+msgid ""
+"The ``clang-format`` is straightforward to run and can support development "
+"workflow as standalone tool or as one of many editor integrations or other "
+"bespoke utilities (eg. ``git cl format`` [Chromium])."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:80
+msgid ""
+"A new pre-commit hook will be added to the current configuration in ``.pre-"
+"commit-config.yaml`` to run [clang-format pre-commit]."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:83
+msgid ""
+"To enforce the code formatting, a gatekeeper will be installed in CI, "
+"rejecting commits with code not conforming to the code formatting style and "
+"a brief textual hint to install or update the pre-commit hooks will be added "
+"to failure message."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:91
+msgid "Code Formatting Rules"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:93
+msgid "What code formatting rules to use?"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:95
+msgid ""
+"*\"A mature engineers know that a standard is more important than which "
+"standard.\"* ~[MongoDB]"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:98
+msgid ""
+"``clang-format`` offers several defaults (eg. LLVM, Mozilla, Linux, Google C+"
+"+ Style)."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:101
+msgid ""
+"The proposal recommends to use one of the base styles without any "
+"modification. It is possible to fine-tune the configuration, but this RFC "
+"aims for simplicity."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:105
+msgid "The reasons are two-fold:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:107
+msgid ""
+"make GDAL code unified with the wide spectrum of well-established C/C++ "
+"projects"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:109
+msgid "long arguments and religious wars prevention."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:112
+msgid "``.clang-format``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:114
+msgid "The hope is to avoid requiring a .clang-format file in the code base."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:117
+msgid "``.editorconfig``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:119
+msgid ""
+"`EditorConfig <http://editorconfig.org/>`__ is currently in use and ``."
+"editorconfig`` file is provided to automatically tell popular code editors "
+"about the basic style settings like indentation, whitespaces and end-of-line "
+"markers for distinguished types of plain text files."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:124
+msgid ""
+"The ``.editorconfig`` file will have to be updated to match the chosen ``."
+"clang-format`` settings if they are required."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:128
+msgid "EOL"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:130
+msgid "``clang-format`` does not enforce line endings."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:132
+msgid ""
+"The EOL marker is considered to be `a part of a file encoding decision "
+"<http://lists.llvm.org/pipermail/cfe-commits/Week-of-Mon-20130930/090200."
+"html>`__ and not part of any coding style."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:136
+msgid ""
+"The EOL marker can be enforced as project-wide setting controlled with ``."
+"gitattributes`` and ``.editorconfig``."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:139
+msgid ""
+"However, it shall still be left as configurable setting in developer's "
+"environment of choice (eg. ``git config``) independently from the project-"
+"wide setting."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:144
+msgid "Big Reformat"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:146
+msgid "What to do about the existing code?"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:148
+msgid "The proposal recommends to just do one big reformat of the codebase."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:150
+msgid ""
+"While it may seem causing clutter in the repository log (eg. ``svn blame``), "
+"if it occurs infrequently (eg. yearly) and is applied to the entire codebase "
+"at that time, it should not be very disruptive to the source code history. "
+"One way to cope with skewed history is to use ``git blame -w`` which ignores "
+"whitespace when comparing commits."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:156
+msgid ""
+"Partial application of the code formatting rules would create more work "
+"without delivering the full benefit [MongoDB] leading to codebase with "
+"different styles mixed."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:160
+msgid ""
+"To skip the \"big reformat\" commit from ``git blame``, git offers a "
+"mechanism to [git_blame_ignore] , a pre-configured ignore file ``.git-blame-"
+"ignore-revs`` will be provided in the source tree with the \"big reformat\" "
+"commit hash in it."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:165
+msgid ""
+"The ignore file can be specified on the command line with ``git blame --"
+"ignore-revs-file .git-blame-ignore-revs`` or it can be set permanently with "
+"``git config blame.ignoreRevsFile .git-blame-ignore-revs``."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:169
+msgid ""
+"The a.m. instructions will be added to the `developers documentation "
+"<https://gdal.org/development/dev_practices.html>`__."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:173
+msgid "Branches"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:175
+msgid "Branches to run the big reformat in are:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:177
+msgid "``master``"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:178
+msgid "current stable version (to make backports easier)"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:181
+msgid "After Big Reformat"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:183
+msgid ""
+"The pre-commit hook will automatically take care of formatting the code "
+"before every commit, the CI test will reject not formatted code."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:187
+msgid ""
+"*\"After all, every moment of time wasted on code formatting or discussion "
+"thereof is eliminated.\"* ~[MongoDB]"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:191
+msgid "Implementation"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:193
+msgid "add clang-format to pre-commit configuration file"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:194
+msgid "Set up GitHub workflow [clang-format-check]"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:196
+msgid ""
+"A draft of the implementation is available at `this branch <https://github."
+"com/elpaso/gdal/tree/rfc69_cplusplus_formatting_revival>`__."
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:198
+msgid "The relevant files are:"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:200
+msgid ""
+"`pre-commit <https://github.com/elpaso/gdal/blob/"
+"rfc69_cplusplus_formatting_revival/.pre-commit-config.yaml#L30>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:201
+msgid ""
+"`.clang-format style <https://github.com/elpaso/gdal/blob/"
+"rfc69_cplusplus_formatting_revival/.clang-format>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:202
+msgid ""
+"`GH workflow <https://github.com/elpaso/gdal/blob/"
+"rfc69_cplusplus_formatting_revival/.github/workflows/clang-format-check."
+"yml>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:203
+msgid ""
+"`clang-format script <https://github.com/elpaso/gdal/blob/"
+"rfc69_cplusplus_formatting_revival/scripts/clang-format.sh>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:209
+msgid "References"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:211
+msgid ""
+"[clang-format pre-commit] `Clang-Format Pre-Commit <https://github.com/pre-"
+"commit/mirrors-clang-format>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:212
+msgid ""
+"[clang-format-check] `Clang-Format Check Workflow <https://github.com/"
+"marketplace/actions/clang-format-check>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:213
+msgid ""
+"[MongoDB] Succeeding With ClangFormat: `Part 1 <https://engineering.mongodb."
+"com/post/succeeding-with-clangformat-part-1-pitfalls-and-planning/>`__, "
+"`Part 2 <https://engineering.mongodb.com/post/succeeding-with-clangformat-"
+"part-2-the-big-reformat/>`__, `Part 3 <https://engineering.mongodb.com/post/"
+"succeeding-with-clangformat-part-3-persisting-the-change/>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:219
+msgid ""
+"[Chromium] `Using clang-format on Chromium C++ Code <https://chromium."
+"googlesource.com/chromium/src/+/master/docs/clang_format.md>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:221
+msgid ""
+"`https://clangformat.com <https://clangformat.com>`__ - ``clang-format`` "
+"interactive guide and builder"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:223
+msgid ""
+"`https://zed0.co.uk/clang-format-configurator/ <https://zed0.co.uk/clang-"
+"format-configurator/>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:224
+msgid ""
+"`https://trac.osgeo.org/geos/wiki/RFC4 <https://trac.osgeo.org/geos/wiki/"
+"RFC4>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:225
+msgid ""
+"[git_blame_ignore] `Ignore Commits in Blame View` <Git https://docs.github."
+"com/en/repositories/working-with-files/using-files/viewing-a-file#ignore-"
+"commits-in-the-blame-view>`__"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:228
+msgid "Voting history"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc69_cplusplus_formatting.rst:230
+msgid "+1 from PSC members KurtS and EvenR"
+msgstr ""

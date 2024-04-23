@@ -1,0 +1,337 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/programs/gdal_rasterize.rst:5
+#: ../../../source/programs/gdal_rasterize.rst:11
+msgid "gdal_rasterize"
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:9
+msgid "Burns vector geometries into a raster"
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:14
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:16
+msgid ""
+"gdal_rasterize [--help] [--help-general]\n"
+"    [-b <band>]... [-i] [-at]\n"
+"    [-oo <NAME>=<VALUE>]...\n"
+"    {[-burn <value>]... | [-a <attribute_name>] | [-3d]} [-add]\n"
+"    [-l <layername>]... [-where <expression>] [-sql <select_statement>|"
+"@<filename>]\n"
+"    [-dialect <dialect>] [-of <format>] [-a_srs <srs_def>] [-to "
+"<NAME>=<VALUE>]...\n"
+"    [-co <NAME>=<VALUE>]... [-a_nodata <value>] [-init <value>]...\n"
+"    [-te <xmin> <ymin> <xmax> <ymax>] [-tr <xres> <yres>] [-tap] [-ts "
+"<width> <height>]\n"
+"    [-ot {Byte/Int8/Int16/UInt16/UInt32/Int32/UInt64/Int64/Float32/Float64/\n"
+"         CInt16/CInt32/CFloat32/CFloat64}] [-optim {AUTO|VECTOR|RASTER}] [-"
+"q]\n"
+"    <src_datasource> <dst_filename>"
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:31
+msgid "Description"
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:33
+msgid ""
+"This program burns vector geometries (points, lines, and polygons) into the "
+"raster band(s) of a raster image.  Vectors are read from OGR supported "
+"vector formats. If the output raster already exists, the affected pixels are "
+"updated in-place."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:38
+msgid ""
+"Note that on the fly reprojection of vector data to the coordinate system of "
+"the raster data is only supported since GDAL 2.1.0."
+msgstr ""
+
+#: ../../../source/programs/options/help.rst:3
+msgid "Show this help message and exit"
+msgstr ""
+
+#: ../../../source/programs/options/help_general.rst:3
+msgid ""
+"Gives a brief usage message for the generic GDAL commandline options and "
+"exit."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:47
+msgid ""
+"The band(s) to burn values into.  Multiple -b arguments may be used to burn "
+"into a list of bands.  The default is to burn into band 1.  Not used when "
+"creating a new raster."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:53
+msgid ""
+"Invert rasterization.  Burn the fixed burn value, or the burn value "
+"associated with the first feature into all parts of the image *not* inside "
+"the provided polygon."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:59
+msgid ""
+"When the vector features contain a polygon nested within another polygon "
+"(like an island in a lake), GDAL must be built against GEOS to get correct "
+"results."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:65
+msgid ""
+"Enables the ALL_TOUCHED rasterization option so that all pixels touched by "
+"lines or polygons will be updated, not just those on the line render path, "
+"or whose center point is within the polygon.  Defaults to disabled for "
+"normal rendering rules."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:72
+msgid ""
+"A fixed value to burn into a band for all objects.  A list of :option:`-"
+"burn` options can be supplied, one per band being written to."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:77
+msgid ""
+"Identifies an attribute field on the features to be used for a burn-in "
+"value. The value will be burned into all output bands."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:82
+msgid ""
+"Indicates that a burn value should be extracted from the \"Z\" values of the "
+"feature. Works with points and lines (linear interpolation along each "
+"segment). For polygons, works properly only if the are flat (same Z value "
+"for all vertices)."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:89
+msgid ""
+"Instead of burning a new value, this adds the new value to the existing "
+"raster. Suitable for heatmaps for instance."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:94
+msgid ""
+"Indicates the layer(s) from the datasource that will be used for input "
+"features.  May be specified multiple times, but at least one layer name or "
+"a :option:`-sql` option must be specified."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:100
+msgid ""
+"An optional SQL WHERE style query expression to be applied to select "
+"features to burn in from the input layer(s)."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:105
+msgid ""
+"An SQL statement to be evaluated against the datasource to produce a virtual "
+"layer of features to be burned in. Starting with GDAL 3.7, the ``@filename`` "
+"syntax can be used to indicate that the content is in the pointed filename."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:112
+msgid ""
+"SQL dialect. In some cases can be used to use (unoptimized) OGR SQL instead "
+"of the native SQL of an RDBMS by passing OGRSQL. The \"SQLITE\" dialect can "
+"also be used with any datasource."
+msgstr ""
+
+#: ../../../source/programs/options/of.rst:3
+msgid ""
+"Select the output format. Starting with GDAL 2.3, if not specified, the "
+"format is guessed from the extension (previously was GTiff). Use the short "
+"format name."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:122
+msgid "Assign a specified nodata value to output bands."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:126
+msgid ""
+"Pre-initialize the output image bands with these values.  However, it is not "
+"marked as the nodata value in the output file.  If only one value is given, "
+"the same value is used in all the bands."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:132
+msgid ""
+"Override the projection for the output file. If not specified, the "
+"projection of the input vector file will be used if available. When using "
+"this option, no reprojection of features from the SRS of the input vector to "
+"the specified SRS of the output raster, so use only this option to correct "
+"an invalid source SRS. The <srs_def> may be any of the usual GDAL/OGR forms, "
+"complete WKT, PROJ.4, EPSG:n or a file containing the WKT."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:141
+msgid ""
+"set a transformer option suitable to pass to :cpp:func:"
+"`GDALCreateGenImgProjTransformer2`. This is used when converting geometries "
+"coordinates to target raster pixel space. For example this can be used to "
+"specify RPC related transformer options."
+msgstr ""
+
+#: ../../../source/programs/options/co.rst:5
+msgid ""
+"Many formats have one or more optional creation options that can be used to "
+"control particulars about the file created. For instance, the GeoTIFF driver "
+"supports creation options to control compression, and whether the file "
+"should be tiled."
+msgstr ""
+
+#: ../../../source/programs/options/co.rst:10
+msgid ""
+"The creation options available vary by format driver, and some simple "
+"formats have no creation options at all. A list of options supported for a "
+"format can be listed with the :ref:`--formats "
+"<raster_common_options_formats>` command line option but the documentation "
+"for the format is the definitive source of information on driver creation "
+"options. See :ref:`raster_drivers` format specific documentation for legal "
+"creation options for each format."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:152
+msgid ""
+"Set georeferenced extents. The values must be expressed in georeferenced "
+"units. If not specified, the extent of the output file will be the extent of "
+"the vector layers."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:158
+msgid ""
+"Set target resolution. The values must be expressed in georeferenced units. "
+"Both must be positive values."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:163
+msgid ""
+"(target aligned pixels) Align the coordinates of the extent of the output "
+"file to the values of the :option:`-tr`, such that the aligned extent "
+"includes the minimum extent. Alignment means that xmin / resx, ymin / resy, "
+"xmax / resx and ymax / resy are integer values."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:170
+msgid ""
+"Set output file size in pixels and lines. Note that :option:`-ts` cannot be "
+"used with :option:`-tr`"
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:175
+msgid ""
+"Force the output bands to be of the indicated data type. Defaults to "
+"``Float64``"
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:179
+msgid ""
+"Force the algorithm used (results are identical). The raster mode is used in "
+"most cases and optimise read/write operations. The vector mode is useful "
+"with a decent amount of input features and optimise the CPU use. That mode "
+"have to be used with tiled images to be efficient. The auto mode (the "
+"default) will chose the algorithm based on input and output properties."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:191
+msgid "Source dataset open option (format specific)"
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:195
+msgid "Suppress progress monitor and other non-error output."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:199
+msgid "Any OGR supported readable datasource."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:203
+msgid ""
+"The GDAL supported output file.  Must support update mode access. This file "
+"will be created if it does not already exist If the output raster already "
+"exists, the affected pixels are updated in-place."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:207
+msgid ""
+"The program creates a new target raster image when any of the :option:`-"
+"of`, :option:`-a_nodata`, :option:`-init`, :option:`-a_srs`, :option:`-co`, :"
+"option:`-te`, :option:`-tr`, :option:`-tap`, :option:`-ts`, or :option:`-ot` "
+"options are used. The resolution or size must be specified using the :option:"
+"`-tr` or :option:`-ts` option for all new rasters.  The target raster will "
+"be overwritten if it already exists and any of these creation-related "
+"options are used."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:215
+msgid "C API"
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:217
+msgid "This utility is also callable from C with :cpp:func:`GDALRasterize`."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:222
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:224
+msgid ""
+"The following would burn all polygons from mask.shp into the RGB TIFF file "
+"work.tif with the color red (RGB = 255,0,0)."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:227
+msgid ""
+"gdal_rasterize -b 1 -b 2 -b 3 -burn 255 -burn 0 -burn 0 -l mask mask.shp "
+"work.tif"
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:232
+msgid ""
+"The following would burn all \"class A\" buildings into the output elevation "
+"file, pulling the top elevation from the ROOF_H attribute."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:235
+msgid ""
+"gdal_rasterize -a ROOF_H -where \"class='A'\" -l footprints footprints.shp "
+"city_dem.tif"
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:239
+msgid ""
+"The following would burn all polygons from footprint.shp into a new "
+"1000x1000 rgb TIFF as the color red.  Note that :option:`-b` is not used; "
+"the order of the :option:`-burn` options determines the bands of the output "
+"raster."
+msgstr ""
+
+#: ../../../source/programs/gdal_rasterize.rst:243
+msgid ""
+"gdal_rasterize -burn 255 -burn 0 -burn 0 -ot Byte -ts 1000 1000 -l "
+"footprints footprints.shp mask.tif"
+msgstr ""
