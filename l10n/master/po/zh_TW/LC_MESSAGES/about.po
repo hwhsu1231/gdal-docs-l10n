@@ -3,23 +3,23 @@
 # This file is distributed under the same license as the GDAL package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-04-22 19:28+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2024-04-23 15:48+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: ../../../source/about.rst:5
 msgid "What is GDAL?"
-msgstr ""
+msgstr "什麼是 GDAL？"
 
 #: ../../../source/about_no_title.rst:3
 msgid ""
@@ -34,7 +34,7 @@ msgstr ""
 
 #: ../../../source/about_no_title.rst:-1
 msgid "OSGeo project"
-msgstr ""
+msgstr "OSGeo 專案"
 
 #: ../../../source/about_no_title.rst:12
 msgid "See :ref:`software_using_gdal`"
