@@ -17,55 +17,6 @@ include(JsonUtils)
 include(LogUtils)
 
 
-message(STATUS "Running 'python -m venv' command to install a virtual environemnt...")
-remove_cmake_message_indent()
-message("")
-execute_process(
-    COMMAND
-        ${Python_EXECUTABLE} -m venv ${PROJ_VENV_DIR}
-    RESULT_VARIABLE RES_VAR
-    OUTPUT_VARIABLE OUT_VAR
-    ERROR_VARIABLE  ERR_VAR
-    OUTPUT_STRIP_TRAILING_WHITESPACE
-    ERROR_STRIP_TRAILING_WHITESPACE)
-if(RES_VAR EQUAL 0)
-    if(NOT ERR_VAR)
-        message("The virtual environment is installed in:")
-        message("${PROJ_VENV_DIR}")
-    else()
-        message("")
-        message("---------- RES ----------")
-        message("")
-        message("${RES_VAR}")
-        message("")
-        message("---------- ERR ----------")
-        message("")
-        message("${ERR_VAR}")
-        message("")
-        message("-------------------------")
-    endif()
-else()
-    message("")
-    message("---------- RES ----------")
-    message("")
-    message("${RES_VAR}")
-    message("")
-    message("---------- OUT ----------")
-    message("")
-    message("${OUT_VAR}")
-    message("")
-    message("---------- ERR ----------")
-    message("")
-    message("${ERR_VAR}")
-    message("")
-    message("-------------------------")
-    message("")
-    message(FATAL_ERROR "Fatal error occurred.")
-endif()
-message("")
-restore_cmake_message_indent()
-
-
 message(STATUS "Determining which reference to checkout...")
 file(READ "${REFERENCE_JSON_PATH}" REFERENCE_JSON_CNT)
 get_json_value_by_dot_notation(
@@ -182,34 +133,96 @@ message("")
 restore_cmake_message_indent()
 
 
-message(STATUS "Determining whether it is required to reinstall the requirements...")
-set(CURRENT_VERSION "${VERSION}")
-if(EXISTS "${PREVIOUS_VERSION_TXT_PATH}")
-    file(READ "${PREVIOUS_VERSION_TXT_PATH}" PREVIOUS_VERSION)
+set(PYVENV_CFG_PATH "${PROJ_VENV_DIR}/pyvenv.cfg")
+if(EXISTS "${PYVENV_CFG_PATH}")
+    set(CURRENT_PYTHON_VERSION "${Python_VERSION}")
+    file(READ "${PYVENV_CFG_PATH}" PYVENV_CFG_CONTENT)
+    string(REGEX MATCH    "version = [0-9]+\\.[0-9]+\\.[0-9]+" VERSION_LINE "${PYVENV_CFG_CONTENT}")
+    string(REGEX REPLACE  "version = ([0-9]+\\.[0-9]+\\.[0-9]+)" "\\1" PREVIOUS_PYTHON_VERSION "${VERSION_LINE}")
+    message(STATUS "CURRENT_PYTHON_VERSION  = ${CURRENT_PYTHON_VERSION}")
+    message(STATUS "PREVIOUS_PYTHON_VERSION = ${PREVIOUS_PYTHON_VERSION}")
+    if(NOT CURRENT_PYTHON_VERSION STREQUAL PREVIOUS_PYTHON_VERSION)
+        message(STATUS "Removing directory: ${PROJ_VENV_DIR}")
+        file(REMOVE_RECURSE "${PROJ_VENV_DIR}")
+    endif()
+endif()
+message(STATUS "Running 'python -m venv' command to install a virtual environemnt...")
+remove_cmake_message_indent()
+message("")
+execute_process(
+    COMMAND
+        ${Python_EXECUTABLE} -m venv ${PROJ_VENV_DIR}
+    RESULT_VARIABLE RES_VAR
+    OUTPUT_VARIABLE OUT_VAR
+    ERROR_VARIABLE  ERR_VAR
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+    ERROR_STRIP_TRAILING_WHITESPACE)
+if(RES_VAR EQUAL 0)
+    if(NOT ERR_VAR)
+        message("The virtual environment is installed in:")
+        message("${PROJ_VENV_DIR}")
+    else()
+        message("")
+        message("---------- RES ----------")
+        message("")
+        message("${RES_VAR}")
+        message("")
+        message("---------- ERR ----------")
+        message("")
+        message("${ERR_VAR}")
+        message("")
+        message("-------------------------")
+    endif()
 else()
-    set(PREVIOUS_VERSION "")
+    message("")
+    message("---------- RES ----------")
+    message("")
+    message("${RES_VAR}")
+    message("")
+    message("---------- OUT ----------")
+    message("")
+    message("${OUT_VAR}")
+    message("")
+    message("---------- ERR ----------")
+    message("")
+    message("${ERR_VAR}")
+    message("")
+    message("-------------------------")
+    message("")
+    message(FATAL_ERROR "Fatal error occurred.")
+endif()
+message("")
+restore_cmake_message_indent()
+
+
+message(STATUS "Determining whether to install the requirements...")
+set(CURRENT_REFERENCE "${CHECKOUT_REFERENCE}")
+if(EXISTS "${PREVIOUS_REFERENCE_TXT_PATH}")
+    file(READ "${PREVIOUS_REFERENCE_TXT_PATH}" PREVIOUS_REFERENCE)
+else()
+    set(PREVIOUS_REFERENCE "")
 endif()
 if(INSTALL_MODE STREQUAL "COMPARE")
-    if(NOT CURRENT_VERSION STREQUAL PREVIOUS_VERSION)
-        set(REINSTALL_REQUIRED ON)
+    if(NOT CURRENT_REFERENCE STREQUAL PREVIOUS_REFERENCE)
+        set(INSTALL_REQUIRED ON)
     else()
-        set(REINSTALL_REQUIRED OFF)
+        set(INSTALL_REQUIRED OFF)
     endif()
 elseif(INSTALL_MODE STREQUAL "ALWAYS")
-    set(REINSTALL_REQUIRED ON)
+    set(INSTALL_REQUIRED ON)
 else()
     message(FATAL_ERROR "Invalid INSTALL_MODE value. (${INSTALL_MODE})")
 endif()
 remove_cmake_message_indent()
 message("")
-message("INSTALL_MODE = ${INSTALL_MODE}")
-message("CURRENT_VERSION  = ${CURRENT_VERSION}")
-message("PREVIOUS_VERSION = ${PREVIOUS_VERSION}")
-message("REINSTALL_REQUIRED = ${REINSTALL_REQUIRED}")
+message("INSTALL_MODE       = ${INSTALL_MODE}")
+message("CURRENT_REFERENCE  = ${CURRENT_REFERENCE}")
+message("PREVIOUS_REFERENCE = ${PREVIOUS_REFERENCE}")
+message("INSTALL_REQUIRED   = ${INSTALL_REQUIRED}")
 message("")
 restore_cmake_message_indent()
-if(NOT REINSTALL_REQUIRED)
-    message(STATUS "No need to reinstall the requirements.")
+if(NOT INSTALL_REQUIRED)
+    message(STATUS "No need to install the requirements.")
     return()
 endif()
 
@@ -311,23 +324,18 @@ if(EXISTS "${PREVIOUS_FREEZE_TXT_PATH}")
 endif()
 
 
+message(STATUS "Running 'pip install' command to install 'numpy' and the requirements...")
+remove_cmake_message_indent()
 set(REQUIREMENTS_PATH "${PROJ_OUT_REPO_DIR}/doc/requirements.txt")
 file(READ "${REQUIREMENTS_PATH}" REQUIREMENTS_CNT)
-message(STATUS "The requirements used will be:")
-remove_cmake_message_indent()
 message("")
 message("${REQUIREMENTS_PATH}")
 message("${REQUIREMENTS_CNT}")
 message("")
-restore_cmake_message_indent()
-
-
-message(STATUS "Running 'pip install' command to install the requirements...")
-remove_cmake_message_indent()
-message("")
 execute_process(
     COMMAND 
         ${Python_EXECUTABLE} -m pip install numpy
+        --upgrade
         --progress-bar off
         --force-reinstall
         --requirement ${REQUIREMENTS_PATH}
@@ -368,7 +376,7 @@ message("")
 restore_cmake_message_indent()
 
 
-message(STATUS "Installing GDAL from sources with CMake...")
+message(STATUS "Running 'cmake' command to configure GDAL project...")
 remove_cmake_message_indent()
 message("")
 execute_process(
@@ -385,20 +393,37 @@ execute_process(
         -D CMAKE_INSTALL_PREFIX=${PROJ_VENV_DIR}
         # -D CMAKE_INSTALL_PREFIX=${PROJ_OUT_DIR}/install
     ECHO_OUTPUT_VARIABLE
-    ECHO_ERROR_VARIABLE)
+    ECHO_ERROR_VARIABLE
+    COMMAND_ERROR_IS_FATAL ANY)
+message("")
+restore_cmake_message_indent()
+message(STATUS "Running 'cmake --build' command to build GDAL project...")
+remove_cmake_message_indent()
+message("")
 execute_process(
-    COMMAND ${CMAKE_COMMAND} --build ${PROJ_OUT_REPO_DIR}/build
+    COMMAND
+        ${CMAKE_COMMAND}
+        --build ${PROJ_OUT_REPO_DIR}/build
     ECHO_OUTPUT_VARIABLE
-    ECHO_ERROR_VARIABLE)
+    ECHO_ERROR_VARIABLE
+    COMMAND_ERROR_IS_FATAL ANY)
+message("")
+restore_cmake_message_indent()
+message(STATUS "Running 'cmake --install' command to install GDAL project...")
+remove_cmake_message_indent()
+message("")
 execute_process(
-    COMMAND ${CMAKE_COMMAND} --install ${PROJ_OUT_REPO_DIR}/build
+    COMMAND
+        ${CMAKE_COMMAND}
+        --install ${PROJ_OUT_REPO_DIR}/build
     ECHO_OUTPUT_VARIABLE
-    ECHO_ERROR_VARIABLE)
+    ECHO_ERROR_VARIABLE
+    COMMAND_ERROR_IS_FATAL ANY)
 message("")
 restore_cmake_message_indent()
 
 
-file(WRITE "${PREVIOUS_VERSION_TXT_PATH}" ${CURRENT_VERSION})
+file(WRITE "${PREVIOUS_REFERENCE_TXT_PATH}" ${CURRENT_REFERENCE})
 execute_process(
     COMMAND ${Python_EXECUTABLE} -m pip freeze
     OUTPUT_FILE "${PREVIOUS_FREEZE_TXT_PATH}")
