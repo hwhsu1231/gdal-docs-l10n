@@ -133,19 +133,43 @@ message("")
 restore_cmake_message_indent()
 
 
+message(STATUS "Determining whether to remove the virtual environment...")
+set(CURRENT_PYTHON_VERSION "${Python_VERSION}")
 set(PYVENV_CFG_PATH "${PROJ_VENV_DIR}/pyvenv.cfg")
 if(EXISTS "${PYVENV_CFG_PATH}")
-    set(CURRENT_PYTHON_VERSION "${Python_VERSION}")
     file(READ "${PYVENV_CFG_PATH}" PYVENV_CFG_CONTENT)
     string(REGEX MATCH    "version = [0-9]+\\.[0-9]+\\.[0-9]+" VERSION_LINE "${PYVENV_CFG_CONTENT}")
     string(REGEX REPLACE  "version = ([0-9]+\\.[0-9]+\\.[0-9]+)" "\\1" PREVIOUS_PYTHON_VERSION "${VERSION_LINE}")
-    message(STATUS "CURRENT_PYTHON_VERSION  = ${CURRENT_PYTHON_VERSION}")
-    message(STATUS "PREVIOUS_PYTHON_VERSION = ${PREVIOUS_PYTHON_VERSION}")
     if(NOT CURRENT_PYTHON_VERSION STREQUAL PREVIOUS_PYTHON_VERSION)
-        message(STATUS "Removing directory: ${PROJ_VENV_DIR}")
-        file(REMOVE_RECURSE "${PROJ_VENV_DIR}")
+        set(REMOVE_VENV_REQUIRED ON)
+    else()
+        set(REMOVE_VENV_REQUIRED OFF)
     endif()
+else()
+    # set(PREVIOUS_PYTHON_VERSION "")
+    set(REMOVE_VENV_REQUIRED OFF)
 endif()
+remove_cmake_message_indent()
+message("")
+message("CURRENT_PYTHON_VERSION   = ${CURRENT_PYTHON_VERSION}")
+message("PREVIOUS_PYTHON_VERSION  = ${PREVIOUS_PYTHON_VERSION}")
+message("REMOVE_VENV_REQUIRED     = ${REMOVE_VENV_REQUIRED}")
+message("")
+restore_cmake_message_indent()
+# if(NOT CURRENT_PYTHON_VERSION STREQUAL PREVIOUS_PYTHON_VERSION)
+#     file(REMOVE_RECURSE "${PROJ_VENV_DIR}")
+#     message(STATUS "Removing '${PROJ_VENV_DIR}'...")
+# else()
+#     message(STATUS "No need to remove the virtual environment.")
+# endif()
+if(REMOVE_VENV_REQUIRED)
+    file(REMOVE_RECURSE "${PROJ_VENV_DIR}")
+    message(STATUS "Removing the virtual environment '${PROJ_VENV_DIR}'...")
+else()
+    message(STATUS "No need to remove the virtual environment.")
+endif()
+
+
 message(STATUS "Running 'python -m venv' command to install a virtual environemnt...")
 remove_cmake_message_indent()
 message("")
@@ -232,17 +256,16 @@ set(Python_ROOT_DIR "${PROJ_VENV_DIR}")
 find_package(Python MODULE ${FIND_PACKAGE_PYTHON_ARGS} REQUIRED)
 
 
-message(STATUS "Running 'pip install --upgrade' command to upgrade pip in the virtual environment...")
+message(STATUS "Running 'pip install --upgrade' command to upgrade 'pip' in the virtual environment...")
 remove_cmake_message_indent()
 message("")
 execute_process(
     COMMAND
-        ${Python_EXECUTABLE} -m pip install --upgrade pip
+        ${Python_EXECUTABLE} -m pip install pip
+        --upgrade
         --progress-bar off
     ECHO_OUTPUT_VARIABLE
-    ECHO_ERROR_VARIABLE
     RESULT_VARIABLE RES_VAR
-    OUTPUT_VARIABLE OUT_VAR
     ERROR_VARIABLE  ERR_VAR
     OUTPUT_STRIP_TRAILING_WHITESPACE
     ERROR_STRIP_TRAILING_WHITESPACE)
@@ -284,11 +307,10 @@ if(EXISTS "${PREVIOUS_FREEZE_TXT_PATH}")
     message("")
     execute_process(
         COMMAND 
-            "${Python_EXECUTABLE}" -m pip uninstall -y
-            --requirement "${PREVIOUS_FREEZE_TXT_PATH}"
+            ${Python_EXECUTABLE} -m pip uninstall -y
+            --requirement ${PREVIOUS_FREEZE_TXT_PATH}
         ECHO_OUTPUT_VARIABLE
         RESULT_VARIABLE RES_VAR
-        OUTPUT_VARIABLE OUT_VAR
         ERROR_VARIABLE  ERR_VAR
         OUTPUT_STRIP_TRAILING_WHITESPACE
         ERROR_STRIP_TRAILING_WHITESPACE)
@@ -341,7 +363,6 @@ execute_process(
         --requirement ${REQUIREMENTS_PATH}
     ECHO_OUTPUT_VARIABLE
     RESULT_VARIABLE RES_VAR
-    OUTPUT_VARIABLE OUT_VAR
     ERROR_VARIABLE  ERR_VAR
     OUTPUT_STRIP_TRAILING_WHITESPACE
     ERROR_STRIP_TRAILING_WHITESPACE)
@@ -391,7 +412,6 @@ execute_process(
         -D GDAL_BUILD_OPTIONAL_DRIVERS=OFF
         -D OGR_BUILD_OPTIONAL_DRIVERS=OFF
         -D CMAKE_INSTALL_PREFIX=${PROJ_VENV_DIR}
-        # -D CMAKE_INSTALL_PREFIX=${PROJ_OUT_DIR}/install
     ECHO_OUTPUT_VARIABLE
     ECHO_ERROR_VARIABLE
     COMMAND_ERROR_IS_FATAL ANY)

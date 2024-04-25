@@ -19,33 +19,35 @@ set(VERSION "master"
 
 set(BUILDER "html"
     CACHE STRING "Builder for the Sphinx documentation system.")
-
-set(AUTO_DEPEND ON
-    CACHE BOOL "Enable automatic dependency management for specific build targets.")
+    # Possible values are "html".
+    # See https://www.sphinx-doc.org/en/master/usage/builders/index.html for details.
 
 set(UPDATE_MODE "NEVER"
     CACHE STRING "Mode of updating .pot/.po files.")
     # Possible values are "NEVER", "COMPARE", and "ALWAYS".
-    # 1) NEVER:   Update .pot/.po files only if they are missing entirely.
-    # 2) COMPARE: Update .pot/.po files only if the current version is out-of-date.
-    # 3) ALWAYS:  Update .pot/.po files even if the current version is up-to-date.
+    # 1) NEVER:   Update .pot/.po files only if the current version is missing.
+    # 2) COMPARE: Update .pot/.po files only if the current version is different than the latest one (out-of-date).
+    # 3) ALWAYS:  Update .pot/.po files even if the current version is the same as    the latest one (up-to-date).
 
-set(INSTALL_MODE "ALWAYS"
+set(INSTALL_MODE "COMPARE"
     CACHE STRING "Mode of installing the requirements.")
     # Possible values are "COMPARE" and "ALWAYS".
-    # 1) COMPARE: Install the requirements only if the current version is different than the previous one.
-    # 2) ALWAYS:  Install the requirements even if the current version is the same as the previous one.
+    # 1) COMPARE: Install the requirements only if the current reference is different than the previous one.
+    # 2) ALWAYS:  Install the requirements even if the current reference is the same as    the previous one.
+
+set(AUTO_DEPEND ON
+    CACHE BOOL "Enable automatic dependency management for specific build targets.")
 
 set(GIT_REMOTE_URL "https://github.com/OSGeo/gdal.git"
     CACHE STRING "Remote URL of the upstream Git repository.")
 
-set(BASEURL_HREF "https://hwhsu1231.github.io/cmake-docs-l10n-draft2"
+set(BASEURL_HREF "https://hwhsu1231.github.io/gdal-docs-l10n"
     CACHE STRING "Base URL of the deployed documentation.")
 
 set(GIT_EXACT_VERSION ""
     CACHE STRING "Exact version for calling find_package(Git).")
 
-set(PYTHON_EXACT_VERSION ""
+set(PYTHON_EXACT_VERSION "3.8"
     CACHE STRING "Exact version for calling find_package(Python).")
 
 set(GETTEXT_EXACT_VERSION ""
@@ -101,11 +103,11 @@ set(REFERENCE_JSON_PATH             "${PROJ_L10N_VERSION_DIR}/reference.json")
 set(CROWDIN_YML_PATH                "${PROJ_L10N_VERSION_DIR}/crowdin.yml")
 set(PROGRESS_TXT_PATH               "${PROJ_L10N_VERSION_DIR}/progress.txt")
 set(STATISTIC_TXT_PATH              "${PROJ_L10N_VERSION_DIR}/statistic.txt")
-set(PREVIOUS_FREEZE_TXT_PATH        "${PROJ_OUT_DIR}/prev/freeze.txt")
-set(PREVIOUS_VERSION_TXT_PATH       "${PROJ_OUT_DIR}/prev/version.txt")
+set(PYVENV_CFG_PATH                 "${PROJ_VENV_DIR}/pyvenv.cfg")
+set(PREVIOUS_FREEZE_TXT_PATH        "${PROJ_VENV_DIR}/prev/freeze.txt")
+set(PREVIOUS_REFERENCE_TXT_PATH     "${PROJ_VENV_DIR}/prev/reference.txt")
 
 #[========================================[
-  Read LATEST_VERSION from latest.txt.
   Read LANGUAGES_LIST from languages.json.
 #]========================================]
 
@@ -268,7 +270,7 @@ message(STATUS "CROWDIN_YML_PATH              = ${CROWDIN_YML_PATH}")
 message(STATUS "PROGRESS_TXT_PATH             = ${PROGRESS_TXT_PATH}")
 message(STATUS "STATISTIC_TXT_PATH            = ${STATISTIC_TXT_PATH}")
 message(STATUS "PREVIOUS_FREEZE_TXT_PATH      = ${PREVIOUS_FREEZE_TXT_PATH}")
-message(STATUS "PREVIOUS_VERSION_TXT_PATH     = ${PREVIOUS_VERSION_TXT_PATH}")
+message(STATUS "PREVIOUS_REFERENCE_TXT_PATH   = ${PREVIOUS_REFERENCE_TXT_PATH}")
 message(STATUS "---------- Other Variables ----------")
 message(STATUS "LANGUAGES_LIST                = ${LANGUAGES_LIST}")
 message(STATUS "LATEST_VERSION                = ${LATEST_VERSION}")
@@ -353,7 +355,7 @@ set(SCRIPT_MODE_CACHE
     -D PROGRESS_TXT_PATH=${PROGRESS_TXT_PATH}
     -D STATISTIC_TXT_PATH=${STATISTIC_TXT_PATH}
     -D PREVIOUS_FREEZE_TXT_PATH=${PREVIOUS_FREEZE_TXT_PATH}
-    -D PREVIOUS_VERSION_TXT_PATH=${PREVIOUS_VERSION_TXT_PATH}
+    -D PREVIOUS_REFERENCE_TXT_PATH=${PREVIOUS_REFERENCE_TXT_PATH}
     # [Other Variables]
     -D LANGUAGES_LIST=${LANGUAGES_LIST}
     -D LATEST_VERSION=${LATEST_VERSION}
@@ -518,3 +520,19 @@ find_package(Doxygen MODULE REQUIRED)
 #     OUTPUT_STRIP_TRAILING_WHITESPACE
 #     ERROR_STRIP_TRAILING_WHITESPACE)
 # return()
+
+
+# 设置配置文件的路径
+# set(PYVENV_CFG_PATH "${PROJ_VENV_DIR}/pyvenv.cfg")
+# if(EXISTS "${PYVENV_CFG_PATH}")
+#     file(READ "${PYVENV_CFG_PATH}" PYVENV_CFG_CONTENT)
+#     string(REGEX MATCH    "version = [0-9]+\.[0-9]+\.[0-9]+" VERSION_LINE "${PYVENV_CFG_CONTENT}")
+#     string(REGEX REPLACE  "version = ([0-9]+\.[0-9]+\.[0-9]+)" "\\1" PREVIOUS_VERSION "${VERSION_LINE}")
+#     # message(STATUS "Python version from pyvenv.cfg: ${PREVIOUS_VERSION}")
+#     # message(STATUS "Python_VERSION  = ${Python_VERSION}")
+#     # message(STATUS "PREVIOUS_PYTHON = ${PREVIOUS_VERSION}")
+#     if(NOT Python_VERSION STREQUAL PREVIOUS_VERSION)
+#         message(STATUS "Removing directory: ${PROJ_VENV_DIR}")
+#         file(REMOVE_RECURSE "${PROJ_VENV_DIR}")
+#     endif()
+# endif()
