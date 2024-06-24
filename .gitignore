@@ -11,6 +11,7 @@ CMakeUserPresets.json
 
 # Non-essential project-related directories and files.
 .venv
+.conda
 .crowdin
 .compendium
 /l10n/**/*.mo
