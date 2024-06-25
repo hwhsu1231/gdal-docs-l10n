@@ -1,0 +1,8 @@
+
+[build] [ 83%] Generating osgeo/_gdal.cpython-310-x86_64-linux-gnu.so, osgeo/_gdalconst.cpython-310-x86_64-linux-gnu.so, osgeo/_gnm.cpython-310-x86_64-linux-gnu.so, osgeo/_ogr.cpython-310-x86_64-linux-gnu.so, osgeo/_osr.cpython-310-x86_64-linux-gnu.so
+[build] Traceback (most recent call last):
+[build]   File "/home/hwhsu1231/Repo/gdal-docs-l10n/out/repo/build/swig/python/setup.py", line 201, in <module>
+[build]     raise Exception(numpy_error_msg + " This error may happen if you build/install using setup.py directly, but should normally not happen if you install using pip install. If you still want to build the bindings without numpy support, define the GDAL_PYTHON_BINDINGS_WITHOUT_NUMPY environment variable")
+[build] Exception: numpy not available! This error may happen if you build/install using setup.py directly, but should normally not happen if you install using pip install. If you still want to build the bindings without numpy support, define the GDAL_PYTHON_BINDINGS_WITHOUT_NUMPY environment variable
+[build] CMake Error at build_ext.cmake:5 (message):
+[build]   setup.py bdist_wheel failed

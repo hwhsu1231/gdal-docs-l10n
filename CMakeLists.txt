@@ -25,11 +25,12 @@ set(BUILDER "html"
 set(UPDATE_MODE "NEVER"
     CACHE STRING "Mode of updating .pot/.po files.")
     # Possible values are "NEVER", "COMPARE", and "ALWAYS".
-    # 1) NEVER:   Update .pot/.po files only if the current version is missing.
-    # 2) COMPARE: Update .pot/.po files only if the current version is different than the latest one (out-of-date).
-    # 3) ALWAYS:  Update .pot/.po files even if the current version is the same as    the latest one (up-to-date).
+    # 1) NEVER:   Update .pot/.po files only if the current reference is missing.
+    # 2) COMPARE: Update .pot/.po files only if the current reference is different than the latest one.
+    # 3) ALWAYS:  Update .pot/.po files even if the current reference is the same as    the latest one.
 
-set(INSTALL_MODE "COMPARE"
+set(INSTALL_MODE "ALWAYS"
+# set(INSTALL_MODE "COMPARE"
     CACHE STRING "Mode of installing the requirements.")
     # Possible values are "COMPARE" and "ALWAYS".
     # 1) COMPARE: Install the requirements only if the current reference is different than the previous one.
@@ -400,6 +401,7 @@ add_custom_target(gettext_update_po
     VERBATIM)
 
 add_custom_target(sphinx_build_docs
+    COMMAND export LD_LIBRARY_PATH=$LD_LIBRARY_PATH
     COMMAND
         ${CMAKE_COMMAND}
         ${SCRIPT_MODE_CACHE} 
@@ -490,9 +492,14 @@ find_package(Doxygen MODULE REQUIRED)
 # message(STATUS "------------------------")
 
 
-# unset(Python_EXECUTABLE)
-# set(Python_ROOT_DIR "${PROJ_VENV_DIR}")
-# find_package(Python MODULE ${FIND_PACKAGE_PYTHON_ARGS} REQUIRED)
+unset(Python_EXECUTABLE)
+set(Python_ROOT_DIR "${PROJ_VENV_DIR}")
+find_package(Python MODULE REQUIRED)
+set(ENV{LD_LIBRARY_PATH}  "${PROJ_VENV_DIR}/lib")
+set(ENV{PYTHONPATH}       "${PROJ_VENV_DIR}/lib")
+execute_process(
+    COMMAND conda
+)
 # execute_process(
 #     COMMAND 
 #         # env
@@ -507,18 +514,45 @@ find_package(Doxygen MODULE REQUIRED)
 #         # ${CMAKE_COMMAND} -E echo "ENV{PYTHONPATH}=$ENV{PYTHONPATH}"
 #         #####################
 #         # env
-#         ${CMAKE_COMMAND} -E env
-#         PYTHONPATH=${PROJ_VENV_DIR}/lib/python3.10/site-packages
-#         LD_LIBRARY_PATH=${PROJ_VENV_DIR}/lib
+#         # ${CMAKE_COMMAND} -E env
+#         # PYTHONPATH=${PROJ_VENV_DIR}/lib/python3.8/site-packages
+
+#         # LD_LIBRARY_PATH=${PROJ_VENV_DIR}/lib
+#         # ldconfig -p | grep libgdal
+#         # ldconfig -p
+#         # env
+#         # export LD_LIBRARY_PATH=$LD_LIBRARY_PATH
+#         # ${Python_EXECUTABLE} -c "from osgeo import gdal"
+
+#         # ${CMAKE_COMMAND} -E env PYTHONPATH=${PROJ_VENV_DIR}/lib
+#         # export PYTHONPATH=${PROJ_VENV_DIR}/lib
+#         # "export PYTHONPATH=$ENV{PYTHONPATH}"]
+#         # ${CMAKE_COMMAND} -E env HELLO_ENV=12345
+#         # ${CMAKE_COMMAND} -E echo "$ENV{HELLO_ENV}"
+#         # ${Python_EXECUTABLE} -c "print('hello')"
+
+#         #######
+#         # ${CMAKE_COMMAND} -E environment
+#         # PYTHONPATH=${PROJ_VENV_DIR}/lib
+#         # bash -c "echo $LD_LIBRARY_PATH"
 #         ${Python_EXECUTABLE} -c "from osgeo import gdal"
+#         # ${CMAKE_COMMAND} -E echo "PYTHONPATH: $ENV{PYTHONPATH"
+#         # echo "$ENV{PYTHONPATH}"
+#         # ${CMAKE_COMMAND} -E environment &&
+#         # ${CMAKE_COMMAND} -E echo "++++++++++"
+#         # ldconfig -p | grep libgdal
 #         # ${CMAKE_COMMAND} -E echo "ENV{PYTHONPATH}=$ENV{PYTHONPATH}"
 #     ECHO_OUTPUT_VARIABLE
 #     ECHO_ERROR_VARIABLE
-#     RESULT_VARIABLE RES_VAR
-#     OUTPUT_VARIABLE OUT_VAR
-#     ERROR_VARIABLE  ERR_VAR
-#     OUTPUT_STRIP_TRAILING_WHITESPACE
-#     ERROR_STRIP_TRAILING_WHITESPACE)
+#     # RESULT_VARIABLE RES_VAR
+#     # OUTPUT_VARIABLE OUT_VAR
+#     # ERROR_VARIABLE  ERR_VAR
+#     # OUTPUT_STRIP_TRAILING_WHITESPACE
+#     # ERROR_STRIP_TRAILING_WHITESPACE
+#     )
+# message("RES_VAR = ${RES_VAR}")
+# message("OUT_VAR = ${OUT_VAR}")
+# message("ERR_VAR = ${ERR_VAR}")
 # return()
 
 
@@ -536,3 +570,51 @@ find_package(Doxygen MODULE REQUIRED)
 #         file(REMOVE_RECURSE "${PROJ_VENV_DIR}")
 #     endif()
 # endif()
+
+
+
+
+# message(STATUS "Running 'cmake' command to configure GDAL project...")
+# # set(ENV{LD_LIBRARY_PATH} "${PROJ_SOURCE_DIR}/.conda/lib")
+# execute_process(
+#     COMMAND
+#         # LD_LIBRARY_PATH=${PROJ_SOURCE_DIR}/.conda/lib;
+#         LD_LIBRARY_PATH="1234"
+#         # ${CMAKE_COMMAND} -E echo "Hello"
+#         -c "print('hello')"
+#         # -S ${PROJ_OUT_REPO_DIR}
+#         # -B ${PROJ_OUT_REPO_DIR}/build
+#         # -D Python_ROOT_DIR=${PROJ_VENV_DIR}
+#         # -D CMAKE_BUILD_TYPE=Release
+#         # # -D BUILD_SHARED_LIBS=ON
+#         # -D BUILD_SHARED_LIBS=OFF
+#         # -D BUILD_APPS=OFF
+#         # -D GDAL_BUILD_OPTIONAL_DRIVERS=OFF
+#         # -D OGR_BUILD_OPTIONAL_DRIVERS=OFF
+#         # -D CMAKE_PREFIX_PATH=${PROJ_SOURCE_DIR}/.conda  # Working!!
+#         # -D CMAKE_INSTALL_PREFIX=${PROJ_VENV_DIR}
+#     ECHO_OUTPUT_VARIABLE
+#     ECHO_ERROR_VARIABLE
+#     RESULT_VARIABLE RES_VAR
+#     OUTPUT_VARIABLE OUT_VAR
+#     ERROR_VARIABLE  ERR_VAR
+#     OUTPUT_STRIP_TRAILING_WHITESPACE
+#     ERROR_STRIP_TRAILING_WHITESPACE)
+# message("RES_VAR = ${RES_VAR}")
+# message("OUT_VAR = ${OUT_VAR}")
+# message("ERR_VAR = ${ERR_VAR}")
+
+
+# set(ENV{LD_LIBRARY_PATH} "${PROJ_SOURCE_DIR}/.conda/lib")
+# execute_process(
+#     COMMAND 
+#         echo $ENV{LD_LIBRARY_PATH}
+#         bash -c "echo $LD_LIBRARY_PATH"
+#     ECHO_OUTPUT_VARIABLE
+#     ECHO_ERROR_VARIABLE
+#     RESULT_VARIABLE RES_VAR
+#     OUTPUT_VARIABLE OUT_VAR OUTPUT_STRIP_TRAILING_WHITESPACE
+#     ERROR_VARIABLE  ERR_VAR ERROR_STRIP_TRAILING_WHITESPACE)
+# message("RES_VAR = ${RES_VAR}")
+# message("OUT_VAR = ${OUT_VAR}")
+# message("ERR_VAR = ${ERR_VAR}")

@@ -63,8 +63,14 @@ foreach(_LANGUAGE ${LANGUAGES_LIST})
     message(STATUS "Running 'sphinx-build' command with '${BUILDER}' builder to build documentation for '${_LANGUAGE}' language...")
     remove_cmake_message_indent()
     message("")
+    if(CMAKE_HOST_UNIX)
+        set(ENV{PATH}             "${PROJ_SOURCE_DIR}/.conda/bin:$ENV{PATH}")
+        set(ENV{LD_LIBRARY_PATH}  "${PROJ_SOURCE_DIR}/.conda/lib:$ENV{LD_LIBRARY_PATH}")
+        set(ENV{PYTHONPATH}       "${PROJ_SOURCE_DIR}/.conda/lib:$ENV{PYTHONPATH}")
+    endif()
     execute_process(
         COMMAND
+            conda run --prefix ${PROJ_SOURCE_DIR}/.conda --verbose --no-capture-output
             ${Sphinx_BUILD_EXECUTABLE}
             -b ${BUILDER}
             -D locale_dirs=${LOCALE_TO_SOURCE_DIR}            # Relative to <sourcedir>
@@ -75,10 +81,10 @@ foreach(_LANGUAGE ${LANGUAGES_LIST})
             ${PROJ_OUT_REPO_DOCS_SOURCE_DIR}                  # <sourcedir>, where index.rst locates.
             ${PROJ_OUT_BUILDER_DIR}/${_LANGUAGE}/${VERSION}   # <outputdir>, where .html generates.
         ECHO_OUTPUT_VARIABLE
+        ECHO_ERROR_VARIABLE
         RESULT_VARIABLE RES_VAR
-        ERROR_VARIABLE  ERR_VAR
-        OUTPUT_STRIP_TRAILING_WHITESPACE
-        ERROR_STRIP_TRAILING_WHITESPACE)
+        OUTPUT_VARIABLE OUT_VAR OUTPUT_STRIP_TRAILING_WHITESPACE
+        ERROR_VARIABLE  ERR_VAR ERROR_STRIP_TRAILING_WHITESPACE)
     if(RES_VAR EQUAL 0)
         if(ERR_VAR)
             # Success, but there might be some warnings.

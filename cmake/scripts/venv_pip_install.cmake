@@ -1,6 +1,7 @@
 # Distributed under the OSI-approved BSD 3-Clause License.
 # See accompanying file LICENSE.txt for details.
 
+cmake_minimum_required(VERSION 3.23)
 get_filename_component(SCRIPT_NAME "${CMAKE_CURRENT_LIST_FILE}" NAME_WE)
 set(CMAKE_MESSAGE_INDENT "[${VERSION}][${LANGUAGE}] ")
 set(CMAKE_MESSAGE_INDENT_BACKUP "${CMAKE_MESSAGE_INDENT}")
@@ -15,6 +16,7 @@ find_package(Python MODULE ${FIND_PACKAGE_PYTHON_ARGS} REQUIRED)
 include(GitUtils)
 include(JsonUtils)
 include(LogUtils)
+
 
 
 message(STATUS "Determining which reference to checkout...")
@@ -135,7 +137,6 @@ restore_cmake_message_indent()
 
 message(STATUS "Determining whether to remove the virtual environment...")
 set(CURRENT_PYTHON_VERSION "${Python_VERSION}")
-set(PYVENV_CFG_PATH "${PROJ_VENV_DIR}/pyvenv.cfg")
 if(EXISTS "${PYVENV_CFG_PATH}")
     file(READ "${PYVENV_CFG_PATH}" PYVENV_CFG_CONTENT)
     string(REGEX MATCH    "version = [0-9]+\\.[0-9]+\\.[0-9]+" VERSION_LINE "${PYVENV_CFG_CONTENT}")
@@ -146,7 +147,6 @@ if(EXISTS "${PYVENV_CFG_PATH}")
         set(REMOVE_VENV_REQUIRED OFF)
     endif()
 else()
-    # set(PREVIOUS_PYTHON_VERSION "")
     set(REMOVE_VENV_REQUIRED OFF)
 endif()
 remove_cmake_message_indent()
@@ -156,12 +156,6 @@ message("PREVIOUS_PYTHON_VERSION  = ${PREVIOUS_PYTHON_VERSION}")
 message("REMOVE_VENV_REQUIRED     = ${REMOVE_VENV_REQUIRED}")
 message("")
 restore_cmake_message_indent()
-# if(NOT CURRENT_PYTHON_VERSION STREQUAL PREVIOUS_PYTHON_VERSION)
-#     file(REMOVE_RECURSE "${PROJ_VENV_DIR}")
-#     message(STATUS "Removing '${PROJ_VENV_DIR}'...")
-# else()
-#     message(STATUS "No need to remove the virtual environment.")
-# endif()
 if(REMOVE_VENV_REQUIRED)
     file(REMOVE_RECURSE "${PROJ_VENV_DIR}")
     message(STATUS "Removing the virtual environment '${PROJ_VENV_DIR}'...")
@@ -356,7 +350,8 @@ message("${REQUIREMENTS_CNT}")
 message("")
 execute_process(
     COMMAND 
-        ${Python_EXECUTABLE} -m pip install numpy
+        ${Python_EXECUTABLE} -m pip install 
+        numpy
         --upgrade
         --progress-bar off
         --force-reinstall
@@ -397,26 +392,58 @@ message("")
 restore_cmake_message_indent()
 
 
-message(STATUS "Running 'cmake' command to configure GDAL project...")
+message(STATUS "Running 'conda' command to install proj package...")
 remove_cmake_message_indent()
 message("")
 execute_process(
+    COMMAND conda create --prefix ${PROJ_SOURCE_DIR}/.conda 
+    ECHO_OUTPUT_VARIABLE
+    ECHO_ERROR_VARIABLE
+    COMMAND_ERROR_IS_FATAL ANY)
+execute_process(
+    COMMAND conda install --prefix ${PROJ_SOURCE_DIR}/.conda --channel conda-forge proj -y
+    ECHO_OUTPUT_VARIABLE
+    ECHO_ERROR_VARIABLE
+    COMMAND_ERROR_IS_FATAL ANY)
+message("")
+restore_cmake_message_indent()
+
+
+message(STATUS "Running 'cmake' command to configure GDAL project...")
+remove_cmake_message_indent()
+message("")
+if(CMAKE_HOST_UNIX)
+    set(ENV{PATH}             "${PROJ_SOURCE_DIR}/.conda/bin:$ENV{PATH}")
+    set(ENV{LD_LIBRARY_PATH}  "${PROJ_SOURCE_DIR}/.conda/lib:$ENV{LD_LIBRARY_PATH}")
+endif()
+execute_process(
     COMMAND
+        conda run 
+        --prefix ${PROJ_SOURCE_DIR}/.conda 
+        --verbose 
+        --no-capture-output
         ${CMAKE_COMMAND} 
         -S ${PROJ_OUT_REPO_DIR}
         -B ${PROJ_OUT_REPO_DIR}/build
         -D Python_ROOT_DIR=${PROJ_VENV_DIR}
         -D CMAKE_BUILD_TYPE=Release
         -D BUILD_SHARED_LIBS=ON
+        # -D BUILD_SHARED_LIBS=OFF
         -D BUILD_APPS=OFF
+        # -D BUILD_PYTHON_BINDINGS=ON
         -D GDAL_BUILD_OPTIONAL_DRIVERS=OFF
         -D OGR_BUILD_OPTIONAL_DRIVERS=OFF
+        -D CMAKE_PREFIX_PATH=${PROJ_SOURCE_DIR}/.conda  # Working for Linux!!
+        # -D CMAKE_BUILD_RPATH=${PROJ_SOURCE_DIR}/.conda/lib
         -D CMAKE_INSTALL_PREFIX=${PROJ_VENV_DIR}
     ECHO_OUTPUT_VARIABLE
     ECHO_ERROR_VARIABLE
     COMMAND_ERROR_IS_FATAL ANY)
 message("")
 restore_cmake_message_indent()
+
+# return()
+
 message(STATUS "Running 'cmake --build' command to build GDAL project...")
 remove_cmake_message_indent()
 message("")
