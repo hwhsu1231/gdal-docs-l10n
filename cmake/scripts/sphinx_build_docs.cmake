@@ -128,20 +128,18 @@ foreach(_LANGUAGE ${LANGUAGES_LIST})
     message("Removing ${PROJ_OUT_BUILDER_DIR}/${_LANGUAGE}/${VERSION}/objects.inv...")
     message("")
     restore_cmake_message_indent()
+
+
+    file(READ "${PROJ_OUT_BUILDER_DIR}/${LANGUAGE}/${VERSION}/drivers/raster/index.html" ORIGINAL_CONTENT)
+    # 使用 string(REPLACE ...) 替换特定字符串
+    string(REPLACE "<div class=\"toctree-wrapper compound\">" 
+                  "<div class=\"toctree-wrapper compound\" style=\"display: none;\">" 
+                  MODIFIED_CONTENT "${ORIGINAL_CONTENT}")
+    # 将修改后的内容写入新文件
+    file(WRITE "${PROJ_OUT_BUILDER_DIR}/${LANGUAGE}/${VERSION}/drivers/raster/index.html.mod" "${MODIFIED_CONTENT}")
 endforeach()
 unset(_LANGUAGE)
 
-
-
-file(READ "${PROJ_OUT_BUILDER_DIR}/${LANGUAGE}/${VERSION}/drivers/raster/index.html" ORIGINAL_CONTENT)
-
-# 使用 string(REPLACE ...) 替换特定字符串
-string(REPLACE "<div class=\"toctree-wrapper compound\">" 
-               "<div class=\"toctree-wrapper compound\" style=\"display: none;\">" 
-               MODIFIED_CONTENT "${ORIGINAL_CONTENT}")
-
-# 将修改后的内容写入新文件
-file(WRITE "${PROJ_OUT_BUILDER_DIR}/${LANGUAGE}/${VERSION}/drivers/raster/index.html.mod" "${MODIFIED_CONTENT}")
 
 # # 重命名新文件，替换原始文件
 # file(RENAME "${BUILDDIR}/html/drivers/raster/index.html.mod" "${BUILDDIR}/html/drivers/raster/index.html")
