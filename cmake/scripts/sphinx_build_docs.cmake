@@ -70,7 +70,7 @@ foreach(_LANGUAGE ${LANGUAGES_LIST})
     endif()
     execute_process(
         COMMAND
-            conda run --prefix ${PROJ_SOURCE_DIR}/.conda --verbose --no-capture-output
+            # conda run --prefix ${PROJ_SOURCE_DIR}/.conda --verbose --no-capture-output
             ${Sphinx_BUILD_EXECUTABLE}
             -b ${BUILDER}
             -D locale_dirs=${LOCALE_TO_SOURCE_DIR}            # Relative to <sourcedir>
@@ -130,13 +130,13 @@ foreach(_LANGUAGE ${LANGUAGES_LIST})
     restore_cmake_message_indent()
 
 
-    file(READ "${PROJ_OUT_BUILDER_DIR}/${LANGUAGE}/${VERSION}/drivers/raster/index.html" ORIGINAL_CONTENT)
+    file(READ "${PROJ_OUT_BUILDER_DIR}/${_LANGUAGE}/${VERSION}/drivers/raster/index.html" ORIGINAL_CONTENT)
     # 使用 string(REPLACE ...) 替换特定字符串
     string(REPLACE "<div class=\"toctree-wrapper compound\">" 
                   "<div class=\"toctree-wrapper compound\" style=\"display: none;\">" 
                   MODIFIED_CONTENT "${ORIGINAL_CONTENT}")
     # 将修改后的内容写入新文件
-    file(WRITE "${PROJ_OUT_BUILDER_DIR}/${LANGUAGE}/${VERSION}/drivers/raster/index.html.mod" "${MODIFIED_CONTENT}")
+    file(WRITE "${PROJ_OUT_BUILDER_DIR}/${_LANGUAGE}/${VERSION}/drivers/raster/index.html.mod" "${MODIFIED_CONTENT}")
 endforeach()
 unset(_LANGUAGE)
 
