@@ -95,7 +95,8 @@ jobs:
         with:
           python-version: '3.8'
 
-      - uses: conda-incubator/setup-miniconda@v3
+      - name: Install Conda
+        uses: conda-incubator/setup-miniconda@v3
         with:
           auto-update-conda: true
           auto-activate-base: false
@@ -104,6 +105,11 @@ jobs:
         shell: bash
         run: |
           sudo apt-get install gettext && xgettext --version
+
+      - name: Install Doxygen
+        shell: bash
+        run: |
+          sudo apt-get install doxygen && doxygen --version
 
       - name: Configure with '${{ inputs.LANGUAGE }}' preset for '${{ inputs.VERSION }}' version
         shell: bash
