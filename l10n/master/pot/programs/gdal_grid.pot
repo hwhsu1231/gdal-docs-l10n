@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -654,13 +655,14 @@ msgstr ""
 
 #: ../../../source/programs/gdal_grid.rst:492
 msgid ""
-"Or just :ref:`gdal_merge`, to combine the one-band files into a single one:"
+"Or just use :ref:`gdal_merge`, to combine the one-band files into a single "
+"one:"
 msgstr ""
 
 #: ../../../source/programs/gdal_grid.rst:494
 msgid ""
 "gdal_grid ... a.tif; gdal_grid ... b.tif; gdal_grid ... c.tif\n"
-"gdal_merge.py -separate a.tif b.tif c.tif -o d.tif"
+"gdal_merge -separate a.tif b.tif c.tif -o d.tif"
 msgstr ""
 
 #: ../../../source/programs/gdal_grid.rst:501

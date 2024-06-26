@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -105,26 +106,26 @@ msgstr ""
 
 #: ../../../source/drivers/raster/kea.rst:51
 msgid ""
-"The following creation options are available. Some are rather esoteric and "
-"should rarely be specified, unless the user has good knowledge of the "
-"working of the underlying HDF5 format."
+"|about-creation-options| The following creation options are available. Some "
+"are rather esoteric and should rarely be specified, unless the user has good "
+"knowledge of the working of the underlying HDF5 format."
 msgstr ""
 
-#: ../../../source/drivers/raster/kea.rst:131
+#: ../../../source/drivers/raster/kea.rst:132
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/raster/kea.rst:133
+#: ../../../source/drivers/raster/kea.rst:134
 msgid "`libkea GitHub repository <https://github.com/ubarsc/kealib>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/kea.rst:135
+#: ../../../source/drivers/raster/kea.rst:136
 msgid ""
 "`The KEAimage file format, by Peter Bunting and Sam Gillingham, published in "
 "Computers&Geosciences <http://www.sciencedirect.com/science/article/pii/"
 "S0098300413001015>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/kea.rst:138
+#: ../../../source/drivers/raster/kea.rst:139
 msgid ":ref:`HDF5 driver page <raster.hdf5>`"
 msgstr ""

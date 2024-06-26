@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -71,11 +72,15 @@ msgstr ""
 msgid "Configuration options"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds.rst:51
+#: ../../../source/drivers/raster/pds.rst:42
+msgid "|about-config-options| The following configuration option is available:"
+msgstr ""
+
+#: ../../../source/drivers/raster/pds.rst:54
 msgid "Georeferencing"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds.rst:53
+#: ../../../source/drivers/raster/pds.rst:56
 msgid ""
 "Due to ambiguities in the PDS specification, the georeferencing of some "
 "products is subtly or grossly incorrect. There are configuration variables "
@@ -85,7 +90,7 @@ msgid ""
 "ticket/3940>`__."
 msgstr ""
 
-#: ../../../source/drivers/raster/pds.rst:60
+#: ../../../source/drivers/raster/pds.rst:63
 msgid ""
 "As a test, download both the label and image for the lunar `LOLA DEM <http://"
 "pds-geosciences.wustl.edu/missions/lro/lola.htm>`__ (digital elevation file) "
@@ -97,30 +102,30 @@ msgid ""
 "any configuration options."
 msgstr ""
 
-#: ../../../source/drivers/raster/pds.rst:70
+#: ../../../source/drivers/raster/pds.rst:73
 msgid "$ gdalinfo ldem_4.lbl"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds.rst:72
+#: ../../../source/drivers/raster/pds.rst:75
 msgid "Example conversion to GeoTiff:"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds.rst:74
+#: ../../../source/drivers/raster/pds.rst:77
 msgid "$ gdal_translate ldem_4.lbl out_LOLA.tif"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds.rst:76
-#: ../../../source/drivers/raster/pds.rst:103
+#: ../../../source/drivers/raster/pds.rst:79
+#: ../../../source/drivers/raster/pds.rst:106
 msgid ""
 "Example conversion and applying offset and multiplier values as defined in "
 "some PDS labels:"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds.rst:79
+#: ../../../source/drivers/raster/pds.rst:82
 msgid "$ gdal_translate -ot Float32 -unscale ldem_4.lbl out_LOLA_32bit.tif"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds.rst:83
+#: ../../../source/drivers/raster/pds.rst:86
 msgid ""
 "To show an example to correct an offset issue we can use the `MOLA DEM "
 "<http://pds-geosciences.wustl.edu/missions/mgs/megdr.html>`__ from the PDS. "
@@ -131,55 +136,55 @@ msgid ""
 "one pixel offset. To read this file correctly, use GDAL with these options."
 msgstr ""
 
-#: ../../../source/drivers/raster/pds.rst:92
+#: ../../../source/drivers/raster/pds.rst:95
 msgid ""
 "$ gdalinfo --config PDS_SampleProjOffset_Shift -0.5 --config "
 "PDS_LineProjOffset_Shift -0.5 megt90n000cb.lbl"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds.rst:95
+#: ../../../source/drivers/raster/pds.rst:98
 msgid ""
 "Again with these optional parameters, the center should be perfectly 0.0, "
 "0.0 meters in Cartesian space."
 msgstr ""
 
-#: ../../../source/drivers/raster/pds.rst:98
+#: ../../../source/drivers/raster/pds.rst:101
 msgid "Example conversion for MOLA:"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds.rst:100
+#: ../../../source/drivers/raster/pds.rst:103
 msgid ""
 "$ gdal_translate --config PDS_SampleProjOffset_Shift -0.5 --config "
 "PDS_LineProjOffset_Shift -0.5 megt90n000cb.lbl out_MOLA_4ppd.tif"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds.rst:106
+#: ../../../source/drivers/raster/pds.rst:109
 msgid ""
 "$ gdal_translate -ot Float32 -unscale --config PDS_SampleProjOffset_Shift "
 "-0.5 --config PDS_LineProjOffset_Shift -0.5 megt90n000cb.lbl "
 "out_MOLA_4ppd_32bit.tif"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds.rst:112
+#: ../../../source/drivers/raster/pds.rst:115
 msgid "PDS is part of a family of related formats including ISIS2 and ISIS3."
 msgstr ""
 
-#: ../../../source/drivers/raster/pds.rst:116
+#: ../../../source/drivers/raster/pds.rst:119
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds.rst:118
+#: ../../../source/drivers/raster/pds.rst:121
 msgid "Implemented as :source_file:`frmts/pds/pdsdataset.cpp`."
 msgstr ""
 
-#: ../../../source/drivers/raster/pds.rst:119
+#: ../../../source/drivers/raster/pds.rst:122
 msgid "`NASA Planetary Data System <http://pds.nasa.gov/>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds.rst:120
+#: ../../../source/drivers/raster/pds.rst:123
 msgid ":ref:`raster.isis2` driver."
 msgstr ""
 
-#: ../../../source/drivers/raster/pds.rst:121
+#: ../../../source/drivers/raster/pds.rst:124
 msgid ":ref:`raster.isis3` driver."
 msgstr ""

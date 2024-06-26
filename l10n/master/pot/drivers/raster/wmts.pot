@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -129,86 +130,96 @@ msgid ""
 "and the first tile matrix set listed."
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:81
+#: ../../../source/drivers/raster/wmts.rst:80
+msgid ""
+"Starting with GDAL 3.10, specifying the ``-if WMTS`` option to command line "
+"utilities accepting it, or ``WMTS`` as the only value of the "
+"``papszAllowedDrivers`` of :cpp:func:`GDALOpenEx`, also forces the driver to "
+"recognize the passed filename/URL, when it is not using subdataset syntax "
+"(it can typically be used to force open a HDF5 file that would be nominally "
+"recognized by the HDF5 driver)."
+msgstr ""
+
+#: ../../../source/drivers/raster/wmts.rst:87
 msgid "Open options"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:83
+#: ../../../source/drivers/raster/wmts.rst:89
 msgid "The following open options are available:"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:164
+#: ../../../source/drivers/raster/wmts.rst:170
 msgid "Local service description XML file"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:166
+#: ../../../source/drivers/raster/wmts.rst:172
 msgid ""
 "It is important that there be no spaces or other content before the "
 "``<GDAL_WMTS>`` element."
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:170
+#: ../../../source/drivers/raster/wmts.rst:176
 msgid "<GDAL_WMTS>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:172
+#: ../../../source/drivers/raster/wmts.rst:178
 msgid ""
 "<GetCapabilitiesUrl>http://foo/WM TSCapabilities.xml</GetCapabiliti esUrl>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:172
+#: ../../../source/drivers/raster/wmts.rst:178
 msgid ""
 "URL (or filename for local files) to GetCapabilities response document "
 "(required). For a KVP only server, will be like http://end_point?"
 "SERVICE=WMTS&amp ;REQUEST=GetCapabilities ."
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:180
+#: ../../../source/drivers/raster/wmts.rst:186
 msgid "<ExtraQueryParameters>foo=bar&amp;"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:180
+#: ../../../source/drivers/raster/wmts.rst:186
 msgid ""
 "URL query parameters to add to all requests (GetCapabilities, GetTile, "
 "GetFeatureInfo) (added in GDAL 3.5.1)"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:185
+#: ../../../source/drivers/raster/wmts.rst:191
 msgid "<Layer>layer_id</Layer>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:185
+#: ../../../source/drivers/raster/wmts.rst:191
 msgid ""
 "Layer identifier (optional, but may be needed to disambiguate between "
 "several layers)"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:189
+#: ../../../source/drivers/raster/wmts.rst:195
 msgid "<Style>style_id</Style>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:189
+#: ../../../source/drivers/raster/wmts.rst:195
 msgid ""
 "Style identifier. Must be one of the listed styles for the layer. (optional, "
 "but may be needed to disambiguate between several styles)"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:195
+#: ../../../source/drivers/raster/wmts.rst:201
 msgid "<TileMatrixSet>tile_matrix_set_id </TileMatrixSet>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:195
+#: ../../../source/drivers/raster/wmts.rst:201
 msgid ""
 "Tile Matrix Set identifier. Must be one of the listed tile matrix set for "
 "the layer. (optional, but may be needed to disambiguate between several tile "
 "matrix sets)"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:201
+#: ../../../source/drivers/raster/wmts.rst:207
 msgid "<TileMatrix>tile_matrix_id</TileM atrix>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:201
+#: ../../../source/drivers/raster/wmts.rst:207
 msgid ""
 "Tile Matrix identifier. Must be one of the listed tile matrix of the select "
 "tile matrix set for the layer. (optional, GDAL >= 2.2. Exclusive with "
@@ -216,11 +227,11 @@ msgid ""
 "resolution, is selected)"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:210
+#: ../../../source/drivers/raster/wmts.rst:216
 msgid "<ZoomLevel>int_value</ZoomLevel>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:210
+#: ../../../source/drivers/raster/wmts.rst:216
 msgid ""
 "Index of the maximum zoom level / tile matrix to use. The first one (ie the "
 "one of lower resolution) is indexed 0. (optional, GDAL >= 2.2. Exclusive "
@@ -228,33 +239,33 @@ msgid ""
 "best resolution, is selected)"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:219
+#: ../../../source/drivers/raster/wmts.rst:225
 msgid "<Format>image/png</Format>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:219
+#: ../../../source/drivers/raster/wmts.rst:225
 msgid ""
 "Tile format, used by GetTile requests. Must be one of the listed Format for "
 "the layer. (optional, but may be needed to disambiguate between several "
 "Format)"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:226
+#: ../../../source/drivers/raster/wmts.rst:232
 msgid "<InfoFormat>application/xml</Info Format>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:226
+#: ../../../source/drivers/raster/wmts.rst:232
 msgid ""
 "Info format, used by GetFeatureInfo requests. Must be one of the listed "
 "InfoFormat for the layer. (optional, but may be needed to disambiguate "
 "between several InfoFormat)"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:233
+#: ../../../source/drivers/raster/wmts.rst:239
 msgid "<DataWindow>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:233
+#: ../../../source/drivers/raster/wmts.rst:239
 msgid ""
 "Define extents of the data. (optional, when not specified the driver will "
 "query the declared extent of the layer, and if not present fallback to the "
@@ -262,103 +273,103 @@ msgid ""
 "matrix set limits)"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:242
+#: ../../../source/drivers/raster/wmts.rst:248
 msgid "<UpperLeftX>-180.0</UpperLeftX>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:242
+#: ../../../source/drivers/raster/wmts.rst:248
 msgid ""
 "X (longitude/easting) coordinate of upper-left corner, in the SRS of the "
 "tile matrix set. (required if DataWindow is present)"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:247
+#: ../../../source/drivers/raster/wmts.rst:253
 msgid "<UpperLeftY>90.0</UpperLeftY>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:247
+#: ../../../source/drivers/raster/wmts.rst:253
 msgid ""
 "Y (latitude/northing) coordinate of upper-left corner, in the SRS of the "
 "tile matrix set. (required if DataWindow is present)"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:252
+#: ../../../source/drivers/raster/wmts.rst:258
 msgid "<LowerRightX>180.0</LowerRightX>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:252
+#: ../../../source/drivers/raster/wmts.rst:258
 msgid ""
 "X (longitude/easting) coordinate of lower-right corner, in the SRS of the "
 "tile matrix set. (required if DataWindow is present)"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:257
+#: ../../../source/drivers/raster/wmts.rst:263
 msgid "<LowerRightY>-90.0</LowerRightY>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:257
+#: ../../../source/drivers/raster/wmts.rst:263
 msgid ""
 "Y (latitude/northing) coordinate of lower-right corner, in the SRS of the "
 "tile matrix set. (required if DataWindow is present)"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:262
+#: ../../../source/drivers/raster/wmts.rst:268
 msgid "</DataWindow>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:264
+#: ../../../source/drivers/raster/wmts.rst:270
 msgid "<Projection>EPSG:4326</Projection >"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:264
+#: ../../../source/drivers/raster/wmts.rst:270
 msgid ""
 "Declared projection, in case the one of the TileMatrixSet is not desirable "
 "(optional, defaults to value of the TileMatrixSet)"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:269
+#: ../../../source/drivers/raster/wmts.rst:275
 msgid "<BandsCount>4</BandsCount>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:269
+#: ../../../source/drivers/raster/wmts.rst:275
 msgid ""
 "Number of bands/channels, 1 for grayscale data, 3 for RGB, 4 for RGBA. "
 "(optional, defaults to 4)"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:273
+#: ../../../source/drivers/raster/wmts.rst:279
 msgid "<DataType>Byte</DataType>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:273
+#: ../../../source/drivers/raster/wmts.rst:279
 msgid ""
 "Band data type, one of: Byte, Int16, UInt16, Int32, UInt32, Float32, "
 "Float64, etc.. (optional, defaults to Byte)"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:278
+#: ../../../source/drivers/raster/wmts.rst:284
 msgid "<ExtendBeyondDateLine>false</Exte ndBeyondDateLine>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:278
+#: ../../../source/drivers/raster/wmts.rst:284
 msgid ""
 "Whether to make the extent go over dateline and warp tile requests. Only "
 "appropriate when the 2 following conditions are met (optional, defaults to "
 "false):"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:285
+#: ../../../source/drivers/raster/wmts.rst:291
 msgid ""
 "for a geodetic SRS or EPSG:3857, with tile matrix sets such as the whole "
 "[-180,180] range of longitude is entirely covered by an integral number of "
 "tiles (e.g. GoogleMapsCompatible)."
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:292
+#: ../../../source/drivers/raster/wmts.rst:298
 msgid "AND"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:294
+#: ../../../source/drivers/raster/wmts.rst:300
 msgid ""
 "when the layer BoundingBox in the SRS of the tile matrix set covers the "
 "whole [-180,180] range of longitude, and that there is another BoundingBox "
@@ -367,28 +378,28 @@ msgid ""
 "be explicitly specified"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:307
+#: ../../../source/drivers/raster/wmts.rst:313
 msgid ""
 "OR when the layer BoundingBox in the SRS of the tile matrix set extends "
 "beyond the dateline."
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:312
+#: ../../../source/drivers/raster/wmts.rst:318
 msgid "<Cache>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:312
+#: ../../../source/drivers/raster/wmts.rst:318
 msgid ""
 "Enable local disk cache. Allows for offline operation. (optional, cache is "
 "disabled when absent, but it is present in the autogenerated XML, can be "
 "overridden with GDAL_ENABLE_WMS_CACHE=NO"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:320
+#: ../../../source/drivers/raster/wmts.rst:326
 msgid "<Path>./gdalwmscache</Path>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:320
+#: ../../../source/drivers/raster/wmts.rst:326
 msgid ""
 "Location where to store cache files. It is safe to use same cache path for "
 "different data sources. (optional, defaults to ./gdalwmscache if "
@@ -396,118 +407,118 @@ msgid ""
 "paths are supported allowing for temporary in-memory cache"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:332
+#: ../../../source/drivers/raster/wmts.rst:338
 msgid "<Type>file</Type>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:332
+#: ../../../source/drivers/raster/wmts.rst:338
 msgid ""
 "Cache type. Now supported only 'file' type. In 'file' cache type files are "
 "stored in file system folders. (optional, defaults to 'file')"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:338
+#: ../../../source/drivers/raster/wmts.rst:344
 msgid "<Depth>2</Depth>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:338
+#: ../../../source/drivers/raster/wmts.rst:344
 msgid ""
 "Number of directory layers. 2 will result in files being written as "
 "cache_path/A/B/ABCDEF... (optional, defaults to 2)"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:344
+#: ../../../source/drivers/raster/wmts.rst:350
 msgid "<Extension>.jpg</Extension>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:344
+#: ../../../source/drivers/raster/wmts.rst:350
 msgid "Append to cache files. (optional, defaults to none)"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:347
+#: ../../../source/drivers/raster/wmts.rst:353
 msgid "</Cache>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:349
+#: ../../../source/drivers/raster/wmts.rst:355
 msgid "<MaxConnections>2</MaxConnections >"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:349
+#: ../../../source/drivers/raster/wmts.rst:355
 msgid "Maximum number of simultaneous connections. (optional, defaults to 2)"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:353
+#: ../../../source/drivers/raster/wmts.rst:359
 msgid "<Timeout>300</Timeout>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:353
+#: ../../../source/drivers/raster/wmts.rst:359
 msgid "Connection timeout in seconds. (optional, defaults to 300)"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:356
+#: ../../../source/drivers/raster/wmts.rst:362
 msgid "<OfflineMode>true</OfflineMode>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:356
+#: ../../../source/drivers/raster/wmts.rst:362
 msgid ""
 "Do not download any new images, use only what is in cache. Useful only with "
 "cache enabled. (optional, defaults to false)"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:361
+#: ../../../source/drivers/raster/wmts.rst:367
 msgid ""
 "<UserAgent>GDAL WMS driver (http://www.gdal.org/frmt_wms.htm l)</UserAgent>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:361
+#: ../../../source/drivers/raster/wmts.rst:367
 msgid ""
 "HTTP User-agent string. Some servers might require a well-known user-agent "
 "such as \"Mozilla/5.0\" (optional, defaults to \"GDAL WMS driver (http://www."
 "gdal.org/frmt_wms.htm l)\")."
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:369
+#: ../../../source/drivers/raster/wmts.rst:375
 msgid "<Accept>mimetype>/Accept>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:369
+#: ../../../source/drivers/raster/wmts.rst:375
 msgid ""
 "HTTP Accept header to specify the MIME type of the expected output of the "
 "server. Empty by default. (added in GDAL 3.5.1)"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:374
+#: ../../../source/drivers/raster/wmts.rst:380
 msgid "<UserPwd>user:password</UserPwd>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:374
+#: ../../../source/drivers/raster/wmts.rst:380
 msgid "User and Password for HTTP authentication (optional)."
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:377
+#: ../../../source/drivers/raster/wmts.rst:383
 msgid "<UnsafeSSL>true</UnsafeSSL>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:377
+#: ../../../source/drivers/raster/wmts.rst:383
 msgid ""
 "Skip SSL certificate verification. May be needed if server is using a self "
 "signed certificate (optional, defaults to false, but set to true in "
 "autogenerated XML)."
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:384
+#: ../../../source/drivers/raster/wmts.rst:390
 msgid "<Referer>http://example.foo/</Ref erer>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:384
+#: ../../../source/drivers/raster/wmts.rst:390
 msgid "HTTP Referer string. Some servers might require it (optional)."
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:387
+#: ../../../source/drivers/raster/wmts.rst:393
 msgid "<ZeroBlockHttpCodes>204,404</Zero BlockHttpCodes>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:387
+#: ../../../source/drivers/raster/wmts.rst:393
 msgid ""
 "Comma separated list of HTTP response codes that will be interpreted as a 0 "
 "filled image (i.e. black for 3 bands, and transparent for 4 bands) instead "
@@ -515,48 +526,48 @@ msgid ""
 "in autogenerated XML)"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:397
+#: ../../../source/drivers/raster/wmts.rst:403
 msgid "<ZeroBlockOnServerException>true< /ZeroBlockOnServerException>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:397
+#: ../../../source/drivers/raster/wmts.rst:403
 msgid ""
 "Whether to treat a Service Exception returned by the server as a 0 filled "
 "image instead of aborting the request. (optional, defaults to false, but set "
 "to true in autogenerated XML)"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:404
+#: ../../../source/drivers/raster/wmts.rst:410
 msgid "</GDAL_WMTS>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:409
+#: ../../../source/drivers/raster/wmts.rst:415
 msgid ""
 "Starting with GDAL 2.3, additional HTTP headers can be sent by setting the :"
 "config:`GDAL_HTTP_HEADER_FILE` configuration option to point to a filename "
 "of a text file with “key: value” HTTP headers."
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:414
+#: ../../../source/drivers/raster/wmts.rst:420
 msgid "GetFeatureInfo request"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:416
+#: ../../../source/drivers/raster/wmts.rst:422
 msgid ""
 "WMTS layers can be queried (through a GetFeatureInfo request) with the "
 "gdallocationinfo utility, or with a GetMetadataItem(\"Pixel_iCol_iLine\", "
 "\"LocationInfo\") call on a band object."
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:422
+#: ../../../source/drivers/raster/wmts.rst:428
 msgid "gdallocationinfo my_wmts.xml -geoloc -11547071.455 5528616 -xml -b 1"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:425
+#: ../../../source/drivers/raster/wmts.rst:431
 msgid "Generation of WMTS service description XML file"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:427
+#: ../../../source/drivers/raster/wmts.rst:433
 msgid ""
 "The WMTS service description XML file can be generated manually, or created "
 "as the output of the CreateCopy() operation of the WMTS driver, only if the "
@@ -565,17 +576,17 @@ msgid ""
 "\"Open syntax\" and as output an XML file. For example:"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:435
+#: ../../../source/drivers/raster/wmts.rst:441
 msgid ""
 "gdal_translate \"WMTS:http://maps.wien.gv.at/wmts/1.0.0/WMTSCapabilities.xml,"
 "layer=lb\" wmts.xml -of WMTS"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:437
+#: ../../../source/drivers/raster/wmts.rst:443
 msgid "generates the following file:"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:439
+#: ../../../source/drivers/raster/wmts.rst:445
 msgid ""
 "<GDAL_WMTS>\n"
 "  <GetCapabilitiesUrl>http://maps.wien.gv.at/wmts/1.0.0/WMTSCapabilities."
@@ -597,19 +608,19 @@ msgid ""
 "</GDAL_WMTS>"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:459
+#: ../../../source/drivers/raster/wmts.rst:465
 msgid ""
 "The generated file will come with default values that you may need to edit."
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:463
+#: ../../../source/drivers/raster/wmts.rst:469
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:465
+#: ../../../source/drivers/raster/wmts.rst:471
 msgid "`OGC WMTS Standard <http://www.opengeospatial.org/standards/wmts>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/wmts.rst:466
+#: ../../../source/drivers/raster/wmts.rst:472
 msgid ":ref:`raster.wms` driver page."
 msgstr ""

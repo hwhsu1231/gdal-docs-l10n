@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -79,7 +79,7 @@ msgstr ""
 
 #: ../../../source/drivers/raster/isis3.rst:48
 msgid ""
-"Starting with GDAL 2.2, the ISIS3 label can be retrieved as JSon-serialized "
+"Starting with GDAL 2.2, the ISIS3 label can be retrieved as JSON-serialized "
 "content in the json:ISIS3 metadata domain."
 msgstr ""
 
@@ -213,26 +213,26 @@ msgid ""
 msgstr ""
 
 #: ../../../source/drivers/raster/isis3.rst:165
-msgid "The available creation options are:"
+msgid "|about-creation-options| The available creation options are:"
 msgstr ""
 
-#: ../../../source/drivers/raster/isis3.rst:308
+#: ../../../source/drivers/raster/isis3.rst:309
 msgid "Examples"
 msgstr ""
 
-#: ../../../source/drivers/raster/isis3.rst:310
+#: ../../../source/drivers/raster/isis3.rst:311
 msgid ""
 "How to create a copy of a source ISIS3 dataset to another ISIS3 dataset "
 "while modifying a parameter of IsisCube.Mapping group, by using GDAL Python :"
 msgstr ""
 
-#: ../../../source/drivers/raster/isis3.rst:316
+#: ../../../source/drivers/raster/isis3.rst:317
 msgid ""
 "import json\n"
 "from osgeo import gdal\n"
 "\n"
 "src_ds = gdal.Open('in.lbl')\n"
-"# Load source label as JSon\n"
+"# Load source label as JSON\n"
 "label = json.loads( src_ds.GetMetadata_List('json:ISIS3')[0] )\n"
 "# Update parameter\n"
 "label[\"IsisCube\"][\"Mapping\"][\"TargetName\"] = \"Moon\"\n"
@@ -265,18 +265,18 @@ msgid ""
 "src_ds = None"
 msgstr ""
 
-#: ../../../source/drivers/raster/isis3.rst:349
+#: ../../../source/drivers/raster/isis3.rst:350
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/raster/isis3.rst:351
+#: ../../../source/drivers/raster/isis3.rst:352
 msgid "Implemented as :source_file:`frmts/pds/isis3dataset.cpp`."
 msgstr ""
 
-#: ../../../source/drivers/raster/isis3.rst:352
+#: ../../../source/drivers/raster/isis3.rst:353
 msgid ":ref:`GDAL PDS Driver <raster.pds>`"
 msgstr ""
 
-#: ../../../source/drivers/raster/isis3.rst:353
+#: ../../../source/drivers/raster/isis3.rst:354
 msgid ":ref:`GDAL ISIS2 Driver <raster.isis2>`"
 msgstr ""

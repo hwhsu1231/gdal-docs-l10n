@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -871,22 +871,23 @@ msgid ""
 "is still possible to do so. Common use case is when geometry is the only "
 "field that is needed. In this case the name of the geometry field to be used "
 "in the SQL statement is the name returned by :cpp:func:`OGRLayer::"
-"GetGeometryColumn`. If the method returns an empty string then a special "
-"name \"_ogr_geometry_\" must be used. The name begins with an underscore and "
-"SQL syntax requires that it must appear between double quotes. In addition "
-"the command line interpreter may require that double quotes are escaped and "
-"the final SELECT statement could look like:"
+"GetGeometryColumn`, and also \"Geometry Column = ...\" in :program:`ogrinfo` "
+"output. If the method returns an empty string then a special name "
+"\"_ogr_geometry_\" must be used. The name begins with an underscore and SQL "
+"syntax requires that it must appear between double quotes. In addition the "
+"command line interpreter may require that double quotes are escaped and the "
+"final SELECT statement could look like:"
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:574
+#: ../../../source/user/ogr_sql_dialect.rst:575
 msgid "SELECT \"_ogr_geometry_\" FROM nation"
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:579
+#: ../../../source/user/ogr_sql_dialect.rst:580
 msgid "OGR_GEOMETRY"
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:581
+#: ../../../source/user/ogr_sql_dialect.rst:582
 msgid ""
 "Some of the data sources (like MapInfo tab) can handle geometries of "
 "different types within the same layer. The ``OGR_GEOMETRY`` special field "
@@ -895,43 +896,43 @@ msgid ""
 "this field one can select particular types of the geometries like:"
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:587
+#: ../../../source/user/ogr_sql_dialect.rst:588
 msgid ""
 "SELECT * FROM nation WHERE OGR_GEOMETRY='POINT' OR OGR_GEOMETRY='POLYGON'"
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:592
+#: ../../../source/user/ogr_sql_dialect.rst:593
 msgid "OGR_GEOM_WKT"
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:594
+#: ../../../source/user/ogr_sql_dialect.rst:595
 msgid ""
 "The Well Known Text representation of the geometry can also be used as a "
 "special field. To select the WKT of the geometry ``OGR_GEOM_WKT`` might be "
 "included in the select list, like:"
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:598
+#: ../../../source/user/ogr_sql_dialect.rst:599
 msgid "SELECT OGR_GEOM_WKT, * FROM nation"
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:602
+#: ../../../source/user/ogr_sql_dialect.rst:603
 msgid ""
 "Using the ``OGR_GEOM_WKT`` and the ``LIKE`` operator in the WHERE clause we "
 "can get similar effect as using OGR_GEOMETRY:"
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:605
+#: ../../../source/user/ogr_sql_dialect.rst:606
 msgid ""
 "SELECT OGR_GEOM_WKT, * FROM nation WHERE OGR_GEOM_WKT\n"
 "LIKE 'POINT%' OR OGR_GEOM_WKT LIKE 'POLYGON%'"
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:611
+#: ../../../source/user/ogr_sql_dialect.rst:612
 msgid "OGR_GEOM_AREA"
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:613
+#: ../../../source/user/ogr_sql_dialect.rst:614
 msgid ""
 "The ``OGR_GEOM_AREA`` special field returns the area of the feature's "
 "geometry computed by the OGRSurface::get_Area() method. For "
@@ -939,19 +940,19 @@ msgid ""
 "of its members. For non-surface geometries the returned area is 0.0."
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:618
+#: ../../../source/user/ogr_sql_dialect.rst:619
 msgid "For example, to select only polygon features larger than a given area:"
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:620
+#: ../../../source/user/ogr_sql_dialect.rst:621
 msgid "SELECT * FROM nation WHERE OGR_GEOM_AREA > 10000000"
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:625
+#: ../../../source/user/ogr_sql_dialect.rst:626
 msgid "OGR_STYLE"
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:627
+#: ../../../source/user/ogr_sql_dialect.rst:628
 msgid ""
 "The ``OGR_STYLE`` special field represents the style string of the feature "
 "returned by OGRFeature::GetStyleString(). By using this field and the "
@@ -959,15 +960,40 @@ msgid ""
 "example we can select the annotation features as:"
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:632
+#: ../../../source/user/ogr_sql_dialect.rst:633
 msgid "SELECT * FROM nation WHERE OGR_STYLE LIKE 'LABEL%'"
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:637
+#: ../../../source/user/ogr_sql_dialect.rst:638
+msgid ""
+"It is possible to use the ``OGR_STYLE`` field name as a special field name "
+"in the field selection as an alternate way of setting the :cpp:func:"
+"`OGRFeature::SetStyleString` value, typically by aliasing another field or a "
+"string literal."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:642
+msgid "SELECT *, 'BRUSH(fc:#01234567)' AS OGR_STYLE FROM source_layer"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:647
+msgid ""
+"By default, the OGR_STYLE field will still be visible as a regular field. If "
+"this is undesirable, starting with GDAL 3.10, it can be hidden by adding the "
+"HIDDEN keyword at the end of the field specification."
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:651
+msgid ""
+"SELECT * EXCLUDE(my_style_field), my_style_field AS OGR_STYLE HIDDEN FROM "
+"source_layer"
+msgstr ""
+
+#: ../../../source/user/ogr_sql_dialect.rst:657
 msgid "CREATE INDEX"
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:639
+#: ../../../source/user/ogr_sql_dialect.rst:659
 msgid ""
 "Some OGR SQL drivers support creating of attribute indexes.  Currently this "
 "includes the Shapefile driver.  An index accelerates very simple attribute "
@@ -976,62 +1002,62 @@ msgid ""
 "the nation table a command like this would be used:"
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:645
+#: ../../../source/user/ogr_sql_dialect.rst:665
 msgid "CREATE INDEX ON nation USING nation_id"
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:650
+#: ../../../source/user/ogr_sql_dialect.rst:670
 msgid "Index Limitations"
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:652
+#: ../../../source/user/ogr_sql_dialect.rst:672
 msgid ""
 "Indexes are not maintained dynamically when new features are added to or "
 "removed from a layer."
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:653
+#: ../../../source/user/ogr_sql_dialect.rst:673
 msgid ""
 "Very long strings (longer than 256 characters?) cannot currently be indexed."
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:654
+#: ../../../source/user/ogr_sql_dialect.rst:674
 msgid ""
 "To recreate an index it is necessary to drop all indexes on a layer and then "
 "recreate all the indexes."
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:655
+#: ../../../source/user/ogr_sql_dialect.rst:675
 msgid ""
 "Indexes are not used in any complex queries.   Currently the only query the "
 "will accelerate is a simple \"field = value\" query."
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:658
+#: ../../../source/user/ogr_sql_dialect.rst:678
 msgid "DROP INDEX"
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:660
+#: ../../../source/user/ogr_sql_dialect.rst:680
 msgid ""
 "The OGR SQL DROP INDEX command can be used to drop all indexes on a "
 "particular table, or just the index for a particular column."
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:663
+#: ../../../source/user/ogr_sql_dialect.rst:683
 msgid ""
 "DROP INDEX ON nation USING nation_id\n"
 "DROP INDEX ON nation"
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:669
+#: ../../../source/user/ogr_sql_dialect.rst:689
 msgid "ALTER TABLE"
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:671
+#: ../../../source/user/ogr_sql_dialect.rst:691
 msgid "The following OGR SQL ALTER TABLE commands can be used."
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:673
+#: ../../../source/user/ogr_sql_dialect.rst:693
 msgid ""
 "-\"ALTER TABLE tablename ADD [COLUMN] columnname columntype\" to add a new "
 "field. Supported if the layer declares the OLCCreateField capability. -"
@@ -1044,13 +1070,13 @@ msgid ""
 "Supported if the layer declares the OLCDeleteField capability."
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:678
+#: ../../../source/user/ogr_sql_dialect.rst:698
 msgid ""
 "The columntype value follows the syntax of the types supported by the CAST "
 "operator described above."
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:680
+#: ../../../source/user/ogr_sql_dialect.rst:700
 msgid ""
 "ALTER TABLE nation ADD COLUMN myfield integer\n"
 "ALTER TABLE nation RENAME COLUMN myfield TO myfield2\n"
@@ -1058,16 +1084,16 @@ msgid ""
 "ALTER TABLE nation DROP COLUMN myfield2"
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:688
+#: ../../../source/user/ogr_sql_dialect.rst:708
 msgid "DROP TABLE"
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:690
+#: ../../../source/user/ogr_sql_dialect.rst:710
 msgid ""
 "The OGR SQL DROP TABLE command can be used to delete a table. This is only "
 "supported on datasources that declare the ODsCDeleteLayer capability."
 msgstr ""
 
-#: ../../../source/user/ogr_sql_dialect.rst:693
+#: ../../../source/user/ogr_sql_dialect.rst:713
 msgid "DROP TABLE nation"
 msgstr ""

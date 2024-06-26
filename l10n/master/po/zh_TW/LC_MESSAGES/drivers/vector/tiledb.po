@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -199,33 +199,37 @@ msgid "Open options"
 msgstr ""
 
 #: ../../../source/drivers/vector/tiledb.rst:101
-msgid "The following open options are available:"
+msgid "|about-open-options| The following open options are available:"
 msgstr ""
 
-#: ../../../source/drivers/vector/tiledb.rst:137
+#: ../../../source/drivers/vector/tiledb.rst:138
 msgid "Dataset creation options"
 msgstr ""
 
-#: ../../../source/drivers/vector/tiledb.rst:139
-msgid "The following dataset creation options are available:"
-msgstr ""
-
-#: ../../../source/drivers/vector/tiledb.rst:158
-msgid "Layer creation options"
+#: ../../../source/drivers/vector/tiledb.rst:140
+msgid ""
+"|about-dataset-creation-options| The following dataset creation options are "
+"available:"
 msgstr ""
 
 #: ../../../source/drivers/vector/tiledb.rst:160
-msgid "The following layer options are available:"
+msgid "Layer creation options"
 msgstr ""
 
-#: ../../../source/drivers/vector/tiledb.rst:235
+#: ../../../source/drivers/vector/tiledb.rst:162
+msgid ""
+"|about-layer-creation-options| The following layer creation options are "
+"available:"
+msgstr ""
+
+#: ../../../source/drivers/vector/tiledb.rst:238
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/vector/tiledb.rst:237
+#: ../../../source/drivers/vector/tiledb.rst:240
 msgid "`TileDB home page <https://tiledb.io/>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/tiledb.rst:239
+#: ../../../source/drivers/vector/tiledb.rst:242
 msgid ":ref:`TileDB raster <raster.tiledb>` documentation page"
 msgstr ""

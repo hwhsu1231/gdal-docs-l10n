@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,14 +40,18 @@ msgstr ""
 msgid "Netpbm files can be created with a type of PNM."
 msgstr ""
 
-#: ../../../source/drivers/raster/pnm.rst:17
-msgid "Creation Options:"
+#: ../../../source/drivers/raster/pnm.rst:18
+msgid "Creation Options"
 msgstr ""
 
-#: ../../../source/drivers/raster/pnm.rst:26
+#: ../../../source/drivers/raster/pnm.rst:20
+msgid "|about-creation-options| The following creation option is available:"
+msgstr ""
+
+#: ../../../source/drivers/raster/pnm.rst:30
 msgid "NOTE: Implemented as :source_file:`frmts/raw/pnmdataset.cpp`."
 msgstr ""
 
-#: ../../../source/drivers/raster/pnm.rst:29
+#: ../../../source/drivers/raster/pnm.rst:33
 msgid "Driver capabilities"
 msgstr ""

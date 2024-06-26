@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -172,18 +172,20 @@ msgid "Creation Options"
 msgstr ""
 
 #: ../../../source/drivers/vector/kml.rst:94
-msgid "The following dataset creation options are supported:"
+msgid ""
+"|about-dataset-creation-options| The following dataset creation options are "
+"supported:"
 msgstr ""
 
-#: ../../../source/drivers/vector/kml.rst:118
+#: ../../../source/drivers/vector/kml.rst:119
 msgid "ogr2ogr -f KML output.kml input.shp -dsco AltitudeMode=absolute"
 msgstr ""
 
-#: ../../../source/drivers/vector/kml.rst:127
+#: ../../../source/drivers/vector/kml.rst:128
 msgid "VSI Virtual File System API support"
 msgstr ""
 
-#: ../../../source/drivers/vector/kml.rst:129
+#: ../../../source/drivers/vector/kml.rst:130
 msgid ""
 "The driver supports reading and writing to files managed by VSI Virtual File "
 "System API, which include \"regular\" files, as well as files in the /"
@@ -191,39 +193,39 @@ msgid ""
 "domains."
 msgstr ""
 
-#: ../../../source/drivers/vector/kml.rst:134
+#: ../../../source/drivers/vector/kml.rst:135
 msgid "Writing to /dev/stdout or /vsistdout/ is also supported."
 msgstr ""
 
-#: ../../../source/drivers/vector/kml.rst:137
+#: ../../../source/drivers/vector/kml.rst:138
 msgid "Example"
 msgstr ""
 
-#: ../../../source/drivers/vector/kml.rst:139
+#: ../../../source/drivers/vector/kml.rst:140
 msgid ""
 "The ogr2ogr utility can be used to dump the results of a PostGIS query to "
 "KML:"
 msgstr ""
 
-#: ../../../source/drivers/vector/kml.rst:144
+#: ../../../source/drivers/vector/kml.rst:145
 msgid ""
 "ogr2ogr -f KML output.kml PG:'host=myserver dbname=warmerda' -sql \"SELECT "
 "pop_1994 from canada where province_name = 'Alberta'\""
 msgstr ""
 
-#: ../../../source/drivers/vector/kml.rst:146
+#: ../../../source/drivers/vector/kml.rst:147
 msgid "How to dump contents of .kml file as OGR sees it:"
 msgstr ""
 
-#: ../../../source/drivers/vector/kml.rst:150
+#: ../../../source/drivers/vector/kml.rst:151
 msgid "ogrinfo -ro somedisplay.kml"
 msgstr ""
 
-#: ../../../source/drivers/vector/kml.rst:153
+#: ../../../source/drivers/vector/kml.rst:154
 msgid "Caveats"
 msgstr ""
 
-#: ../../../source/drivers/vector/kml.rst:155
+#: ../../../source/drivers/vector/kml.rst:156
 msgid ""
 "Google Earth seems to have some limits regarding the number of coordinates "
 "in complex geometries like polygons. If the problem appears, then "
@@ -238,19 +240,19 @@ msgid ""
 "thread/e6995b8073e69c41>`__ thread."
 msgstr ""
 
-#: ../../../source/drivers/vector/kml.rst:169
+#: ../../../source/drivers/vector/kml.rst:170
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/vector/kml.rst:171
+#: ../../../source/drivers/vector/kml.rst:172
 msgid "`KML Specification <https://developers.google.com/kml/?csw=1>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/kml.rst:172
+#: ../../../source/drivers/vector/kml.rst:173
 msgid ""
 "`KML Tutorial <https://developers.google.com/kml/documentation/kml_tut>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/kml.rst:174
+#: ../../../source/drivers/vector/kml.rst:175
 msgid ":ref:`LIBKML driver <vector.libkml>` An alternative GDAL KML driver"
 msgstr ""

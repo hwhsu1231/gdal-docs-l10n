@@ -8,19 +8,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../../source/api/gdalattribute_cpp.rst:5
+#: ../../../source/api/gdalattribute_cpp.rst:10
 msgid "GDALAttribute C++ API"
 msgstr ""
 
-#: ../../../source/api/gdalattribute_cpp.rst:8
+#: ../../../source/api/gdalattribute_cpp.rst:13
 msgid "GDALAttribute class"
 msgstr ""
 
@@ -36,6 +37,6 @@ msgstr ""
 msgid "Parameters"
 msgstr ""
 
-#: ../../../source/api/gdalattribute_cpp.rst:15
+#: ../../../source/api/gdalattribute_cpp.rst:20
 msgid "GDALIHasAttribute interface"
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -215,7 +215,11 @@ msgstr ""
 msgid "Creation Options"
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:150
+#: ../../../source/drivers/raster/georaster.rst:112
+msgid "|about-creation-options| The following creation options are supported:"
+msgstr ""
+
+#: ../../../source/drivers/raster/georaster.rst:153
 msgid ""
 "gdal_translate -of georaster landsat_823.tif geor:scott/tiger@orcl,landsat,"
 "raster \\\n"
@@ -224,38 +228,38 @@ msgid ""
 "  -co INSERT=\"VALUES (1,'Scene 823',SDO_GEOR.INIT())\""
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:161
+#: ../../../source/drivers/raster/georaster.rst:164
 msgid ""
 "gdal_translate -of georaster landsat_825.tif geor:scott/tiger@orcl,landsat,"
 "raster \\\n"
 "  -co INSERT=\"(ID, RASTER) VALUES (2,SDO_GEOR.INIT())\""
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:255
+#: ../../../source/drivers/raster/georaster.rst:258
 msgid ""
 "When this value is set to FALSE, then the bin function to use is the one "
 "generated dynamically as previously described."
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:268
+#: ../../../source/drivers/raster/georaster.rst:271
 msgid "A valid function defined in the GeoRaster metadata."
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:269
+#: ../../../source/drivers/raster/georaster.rst:272
 msgid "The same bin function generated when :co:`GENSTATS_USEBIN` is FALSE."
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:281
+#: ../../../source/drivers/raster/georaster.rst:284
 msgid ""
 "A NODATA value is used for cells whose values are either not known or "
 "meaningless"
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:365
+#: ../../../source/drivers/raster/georaster.rst:368
 msgid "Importing GeoRaster"
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:367
+#: ../../../source/drivers/raster/georaster.rst:370
 msgid ""
 "During the process of importing raster into a GeoRaster object it is "
 "possible to give the driver a simple SQL table definition and also a SQL "
@@ -264,7 +268,7 @@ msgid ""
 "that:"
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:373
+#: ../../../source/drivers/raster/georaster.rst:376
 msgid ""
 "gdal_translate -of georaster Newpor.tif georaster:scott/tiger,,landsat,scene "
 "\\\n"
@@ -275,13 +279,13 @@ msgid ""
 "  -co \"INTERLEAVE=PIXEL\" -co \"COMPRESS=JPEG-F\""
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:381
+#: ../../../source/drivers/raster/georaster.rst:384
 msgid ""
 "Note that the create option DESCRIPTION requires to inform table name (in "
 "bold). And column name (underlined) should match the description:"
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:384
+#: ../../../source/drivers/raster/georaster.rst:387
 msgid ""
 "gdal_translate -of georaster landsat_1.tif georaster:scott/tiger,,landsat,"
 "scene \\\n"
@@ -290,7 +294,7 @@ msgid ""
 "  -co \"INSERT=VALUES(1,'West fields', SDO_GEOR.INIT())\""
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:390
+#: ../../../source/drivers/raster/georaster.rst:393
 msgid ""
 "If the table \"landsat\" exist, the option \"DESCRIPTION\" is ignored. The "
 "driver can only update one GeoRaster column per run of "
@@ -299,14 +303,14 @@ msgid ""
 "to specify a name and value of their choice."
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:396
+#: ../../../source/drivers/raster/georaster.rst:399
 msgid ""
 "gdal_translate -of georaster landsat_1.tif georaster:scott/tiger,,landsat,"
 "scene \\\n"
 "  -co \"INSERT=VALUES(10,'Main building', SDO_GEOR.INIT('RDT', 10))\""
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:401
+#: ../../../source/drivers/raster/georaster.rst:404
 msgid ""
 "If no information is given about where to store the raster the driver will "
 "create (if doesn't exist already) a default table named GDAL_IMPORT with "
@@ -314,54 +318,54 @@ msgid ""
 "RID will be given automatically by the server, example:"
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:406
+#: ../../../source/drivers/raster/georaster.rst:409
 msgid "gdal_translate -of georaster input.tif “geor:scott/tiger@dbdemo”"
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:411
+#: ../../../source/drivers/raster/georaster.rst:414
 msgid "Exporting GeoRaster"
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:413
+#: ../../../source/drivers/raster/georaster.rst:416
 msgid ""
 "A GeoRaster can be identified by a Where clause or by a pair of RDT & RID:"
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:415
+#: ../../../source/drivers/raster/georaster.rst:418
 msgid ""
 "gdal_translate -of gtiff geor:scott/tiger@dbdemo,landsat,scene,id=54 output."
 "tif\n"
 "gdal_translate -of gtiff geor:scott/tiger@dbdemo,st_rdt_1,130 output.tif"
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:421
+#: ../../../source/drivers/raster/georaster.rst:424
 msgid "Cross schema access"
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:423
+#: ../../../source/drivers/raster/georaster.rst:426
 msgid ""
 "As long as the user was granted full access the GeoRaster table and the "
 "Raster Data Table, e.g.:"
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:428
+#: ../../../source/drivers/raster/georaster.rst:431
 msgid ""
 "% sqlplus scott/tiger\n"
 "SQL> grant select,insert,update,delete on gdal_import to spock;\n"
 "SQL> grant select,insert,update,delete on gdal_rdt to spock;"
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:432
+#: ../../../source/drivers/raster/georaster.rst:435
 msgid ""
 "It is possible to an user access to extract and load GeoRaster from another "
 "user/schema by informing the schema name as showed here:"
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:435
+#: ../../../source/drivers/raster/georaster.rst:438
 msgid "Browsing:"
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:437
+#: ../../../source/drivers/raster/georaster.rst:440
 msgid ""
 "gdalinfo geor:spock/lion@orcl,scott.\n"
 "gdalinfo geor:spock/lion@orcl,scott.gdal_import,raster,\"t.raster.rasterid > "
@@ -369,28 +373,28 @@ msgid ""
 "gdalinfo geor:spock/lion@orcl,scott.gdal_import,raster,t.raster.rasterid=101"
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:443
+#: ../../../source/drivers/raster/georaster.rst:446
 msgid "Extracting:"
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:445
+#: ../../../source/drivers/raster/georaster.rst:448
 msgid ""
 "gdal_translate geor:spock/lion@orcl,scott.gdal_import,raster,t.raster."
 "rasterid=101out.tif\n"
 "gdal_translate geor:spock/lion@orcl,gdal_rdt,101 out.tif"
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:450
+#: ../../../source/drivers/raster/georaster.rst:453
 msgid ""
 "Note: On the above example that accessing by RDT/RID doesn't need schame "
 "name as long as the users is granted full access to both tables."
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:454
+#: ../../../source/drivers/raster/georaster.rst:457
 msgid "Loading:"
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:456
+#: ../../../source/drivers/raster/georaster.rst:459
 msgid ""
 "gdal_translate -of georaster input.tif geor:spock/lion@orcl,scott.\n"
 "gdal_translate -of georaster input.tif geor:spock/lion@orcl,scott.cities,"
@@ -398,17 +402,17 @@ msgid ""
 "  -co INSERT=\"(1,'Rio de Janeiro',sdo_geor.init('cities_rdt'))\""
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:463
+#: ../../../source/drivers/raster/georaster.rst:466
 msgid "General use of GeoRaster"
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:465
+#: ../../../source/drivers/raster/georaster.rst:468
 msgid ""
 "GeoRaster can be used in any GDAL command line tool with all the available "
 "options. Like a image subset extraction or re-project:"
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:468
+#: ../../../source/drivers/raster/georaster.rst:471
 msgid ""
 " % gdal_translate -of gtiff geor:scott/tiger@dbdemo,landsat,scene,id=54 "
 "output.tif \\\n"
@@ -417,13 +421,13 @@ msgid ""
 "-t_srs EPSG:9000913"
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:475
+#: ../../../source/drivers/raster/georaster.rst:478
 msgid ""
 "Two different GeoRaster can be used as input and output on the same "
 "operation:"
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:477
+#: ../../../source/drivers/raster/georaster.rst:480
 msgid ""
 "% gdal_translate -of georaster geor:scott/tiger@dbdemo,landsat,scene,id=54 "
 "\\\n"
@@ -431,7 +435,7 @@ msgid ""
 "INIT())\""
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:482
+#: ../../../source/drivers/raster/georaster.rst:485
 msgid ""
 "Applications that use GDAL can theoretically read and write from GeoRaster "
 "just like any other format but most of then are more inclined to try to "
@@ -439,7 +443,7 @@ msgid ""
 "represent the GeoRaster description, e.g.:"
 msgstr ""
 
-#: ../../../source/drivers/raster/georaster.rst:486
+#: ../../../source/drivers/raster/georaster.rst:489
 msgid ""
 "% gdal_translate -of VRT geor:scott/tiger@dbdemo,landsat,scene,id=54 view_54."
 "vrt\n"

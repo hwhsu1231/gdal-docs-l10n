@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -96,11 +96,19 @@ msgstr ""
 
 #: ../../../source/drivers/raster/ogcapi.rst:54
 msgid ""
+"Starting with GDAL 3.10, specifying the ``-if OGCAPI`` option to command "
+"line utilities accepting it, or ``OGCAPI`` as the only value of the "
+"``papszAllowedDrivers`` of :cpp:func:`GDALOpenEx`, also forces the driver to "
+"recognize the passed URL,  without the ``OGCAPI:`` prefix."
+msgstr ""
+
+#: ../../../source/drivers/raster/ogcapi.rst:59
+msgid ""
 "passing a string \"OGCAPI:{url}\" where {url} is the URL to a OGC API "
 "collection description"
 msgstr ""
 
-#: ../../../source/drivers/raster/ogcapi.rst:57
+#: ../../../source/drivers/raster/ogcapi.rst:62
 msgid ""
 "When the driver opens a collection, for raster, it will look if tiles or "
 "maps API are advertized for it. It will use tiles API by default, and "
@@ -108,22 +116,22 @@ msgid ""
 "formats, and will prefer PNG When available."
 msgstr ""
 
-#: ../../../source/drivers/raster/ogcapi.rst:62
+#: ../../../source/drivers/raster/ogcapi.rst:67
 msgid ""
 "For vector collections, this driver handles the tiles API, with GeoJSON or "
 "Mapbox Vector tiles."
 msgstr ""
 
-#: ../../../source/drivers/raster/ogcapi.rst:65
+#: ../../../source/drivers/raster/ogcapi.rst:70
 msgid ""
 "When using the tiles API, the driver will use by default the WorldCRS84Quad "
 "tile matrix set when available"
 msgstr ""
 
-#: ../../../source/drivers/raster/ogcapi.rst:69
+#: ../../../source/drivers/raster/ogcapi.rst:74
 msgid "Open options"
 msgstr ""
 
-#: ../../../source/drivers/raster/ogcapi.rst:71
-msgid "The following open options are available:"
+#: ../../../source/drivers/raster/ogcapi.rst:76
+msgid "|about-open-options| The following open options are available:"
 msgstr ""

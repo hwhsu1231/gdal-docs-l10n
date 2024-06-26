@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -42,21 +43,22 @@ msgid ""
 "                  [-subset <subset_spec>]...\n"
 "                  [-scaleaxes <scaleaxes_spec>]\n"
 "                  [-oo <NAME>=<VALUE>]...\n"
+"                  [-strict]\n"
 "                   <src_filename> <dst_filename>"
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:33
+#: ../../../source/programs/gdalmdimtranslate.rst:34
 msgid "Description"
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:35
+#: ../../../source/programs/gdalmdimtranslate.rst:36
 msgid ""
 ":program:`gdalmdimtranslate` program converts multidimensional raster "
 "between different formats, and/or can perform selective conversion of "
 "specific arrays and groups, and/or subsetting operations."
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:39
+#: ../../../source/programs/gdalmdimtranslate.rst:40
 msgid "The following command line parameters can appear in any order."
 msgstr ""
 
@@ -80,7 +82,7 @@ msgid ""
 "particular, some drivers have requirements on file extensions."
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:49
+#: ../../../source/programs/gdalmdimtranslate.rst:50
 msgid ""
 "Select the output format. This can be a format that supports "
 "multidimensional output (such as :ref:`raster.netcdf`, :ref:"
@@ -90,13 +92,13 @@ msgid ""
 "the destination filename."
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:57
+#: ../../../source/programs/gdalmdimtranslate.rst:58
 msgid ""
 "Many formats have one or more optional creation options that can be used to "
 "control particulars about the file created."
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:60
+#: ../../../source/programs/gdalmdimtranslate.rst:61
 msgid ""
 "The creation options available vary by format driver, and some simple "
 "formats have no creation options at all. A list of options supported for a "
@@ -107,21 +109,21 @@ msgid ""
 "creation options for each format."
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:69
+#: ../../../source/programs/gdalmdimtranslate.rst:70
 msgid ""
 "Array-level creation options may be passed by prefixing them with ``ARRAY:"
 "``. See :cpp:func:`GDALGroup::CopyFrom` for further details regarding such "
 "options."
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:74
+#: ../../../source/programs/gdalmdimtranslate.rst:75
 msgid ""
 "Instead of converting the whole dataset, select one array, and possibly "
 "perform operations on it. This option can be specified several times to "
 "operate on different arrays."
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:78
+#: ../../../source/programs/gdalmdimtranslate.rst:79
 msgid ""
 "<array_spec> may be just an array name, potentially using a fully qualified "
 "syntax (/group/subgroup/array_name). Or it can be a combination of options "
@@ -129,46 +131,46 @@ msgid ""
 "resample=yes][,transpose=[{axis1},{axis2},...][,view={view_expr}]"
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:83
+#: ../../../source/programs/gdalmdimtranslate.rst:84
 msgid "The following options are processed in that order:"
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:85
+#: ../../../source/programs/gdalmdimtranslate.rst:86
 msgid ""
 "``resample=yes`` asks for the array to run through :cpp:func:`GDALMDArray::"
 "GetResampled`."
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:88
+#: ../../../source/programs/gdalmdimtranslate.rst:89
 msgid ""
 "[{axis1},{axis2},...] is the argument of  :cpp:func:`GDALMDArray::Transpose`."
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:88
+#: ../../../source/programs/gdalmdimtranslate.rst:89
 msgid "For example, transpose=[1,0] switches the axis order of a 2D array."
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:90
+#: ../../../source/programs/gdalmdimtranslate.rst:91
 msgid ""
 "{view_expr} is the value of the *viewExpr* argument of :cpp:func:"
 "`GDALMDArray::GetView`"
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:92
+#: ../../../source/programs/gdalmdimtranslate.rst:93
 msgid ""
 "When specifying a view_expr that performs a slicing or subsetting on a "
 "dimension, the equivalent operation will be applied to the corresponding "
 "indexing variable."
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:99
+#: ../../../source/programs/gdalmdimtranslate.rst:100
 msgid ""
 "Option passed to :cpp:func:`GDALGroup::GetMDArrayNames` to filter reported "
 "arrays. Such option is format specific. Consult driver documentation. This "
 "option may be used several times."
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:105
+#: ../../../source/programs/gdalmdimtranslate.rst:106
 msgid ""
 "Instead of converting the whole dataset, select one group, and possibly "
 "perform operations on it. This option can be specified several times to "
@@ -177,7 +179,7 @@ msgid ""
 "specified, they are copied under the target root group"
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:111
+#: ../../../source/programs/gdalmdimtranslate.rst:112
 msgid ""
 "<group_spec> may be just a group name, potentially using a fully qualified "
 "syntax (/group/subgroup/subsubgroup_name). Or it can be a combination of "
@@ -185,7 +187,7 @@ msgid ""
 "recursive=no]"
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:118
+#: ../../../source/programs/gdalmdimtranslate.rst:119
 msgid ""
 "Performs a subsetting (trimming or slicing) operation along a dimension, "
 "provided that it is indexed by a 1D variable of numeric or string data type, "
@@ -194,7 +196,7 @@ msgid ""
 "files/09-147r3>`__ for subsetting."
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:124
+#: ../../../source/programs/gdalmdimtranslate.rst:125
 msgid ""
 "That is dim_name(min_val,max_val) or dim_name(sliced_val) The first syntax "
 "will subset the dimension dim_name to values in the [min_val,max_val] range. "
@@ -202,99 +204,106 @@ msgid ""
 "this dimension will be removed from the arrays that reference to it)"
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:130
+#: ../../../source/programs/gdalmdimtranslate.rst:131
 msgid "Using -subset is incompatible of specifying a *view* option in -array."
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:134
+#: ../../../source/programs/gdalmdimtranslate.rst:135
 msgid ""
 "Applies a integral scale factor to one or several dimensions, that is "
 "extract 1 value every N values (without resampling)."
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:137
+#: ../../../source/programs/gdalmdimtranslate.rst:138
 msgid ""
 "<scaleaxes_spec> follows exactly the syntax of the KVP encoding of the "
 "SCALEAXES parameter of `OGC WCS 2.0 Scaling Extension <https://portal."
 "opengeospatial.org/files/12-039>`__, but limited to integer scale factors."
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:142
+#: ../../../source/programs/gdalmdimtranslate.rst:143
 msgid "That is <dim1_name>(<scale_factor>)[,<dim2_name>(<scale_factor>)]..."
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:144
+#: ../../../source/programs/gdalmdimtranslate.rst:145
 msgid ""
 "Using -scaleaxes is incompatible of specifying a *view* option in -array."
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:150
+#: ../../../source/programs/gdalmdimtranslate.rst:149
+msgid ""
+"By default, some failures during the translation are tolerated, such as not "
+"being able to write group attributes. When setting this option, such "
+"failures will cause the process to fail."
+msgstr ""
+
+#: ../../../source/programs/gdalmdimtranslate.rst:157
 msgid "Source dataset open option (format specific)"
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:154
+#: ../../../source/programs/gdalmdimtranslate.rst:161
 msgid "The source dataset name."
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:158
+#: ../../../source/programs/gdalmdimtranslate.rst:165
 msgid "The destination file name."
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:161
+#: ../../../source/programs/gdalmdimtranslate.rst:168
 msgid "C API"
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:163
+#: ../../../source/programs/gdalmdimtranslate.rst:170
 msgid ""
 "This utility is also callable from C with :cpp:func:`GDALMultiDimTranslate`."
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:166
+#: ../../../source/programs/gdalmdimtranslate.rst:173
 msgid "Examples"
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:168
+#: ../../../source/programs/gdalmdimtranslate.rst:175
 msgid "Convert a netCDF file to a multidimensional VRT file"
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:170
+#: ../../../source/programs/gdalmdimtranslate.rst:177
 msgid "$ gdalmdimtranslate in.nc out.vrt"
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:174
+#: ../../../source/programs/gdalmdimtranslate.rst:181
 msgid "Extract a 2D slice of a time,Y,X array"
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:176
+#: ../../../source/programs/gdalmdimtranslate.rst:183
 msgid ""
 "$ gdalmdimtranslate in.nc out.tif -subset 'time(\"2010-01-01\")' -array "
 "temperature"
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:180
+#: ../../../source/programs/gdalmdimtranslate.rst:187
 msgid "Subsample along X and Y axis"
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:182
+#: ../../../source/programs/gdalmdimtranslate.rst:189
 msgid "$ gdalmdimtranslate in.nc out.nc -scaleaxes \"X(2),Y(2)\""
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:186
+#: ../../../source/programs/gdalmdimtranslate.rst:193
 msgid ""
 "Reorder the values of a time,Y,X array along the Y axis from top-to-bottom "
 "to bottom-to-top (or the reverse)"
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:189
+#: ../../../source/programs/gdalmdimtranslate.rst:196
 msgid ""
 "$ gdalmdimtranslate in.nc out.nc -array \"name=temperature,view=[:,::-1,:]\""
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:193
+#: ../../../source/programs/gdalmdimtranslate.rst:200
 msgid "Transpose an array that has X,Y,time dimension order to time,Y,X"
 msgstr ""
 
-#: ../../../source/programs/gdalmdimtranslate.rst:195
+#: ../../../source/programs/gdalmdimtranslate.rst:202
 msgid ""
 "$ gdalmdimtranslate in.nc out.nc -array \"name=temperature,"
 "transpose=[2,1,0]\""

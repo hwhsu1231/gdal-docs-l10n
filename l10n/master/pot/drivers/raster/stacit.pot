@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -54,96 +55,118 @@ msgid ""
 "enhanced with STAC entities."
 msgstr ""
 
-#: ../../../source/drivers/raster/stacit.rst:21
-msgid ""
-"Note that when the ItemCollections contains overlapping items, and that some "
-"items are fully covered by other items that are more recent, the STACIT "
-"virtual mosaic will not list those fully covered items not participating to "
-"the pixel values of the mosaic."
-msgstr ""
-
-#: ../../../source/drivers/raster/stacit.rst:26
+#: ../../../source/drivers/raster/stacit.rst:22
 msgid "Open syntax"
 msgstr ""
 
-#: ../../../source/drivers/raster/stacit.rst:28
+#: ../../../source/drivers/raster/stacit.rst:24
 msgid ""
 "STACIT datasets/subdatasets can be accessed with one of the following "
 "syntaxes:"
 msgstr ""
 
-#: ../../../source/drivers/raster/stacit.rst:30
+#: ../../../source/drivers/raster/stacit.rst:26
 msgid "``filename.json``: local file"
 msgstr ""
 
-#: ../../../source/drivers/raster/stacit.rst:32
+#: ../../../source/drivers/raster/stacit.rst:28
 msgid "``STACIT:\"https://example.com/filename.json\"``: remote file or query"
 msgstr ""
 
-#: ../../../source/drivers/raster/stacit.rst:34
+#: ../../../source/drivers/raster/stacit.rst:30
 msgid ""
 "``STACIT:\"filename.json\":asset=my_asset``: specify the name of the asset "
 "GDAL should read (i.e. \"visual\")"
 msgstr ""
 
-#: ../../../source/drivers/raster/stacit.rst:36
+#: ../../../source/drivers/raster/stacit.rst:32
 msgid ""
 "``STACIT:\"filename.json\":collection=my_collect,asset=my_asset``: limit to "
 "items in a given collection and specify asset to read"
 msgstr ""
 
-#: ../../../source/drivers/raster/stacit.rst:38
+#: ../../../source/drivers/raster/stacit.rst:34
 msgid ""
 "``STACIT:\"filename.json\":collection=my_collect,asset=my_asset,"
 "crs=my_crs``: specify a collection, asset, and limit to items in a given CRS"
 msgstr ""
 
-#: ../../../source/drivers/raster/stacit.rst:41
+#: ../../../source/drivers/raster/stacit.rst:36
+msgid ""
+"Starting with GDAL 3.10, specifying the ``-if STACIT`` option to command "
+"line utilities accepting it, or ``STACIT`` as the only value of the "
+"``papszAllowedDrivers`` of :cpp:func:`GDALOpenEx`, also forces the driver to "
+"recognize the passed filename or URL."
+msgstr ""
+
+#: ../../../source/drivers/raster/stacit.rst:42
 msgid "Open options"
 msgstr ""
 
-#: ../../../source/drivers/raster/stacit.rst:43
-msgid "The following open options are supported:"
+#: ../../../source/drivers/raster/stacit.rst:44
+msgid "|about-open-options| The following open options are supported:"
 msgstr ""
 
-#: ../../../source/drivers/raster/stacit.rst:70
+#: ../../../source/drivers/raster/stacit.rst:79
+msgid ""
+"Starting with GDAL 3.9.1, the ``REMOVE_IF_NO_NODATA`` strategy is applied by "
+"default. The STACIT virtual mosaic will omit fully covered items, only if no "
+"band declares a nodata value. (Note that the determination whether a band "
+"has a nodata value of not is done by opening one of the items, and assuming "
+"it is representative of the characteristics of the others in the collection)."
+msgstr ""
+
+#: ../../../source/drivers/raster/stacit.rst:86
+msgid ""
+"This strategy can be forced in all cases by selecting the "
+"``USE_MOST_RECENT`` strategy (this was the strategy applied prior to 3.9.1)"
+msgstr ""
+
+#: ../../../source/drivers/raster/stacit.rst:89
+msgid ""
+"The ``USE_ALL`` strategy always causes all items to be listed in the virtual "
+"mosaic, with the most recent ones being rendered on top of the less recent "
+"ones."
+msgstr ""
+
+#: ../../../source/drivers/raster/stacit.rst:94
 msgid "Subdatasets"
 msgstr ""
 
-#: ../../../source/drivers/raster/stacit.rst:72
+#: ../../../source/drivers/raster/stacit.rst:96
 msgid ""
 "If a STACIT JSON file contains several collections, assets or CRS, the "
 "driver will return a list of subdataset names to open each of the possible "
 "subdatasets."
 msgstr ""
 
-#: ../../../source/drivers/raster/stacit.rst:77
+#: ../../../source/drivers/raster/stacit.rst:101
 msgid "Driver capabilities"
 msgstr ""
 
-#: ../../../source/drivers/raster/stacit.rst:82
+#: ../../../source/drivers/raster/stacit.rst:106
 msgid "Examples"
 msgstr ""
 
-#: ../../../source/drivers/raster/stacit.rst:84
+#: ../../../source/drivers/raster/stacit.rst:108
 msgid ""
 "List the subdatasets associated to a `STAC search <https://github.com/"
 "radiantearth/stac-api-spec/tree/master/item-search>`_ on a given collection, "
 "bbox and starting from a datetime:"
 msgstr ""
 
-#: ../../../source/drivers/raster/stacit.rst:89
+#: ../../../source/drivers/raster/stacit.rst:113
 msgid ""
 "gdalinfo \"STACIT:\\\"https://planetarycomputer.microsoft.com/api/stac/v1/"
 "search?"
 "collections=naip&bbox=-100,40,-99,41&datetime=2019-01-01T00:00:00Z%2F..\\\"\""
 msgstr ""
 
-#: ../../../source/drivers/raster/stacit.rst:92
+#: ../../../source/drivers/raster/stacit.rst:116
 msgid "Open a subdataset returned by the above request:"
 msgstr ""
 
-#: ../../../source/drivers/raster/stacit.rst:96
+#: ../../../source/drivers/raster/stacit.rst:120
 msgid ""
 "gdalinfo \"STACIT:\\\"https://planetarycomputer.microsoft.com/api/stac/v1/"
 "search?"
@@ -151,10 +174,10 @@ msgid ""
 "asset=image\""
 msgstr ""
 
-#: ../../../source/drivers/raster/stacit.rst:100
+#: ../../../source/drivers/raster/stacit.rst:124
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/raster/stacit.rst:102
+#: ../../../source/drivers/raster/stacit.rst:126
 msgid ":ref:`raster.stacta` documentation page."
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -92,63 +92,63 @@ msgid ""
 msgstr ""
 
 #: ../../../source/drivers/vector/mongodbv3.rst:50
-msgid "The open options available are :"
+msgid "|about-open-options| The open options available are:"
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:148
+#: ../../../source/drivers/vector/mongodbv3.rst:149
 msgid "Whether to use bulk insert for feature creation."
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:151
+#: ../../../source/drivers/vector/mongodbv3.rst:152
 msgid "Filtering"
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:153
+#: ../../../source/drivers/vector/mongodbv3.rst:154
 msgid ""
 "The driver will forward any spatial filter set with SetSpatialFilter() to "
 "the server when a \"2d\" or \"2dsphere\" spatial index is available on the "
 "geometry field."
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:157
+#: ../../../source/drivers/vector/mongodbv3.rst:158
 msgid ""
 "However, in the current state, SQL attribute filters set with "
 "SetAttributeFilter() are evaluated only on client-side. To enable server-"
-"side filtering, the string passed to SetAttributeFilter() must be a JSon "
+"side filtering, the string passed to SetAttributeFilter() must be a JSON "
 "object in the `MongoDB filter syntax <https://docs.mongodb.com/manual/"
 "reference/method/db.collection.find/index.html>`__."
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:164
+#: ../../../source/drivers/vector/mongodbv3.rst:165
 msgid "Paging"
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:166
+#: ../../../source/drivers/vector/mongodbv3.rst:167
 msgid ""
 "Features are retrieved from the server by chunks of 101 documents or just "
 "enough documents to exceed 1 megabyte. Subsequent batch size is 4 megabytes. "
 "This can be altered with the BATCH_SIZE open option."
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:171
+#: ../../../source/drivers/vector/mongodbv3.rst:172
 msgid "Schema"
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:173
+#: ../../../source/drivers/vector/mongodbv3.rst:174
 msgid ""
 "When reading a MongoDB collection, OGR must establish the schema of "
 "attribute and geometry fields, since, contrary to MongoDB collections which "
 "are schema-less, OGR has a fixed schema concept."
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:177
+#: ../../../source/drivers/vector/mongodbv3.rst:178
 msgid ""
 "In the general case, OGR will read the first 100 documents (can be altered "
 "with the FEATURE_COUNT_TO_ESTABLISH_FEATURE_DEFN open option) of the "
 "collection and build the schema that best fit to the found fields and values."
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:182
+#: ../../../source/drivers/vector/mongodbv3.rst:183
 msgid ""
 "If the collection/layer has been previously created with OGR, a "
 "\\_ogr_metadata special collection contains the OGR schema, in which case it "
@@ -156,22 +156,22 @@ msgid ""
 "\\_ogr_metadata by setting the USE_OGR_METADATA=NO open option."
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:188
+#: ../../../source/drivers/vector/mongodbv3.rst:189
 msgid ""
 "It is also possible to set the JSON_FIELD=YES open option so that a \\_json "
 "special field is added to the OGR schema. When reading MongoDB documents as "
-"OGR features, the full JSon version of the document will be stored in the "
+"OGR features, the full JSON version of the document will be stored in the "
 "\\_json field. This might be useful in case of complex documents or with "
 "data types that do not translate well in OGR data types. On creation/update "
 "of documents, if the \\_json field is present and set, its content will be "
 "used directly (other fields will be ignored)."
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:198
+#: ../../../source/drivers/vector/mongodbv3.rst:199
 msgid "Feature ID"
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:200
+#: ../../../source/drivers/vector/mongodbv3.rst:201
 msgid ""
 "MongoDB have a special \\_id field that contains the unique ID of the "
 "document. This field is returned as an OGR field, but cannot be used as the "
@@ -182,117 +182,119 @@ msgid ""
 "starting at 1, but it is not guaranteed to be stable at all."
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:210
+#: ../../../source/drivers/vector/mongodbv3.rst:211
 msgid "ExecuteSQL() interface"
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:212
+#: ../../../source/drivers/vector/mongodbv3.rst:213
 msgid ""
-"If specifying \"MongoDB\" as the dialect of ExecuteSQL(), a JSon string with "
+"If specifying \"MongoDB\" as the dialect of ExecuteSQL(), a JSON string with "
 "a serialized `MongoDB command <https://docs.mongodb.com/manual/reference/"
-"command/index.html>`__ can be passed. The result will be returned as a JSon "
+"command/index.html>`__ can be passed. The result will be returned as a JSON "
 "string in a single OGR feature."
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:218
+#: ../../../source/drivers/vector/mongodbv3.rst:219
 msgid "Standard SQL requests will be executed on client-side."
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:221
+#: ../../../source/drivers/vector/mongodbv3.rst:222
 msgid "Write support"
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:223
+#: ../../../source/drivers/vector/mongodbv3.rst:224
 msgid "Layer/collection creation and deletion is possible."
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:225
+#: ../../../source/drivers/vector/mongodbv3.rst:226
 msgid ""
 "Write support is only enabled when the datasource is opened in update mode."
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:228
+#: ../../../source/drivers/vector/mongodbv3.rst:229
 msgid ""
 "When inserting a new feature with CreateFeature(), and if the command is "
 "successful, OGR will fetch the returned \\_id and use it for the "
 "SetFeature() operation."
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:233
+#: ../../../source/drivers/vector/mongodbv3.rst:234
 msgid "Layer creation options"
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:235
-msgid "The following layer creation options are supported:"
-msgstr ""
-
-#: ../../../source/drivers/vector/mongodbv3.rst:282
-msgid "Examples"
+#: ../../../source/drivers/vector/mongodbv3.rst:236
+msgid ""
+"|about-layer-creation-options| The following layer creation options are "
+"supported:"
 msgstr ""
 
 #: ../../../source/drivers/vector/mongodbv3.rst:284
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/drivers/vector/mongodbv3.rst:286
 msgid "Listing the tables of a MongoDB database:"
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:288
+#: ../../../source/drivers/vector/mongodbv3.rst:290
 msgid "ogrinfo -ro mongodb+srv://user:password@cluster0-ox9uy.mongodb.net/test"
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:290
+#: ../../../source/drivers/vector/mongodbv3.rst:292
 msgid "Filtering on a MongoDB field:"
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:294
+#: ../../../source/drivers/vector/mongodbv3.rst:296
 msgid ""
 "ogrinfo -ro mongodb+srv://user:password@cluster0-ox9uy.mongodb.net/test -"
 "where '{ \"field\": 5 }'"
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:296
+#: ../../../source/drivers/vector/mongodbv3.rst:298
 msgid "Creating and populating a collection from a shapefile:"
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:300
+#: ../../../source/drivers/vector/mongodbv3.rst:302
 msgid ""
 "ogr2ogr -update mongodb+srv://user:password@cluster0-ox9uy.mongodb.net/test "
 "shapefile.shp"
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:303
+#: ../../../source/drivers/vector/mongodbv3.rst:305
 msgid "Build instructions"
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:305
+#: ../../../source/drivers/vector/mongodbv3.rst:307
 msgid ""
 "GDAL/OGR must be built against the `MongoDB C++ driver client library "
 "<https://github.com/mongodb/mongo-cxx-driver>`__, v3.4.0, in order to the "
 "MongoDBv3 driver to be compiled."
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:309
+#: ../../../source/drivers/vector/mongodbv3.rst:311
 msgid ""
 "You must first follow `MongoDB C++ driver client build instructions <http://"
 "mongocxx.org/mongocxx-v3/installation/>`__."
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:312
+#: ../../../source/drivers/vector/mongodbv3.rst:314
 msgid "Then:"
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:314
+#: ../../../source/drivers/vector/mongodbv3.rst:316
 msgid ""
 "On Linux/Unix, run ./configure --with-mongocxxv3 (potentially by overriding "
 "PKG_CONFIG_PATH to point to the {INSTALLATION_PREFIX_OF_MONGOCXX}/lib/"
 "pkgconfig"
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:317
+#: ../../../source/drivers/vector/mongodbv3.rst:319
 msgid ""
 "On Windows, uncomment and adapt the following in nmake.opt (or add in nmake."
 "local):"
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:322
+#: ../../../source/drivers/vector/mongodbv3.rst:324
 msgid ""
 "# Uncomment for MongoDBv3 support\n"
 "# Uncomment following line if plugin is preferred\n"
@@ -304,14 +306,14 @@ msgid ""
 "install-mongocxx-3.4.0/lib/bsoncxx.lib"
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:330
+#: ../../../source/drivers/vector/mongodbv3.rst:332
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:332
+#: ../../../source/drivers/vector/mongodbv3.rst:334
 msgid "`MongoDB C++ Driver <https://github.com/mongodb/mongo-cxx-driver>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/mongodbv3.rst:333
+#: ../../../source/drivers/vector/mongodbv3.rst:335
 msgid "`MongoDB Manual <https://docs.mongodb.com/manual/>`__"
 msgstr ""

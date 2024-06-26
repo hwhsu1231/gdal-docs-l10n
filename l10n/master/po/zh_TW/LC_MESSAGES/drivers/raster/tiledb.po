@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,25 +52,64 @@ msgid "Driver capabilities"
 msgstr ""
 
 #: ../../../source/drivers/raster/tiledb.rst:30
-msgid "Creation options"
+msgid "Open options"
 msgstr ""
 
 #: ../../../source/drivers/raster/tiledb.rst:32
-msgid "Various creation and open options exists, among them :"
+msgid "The following open options exist:"
 msgstr ""
 
-#: ../../../source/drivers/raster/tiledb.rst:41
+#: ../../../source/drivers/raster/tiledb.rst:58
+msgid "Creation options"
+msgstr ""
+
+#: ../../../source/drivers/raster/tiledb.rst:60
+msgid "The following creation options exist:"
+msgstr ""
+
+#: ../../../source/drivers/raster/tiledb.rst:108
+msgid ""
+"``BAND``: a 3D array is created with the slowest varying dimension being the "
+"band."
+msgstr ""
+
+#: ../../../source/drivers/raster/tiledb.rst:109
+msgid ""
+"``PIXEL``: a 3D array is created with the fastest varying dimension being "
+"the band."
+msgstr ""
+
+#: ../../../source/drivers/raster/tiledb.rst:110
+msgid ""
+"``ATTRIBUTES``: a 2D array is created with each band being stored in a "
+"separate TileDB attribute."
+msgstr ""
+
+#: ../../../source/drivers/raster/tiledb.rst:124
+msgid ""
+"When the dataset is created within a TileDB group, overviews that may be "
+"created are stored as TileDB arrays inside that group, next to the full "
+"resolution array. This makes administration of the dataset easier."
+msgstr ""
+
+#: ../../../source/drivers/raster/tiledb.rst:128
+msgid ""
+"Otherwise, the past default behavior (CREATE_GROUP=NO) is to create the "
+"dataset as a TileDB array. Overviews cannot be created in that mode."
+msgstr ""
+
+#: ../../../source/drivers/raster/tiledb.rst:133
 msgid "Multidimensional API support"
 msgstr ""
 
-#: ../../../source/drivers/raster/tiledb.rst:45
+#: ../../../source/drivers/raster/tiledb.rst:137
 msgid ""
 "The TileDB driver supports the :ref:`multidim_raster_data_model` for reading "
 "and writing operations. It requires GDAL to be built and run against TileDB "
 ">= 2.15."
 msgstr ""
 
-#: ../../../source/drivers/raster/tiledb.rst:48
+#: ../../../source/drivers/raster/tiledb.rst:140
 msgid ""
 "The driver supports: - creating and reading groups and subgroups - creating "
 "and reading multidimensional dense arrays with a numeric data type - "
@@ -78,77 +117,82 @@ msgid ""
 "storing an indexing array of a dimension as a TileDB dimension label"
 msgstr ""
 
-#: ../../../source/drivers/raster/tiledb.rst:54
+#: ../../../source/drivers/raster/tiledb.rst:146
 msgid ""
 "The multidimensional API supports reading dense arrays created by the "
 "classic raster API of GDAL."
 msgstr ""
 
-#: ../../../source/drivers/raster/tiledb.rst:57
+#: ../../../source/drivers/raster/tiledb.rst:149
 msgid "The following multidimensional dataset open options are available:"
 msgstr ""
 
-#: ../../../source/drivers/raster/tiledb.rst:59
-#: ../../../source/drivers/raster/tiledb.rst:67
+#: ../../../source/drivers/raster/tiledb.rst:151
+#: ../../../source/drivers/raster/tiledb.rst:159
 msgid ""
 "**TILEDB_CONFIG=config**: A local file with TileDB configuration `options "
 "<https://docs.tiledb.io/en/stable/tutorials/config.html>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/tiledb.rst:62
-#: ../../../source/drivers/raster/tiledb.rst:70
-#: ../../../source/drivers/raster/tiledb.rst:75
-#: ../../../source/drivers/raster/tiledb.rst:90
+#: ../../../source/drivers/raster/tiledb.rst:154
+#: ../../../source/drivers/raster/tiledb.rst:167
 msgid ""
 "**TILEDB_TIMESTAMP=val**: inclusive ending timestamp when opening this array"
 msgstr ""
 
-#: ../../../source/drivers/raster/tiledb.rst:65
+#: ../../../source/drivers/raster/tiledb.rst:157
 msgid "The following multidimensional dataset creation options are available:"
 msgstr ""
 
-#: ../../../source/drivers/raster/tiledb.rst:73
+#: ../../../source/drivers/raster/tiledb.rst:162
+#: ../../../source/drivers/raster/tiledb.rst:182
+msgid ""
+"**TILEDB_TIMESTAMP=val**: Create array at this timestamp. Should be strictly "
+"greater than zero when set."
+msgstr ""
+
+#: ../../../source/drivers/raster/tiledb.rst:165
 msgid "The following array open options are available:"
 msgstr ""
 
-#: ../../../source/drivers/raster/tiledb.rst:78
+#: ../../../source/drivers/raster/tiledb.rst:170
 msgid "The following array creation options are available:"
 msgstr ""
 
-#: ../../../source/drivers/raster/tiledb.rst:80
+#: ../../../source/drivers/raster/tiledb.rst:172
 msgid "**BLOCKSIZE=val1,val2,...,valN**: Block size in pixels"
 msgstr ""
 
-#: ../../../source/drivers/raster/tiledb.rst:82
+#: ../../../source/drivers/raster/tiledb.rst:174
 msgid ""
 "**COMPRESSION=NONE/GZIP/ZSTD/LZ4/RLE/BZIP2/DOUBLE-DELTA/POSITIVE-DELTA**: "
 "Compression to use. Default is NONE"
 msgstr ""
 
-#: ../../../source/drivers/raster/tiledb.rst:85
+#: ../../../source/drivers/raster/tiledb.rst:177
 msgid "**COMPRESSION_LEVEL=int_value**: compression level"
 msgstr ""
 
-#: ../../../source/drivers/raster/tiledb.rst:87
+#: ../../../source/drivers/raster/tiledb.rst:179
 msgid ""
 "**IN_MEMORY=YES/NO**: hether the array should be only in-memory. Useful to "
 "create an indexing variable that is serialized as a dimension label"
 msgstr ""
 
-#: ../../../source/drivers/raster/tiledb.rst:93
+#: ../../../source/drivers/raster/tiledb.rst:185
 msgid ""
 "Cf :source_file:`autotest/gdrivers/tiledb_multidim.py` for examples of how "
 "to use the Python multidimensional API with the TileDB driver."
 msgstr ""
 
-#: ../../../source/drivers/raster/tiledb.rst:97
+#: ../../../source/drivers/raster/tiledb.rst:189
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/raster/tiledb.rst:99
+#: ../../../source/drivers/raster/tiledb.rst:191
 msgid "`TileDB home page <https://tiledb.io/>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/tiledb.rst:101
+#: ../../../source/drivers/raster/tiledb.rst:193
 msgid ":ref:`TileDB vector <vector.tiledb>` documentation page"
 msgstr ""

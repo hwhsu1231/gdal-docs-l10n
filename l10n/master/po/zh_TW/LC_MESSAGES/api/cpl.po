@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../../source/api/cpl.rst:5
+#: ../../../source/api/cpl.rst:10
 msgid "Common Portability Library C API"
 msgstr ""
 
-#: ../../../source/api/cpl.rst:8
+#: ../../../source/api/cpl.rst:13
 msgid "cpl_conv.h"
 msgstr ""
 
@@ -70,7 +70,7 @@ msgstr ""
 msgid "Public Members"
 msgstr ""
 
-#: ../../../source/api/cpl.rst:14
+#: ../../../source/api/cpl.rst:19
 msgid "cpl_csv.h"
 msgstr ""
 
@@ -78,7 +78,7 @@ msgstr ""
 msgid "Enums"
 msgstr ""
 
-#: ../../../source/api/cpl.rst:20
+#: ../../../source/api/cpl.rst:25
 msgid "cpl_compressor.h"
 msgstr ""
 
@@ -110,7 +110,7 @@ msgstr ""
 msgid "Return"
 msgstr ""
 
-#: ../../../source/api/cpl.rst:26
+#: ../../../source/api/cpl.rst:31
 msgid "cpl_error.h"
 msgstr ""
 
@@ -122,7 +122,7 @@ msgstr ""
 msgid "Private Members"
 msgstr ""
 
-#: ../../../source/api/cpl.rst:32
+#: ../../../source/api/cpl.rst:37
 msgid "cpl_http.h"
 msgstr ""
 
@@ -158,7 +158,7 @@ msgstr ""
 msgid "Public Types"
 msgstr ""
 
-#: ../../../source/api/cpl.rst:38
+#: ../../../source/api/cpl.rst:43
 msgid "cpl_minixml.h"
 msgstr ""
 
@@ -181,15 +181,15 @@ msgid ""
 "CPLCreateXMLNode( psAttributeNode, CXT_Text, pszValue );"
 msgstr ""
 
-#: ../../../source/api/cpl.rst:44
+#: ../../../source/api/cpl.rst:49
 msgid "cpl_multiproc.h"
 msgstr ""
 
-#: ../../../source/api/cpl.rst:50
+#: ../../../source/api/cpl.rst:55
 msgid "cpl_port.h"
 msgstr ""
 
-#: ../../../source/api/cpl.rst:56
+#: ../../../source/api/cpl.rst:61
 msgid "cpl_progress.h"
 msgstr ""
 
@@ -218,7 +218,7 @@ msgid ""
 "}"
 msgstr ""
 
-#: ../../../source/api/cpl.rst:62
+#: ../../../source/api/cpl.rst:67
 msgid "cpl_string.h"
 msgstr ""
 
@@ -257,11 +257,11 @@ msgstr ""
 msgid "Private Functions"
 msgstr ""
 
-#: ../../../source/api/cpl.rst:68
+#: ../../../source/api/cpl.rst:73
 msgid "cpl_time.h"
 msgstr ""
 
-#: ../../../source/api/cpl.rst:74
+#: ../../../source/api/cpl.rst:79
 msgid "cpl_virtualmem.h"
 msgstr ""
 
@@ -289,11 +289,11 @@ msgstr ""
 msgid "Param nToBeEvicted"
 msgstr ""
 
-#: ../../../source/api/cpl.rst:80
+#: ../../../source/api/cpl.rst:85
 msgid "cpl_vsi_error.h"
 msgstr ""
 
-#: ../../../source/api/cpl.rst:86
+#: ../../../source/api/cpl.rst:91
 msgid "cpl_vsi.h"
 msgstr ""
 
@@ -311,6 +311,26 @@ msgstr ""
 
 #: ../../../source/api/cpl.rst:0
 msgid "Param panSizes"
+msgstr ""
+
+#: ../../../source/api/cpl.rst:-1
+msgid ""
+"char* pszOutputPayload = NULL;\n"
+"int ret = VSICopyFileRestartable(pszSource, pszTarget, NULL,\n"
+"                                 &pszOutputPayload, NULL, NULL, NULL);\n"
+"while( ret == 1 ) // add also a limiting counter to avoid potentiall endless "
+"looping\n"
+"{\n"
+"    // TODO: wait for some time\n"
+"\n"
+"    char* pszOutputPayloadNew = NULL;\n"
+"    const char* pszInputPayload = pszOutputPayload;\n"
+"    ret = VSICopyFileRestartable(pszSource, pszTarget, pszInputPayload,\n"
+"                                 &pszOutputPayloadNew, NULL, NULL, NULL);\n"
+"    VSIFree(pszOutputPayload);\n"
+"    pszOutputPayload = pszOutputPayloadNew;\n"
+"}\n"
+"VSIFree(pszOutputPayload);"
 msgstr ""
 
 #: ../../../source/api/cpl.rst:-1
@@ -667,6 +687,6 @@ msgstr ""
 msgid "Since  GDAL 3.8.0"
 msgstr ""
 
-#: ../../../source/api/cpl.rst:93
+#: ../../../source/api/cpl.rst:98
 msgid ":ref:`cpl_cpp_api`."
 msgstr ""

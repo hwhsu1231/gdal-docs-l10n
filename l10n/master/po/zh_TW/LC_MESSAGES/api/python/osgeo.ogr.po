@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:33+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../../source/api/python/osgeo.ogr.rst:2
+#: ../../../source/api/python/osgeo.ogr.rst:7
 msgid "osgeo.ogr module"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/ogr.py:docstring
 #: of osgeo.ogr.ArrowArray:1 osgeo.ogr.ArrowArrayStream:1
 #: osgeo.ogr.ArrowSchema:1 osgeo.ogr.ExceptionMgr:1
 #: osgeo.ogr.GeomCoordinatePrecision:1 osgeo.ogr.GeomTransformer:1
@@ -29,637 +29,22 @@ msgstr ""
 msgid "Bases: :py:class:`object`"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/ogr.py:docstring
 #: of osgeo.ogr.ArrowArray:1
 msgid "Proxy of C++ ArrowArray class."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.ArrowArray.thisown:1 osgeo.ogr.ArrowArrayStream.thisown:1
-#: osgeo.ogr.ArrowSchema.thisown:1 osgeo.ogr.DataSource.thisown:1
-#: osgeo.ogr.Driver.thisown:1 osgeo.ogr.GeomCoordinatePrecision.thisown:1
-#: osgeo.ogr.GeomTransformer.thisown:1 osgeo.ogr.MajorObject.thisown:1
-#: osgeo.ogr.PreparedGeometry.thisown:1
-msgid "The membership flag"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/ogr.py:docstring
 #: of osgeo.ogr.ArrowArrayStream:1
 msgid "Proxy of C++ ArrowArrayStream class."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/ogr.py:docstring
 #: of osgeo.ogr.ArrowSchema:1
 msgid "Proxy of C++ ArrowSchema class."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource:1 osgeo.ogr.Driver:1
-msgid "Bases: :py:class:`~osgeo.ogr.MajorObject`"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource:1
-msgid "Python proxy of a vector :cpp:class:`GDALDataset`."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource:3
-msgid ""
-"Since GDAL 3.8, a DataSource can be used as a context manager. When exiting "
-"the context, the DataSource will be closed and features will be written to "
-"disk."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.Close:1
-msgid "Closes opened dataset and releases allocated resources."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.Close:3
-msgid ""
-"This method can be used to force the dataset to close when one more "
-"references to the dataset are still reachable. If Close is never called, the "
-"dataset will be closed automatically during garbage collection."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.CopyLayer:1
-msgid ""
-"OGRLayerH OGR_DS_CopyLayer(OGRDataSourceH hDS, OGRLayerH hSrcLayer, const "
-"char \\*pszNewName, char \\*\\*papszOptions)"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.CopyLayer:5
-msgid "Duplicate an existing layer."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.CopyLayer:7
-msgid ""
-"This function creates a new layer, duplicate the field definitions of the "
-"source layer and then duplicate each features of the source layer. The "
-"papszOptions argument can be used to control driver specific creation "
-"options. These options are normally documented in the format specific "
-"documentation. The source layer may come from another dataset."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.CopyLayer:14
-msgid "Deprecated Use GDALDatasetCopyLayer() in GDAL 2.0"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.CopyLayer:0 osgeo.ogr.DataSource.CreateLayer:0
-#: osgeo.ogr.DataSource.DeleteLayer:0 osgeo.ogr.DataSource.ExecuteSQL:0
-#: osgeo.ogr.DataSource.GetDriver:0 osgeo.ogr.DataSource.GetLayerByName:0
-#: osgeo.ogr.DataSource.GetLayerCount:0 osgeo.ogr.DataSource.GetName:0
-#: osgeo.ogr.DataSource.ReleaseResultSet:0
-#: osgeo.ogr.DataSource.TestCapability:0
-msgid "Parameters"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.CopyLayer:16
-msgid "handle to the data source where to create the new layer"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.CopyLayer:17
-msgid "handle to the source layer."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.CopyLayer:18
-msgid "the name of the layer to create."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.CopyLayer:19
-msgid "a StringList of name=value options. Options are driver specific."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.CopyLayer:0 osgeo.ogr.DataSource.CreateLayer:0
-#: osgeo.ogr.DataSource.DeleteLayer:0 osgeo.ogr.DataSource.ExecuteSQL:0
-#: osgeo.ogr.DataSource.GetDriver:0 osgeo.ogr.DataSource.GetLayerByName:0
-#: osgeo.ogr.DataSource.GetLayerCount:0 osgeo.ogr.DataSource.GetName:0
-#: osgeo.ogr.DataSource.TestCapability:0
-msgid "Returns"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.CopyLayer:22
-msgid "a handle to the layer, or NULL if an error occurs."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.CopyLayer:0 osgeo.ogr.DataSource.CreateLayer:0
-#: osgeo.ogr.DataSource.DeleteLayer:0 osgeo.ogr.DataSource.ExecuteSQL:0
-#: osgeo.ogr.DataSource.GetDriver:0 osgeo.ogr.DataSource.GetLayerByName:0
-#: osgeo.ogr.DataSource.GetLayerCount:0 osgeo.ogr.DataSource.GetName:0
-#: osgeo.ogr.DataSource.TestCapability:0
-msgid "Return type"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.CreateLayer:1
-msgid ""
-"OGRLayerH OGR_DS_CreateLayer(OGRDataSourceH hDS, const char \\*pszName, "
-"OGRSpatialReferenceH hSpatialRef, OGRwkbGeometryType eType, char "
-"\\*\\*papszOptions)"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.CreateLayer:6
-msgid ""
-"This function attempts to create a new layer on the data source with the "
-"indicated name, coordinate system, geometry type."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.CreateLayer:9
-msgid ""
-"The papszOptions argument can be used to control driver specific creation "
-"options. These options are normally documented in the format specific "
-"documentation."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.CreateLayer:13
-msgid "Deprecated Use GDALDatasetCreateLayer() in GDAL 2.0"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.CreateLayer:15
-msgid ""
-"The dataset handle.pszName:  the name for the new layer. This should ideally "
-"not match any existing layer on the datasource."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.CreateLayer:17
-msgid ""
-"handle to the coordinate system to use for the new layer, or NULL if no "
-"coordinate system is available. The driver might only increase the reference "
-"counter of the object to take ownership, and not make a full copy, so do not "
-"use OSRDestroySpatialReference(), but OSRRelease() instead when you are done "
-"with the object."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.CreateLayer:22
-msgid ""
-"the geometry type for the layer. Use wkbUnknown if there are no constraints "
-"on the types geometry to be written."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.CreateLayer:24
-msgid ""
-"a StringList of name=value options. Options are driver specific, and driver "
-"information can be found at the following url:http://www.gdal.org/"
-"ogr_formats.html"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.CreateLayer:28
-msgid "NULL is returned on failure, or a new OGRLayer handle on success."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.DeleteLayer:1
-msgid "Delete the indicated layer from the datasource."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.DeleteLayer:3
-msgid "For more details: :c:func:`OGR_DS_DeleteLayer`"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.DeleteLayer:5
-msgid "index or name of the layer to delete."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.DeleteLayer:8
-msgid ""
-":py:const:`osgeo.ogr.OGRERR_NONE` on success, or :py:const:`osgeo.ogr."
-"OGRERR_UNSUPPORTED_OPERATION` if deleting layers is not supported for this "
-"datasource."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.Dereference:1 osgeo.ogr.DataSource.Reference:1
-msgid "For backwards compatibility only."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.Destroy:1 osgeo.ogr.DataSource.Release:1
-msgid ""
-"Once called, self has effectively been destroyed.  Do not access. For "
-"backwards compatibility only"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.ExecuteSQL:1
-msgid "Execute a SQL statement against the dataset"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.ExecuteSQL:7
-msgid "The result of a SQL query is:"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.ExecuteSQL:4
-msgid ""
-"None (or an exception if exceptions are enabled) for statements that are in "
-"error"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.ExecuteSQL:6
-msgid "or None for statements that have no results set,"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.ExecuteSQL:7
-msgid "or a ogr.Layer handle representing a results set from the query."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.ExecuteSQL:9
-msgid ""
-"Note that this ogr.Layer is in addition to the layers in the data store and "
-"must be released with ReleaseResultSet() before the data source is closed "
-"(destroyed)."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.ExecuteSQL:13
-msgid ""
-"Starting with GDAL 3.7, this method can also be used as a context manager, "
-"as a convenient way of automatically releasing the returned result layer."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.ExecuteSQL:16
-msgid ""
-"For more information on the SQL dialect supported internally by OGR review "
-"the OGR SQL document (:ref:`ogr_sql_sqlite_dialect`) Some drivers (i.e. "
-"Oracle and PostGIS) pass the SQL directly through to the underlying RDBMS."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.ExecuteSQL:21
-msgid "The SQLITE dialect can also be used (:ref:`sql_sqlite_dialect`)"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.ExecuteSQL:23
-msgid "the SQL statement to execute (e.g \"SELECT * FROM layer\")"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.ExecuteSQL:24
-msgid "a geometry which represents a spatial filter. Can be None"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.ExecuteSQL:25
-msgid ""
-"allows control of the statement dialect. If set to None or empty string, the "
-"OGR SQL engine will be used, except for RDBMS drivers that will use their "
-"dedicated SQL engine, unless OGRSQL is explicitly passed as the dialect. The "
-"SQLITE dialect can also be used."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.ExecuteSQL:29
-msgid ""
-"whether the returned layer should keep a (strong) reference on the current "
-"dataset. Cf example 2 for a use case."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.ExecuteSQL:32
-msgid ""
-"a ogr.Layer containing the results of the query, that will be automatically "
-"released when the context manager goes out of scope."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.ExecuteSQL:37
-msgid "Examples"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.ExecuteSQL:38
-msgid "Use as a context manager:"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.ExecuteSQL:43
-msgid ""
-"Use keep_ref_on_ds=True to return an object that keeps a reference to its "
-"dataset:"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.GetDriver:1
-msgid "OGRSFDriverH OGR_DS_GetDriver(OGRDataSourceH hDS)"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.GetDriver:4
-msgid "Returns the driver that the dataset was opened with."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.GetDriver:6
-msgid ""
-"NOTE: Starting with GDAL 2.0, it is NOT safe to cast the returned handle to "
-"OGRSFDriver\\*. If a C++ object is needed, the handle should be cast to "
-"GDALDriver\\*."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.GetDriver:10
-msgid "Deprecated Use GDALGetDatasetDriver() in GDAL 2.0"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.GetDriver:12
-msgid "handle to the datasource"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.GetDriver:14
-msgid ""
-"NULL if driver info is not available, or pointer to a driver owned by the "
-"OGRSFDriverManager."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.GetLayer:1
-msgid "Return the layer given an index or a name"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.GetLayerByName:1
-msgid ""
-"OGRLayerH OGR_DS_GetLayerByName(OGRDataSourceH hDS, const char "
-"\\*pszLayerName)"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.GetLayerByName:4
-msgid "Fetch a layer by name."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.GetLayerByName:6
-msgid ""
-"The returned layer remains owned by the OGRDataSource and should not be "
-"deleted by the application."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.GetLayerByName:9
-msgid "Deprecated Use GDALDatasetGetLayerByName() in GDAL 2.0"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.GetLayerByName:11
-msgid "handle to the data source from which to get the layer."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.GetLayerByName:12
-msgid "Layer the layer name of the layer to fetch."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.GetLayerByName:14
-msgid ""
-"a handle to the layer, or NULL if the layer is not found or an error occurs."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.GetLayerCount:1
-msgid "int OGR_DS_GetLayerCount(OGRDataSourceH hDS)"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.GetLayerCount:4
-msgid "Get the number of layers in this data source."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.GetLayerCount:6
-msgid "Deprecated Use GDALDatasetGetLayerCount() in GDAL 2.0"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.GetLayerCount:8
-msgid "handle to the data source from which to get the number of layers."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.GetLayerCount:11
-msgid "layer count."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.GetName:1
-msgid "const char\\* OGR_DS_GetName(OGRDataSourceH hDS)"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.GetName:4
-msgid "Returns the name of the data source."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.GetName:6
-msgid ""
-"This string should be sufficient to open the data source if passed to the "
-"same OGRSFDriver that this data source was opened with, but it need not be "
-"exactly the same string that was used to open the data source. Normally this "
-"is a filename."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.GetName:11
-msgid "Deprecated Use GDALGetDescription() in GDAL 2.0"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.GetName:13
-msgid "handle to the data source to get the name from."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.GetName:15
-msgid ""
-"pointer to an internal name string which should not be modified or freed by "
-"the caller."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.GetRefCount:1
-msgid "int OGR_DS_GetRefCount(OGRDataSourceH hDataSource)"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.GetStyleTable:1
-msgid "OGRStyleTableH OGR_DS_GetStyleTable(OGRDataSourceH hDS)"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.GetStyleTable:4
-msgid "Get style table."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.GetSummaryRefCount:1
-msgid "int OGR_DS_GetSummaryRefCount(OGRDataSourceH hDataSource)"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.ReleaseResultSet:1
-msgid ""
-"Release ogr.Layer returned by ExecuteSQL() (when not called as an execution "
-"manager)"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.ReleaseResultSet:3
-msgid "The sql_lyr object is invalidated after this call."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.ReleaseResultSet:5
-msgid "ogr.Layer got with ExecuteSQL()"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.SetStyleTable:1
-msgid ""
-"void OGR_DS_SetStyleTable(OGRDataSourceH hDS, OGRStyleTableH hStyleTable)"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.SetStyleTable:4
-msgid "Set style table."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.SyncToDisk:1
-msgid "OGRErr OGR_DS_SyncToDisk(OGRDataSourceH hDS)"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.SyncToDisk:4
-msgid "Flush pending changes to disk."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.SyncToDisk:6
-msgid "See GDALDataset::FlushCache()"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.TestCapability:1
-msgid ""
-"int OGR_DS_TestCapability(OGRDataSourceH hDS, const char \\*pszCapability)"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.TestCapability:4
-msgid "Test if capability is available."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.TestCapability:6
-msgid ""
-"One of the following data source capability names can be passed into this "
-"function, and a TRUE or FALSE value will be returned indicating whether or "
-"not the capability is available for this object."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.TestCapability:10
-msgid "ODsCCreateLayer: True if this datasource can create new layers."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.TestCapability:12
-msgid "ODsCDeleteLayer: True if this datasource can delete existing layers."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.TestCapability:14
-msgid ""
-"ODsCCreateGeomFieldAfterCreateLayer: True if the layers of this datasource "
-"support CreateGeomField() just after layer creation."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.TestCapability:17
-msgid ""
-"ODsCCurveGeometries: True if this datasource supports writing curve "
-"geometries. (GDAL 2.0). In that case, OLCCurveGeometries must also be "
-"declared in layers of that dataset."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.TestCapability:21
-msgid ""
-"The #define macro forms of the capability names should be used in preference "
-"to the strings themselves to avoid misspelling."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.TestCapability:24
-msgid "Deprecated Use GDALDatasetTestCapability() in GDAL 2.0"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.TestCapability:26
-msgid "handle to the data source against which to test the capability."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.TestCapability:27
-msgid "the capability to test."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.TestCapability:29
-msgid "TRUE if capability available otherwise FALSE."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.name:1 osgeo.ogr.Driver.name:1
-msgid "p.q(const).char"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.name:0 osgeo.ogr.Driver.name:0
-msgid "type"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.DataSource.name:3 osgeo.ogr.Driver.name:3
-msgid "name"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/ogr.py:docstring
 #: of osgeo.ogr.DontUseExceptions:1
 msgid ""
 "Disable exceptions in all GDAL related modules (osgeo.gdal, osgeo.ogr, osgeo."
@@ -667,17 +52,12 @@ msgid ""
 "module"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
-#: of osgeo.ogr.Driver:1
-msgid "Proxy of C++ OGRDriverShadow class."
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/ogr.py:docstring
 #: of osgeo.ogr.ExceptionMgr:1
 msgid "Context manager to manage Python Exception state for GDAL/OGR/OSR/GNM."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/ogr.py:docstring
 #: of osgeo.ogr.ExceptionMgr:4
 msgid ""
 "Separate exception state is maintained for each module (gdal, ogr, etc), and "
@@ -685,12 +65,12 @@ msgid ""
 "calls to the older UseExceptions()/DontUseExceptions() functions."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/ogr.py:docstring
 #: of osgeo.ogr.ExceptionMgr:9
 msgid "Example::"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/ogr.py:docstring
 #: of osgeo.ogr.ExceptionMgr:11
 msgid ""
 ">>> print(gdal.GetUseExceptions())\n"
@@ -705,27 +85,80 @@ msgid ""
 "0"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/ogr.py:docstring
 #: of osgeo.ogr.GeomCoordinatePrecision:1
 msgid "Proxy of C++ OGRGeomCoordinatePrecisionShadow class."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/ogr.py:docstring
 #: of osgeo.ogr.GeomTransformer:1
 msgid "Proxy of C++ OGRGeomTransformerShadow class."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/ogr.py:docstring
+#: of osgeo.ogr.GetDriverByName:1
+msgid ""
+"Get a vector driver. Like :py:func:`gdal.GetDriverByName`, but only returns "
+"drivers that handle vector data."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/ogr.py:docstring
+#: of osgeo.ogr.GetDriverByName:0 osgeo.ogr.Open:0 osgeo.ogr.OpenShared:0
+msgid "Parameters"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/ogr.py:docstring
+#: of osgeo.ogr.GetDriverByName:4
+msgid "name of the driver to fetch"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/ogr.py:docstring
+#: of osgeo.ogr.GetDriverByName:0 osgeo.ogr.Open:0 osgeo.ogr.OpenShared:0
+msgid "Return type"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/ogr.py:docstring
+#: of osgeo.ogr.GetDriverByName:10 osgeo.ogr.Open:11
+msgid "Examples"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/ogr.py:docstring
 #: of osgeo.ogr.MajorObject:1
 msgid "Proxy of C++ GDALMajorObjectShadow class."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/ogr.py:docstring
+#: of osgeo.ogr.Open:1
+msgid ""
+"Open a vector file as a :py:class:`gdal.Dataset`. Equivalent to calling :py:"
+"func:`gdal.OpenEx` with the :py:const:`gdal.OF_VECTOR` flag."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/ogr.py:docstring
+#: of osgeo.ogr.Open:5 osgeo.ogr.OpenShared:6
+msgid "name of the file to open"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/ogr.py:docstring
+#: of osgeo.ogr.Open:8 osgeo.ogr.OpenShared:9
+msgid "gdal.Dataset, or ``None`` on failure"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/ogr.py:docstring
+#: of osgeo.ogr.OpenShared:1
+msgid ""
+"Open a vector file as a :py:class:`gdal.Dataset`. If the file has already "
+"been opened in the current thread, return a reference to the already-opened :"
+"py:class:`gdal.Dataset`. Equivalent to calling :py:func:`gdal.OpenEx` with "
+"the :py:const:`gdal.OF_VECTOR` and :py:const:`gdal.OF_SHARED` flags."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/ogr.py:docstring
 #: of osgeo.ogr.PreparedGeometry:1
 msgid "Proxy of C++ OGRPreparedGeometryShadow class."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/ogr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/ogr.py:docstring
 #: of osgeo.ogr.UseExceptions:1
 msgid ""
 "Enable exceptions in all GDAL related modules (osgeo.gdal, osgeo.ogr, osgeo."

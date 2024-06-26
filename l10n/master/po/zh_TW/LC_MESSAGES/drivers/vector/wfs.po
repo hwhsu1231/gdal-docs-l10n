@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,26 +70,34 @@ msgstr ""
 
 #: ../../../source/drivers/vector/wfs.rst:33
 msgid ""
+"Starting with GDAL 3.10, specifying the ``-if WFS`` option to command line "
+"utilities accepting it, or ``WFS`` as the only value of the "
+"``papszAllowedDrivers`` of :cpp:func:`GDALOpenEx`, also forces the driver to "
+"recognize the passed URL without the ``WFS:`` prefix."
+msgstr ""
+
+#: ../../../source/drivers/vector/wfs.rst:38
+msgid ""
 "Additional optional parameters can be specified such as *TYPENAME*, "
 "*VERSION*, *MAXFEATURES* (WFS < 2) or *COUNT* (WFS > 2) as specified in WFS "
 "specification."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:36
+#: ../../../source/drivers/vector/wfs.rst:41
 msgid ""
 "The name provided to the TYPENAME parameter must be exactly the layer name "
 "reported by OGR, in particular with its namespace prefix when its exists. "
 "Note: several type names can be provided and separated by comma."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:40
+#: ../../../source/drivers/vector/wfs.rst:45
 msgid ""
 "It is also possible to specify the name of an XML file whose content matches "
 "the following syntax (the <OGRWFSDataSource> element must be the first bytes "
 "of the file):"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:46
+#: ../../../source/drivers/vector/wfs.rst:51
 msgid ""
 "<OGRWFSDataSource>\n"
 "    <URL>http://path/to/WFS/service[?OPTIONAL_PARAMETER1=VALUE[&amp;"
@@ -97,13 +105,13 @@ msgid ""
 "</OGRWFSDataSource>"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:50
+#: ../../../source/drivers/vector/wfs.rst:55
 msgid ""
 "Note: the URL must be XML-escaped, for example the *&* character must be "
 "written as *&amp;*"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:53
+#: ../../../source/drivers/vector/wfs.rst:58
 msgid ""
 "At the first opening, the content of the result of the *GetCapabilities* "
 "request will be appended to the file, so that it can be cached for later "
@@ -111,54 +119,54 @@ msgid ""
 "request issued to discover the field definition of each layer."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:58
+#: ../../../source/drivers/vector/wfs.rst:63
 msgid ""
 "The service description file has the following additional elements as "
 "immediate children of the ``OGRWFSDataSource`` element that may be "
 "optionally set."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:62
+#: ../../../source/drivers/vector/wfs.rst:67
 msgid ""
 "**Timeout**: The timeout to use for remote service requests. If not "
 "provided, the libcurl default is used."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:64
+#: ../../../source/drivers/vector/wfs.rst:69
 msgid ""
 "**UserPwd**: May be supplied with *userid:password* to pass a userid and "
 "password to the remote server."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:66
+#: ../../../source/drivers/vector/wfs.rst:71
 msgid ""
 "**HttpAuth**: May be BASIC, NTLM or ANY to control the authentication scheme "
 "to be used."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:68
+#: ../../../source/drivers/vector/wfs.rst:73
 msgid "**Version**: Set a specific WFS version to use (either 1.0.0 or 1.1.0)."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:70
+#: ../../../source/drivers/vector/wfs.rst:75
 msgid ""
 "**PagingAllowed**: Set to ON if paging must be enabled. See \"Request "
 "paging\" section."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:72
+#: ../../../source/drivers/vector/wfs.rst:77
 msgid ""
 "**PageSize**: Page size when paging is enabled. See \"Request paging\" "
 "section."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:74
+#: ../../../source/drivers/vector/wfs.rst:79
 msgid ""
 "**BaseStartIndex**: Base of the start index when paging is enabled (0 or 1). "
 "See \"Request paging\" section."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:76
+#: ../../../source/drivers/vector/wfs.rst:81
 msgid ""
 "**COOKIE**: HTTP cookies that are passed in HTTP requests, formatted as "
 "COOKIE1=VALUE1; COOKIE2=VALUE2... Starting with GDAL 2.3, additional HTTP "
@@ -167,11 +175,11 @@ msgid ""
 "HTTP headers."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:83
+#: ../../../source/drivers/vector/wfs.rst:88
 msgid "Request paging"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:85
+#: ../../../source/drivers/vector/wfs.rst:90
 msgid ""
 "The WFS driver will read the GML content as a stream instead as a whole "
 "file, which will improve interactivity and help when the content cannot fit "
@@ -185,11 +193,11 @@ msgid ""
 "`CPL_CURL_GZIP` configuration option to NO."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:98
+#: ../../../source/drivers/vector/wfs.rst:103
 msgid "Paging with WFS 2.0"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:100
+#: ../../../source/drivers/vector/wfs.rst:105
 msgid ""
 "The WFS driver will automatically detect if server supports paging, when "
 "requesting a WFS 2.0 server. The page size (number of features fetched in a "
@@ -199,14 +207,14 @@ msgid ""
 "of the connection string."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:107
+#: ../../../source/drivers/vector/wfs.rst:112
 msgid ""
 "If only the N first features must be downloaded and paging through the whole "
 "layer is not desirable, the :config:`OGR_WFS_PAGING_ALLOWED` configuration "
 "option should be set to OFF."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:111
+#: ../../../source/drivers/vector/wfs.rst:116
 msgid ""
 "Starting with GDAL 3.8, if the feature count is already known before "
 "fetching the first feature, and the feature count is less than the page "
@@ -215,11 +223,11 @@ msgid ""
 "Geoserver when datasources with no primary key.)"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:118
+#: ../../../source/drivers/vector/wfs.rst:123
 msgid "Paging with WFS 1.0 or 1.1"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:120
+#: ../../../source/drivers/vector/wfs.rst:125
 msgid ""
 "Some servers (such as MapServer >= 6.0) support the use of STARTINDEX that "
 "allows doing the requests per \"page\", and thus to avoid downloading the "
@@ -232,7 +240,7 @@ msgid ""
 "the :config:`OGR_WFS_PAGE_SIZE` configuration option."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:132
+#: ../../../source/drivers/vector/wfs.rst:137
 msgid ""
 "WFS 2.0.2 specification has clarified that the first feature in paging is at "
 "index 0. But some server implementations of WFS paging have considered that "
@@ -243,11 +251,11 @@ msgid ""
 "feature to be at index 1."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:142
+#: ../../../source/drivers/vector/wfs.rst:147
 msgid "Paging options"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:144
+#: ../../../source/drivers/vector/wfs.rst:149
 msgid ""
 "Those 3 options (:config:`OGR_WFS_PAGING_ALLOWED`, :config:"
 "`OGR_WFS_PAGE_SIZE`, :config:`OGR_WFS_BASE_START_INDEX`) can also be set in "
@@ -255,11 +263,11 @@ msgid ""
 "(PagingAllowed, PageSize, BaseStartIndex)."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:151
+#: ../../../source/drivers/vector/wfs.rst:156
 msgid "Filtering"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:153
+#: ../../../source/drivers/vector/wfs.rst:158
 msgid ""
 "The driver will forward any spatial filter set with SetSpatialFilter() to "
 "the server. It also makes its best effort to do the same for attribute "
@@ -269,11 +277,11 @@ msgid ""
 "involving fetching all the features from the servers."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:161
+#: ../../../source/drivers/vector/wfs.rst:166
 msgid "The following spatial functions can be used :"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:163
+#: ../../../source/drivers/vector/wfs.rst:168
 msgid ""
 "the 8 spatial binary predicate: **ST_Equals, ST_Disjoint, ST_Touches, "
 "ST_Contains, ST_Intersects, ST_Within, ST_Crosses and ST_Overlaps** that "
@@ -281,15 +289,15 @@ msgid ""
 "constant geometry such as built with ST_MakeEnvelope or ST_GeomFromText."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:168
+#: ../../../source/drivers/vector/wfs.rst:173
 msgid "**ST_DWithin(geom1,geom2,distance_in_meters)**"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:169
+#: ../../../source/drivers/vector/wfs.rst:174
 msgid "**ST_Beyond(geom1,geom2,distance_in_meters)**"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:170
+#: ../../../source/drivers/vector/wfs.rst:175
 msgid ""
 "**ST_MakeEnvelope(xmin,ymin,xmax,ymax[,srs])**: to build an envelope. srs "
 "can be an integer (an EPSG code), or a string directly set as the srsName "
@@ -298,29 +306,29 @@ msgid ""
 "long,lat for geodetic systems)"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:175
+#: ../../../source/drivers/vector/wfs.rst:180
 msgid ""
 "**ST_GeomFromText(wkt,[srs])**: to build a geometry from its WKT "
 "representation."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:178
+#: ../../../source/drivers/vector/wfs.rst:183
 msgid ""
 "Note that those spatial functions are only supported as server-side filters."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:182
+#: ../../../source/drivers/vector/wfs.rst:187
 msgid "Layer joins"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:184
+#: ../../../source/drivers/vector/wfs.rst:189
 msgid ""
 "For WFS 2.0 servers that support joins, SELECT statements that involve joins "
 "will be run on server side. Spatial joins can also be done by using the "
 "above mentioned spatial functions, if the server supports spatial joins."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:189
+#: ../../../source/drivers/vector/wfs.rst:194
 msgid ""
 "There might be restrictions set by server on the complexity of the joins. "
 "The OGR WFS driver also restricts column selection to be column names, "
@@ -330,64 +338,64 @@ msgid ""
 "fields must belong to the primary table."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:196
+#: ../../../source/drivers/vector/wfs.rst:201
 msgid "Example of valid statement :"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:200
+#: ../../../source/drivers/vector/wfs.rst:205
 msgid ""
 "SELECT t1.id, t1.val1, t1.geom, t2.val1 FROM my_table AS t1 JOIN "
 "another_table AS t2 ON t1.id = t2.t1id"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:202
+#: ../../../source/drivers/vector/wfs.rst:207
 msgid "or"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:206
+#: ../../../source/drivers/vector/wfs.rst:211
 msgid ""
 "SELECT * FROM my_table AS t1 JOIN another_table AS t2 ON ST_Intersects(t1."
 "geom, t2.geom)"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:209
+#: ../../../source/drivers/vector/wfs.rst:214
 msgid "Write support / WFS-T"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:211
+#: ../../../source/drivers/vector/wfs.rst:216
 msgid ""
 "The WFS-T protocol only enables the user to operate at feature level. No "
 "datasource, layer or field creations are possible."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:214
+#: ../../../source/drivers/vector/wfs.rst:219
 msgid ""
 "Write support is only enabled when the datasource is opened in update mode."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:217
+#: ../../../source/drivers/vector/wfs.rst:222
 msgid ""
 "The mapping between the operations of the WFS Transaction service and the "
 "OGR concepts is the following:"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:220
+#: ../../../source/drivers/vector/wfs.rst:225
 msgid "OGRFeature::CreateFeature() <==> WFS insert operation"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:221
+#: ../../../source/drivers/vector/wfs.rst:226
 msgid "OGRFeature::SetFeature() <==> WFS update operation"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:222
+#: ../../../source/drivers/vector/wfs.rst:227
 msgid "OGRFeature::DeleteFeature() <==> WFS delete operation"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:224
+#: ../../../source/drivers/vector/wfs.rst:229
 msgid "Lock operations (LockFeature service) are not available at that time."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:226
+#: ../../../source/drivers/vector/wfs.rst:231
 msgid ""
 "There are a few caveats to keep in mind. OGR feature ID (FID) is an integer "
 "based value, whereas WFS/GML gml:id attribute is a string. Thus it is not "
@@ -395,7 +403,7 @@ msgid ""
 "attribute of a feature as a 'gml_id' field."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:231
+#: ../../../source/drivers/vector/wfs.rst:236
 msgid ""
 "When inserting a new feature with CreateFeature(), and if the command is "
 "successful, OGR will fetch the returned gml:id and set the 'gml_id' field of "
@@ -404,7 +412,7 @@ msgid ""
 "its unset default value."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:237
+#: ../../../source/drivers/vector/wfs.rst:242
 msgid ""
 "When updating an existing feature with SetFeature(), the OGR FID field will "
 "be ignored. The request issued to the driver will only take into account the "
@@ -412,18 +420,18 @@ msgid ""
 "DeleteFeature()."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:243
+#: ../../../source/drivers/vector/wfs.rst:248
 msgid "Write support and OGR transactions"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:245
+#: ../../../source/drivers/vector/wfs.rst:250
 msgid ""
 "The above operations are by default issued to the server synchronously with "
 "the OGR API call. This however can cause performance penalties when issuing "
 "a lot of commands due to many client/server exchanges."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:249
+#: ../../../source/drivers/vector/wfs.rst:254
 msgid ""
 "It is possible to surround those operations between OGRLayer::"
 "StartTransaction() and OGRLayer::CommitTransaction(). The operations will be "
@@ -431,7 +439,7 @@ msgid ""
 "called."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:254
+#: ../../../source/drivers/vector/wfs.rst:259
 msgid ""
 "The drawback for CreateFeature() is that the user cannot know which gml:id "
 "have been assigned to the inserted features. A special SQL statement has "
@@ -443,23 +451,23 @@ msgid ""
 "transaction."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:263
+#: ../../../source/drivers/vector/wfs.rst:268
 msgid ""
 "Note : currently, only CreateFeature() makes use of OGR transaction "
 "mechanism. SetFeature() and DeleteFeature() will still be issued immediately."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:268
+#: ../../../source/drivers/vector/wfs.rst:273
 msgid "Special SQL commands"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:270
+#: ../../../source/drivers/vector/wfs.rst:275
 msgid ""
 "The following SQL / pseudo-SQL commands passed to OGRDataSource::"
 "ExecuteSQL() are specific of the WFS driver :"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:273
+#: ../../../source/drivers/vector/wfs.rst:278
 msgid ""
 "\"DELETE FROM layer_name WHERE expression\" : this will result into a WFS "
 "delete operation. This can be a fast way of deleting one or several "
@@ -468,12 +476,12 @@ msgid ""
 "fetched from the server."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:279
+#: ../../../source/drivers/vector/wfs.rst:284
 msgid ""
 "\"SELECT \\_LAST_INSERTED_FIDS\\_ FROM layer_name\" : see above paragraph."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:282
+#: ../../../source/drivers/vector/wfs.rst:287
 msgid ""
 "Currently, any other SQL command will be processed by the generic layer, "
 "meaning client-side only processing. Server side spatial and attribute "
@@ -481,124 +489,124 @@ msgid ""
 "SetAttributeFilter() interfaces."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:288
+#: ../../../source/drivers/vector/wfs.rst:293
 msgid "Special layer : WFSLayerMetadata"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:290
+#: ../../../source/drivers/vector/wfs.rst:295
 msgid ""
 "A \"hidden\" layer called \"WFSLayerMetadata\" is filled with records with "
 "metadata for each WFS layer."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:293
+#: ../../../source/drivers/vector/wfs.rst:298
 msgid ""
 "Each record contains a \"layer_name\", \"title\" and \"abstract\" field, "
 "from the document returned by GetCapabilities."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:296
+#: ../../../source/drivers/vector/wfs.rst:301
 msgid "That layer is returned through GetLayerByName(\"WFSLayerMetadata\")."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:299
+#: ../../../source/drivers/vector/wfs.rst:304
 msgid "Special layer : WFSGetCapabilities"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:301
+#: ../../../source/drivers/vector/wfs.rst:306
 msgid ""
 "A \"hidden\" layer called \"WFSGetCapabilities\" is filled with the raw XML "
 "result of the GetCapabilities request."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:304
+#: ../../../source/drivers/vector/wfs.rst:309
 msgid "That layer is returned through GetLayerByName(\"WFSGetCapabilities\")."
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:307
+#: ../../../source/drivers/vector/wfs.rst:312
 msgid "Open options"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:309
-msgid "The following options are available:"
+#: ../../../source/drivers/vector/wfs.rst:314
+msgid "|about-open-options| The following open options are available:"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:358
+#: ../../../source/drivers/vector/wfs.rst:364
 msgid "Configuration options"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:360
+#: ../../../source/drivers/vector/wfs.rst:366
 msgid ""
-"The following :ref:`configuration options <configoptions>` are available:"
-msgstr ""
-
-#: ../../../source/drivers/vector/wfs.rst:384
-msgid "Examples"
-msgstr ""
-
-#: ../../../source/drivers/vector/wfs.rst:386
-msgid "Listing the types of a WFS server :"
+"|about-config-options| The following configuration options are available:"
 msgstr ""
 
 #: ../../../source/drivers/vector/wfs.rst:390
-msgid "ogrinfo -ro WFS:https://www.wfs.nrw.de/geobasis/wfs_nw_dvg"
+msgid "Examples"
 msgstr ""
 
 #: ../../../source/drivers/vector/wfs.rst:392
+msgid "Listing the types of a WFS server :"
+msgstr ""
+
+#: ../../../source/drivers/vector/wfs.rst:396
+msgid "ogrinfo -ro WFS:https://www.wfs.nrw.de/geobasis/wfs_nw_dvg"
+msgstr ""
+
+#: ../../../source/drivers/vector/wfs.rst:398
 msgid ""
 "Listing the types of a WFS server whose layer structures are cached in a XML "
 "file :"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:397
+#: ../../../source/drivers/vector/wfs.rst:403
 msgid "ogrinfo -ro wfs_nw_dvg.xml"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:399
+#: ../../../source/drivers/vector/wfs.rst:405
 msgid ""
 "Listing the features of the dvg:nw_dvg2_rbz layer, with a spatial filter :"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:403
+#: ../../../source/drivers/vector/wfs.rst:409
 msgid ""
 "ogrinfo -ro WFS:https://www.wfs.nrw.de/geobasis/wfs_nw_dvg dvg:nw_dvg2_rbz -"
 "spat 0 0 319874 5686804"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:405
+#: ../../../source/drivers/vector/wfs.rst:411
 msgid ""
 "Retrieving the features of GN \"Köln\" and \"Viersen\" from the dvg:"
 "nw_dvg2_krs layer :"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:410
+#: ../../../source/drivers/vector/wfs.rst:416
 msgid ""
 "ogrinfo WFS:https://www.wfs.nrw.de/geobasis/wfs_nw_dvg dvg:nw_dvg2_krs -ro -"
 "al -where \"GN='Köln' or GN='Viersen'\""
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:412
+#: ../../../source/drivers/vector/wfs.rst:418
 msgid "Display layer metadata :"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:416
+#: ../../../source/drivers/vector/wfs.rst:422
 msgid ""
 "ogrinfo -ro -al WFS:https://www.wfs.nrw.de/geobasis/wfs_nw_dvg "
 "WFSLayerMetadata"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:419
+#: ../../../source/drivers/vector/wfs.rst:425
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:421
+#: ../../../source/drivers/vector/wfs.rst:427
 msgid "`OGC WFS Standard <http://www.opengeospatial.org/standards/wfs>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:422
+#: ../../../source/drivers/vector/wfs.rst:428
 msgid ":ref:`GML driver documentation <vector.gml>`"
 msgstr ""
 
-#: ../../../source/drivers/vector/wfs.rst:423
+#: ../../../source/drivers/vector/wfs.rst:429
 msgid ":ref:`OGC API - Features driver documentation <vector.oapif>`"
 msgstr ""

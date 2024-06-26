@@ -8,34 +8,36 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:33+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../../source/api/python/utilities.rst:4
+#: ../../../source/api/python/utilities.rst:9
 msgid "Python Utilities"
 msgstr ""
 
-#: ../../../source/api/python/utilities.rst:7
+#: ../../../source/api/python/utilities.rst:12
 msgid "Raster Utilities"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.BuildVRT:1
 msgid "Build a VRT from a list of datasets."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.BuildVRT:0 osgeo.gdal.BuildVRTOptions:0
 #: osgeo.gdal.DEMProcessing:0 osgeo.gdal.DEMProcessingOptions:0
-#: osgeo.gdal.Footprint:0 osgeo.gdal.FootprintOptions:0 osgeo.gdal.Grid:0
-#: osgeo.gdal.GridOptions:0 osgeo.gdal.Info:0 osgeo.gdal.MultiDimInfo:0
-#: osgeo.gdal.MultiDimTranslate:0 osgeo.gdal.MultiDimTranslateOptions:0
-#: osgeo.gdal.Nearblack:0 osgeo.gdal.NearblackOptions:0 osgeo.gdal.Rasterize:0
+#: osgeo.gdal.FillNodata:0 osgeo.gdal.Footprint:0 osgeo.gdal.FootprintOptions:0
+#: osgeo.gdal.Grid:0 osgeo.gdal.GridOptions:0 osgeo.gdal.Info:0
+#: osgeo.gdal.MultiDimInfo:0 osgeo.gdal.MultiDimTranslate:0
+#: osgeo.gdal.MultiDimTranslateOptions:0 osgeo.gdal.Nearblack:0
+#: osgeo.gdal.NearblackOptions:0 osgeo.gdal.Rasterize:0
 #: osgeo.gdal.RasterizeOptions:0 osgeo.gdal.SuggestedWarpOutput:0
 #: osgeo.gdal.TileIndex:0 osgeo.gdal.TileIndexOptions:0 osgeo.gdal.Translate:0
 #: osgeo.gdal.TranslateOptions:0 osgeo.gdal.VectorInfo:0
@@ -45,18 +47,18 @@ msgstr ""
 msgid "Parameters"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.BuildVRT:3 osgeo.gdal.TileIndex:3
 msgid "Output dataset name."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.BuildVRT:4
 msgid ""
 "An array of Dataset objects or filenames, or a Dataset object or a filename."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.BuildVRT:5
 msgid ""
 "options: return of gdal.BuildVRTOptions(), string or array of strings, other "
@@ -64,12 +66,12 @@ msgid ""
 "gdal.BuildVRTOptions() object, other keywords are ignored."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.BuildVRTOptions:1
 msgid "Create a BuildVRTOptions() object that can be passed to gdal.BuildVRT()"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.BuildVRTOptions:3 osgeo.gdal.DEMProcessingOptions:3
 #: osgeo.gdal.FootprintOptions:3 osgeo.gdal.GridOptions:3
 #: osgeo.gdal.MultiDimTranslateOptions:3 osgeo.gdal.NearblackOptions:3
@@ -81,110 +83,110 @@ msgid ""
 "keywords."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.BuildVRTOptions:5
 msgid "'highest', 'lowest', 'average', 'user'."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.BuildVRTOptions:6
 msgid "output bounds as (minX, minY, maxX, maxY) in target SRS."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.BuildVRTOptions:8 osgeo.gdal.BuildVRTOptions:9
 msgid "output resolution in target SRS."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.BuildVRTOptions:10
 msgid "whether to force output bounds to be multiple of output resolution."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.BuildVRTOptions:11
 msgid ""
 "whether each source file goes into a separate stacked band in the VRT band."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.BuildVRTOptions:12
 msgid "array of band numbers (index start at 1)."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.BuildVRTOptions:13
 msgid ""
 "whether to add an alpha mask band to the VRT when the source raster have "
 "none."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.BuildVRTOptions:14
 msgid "resampling mode."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.BuildVRTOptions:15
 msgid "assigned output SRS."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.BuildVRTOptions:16
 msgid ""
 "whether to accept input datasets have not the same projection. Note: they "
 "will *not* be reprojected."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.BuildVRTOptions:18 osgeo.gdal.FootprintOptions:7
 msgid "source nodata value(s)."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.BuildVRTOptions:19
 msgid "nodata values at the VRT band level."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.BuildVRTOptions:20
 msgid "whether to make the VRT band not report the NoData value."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.BuildVRTOptions:21
 msgid ""
 "value of the mask band of a source below which the source band values should "
 "be replaced by VRTNodata (or 0 if not specified)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.BuildVRTOptions:22
 msgid "set to True if warnings should be failures"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.BuildVRTOptions:23
 msgid "callback method."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.BuildVRTOptions:24
 msgid "user data for callback."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DEMProcessing:1
 msgid "Apply a DEM processing."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DEMProcessing:3 osgeo.gdal.Grid:3
 #: osgeo.gdal.MultiDimTranslate:3 osgeo.gdal.Translate:3
 msgid "Output dataset name"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DEMProcessing:4 osgeo.gdal.Footprint:4 osgeo.gdal.Grid:4
 #: osgeo.gdal.Info:3 osgeo.gdal.MultiDimInfo:3 osgeo.gdal.Nearblack:4
 #: osgeo.gdal.Rasterize:4 osgeo.gdal.Translate:4 osgeo.gdal.VectorInfo:3
@@ -192,14 +194,14 @@ msgstr ""
 msgid "a Dataset object or a filename"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DEMProcessing:5
 msgid ""
 "one of \"hillshade\", \"slope\", \"aspect\", \"color-relief\", \"TRI\", "
 "\"TPI\", \"Roughness\""
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DEMProcessing:6
 msgid ""
 "options: return of gdal.DEMProcessingOptions(), string or array of strings, "
@@ -207,21 +209,21 @@ msgid ""
 "provided as a gdal.DEMProcessingOptions() object, other keywords are ignored."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DEMProcessingOptions:1
 msgid ""
 "Create a DEMProcessingOptions() object that can be passed to gdal."
 "DEMProcessing()"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DEMProcessingOptions:4
 msgid ""
 "(mandatory for \"color-relief\") name of file that contains palette "
 "definition for the \"color-relief\" processing."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DEMProcessingOptions:5 osgeo.gdal.GridOptions:4
 #: osgeo.gdal.MultiDimTranslateOptions:4 osgeo.gdal.NearblackOptions:4
 #: osgeo.gdal.RasterizeOptions:4 osgeo.gdal.TranslateOptions:4
@@ -229,7 +231,7 @@ msgstr ""
 msgid "output format (\"GTiff\", etc...)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DEMProcessingOptions:6 osgeo.gdal.GridOptions:8
 #: osgeo.gdal.MultiDimTranslateOptions:5 osgeo.gdal.NearblackOptions:5
 #: osgeo.gdal.RasterizeOptions:6 osgeo.gdal.TranslateOptions:14
@@ -237,35 +239,35 @@ msgstr ""
 msgid "list or dict of creation options"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DEMProcessingOptions:7
 msgid "whether to compute values at raster edges."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DEMProcessingOptions:8
 msgid ""
 "'Horn' (default) or 'ZevenbergenThorne' for hillshade, slope or aspect. "
 "'Wilson' (default) or 'Riley' for TRI"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DEMProcessingOptions:9
 msgid "source band number to use"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DEMProcessingOptions:10
 msgid ""
 "(hillshade only) vertical exaggeration used to pre-multiply the elevations."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DEMProcessingOptions:11
 msgid "ratio of vertical units to horizontal."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DEMProcessingOptions:12
 msgid ""
 "(hillshade only) azimuth of the light, in degrees. 0 if it comes from the "
@@ -273,14 +275,14 @@ msgid ""
 "rarely be changed as it is the value generally used to generate shaded maps."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DEMProcessingOptions:13
 msgid ""
 "(hillshade only) altitude of the light, in degrees. 90 if the light comes "
 "from above the DEM, 0 if it is raking light."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DEMProcessingOptions:14
 msgid ""
 "(hillshade only) whether to compute combined shading, a combination of slope "
@@ -288,46 +290,46 @@ msgid ""
 "specified."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DEMProcessingOptions:15
 msgid ""
 "(hillshade only) whether to compute multi-directional shading. Only one of "
 "combined, multiDirectional and igor can be specified."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DEMProcessingOptions:16
 msgid ""
 "(hillshade only) whether to use Igor's hillshading from Maperitive.  Only "
 "one of combined, multiDirectional and igor can be specified."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DEMProcessingOptions:17
 msgid "(slope only) \"degree\" or \"percent\"."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DEMProcessingOptions:18
 msgid ""
 "(aspect only) whether to return trigonometric angle instead of azimuth. Thus "
 "0deg means East, 90deg North, 180deg West, 270deg South."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DEMProcessingOptions:19
 msgid ""
 "(aspect only) whether to return 0 for flat areas with slope=0, instead of "
 "-9999."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DEMProcessingOptions:20
 msgid ""
 "adds an alpha band to the output file (only for processing = 'color-relief')"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DEMProcessingOptions:21
 msgid ""
 "(color-relief only) Determines how color entries are selected from an input "
@@ -335,7 +337,7 @@ msgid ""
 "\"linear_interpolation\". Defaults to \"linear_interpolation\""
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DEMProcessingOptions:22 osgeo.gdal.FootprintOptions:22
 #: osgeo.gdal.GridOptions:26 osgeo.gdal.MultiDimTranslateOptions:15
 #: osgeo.gdal.NearblackOptions:13 osgeo.gdal.RasterizeOptions:41
@@ -344,7 +346,7 @@ msgstr ""
 msgid "callback method"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DEMProcessingOptions:23 osgeo.gdal.FootprintOptions:23
 #: osgeo.gdal.GridOptions:27 osgeo.gdal.MultiDimTranslateOptions:16
 #: osgeo.gdal.NearblackOptions:14 osgeo.gdal.RasterizeOptions:42
@@ -353,18 +355,18 @@ msgstr ""
 msgid "user data for callback"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.Footprint:1
 msgid "Compute the footprint of a raster"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.Footprint:3 osgeo.gdal.Nearblack:3 osgeo.gdal.Rasterize:3
 #: osgeo.gdal.VectorTranslate:3 osgeo.gdal.Warp:3
 msgid "Output dataset name or object"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.Footprint:5
 msgid ""
 "options: return of gdal.FootprintOptions(), string or array of strings, "
@@ -372,101 +374,101 @@ msgid ""
 "as a gdal.FootprintOptions() object, other keywords are ignored."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
-#: of osgeo.gdal.Footprint:10
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.FillNodata:41 osgeo.gdal.Footprint:10
 msgid "Examples"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.Footprint:11
 msgid ""
 "Special mode to get deserialized GeoJSON (in EPSG:4326 if dstSRS not "
 "specified):"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.Footprint:15
 msgid "Special mode to get WKT:"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.Footprint:19
 msgid "Get result in a GeoPackage"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.FootprintOptions:1
 msgid ""
 "Create a FootprintOptions() object that can be passed to gdal.Footprint()"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.FootprintOptions:4
 msgid "output format (\"GeoJSON\", etc...)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.FootprintOptions:5 osgeo.gdal.RasterizeOptions:21
 msgid "list of output bands to burn values into"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.FootprintOptions:6
 msgid "how to combine bands: \"union\" (default) or \"intersection\""
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.FootprintOptions:8
 msgid "overview index."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.FootprintOptions:9
 msgid "\"pixel\" or \"georef\""
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.FootprintOptions:10 osgeo.gdal.WarpOptions:15
 msgid "output SRS"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.FootprintOptions:11 osgeo.gdal.VectorTranslateOptions:23
 msgid "list or dict of dataset creation options"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.FootprintOptions:12 osgeo.gdal.TileIndexOptions:11
 #: osgeo.gdal.VectorTranslateOptions:24
 msgid "list or dict of layer creation options"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.FootprintOptions:13
 msgid "whether to split multipolygons as several polygons"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.FootprintOptions:14
 msgid "whether to compute the convex hull of polygons/multipolygons"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.FootprintOptions:15
 msgid "tolerance value for polygon densification"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.FootprintOptions:16
 msgid "tolerance value for polygon simplification"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.FootprintOptions:17
 msgid "maximum number of points (100 by default, \"unlimited\" for unlimited)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.FootprintOptions:18
 msgid ""
 "Minimum value for the area of a ring The unit of the area is in square "
@@ -475,7 +477,7 @@ msgid ""
 "after the reprojection implied by dstSRS"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.FootprintOptions:19 osgeo.gdal.TileIndexOptions:12
 msgid ""
 "Specifies the name of the field in the resulting vector dataset where the "
@@ -483,25 +485,113 @@ msgid ""
 "\"location\". Can be set to None to disable creation of such field."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.FootprintOptions:20 osgeo.gdal.TileIndexOptions:14
 msgid ""
 "Enables writing the absolute path of the input dataset. By default, the "
 "filename is written in the location field exactly as the dataset name."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.FootprintOptions:21 osgeo.gdal.TileIndexOptions:10
 #: osgeo.gdal.VectorTranslateOptions:26
 msgid "output layer name"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.FillNodata:1
+msgid "Fill selected raster regions by interpolation from the edges."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.FillNodata:3
+msgid ""
+"This algorithm will interpolate values for all designated nodata pixels "
+"(marked by zeros in ``maskBand``). For each pixel a four direction conic "
+"search is done to find values to interpolate from (using inverse distance "
+"weighting by default). Once all values are interpolated, zero or more "
+"smoothing iterations (3x3 average filters on interpolated pixels) are "
+"applied to smooth out artifacts."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.FillNodata:11
+msgid ""
+"This algorithm is generally suitable for interpolating missing regions of "
+"fairly continuously varying rasters (such as elevation models for instance). "
+"It is also suitable for filling small holes and cracks in more irregularly "
+"varying images (like airphotos). It is generally not so great for "
+"interpolating a raster from sparse point data. See :py:func:`Grid` for that "
+"case."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.FillNodata:18
+msgid "See :cpp:func:`GDALFillNodata`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.FillNodata:20
+msgid "Band containing values to fill. Will be modified in-place."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.FillNodata:22
+msgid ""
+"Mask band with a value of 0 indicating values that should be filled. If not "
+"specified, the mask band associated with ``targetBand`` will be used."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.FillNodata:25
+msgid ""
+"the maximum number of pixels to search in all directions to find values to "
+"interpolate from."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.FillNodata:27
+msgid "the number of 3x3 smoothing filter passes to run (0 or more)"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.FillNodata:29
+msgid ""
+"A dict or list of name=value options. Available options are described in :"
+"cpp:func:`GDALFillNodata`."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.FillNodata:32
+msgid "A progress callback function"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.FillNodata:34
+msgid "Optional data to be passed to callback function"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.FillNodata:0 osgeo.gdal.SuggestedWarpOutput:0
+msgid "Returns"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.FillNodata:37
+msgid ":py:const:`CE_None` on success or :py:const:`CE_Failure` on failure."
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
+#: of osgeo.gdal.FillNodata:0
+msgid "Return type"
+msgstr ""
+
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.Grid:1
 msgid "Create raster from the scattered data."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.Grid:5
 msgid ""
 "options: return of gdal.GridOptions(), string or array of strings, other "
@@ -509,82 +599,82 @@ msgid ""
 "GridOptions() object, other keywords are ignored."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GridOptions:1
 msgid "Create a GridOptions() object that can be passed to gdal.Grid()"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GridOptions:5 osgeo.gdal.RasterizeOptions:5
 #: osgeo.gdal.TranslateOptions:5 osgeo.gdal.WarpOptions:20
 msgid "output type (gdalconst.GDT_Byte, etc...)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GridOptions:6 osgeo.gdal.RasterizeOptions:11
 #: osgeo.gdal.TranslateOptions:8 osgeo.gdal.WarpOptions:12
 msgid "width of the output raster in pixel"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GridOptions:7 osgeo.gdal.RasterizeOptions:12
 #: osgeo.gdal.TranslateOptions:9 osgeo.gdal.WarpOptions:13
 msgid "height of the output raster in pixel"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GridOptions:9 osgeo.gdal.TranslateOptions:22
 msgid "assigned output bounds: [ulx, uly, lrx, lry]"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GridOptions:11 osgeo.gdal.RasterizeOptions:9
 #: osgeo.gdal.TileIndexOptions:13 osgeo.gdal.TranslateOptions:25
 msgid "assigned output SRS"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GridOptions:12 osgeo.gdal.RasterizeOptions:16
 msgid "nodata value"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GridOptions:13
 msgid ""
 "e.g \"invdist:power=2.0:smoothing=0.0:radius1=0.0:radius2=0.0:angle=0.0:"
 "max_points=0:min_points=0:nodata=0.0\""
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GridOptions:14 osgeo.gdal.VectorTranslateOptions:25
 msgid "list of layers to convert"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GridOptions:15 osgeo.gdal.RasterizeOptions:36
 #: osgeo.gdal.VectorInfoOptions:7 osgeo.gdal.VectorTranslateOptions:12
 msgid "SQL statement to apply to the source dataset"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GridOptions:16 osgeo.gdal.RasterizeOptions:38
 #: osgeo.gdal.VectorInfoOptions:9 osgeo.gdal.VectorTranslateOptions:14
 msgid "WHERE clause to apply to source layer(s)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GridOptions:17 osgeo.gdal.VectorTranslateOptions:20
 msgid "spatial filter as (minX, minY, maxX, maxY) bounding box"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GridOptions:18
 msgid ""
 "Identifies an attribute field on the features to be used to get a Z value "
 "from. This value overrides Z value read from feature geometry record."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GridOptions:20
 msgid ""
 "Addition to the attribute field on the features to be used to get a Z value "
@@ -592,7 +682,7 @@ msgid ""
 "be Z value + Z increase value. The default value is 0."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GridOptions:23
 msgid ""
 "Multiplication ratio for Z field. This can be used for shift from e.g. foot "
@@ -600,12 +690,12 @@ msgid ""
 "increase value) * Z multiply value. The default value is 1."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.Info:1
 msgid "Return information on a raster dataset."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.Info:4
 msgid ""
 "options: return of gdal.InfoOptions(), string or array of strings other "
@@ -613,7 +703,7 @@ msgid ""
 "InfoOptions() object, other keywords are ignored."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.InfoOptions:1
 msgid ""
 "Create a InfoOptions() object that can be passed to gdal.Info() options can "
@@ -621,12 +711,12 @@ msgid ""
 "keywords."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.Nearblack:1
 msgid "Convert nearly black/white borders to exact value."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.Nearblack:5
 msgid ""
 "options: return of gdal.NearblackOptions(), string or array of strings, "
@@ -634,27 +724,27 @@ msgid ""
 "as a gdal.NearblackOptions() object, other keywords are ignored."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.NearblackOptions:1
 msgid ""
 "Create a NearblackOptions() object that can be passed to gdal.Nearblack()"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.NearblackOptions:6
 msgid ""
 "whether to search for nearly white (255) pixels instead of nearly black "
 "pixels."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.NearblackOptions:7
 msgid ""
 "list of colors  to search for, e.g. ((0,0,0),(255,255,255)). The pixels that "
 "are considered as the collar are set to 0"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.NearblackOptions:8
 msgid ""
 "number of non-black (or other searched colors specified with white / colors) "
@@ -662,34 +752,34 @@ msgid ""
 "to 2."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.NearblackOptions:9
 msgid ""
 "select how far from black, white or custom colors the pixel values can be "
 "and still considered near black, white or custom color.  Defaults to 15."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.NearblackOptions:10
 msgid "adds an alpha band to the output file."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.NearblackOptions:11
 msgid "adds a mask band to the output file."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.NearblackOptions:12
 msgid "\"twopasses\" (default), or \"floodfill\""
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.Rasterize:1
 msgid "Burns vector geometries into a raster"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.Rasterize:5
 msgid ""
 "options: return of gdal.RasterizeOptions(), string or array of strings, "
@@ -697,34 +787,34 @@ msgid ""
 "as a gdal.RasterizeOptions() object, other keywords are ignored."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.RasterizeOptions:1
 msgid ""
 "Create a RasterizeOptions() object that can be passed to gdal.Rasterize()"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.RasterizeOptions:7
 msgid "assigned output bounds: [minx, miny, maxx, maxy]"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.RasterizeOptions:10 osgeo.gdal.WarpOptions:34
 msgid "list or dict of transformer options"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.RasterizeOptions:13 osgeo.gdal.RasterizeOptions:14
 #: osgeo.gdal.WarpOptions:9 osgeo.gdal.WarpOptions:10
 msgid "output resolution in target SRS"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.RasterizeOptions:15 osgeo.gdal.WarpOptions:11
 msgid "whether to force output bounds to be multiple of output resolution"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.RasterizeOptions:17
 msgid ""
 "Value or list of values to pre-initialize the output image bands with.  "
@@ -732,22 +822,22 @@ msgid ""
 "one value is given, the same value is used in all the bands."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.RasterizeOptions:19
 msgid "Value or list of values to pre-initialize the output image bands with."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.RasterizeOptions:19
 msgid "However, it is not marked as the nodata value in the output file."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.RasterizeOptions:20
 msgid "If only one value is given, the same value is used in all the bands."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.RasterizeOptions:22
 msgid ""
 "whether to invert rasterization, i.e. burn the fixed burn value, or the burn "
@@ -755,7 +845,7 @@ msgid ""
 "inside the provided a polygon."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.RasterizeOptions:25
 msgid ""
 "whether to enable the ALL_TOUCHED rasterization option so that all pixels "
@@ -763,14 +853,14 @@ msgid ""
 "render path, or whose center point is within the polygon."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.RasterizeOptions:28
 msgid ""
 "list of fixed values to burn into each band for all objects. Excusive with "
 "attribute."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.RasterizeOptions:30
 msgid ""
 "identifies an attribute field on the features to be used for a burn-in "
@@ -778,7 +868,7 @@ msgid ""
 "burnValues."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.RasterizeOptions:32
 msgid ""
 "whether to indicate that a burn value should be extracted from the \"Z\" "
@@ -787,34 +877,34 @@ msgid ""
 "drawn in 3D."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.RasterizeOptions:35
 msgid ""
 "list of layers from the datasource that will be used for input features."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.RasterizeOptions:37 osgeo.gdal.VectorInfoOptions:8
 #: osgeo.gdal.VectorTranslateOptions:13
 msgid "SQL dialect ('OGRSQL', 'SQLITE', ...)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.RasterizeOptions:39
 msgid "optimization mode ('RASTER', 'VECTOR')"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.RasterizeOptions:40
 msgid "set to True to use additive mode instead of replace when burning values"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.SuggestedWarpOutput:1
 msgid "Suggest output dataset size and extent."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.SuggestedWarpOutput:3
 msgid ""
 "SuggestedWarpOutput(src: Dataset, transformer: Transformer) -> "
@@ -822,7 +912,7 @@ msgid ""
 "-> SuggestedWarpOutputRes"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.SuggestedWarpOutput:6
 msgid ""
 "This function is used to suggest the size, and georeferenced extents "
@@ -831,7 +921,7 @@ msgid ""
 "transforming into output coordinates in order to get an extents box."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.SuggestedWarpOutput:11
 msgid ""
 "Then a resolution is computed with the intent that the length of the "
@@ -844,12 +934,12 @@ msgid ""
 "input data in the output file."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.SuggestedWarpOutput:20
 msgid "There are 2 forms of this method:"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.SuggestedWarpOutput:22
 msgid ""
 "one that takes the output of gdal.Transformer(src, dst, options) as the "
@@ -861,7 +951,7 @@ msgid ""
 "`GDALCreateGenImgProjTransformer2` (e.g ``DST_SRS``)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.SuggestedWarpOutput:30
 msgid ""
 "one that takes a list of strings as the second argument. Those strings are "
@@ -869,19 +959,19 @@ msgid ""
 "`GDALCreateGenImgProjTransformer2` (e.g ``DST_SRS``)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.SuggestedWarpOutput:34
 msgid "Source dataset"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.SuggestedWarpOutput:36
 msgid ""
 "The return value of gdal.Transformer(src, None, options) (exclusive with "
 "below options parameter)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.SuggestedWarpOutput:39
 msgid ""
 "List of strings that are the transforming options accepted by :cpp:func:"
@@ -889,12 +979,7 @@ msgid ""
 "transformer parameter)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
-#: of osgeo.gdal.SuggestedWarpOutput:0
-msgid "Returns"
-msgstr ""
-
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.SuggestedWarpOutput:44
 msgid ""
 "* *A SuggestedWarpOutputRes class instance with the following members* * **- "
@@ -907,62 +992,62 @@ msgid ""
 "geotransformation matrix (6 values)*)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.SuggestedWarpOutput:44
 msgid "*A SuggestedWarpOutputRes class instance with the following members*"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.SuggestedWarpOutput:45
 msgid "**- width** (*number of pixels in width of the output dataset*)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.SuggestedWarpOutput:46
 msgid "**- height** (*number of pixels in height of the output dataset*)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.SuggestedWarpOutput:47
 msgid "**- xmin** (*minimum value of the georeferenced X coordinates*)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.SuggestedWarpOutput:48
 msgid "**- ymin** (*maximum value of the georeferenced Y coordinates*)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.SuggestedWarpOutput:49
 msgid "**- xmax** (*minimum value of the georeferenced X coordinates*)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.SuggestedWarpOutput:50
 msgid "**- ymax** (*maximum value of the georeferenced Y coordinates*)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.SuggestedWarpOutput:51
 msgid "**- geotransform** (*affine geotransformation matrix (6 values)*)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.SuggestedWarpOutput:54
 msgid "Example"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TileIndex:1
 msgid "Build a tileindex from a list of datasets."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TileIndex:4
 msgid "An array of filenames."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TileIndex:5
 msgid ""
 "options: return of gdal.TileIndexOptions(), string or array of strings, "
@@ -970,103 +1055,103 @@ msgid ""
 "as a gdal.TileIndexOptions() object, other keywords are ignored."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TileIndexOptions:1
 msgid ""
 "Create a TileIndexOptions() object that can be passed to gdal.TileIndex()"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TileIndexOptions:4
 msgid "Whether to overwrite the existing tile index"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TileIndexOptions:5
 msgid ""
 "Whether directories specified in source filenames should be explored "
 "recursively"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TileIndexOptions:6
 msgid ""
 "Pattern that the filenames contained in directories pointed by <file_or_dir> "
 "should follow. '*' and '?' wildcard can be used. String or list of strings."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TileIndexOptions:7
 msgid ""
 "Minimum pixel size in term of geospatial extent per pixel (resolution) that "
 "a raster should have to be selected."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TileIndexOptions:8
 msgid ""
 "Maximum pixel size in term of geospatial extent per pixel (resolution) that "
 "a raster should have to be selected."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TileIndexOptions:9
 msgid "output format (\"ESRI Shapefile\", \"GPKG\", etc...)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TileIndexOptions:15
 msgid "Whether to skip sources that have a different SRS"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TileIndexOptions:16
 msgid "Filename of the GDAL XML Tile Index file"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TileIndexOptions:17 osgeo.gdal.TranslateOptions:12
 msgid "output horizontal resolution"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TileIndexOptions:18 osgeo.gdal.TranslateOptions:13
 msgid "output vertical resolution"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TileIndexOptions:19
 msgid "output bounds as [minx, miny, maxx, maxy]"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TileIndexOptions:20
 msgid ""
 "tile color interpretation, as a single value or a list, of the following "
 "values: \"red\", \"green\", \"blue\", \"alpha\", \"grey\", \"undefined\""
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TileIndexOptions:21
 msgid "tile nodata value, as a single value or a list"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TileIndexOptions:22
 msgid "number of band of tiles in the index"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TileIndexOptions:23
 msgid "whether tiles have a band mask"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TileIndexOptions:24 osgeo.gdal.TranslateOptions:24
 msgid "list or dict of metadata options"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TileIndexOptions:25
 msgid ""
 "Fetch a metadata item from the raster tile and write it as a field in the "
@@ -1075,12 +1160,12 @@ msgid ""
 "\"Integer\", \"Integer64\", \"Real\", \"Date\", \"DateTime\";"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.Translate:1
 msgid "Convert a dataset."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.Translate:5
 msgid ""
 "options: return of gdal.TranslateOptions(), string or array of strings other "
@@ -1088,138 +1173,138 @@ msgid ""
 "gdal.TranslateOptions() object, other keywords are ignored."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TranslateOptions:1
 msgid ""
 "Create a TranslateOptions() object that can be passed to gdal.Translate()"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TranslateOptions:6
 msgid "array of band numbers (index start at 1)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TranslateOptions:7
 msgid "mask band to generate or not (\"none\", \"auto\", \"mask\", 1, ...)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TranslateOptions:10
 msgid "width of the output raster in percentage (100 = original width)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TranslateOptions:11
 msgid "height of the output raster in percentage (100 = original height)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TranslateOptions:15
 msgid "subwindow in pixels to extract: [left_x, top_y, width, height]"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TranslateOptions:16
 msgid "subwindow in projected coordinates to extract: [ulx, uly, lrx, lry]"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TranslateOptions:17
 msgid "SRS in which projWin is expressed"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TranslateOptions:18
 msgid "strict mode"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TranslateOptions:19
 msgid "unscale values with scale and offset metadata"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TranslateOptions:20
 msgid ""
 "list of scale parameters, each of the form [src_min,src_max] or [src_min,"
 "src_max,dst_min,dst_max]"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TranslateOptions:21
 msgid "list of exponentiation parameters"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TranslateOptions:23
 msgid ""
 "assigned geotransform matrix (array of 6 values) (mutually exclusive with "
 "outputBounds)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TranslateOptions:26
 msgid "ignore GCP in the raster"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TranslateOptions:27
 msgid "list of GCPs"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TranslateOptions:28
 msgid "nodata value (or \"none\" to unset it)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TranslateOptions:29
 msgid "Color palette expansion mode: \"gray\", \"rgb\", \"rgba\""
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TranslateOptions:30
 msgid "whether to calculate statistics"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TranslateOptions:31
 msgid "whether to write source RAT"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TranslateOptions:32
 msgid "whether to copy XMP metadata"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TranslateOptions:33 osgeo.gdal.WarpOptions:25
 msgid "resampling mode"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TranslateOptions:34 osgeo.gdal.WarpOptions:46
 msgid "To specify which overview level of source files must be used"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.TranslateOptions:37
 msgid "list or dict of domain-specific metadata options"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.Warp:1
 msgid "Warp one or several datasets."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.MultiDimTranslate:4 osgeo.gdal.Warp:4
 msgid ""
 "an array of Dataset objects or filenames, or a Dataset object or a filename"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.Warp:5
 msgid ""
 "options: return of gdal.WarpOptions(), string or array of strings, other "
@@ -1227,177 +1312,177 @@ msgid ""
 "WarpOptions() object, other keywords are ignored."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.WarpOptions:1
 msgid "Create a WarpOptions() object that can be passed to gdal.Warp()"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.WarpOptions:5
 msgid "list of source band numbers (between 1 and the number of input bands)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.WarpOptions:6
 msgid "list of output band numbers"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.WarpOptions:7
 msgid "output bounds as (minX, minY, maxX, maxY) in target SRS"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.WarpOptions:8
 msgid ""
 "SRS in which output bounds are expressed, in the case they are not expressed "
 "in dstSRS"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:8 osgeo.gdal.WarpOptions:14
 msgid "source SRS"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:10 osgeo.gdal.WarpOptions:16
 msgid "coordinate operation as a PROJ string or WKT string"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.WarpOptions:17
 msgid ""
 "whether to force the last band of the input dataset to be considered as an "
 "alpha band. If set to False, source alpha warping will be disabled."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.WarpOptions:19
 msgid "whether to force the creation of an output alpha band"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.WarpOptions:21
 msgid "working type (gdalconst.GDT_Byte, etc...)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.WarpOptions:22
 msgid "list or dict of warping options"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.WarpOptions:23
 msgid "error threshold for approximation transformer (in pixels)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.WarpOptions:24
 msgid "size of working buffer in MB"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.WarpOptions:27
 msgid "source nodata value(s)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.WarpOptions:28
 msgid "output nodata value(s)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.WarpOptions:29
 msgid "whether to multithread computation and I/O operations"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.WarpOptions:30
 msgid "whether to use Thin Plate Spline GCP transformer"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.WarpOptions:31
 msgid "whether to use RPC transformer"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.WarpOptions:32
 msgid "whether to use GeoLocation array transformer"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.WarpOptions:33
 msgid "order of polynomial GCP interpolation"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.WarpOptions:35
 msgid "cutline dataset name (mutually exclusive with cutlineDSName)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.WarpOptions:36
 msgid ""
 "cutline WKT geometry (POLYGON or MULTIPOLYGON) (mutually exclusive with "
 "cutlineWKT)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.WarpOptions:37
 msgid "set/override cutline SRS"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.WarpOptions:38
 msgid "cutline layer name"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.WarpOptions:39
 msgid "cutline WHERE clause"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.WarpOptions:40
 msgid "cutline SQL statement"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.WarpOptions:41
 msgid "cutline blend distance in pixels"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.WarpOptions:42
 msgid "whether to use cutline extent for output bounds"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.WarpOptions:43
 msgid "whether to copy source metadata"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.WarpOptions:44
 msgid "metadata data conflict value"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.WarpOptions:45
 msgid "whether to force color interpretation of input bands to output bands"
 msgstr ""
 
-#: ../../../source/api/python/utilities.rst:70
+#: ../../../source/api/python/utilities.rst:75
 msgid "Multidimensional Raster Utilities"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.MultiDimInfo:1
 msgid "Return information on a dataset."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.MultiDimInfo:4
 msgid ""
 "options: return of gdal.MultiDimInfoOptions(), string or array of strings "
@@ -1405,7 +1490,7 @@ msgid ""
 "provided as a gdal.MultiDimInfoOptions() object, other keywords are ignored."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.MultiDimInfoOptions:1
 msgid ""
 "Create a MultiDimInfoOptions() object that can be passed to gdal."
@@ -1413,12 +1498,12 @@ msgid ""
 "and filled from other keywords."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.MultiDimTranslate:1
 msgid "MultiDimTranslate one or several datasets."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.MultiDimTranslate:5
 msgid ""
 "options: return of gdal.MultiDimTranslateOptions(), string or array of "
@@ -1427,58 +1512,58 @@ msgid ""
 "keywords are ignored."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.MultiDimTranslateOptions:1
 msgid ""
 "Create a MultiDimTranslateOptions() object that can be passed to gdal."
 "MultiDimTranslate()"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.MultiDimTranslateOptions:6
 msgid ""
 "list of array specifications, each of them being an array name or "
 "\"name={src_array_name},dstname={dst_name},transpose=[1,0],view=[:,::-1]\""
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.MultiDimTranslateOptions:8
 msgid ""
 "list of options passed to `GDALGroup.GetMDArrayNames` to filter reported "
 "arrays."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.MultiDimTranslateOptions:9
 msgid ""
 "list of group specifications, each of them being a group name or "
 "\"name={src_array_name},dstname={dst_name},recursive=no\""
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.MultiDimTranslateOptions:11
 msgid ""
 "list of subset specifications, each of them being like \"{dim_name}"
 "({min_val},{max_val})\" or \"{dim_name}({slice_va})\""
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.MultiDimTranslateOptions:13
 msgid ""
 "list of dimension scaling specifications, each of them being like "
 "\"{dim_name}({scale_factor})\""
 msgstr ""
 
-#: ../../../source/api/python/utilities.rst:81
+#: ../../../source/api/python/utilities.rst:86
 msgid "Vector Utilities"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorInfo:1
 msgid "Return information on a vector dataset."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorInfo:4
 msgid ""
 "options: return of gdal.VectorInfoOptions(), string or array of strings "
@@ -1486,7 +1571,7 @@ msgid ""
 "as a gdal.VectorInfoOptions() object, other keywords are ignored."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorInfoOptions:1
 msgid ""
 "Create a VectorInfoOptions() object that can be passed to gdal.VectorInfo() "
@@ -1494,51 +1579,51 @@ msgid ""
 "other keywords."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorInfoOptions:5
 msgid "\"text\" or \"json\""
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorInfoOptions:6
 msgid ""
 "if JSON output should be returned as a Python dictionary. Otherwise as a "
 "serialized representation."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorInfoOptions:10
 msgid "list of layers of interest"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorInfoOptions:11
 msgid "whether to compute and display the feature count"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorInfoOptions:12
 msgid ""
 "whether to compute and display the layer extent. Can also be set to the "
 "string '3D' to request a 3D extent"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorInfoOptions:13
 msgid "set to True to get the dump of all features"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorInfoOptions:14 osgeo.gdal.VectorTranslateOptions:75
 msgid "maximum number of features to read per layer"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslate:1
 msgid "Convert one vector dataset"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslate:5
 msgid ""
 "options: return of gdal.VectorTranslateOptions(), string or array of "
@@ -1547,63 +1632,63 @@ msgid ""
 "keywords are ignored."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:1
 msgid ""
 "Create a VectorTranslateOptions() object that can be passed to gdal."
 "VectorTranslate()"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:6
 msgid "format (\"ESRI Shapefile\", etc...)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:7
 msgid "None for creation, 'update', 'append', 'upsert', 'overwrite'"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:9
 msgid "output SRS (with reprojection if reproject = True)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:11
 msgid "whether to do reprojection"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:15
 msgid "list of fields to select"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:16
 msgid ""
 "whether to add new fields found in source layers (to be used with accessMode "
 "== 'append' or 'upsert')"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:18
 msgid "whether to drop NOT NULL constraints on newly created fields"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:19
 msgid "whether to treat empty string values as NULL"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:21
 msgid ""
 "SRS in which the spatFilter is expressed. If not specified, it is assumed to "
 "be the one of the layer(s)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:27
 msgid ""
 "output layer geometry type ('POINT', ....). May be an array of strings when "
@@ -1611,12 +1696,12 @@ msgid ""
 "'CONVERT_TO_CURVE' combined with another one or a geometry type."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:30
 msgid "output dimension ('XY', 'XYZ', 'XYM', 'XYZM', 'layer_dim')"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:31
 msgid ""
 "number of features to save per transaction (default 100 000). Increase the "
@@ -1625,7 +1710,7 @@ msgid ""
 "transaction."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:34
 msgid ""
 "clip geometries to the specified bounding box (expressed in source SRS), WKT "
@@ -1635,22 +1720,22 @@ msgid ""
 "with the clipSrcLayer, clipSrcWhere or clipSrcSQL options."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:39 osgeo.gdal.VectorTranslateOptions:46
 msgid "select desired geometries using an SQL query instead."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:40
 msgid "select the named layer from the source clip datasource."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:41 osgeo.gdal.VectorTranslateOptions:48
 msgid "restrict desired geometries based on attribute query."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:42
 msgid ""
 "clip geometries after reprojection to the specified bounding box (expressed "
@@ -1659,29 +1744,29 @@ msgid ""
 "combination of the clipDstLayer, clipDstWhere or clipDstSQL options."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:47
 msgid "select the named layer from the destination clip datasource."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:49
 msgid ""
 "distance tolerance for simplification. The algorithm used preserves topology "
 "per feature, in particular for polygon geometries, but not for a whole layer."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:51
 msgid "maximum distance between consecutive nodes of a line geometry"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:52
 msgid "run MakeValid() on geometries"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:53
 msgid ""
 "converts any field of the specified type to another type. Valid types are: "
@@ -1694,7 +1779,7 @@ msgid ""
 "driver, and is only an afterwards conversion."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:61
 msgid ""
 "produce one feature for each geometry in any kind of geometry collection in "
@@ -1703,7 +1788,7 @@ msgid ""
 "original_fid, * FROM ...) can be used to store the original FID if needed."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:65
 msgid ""
 "Use the FID of the source features instead of letting the output driver "
@@ -1715,43 +1800,43 @@ msgid ""
 "with explodeCollections"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:71
 msgid "name of field to use to set the Z component of geometries"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:72
 msgid ""
 "whether to create an additional field for each field associated with a coded "
 "field domain."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:74
 msgid "whether to skip failures"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:76
 msgid ""
 "Geometry X,Y coordinate resolution. Numeric value, or numeric value suffixed "
 "with \" m\", \" mm\" or \"deg\"."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:77
 msgid ""
 "Geometry Z coordinate resolution. Numeric value, or numeric value suffixed "
 "with \" m\" or \" mm\"."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:78
 msgid "Geometry M coordinate resolution. Numeric value."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.VectorTranslateOptions:79
 msgid "Set to False to unset the geometry coordinate precision."
 msgstr ""

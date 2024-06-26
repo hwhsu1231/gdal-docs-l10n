@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -216,32 +217,42 @@ msgstr ""
 
 #: ../../../source/drivers/vector/oci.rst:127
 msgid ""
-"The following :ref:`configuration options <configoptions>` are available:"
+"|about-config-options| The following configuration options are available:"
 msgstr ""
 
 #: ../../../source/drivers/vector/oci.rst:136
 msgid "Layer Creation Options"
 msgstr ""
 
-#: ../../../source/drivers/vector/oci.rst:289
+#: ../../../source/drivers/vector/oci.rst:138
+msgid ""
+"|about-layer-creation-options| The following layer creation options are "
+"supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:292
 msgid "Layer Open Options"
 msgstr ""
 
-#: ../../../source/drivers/vector/oci.rst:308
+#: ../../../source/drivers/vector/oci.rst:294
+msgid "|about-open-options| The following open options are supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/oci.rst:314
 msgid "Example"
 msgstr ""
 
-#: ../../../source/drivers/vector/oci.rst:310
+#: ../../../source/drivers/vector/oci.rst:316
 msgid ""
 "Simple translation of a shapefile into Oracle. The table 'ABC' will be "
 "created with the features from abc.shp and attributes from abc.dbf."
 msgstr ""
 
-#: ../../../source/drivers/vector/oci.rst:315
+#: ../../../source/drivers/vector/oci.rst:321
 msgid "% ogr2ogr -f OCI OCI:warmerda/password@gdal800.dreadfest.com abc.shp"
 msgstr ""
 
-#: ../../../source/drivers/vector/oci.rst:317
+#: ../../../source/drivers/vector/oci.rst:323
 msgid ""
 "This second example loads a political boundaries layer from VPF (via the :"
 "ref:`OGDI driver <vector.ogdi>`), and renames the layer from the cryptic "
@@ -249,44 +260,44 @@ msgid ""
 "desired name exists it is overwritten."
 msgstr ""
 
-#: ../../../source/drivers/vector/oci.rst:324
+#: ../../../source/drivers/vector/oci.rst:330
 msgid ""
 "% ogr2ogr  -f OCI OCI:warmerda/password \\\n"
 "        gltp:/vrf/usr4/mpp1/v0eur/vmaplv0/eurnasia \\\n"
 "        -lco OVERWRITE=yes -nln polbndl_bnd 'polbndl@bnd(*)_line'"
 msgstr ""
 
-#: ../../../source/drivers/vector/oci.rst:328
+#: ../../../source/drivers/vector/oci.rst:334
 msgid ""
 "This example shows using ogrinfo to evaluate an SQL query statement within "
 "Oracle. More sophisticated Oracle Spatial specific queries may also be used "
 "via the -sql commandline switch to ogrinfo."
 msgstr ""
 
-#: ../../../source/drivers/vector/oci.rst:334
+#: ../../../source/drivers/vector/oci.rst:340
 msgid ""
 "ogrinfo -ro OCI:warmerda/password -sql \"SELECT pop_1994 from canada where "
 "province_name = 'Alberta'\""
 msgstr ""
 
-#: ../../../source/drivers/vector/oci.rst:336
+#: ../../../source/drivers/vector/oci.rst:342
 msgid "This example shows hows to list information about an Oracle view."
 msgstr ""
 
-#: ../../../source/drivers/vector/oci.rst:340
+#: ../../../source/drivers/vector/oci.rst:346
 msgid ""
 "ogrinfo -ro -so OCI:username/password@host_name:port_number/service_name:"
 "MY_SCHEMA.MY_VIEW MY_SCHEMA.MY_VIEW"
 msgstr ""
 
-#: ../../../source/drivers/vector/oci.rst:342
+#: ../../../source/drivers/vector/oci.rst:348
 msgid ""
 "This example shows hows to convert certain columns from an Oracle view to a "
 "GeoPackage file, explicitly assigning the layer name and the coordinate "
 "reference system, and converting timestamps to UTC."
 msgstr ""
 
-#: ../../../source/drivers/vector/oci.rst:348
+#: ../../../source/drivers/vector/oci.rst:354
 msgid ""
 "ogr2ogr -f GPKG output.gpkg -nln new_layer_name -nlt POLYGON -s_srs "
 "EPSG:25832 -t_srs EPSG:25832 -dsco DATETIME_FORMAT=UTC OCI:username/"
@@ -294,11 +305,11 @@ msgid ""
 "COLUMN_A, COLUMN_B, GEOMETRY FROM MY_SCHEMA.MY_VIEW\""
 msgstr ""
 
-#: ../../../source/drivers/vector/oci.rst:351
+#: ../../../source/drivers/vector/oci.rst:357
 msgid "Credits"
 msgstr ""
 
-#: ../../../source/drivers/vector/oci.rst:353
+#: ../../../source/drivers/vector/oci.rst:359
 msgid ""
 "I would like to thank `SRC, LLC <http://www.extendthereach.com/>`__ for its "
 "financial support of the development of this driver."

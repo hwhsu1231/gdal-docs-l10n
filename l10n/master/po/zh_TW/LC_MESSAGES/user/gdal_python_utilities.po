@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -63,61 +63,55 @@ msgstr ""
 msgid "ogrmerge"
 msgstr ""
 
-#: ../../../source/user/gdal_python_utilities.rst:27
-msgid ""
-"For the full list see :ref:`Programs <programs>` and note the ones that end "
-"in ``.py``."
-msgstr ""
-
-#: ../../../source/user/gdal_python_utilities.rst:31
+#: ../../../source/user/gdal_python_utilities.rst:28
 msgid "Developers"
 msgstr ""
 
-#: ../../../source/user/gdal_python_utilities.rst:33
+#: ../../../source/user/gdal_python_utilities.rst:30
 msgid "Read the :ref:`gdal-utils project charter <rfc-78>`."
 msgstr ""
 
-#: ../../../source/user/gdal_python_utilities.rst:35
+#: ../../../source/user/gdal_python_utilities.rst:32
 msgid "Clone or download the gdal project: https://github.com/OSGeo/gdal/"
 msgstr ""
 
-#: ../../../source/user/gdal_python_utilities.rst:37
+#: ../../../source/user/gdal_python_utilities.rst:34
 msgid ""
 "In your IDE set gdal-utils as the root folder, `.../swig/python/gdal-utils "
 "<https://github.com/OSGeo/gdal/tree/master/swig/python/gdal-utils/>`__."
 msgstr ""
 
-#: ../../../source/user/gdal_python_utilities.rst:40
+#: ../../../source/user/gdal_python_utilities.rst:37
 msgid ""
 "**./osgeo_utils** - contains the Programs (those scripts that have launch "
 "wrappers created by pip and added to PYTHONHOME/Scripts)"
 msgstr ""
 
-#: ../../../source/user/gdal_python_utilities.rst:43
+#: ../../../source/user/gdal_python_utilities.rst:40
 msgid ""
 "**./osgeo_utils/samples** - working python scripts but not typically "
 "available in path (run them with ``python3 path/to/samples/something.py``)"
 msgstr ""
 
-#: ../../../source/user/gdal_python_utilities.rst:47
+#: ../../../source/user/gdal_python_utilities.rst:44
 msgid ""
 "Improve the docs by editing the RST pages in `.../doc/source <https://github."
 "com/OSGeo/gdal/tree/master/doc/source>`__ which generate the web pages:"
 msgstr ""
 
-#: ../../../source/user/gdal_python_utilities.rst:51
+#: ../../../source/user/gdal_python_utilities.rst:48
 msgid "https://gdal.org/api/index.html#python-api"
 msgstr ""
 
-#: ../../../source/user/gdal_python_utilities.rst:52
+#: ../../../source/user/gdal_python_utilities.rst:49
 msgid "https://gdal.org/programs/index.html#programs"
 msgstr ""
 
-#: ../../../source/user/gdal_python_utilities.rst:53
+#: ../../../source/user/gdal_python_utilities.rst:50
 msgid "https://gdal.org/api/python_samples.html"
 msgstr ""
 
-#: ../../../source/user/gdal_python_utilities.rst:55
+#: ../../../source/user/gdal_python_utilities.rst:52
 msgid ""
 "Contribute changes with `Pull Requests <https://github.com/OSGeo/gdal/"
 "pulls>`__ from your fork to main GDAL project and use *gdal-utils* label."

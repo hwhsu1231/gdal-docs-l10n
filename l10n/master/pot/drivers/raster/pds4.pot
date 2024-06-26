@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -96,20 +97,21 @@ msgstr ""
 
 #: ../../../source/drivers/raster/pds4.rst:60
 msgid ""
-"When opening a PDS4 vector dataset, the following open options are available:"
+"|about-open-options| When opening a PDS4 vector dataset, the following open "
+"options are available:"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:90
+#: ../../../source/drivers/raster/pds4.rst:91
 msgid "Creation support"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:92
+#: ../../../source/drivers/raster/pds4.rst:93
 msgid ""
 "The PDS4 driver supports updating imagery of existing datasets, creating new "
 "datasets through the CreateCopy() and Create() interfaces."
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:95
+#: ../../../source/drivers/raster/pds4.rst:96
 msgid ""
 "When using CreateCopy(), gdal_translate or gdalwarp, an effort is made to "
 "preserve as much as possible of the original label when doing PDS4 to PDS4 "
@@ -117,25 +119,27 @@ msgid ""
 "option."
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:100
-msgid "The following dataset creation options are available:"
+#: ../../../source/drivers/raster/pds4.rst:101
+msgid ""
+"|about-creation-options| The following dataset creation options are "
+"available:"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:102
+#: ../../../source/drivers/raster/pds4.rst:104
 msgid "Raster only:"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:182
+#: ../../../source/drivers/raster/pds4.rst:184
 msgid "Raster and vector:"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:184
+#: ../../../source/drivers/raster/pds4.rst:186
 msgid ""
 "**VAR_\\***\\ =string. If options like VAR_XXXX=yyyy are specified, any "
 "{XXXX} string in the template label will be replaced by the yyyy value."
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:191
+#: ../../../source/drivers/raster/pds4.rst:193
 msgid ""
 "Template label to use. If not specified and not creating from an existing "
 "PDS4 file, the data/pds4_template.xml file will be used. For GDAL utilities "
@@ -146,29 +150,29 @@ msgid ""
 "information."
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:229
+#: ../../../source/drivers/raster/pds4.rst:231
 msgid "Layer creation options (vector/table datasets)"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:231
+#: ../../../source/drivers/raster/pds4.rst:233
 msgid ""
-"(Starting with GDAL 3.0) When creating a PDS4 vector dataset, or appending a "
-"new table to an existing table, the following layer creation options are "
-"available:"
+"|about-layer-creation-options| (Starting with GDAL 3.0) When creating a PDS4 "
+"vector dataset, or appending a new table to an existing table, the following "
+"layer creation options are available:"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:313
+#: ../../../source/drivers/raster/pds4.rst:316
 msgid "Subdataset / multiple image support"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:315
+#: ../../../source/drivers/raster/pds4.rst:318
 msgid ""
 "If several Array objects are present in the label, they will be reported as "
 "separate subdatasets (typically the main subdataset is an Array3D, and "
 "backplanes are represented as Array2D)."
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:319
+#: ../../../source/drivers/raster/pds4.rst:322
 msgid ""
 "Since GDAL 3.0, creation of new datasets with subdatasets is supported "
 "(through the :co:`APPEND_SUBDATASET=YES` creation option). One important "
@@ -181,15 +185,15 @@ msgid ""
 "`ARRAY_IDENTIFIER`."
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:330
+#: ../../../source/drivers/raster/pds4.rst:333
 msgid "PDS4 raster examples"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:332
+#: ../../../source/drivers/raster/pds4.rst:335
 msgid "Listing bands and subdatasets:"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:336
+#: ../../../source/drivers/raster/pds4.rst:339
 msgid ""
 "$ gdalinfo b0011_p237201_01_01v02.xml\n"
 "\n"
@@ -242,17 +246,17 @@ msgid ""
 "  Offset: 0.146998785514825,   Scale:4.48823844390647e-06"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:380
+#: ../../../source/drivers/raster/pds4.rst:383
 msgid ""
 "The information displayed by default is the one of the first subdataset "
 "(SUBDATASET_1_NAME)"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:383
+#: ../../../source/drivers/raster/pds4.rst:386
 msgid "Getting information on a subdataset:"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:387
+#: ../../../source/drivers/raster/pds4.rst:390
 msgid ""
 "$ gdalinfo PDS4:b0011_p237201_01_01v02.xml:1:2\n"
 "\n"
@@ -271,34 +275,34 @@ msgid ""
 "  Offset: 0.04984971,   Scale:7.454028e-06"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:403
+#: ../../../source/drivers/raster/pds4.rst:406
 msgid "Conversion to GeoTIFF of a given subdatasets:"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:407
+#: ../../../source/drivers/raster/pds4.rst:410
 msgid "$ gdal_translate PDS4:b0011_p237201_01_01v02.xml:1:2 iof_r2.tif"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:409
+#: ../../../source/drivers/raster/pds4.rst:412
 msgid "Conversion to GeoTIFF of a all subdatasets:"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:413
+#: ../../../source/drivers/raster/pds4.rst:416
 msgid ""
 "$ gdal_translate -sds b0011_p237201_01_01v02.xml b0011_p237201_01_01v02.tif"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:415
+#: ../../../source/drivers/raster/pds4.rst:418
 msgid "This will create b0011_p237201_01_01v02_X.tif files where X=1,....,N"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:417
+#: ../../../source/drivers/raster/pds4.rst:420
 msgid ""
 "Creation of a new PDS4 dataset, using the default template and setting its "
 "parameterized variables:"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:422
+#: ../../../source/drivers/raster/pds4.rst:425
 msgid ""
 "$ gdal_translate input.tif output.xml -of PDS4 \\\n"
 "            -co VAR_TARGET_TYPE=Satellite \\\n"
@@ -314,18 +318,18 @@ msgid ""
 "instrument_host:spacecraft.lro\""
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:431
+#: ../../../source/drivers/raster/pds4.rst:434
 msgid ""
 "Creation of the same PDS4 dataset as above, using the default template but "
 "setting its parameterized variables from a text file. Helps with long "
 "command lines:"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:435
+#: ../../../source/drivers/raster/pds4.rst:438
 msgid "Create a text file \"myOptions.txt\" with the below content"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:439
+#: ../../../source/drivers/raster/pds4.rst:442
 msgid ""
 "#This is a comment\n"
 "#Conversion parameters for the LRO LOLA dataset\n"
@@ -340,46 +344,46 @@ msgid ""
 "#end of file"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:452
+#: ../../../source/drivers/raster/pds4.rst:455
 msgid "gdal_translate input.tif output.xml -of PDS4 --optfile myOptions.txt"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:454
+#: ../../../source/drivers/raster/pds4.rst:457
 msgid ""
 "For more on --optfile, consult `the general documentation on GDAL utilities "
 "<gdal_utilities.html>`__."
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:457
+#: ../../../source/drivers/raster/pds4.rst:460
 msgid ""
 "Creation of a PDS4 dataset, using a non default template (here on a HTTP "
 "server, but local filename also possible):"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:462
+#: ../../../source/drivers/raster/pds4.rst:465
 msgid ""
 "$ gdal_translate input.tif output.xml -of PDS4 \\\n"
 "            -co TEMPLATE=http://example.com/mytemplate.xml"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:465
+#: ../../../source/drivers/raster/pds4.rst:468
 msgid ""
 "Creation of a PDS4 dataset from a source PDS4 dataset (using the XML file of "
 "this source PDS4 dataset as an implicit template), with subsetting:"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:471
+#: ../../../source/drivers/raster/pds4.rst:474
 msgid ""
 "$ gdal_translate input.xml output.xml -of PDS4 -projwin ullx ully lrx lry"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:473
+#: ../../../source/drivers/raster/pds4.rst:476
 msgid ""
 "In Python, creation of a PDS4 dataset from a GeoTIFF, using a base template "
 "into which one substitute one element with a new value:"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:478
+#: ../../../source/drivers/raster/pds4.rst:481
 msgid ""
 "from osgeo import gdal\n"
 "from lxml import etree\n"
@@ -404,91 +408,91 @@ msgid ""
 "gdal.Unlink(in_memory_template)"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:499
+#: ../../../source/drivers/raster/pds4.rst:502
 msgid "Appending a new image (subdataset) to an existing PDS4 dataset."
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:503
+#: ../../../source/drivers/raster/pds4.rst:506
 msgid ""
 "$ gdal_translate new_image.tif existing_output.xml -of PDS4 \\\n"
 "                      -co APPEND_SUBDATASET=YES \\\n"
 "                      -co ARRAY_IDENTIFIER=my_new_image"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:508
+#: ../../../source/drivers/raster/pds4.rst:511
 msgid "Adding a PDS4 label to an existing ISIS3 dataset. (GDAL >= 3.1)"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:512
+#: ../../../source/drivers/raster/pds4.rst:515
 msgid ""
 "$ gdal_translate dataset.cub dataset.xml -of PDS4 -co CREATE_LABEL_ONLY=YES"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:515
+#: ../../../source/drivers/raster/pds4.rst:518
 msgid "PDS4 vector examples"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:517
+#: ../../../source/drivers/raster/pds4.rst:520
 msgid "Displaying the content of a PDS4 dataset with a table:"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:521
+#: ../../../source/drivers/raster/pds4.rst:524
 msgid "$ ogrinfo -al my_pds4.xml"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:523
+#: ../../../source/drivers/raster/pds4.rst:526
 msgid ""
 "Converting a PDS4 dataset with a table to shapefile, by specifying columns "
 "that contain longitude and latitude:"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:528
+#: ../../../source/drivers/raster/pds4.rst:531
 msgid ""
 "$ ogr2ogr out.shp my_pds4.xml -oo LAT=my_lat_column -oo LONG=my_long_column"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:530
+#: ../../../source/drivers/raster/pds4.rst:533
 msgid ""
 "Converting a shapefile to a PDS4 dataset with a CSV-delimited table (with an "
 "implicit WKT column to store the geometry):"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:535
+#: ../../../source/drivers/raster/pds4.rst:538
 msgid "$ ogr2ogr my_out_pds4.xml in.shp"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:538
+#: ../../../source/drivers/raster/pds4.rst:541
 msgid "Limitations"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:540
+#: ../../../source/drivers/raster/pds4.rst:543
 msgid ""
 "As a new driver and new format, please report any issues to the bug tracker, "
 "as explained on the `wiki <https://trac.osgeo.org/gdal/wiki>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:544
+#: ../../../source/drivers/raster/pds4.rst:547
 msgid "See Also:"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:546
+#: ../../../source/drivers/raster/pds4.rst:549
 msgid "Implemented as :source_file:`frmts/pds/pds4dataset.cpp`."
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:547
+#: ../../../source/drivers/raster/pds4.rst:550
 msgid "`Official documentation <https://pds.nasa.gov/pds4/doc/index.shtml>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:549
+#: ../../../source/drivers/raster/pds4.rst:552
 msgid ""
 "`Schemas, including the cartography extension <https://pds.nasa.gov/pds4/"
 "schema/released/>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:551
+#: ../../../source/drivers/raster/pds4.rst:554
 msgid ":ref:`raster.pds` driver."
 msgstr ""
 
-#: ../../../source/drivers/raster/pds4.rst:552
+#: ../../../source/drivers/raster/pds4.rst:555
 msgid ":ref:`raster.isis3` driver."
 msgstr ""

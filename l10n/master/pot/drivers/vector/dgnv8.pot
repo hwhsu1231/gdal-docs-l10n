@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -256,24 +257,36 @@ msgstr ""
 msgid "Dataset creation options"
 msgstr ""
 
-#: ../../../source/drivers/vector/dgnv8.rst:201
+#: ../../../source/drivers/vector/dgnv8.rst:119
+msgid ""
+"|about-dataset-creation-options| The following dataset creation options are "
+"supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:204
 msgid "Layer creation options"
 msgstr ""
 
-#: ../../../source/drivers/vector/dgnv8.rst:215
+#: ../../../source/drivers/vector/dgnv8.rst:206
+msgid ""
+"|about-layer-creation-options| The following layer creation options are "
+"supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/dgnv8.rst:221
 msgid "Building"
 msgstr ""
 
-#: ../../../source/drivers/vector/dgnv8.rst:217
+#: ../../../source/drivers/vector/dgnv8.rst:223
 msgid ""
 "See :ref:`ODA platform support <vector.oda>` for building GDAL with ODA "
 "support."
 msgstr ""
 
-#: ../../../source/drivers/vector/dgnv8.rst:226
+#: ../../../source/drivers/vector/dgnv8.rst:232
 msgid ":ref:`DGN (v7) driver <vector.dgn>`"
 msgstr ""
 
-#: ../../../source/drivers/vector/dgnv8.rst:227
+#: ../../../source/drivers/vector/dgnv8.rst:233
 msgid ":ref:`ogr_feature_style`"
 msgstr ""

@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -580,8 +581,8 @@ msgstr ""
 
 #: ../../../source/drivers/vector/selafin.rst:328
 msgid ""
-"Datasource creation options can be specified with the \"``-dsco``\" flag in "
-"ogr2ogr."
+"|about-dataset-creation-options| The following dataset creation options are "
+"supported:"
 msgstr ""
 
 #: ../../../source/drivers/vector/selafin.rst:345
@@ -596,12 +597,12 @@ msgstr ""
 
 #: ../../../source/drivers/vector/selafin.rst:351
 msgid ""
-"Layer creation options can be specified with the \"``-lco``\" flag in "
-"ogr2ogr."
+"|about-layer-creation-options| The following layer creation options are "
+"supported:"
 msgstr ""
 
 #: ../../../source/drivers/vector/selafin.rst:361
-msgid "An example of datasource creation option is: ``-lco DATE=24000``."
+msgid "An example of a layer creation option is: ``-lco DATE=24000``."
 msgstr ""
 
 #: ../../../source/drivers/vector/selafin.rst:364

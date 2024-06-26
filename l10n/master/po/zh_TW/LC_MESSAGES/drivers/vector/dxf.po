@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -535,21 +535,23 @@ msgid "color (c); angle (a); anchor point (p)"
 msgstr ""
 
 #: ../../../source/drivers/vector/dxf.rst:334
-msgid "The dataset creation supports the following dataset creation options:"
+msgid ""
+"|about-dataset-creation-options| The driver supports the following dataset "
+"creation options:"
 msgstr ""
 
-#: ../../../source/drivers/vector/dxf.rst:348
+#: ../../../source/drivers/vector/dxf.rst:349
 msgid ""
 "The header and trailer templates can be complete DXF files. The driver will "
 "scan them and only extract the needed portions (portion before or after the "
 "ENTITIES section)."
 msgstr ""
 
-#: ../../../source/drivers/vector/dxf.rst:353
+#: ../../../source/drivers/vector/dxf.rst:354
 msgid "Block References"
 msgstr ""
 
-#: ../../../source/drivers/vector/dxf.rst:355
+#: ../../../source/drivers/vector/dxf.rst:356
 msgid ""
 "It is possible to export a \"blocks\" layer to DXF in addition to the "
 "\"entities\" layer in order to produce actual DXF BLOCKs definitions in the "
@@ -557,19 +559,19 @@ msgid ""
 "provided for an entity. To make this work the following conditions apply:"
 msgstr ""
 
-#: ../../../source/drivers/vector/dxf.rst:361
+#: ../../../source/drivers/vector/dxf.rst:362
 msgid ""
 "A \"blocks\" layer may be created, and it must be created before the "
 "entities layer."
 msgstr ""
 
-#: ../../../source/drivers/vector/dxf.rst:363
+#: ../../../source/drivers/vector/dxf.rst:364
 msgid ""
 "The entities in the blocks layer should have the Block field populated. "
 "(Note, in GDAL 2.2.x and earlier this attribute was called BlockName.)"
 msgstr ""
 
-#: ../../../source/drivers/vector/dxf.rst:366
+#: ../../../source/drivers/vector/dxf.rst:367
 msgid ""
 "Objects to be written as INSERTs in the entities layer should have a POINT "
 "geometry, and the BlockName field set. You may also set BlockAngle, "
@@ -579,13 +581,13 @@ msgid ""
 "position of the POINT geometry is ignored."
 msgstr ""
 
-#: ../../../source/drivers/vector/dxf.rst:372
+#: ../../../source/drivers/vector/dxf.rst:373
 msgid ""
 "If a block (name) is already defined in the template header, that will be "
 "used regardless of whether a new definition was provided in the blocks layer."
 msgstr ""
 
-#: ../../../source/drivers/vector/dxf.rst:376
+#: ../../../source/drivers/vector/dxf.rst:377
 msgid ""
 "The intention is that a simple translation from DXF to DXF with :config:"
 "`DXF_INLINE_BLOCKS` set to FALSE will approximately reproduce the original "
@@ -593,11 +595,11 @@ msgid ""
 "them."
 msgstr ""
 
-#: ../../../source/drivers/vector/dxf.rst:382
+#: ../../../source/drivers/vector/dxf.rst:383
 msgid "Layer Definitions"
 msgstr ""
 
-#: ../../../source/drivers/vector/dxf.rst:384
+#: ../../../source/drivers/vector/dxf.rst:385
 msgid ""
 "When writing entities, if populated the Layer field is used to set the "
 "written entities layer. If the layer is not already defined in the template "
@@ -605,17 +607,17 @@ msgid ""
 "definition of the default layer (\"0\")."
 msgstr ""
 
-#: ../../../source/drivers/vector/dxf.rst:390
+#: ../../../source/drivers/vector/dxf.rst:391
 msgid "Linetype Definitions"
 msgstr ""
 
-#: ../../../source/drivers/vector/dxf.rst:392
+#: ../../../source/drivers/vector/dxf.rst:393
 msgid ""
 "When writing linestring geometries, the following rules apply with regard to "
 "linetype (dash pattern) definitions."
 msgstr ""
 
-#: ../../../source/drivers/vector/dxf.rst:395
+#: ../../../source/drivers/vector/dxf.rst:396
 msgid ""
 "If the Linetype field is set on a written feature, and that linetype is "
 "already defined in the template header, then it will be referenced from the "
@@ -623,14 +625,14 @@ msgid ""
 "the linetype defined in the header, a linetype scale value is written."
 msgstr ""
 
-#: ../../../source/drivers/vector/dxf.rst:400
+#: ../../../source/drivers/vector/dxf.rst:401
 msgid ""
 "If the Linetype field is set, but the linetype is not defined in the header "
 "template, then a definition will be added if the feature has an OGR style "
 "string with a PEN tool and a \"p\" pattern setting."
 msgstr ""
 
-#: ../../../source/drivers/vector/dxf.rst:403
+#: ../../../source/drivers/vector/dxf.rst:404
 msgid ""
 "If the feature has no Linetype field set, but it does have an OGR style "
 "string with a PEN tool with a \"p\" pattern set, then an automatically named "
@@ -639,25 +641,25 @@ msgid ""
 "scale if required."
 msgstr ""
 
-#: ../../../source/drivers/vector/dxf.rst:409
+#: ../../../source/drivers/vector/dxf.rst:410
 msgid ""
 "The intention is that \"dot dash\" style patterns will be preserved when "
 "written to DXF and that specific linetypes can be predefined in the header "
 "template, and referenced using the Linetype field if desired."
 msgstr ""
 
-#: ../../../source/drivers/vector/dxf.rst:413
+#: ../../../source/drivers/vector/dxf.rst:414
 msgid ""
 "It is assumed that patterns are using \"g\" (georeferenced) units for "
 "defining the line pattern. If not, the scaling of the DXF patterns is likely "
 "to be wrong - potentially very wrong."
 msgstr ""
 
-#: ../../../source/drivers/vector/dxf.rst:418
+#: ../../../source/drivers/vector/dxf.rst:419
 msgid "Units"
 msgstr ""
 
-#: ../../../source/drivers/vector/dxf.rst:420
+#: ../../../source/drivers/vector/dxf.rst:421
 msgid ""
 "GDAL writes DXF files with measurement units set to \"Imperial - Inches\". "
 "If you need to change the units, edit the `$MEASUREMENT <https://knowledge."
@@ -668,23 +670,23 @@ msgid ""
 "A00A-EEF55A2B4FD8-htm.html>`__ variables in the header template."
 msgstr ""
 
-#: ../../../source/drivers/vector/dxf.rst:431
+#: ../../../source/drivers/vector/dxf.rst:432
 msgid "See also"
 msgstr ""
 
-#: ../../../source/drivers/vector/dxf.rst:433
+#: ../../../source/drivers/vector/dxf.rst:434
 msgid ""
 "`List of known issues <https://github.com/OSGeo/gdal/blob/master/ogr/"
 "ogrsf_frmts/dxf/KNOWN_ISSUES.md>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/dxf.rst:436
+#: ../../../source/drivers/vector/dxf.rst:437
 msgid ""
 "`AutoCAD 2000 DXF Reference <http://www.autodesk.com/techpubs/autocad/"
 "acad2000/dxf/>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/dxf.rst:439
+#: ../../../source/drivers/vector/dxf.rst:440
 msgid ""
 "`AutoCAD 2014 DXF Reference <http://images.autodesk.com/adsk/files/"
 "autocad_2014_pdf_dxf_reference_enu.pdf>`__"

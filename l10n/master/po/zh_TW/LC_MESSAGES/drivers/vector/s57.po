@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -195,58 +195,61 @@ msgid ""
 msgstr ""
 
 #: ../../../source/drivers/vector/s57.rst:141
-msgid "They can also be specified independently as open options to the driver."
+msgid ""
+"They can also be specified independently as open options to the driver. |"
+"about-open-options| The following open options are supported:"
 msgstr ""
 
-#: ../../../source/drivers/vector/s57.rst:225
+#: ../../../source/drivers/vector/s57.rst:227
 msgid "Example:"
 msgstr ""
 
-#: ../../../source/drivers/vector/s57.rst:229
-#: ../../../source/drivers/vector/s57.rst:240
+#: ../../../source/drivers/vector/s57.rst:231
+#: ../../../source/drivers/vector/s57.rst:242
 msgid ""
 "set OGR_S57_OPTIONS = \"RETURN_PRIMITIVES=ON,RETURN_LINKAGES=ON,"
 "LNAM_REFS=ON\""
 msgstr ""
 
-#: ../../../source/drivers/vector/s57.rst:232
+#: ../../../source/drivers/vector/s57.rst:234
 msgid "S-57 Export"
 msgstr ""
 
-#: ../../../source/drivers/vector/s57.rst:234
+#: ../../../source/drivers/vector/s57.rst:236
 msgid ""
 "Preliminary S-57 export capability is intended only for specialized use, and "
 "is not properly documented at this time. Setting the following options is a "
 "minimum required to support S-57 to S-57 conversion via OGR."
 msgstr ""
 
-#: ../../../source/drivers/vector/s57.rst:242
+#: ../../../source/drivers/vector/s57.rst:244
 msgid ""
-"The following dataset creation options are supported to supply basic "
-"information for the S-57 data set descriptive records (DSID and DSPM, see "
-"the S-57 standard for a more detailed description):"
-msgstr ""
-
-#: ../../../source/drivers/vector/s57.rst:368
-msgid "See Also"
-msgstr ""
-
-#: ../../../source/drivers/vector/s57.rst:370
-msgid "`S-57 Online Object/Attribute Catalog <http://www.s-57.com/>`__"
+"|about-dataset-creation-options| The following dataset creation options are "
+"supported to supply basic information for the S-57 data set descriptive "
+"records (DSID and DSPM, see the S-57 standard for a more detailed "
+"description):"
 msgstr ""
 
 #: ../../../source/drivers/vector/s57.rst:371
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/vector/s57.rst:373
+msgid "`S-57 Online Object/Attribute Catalog <http://www.s-57.com/>`__"
+msgstr ""
+
+#: ../../../source/drivers/vector/s57.rst:374
 msgid ""
 "`Frank's S-57 Page (at archive.org) <https://web.archive.org/"
 "web/20130730111701/http://home.gdal.org/projects/s57/index.html>`__: Links "
 "to other resources, and sample datasets."
 msgstr ""
 
-#: ../../../source/drivers/vector/s57.rst:374
+#: ../../../source/drivers/vector/s57.rst:377
 msgid "`IHO S-57 Edition 3.1 standard (main)`_"
 msgstr ""
 
-#: ../../../source/drivers/vector/s57.rst:375
+#: ../../../source/drivers/vector/s57.rst:378
 msgid ""
 "`S-57 Appendix B <https://iho.int/uploads/user/pubs/standards/s-57/20ApB1."
 "pdf>`__"

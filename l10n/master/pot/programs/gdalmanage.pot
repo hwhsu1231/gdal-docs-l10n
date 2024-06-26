@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -32,7 +33,7 @@ msgstr ""
 #: ../../../source/programs/gdalmanage.rst:16
 msgid ""
 "Usage: gdalmanage [--help] [--help-general]\n"
-"                  <mode> [-r] [-u] [-f <format>]\n"
+"                  <mode> [-r] [-fr] [-u] [-f <format>]\n"
 "                  <datasetname> [<newdatasetname>]"
 msgstr ""
 
@@ -56,7 +57,7 @@ msgid "**identify** *<datasetname>*:"
 msgstr ""
 
 #: ../../../source/programs/gdalmanage.rst:34
-msgid "List data format of file."
+msgid "List data format of file(s)."
 msgstr ""
 
 #: ../../../source/programs/gdalmanage.rst:35
@@ -80,7 +81,7 @@ msgid "**delete** *<datasetname>*:"
 msgstr ""
 
 #: ../../../source/programs/gdalmanage.rst:40
-msgid "Delete raster file."
+msgid "Delete raster file(s)."
 msgstr ""
 
 #: ../../../source/programs/gdalmanage.rst:44
@@ -88,51 +89,59 @@ msgid "Recursively scan files/folders for raster files."
 msgstr ""
 
 #: ../../../source/programs/gdalmanage.rst:48
-msgid "Report failures if file type is unidentified."
+msgid ""
+"Recursively scan folders for raster files, forcing recursion in folders "
+"recognized as valid formats."
 msgstr ""
 
 #: ../../../source/programs/gdalmanage.rst:52
+msgid "Report failures if file type is unidentified."
+msgstr ""
+
+#: ../../../source/programs/gdalmanage.rst:56
 msgid ""
 "Specify format of raster file if unknown by the application. Uses short data "
 "format name (e.g. *GTiff*)."
 msgstr ""
 
-#: ../../../source/programs/gdalmanage.rst:57
-msgid "Raster file to operate on."
+#: ../../../source/programs/gdalmanage.rst:61
+msgid ""
+"Raster file to operate on. With **identify** may be repeated for multiple "
+"files."
 msgstr ""
 
-#: ../../../source/programs/gdalmanage.rst:61
+#: ../../../source/programs/gdalmanage.rst:65
 msgid ""
 "For copy and rename modes, you provide a *source* filename and a *target* "
 "filename, just like copy and move commands in an operating system."
 msgstr ""
 
-#: ../../../source/programs/gdalmanage.rst:66
+#: ../../../source/programs/gdalmanage.rst:70
 msgid "Examples"
 msgstr ""
 
-#: ../../../source/programs/gdalmanage.rst:69
+#: ../../../source/programs/gdalmanage.rst:73
 msgid "Using identify mode"
 msgstr ""
 
-#: ../../../source/programs/gdalmanage.rst:71
+#: ../../../source/programs/gdalmanage.rst:75
 msgid ""
 "Report the data format of the raster file by using the *identify* mode and "
 "specifying a data file name:"
 msgstr ""
 
-#: ../../../source/programs/gdalmanage.rst:74
+#: ../../../source/programs/gdalmanage.rst:78
 msgid ""
 "$ gdalmanage identify NE1_50M_SR_W.tif\n"
 "\n"
 "NE1_50M_SR_W.tif: GTiff"
 msgstr ""
 
-#: ../../../source/programs/gdalmanage.rst:80
+#: ../../../source/programs/gdalmanage.rst:84
 msgid "Recursive mode will scan subfolders and report the data format:"
 msgstr ""
 
-#: ../../../source/programs/gdalmanage.rst:82
+#: ../../../source/programs/gdalmanage.rst:86
 msgid ""
 "$ gdalmanage identify -r 50m_raster/\n"
 "\n"
@@ -147,38 +156,38 @@ msgid ""
 "NE1_50M_SR_W/ne1_50m_sub2.tif: GTiff"
 msgstr ""
 
-#: ../../../source/programs/gdalmanage.rst:97
+#: ../../../source/programs/gdalmanage.rst:101
 msgid "Using copy mode"
 msgstr ""
 
-#: ../../../source/programs/gdalmanage.rst:99
+#: ../../../source/programs/gdalmanage.rst:103
 msgid "Copy the raster data:"
 msgstr ""
 
-#: ../../../source/programs/gdalmanage.rst:101
+#: ../../../source/programs/gdalmanage.rst:105
 msgid "$ gdalmanage copy NE1_50M_SR_W.tif ne1_copy.tif"
 msgstr ""
 
-#: ../../../source/programs/gdalmanage.rst:106
+#: ../../../source/programs/gdalmanage.rst:110
 msgid "Using rename mode"
 msgstr ""
 
-#: ../../../source/programs/gdalmanage.rst:108
+#: ../../../source/programs/gdalmanage.rst:112
 msgid "Rename raster data:"
 msgstr ""
 
-#: ../../../source/programs/gdalmanage.rst:110
+#: ../../../source/programs/gdalmanage.rst:114
 msgid "$ gdalmanage rename NE1_50M_SR_W.tif ne1_rename.tif"
 msgstr ""
 
-#: ../../../source/programs/gdalmanage.rst:115
+#: ../../../source/programs/gdalmanage.rst:119
 msgid "Using delete mode"
 msgstr ""
 
-#: ../../../source/programs/gdalmanage.rst:117
+#: ../../../source/programs/gdalmanage.rst:121
 msgid "Delete the raster data:"
 msgstr ""
 
-#: ../../../source/programs/gdalmanage.rst:119
+#: ../../../source/programs/gdalmanage.rst:123
 msgid "gdalmanage delete NE1_50M_SR_W.tif"
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,7 +68,7 @@ msgid "Driver capabilities"
 msgstr ""
 
 #: ../../../source/drivers/vector/vdv.rst:41
-msgid "Creations issues"
+msgid "Creation issues"
 msgstr ""
 
 #: ../../../source/drivers/vector/vdv.rst:43
@@ -81,30 +81,34 @@ msgid ""
 msgstr ""
 
 #: ../../../source/drivers/vector/vdv.rst:49
-msgid "The following dataset creation options are available:"
+msgid ""
+"|about-dataset-creation-options| The following dataset creation options are "
+"available:"
 msgstr ""
 
-#: ../../../source/drivers/vector/vdv.rst:58
-msgid "The following layer creation options are available:"
-msgstr ""
-
-#: ../../../source/drivers/vector/vdv.rst:150
-msgid "Links"
+#: ../../../source/drivers/vector/vdv.rst:59
+msgid ""
+"|about-layer-creation-options| The following layer creation options are "
+"available:"
 msgstr ""
 
 #: ../../../source/drivers/vector/vdv.rst:152
+msgid "Links"
+msgstr ""
+
+#: ../../../source/drivers/vector/vdv.rst:154
 msgid ""
 "`VDV-451 file format <https://www.vdv.de/vdv-schrift-451.pdfx?"
 "forced=false>`__ (German)"
 msgstr ""
 
-#: ../../../source/drivers/vector/vdv.rst:155
+#: ../../../source/drivers/vector/vdv.rst:157
 msgid ""
 "`VDV-452 data model <https://www.vdv.de/service/downloads_onp.aspx?"
 "id=4328&forced=false>`__ (German)"
 msgstr ""
 
-#: ../../../source/drivers/vector/vdv.rst:157
+#: ../../../source/drivers/vector/vdv.rst:159
 msgid ""
 "`Austrian INTREST data format <https://gip.gv.at/assets/"
 "downloads/1908_dokumentation_gipat_ogd.pdf>`__ (German)"

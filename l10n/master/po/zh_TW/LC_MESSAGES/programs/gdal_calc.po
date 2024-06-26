@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../../source/programs/gdal_calc.rst:5
-msgid "gdal_calc.py"
+#: ../../../source/programs/gdal_calc.rst:11
+msgid "gdal_calc"
 msgstr ""
 
 #: ../../../source/programs/gdal_calc.rst:9
@@ -31,7 +32,7 @@ msgstr ""
 
 #: ../../../source/programs/gdal_calc.rst:16
 msgid ""
-"gdal_calc.py [--help] [--help-general]\n"
+"gdal_calc [--help] [--help-general]\n"
 "             --calc=expression --outfile=<out_filename> [-A <filename>]\n"
 "             [--A_band=<n>] [-B...-Z <filename>] [<other_options>]"
 msgstr ""
@@ -49,6 +50,12 @@ msgid ""
 "performed (unless projectionCheck option is used)."
 msgstr ""
 
+#: ../../../source/programs/gdal_calc.rst:33
+msgid ""
+"gdal_calc is a Python utility, and is only available if GDAL Python bindings "
+"are available."
+msgstr ""
+
 #: ../../../source/programs/options/help.rst:3
 msgid "Show this help message and exit"
 msgstr ""
@@ -59,20 +66,20 @@ msgid ""
 "exit."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:35
+#: ../../../source/programs/gdal_calc.rst:39
 msgid ""
 "Calculation in numpy syntax using ``+``, ``-``, ``/``, ``*``, or any numpy "
 "array functions (i.e. ``log10()``). Multiple ``--calc`` options can be "
 "listed to produce a multiband file (GDAL >= 3.2)."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:40
+#: ../../../source/programs/gdal_calc.rst:44
 msgid ""
 "Input gdal raster file, you can use any letter (a-z, A-Z).  (lower case "
 "supported since GDAL 3.3)"
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:42
+#: ../../../source/programs/gdal_calc.rst:46
 msgid ""
 "A letter may be repeated, or several values (separated by space) can be "
 "provided (GDAL >= 3.3). Since GDAL 3.5, wildcard exceptions (using ?, \\*) "
@@ -82,27 +89,27 @@ msgid ""
 "calculation does not return a 2D array an error would be generated."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:50
+#: ../../../source/programs/gdal_calc.rst:54
 msgid "Number of raster band for file A (default 1)."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:54
+#: ../../../source/programs/gdal_calc.rst:58
 msgid "Output file to generate or fill."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:58
+#: ../../../source/programs/gdal_calc.rst:62
 msgid ""
 "Output NoDataValue (default datatype specific value). To indicate not "
 "setting a NoDataValue use --NoDataValue=none (GDAL >= 3.3)"
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:62
+#: ../../../source/programs/gdal_calc.rst:66
 msgid ""
 "Using the Python API: ``None`` value will indicate default datatype specific "
 "value. ``'none'`` value will indicate not setting a NoDataValue."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:70
+#: ../../../source/programs/gdal_calc.rst:74
 msgid ""
 "Ignores the input bands NoDataValue. By default, the input bands NoDataValue "
 "are not participating in the calculation. By setting this setting - no "
@@ -112,14 +119,14 @@ msgid ""
 "setting --NoDataValue=<value>."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:77
+#: ../../../source/programs/gdal_calc.rst:81
 msgid ""
 "Output datatype, must be one of [``Byte``, ``Int8``, ``UInt16``, ``Int16``, "
 "``UInt32``, ``Int32``, ``UInt64``, ``Int64``, ``Float64``, ``Float32``, "
 "``CInt16``, ``CInt32``, ``CFloat64``, ``CFloat32``]."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:81
+#: ../../../source/programs/gdal_calc.rst:85
 msgid ""
 "Despite the datatype set using ``--type``, when doing intermediate "
 "aritmethic operations using operands of the same type, the operation result "
@@ -127,17 +134,17 @@ msgid ""
 "the final result."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:86
+#: ../../../source/programs/gdal_calc.rst:90
 msgid ""
 "UInt64, Int64, CInt16, CInt32, CFloat32, CFloat64 have been added in GDAL "
 "3.5.3 Int8 has been added in GDAL 3.7"
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:91
+#: ../../../source/programs/gdal_calc.rst:95
 msgid "GDAL format for output file."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:95
+#: ../../../source/programs/gdal_calc.rst:99
 msgid ""
 "Allows specifying a filename of a color table (or a ColorTable object) (with "
 "Palette Index interpretation) to be used for the output raster. Supported "
@@ -145,74 +152,74 @@ msgid ""
 "qml (i.e. exported from QGIS)"
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:102
+#: ../../../source/programs/gdal_calc.rst:106
 msgid ""
 "This option determines how to handle rasters with different extents. This "
 "option is mutually exclusive with the `projwin` option, which is used for "
 "providing a custom extent."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:105
+#: ../../../source/programs/gdal_calc.rst:109
 msgid ""
 "For all the options below the pixel size (resolution) and SRS (Spatial "
 "Reference System) of all the input rasters must be the same."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:107
+#: ../../../source/programs/gdal_calc.rst:111
 msgid ""
 "``ignore`` (default) - only the dimensions of the rasters are compared. if "
 "the dimensions do not agree the operation will fail."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:109
+#: ../../../source/programs/gdal_calc.rst:113
 msgid ""
 "``fail`` - the dimensions and the extent (bounds) of the rasters must agree, "
 "otherwise the operation will fail."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:111
+#: ../../../source/programs/gdal_calc.rst:115
 msgid ""
 "``union`` - the extent (bounds) of the output will be the minimal rectangle "
 "that contains all the input extents."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:113
+#: ../../../source/programs/gdal_calc.rst:117
 msgid ""
 "``intersect`` - the extent (bounds) of the output will be the maximal "
 "rectangle that is contained in all the input extents."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:119
+#: ../../../source/programs/gdal_calc.rst:123
 msgid ""
 "This option provides a custom extent for the output, it is mutually "
 "exclusive with the `extent` option."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:125
+#: ../../../source/programs/gdal_calc.rst:129
 msgid ""
 "By default, no projection checking will be performed. By setting this "
 "option, if the projection is not the same for all bands then the operation "
 "will fail."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:132
+#: ../../../source/programs/gdal_calc.rst:136
 msgid ""
 "Passes a creation option to the output format driver.  Multiple options may "
 "be listed. See format specific documentation for legal creation options for "
 "each format."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:138
+#: ../../../source/programs/gdal_calc.rst:142
 msgid "The same as creation-option_."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:142
+#: ../../../source/programs/gdal_calc.rst:146
 msgid ""
 "Process all bands of given raster (a-z, A-Z). Requires a single calc for all "
 "bands."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:146
+#: ../../../source/programs/gdal_calc.rst:150
 msgid ""
 "Overwrite output file if it already exists. Overwriting must be understood "
 "here as deleting and recreating the file from scratch. Note that if this "
@@ -220,156 +227,152 @@ msgid ""
 "updated in place."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:153
+#: ../../../source/programs/gdal_calc.rst:157
 msgid "Print debugging information."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:157
+#: ../../../source/programs/gdal_calc.rst:161
 msgid "Suppress progress messages."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:161
+#: ../../../source/programs/gdal_calc.rst:165
 msgid "Python options"
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:165
+#: ../../../source/programs/gdal_calc.rst:169
 msgid ""
 "The following options are available by using function the python interface "
 "of gdal_calc. They are not available using the command prompt."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:170
+#: ../../../source/programs/gdal_calc.rst:174
 msgid ""
 "A dictionary of custom functions or other names to be available for use in "
 "the Calc expression."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:174
+#: ../../../source/programs/gdal_calc.rst:178
 msgid ""
 "If enabled, the output dataset would be returned from the function and not "
 "closed."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:178
+#: ../../../source/programs/gdal_calc.rst:182
 msgid ""
 "Allows specifying a ColorTable object (with Palette Index interpretation) to "
 "be used for the output raster."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:181
+#: ../../../source/programs/gdal_calc.rst:185
 msgid "Examples"
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:183
+#: ../../../source/programs/gdal_calc.rst:187
 msgid "Add two files together:"
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:185
+#: ../../../source/programs/gdal_calc.rst:189
 msgid ""
-"gdal_calc.py -A input1.tif -B input2.tif --outfile=result.tif --calc=\"A+B\""
+"gdal_calc -A input1.tif -B input2.tif --outfile=result.tif --calc=\"A+B\""
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:189
+#: ../../../source/programs/gdal_calc.rst:193
 msgid "Average of two layers:"
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:191
+#: ../../../source/programs/gdal_calc.rst:195
 msgid ""
-"gdal_calc.py -A input1.tif -B input2.tif --outfile=result.tif --"
-"calc=\"(A+B)/2\""
+"gdal_calc -A input1.tif -B input2.tif --outfile=result.tif --calc=\"(A+B)/2\""
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:197
+#: ../../../source/programs/gdal_calc.rst:201
 msgid ""
 "In the previous example, beware that if A and B inputs are of the same "
 "datatype, for example integers, you may need to force the conversion of one "
 "of the operands before the division operation."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:200
+#: ../../../source/programs/gdal_calc.rst:204
 msgid ""
-"gdal_calc.py -A input.tif -B input2.tif --outfile=result.tif --calc=\"(A."
+"gdal_calc -A input.tif -B input2.tif --outfile=result.tif --calc=\"(A."
 "astype(numpy.float64) + B) / 2\""
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:204
+#: ../../../source/programs/gdal_calc.rst:208
 msgid "Add three files together (two options with the same result):"
-msgstr ""
-
-#: ../../../source/programs/gdal_calc.rst:206
-msgid ""
-"gdal_calc.py -A input1.tif -B input2.tif -C input3.tif --outfile=result.tif "
-"--calc=\"A+B+C\""
 msgstr ""
 
 #: ../../../source/programs/gdal_calc.rst:210
 msgid ""
-"gdal_calc.py -A input1.tif -A input2.tif -A input3.tif --outfile=result.tif "
-"--calc=\"numpy.sum(A,axis=0)\"."
+"gdal_calc -A input1.tif -B input2.tif -C input3.tif --outfile=result.tif --"
+"calc=\"A+B+C\""
 msgstr ""
 
 #: ../../../source/programs/gdal_calc.rst:214
-msgid "Average of three layers (two options with the same result):"
+msgid ""
+"gdal_calc -A input1.tif -A input2.tif -A input3.tif --outfile=result.tif --"
+"calc=\"numpy.sum(A,axis=0)\"."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:216
-msgid ""
-"gdal_calc.py -A input1.tif -B input2.tif -C input3.tif --outfile=result.tif "
-"--calc=\"(A+B+C)/3\""
+#: ../../../source/programs/gdal_calc.rst:218
+msgid "Average of three layers (two options with the same result):"
 msgstr ""
 
 #: ../../../source/programs/gdal_calc.rst:220
 msgid ""
-"gdal_calc.py -A input1.tif input2.tif input3.tif --outfile=result.tif --"
-"calc=\"numpy.average(a,axis=0)\"."
+"gdal_calc -A input1.tif -B input2.tif -C input3.tif --outfile=result.tif --"
+"calc=\"(A+B+C)/3\""
 msgstr ""
 
 #: ../../../source/programs/gdal_calc.rst:224
-msgid "Maximum of three layers  (two options with the same result):"
+msgid ""
+"gdal_calc -A input1.tif input2.tif input3.tif --outfile=result.tif --"
+"calc=\"numpy.average(a,axis=0)\"."
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:226
-msgid ""
-"gdal_calc.py -A input1.tif -B input2.tif -C input3.tif --outfile=result.tif "
-"--calc=\"numpy.max((A,B,C),axis=0)\""
+#: ../../../source/programs/gdal_calc.rst:228
+msgid "Maximum of three layers  (two options with the same result):"
 msgstr ""
 
 #: ../../../source/programs/gdal_calc.rst:230
 msgid ""
-"gdal_calc.py -A input1.tif input2.tif input3.tif --outfile=result.tif --"
-"calc=\"numpy.max(A,axis=0)\""
+"gdal_calc -A input1.tif -B input2.tif -C input3.tif --outfile=result.tif --"
+"calc=\"numpy.max((A,B,C),axis=0)\""
 msgstr ""
 
 #: ../../../source/programs/gdal_calc.rst:234
+msgid ""
+"gdal_calc -A input1.tif input2.tif input3.tif --outfile=result.tif --"
+"calc=\"numpy.max(A,axis=0)\""
+msgstr ""
+
+#: ../../../source/programs/gdal_calc.rst:238
 msgid "Set values of zero and below to null:"
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:236
+#: ../../../source/programs/gdal_calc.rst:240
 msgid ""
-"gdal_calc.py -A input.tif --outfile=result.tif --calc=\"A*(A>0)\" --"
+"gdal_calc -A input.tif --outfile=result.tif --calc=\"A*(A>0)\" --"
 "NoDataValue=0"
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:240
+#: ../../../source/programs/gdal_calc.rst:244
 msgid "Using logical operator to keep a range of values from input:"
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:242
+#: ../../../source/programs/gdal_calc.rst:246
 msgid ""
-"gdal_calc.py -A input.tif --outfile=result.tif --calc=\"A*logical_and(A>100,"
+"gdal_calc -A input.tif --outfile=result.tif --calc=\"A*logical_and(A>100,"
 "A<150)\""
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:246
+#: ../../../source/programs/gdal_calc.rst:250
 msgid "Work with multiple bands:"
 msgstr ""
 
-#: ../../../source/programs/gdal_calc.rst:248
+#: ../../../source/programs/gdal_calc.rst:252
 msgid ""
-"gdal_calc.py -A input.tif --A_band=1 -B input.tif --B_band=2 --"
-"outfile=result.tif --calc=\"(A+B)/2\" --calc=\"B*logical_and(A>100,A<150)\""
-msgstr ""
-
-#: ../../../source/programs/gdal_calc.rst:11
-msgid "gdal_calc"
+"gdal_calc -A input.tif --A_band=1 -B input.tif --B_band=2 \\\n"
+"  --outfile=result.tif --calc=\"(A+B)/2\" --calc=\"B*logical_and(A>100,"
+"A<150)\""
 msgstr ""

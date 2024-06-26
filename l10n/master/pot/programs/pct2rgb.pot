@@ -8,16 +8,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../../source/programs/pct2rgb.rst:5
-msgid "pct2rgb.py"
+#: ../../../source/programs/pct2rgb.rst:11
+msgid "pct2rgb"
 msgstr ""
 
 #: ../../../source/programs/pct2rgb.rst:9
@@ -30,7 +32,7 @@ msgstr ""
 
 #: ../../../source/programs/pct2rgb.rst:16
 msgid ""
-"pct2rgb.py [--help] [--help-general]\n"
+"pct2rgb [--help] [--help-general]\n"
 "           [-of format] [-b band] [-rgba] [-pct palette_file] <source_file> "
 "<dest_file>"
 msgstr ""
@@ -45,6 +47,12 @@ msgid ""
 "output RGB file of the desired format."
 msgstr ""
 
+#: ../../../source/programs/pct2rgb.rst:29
+msgid ""
+"pct2rgb is a Python utility, and is only available if GDAL Python bindings "
+"are available."
+msgstr ""
+
 #: ../../../source/programs/options/help.rst:3
 msgid "Show this help message and exit"
 msgstr ""
@@ -55,22 +63,22 @@ msgid ""
 "exit."
 msgstr ""
 
-#: ../../../source/programs/pct2rgb.rst:33
+#: ../../../source/programs/pct2rgb.rst:37
 msgid ""
 "Select the output format. Starting with GDAL 2.3, if not specified, the "
 "format is guessed from the extension (previously was GTiff). Use the short "
 "format name."
 msgstr ""
 
-#: ../../../source/programs/pct2rgb.rst:39
+#: ../../../source/programs/pct2rgb.rst:43
 msgid "Band to convert to RGB, defaults to 1."
 msgstr ""
 
-#: ../../../source/programs/pct2rgb.rst:43
+#: ../../../source/programs/pct2rgb.rst:47
 msgid "Generate a RGBA file (instead of a RGB file by default)."
 msgstr ""
 
-#: ../../../source/programs/pct2rgb.rst:47
+#: ../../../source/programs/pct2rgb.rst:51
 msgid ""
 "Extract the color table from <palette_file> instead of getting it from "
 "<source_file>. Can be used to have a consistent color table for multiple "
@@ -78,26 +86,16 @@ msgid ""
 "format with a palette or a color file in a supported format (txt, qml, qlr)."
 msgstr ""
 
-#: ../../../source/programs/pct2rgb.rst:54
+#: ../../../source/programs/pct2rgb.rst:58
 msgid "The input file."
 msgstr ""
 
-#: ../../../source/programs/pct2rgb.rst:58
+#: ../../../source/programs/pct2rgb.rst:62
 msgid "The output RGB file that will be created."
 msgstr ""
 
-#: ../../../source/programs/pct2rgb.rst:60
-msgid ""
-"NOTE: pct2rgb.py is a Python script, and will only work if GDAL was built "
-"with Python support."
-msgstr ""
-
-#: ../../../source/programs/pct2rgb.rst:63
+#: ../../../source/programs/pct2rgb.rst:64
 msgid ""
 "The '-expand rgb|rgba' option of :ref:`gdal_translate` obsoletes that "
 "utility."
-msgstr ""
-
-#: ../../../source/programs/pct2rgb.rst:11
-msgid "pct2rgb"
 msgstr ""

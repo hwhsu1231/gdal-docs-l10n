@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,10 +56,14 @@ msgstr ""
 msgid "Creation options"
 msgstr ""
 
-#: ../../../source/drivers/raster/gta.rst:36
+#: ../../../source/drivers/raster/gta.rst:28
+msgid "|about-creation-options| The following creation options are supported:"
+msgstr ""
+
+#: ../../../source/drivers/raster/gta.rst:39
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/raster/gta.rst:38
+#: ../../../source/drivers/raster/gta.rst:41
 msgid "`GTA home page <http://gta.nongnu.org>`__"
 msgstr ""

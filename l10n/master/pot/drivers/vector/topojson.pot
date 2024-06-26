@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -71,18 +72,22 @@ msgstr ""
 #: ../../../source/drivers/vector/topojson.rst:35
 msgid ""
 "Starting with GDAL 2.3, the URL/filename/text might be prefixed with "
-"TopoJSON: to avoid any ambiguity with other drivers."
+"TopoJSON: to avoid any ambiguity with other drivers. Alternatively, starting "
+"with GDAL 3.10, specifying the ``-if TopoJSON`` option to command line "
+"utilities accepting it, or ``TopoJSON`` as the only value of the "
+"``papszAllowedDrivers`` of :cpp:func:`GDALOpenEx`, also forces the driver to "
+"recognize the passed URL/filename/text."
 msgstr ""
 
-#: ../../../source/drivers/vector/topojson.rst:39
+#: ../../../source/drivers/vector/topojson.rst:43
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/vector/topojson.rst:41
+#: ../../../source/drivers/vector/topojson.rst:45
 msgid ":ref:`GeoJSON driver <vector.geojson>`"
 msgstr ""
 
-#: ../../../source/drivers/vector/topojson.rst:42
+#: ../../../source/drivers/vector/topojson.rst:46
 msgid ""
 "`TopoJSON Format Specification <https://github.com/topojson/topojson-"
 "specification/blob/master/README.md>`__"

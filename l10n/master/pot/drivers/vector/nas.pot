@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -66,17 +67,21 @@ msgid ""
 "defining the NAS_GFS_TEMPLATE configuration option is required for the NAS "
 "driver to open a file. It may be set to the empty string to mean that the "
 "driver should try to establish the schema of the file from its content, but "
-"using one of templates mentioned below is recommended."
+"using one of templates mentioned below is recommended. Alternatively, "
+"starting with GDAL 3.10, specifying the ``-if NAS`` option to command line "
+"utilities accepting it, or ``NAS`` as the only value of the "
+"``papszAllowedDrivers`` of :cpp:func:`GDALOpenEx`, also forces the driver to "
+"recognize the passed filename."
 msgstr ""
 
-#: ../../../source/drivers/vector/nas.rst:31
+#: ../../../source/drivers/vector/nas.rst:34
 msgid ""
 "The GFS templates and PostgreSQL schemas are part of `norGIS ALKIS-Import "
 "<http://www.norbit.de/68/>`__ (also featuring a shell script and PyQt "
 "frontend which ease the import).  There are currently two versions:"
 msgstr ""
 
-#: ../../../source/drivers/vector/nas.rst:35
+#: ../../../source/drivers/vector/nas.rst:38
 msgid ""
 "GeoInfoDok 6: `GFS template <https://github.com/norBIT/alkisimport/blob/"
 "master/alkis-schema.gfs>`__ (for GDAL >=3.8 and `<3.8 <https://github.com/"
@@ -85,21 +90,21 @@ msgid ""
 "sql>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/nas.rst:36
+#: ../../../source/drivers/vector/nas.rst:39
 msgid ""
 "GeoInfoDok 7.1.2: `GFS template <https://github.com/norBIT/alkisimport/blob/"
 "gid7/alkis-schema.gfs>`__ and `PostgreSQL schema <https://github.com/norBIT/"
 "alkisimport/blob/gid7/alkis-schema.sql>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/nas.rst:38
+#: ../../../source/drivers/vector/nas.rst:41
 msgid ""
 "The files were generated using `xmi2db <https://github.com/norBIT/xmi2db/"
 ">`__ (fork of `xmi2db <https://github.com/pkorduan/xmi2db>`__) from the "
 "official application schema."
 msgstr ""
 
-#: ../../../source/drivers/vector/nas.rst:42
+#: ../../../source/drivers/vector/nas.rst:45
 msgid ""
 "In GDAL 3.8 the creation of the relation layer *alkis_beziehungen* was "
 "removed. Prior the configuration option **NAS_NO_RELATION_LAYER** allowed to "
@@ -108,13 +113,20 @@ msgid ""
 "elements/tables. Enabling the option also made progress reporting available."
 msgstr ""
 
-#: ../../../source/drivers/vector/nas.rst:48
+#: ../../../source/drivers/vector/nas.rst:51
+msgid ""
+"Duplicate data in datasets will usually causes errors.  When importing "
+"separate datasets into PostgreSQL it is useful to enable "
+"\"OGR_PG_SKIP_CONFLICTS\" to skip conflicting features."
+msgstr ""
+
+#: ../../../source/drivers/vector/nas.rst:55
 msgid ""
 "This driver was implemented within the context of the `PostNAS project "
 "<http://trac.wheregroup.com/PostNAS>`__, which has more information on its "
 "use and other related projects."
 msgstr ""
 
-#: ../../../source/drivers/vector/nas.rst:53
+#: ../../../source/drivers/vector/nas.rst:60
 msgid "Driver capabilities"
 msgstr ""

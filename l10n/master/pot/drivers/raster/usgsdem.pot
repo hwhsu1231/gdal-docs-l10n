@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -92,10 +93,10 @@ msgid ""
 msgstr ""
 
 #: ../../../source/drivers/raster/usgsdem.rst:59
-msgid "Creation Options:"
+msgid "|about-creation-options| The following creation options are supported:"
 msgstr ""
 
-#: ../../../source/drivers/raster/usgsdem.rst:145
+#: ../../../source/drivers/raster/usgsdem.rst:146
 msgid ""
 "Example: The following would generate a single CDED50K tile, extracting from "
 "the larger DEM coverage yk_3arcsec for a tile with the top left corner "
@@ -103,18 +104,18 @@ msgid ""
 "including the Producer of Data, Process Code and Origin Code fields."
 msgstr ""
 
-#: ../../../source/drivers/raster/usgsdem.rst:153
+#: ../../../source/drivers/raster/usgsdem.rst:154
 msgid ""
 "gdal_translate -of USGSDEM -co PRODUCT=CDED50K -co TEMPLATE=yk_template.dem "
 "\\\n"
 "               -co TOPLEFT=-117w,60n yk_3arcsec 031a01_e.dem"
 msgstr ""
 
-#: ../../../source/drivers/raster/usgsdem.rst:158
+#: ../../../source/drivers/raster/usgsdem.rst:159
 msgid "NOTE: Implemented as :source_file:`frmts/usgsdem/usgsdemdataset.cpp`."
 msgstr ""
 
-#: ../../../source/drivers/raster/usgsdem.rst:160
+#: ../../../source/drivers/raster/usgsdem.rst:161
 msgid ""
 "The USGS DEM reading code in GDAL was derived from the importer in the `VTP "
 "<http://www.vterrain.org/>`__ software. The export capability was developed "

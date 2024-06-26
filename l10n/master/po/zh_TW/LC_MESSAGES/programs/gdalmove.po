@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../../source/programs/gdalmove.rst:5
-msgid "gdalmove.py"
+#: ../../../source/programs/gdalmove.rst:11
+msgid "gdalmove"
 msgstr ""
 
 #: ../../../source/programs/gdalmove.rst:9
@@ -31,7 +32,7 @@ msgstr ""
 
 #: ../../../source/programs/gdalmove.rst:16
 msgid ""
-"gdalmove.py [--help] [--help-general]\n"
+"gdalmove [--help] [--help-general]\n"
 "            [-s_srs <srs_defn>] -t_srs <srs_defn>\n"
 "            [-et <max_pixel_err>] <target_file>"
 msgstr ""
@@ -42,13 +43,13 @@ msgstr ""
 
 #: ../../../source/programs/gdalmove.rst:25
 msgid ""
-"The :program:`gdalmove.py` script transforms the bounds of a raster file "
-"from one coordinate system to another, and then updates the coordinate "
-"system and geotransform of the file. This is done without altering pixel "
-"values at all. It is loosely similar to using gdalwarp to transform an image "
-"but avoiding the resampling step in order to avoid image damage. It is "
-"generally only suitable for transformations that are effectively linear in "
-"the area of the file."
+"The :program:`gdalmove` script transforms the bounds of a raster file from "
+"one coordinate system to another, and then updates the coordinate system and "
+"geotransform of the file. This is done without altering pixel values at all. "
+"It is loosely similar to using gdalwarp to transform an image but avoiding "
+"the resampling step in order to avoid image damage. It is generally only "
+"suitable for transformations that are effectively linear in the area of the "
+"file."
 msgstr ""
 
 #: ../../../source/programs/gdalmove.rst:32
@@ -67,6 +68,12 @@ msgid ""
 "least all four corner points."
 msgstr ""
 
+#: ../../../source/programs/gdalmove.rst:43
+msgid ""
+"gdalmove is a Python utility, and is only available if GDAL Python bindings "
+"are available."
+msgstr ""
+
 #: ../../../source/programs/options/help.rst:3
 msgid "Show this help message and exit"
 msgstr ""
@@ -77,36 +84,32 @@ msgid ""
 "exit."
 msgstr ""
 
-#: ../../../source/programs/gdalmove.rst:45
+#: ../../../source/programs/gdalmove.rst:49
 msgid ""
 "Override the coordinate system of the file with the indicated coordinate "
 "system definition. Optional. If not provided the source coordinate system is "
 "read from the source file."
 msgstr ""
 
-#: ../../../source/programs/gdalmove.rst:51
+#: ../../../source/programs/gdalmove.rst:55
 msgid ""
 "Defines the target coordinate system. This coordinate system will be written "
 "to the file after an update."
 msgstr ""
 
-#: ../../../source/programs/gdalmove.rst:56
+#: ../../../source/programs/gdalmove.rst:60
 msgid ""
 "The error threshold (in pixels) beyond which the file will not be updated. "
 "If not provided no update will be applied to the file, but errors will be "
 "reported."
 msgstr ""
 
-#: ../../../source/programs/gdalmove.rst:60
+#: ../../../source/programs/gdalmove.rst:64
 msgid "<target_file>"
 msgstr ""
 
-#: ../../../source/programs/gdalmove.rst:62
+#: ../../../source/programs/gdalmove.rst:66
 msgid ""
 "The file to be operated on. To update this must be a file format that "
 "supports in place updates of the geotransform and SRS."
-msgstr ""
-
-#: ../../../source/programs/gdalmove.rst:11
-msgid "gdalmove"
 msgstr ""

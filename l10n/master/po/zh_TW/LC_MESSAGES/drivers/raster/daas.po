@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -132,38 +132,39 @@ msgid "Configuration options"
 msgstr ""
 
 #: ../../../source/drivers/raster/daas.rst:73
-msgid "The following configuration options are available :"
+msgid ""
+"|about-config-options| The following configuration options are available :"
 msgstr ""
 
-#: ../../../source/drivers/raster/daas.rst:92
+#: ../../../source/drivers/raster/daas.rst:93
 msgid "Open options"
 msgstr ""
 
-#: ../../../source/drivers/raster/daas.rst:94
-msgid "The following open options are available :"
+#: ../../../source/drivers/raster/daas.rst:95
+msgid "|about-open-options| The following open options are available :"
 msgstr ""
 
-#: ../../../source/drivers/raster/daas.rst:137
+#: ../../../source/drivers/raster/daas.rst:139
 msgid ""
 "**AUTO**: for 1, 3 or 4-band images of type Byte, resolves to PNG. Otherwise "
 "to RAW"
 msgstr ""
 
-#: ../../../source/drivers/raster/daas.rst:139
+#: ../../../source/drivers/raster/daas.rst:141
 msgid ""
 "**RAW**: compatible of all images. Pixels are requested in a uncompressed "
 "raw format."
 msgstr ""
 
-#: ../../../source/drivers/raster/daas.rst:141
+#: ../../../source/drivers/raster/daas.rst:143
 msgid "**PNG**: compatible of 1, 3 or 4-band images of type Byte"
 msgstr ""
 
-#: ../../../source/drivers/raster/daas.rst:142
+#: ../../../source/drivers/raster/daas.rst:144
 msgid "**JPEG**: compatible of 1 or 3-band images of type Byte"
 msgstr ""
 
-#: ../../../source/drivers/raster/daas.rst:143
+#: ../../../source/drivers/raster/daas.rst:145
 msgid ""
 "**JPEG2000**: compatible of all images. Requires GDAL to be built with one "
 "of its JPEG2000-capable drivers."

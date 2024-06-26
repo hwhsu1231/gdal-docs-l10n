@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,70 +53,78 @@ msgstr ""
 
 #: ../../../source/drivers/raster/stacta.rst:27
 msgid ""
-"The following :ref:`configuration options <configoptions>` are available:"
+"|about-config-options| The following configuration options are available:"
 msgstr ""
 
-#: ../../../source/drivers/raster/stacta.rst:35
+#: ../../../source/drivers/raster/stacta.rst:36
 msgid "Open syntax"
 msgstr ""
 
-#: ../../../source/drivers/raster/stacta.rst:37
+#: ../../../source/drivers/raster/stacta.rst:38
 msgid ""
 "STACTA datasets/subdatasets can be accessed with one of the following "
 "syntaxes:"
 msgstr ""
 
-#: ../../../source/drivers/raster/stacta.rst:39
+#: ../../../source/drivers/raster/stacta.rst:40
 msgid "``filename.json``: local file"
 msgstr ""
 
-#: ../../../source/drivers/raster/stacta.rst:41
+#: ../../../source/drivers/raster/stacta.rst:42
 msgid "``STACTA:\"https://example.com/filename.json\"``: remote file"
 msgstr ""
 
-#: ../../../source/drivers/raster/stacta.rst:43
+#: ../../../source/drivers/raster/stacta.rst:44
 msgid ""
 "``STACTA:\"filename.json\":my_asset``: specify an asset of a local/remote "
 "file"
 msgstr ""
 
-#: ../../../source/drivers/raster/stacta.rst:45
+#: ../../../source/drivers/raster/stacta.rst:46
 msgid ""
 "``STACTA:\"filename.json\":my_asset:my_tms``: specify an asset and tiling "
 "scheme of a local/remote file"
 msgstr ""
 
-#: ../../../source/drivers/raster/stacta.rst:47
+#: ../../../source/drivers/raster/stacta.rst:48
 msgid "The root of the JSON file must be of type ``Feature``."
 msgstr ""
 
 #: ../../../source/drivers/raster/stacta.rst:50
+msgid ""
+"Starting with GDAL 3.10, specifying the ``-if STACTA`` option to command "
+"line utilities accepting it, or ``STACTA`` as the only value of the "
+"``papszAllowedDrivers`` of :cpp:func:`GDALOpenEx`, also forces the driver to "
+"recognize the passed filename or URL."
+msgstr ""
+
+#: ../../../source/drivers/raster/stacta.rst:56
 msgid "Open options"
 msgstr ""
 
-#: ../../../source/drivers/raster/stacta.rst:52
-msgid "The following open options are supported:"
+#: ../../../source/drivers/raster/stacta.rst:58
+msgid "|about-open-options| The following open options are supported:"
 msgstr ""
 
-#: ../../../source/drivers/raster/stacta.rst:71
+#: ../../../source/drivers/raster/stacta.rst:78
 msgid "Subdatasets"
 msgstr ""
 
-#: ../../../source/drivers/raster/stacta.rst:73
+#: ../../../source/drivers/raster/stacta.rst:80
 msgid ""
 "If a STACTA JSON file contains several asset templates and/or tiling scheme, "
 "the driver will return a list of subdataset names to open each of the "
 "possible subdatasets."
 msgstr ""
 
-#: ../../../source/drivers/raster/stacta.rst:78
+#: ../../../source/drivers/raster/stacta.rst:85
 msgid "Driver capabilities"
 msgstr ""
 
-#: ../../../source/drivers/raster/stacta.rst:83
+#: ../../../source/drivers/raster/stacta.rst:90
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/raster/stacta.rst:85
+#: ../../../source/drivers/raster/stacta.rst:92
 msgid ":ref:`raster.stacit` documentation page."
 msgstr ""

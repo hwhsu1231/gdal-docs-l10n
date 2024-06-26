@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,17 +57,21 @@ msgstr ""
 msgid "Creation options"
 msgstr ""
 
-#: ../../../source/drivers/raster/hf2.rst:55
+#: ../../../source/drivers/raster/hf2.rst:36
+msgid "|about-creation-options| The following creation options are supported:"
+msgstr ""
+
+#: ../../../source/drivers/raster/hf2.rst:58
 msgid "See also"
 msgstr ""
 
-#: ../../../source/drivers/raster/hf2.rst:57
+#: ../../../source/drivers/raster/hf2.rst:60
 msgid ""
 "`Specification of HF2/HFZ format <http://www.bundysoft.com/docs/doku.php?"
 "id=l3dt:formats:specs:hf2>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/hf2.rst:59
+#: ../../../source/drivers/raster/hf2.rst:62
 msgid ""
 "`Specification of HF2 extended header blocks <http://www.bundysoft.com/docs/"
 "doku.php?id=l3dt:formats:specs:hf2#extended_header>`__"

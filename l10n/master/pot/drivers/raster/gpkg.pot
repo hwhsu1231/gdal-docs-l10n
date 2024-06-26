@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -151,47 +152,47 @@ msgid ""
 msgstr ""
 
 #: ../../../source/drivers/raster/gpkg.rst:83
-msgid "The following open options are available:"
+msgid "|about-open-options| The following open options are available:"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:168
+#: ../../../source/drivers/raster/gpkg.rst:169
 msgid ""
 "Note: open options are typically specified with \"-oo name=value\" syntax in "
 "most GDAL utilities, or with the GDALOpenEx() API call."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:172
+#: ../../../source/drivers/raster/gpkg.rst:173
 msgid "Creation issues"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:174
+#: ../../../source/drivers/raster/gpkg.rst:175
 msgid ""
 "Depending of the number of bands of the input dataset and the tile format "
 "selected, the driver will do the necessary conversions to be compatible with "
 "the tile format."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:178
+#: ../../../source/drivers/raster/gpkg.rst:179
 msgid ""
 "To add several tile tables to a GeoPackage dataset (seen as GDAL "
 "subdatasets), or to add a tile table to an existing vector-only GeoPackage, "
 "the generic APPEND_SUBDATASET=YES creation option must be provided."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:183
+#: ../../../source/drivers/raster/gpkg.rst:184
 msgid ""
 "Fully transparent tiles will not be written to the database, as allowed by "
 "the format."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:186
+#: ../../../source/drivers/raster/gpkg.rst:187
 msgid ""
 "The driver implements the Create() and IWriteBlock() methods, so that "
 "arbitrary writing of raster blocks is possible, enabling the direct use of "
 "GeoPackage as the output dataset of utilities such as gdalwarp."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:190
+#: ../../../source/drivers/raster/gpkg.rst:191
 msgid ""
 "On creation, raster blocks can be written only if the geotransformation "
 "matrix has been set with SetGeoTransform() This is effectively needed to "
@@ -199,7 +200,7 @@ msgid ""
 "resolution, dataset and tile dimensions."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:195
+#: ../../../source/drivers/raster/gpkg.rst:196
 msgid ""
 "Technical/implementation note: when a dataset is opened with a non-default "
 "area of interest (i.e. use of MINX,MINY,MAXX,MAXY or USE_TILE_EXTENT open "
@@ -218,7 +219,7 @@ msgid ""
 "compression. All of this is transparent to the user of GDAL API/utilities"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:212
+#: ../../../source/drivers/raster/gpkg.rst:213
 msgid ""
 "The driver updates the GeoPackage ``last_change`` timestamp when the file is "
 "created or modified. If consistent binary output is required for "
@@ -229,19 +230,19 @@ msgid ""
 "spec120/#r15>`__."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:224
+#: ../../../source/drivers/raster/gpkg.rst:225
 msgid "Tile formats"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:227
+#: ../../../source/drivers/raster/gpkg.rst:228
 msgid "Tiled rasters"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:229
+#: ../../../source/drivers/raster/gpkg.rst:230
 msgid "This section only applies for raster of Byte data type."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:231
+#: ../../../source/drivers/raster/gpkg.rst:232
 msgid ""
 "GeoPackage can store tiles in different formats, PNG and/or JPEG for the "
 "baseline specification, and WebP for extended GeoPackage. Support for those "
@@ -250,7 +251,7 @@ msgid ""
 "it requires GDAL to be compiled against the optional libwebp."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:238
+#: ../../../source/drivers/raster/gpkg.rst:239
 msgid ""
 "By default, GDAL will use a mix of PNG and JPEG tiles (PNG_JPEG tile format, "
 "or AUTO). PNG tiles will be used to store tiles that are not completely "
@@ -262,7 +263,7 @@ msgid ""
 "raster has only one band, the default is PNG."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:248
+#: ../../../source/drivers/raster/gpkg.rst:249
 msgid ""
 "It is possible to select one unique tile format by setting the creation/open "
 "option TILE_FORMAT to one of PNG, JPEG or WEBP. When using JPEG, the alpha "
@@ -272,7 +273,7 @@ msgid ""
 "(>=0.1.4) must be used to support alpha channel in WebP tiles."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:256
+#: ../../../source/drivers/raster/gpkg.rst:257
 msgid ""
 "PNG8 can be selected to use 8-bit PNG with a color table up to 256 colors. "
 "On creation, an optimized color table is computed for each tile. The DITHER "
@@ -288,11 +289,11 @@ msgid ""
 "as 32-bit PNG."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:270
+#: ../../../source/drivers/raster/gpkg.rst:271
 msgid "Tiled gridded coverage data"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:272
+#: ../../../source/drivers/raster/gpkg.rst:273
 msgid ""
 "Since GDAL 2.3, `tiled gridded coverage data <http://docs.opengeospatial.org/"
 "is/17-066r1/17-066r1.html#27>`__ can be stored using PNG unsigned 16bit "
@@ -300,7 +301,7 @@ msgid ""
 "floating point data) or TIFF 32-bit floating-point LZW compressed tiles."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:278
+#: ../../../source/drivers/raster/gpkg.rst:279
 msgid ""
 "When converting a GDAL Int16 or UInt16 dataset, PNG tiles will be used. When "
 "converting a GDAL Float32 dataset, TIFF tiles will be used by default, "
@@ -308,7 +309,7 @@ msgid ""
 "be automatically computed for each tile."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:285
+#: ../../../source/drivers/raster/gpkg.rst:286
 msgid ""
 "The `tiled gridded extension <http://www.geopackage.org/spec/"
 "#extension_tiled_gridded_elevation_data>`__ initially implemented in GDAL "
@@ -319,11 +320,11 @@ msgid ""
 "those GDAL 2.2-generated files."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:297
+#: ../../../source/drivers/raster/gpkg.rst:298
 msgid "Tiling schemes"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:299
+#: ../../../source/drivers/raster/gpkg.rst:300
 msgid ""
 "By default, conversion to GeoPackage will create a custom tiling scheme, "
 "such that the input dataset can be losslessly converted, both at the pixel "
@@ -336,7 +337,7 @@ msgid ""
 "#_tile_matrix>`__ table will match the pixel width and height of the raster."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:311
+#: ../../../source/drivers/raster/gpkg.rst:312
 msgid ""
 "However to ease interoperability with other implementations, and enable use "
 "of GeoPackage with tile servicing software, it is possible to select a "
@@ -344,7 +345,7 @@ msgid ""
 "schemes are :"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:316
+#: ../../../source/drivers/raster/gpkg.rst:317
 msgid ""
 "*GoogleMapsCompatible*, as described in WMTS 1.0 specification, Annex E.4. "
 "That tiling schemes consists of a single 256x256 tile at its zoom level 0, "
@@ -352,7 +353,7 @@ msgid ""
 "[-20037508.34,20037508.34]."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:320
+#: ../../../source/drivers/raster/gpkg.rst:321
 msgid ""
 "*InspireCRS84Quad*, as described in `Inspire View Services <http://inspire."
 "ec.europa.eu/documents/Network_Services/TechnicalGuidance_ViewServices_v3.0."
@@ -361,7 +362,7 @@ msgid ""
 "latitude in the range [-90,90]."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:325
+#: ../../../source/drivers/raster/gpkg.rst:326
 msgid ""
 "*PseudoTMS_GlobalGeodetic*, based on the `global-geodetic <http://wiki.osgeo."
 "org/wiki/Tile_Map_Service_Specification#global-geodetic>`__ profile of OSGeo "
@@ -372,7 +373,7 @@ msgid ""
 "TMS uses the bottom left corner as origin."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:333
+#: ../../../source/drivers/raster/gpkg.rst:334
 msgid ""
 "*PseudoTMS_GlobalMercator*, based on the `global-mercator <http://wiki.osgeo."
 "org/wiki/Tile_Map_Service_Specification#global-mercator>`__ profile of OSGeo "
@@ -383,7 +384,7 @@ msgid ""
 "with TMS."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:340
+#: ../../../source/drivers/raster/gpkg.rst:341
 msgid ""
 "*GoogleCRS84Quad*, as described in `OGC 07-057r7 WMTS 1.0 <http://portal."
 "opengeospatial.org/files/?artifact_id=35326>`__ specification, Annex E.3. "
@@ -404,16 +405,16 @@ msgid ""
 "definition."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:361
+#: ../../../source/drivers/raster/gpkg.rst:362
 msgid ""
 "In all the above tiling schemes, consecutive zoom levels defer by a "
 "resolution of a factor of two."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:364
+#: ../../../source/drivers/raster/gpkg.rst:365
 msgid ""
 "Starting with GDAL 3.2, it is also possible to use a Tile Matrix Set "
-"definition, encoded as a JSon file, according to the `OGC Two Dimensional "
+"definition, encoded as a JSON file, according to the `OGC Two Dimensional "
 "Tile Matrix Set standard`_ Examples of such files can be found at http://"
 "schemas.opengis.net/tms/1.0/json/examples/ The GDAL data directory also "
 "contains files prefixed with ``tms_`` and with a ``.json`` extension. If "
@@ -422,147 +423,147 @@ msgid ""
 "tile matrix set supported:"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:372
+#: ../../../source/drivers/raster/gpkg.rst:373
 msgid "all zoom levels must have the same origin"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:373
+#: ../../../source/drivers/raster/gpkg.rst:374
 msgid "consecutive zoom levels defer by a resolution of a factor of two."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:374
+#: ../../../source/drivers/raster/gpkg.rst:375
 msgid "all zoom levels must have the same tile dimension"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:375
+#: ../../../source/drivers/raster/gpkg.rst:376
 msgid "variable matrix width tile set are not supported."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:380
+#: ../../../source/drivers/raster/gpkg.rst:381
 msgid "Nodata value"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:382
+#: ../../../source/drivers/raster/gpkg.rst:383
 msgid ""
 "The concept of the nodata value is only supported for tiled gridded "
 "elevation datasets. For regular tiled rasters, the alpha band must rather be "
 "used."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:386
+#: ../../../source/drivers/raster/gpkg.rst:387
 msgid ""
 "For Float32 datasets with TIFF tiles, the concepts of nodata in GDAL and "
 "null_value in the GeoPackage internals perfectly match."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:389
+#: ../../../source/drivers/raster/gpkg.rst:390
 msgid ""
 "For Int16, UInt16 or Float32 with PNG tiles, GDAL will generally remap the "
 "input nodata value to another value."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:392
+#: ../../../source/drivers/raster/gpkg.rst:393
 msgid "On writing, for PNG tiles, the behavior is the following one:"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:395
-#: ../../../source/drivers/raster/gpkg.rst:404
-#: ../../../source/drivers/raster/gpkg.rst:414
+#: ../../../source/drivers/raster/gpkg.rst:396
+#: ../../../source/drivers/raster/gpkg.rst:405
+#: ../../../source/drivers/raster/gpkg.rst:415
 msgid "GDAL data type"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:395
+#: ../../../source/drivers/raster/gpkg.rst:396
 msgid "Input GDAL nodata value"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:395
-#: ../../../source/drivers/raster/gpkg.rst:404
-#: ../../../source/drivers/raster/gpkg.rst:414
+#: ../../../source/drivers/raster/gpkg.rst:396
+#: ../../../source/drivers/raster/gpkg.rst:405
+#: ../../../source/drivers/raster/gpkg.rst:415
 msgid "null_value in GPKG gpkg_2d_gridded_coverage_ancillary"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:396
-#: ../../../source/drivers/raster/gpkg.rst:405
+#: ../../../source/drivers/raster/gpkg.rst:397
 #: ../../../source/drivers/raster/gpkg.rst:406
-#: ../../../source/drivers/raster/gpkg.rst:415
+#: ../../../source/drivers/raster/gpkg.rst:407
+#: ../../../source/drivers/raster/gpkg.rst:416
 msgid "Int16"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:396
-#: ../../../source/drivers/raster/gpkg.rst:398
+#: ../../../source/drivers/raster/gpkg.rst:397
+#: ../../../source/drivers/raster/gpkg.rst:399
 msgid "Any"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:396
-#: ../../../source/drivers/raster/gpkg.rst:398
-#: ../../../source/drivers/raster/gpkg.rst:415
-#: ../../../source/drivers/raster/gpkg.rst:417
+#: ../../../source/drivers/raster/gpkg.rst:397
+#: ../../../source/drivers/raster/gpkg.rst:399
+#: ../../../source/drivers/raster/gpkg.rst:416
+#: ../../../source/drivers/raster/gpkg.rst:418
 msgid "65535"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:397
-#: ../../../source/drivers/raster/gpkg.rst:407
-#: ../../../source/drivers/raster/gpkg.rst:416
-msgid "UInt16"
-msgstr ""
-
-#: ../../../source/drivers/raster/gpkg.rst:397
-#: ../../../source/drivers/raster/gpkg.rst:416
-msgid "X (if coverage offset == 0 and coverage scale == 1)"
-msgstr ""
-
-#: ../../../source/drivers/raster/gpkg.rst:397
-#: ../../../source/drivers/raster/gpkg.rst:406
-#: ../../../source/drivers/raster/gpkg.rst:407
-#: ../../../source/drivers/raster/gpkg.rst:408
-#: ../../../source/drivers/raster/gpkg.rst:416
-msgid "X"
-msgstr ""
-
 #: ../../../source/drivers/raster/gpkg.rst:398
 #: ../../../source/drivers/raster/gpkg.rst:408
 #: ../../../source/drivers/raster/gpkg.rst:417
+msgid "UInt16"
+msgstr ""
+
+#: ../../../source/drivers/raster/gpkg.rst:398
+#: ../../../source/drivers/raster/gpkg.rst:417
+msgid "X (if coverage offset == 0 and coverage scale == 1)"
+msgstr ""
+
+#: ../../../source/drivers/raster/gpkg.rst:398
+#: ../../../source/drivers/raster/gpkg.rst:407
+#: ../../../source/drivers/raster/gpkg.rst:408
+#: ../../../source/drivers/raster/gpkg.rst:409
+#: ../../../source/drivers/raster/gpkg.rst:417
+msgid "X"
+msgstr ""
+
+#: ../../../source/drivers/raster/gpkg.rst:399
+#: ../../../source/drivers/raster/gpkg.rst:409
+#: ../../../source/drivers/raster/gpkg.rst:418
 msgid "Float32"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:401
+#: ../../../source/drivers/raster/gpkg.rst:402
 msgid "On reading, for PNG tiles, the behavior is the following one:"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:404
+#: ../../../source/drivers/raster/gpkg.rst:405
 msgid "Exposed GDAL nodata value"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:405
+#: ../../../source/drivers/raster/gpkg.rst:406
 msgid ">= 32768"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:405
-#: ../../../source/drivers/raster/gpkg.rst:415
+#: ../../../source/drivers/raster/gpkg.rst:406
+#: ../../../source/drivers/raster/gpkg.rst:416
 msgid "-32768"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:406
+#: ../../../source/drivers/raster/gpkg.rst:407
 msgid "X <= 32767"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:411
+#: ../../../source/drivers/raster/gpkg.rst:412
 msgid "Thus, perfect roundtripping is achieved in the following cases:"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:414
+#: ../../../source/drivers/raster/gpkg.rst:415
 msgid "GDAL nodata value"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:421
+#: ../../../source/drivers/raster/gpkg.rst:422
 msgid "Creation options"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:423
-msgid "The following creation options are available:"
+#: ../../../source/drivers/raster/gpkg.rst:424
+msgid "|about-creation-options| The following creation options are available:"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:500
+#: ../../../source/drivers/raster/gpkg.rst:502
 msgid ""
 "Starting with GDAL 3.2, the value of TILING_SCHEME can also be the filename "
 "of a JSON file according to the `OGC Two Dimensional Tile Matrix Set "
@@ -574,17 +575,17 @@ msgid ""
 "exact value expected by one zoom level of the tiling scheme."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:509
+#: ../../../source/drivers/raster/gpkg.rst:511
 msgid ""
 "In non-CUSTOM mode, the actual resolution can be controlled with the :co:"
 "`ZOOM_LEVEL` or :co:`ZOOM_LEVEL_STRATEGY` options."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:621
+#: ../../../source/drivers/raster/gpkg.rst:623
 msgid "Overviews"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:623
+#: ../../../source/drivers/raster/gpkg.rst:625
 msgid ""
 "gdaladdo / BuildOverviews() can be used to compute overviews. Power-of-two "
 "overview factors (2,4,8,16,...) should be favored to be conformant with the "
@@ -595,24 +596,24 @@ msgid ""
 "implementations that do not support that extension."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:632
+#: ../../../source/drivers/raster/gpkg.rst:634
 msgid ""
 "Overviews can also be cleared with the -clean option of gdaladdo (or "
 "BuildOverviews() with nOverviews=0)"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:636
+#: ../../../source/drivers/raster/gpkg.rst:638
 msgid "Metadata"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:638
+#: ../../../source/drivers/raster/gpkg.rst:640
 msgid ""
 "GDAL uses the standardized `gpkg_metadata <http://www.geopackage.org/spec/"
 "#_metadata_table>`__ and `gpkg_metadata_reference <http://www.geopackage.org/"
 "spec/#_metadata_reference_table>`__ tables to read and write metadata."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:644
+#: ../../../source/drivers/raster/gpkg.rst:646
 msgid ""
 "GDAL metadata, from the default metadata domain and possibly other metadata "
 "domains, is serialized in a single XML document, conformant with the format "
@@ -622,14 +623,14 @@ msgid ""
 "reference_scope=table and table_name={name of the raster table}"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:652
+#: ../../../source/drivers/raster/gpkg.rst:654
 msgid ""
 "It is possible to read and write metadata that applies to the global "
 "GeoPackage, and not only to the raster table, by using the *GEOPACKAGE* "
 "metadata domain."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:656
+#: ../../../source/drivers/raster/gpkg.rst:658
 msgid ""
 "Metadata not originating from GDAL can be read by the driver and will be "
 "exposed as metadata items with keys of the form GPKG_METADATA_ITEM_XXX and "
@@ -638,64 +639,64 @@ msgid ""
 "( although it can be through direct SQL commands)."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:662
+#: ../../../source/drivers/raster/gpkg.rst:664
 msgid ""
 "The specific DESCRIPTION and IDENTIFIER metadata item of the default "
 "metadata domain can be used in read/write to read from/update the "
 "corresponding columns of the gpkg_contents table."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:666
+#: ../../../source/drivers/raster/gpkg.rst:668
 msgid ""
 "You can set the CREATE_METADATA_TABLES configuration option to NO to avoid "
 "creating and filling the metadata tables."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:670
+#: ../../../source/drivers/raster/gpkg.rst:672
 msgid "IMAGE_STRUCTURE metadata item"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:674
+#: ../../../source/drivers/raster/gpkg.rst:676
 msgid ""
 "Implementation details, normally transparent to GDAL users, but useful for "
 "other implementations."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:677
+#: ../../../source/drivers/raster/gpkg.rst:679
 msgid ""
 "Starting with GDAL 3.6.1, the following optional metadata items can be read "
 "and write into the ``IMAGE_STRUCTURE`` metadata domain, in the "
 "``<GDALMultiDomainMetadata>`` XML element:"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:681
+#: ../../../source/drivers/raster/gpkg.rst:683
 msgid ""
 "BAND_COUNT=1, 2, 3 or 4. Applies only for Byte data. Set when creating a "
 "dataset so that GDAL knows the number of bands when reopening it."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:684
+#: ../../../source/drivers/raster/gpkg.rst:686
 msgid ""
 "COLOR_TABLE={{r0,g0,b0,a0},...{r255,g255,b255,a255}}. Applies only for Byte "
 "data and a single band dataset. Set when creating a dataset from a source "
 "dataset that has a color table."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:688
+#: ../../../source/drivers/raster/gpkg.rst:690
 msgid ""
 "TILE_FORMAT=PNG/PNG8/PNG_JPEG/JPEG/WEBP. Set when creating a dataset so that "
 "GDAL knows the tile format when reopening it, for updates."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:691
+#: ../../../source/drivers/raster/gpkg.rst:693
 msgid "NODATA_VALUE=integer between 0 and 255. Applies only for Byte data."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:694
+#: ../../../source/drivers/raster/gpkg.rst:696
 msgid "Example:"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:696
+#: ../../../source/drivers/raster/gpkg.rst:698
 msgid ""
 "INSERT INTO gpkg_metadata VALUES(\n"
 "    1,\n"
@@ -710,262 +711,262 @@ msgid ""
 "    'table','my_raster_table',NULL,NULL,'2022-11-09T18:44:59.723Z',1,NULL);"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:710
+#: ../../../source/drivers/raster/gpkg.rst:712
 msgid "Level of support of GeoPackage Extensions"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:712
+#: ../../../source/drivers/raster/gpkg.rst:714
 msgid "(Restricted to those have a raster scope)"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:714
+#: ../../../source/drivers/raster/gpkg.rst:716
 msgid "Extensions"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:717
+#: ../../../source/drivers/raster/gpkg.rst:719
 msgid "Extension name"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:718
+#: ../../../source/drivers/raster/gpkg.rst:720
 msgid "OGC adopted extension ?"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:719
+#: ../../../source/drivers/raster/gpkg.rst:721
 msgid "Supported by GDAL?"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:720
+#: ../../../source/drivers/raster/gpkg.rst:722
 msgid ""
 "`Zoom Other intervals <http://www.geopackage.org/guidance/extensions/"
 "zoom_other_intervals.html>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:721
-#: ../../../source/drivers/raster/gpkg.rst:722
+#: ../../../source/drivers/raster/gpkg.rst:723
 #: ../../../source/drivers/raster/gpkg.rst:724
-#: ../../../source/drivers/raster/gpkg.rst:725
+#: ../../../source/drivers/raster/gpkg.rst:726
 #: ../../../source/drivers/raster/gpkg.rst:727
-#: ../../../source/drivers/raster/gpkg.rst:728
+#: ../../../source/drivers/raster/gpkg.rst:729
 #: ../../../source/drivers/raster/gpkg.rst:730
-#: ../../../source/drivers/raster/gpkg.rst:733
+#: ../../../source/drivers/raster/gpkg.rst:732
+#: ../../../source/drivers/raster/gpkg.rst:735
 msgid "Yes"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:723
+#: ../../../source/drivers/raster/gpkg.rst:725
 msgid ""
 "`Tiles Encoding WebP <http://www.geopackage.org/guidance/extensions/"
 "tiles_encoding_webp.html>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:726
+#: ../../../source/drivers/raster/gpkg.rst:728
 msgid ""
 "`Metadata <http://www.geopackage.org/guidance/extensions/metadata.html>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:729
+#: ../../../source/drivers/raster/gpkg.rst:731
 msgid ""
 "`WKT for Coordinate Reference Systems <http://www.geopackage.org/guidance/"
 "extensions/wkt_for_crs.md>`__ (WKT v2)"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:731
+#: ../../../source/drivers/raster/gpkg.rst:733
 msgid ""
 "Partially, since GDAL 2.2. GDAL can read databases using this extension. "
 "GDAL 3.0 brings support for the WKT v2 entry."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:732
+#: ../../../source/drivers/raster/gpkg.rst:734
 msgid ""
 "`Tiled Gridded Coverage Data <http://www.geopackage.org/guidance/extensions/"
 "tiled_gridded_coverage_data.html>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:734
+#: ../../../source/drivers/raster/gpkg.rst:736
 msgid ""
 "Yes, since GDAL 2.3 (GDAL 2.2 supported a preliminary version of this "
 "extension)"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:737
+#: ../../../source/drivers/raster/gpkg.rst:739
 msgid "Examples"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:739
+#: ../../../source/drivers/raster/gpkg.rst:741
 msgid ""
 "Simple translation of a GeoTIFF into GeoPackage. The table 'byte' will be "
 "created with the tiles."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:744
+#: ../../../source/drivers/raster/gpkg.rst:746
 msgid "gdal_translate -of GPKG byte.tif byte.gpkg"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:746
+#: ../../../source/drivers/raster/gpkg.rst:748
 msgid "Translation of a GeoTIFF into GeoPackage using WebP tiles"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:750
+#: ../../../source/drivers/raster/gpkg.rst:752
 msgid "gdal_translate -of GPKG byte.tif byte.gpkg -co TILE_FORMAT=WEBP"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:752
+#: ../../../source/drivers/raster/gpkg.rst:754
 msgid ""
 "Translation of a GeoTIFF into GeoPackage using GoogleMapsCompatible tiling "
 "scheme (with reprojection and resampling if needed)"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:757
+#: ../../../source/drivers/raster/gpkg.rst:759
 msgid ""
 "gdal_translate -of GPKG byte.tif byte.gpkg -co "
 "TILING_SCHEME=GoogleMapsCompatible"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:759
+#: ../../../source/drivers/raster/gpkg.rst:761
 msgid "Building of overviews of an existing GeoPackage, and forcing JPEG tiles"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:764
+#: ../../../source/drivers/raster/gpkg.rst:766
 msgid "gdaladdo -r cubic -oo TILE_FORMAT=JPEG my.gpkg 2 4 8 16 32 64"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:766
+#: ../../../source/drivers/raster/gpkg.rst:768
 msgid ""
 "Addition of a new subdataset to an existing GeoPackage, and choose a non "
 "default name for the raster table."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:771
+#: ../../../source/drivers/raster/gpkg.rst:773
 msgid ""
 "gdal_translate -of GPKG new.tif existing.gpkg -co APPEND_SUBDATASET=YES -co "
 "RASTER_TABLE=new_table"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:773
+#: ../../../source/drivers/raster/gpkg.rst:775
 msgid "Reprojection of an input dataset to GeoPackage"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:777
+#: ../../../source/drivers/raster/gpkg.rst:779
 msgid "gdalwarp -of GPKG in.tif out.gpkg -t_srs EPSG:3857"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:779
+#: ../../../source/drivers/raster/gpkg.rst:781
 msgid "Open a specific raster table in a GeoPackage"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:783
+#: ../../../source/drivers/raster/gpkg.rst:785
 msgid "gdalinfo my.gpkg -oo TABLE=a_table"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:788
+#: ../../../source/drivers/raster/gpkg.rst:790
 msgid "Raster SQL functions"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:790
+#: ../../../source/drivers/raster/gpkg.rst:792
 msgid ""
 "The raster SQL functions mentioned at :ref:"
 "`sql_sqlite_dialect_raster_functions` are also available."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:793
+#: ../../../source/drivers/raster/gpkg.rst:795
 msgid ""
 "The ``gdal_get_layer_pixel_value()`` function (added in GDAL 3.7), variant "
 "of the generic ``gdal_get_pixel_value()``, can be used to extract the value "
 "of a pixel in a raster layer of the current dataset."
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:797
+#: ../../../source/drivers/raster/gpkg.rst:799
 msgid "It takes 5 arguments:"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:799
+#: ../../../source/drivers/raster/gpkg.rst:801
 msgid "a string with the layer/table name"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:800
+#: ../../../source/drivers/raster/gpkg.rst:802
 msgid "a band number (numbering starting at 1)"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:801
+#: ../../../source/drivers/raster/gpkg.rst:803
 msgid ""
 "a string being \"georef\" to indicate that subsequent values will be "
 "georeferenced coordinates, or \"pixel\" to indicate that subsequent values "
 "will be in column, line pixel space"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:804
+#: ../../../source/drivers/raster/gpkg.rst:806
 msgid "georeferenced X value or column number"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:805
+#: ../../../source/drivers/raster/gpkg.rst:807
 msgid "georeferenced Y value or line number"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:807
+#: ../../../source/drivers/raster/gpkg.rst:809
 msgid ""
 "SELECT gdal_get_layer_pixel_value('my_raster_table', 1, 'georef', 440720, "
 "3751320)\n"
 "SELECT gdal_get_layer_pixel_value('my_raster_table', 1, 'pixel', 0, 0)"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:813
+#: ../../../source/drivers/raster/gpkg.rst:815
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:815
+#: ../../../source/drivers/raster/gpkg.rst:817
 msgid ":ref:`GeoPackage vector <vector.gpkg>` documentation page"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:816
+#: ../../../source/drivers/raster/gpkg.rst:818
 msgid ""
 "`Getting Started With GeoPackage <http://www.geopackage.org/guidance/getting-"
 "started.html>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:818
+#: ../../../source/drivers/raster/gpkg.rst:820
 msgid ""
 "`OGC GeoPackage format standard <http://www.geopackage.org/spec/>`__ "
 "specification, HTML format (current/development version of the standard)"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:821
+#: ../../../source/drivers/raster/gpkg.rst:823
 msgid ""
 "`OGC GeoPackage Encoding Standard <http://www.opengeospatial.org/standards/"
 "geopackage>`__ page"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:823
+#: ../../../source/drivers/raster/gpkg.rst:825
 msgid "`SQLite <http://sqlite.org/>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:824
+#: ../../../source/drivers/raster/gpkg.rst:826
 msgid ":ref:`PNG driver <raster.png>` documentation page"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:825
+#: ../../../source/drivers/raster/gpkg.rst:827
 msgid ":ref:`JPEG driver <raster.jpeg>` documentation page"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:826
+#: ../../../source/drivers/raster/gpkg.rst:828
 msgid ":ref:`WEBP driver <raster.webp>` documentation page"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:827
+#: ../../../source/drivers/raster/gpkg.rst:829
 msgid ""
 "`OGC 07-057r7 WMTS 1.0 <http://portal.opengeospatial.org/files/?"
 "artifact_id=35326>`__ specification"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:830
+#: ../../../source/drivers/raster/gpkg.rst:832
 msgid ""
 "`OSGeo TMS (Tile Map Service) <http://wiki.osgeo.org/wiki/"
 "Tile_Map_Service_Specification>`__ specification"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:835
+#: ../../../source/drivers/raster/gpkg.rst:837
 msgid "Other notes"
 msgstr ""
 
-#: ../../../source/drivers/raster/gpkg.rst:837
+#: ../../../source/drivers/raster/gpkg.rst:839
 msgid ""
 "Development of raster support in the GeoPackage driver was financially "
 "supported by `Safe Software <http://www.safe.com>`__."

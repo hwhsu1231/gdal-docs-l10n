@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -61,45 +62,62 @@ msgstr ""
 msgid "Dataset Creation Options"
 msgstr ""
 
-#: ../../../source/drivers/vector/pgdump.rst:48
+#: ../../../source/drivers/vector/pgdump.rst:37
+msgid ""
+"|about-dataset-creation-options| The following dataset creation options are "
+"supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/pgdump.rst:51
 msgid "Layer Creation Options"
 msgstr ""
 
-#: ../../../source/drivers/vector/pgdump.rst:242
+#: ../../../source/drivers/vector/pgdump.rst:53
+msgid ""
+"|about-layer-creation-options| The following layer creation options are "
+"supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/pgdump.rst:248
 msgid "Environment variables"
 msgstr ""
 
-#: ../../../source/drivers/vector/pgdump.rst:244
+#: ../../../source/drivers/vector/pgdump.rst:250
+msgid ""
+"|about-config-options| The following configuration options are available:"
+msgstr ""
+
+#: ../../../source/drivers/vector/pgdump.rst:253
 msgid ":copy-config:`PG_USE_COPY`"
 msgstr ""
 
-#: ../../../source/drivers/vector/pg.rst:401
+#: ../../../source/drivers/vector/pg.rst:407
 msgid ""
 "At time of writing, PgPoolII is not compatible with COPY mode as used by the "
 "OGR PostgreSQL driver. Thus you should force PG_USE_COPY=NO when using "
 "PgPoolII."
 msgstr ""
 
-#: ../../../source/drivers/vector/pgdump.rst:247
+#: ../../../source/drivers/vector/pgdump.rst:256
 msgid "VSI Virtual File System API support"
 msgstr ""
 
-#: ../../../source/drivers/vector/pgdump.rst:249
+#: ../../../source/drivers/vector/pgdump.rst:258
 msgid ""
 "The driver supports writing to files managed by VSI Virtual File System API, "
 "which include \"regular\" files, as well as files in the /vsizip/, /vsigzip/ "
 "domains."
 msgstr ""
 
-#: ../../../source/drivers/vector/pgdump.rst:253
+#: ../../../source/drivers/vector/pgdump.rst:262
 msgid "Writing to /dev/stdout or /vsistdout/ is also supported."
 msgstr ""
 
-#: ../../../source/drivers/vector/pgdump.rst:256
+#: ../../../source/drivers/vector/pgdump.rst:265
 msgid "Example"
 msgstr ""
 
-#: ../../../source/drivers/vector/pgdump.rst:258
+#: ../../../source/drivers/vector/pgdump.rst:267
 msgid ""
 "Simple translation of a shapefile into PostgreSQL into a file abc.sql. The "
 "table 'abc' will be created with the features from abc.shp and attributes "
@@ -107,38 +125,38 @@ msgid ""
 "improve the performance."
 msgstr ""
 
-#: ../../../source/drivers/vector/pgdump.rst:265
+#: ../../../source/drivers/vector/pgdump.rst:274
 msgid ""
 "ogr2ogr --config PG_USE_COPY YES -f PGDump abc.sql abc.shp -lco SRID=32631"
 msgstr ""
 
-#: ../../../source/drivers/vector/pgdump.rst:267
+#: ../../../source/drivers/vector/pgdump.rst:276
 msgid "Pipe the output of the PGDump driver into the psql utility."
 msgstr ""
 
-#: ../../../source/drivers/vector/pgdump.rst:271
+#: ../../../source/drivers/vector/pgdump.rst:280
 msgid ""
 "ogr2ogr --config PG_USE_COPY YES -f PGDump /vsistdout/ abc.shp | psql -d "
 "my_dbname -f -"
 msgstr ""
 
-#: ../../../source/drivers/vector/pgdump.rst:274
+#: ../../../source/drivers/vector/pgdump.rst:283
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/vector/pgdump.rst:276
+#: ../../../source/drivers/vector/pgdump.rst:285
 msgid ":ref:`OGR PostgreSQL driver Page <vector.pg>`"
 msgstr ""
 
-#: ../../../source/drivers/vector/pgdump.rst:277
+#: ../../../source/drivers/vector/pgdump.rst:286
 msgid "`PostgreSQL Home Page <http://www.postgresql.org/>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/pgdump.rst:278
+#: ../../../source/drivers/vector/pgdump.rst:287
 msgid "`PostGIS <http://postgis.net/>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/pgdump.rst:279
+#: ../../../source/drivers/vector/pgdump.rst:288
 msgid ""
 "`PostGIS / OGR Wiki Examples Page <http://trac.osgeo.org/postgis/wiki/"
 "UsersWikiOGR>`__"

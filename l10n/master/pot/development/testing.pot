@@ -8,25 +8,26 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../../source/development/testing.rst:7
+#: ../../../source/development/testing.rst:5
 msgid "Automated testing"
 msgstr ""
 
-#: ../../../source/development/testing.rst:9
+#: ../../../source/development/testing.rst:7
 msgid ""
 "GDAL includes a comprehensive test suite, implemented using a combination of "
 "Python (via pytest) and C++ (via gtest)."
 msgstr ""
 
-#: ../../../source/development/testing.rst:11
+#: ../../../source/development/testing.rst:9
 msgid ""
 "After building GDAL using CMake, the complete test suite can be run using "
 "``ctest -v --output-on-failure``. This will automatically set environment "
@@ -34,72 +35,44 @@ msgid ""
 "than an installed system copy."
 msgstr ""
 
-#: ../../../source/development/testing.rst:15
+#: ../../../source/development/testing.rst:13
 msgid "Running a subset of tests using ``ctest``"
 msgstr ""
 
-#: ../../../source/development/testing.rst:17
+#: ../../../source/development/testing.rst:15
 msgid ""
 "The complete set of test suites known to ``ctest`` can be viewed running "
 "``ctest -N``."
 msgstr ""
 
-#: ../../../source/development/testing.rst:19
+#: ../../../source/development/testing.rst:17
 msgid ""
 "A subset of tests can be run using the ``-R`` argument to ``ctest``, which "
 "selects tests using a provided regular expression. For example, ``ctest -R "
 "autotest`` would run the Python-based tests."
 msgstr ""
 
-#: ../../../source/development/testing.rst:22
+#: ../../../source/development/testing.rst:20
 msgid ""
 "The ``-E`` argument can be used to exclude tests using a regular expression. "
 "For example, ``ctest -E gdrivers`` would exclude the suite of driver tests."
 msgstr ""
 
-#: ../../../source/development/testing.rst:25
+#: ../../../source/development/testing.rst:23
 msgid "Running a subset of tests using ``pytest``"
 msgstr ""
 
-#: ../../../source/development/testing.rst:27
+#: ../../../source/development/testing.rst:25
 msgid ""
 "The test subsets exposed by ``ctest`` are still rather large and some may "
 "take several minutes to run. If a higher level of specificity is needed, "
 "``pytest`` can be called directly to run groups of tests or individual "
-"tests. Before running ``pytest``, it is important to set environment "
-"variables so that the development build of GDAL is tested, rather than a "
-"system version. This can be done by sourcing the following from the build "
-"directory:"
+"tests. Before running ``pytest``, it is important to set :ref:`development "
+"environment variables <setting_dev_environment_variables>` so that the "
+"development build of GDAL is tested, rather than a system version."
 msgstr ""
 
-#: ../../../source/development/testing.rst:32
-msgid ". ../scripts/setdevenv.sh"
-msgstr ""
-
-#: ../../../source/development/testing.rst:36
-msgid ""
-"(with adjustments to the above path if the build directory is not a "
-"subdirectory of the GDAL source root). To verify that environment variables "
-"were set correctly, you can check the version of a GDAL binary:"
-msgstr ""
-
-#: ../../../source/development/testing.rst:39
-msgid ""
-"gdalinfo --version\n"
-"# GDAL 3.7.0dev-5327c149f5-dirty, released 2018/99/99 (debug build)"
-msgstr ""
-
-#: ../../../source/development/testing.rst:44
-msgid "and the Python bindings:"
-msgstr ""
-
-#: ../../../source/development/testing.rst:46
-msgid ""
-"python3 -c 'from osgeo import gdal; print(gdal.__version__)'\n"
-"# 3.7.0dev-5327c149f5-dirty"
-msgstr ""
-
-#: ../../../source/development/testing.rst:51
+#: ../../../source/development/testing.rst:29
 msgid ""
 "Tests can then be run by calling ``pytest``, for example on an individual "
 "file. On Linux and MacOS builds, the tests are symlinked into the build "
@@ -107,78 +80,78 @@ msgid ""
 "directory:"
 msgstr ""
 
-#: ../../../source/development/testing.rst:55
+#: ../../../source/development/testing.rst:33
 msgid "pytest autotest/gcore/vrt_read.py"
 msgstr ""
 
-#: ../../../source/development/testing.rst:59
+#: ../../../source/development/testing.rst:37
 msgid ""
 "On Windows, the test files remain in the source tree, but the pytest "
 "configuration file ``pytest.ini`` is only available in the build directory. "
 "To accommodate this, the above command would be modified as follows:"
 msgstr ""
 
-#: ../../../source/development/testing.rst:61
+#: ../../../source/development/testing.rst:39
 msgid "pytest -c pytest.ini ../autotest/gcore/vrt_read.py"
 msgstr ""
 
-#: ../../../source/development/testing.rst:65
+#: ../../../source/development/testing.rst:43
 msgid ""
 "A subset of tests within an individual test file can be run by providing a "
 "regular expression to the ``-k`` argument to ``pytest``."
 msgstr ""
 
-#: ../../../source/development/testing.rst:67
+#: ../../../source/development/testing.rst:45
 msgid "pytest autotest/gcore/vrt_read.py -k test_vrt_read_non_existing_source"
 msgstr ""
 
-#: ../../../source/development/testing.rst:71
+#: ../../../source/development/testing.rst:49
 msgid ""
 "``pytest`` can also report information on the tests without running them. "
 "For example, to list tests containing \"tiff\" in the name:"
 msgstr ""
 
-#: ../../../source/development/testing.rst:74
+#: ../../../source/development/testing.rst:52
 msgid "pytest --collect-only autotest -k tiff"
 msgstr ""
 
-#: ../../../source/development/testing.rst:79
+#: ../../../source/development/testing.rst:57
 msgid ""
 "Not all Python tests can be run independently; some tests depend on state "
 "set by a previous tests in the same file."
 msgstr ""
 
-#: ../../../source/development/testing.rst:83
+#: ../../../source/development/testing.rst:61
 msgid "Checking for memory leaks and access errors using Valgrind"
 msgstr ""
 
-#: ../../../source/development/testing.rst:85
+#: ../../../source/development/testing.rst:63
 msgid ""
 "The GDAL unit test suite can be run using the Valgrind tool to detect memory "
 "errors such as leaks and incorrect reads/writes."
 msgstr ""
 
-#: ../../../source/development/testing.rst:88
+#: ../../../source/development/testing.rst:66
 msgid ""
 "The test suite will run considerably slower under Valgrind (perhaps by a "
 "factor of ten) so it is generally advisable to run a subset of the tests "
 "using the methods described above."
 msgstr ""
 
-#: ../../../source/development/testing.rst:92
+#: ../../../source/development/testing.rst:70
 msgid ""
 "Calling ``valgrind ctest`` will _not_ run the tests under ``valgrind``. "
 "Although it is possible to use Valgrind with ctest, it is simpler to call "
 "``pytest`` or ``gdal_unit_test`` directly."
 msgstr ""
 
-#: ../../../source/development/testing.rst:96
+#: ../../../source/development/testing.rst:74
 msgid ""
 "The following preparatory steps are necessary to avoid numerous false-"
 "positive errors from Valgrind:"
 msgstr ""
 
-#: ../../../source/development/testing.rst:99
+#: ../../../source/development/testing.rst:77
 msgid ""
 "Many false-positive errors are generated by Python itself. Most of these can "
 "be removed by obtaining a suppression file that corresponds to the version "
@@ -188,21 +161,21 @@ msgid ""
 "valgrind-python.supp)"
 msgstr ""
 
-#: ../../../source/development/testing.rst:106
+#: ../../../source/development/testing.rst:84
 msgid ""
 "A few false-positive errors are generated by the GDAL test suite or "
 "libraries that it uses (e.g., SWIG, numpy). These can be removed by "
 "``autotest/valgrind-gdal.supp`` file in the GDAL repository."
 msgstr ""
 
-#: ../../../source/development/testing.rst:110
+#: ../../../source/development/testing.rst:88
 msgid ""
 "When running Python unit tests, the default system memory allocator should "
 "be used instead of Python's internal memory allocator. This can be done by "
 "setting the ``PYTHONMALLOC`` environment variable to ``malloc``."
 msgstr ""
 
-#: ../../../source/development/testing.rst:114
+#: ../../../source/development/testing.rst:92
 msgid ""
 "When running Python unit tests, Valgrind will report numerous \"Invalid file "
 "descriptor\" warnings that cannot currently be suppressed. These can be "
@@ -210,13 +183,13 @@ msgid ""
 "alternative log fd\"``."
 msgstr ""
 
-#: ../../../source/development/testing.rst:119
+#: ../../../source/development/testing.rst:97
 msgid ""
 "Combining the following, we can run valgrind for a subset of Python tests as "
 "follows:"
 msgstr ""
 
-#: ../../../source/development/testing.rst:122
+#: ../../../source/development/testing.rst:100
 msgid ""
 "PYTHONMALLOC=malloc valgrind \\\n"
 "    --leak-check=full \\\n"
@@ -226,25 +199,25 @@ msgid ""
 "alternative log fd\" || true) | tee valgrind-out"
 msgstr ""
 
-#: ../../../source/development/testing.rst:130
+#: ../../../source/development/testing.rst:108
 msgid ""
 "To avoid verbose commands such as the one above, it may be useful to "
 "reference the suppression files and other common arguments in a ``~/."
 "valgrindrc`` file."
 msgstr ""
 
-#: ../../../source/development/testing.rst:136
+#: ../../../source/development/testing.rst:114
 msgid "Recommendations on how to write new tests"
 msgstr ""
 
-#: ../../../source/development/testing.rst:138
+#: ../../../source/development/testing.rst:116
 msgid ""
 "Python-based tests should be preferred when possible, as productivity is "
 "higher in Python and there is no associated compilation time (compilation "
 "time affects feedback received from continuous integration)."
 msgstr ""
 
-#: ../../../source/development/testing.rst:142
+#: ../../../source/development/testing.rst:120
 msgid ""
 "C/C++-based test should be reserved for C++-specific aspects that cannot be "
 "tested with the SWIG Python bindings, which use the C interface. For example "
@@ -253,17 +226,17 @@ msgid ""
 "CPL utility functions/classes)"
 msgstr ""
 
-#: ../../../source/development/testing.rst:148
+#: ../../../source/development/testing.rst:126
 msgid "Python tests"
 msgstr ""
 
-#: ../../../source/development/testing.rst:150
+#: ../../../source/development/testing.rst:128
 msgid ""
 "Python tests use the `pytest <https://docs.pytest.org/en/latest/>`__ "
 "framework since :ref:`rfc-72`."
 msgstr ""
 
-#: ../../../source/development/testing.rst:153
+#: ../../../source/development/testing.rst:131
 msgid ""
 "Test cases should be written in a way where they are independent from other "
 "ones, so they can potentially be run in a isolated way or in parallel of "
@@ -273,13 +246,13 @@ msgid ""
 "html#the-tmp-path-fixture>`__."
 msgstr ""
 
-#: ../../../source/development/testing.rst:158
+#: ../../../source/development/testing.rst:136
 msgid ""
 "Use ``@pytest.mark.require_driver(driver_name)`` as an annotation for a test "
 "case that requires an optional driver to be present."
 msgstr ""
 
-#: ../../../source/development/testing.rst:161
+#: ../../../source/development/testing.rst:139
 msgid ""
 "Use ``pytestmark = pytest.mark.require_driver(\"driver_name\")`` towards the "
 "beginning of a test file that requires a given driver to be available for "
@@ -287,7 +260,7 @@ msgid ""
 "driver."
 msgstr ""
 
-#: ../../../source/development/testing.rst:166
+#: ../../../source/development/testing.rst:144
 msgid ""
 "Use ``@pytest.mark.require_run_on_demand`` as an annotation to signal a test "
 "that should not be run by default, typically because it requires special pre-"
@@ -295,18 +268,18 @@ msgid ""
 "automatically run by continuous integration."
 msgstr ""
 
-#: ../../../source/development/testing.rst:171
+#: ../../../source/development/testing.rst:149
 msgid ""
 "Use ``@pytest.mark.parametrize(...)`` as an annotation for test functions "
 "that test for variations, instead of for() constructs. More details at "
 "https://docs.pytest.org/en/latest/parametrize.html"
 msgstr ""
 
-#: ../../../source/development/testing.rst:175
+#: ../../../source/development/testing.rst:153
 msgid "e.g.:"
 msgstr ""
 
-#: ../../../source/development/testing.rst:177
+#: ../../../source/development/testing.rst:155
 msgid ""
 "@pytest.mark.parametrize(\"dt,expected_size\", [(gdal.GDT_Byte, 1),\n"
 "                                              (gdal.GDT_UInt16, 2)]\n"
@@ -314,31 +287,31 @@ msgid ""
 "    assert gdal.GetDataTypeSizeBytes(dt) == expected_size"
 msgstr ""
 
-#: ../../../source/development/testing.rst:184
+#: ../../../source/development/testing.rst:162
 msgid "instead of"
 msgstr ""
 
-#: ../../../source/development/testing.rst:186
+#: ../../../source/development/testing.rst:164
 msgid ""
 "def test_datatypesize_DO_NOT_DO_THAT():\n"
 "    for dt, expected_size in [(gdal.GDT_Byte, 1), (gdal.GDT_UInt16, 2)]:\n"
 "        assert gdal.GetDataTypeSizeBytes(dt) == expected_size"
 msgstr ""
 
-#: ../../../source/development/testing.rst:193
+#: ../../../source/development/testing.rst:171
 msgid ""
 "`Fixtures <https://docs.pytest.org/en/latest/how-to/fixtures.html>`__ can be "
 "used to share set-up and tear-down code between test cases."
 msgstr ""
 
-#: ../../../source/development/testing.rst:196
+#: ../../../source/development/testing.rst:174
 msgid ""
 "e.g. a fixture automatically loaded for all test cases of a test file, that "
 "takes care to unregister a given driver before the test case is run, and re-"
 "register it afterwards:"
 msgstr ""
 
-#: ../../../source/development/testing.rst:200
+#: ../../../source/development/testing.rst:178
 msgid ""
 "@pytest.fixture(scope=\"module\", autouse=True)\n"
 "def without_filegdb_driver():\n"
@@ -354,13 +327,13 @@ msgid ""
 "    filegdb_driver.Register()"
 msgstr ""
 
-#: ../../../source/development/testing.rst:215
+#: ../../../source/development/testing.rst:193
 msgid ""
 "or a fixture that runs preliminary checks to discover if a driver has some "
 "optional capabilities, and skip a test case if not:"
 msgstr ""
 
-#: ../../../source/development/testing.rst:218
+#: ../../../source/development/testing.rst:196
 msgid ""
 "@pytest.fixture()\n"
 "def require_auto_load_extension():\n"
@@ -383,17 +356,17 @@ msgid ""
 "VirtualOGR()\")"
 msgstr ""
 
-#: ../../../source/development/testing.rst:240
+#: ../../../source/development/testing.rst:218
 msgid "C++ tests"
 msgstr ""
 
-#: ../../../source/development/testing.rst:242
+#: ../../../source/development/testing.rst:220
 msgid ""
 "GDAL C++ tests use the `GoogleTest <https://github.com/google/googletest>`__ "
 "framework since :ref:`rfc-88`."
 msgstr ""
 
-#: ../../../source/development/testing.rst:245
+#: ../../../source/development/testing.rst:223
 msgid ""
 "Common non-failing assertions are: ``EXPECT_TRUE(cond)``, "
 "``EXPECT_FALSE(cond)``, ``EXPECT_EQ(a, b)``, ``EXPECT_NE(a, b)``, "
@@ -406,12 +379,12 @@ msgid ""
 "exit of the test case is desired."
 msgstr ""
 
-#: ../../../source/development/testing.rst:254
+#: ../../../source/development/testing.rst:232
 msgid ""
 "GoogleTest also offers capabilities for parametrized tests. For example:"
 msgstr ""
 
-#: ../../../source/development/testing.rst:256
+#: ../../../source/development/testing.rst:234
 msgid ""
 "class DataTypeTupleFixture:\n"
 "        public test_gdal,\n"
@@ -471,25 +444,25 @@ msgid ""
 ");"
 msgstr ""
 
-#: ../../../source/development/testing.rst:306
+#: ../../../source/development/testing.rst:284
 msgid "Test coverage reports"
 msgstr ""
 
-#: ../../../source/development/testing.rst:308
+#: ../../../source/development/testing.rst:286
 msgid ""
 "GDAL continuous integration has a ``coverage`` configuration that builds "
 "GDAL with the ``gcov`` GCC module to get the line coverage of running Python "
 "and C++ autotest tests."
 msgstr ""
 
-#: ../../../source/development/testing.rst:312
+#: ../../../source/development/testing.rst:290
 msgid ""
 "This is used by the `Coveralls GitHub Action <https://github.com/marketplace/"
 "actions/coveralls-github-action>`__ to upload results to https://coveralls."
 "io/github/OSGeo/gdal, for both push and pull requests events."
 msgstr ""
 
-#: ../../../source/development/testing.rst:316
+#: ../../../source/development/testing.rst:294
 msgid ""
 "A somewhat nicer looking output of line coverage results for the latest "
 "master build, generated by ``lcov``, is also available at https://"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -96,26 +96,28 @@ msgstr ""
 
 #: ../../../source/programs/gdal_create.rst:61
 msgid ""
-"A fixed value to burn into a band for all objects.  A list of :option:`-"
-"burn` options can be supplied, one per band being written to."
+"A fixed value to burn into a band. A list of :option:`-burn` options can be "
+"supplied, one per band (the first value will apply to the first band, the "
+"second one to the second band, etc.). If a single value is specified, it "
+"will apply to all bands."
 msgstr ""
 
-#: ../../../source/programs/gdal_create.rst:66
+#: ../../../source/programs/gdal_create.rst:68
 msgid ""
 "Override the projection for the output file.  The<srs_def> may be any of the "
 "usual GDAL/OGR forms, complete WKT, PROJ.4, EPSG:n or a file containing the "
 "WKT. No reprojection is done."
 msgstr ""
 
-#: ../../../source/programs/gdal_create.rst:72
+#: ../../../source/programs/gdal_create.rst:74
 msgid "Assign the georeferenced bounds of the output file."
 msgstr ""
 
-#: ../../../source/programs/gdal_create.rst:76
+#: ../../../source/programs/gdal_create.rst:78
 msgid "Assign a specified nodata value to output bands."
 msgstr ""
 
-#: ../../../source/programs/gdal_create.rst:80
+#: ../../../source/programs/gdal_create.rst:82
 msgid ""
 "Passes a metadata key and value to set on the output dataset if possible."
 msgstr ""
@@ -139,47 +141,47 @@ msgid ""
 "creation options for each format."
 msgstr ""
 
-#: ../../../source/programs/gdal_create.rst:86
+#: ../../../source/programs/gdal_create.rst:88
 msgid "Suppress progress monitor and other non-error output."
 msgstr ""
 
-#: ../../../source/programs/gdal_create.rst:92
+#: ../../../source/programs/gdal_create.rst:94
 msgid ""
 "Name of GDAL input dataset that serves as a template for default values of "
 "options -outsize, -bands, -ot, -a_srs, -a_ullr and -a_nodata. Note that the "
 "pixel values will *not* be copied."
 msgstr ""
 
-#: ../../../source/programs/gdal_create.rst:98
+#: ../../../source/programs/gdal_create.rst:100
 msgid "The destination file name."
 msgstr ""
 
-#: ../../../source/programs/gdal_create.rst:101
+#: ../../../source/programs/gdal_create.rst:103
 msgid "Examples"
 msgstr ""
 
-#: ../../../source/programs/gdal_create.rst:103
+#: ../../../source/programs/gdal_create.rst:105
 msgid "Initialize a new GeoTIFF file with a uniform value of 10"
 msgstr ""
 
-#: ../../../source/programs/gdal_create.rst:107
+#: ../../../source/programs/gdal_create.rst:109
 msgid ""
 "gdal_create -outsize 20 20 -a_srs EPSG:4326 -a_ullr 2 50 3 49 -burn 10 out."
 "tif"
 msgstr ""
 
-#: ../../../source/programs/gdal_create.rst:110
+#: ../../../source/programs/gdal_create.rst:112
 msgid "Create a PDF file from a XML composition file:"
 msgstr ""
 
-#: ../../../source/programs/gdal_create.rst:114
+#: ../../../source/programs/gdal_create.rst:116
 msgid "gdal_create -co COMPOSITION_FILE=composition.xml out.pdf"
 msgstr ""
 
-#: ../../../source/programs/gdal_create.rst:118
+#: ../../../source/programs/gdal_create.rst:120
 msgid "Initialize a blank GeoTIFF file from an input one:"
 msgstr ""
 
-#: ../../../source/programs/gdal_create.rst:122
+#: ../../../source/programs/gdal_create.rst:124
 msgid "gdal_create -if prototype.tif output.tif"
 msgstr ""

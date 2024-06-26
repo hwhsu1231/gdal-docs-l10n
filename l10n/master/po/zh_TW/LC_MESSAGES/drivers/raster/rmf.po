@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -77,18 +77,26 @@ msgstr ""
 msgid "Open Options"
 msgstr ""
 
-#: ../../../source/drivers/raster/rmf.rst:53
+#: ../../../source/drivers/raster/rmf.rst:46
+msgid "|about-open-options| The following open options are supported:"
+msgstr ""
+
+#: ../../../source/drivers/raster/rmf.rst:57
 msgid "Creation Options"
 msgstr ""
 
-#: ../../../source/drivers/raster/rmf.rst:105
+#: ../../../source/drivers/raster/rmf.rst:59
+msgid "|about-creation-options| The following creation options are supported:"
+msgstr ""
+
+#: ../../../source/drivers/raster/rmf.rst:112
 msgid "See Also:"
 msgstr ""
 
-#: ../../../source/drivers/raster/rmf.rst:107
+#: ../../../source/drivers/raster/rmf.rst:114
 msgid "Implemented as :source_file:`frmts/rmf/rmfdataset.cpp`."
 msgstr ""
 
-#: ../../../source/drivers/raster/rmf.rst:108
+#: ../../../source/drivers/raster/rmf.rst:115
 msgid "`\"Panorama\" GIS homepage <http://www.gisinfo.ru/index_en.htm>`__"
 msgstr ""

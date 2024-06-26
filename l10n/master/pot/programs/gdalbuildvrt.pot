@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -220,24 +221,26 @@ msgstr ""
 msgid ""
 "Insert a <NoDataFromMaskSource> source, which replaces the value of the "
 "source with the value of :option:`-vrtnodata` (or 0 if not specified) when "
-"the value of the mask band of the source is less or equal to the threshold."
+"the value of the mask band of the source is less or equal to the threshold. "
+"This is typically used to transform a R,G,B,A image into a R,G,B one with a "
+"NoData value."
 msgstr ""
 
-#: ../../../source/programs/gdalbuildvrt.rst:160
+#: ../../../source/programs/gdalbuildvrt.rst:161
 msgid ""
 "Select an input <band> to be processed. Bands are numbered from 1. If input "
 "bands not set all bands will be added to vrt. Multiple :option:`-b` switches "
 "may be used to select a set of input bands."
 msgstr ""
 
-#: ../../../source/programs/gdalbuildvrt.rst:166
+#: ../../../source/programs/gdalbuildvrt.rst:167
 msgid ""
 "If the input dataset contains several subdatasets, use a subdataset with the "
 "specified number (starting from 1). This is an alternative of giving the "
 "full subdataset name as an input to the utility."
 msgstr ""
 
-#: ../../../source/programs/gdalbuildvrt.rst:172
+#: ../../../source/programs/gdalbuildvrt.rst:173
 msgid ""
 "Set nodata values at the VRT band level (different values can be supplied "
 "for each band).  If more than one value is supplied all values should be "
@@ -248,13 +251,13 @@ msgid ""
 "ignore intrinsic nodata settings on the source datasets."
 msgstr ""
 
-#: ../../../source/programs/gdalbuildvrt.rst:181
+#: ../../../source/programs/gdalbuildvrt.rst:182
 msgid ""
 "Place each input file into a separate band. Contrary to the default mode, it "
 "is not required that all bands have the same datatype."
 msgstr ""
 
-#: ../../../source/programs/gdalbuildvrt.rst:184
+#: ../../../source/programs/gdalbuildvrt.rst:185
 msgid ""
 "Starting with GDAL 3.8, all bands of each input file are added as separate "
 "VRT bands, unless :option:`-b` is specified to select a subset of them. "
@@ -262,93 +265,93 @@ msgid ""
 "new VRT band, and :option:`-b` was ignored."
 msgstr ""
 
-#: ../../../source/programs/gdalbuildvrt.rst:191
+#: ../../../source/programs/gdalbuildvrt.rst:192
 msgid ""
 "When this option is specified, the utility will accept to make a VRT even if "
 "the input datasets have not the same projection. Note: this does not mean "
 "that they will be reprojected. Their projection will just be ignored."
 msgstr ""
 
-#: ../../../source/programs/gdalbuildvrt.rst:197
+#: ../../../source/programs/gdalbuildvrt.rst:198
 msgid ""
 "Override the projection for the output file.  The <srs_def> may be any of "
 "the usual GDAL/OGR forms, complete WKT, PROJ.4, EPSG:n or a file containing "
 "the WKT. No reprojection is done."
 msgstr ""
 
-#: ../../../source/programs/gdalbuildvrt.rst:202
+#: ../../../source/programs/gdalbuildvrt.rst:203
 msgid "Select a resampling algorithm. Nearest is the default"
 msgstr ""
 
-#: ../../../source/programs/gdalbuildvrt.rst:206
+#: ../../../source/programs/gdalbuildvrt.rst:207
 msgid "Dataset open option (format specific)"
 msgstr ""
 
-#: ../../../source/programs/gdalbuildvrt.rst:212
+#: ../../../source/programs/gdalbuildvrt.rst:213
 msgid "To specify a text file with an input filename on each line"
 msgstr ""
 
-#: ../../../source/programs/gdalbuildvrt.rst:216
+#: ../../../source/programs/gdalbuildvrt.rst:217
 msgid "To disable the progress bar on the console"
 msgstr ""
 
-#: ../../../source/programs/gdalbuildvrt.rst:220
+#: ../../../source/programs/gdalbuildvrt.rst:221
 msgid "Overwrite the VRT if it already exists."
 msgstr ""
 
-#: ../../../source/programs/gdalbuildvrt.rst:224
+#: ../../../source/programs/gdalbuildvrt.rst:225
 msgid ""
 "Turn warnings as failures. This is mutually exclusive with -non_strict, the "
 "latter which is the default."
 msgstr ""
 
-#: ../../../source/programs/gdalbuildvrt.rst:230
+#: ../../../source/programs/gdalbuildvrt.rst:231
 msgid ""
 "Skip source datasets that have issues with warnings, and continue "
 "processing. This is the default."
 msgstr ""
 
-#: ../../../source/programs/gdalbuildvrt.rst:235
+#: ../../../source/programs/gdalbuildvrt.rst:236
 msgid "Examples"
 msgstr ""
 
-#: ../../../source/programs/gdalbuildvrt.rst:237
+#: ../../../source/programs/gdalbuildvrt.rst:238
 msgid "Make a virtual mosaic from all TIFF files contained in a directory :"
 msgstr ""
 
-#: ../../../source/programs/gdalbuildvrt.rst:241
+#: ../../../source/programs/gdalbuildvrt.rst:242
 msgid "gdalbuildvrt doq_index.vrt doq/*.tif"
 msgstr ""
 
-#: ../../../source/programs/gdalbuildvrt.rst:243
+#: ../../../source/programs/gdalbuildvrt.rst:244
 msgid ""
 "Make a virtual mosaic from files whose name is specified in a text file :"
 msgstr ""
 
-#: ../../../source/programs/gdalbuildvrt.rst:247
+#: ../../../source/programs/gdalbuildvrt.rst:248
 msgid "gdalbuildvrt -input_file_list my_list.txt doq_index.vrt"
 msgstr ""
 
-#: ../../../source/programs/gdalbuildvrt.rst:250
+#: ../../../source/programs/gdalbuildvrt.rst:251
 msgid "Make a RGB virtual mosaic from 3 single-band input files :"
 msgstr ""
 
-#: ../../../source/programs/gdalbuildvrt.rst:254
+#: ../../../source/programs/gdalbuildvrt.rst:255
 msgid "gdalbuildvrt -separate rgb.vrt red.tif green.tif blue.tif"
 msgstr ""
 
-#: ../../../source/programs/gdalbuildvrt.rst:256
+#: ../../../source/programs/gdalbuildvrt.rst:257
 msgid "Make a virtual mosaic with blue background colour (RGB: 0 0 255) :"
 msgstr ""
 
-#: ../../../source/programs/gdalbuildvrt.rst:260
+#: ../../../source/programs/gdalbuildvrt.rst:261
 msgid "gdalbuildvrt -hidenodata -vrtnodata \"0 0 255\" doq_index.vrt doq/*.tif"
 msgstr ""
 
-#: ../../../source/programs/gdalbuildvrt.rst:263
+#: ../../../source/programs/gdalbuildvrt.rst:264
 msgid "C API"
 msgstr ""
 
-#: ../../../source/programs/gdalbuildvrt.rst:265
+#: ../../../source/programs/gdalbuildvrt.rst:266
 msgid "This utility is also callable from C with :cpp:func:`GDALBuildVRT`."
 msgstr ""

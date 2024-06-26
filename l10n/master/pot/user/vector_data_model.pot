@@ -8,19 +8,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../../source/user/vector_data_model.rst:7
+#: ../../../source/user/vector_data_model.rst:5
 msgid "Vector Data Model"
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:9
+#: ../../../source/user/vector_data_model.rst:7
 msgid ""
 "This page documents the classes used to handle vector data. Many data types "
 "and method names are based on the OGC Simple Features data model, so it may "
@@ -29,15 +30,15 @@ msgid ""
 "to denote types and functions that apply only to vector data."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:13
+#: ../../../source/user/vector_data_model.rst:11
 msgid "Class Overview"
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:15
+#: ../../../source/user/vector_data_model.rst:13
 msgid "The following classes form the core of the vector data model:"
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:17
+#: ../../../source/user/vector_data_model.rst:15
 msgid ""
 "Geometry (:ref:`ogr_geometry.h <ogrgeometry_cpp>`): The geometry classes (:"
 "cpp:class:`OGRGeometry`, etc) encapsulate the OGC vector data types. They "
@@ -45,41 +46,41 @@ msgid ""
 "and text format. A geometry includes a spatial reference system (projection)."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:18
+#: ../../../source/user/vector_data_model.rst:16
 msgid ""
 "Spatial Reference (:ref:`ogr_spatialref.h <ogrspatialref>`): An :cpp:class:"
 "`OGRSpatialReference` encapsulates the definition of a projection and datum."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:19
+#: ../../../source/user/vector_data_model.rst:17
 msgid ""
 "Feature (:ref:`ogr_feature.h <ogrfeature_cpp>`): The :cpp:class:`OGRFeature` "
 "encapsulates the definition of a whole feature, that is a set of geometries "
 "and attributes relating to a single entity."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:20
+#: ../../../source/user/vector_data_model.rst:18
 msgid ""
 "Feature Class Definition (:ref:`ogr_feature.h <ogrfeature_cpp>`): The :cpp:"
 "class:`OGRFeatureDefn` class captures the schema (set of field definitions) "
 "for a group of related features (normally a whole layer)."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:21
+#: ../../../source/user/vector_data_model.rst:19
 msgid ""
 "Layer (:ref:`ogrsf_frmts.h <ogrlayer_cpp>`): :cpp:class:`OGRLayer` is an "
 "abstract class representing a layer of features in a :cpp:class:"
 "`GDALDataset`."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:22
+#: ../../../source/user/vector_data_model.rst:20
 msgid ""
 "Dataset (:ref:`gdal_priv.h <gdaldataset_cpp>`): A :cpp:class:`GDALDataset` "
 "is an abstract base class representing a file or database containing one or "
 "more :cpp:class:`OGRLayer` objects."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:23
+#: ../../../source/user/vector_data_model.rst:21
 msgid ""
 "Drivers (:ref:`gdal_priv.h <gdaldriver_cpp>`): A :cpp:class:`GDALDriver` "
 "represents a translator for a specific format, capable of opening and "
@@ -87,11 +88,11 @@ msgid ""
 "managed by the :cpp:class:`GDALDriverManager`."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:26
+#: ../../../source/user/vector_data_model.rst:24
 msgid "Geometry"
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:28
+#: ../../../source/user/vector_data_model.rst:26
 msgid ""
 "Individual geometry classes are used to represent the different types of "
 "vector geometry. All the geometry classes derive from :cpp:class:"
@@ -108,13 +109,13 @@ msgid ""
 "and :cpp:class:`OGRMultiSurface`."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:32
+#: ../../../source/user/vector_data_model.rst:30
 msgid ""
 "Any of the above geometry classes can store coordinates in two (XY), three "
 "(XYZ or XYM), or four (XYZM) dimensions."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:34
+#: ../../../source/user/vector_data_model.rst:32
 msgid ""
 "Additional intermediate classes contain functionality that is used by "
 "multiple geometry types. These include :cpp:class:`OGRCurve` (base class "
@@ -128,7 +129,7 @@ msgstr ""
 msgid "Diagram of OGRGeometry and subclasses"
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:39
+#: ../../../source/user/vector_data_model.rst:37
 msgid ""
 "The :cpp:class:`OGRGeometryFactory` is used to convert well known text (WKT) "
 "and well known binary (WKB) format data into the appropriate :cpp:class:"
@@ -136,7 +137,7 @@ msgid ""
 "representing all the types of simple features geometries."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:41
+#: ../../../source/user/vector_data_model.rst:39
 msgid ""
 "The :cpp:class:`OGRGeometry` includes a reference to an :cpp:class:"
 "`OGRSpatialReference` object, defining the spatial reference system of that "
@@ -145,7 +146,7 @@ msgid ""
 "using it."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:43
+#: ../../../source/user/vector_data_model.rst:41
 msgid ""
 "While it is theoretically possible to derive other or more specific geometry "
 "classes from the existing :cpp:class:`OGRGeometry` classes, this isn't an "
@@ -154,11 +155,11 @@ msgid ""
 "without modifying it."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:46
+#: ../../../source/user/vector_data_model.rst:44
 msgid "Compatibility issues with non-linear geometries"
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:48
+#: ../../../source/user/vector_data_model.rst:46
 msgid ""
 "Generic mechanisms have been introduced so that creating or modifying a "
 "feature with a non-linear geometry in a layer of a driver that does not "
@@ -167,7 +168,7 @@ msgid ""
 "`configoptions_vector`."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:50
+#: ../../../source/user/vector_data_model.rst:48
 msgid ""
 "On the other side, when retrieving data from the OGR C API, the :cpp:func:"
 "`OGRSetNonLinearGeometriesEnabledFlag` function can be used, so that "
@@ -175,11 +176,11 @@ msgid ""
 "linear approximation if necessary."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:53
+#: ../../../source/user/vector_data_model.rst:51
 msgid "Spatial Reference"
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:55
+#: ../../../source/user/vector_data_model.rst:53
 msgid ""
 "The :cpp:class:`OGRSpatialReference` class is intended to store an OpenGIS "
 "Spatial Reference System definition. Currently local, geographic and "
@@ -188,7 +189,7 @@ msgid ""
 "coordinate systems are as well supported in recent GDAL versions."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:57
+#: ../../../source/user/vector_data_model.rst:55
 msgid ""
 "The spatial coordinate system data model is inherited from the OpenGIS Well "
 "Known Text format. A simple form of this is defined in the Simple Features "
@@ -198,18 +199,18 @@ msgid ""
 "intended to be compatible with the earlier simple features form."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:59
+#: ../../../source/user/vector_data_model.rst:57
 msgid ""
 "There is also an associated :cpp:class:`OGRCoordinateTransformation` class "
 "that encapsulates use of |PROJ| for converting between different coordinate "
 "systems."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:62
+#: ../../../source/user/vector_data_model.rst:60
 msgid "Feature / Feature Definition"
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:64
+#: ../../../source/user/vector_data_model.rst:62
 msgid ""
 "The :cpp:class:`OGRGeometry` captures the geometry of a vector feature. The :"
 "cpp:class:`OGRFeature` contains geometry, and adds feature attributes, "
@@ -218,7 +219,7 @@ msgid ""
 "`OGRFeature`."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:66
+#: ../../../source/user/vector_data_model.rst:64
 msgid ""
 "The set of attributes (:cpp:class:`OGRFieldDefn`), their types, names and so "
 "forth is represented via the :cpp:class:`OGRFeatureDefn` class. One :cpp:"
@@ -227,7 +228,7 @@ msgid ""
 "type (or feature class)."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:68
+#: ../../../source/user/vector_data_model.rst:66
 msgid ""
 "The feature id (FID) of a feature is intended to be a unique identifier for "
 "the feature within the layer it is a member of. Freestanding features, or "
@@ -237,7 +238,7 @@ msgid ""
 "For instance, the GML feature id is a string."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:70
+#: ../../../source/user/vector_data_model.rst:68
 msgid ""
 "The :cpp:class:`OGRFeatureDefn` also contains an indicator of the types of "
 "geometry allowed for that feature class (returned as an :cpp:enum:"
@@ -248,7 +249,7 @@ msgid ""
 "common attribute schema."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:72
+#: ../../../source/user/vector_data_model.rst:70
 msgid ""
 "Several geometry fields (:cpp:class:`OGRGeomFieldDefn`) can be associated "
 "with an :cpp:class:`OGRFeatureDefn`. Each geometry field has its own "
@@ -257,17 +258,17 @@ msgid ""
 "`OGRGeomFieldDefn::GetSpatialRef`."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:74
+#: ../../../source/user/vector_data_model.rst:72
 msgid ""
 "The :cpp:class:`OGRFeatureDefn` also contains a feature class name (normally "
 "used as a layer name)."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:77
+#: ../../../source/user/vector_data_model.rst:75
 msgid "Field Definitions"
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:79
+#: ../../../source/user/vector_data_model.rst:77
 msgid ""
 "The behavior of each field in a feature class is defined by a shared :cpp:"
 "class:`OGRFieldDefn`. The :cpp:class:`OGRFieldDefn` specifies the field type "
@@ -277,7 +278,7 @@ msgid ""
 "OFTInteger` with a subtype of :cpp:enumerator:`OGRFieldSubType::OFSTBoolean`."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:84
+#: ../../../source/user/vector_data_model.rst:82
 msgid ""
 "The :cpp:class:`OGRFieldDefn` can also track whether a field is allowed to "
 "be null (:cpp:func:`OGRFieldDefn::IsNullable`), whether its value must be "
@@ -286,11 +287,11 @@ msgid ""
 "define a default value in case one is not manually specified."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:87
+#: ../../../source/user/vector_data_model.rst:85
 msgid "Field Domains"
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:89
+#: ../../../source/user/vector_data_model.rst:87
 msgid ""
 "Some formats support the use of field domains that describe the values that "
 "can be stored in a given attribute field. An :cpp:class:`OGRFieldDefn` may "
@@ -301,40 +302,40 @@ msgid ""
 "a field's associated :cpp:class:`OGRFieldDomain`."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:92
+#: ../../../source/user/vector_data_model.rst:90
 msgid "Available types of :cpp:class:`OGRFieldDomain` include:"
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:94
+#: ../../../source/user/vector_data_model.rst:92
 msgid ""
 ":cpp:class:`OGRCodedFieldDomain`, which constrains values those present in a "
 "specified enumeration"
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:95
+#: ../../../source/user/vector_data_model.rst:93
 msgid ""
 ":cpp:class:`OGRRangeFieldDomain`, which constrains values to a specified "
 "range"
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:96
+#: ../../../source/user/vector_data_model.rst:94
 msgid ""
 ":cpp:class:`OGRGlobFieldDomain`, which constrains values to those matching a "
 "specified pattern"
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:98
+#: ../../../source/user/vector_data_model.rst:96
 msgid ""
 "Additionally, an :cpp:class:`OGRFieldDomain` may define policies describing "
 "the values that should be assigned to domain-controlled fields when features "
 "are split or merged."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:101
+#: ../../../source/user/vector_data_model.rst:99
 msgid "Layer"
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:103
+#: ../../../source/user/vector_data_model.rst:101
 msgid ""
 "An :cpp:class:`OGRLayer` represents a layer of features within a data "
 "source. All features in an :cpp:class:`OGRLayer` share a common schema and "
@@ -345,7 +346,7 @@ msgid ""
 "result of a database query."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:105
+#: ../../../source/user/vector_data_model.rst:103
 msgid ""
 "The :cpp:class:`OGRLayer` includes methods for sequential and random reading "
 "and writing. Read access (via the :cpp:func:`OGRLayer::GetNextFeature` "
@@ -359,7 +360,7 @@ msgid ""
 "SetIgnoredFields`)."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:107
+#: ../../../source/user/vector_data_model.rst:105
 msgid ""
 "Starting with GDAL 3.6, as an alternative to getting features through "
 "``GetNextFeature``, it is possible to retrieve them by batches, with a "
@@ -367,7 +368,7 @@ msgid ""
 "GetArrowStream` method (cf :ref:`vector_api_tut_arrow_stream`)."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:109
+#: ../../../source/user/vector_data_model.rst:107
 msgid ""
 "An :cpp:class:`OGRLayer` may also store an :cpp:class:`OGRStyleTable` that "
 "provides a set of styles that may be used by features in the layer. More "
@@ -375,7 +376,7 @@ msgid ""
 "`ogr_feature_style`."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:111
+#: ../../../source/user/vector_data_model.rst:109
 msgid ""
 "One flaw in the current OGR architecture is that the spatial and attribute "
 "filters are set directly on the :cpp:class:`OGRLayer` which is intended to "
@@ -384,7 +385,7 @@ msgid ""
 "different spatial filters on each."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:116
+#: ../../../source/user/vector_data_model.rst:114
 msgid ""
 "Another question that might arise is why the :cpp:class:`OGRLayer` and :cpp:"
 "class:`OGRFeatureDefn` classes are distinct. An :cpp:class:`OGRLayer` always "
@@ -392,14 +393,14 @@ msgid ""
 "amalgamate the classes? There are two reasons:"
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:118
+#: ../../../source/user/vector_data_model.rst:116
 msgid ""
 "As defined now :cpp:class:`OGRFeature` and :cpp:class:`OGRFeatureDefn` don't "
 "depend on :cpp:class:`OGRLayer`, so they can exist independently in memory "
 "without regard to a particular layer in a data store."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:119
+#: ../../../source/user/vector_data_model.rst:117
 msgid ""
 "The SF CORBA model does not have a concept of a layer with a single fixed "
 "schema the way that the SFCOM and SFSQL models do. The fact that features "
@@ -408,7 +409,7 @@ msgid ""
 "support using OGR."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:121
+#: ../../../source/user/vector_data_model.rst:119
 msgid ""
 "The :cpp:class:`OGRLayer` class is an abstract base class. An implementation "
 "is expected to be subclassed for each file format driver implemented. "
@@ -416,11 +417,11 @@ msgid ""
 "aren't instantiated or destroyed directly."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:125
+#: ../../../source/user/vector_data_model.rst:123
 msgid "Dataset"
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:127
+#: ../../../source/user/vector_data_model.rst:125
 msgid ""
 "A :cpp:class:`GDALDataset` represents a set of :cpp:class:`OGRLayer` "
 "objects. This usually represents a single file, set of files, database or "
@@ -428,7 +429,7 @@ msgid ""
 "which it owns but can return references to."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:129
+#: ../../../source/user/vector_data_model.rst:127
 msgid ""
 ":cpp:class:`GDALDataset` is an abstract base class. An implementation is "
 "expected to be subclassed for each file format driver implemented. :cpp:"
@@ -438,14 +439,14 @@ msgid ""
 "but does not normally result in deletion of that file."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:131
+#: ../../../source/user/vector_data_model.rst:129
 msgid ""
 "A :cpp:class:`GDALDataset` has a name (usually a filename or database "
 "connection string) that can be used to reopen the data source with a :cpp:"
 "class:`GDALDriver`."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:133
+#: ../../../source/user/vector_data_model.rst:131
 msgid ""
 "The :cpp:class:`GDALDataset` also has support for executing a datasource "
 "specific command, normally a form of SQL. This is accomplished via the :cpp:"
@@ -455,21 +456,21 @@ msgid ""
 "any datasource (see :ref:`ogr_sql_sqlite_dialect`.)"
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:135
+#: ../../../source/user/vector_data_model.rst:133
 msgid ""
 "When using some drivers, the :cpp:class:`GDALDataset` also offers a "
 "mechanism for to start, commit, and rollback transactions when interacting "
 "with the underlying data store."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:138
+#: ../../../source/user/vector_data_model.rst:136
 msgid ""
 "A :cpp:class:`GDALDataset` may also be aware of relationships between layers "
 "(e.g., a foreign key relationship between database tables). Information "
 "about these relationships is stored in a :cpp:class:`GDALRelationshp`."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:142
+#: ../../../source/user/vector_data_model.rst:140
 msgid ""
 "Earlier versions of GDAL represented vector datasets using the :cpp:class:"
 "`OGRDataSource` class. This class has been maintained for backwards "
@@ -477,11 +478,11 @@ msgid ""
 "for vector data."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:145
+#: ../../../source/user/vector_data_model.rst:143
 msgid "Drivers"
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:147
+#: ../../../source/user/vector_data_model.rst:145
 msgid ""
 "A :cpp:class:`GDALDriver` object is instantiated for each file format "
 "supported. The :cpp:class:`GDALDriver` objects are registered with the :cpp:"
@@ -489,7 +490,7 @@ msgid ""
 "new datasets."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:149
+#: ../../../source/user/vector_data_model.rst:147
 msgid ""
 "It is intended that a new :cpp:class:`GDALDriver` object is instantiated and "
 "define function pointers for operations like Identify(), Open() for each "
@@ -497,7 +498,7 @@ msgid ""
 "`GDALDataset`, and :cpp:class:`OGRLayer` classes)."
 msgstr ""
 
-#: ../../../source/user/vector_data_model.rst:151
+#: ../../../source/user/vector_data_model.rst:149
 msgid ""
 "On application startup registration functions are normally called for each "
 "desired file format. These functions instantiate the appropriate :cpp:class:"

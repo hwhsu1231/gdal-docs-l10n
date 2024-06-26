@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -127,55 +128,68 @@ msgid "Layer creation option (format specific)"
 msgstr ""
 
 #: ../../../source/programs/gdal_contour.rst:96
-msgid "Elevation interval between contours."
+msgid ""
+"Elevation interval between contours. Ignored if -fl is used. Must specify "
+"either -i or -fl or -e."
 msgstr ""
 
-#: ../../../source/programs/gdal_contour.rst:100
-msgid "Offset from zero relative to which to interpret intervals."
+#: ../../../source/programs/gdal_contour.rst:101
+msgid ""
+"Offset from zero relative to which to interpret intervals. Ignored if -fl is "
+"used."
 msgstr ""
 
-#: ../../../source/programs/gdal_contour.rst:104
-msgid "Name one or more \"fixed levels\" to extract."
+#: ../../../source/programs/gdal_contour.rst:103
+msgid ""
+"For example, `-i 100` requests contours at ...-100, 0, 100... Further adding "
+"`-off 25` makes that request instead ...-75, 25, 125..."
 msgstr ""
 
 #: ../../../source/programs/gdal_contour.rst:108
 msgid ""
-"Generate levels on an exponential scale: `base ^ k`, for `k` an integer."
+"Name one or more \"fixed levels\" to extract. Must specify either -i or -fl "
+"or -e."
 msgstr ""
 
-#: ../../../source/programs/gdal_contour.rst:114
+#: ../../../source/programs/gdal_contour.rst:113
+msgid ""
+"Generate levels on an exponential scale: `base ^ k`, for `k` an integer. "
+"Must specify either -i or -fl or -e."
+msgstr ""
+
+#: ../../../source/programs/gdal_contour.rst:120
 msgid "Provide a name for the output vector layer. Defaults to \"contour\"."
 msgstr ""
 
-#: ../../../source/programs/gdal_contour.rst:118
+#: ../../../source/programs/gdal_contour.rst:124
 msgid "Generate contour polygons rather than contour lines."
 msgstr ""
 
-#: ../../../source/programs/gdal_contour.rst:124
-msgid "Be quiet."
+#: ../../../source/programs/gdal_contour.rst:130
+msgid "Be quiet: do not print progress indicators."
 msgstr ""
 
-#: ../../../source/programs/gdal_contour.rst:127
+#: ../../../source/programs/gdal_contour.rst:133
 msgid "C API"
 msgstr ""
 
-#: ../../../source/programs/gdal_contour.rst:129
+#: ../../../source/programs/gdal_contour.rst:135
 msgid ""
 "Functionality of this utility can be done from C with :cpp:func:"
 "`GDALContourGenerate`."
 msgstr ""
 
-#: ../../../source/programs/gdal_contour.rst:132
+#: ../../../source/programs/gdal_contour.rst:138
 msgid "Example"
 msgstr ""
 
-#: ../../../source/programs/gdal_contour.rst:134
+#: ../../../source/programs/gdal_contour.rst:140
 msgid ""
 "This would create 10-meter contours from the DEM data in :file:`dem.tif` and "
 "produce a shapefile in :file:`contour.shp|shx|dbf` with the contour "
 "elevations in the ``elev`` attribute."
 msgstr ""
 
-#: ../../../source/programs/gdal_contour.rst:138
+#: ../../../source/programs/gdal_contour.rst:144
 msgid "gdal_contour -a elev dem.tif contour.shp -i 10.0"
 msgstr ""

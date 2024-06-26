@@ -1,0 +1,389 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2024
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/drivers/vector/xodr.rst:4
+msgid "XODR -- OpenDRIVE Road Description Format"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:-1
+msgid "Driver short name"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:8
+msgid "XODR"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:-1
+msgid "Build dependencies"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:10
+msgid "libOpenDRIVE >= 0.5.0, GEOS"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:12
+msgid ""
+"This driver provides read access to road network elements of OpenDRIVE "
+"datasets."
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:14
+msgid ""
+"`OpenDRIVE <https://www.asam.net/standards/detail/opendrive/>`_ is an open "
+"industry format for lane-detailed description of road networks, commonly "
+"used in applications of the automotive and transportation systems domains. "
+"It bundles polynomial, continuous road geometry modelling with all necessary "
+"topological links and semantic information from traffic-regulating "
+"infrastructure (signs and traffic lights)."
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:17
+msgid "Driver capabilities"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:22
+msgid "Specification version"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:24
+msgid ""
+"The currently supported OpenDRIVE version is 1.4 and depends on what is "
+"provided by libOpenDRIVE_."
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:29
+msgid "Supported OpenDRIVE elements"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:31
+msgid ""
+"The XODR driver exposes OpenDRIVE's different road elements as separate "
+"layers by converting geometric elements into 3-dimensional OGR geometry "
+"types. The following _`layer types` are currently implemented:"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:33
+msgid ""
+"*ReferenceLine*: Road reference line (``<planView>``) as :cpp:class:"
+"`OGRLineString`."
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:34
+msgid "*LaneBorder*: Outer road lane border as :cpp:class:`OGRLineString`."
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:35
+msgid ""
+"*Lane*: Polygonal surface (TIN) of the lane mesh as :cpp:class:"
+"`OGRTriangulatedSurface`."
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:36
+msgid ""
+"*RoadMark*: Polygonal surface (TIN) of the road mark mesh as :cpp:class:"
+"`OGRTriangulatedSurface`."
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:37
+msgid ""
+"*RoadObject*: Polygonal surface (TIN) of the road object mesh as :cpp:class:"
+"`OGRTriangulatedSurface`."
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:38
+msgid ""
+"*RoadSignal*: Polygonal surface (TIN) of the road signal mesh as :cpp:class:"
+"`OGRTriangulatedSurface`."
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:41
+msgid "Spatial reference"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:43
+msgid ""
+"By definition, OpenDRIVE geometries are always referenced in a Cartesian "
+"coordinate system which defaults to having its origin at ``(0, 0, 0)``. If "
+"real-world coordinates are used, the OpenDRIVE header provides a PROJ.4 "
+"string with the definition of a projected spatial reference system:"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:47
+msgid ""
+"<header ...>\n"
+"  <geoReference><![CDATA[+proj=tmerc +lat_0=0 +lon_0=9 +k=0.9996 +x_0=500000 "
+"+y_0=0 +datum=WGS84 +units=m +no_defs]]></geoReference>\n"
+"</header>"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:51
+msgid ""
+"The XODR driver uses this PROJ definition as spatial reference for creation "
+"of all OGR geometry layers."
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:54
+msgid "Limitations"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:56
+msgid ""
+"The supported content encoding of OpenDRIVE XML files is limited to what "
+"pugixml is able to automatically guess (see `4.6. Encodings <https://pugixml."
+"org/docs/manual.html#loading.encoding>`_). The default fallback encoding is "
+"UTF-8."
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:59
+msgid "Open options"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:61
+msgid ""
+"The following open options can be specified (typically with the ``-oo "
+"name=value`` parameters of :program:`ogrinfo` or :program:`ogr2ogr`):"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:78
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:80
+msgid ""
+"Translate OpenDRIVE road *ReferenceLine* elements (``<planView>``) to :ref:"
+"`Shapefile <vector.shapefile>` using :program:`ogr2ogr`. The desired :ref:"
+"`layer type <layer types>` which is to be extracted from the dataset is "
+"specified as the last parameter of the function call."
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:84
+msgid "ogr2ogr -f \"ESRI Shapefile\" CulDeSac.shp CulDeSac.xodr ReferenceLine"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:86
+msgid ""
+"Convert the whole OpenDRIVE dataset with all its different layers into a :"
+"ref:`GeoPackage <vector.gpkg>` using:"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:90
+msgid "ogr2ogr -f \"GPKG\" CulDeSac.gpkg CulDeSac.xodr"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:92
+msgid ""
+"Convert the whole OpenDRIVE dataset with custom parameters :oo:`EPSILON` "
+"and :oo:`DISSOLVE_TIN` into a :ref:`GeoPackage <vector.gpkg>`:"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:96
+msgid ""
+"ogr2ogr -f \"GPKG\" CulDeSac.gpkg CulDeSac.xodr -oo EPSILON=0.9 -oo "
+"DISSOLVE_TIN=YES"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:99
+msgid "Convenient usage through docker image"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:101
+msgid ""
+"To use the XODR driver through a docker image, first build the image from "
+"the corresponding docker directory"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:105
+msgid ""
+"cd <gdal>/docker/ubuntu-full/\n"
+"docker build -t gdal/xodr -f Dockerfile ."
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:108
+msgid ""
+"For general usage information refer to `GDAL Docker images <https://github."
+"com/OSGeo/gdal/tree/master/docker#usage>`__. Usage examples:"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:110
+msgid ""
+"Use :program:`ogrinfo` to extract detailed information about a local `xodr` "
+"file by mounting your current working directory (`$PWD`) containing the file "
+"into the Docker container:"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:114
+msgid "docker run --rm -v ${PWD}:/home -it gdal/xodr ogrinfo /home/<file>.xodr"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:116
+msgid ""
+"Use :program:`ogr2ogr` to convert a local `xodr` file into any other "
+"supported OGR output format. The result will be automatically available in "
+"your host machine's working directory which is mounted into the container:"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:120
+msgid ""
+"docker run --rm -v ${PWD}:/home -it gdal/xodr ogr2ogr -f \"GPKG\" /home/"
+"<file>.gpkg /home/<file>.xodr"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:123
+msgid ""
+"Alternatively, you can run a docker container that enables using the XODR "
+"driver in an isolated workspace from within the container"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:127
+msgid "docker run --name <container_name> -it gdal/xodr /bin/bash"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:131
+msgid "General building notes"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:133
+msgid "Building of the driver as plugin is tested to work on"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:135
+msgid "Ubuntu 24.04 using GCC"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:136
+msgid ""
+"Windows 10 using GCC 13.1.0 (with MCF threads) + MinGW-w64 11.0.0 (MSVCRT "
+"runtime), which is obtainable from `WinLibs <https://winlibs.com/>`_."
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:138
+msgid "Ensure to meet the following driver dependencies:"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:140
+msgid "PROJ"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:141
+msgid "GEOS"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:142
+msgid ""
+"libOpenDRIVE_ as shared library (built with CMake option ``-"
+"DBUILD_SHARED_LIBS=ON``)"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:144
+msgid ""
+"Then, after checking out GDAL sources with this driver extension, create the "
+"build directory:"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:148
+msgid ""
+"cd <gdal>\n"
+"mkdir build\n"
+"cd build"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:152
+msgid ""
+"From the build directory configure CMake to activate our XODR driver as "
+"plugin:"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:156
+msgid ""
+"cmake .. -DOGR_ENABLE_DRIVER_XODR_PLUGIN=TRUE -DOpenDrive_DIR=/path/to/"
+"libOpenDRIVE/installdir/cmake/"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:158
+msgid ""
+"The :file:`cmake/` path is usually automatically created when installing "
+"libOpenDRIVE and contains the necessary configuration files for inclusion "
+"into other project builds."
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:160
+msgid "Now, build GDAL and install it:"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:164
+msgid ""
+"cmake --build .\n"
+"cmake --build . --target install"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:167
+msgid ""
+"Afterwards you will find a new shared library file :file:`{path/to/GDAL/"
+"installdir}/lib/gdalplugins/ogr_XODR`."
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:170
+msgid "Verifying a successful build"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:172
+msgid "Check if XODR driver is found:"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:176
+msgid ""
+"cd <gdal>/build/\n"
+"./apps/ogrinfo --format XODR"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:179
+msgid "This should print basic capabilities of the driver:"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:183
+msgid ""
+"Format Details:\n"
+"  Short Name: XODR\n"
+"  Long Name: OpenDRIVE - Open Dynamic Road Information for Vehicle "
+"Environment\n"
+"  Supports: Vector\n"
+"  Supports: Open() - Open existing dataset.\n"
+"<OpenOptionList>\n"
+"  ...\n"
+"</OpenOptionList>"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:192
+msgid ""
+"If you are on Linux, depending on your environment, you might experience "
+"linker errors like:"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:196
+msgid ""
+"ERROR 1: libOpenDrive.so: cannot open shared object file: No such file or "
+"directory"
+msgstr ""
+
+#: ../../../source/drivers/vector/xodr.rst:198
+msgid ""
+"In such cases ensure that your environment variable ``LD_LIBRARY_PATH`` "
+"points to the corresponding install directories of libOpenDRIVE and GDAL and "
+"run ``ldconfig`` afterwards."
+msgstr ""

@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -87,7 +88,7 @@ msgstr ""
 
 #: ../../../source/drivers/vector/gml.rst:38
 msgid ""
-"The following :ref:`configuration options <configoptions>` are available:"
+"|about-config-options| The following configuration options are available:"
 msgstr ""
 
 #: ../../../source/drivers/vector/gml.rst:120
@@ -668,16 +669,27 @@ msgstr ""
 msgid "Open options"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:571
+#: ../../../source/drivers/vector/gml.rst:504
+msgid "|about-open-options| The following open options are supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/gml.rst:574
 msgid ""
 "Whether to consider srsName like EPSG:XXXX as respecting EPSG axis order."
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:627
+#: ../../../source/drivers/vector/gml.rst:632
+msgid ""
+"When changing the value of most of the above options, it is recommended to "
+"delete the ``.gfs`` file if it pre-exists, otherwise mis-behavior might be "
+"observed."
+msgstr ""
+
+#: ../../../source/drivers/vector/gml.rst:638
 msgid "Creation Issues"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:629
+#: ../../../source/drivers/vector/gml.rst:640
 msgid ""
 "On export all layers are written to a single GML file all in a single "
 "feature collection. Each layer's name is used as the element name for "
@@ -685,34 +697,40 @@ msgid ""
 "geometryProperty element on the feature."
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:635
+#: ../../../source/drivers/vector/gml.rst:646
 msgid "Dataset creation options"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:677
+#: ../../../source/drivers/vector/gml.rst:648
+msgid ""
+"|about-dataset-creation-options| The following dataset creation options are "
+"supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/gml.rst:691
 msgid ""
 "*GML2* in order to write GML files that follow GML 2.1.2 (Default before "
 "GDAL 3.4)"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:678
+#: ../../../source/drivers/vector/gml.rst:692
 msgid "*GML3* in order to write GML files that follow GML 3.1.1 SF-0 profile."
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:680
+#: ../../../source/drivers/vector/gml.rst:694
 msgid ""
 "*GML3Deegree* in order to produce a GML 3.1.1 .XSD schema, with a few "
 "variations with respect to what is recommended by GML3 SF-0 profile, but "
 "that will be better accepted by some software (such as Deegree 3)."
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:684
+#: ../../../source/drivers/vector/gml.rst:698
 msgid ""
 "*GML3.2*\\ in order to write GML files that follow GML 3.2.1 SF-0 profile. "
 "(Default since GDAL 3.4)"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:687
+#: ../../../source/drivers/vector/gml.rst:701
 msgid ""
 "Non-linear geometries can be written. This is only compatible with selecting "
 "on of that above GML3 format variant. Otherwise, such geometries will be "
@@ -722,7 +740,7 @@ msgid ""
 "by SF-0)."
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:699
+#: ../../../source/drivers/vector/gml.rst:713
 msgid ""
 "Whether to use the gml:FeatureCollection, instead of creating a dedicated "
 "container element in the target namespace. Only valid for FORMAT=GML3/"
@@ -733,11 +751,11 @@ msgid ""
 "specifications."
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:778
+#: ../../../source/drivers/vector/gml.rst:792
 msgid "VSI Virtual File System API support"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:780
+#: ../../../source/drivers/vector/gml.rst:794
 msgid ""
 "The driver supports reading and writing to files managed by VSI Virtual File "
 "System API, which include \"regular\" files, as well as files in the /"
@@ -745,7 +763,7 @@ msgid ""
 "domains."
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:785
+#: ../../../source/drivers/vector/gml.rst:799
 msgid ""
 "Writing to /dev/stdout or /vsistdout/ is also supported. Note that in that "
 "case, only the content of the GML file will be written to the standard "
@@ -753,23 +771,23 @@ msgid ""
 "is also the case if writing in /vsigzip/"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:791
+#: ../../../source/drivers/vector/gml.rst:805
 msgid "Syntax of .gfs files"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:793
+#: ../../../source/drivers/vector/gml.rst:807
 msgid ""
 "A XML Schema for .gfs files can be found at https://raw.githubusercontent."
 "com/OSGeo/gdal/master/ogr/ogrsf_frmts/gml/data/gfs.xsd ."
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:796
-#: ../../../source/drivers/vector/gml.rst:904
-#: ../../../source/drivers/vector/gml.rst:974
+#: ../../../source/drivers/vector/gml.rst:810
+#: ../../../source/drivers/vector/gml.rst:918
+#: ../../../source/drivers/vector/gml.rst:988
 msgid "Let's consider the following test.gml file :"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:798
+#: ../../../source/drivers/vector/gml.rst:812
 msgid ""
 "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
 "<gml:FeatureCollection xmlns:gml=\"http://www.opengis.net/gml\">\n"
@@ -792,13 +810,13 @@ msgid ""
 "</gml:FeatureCollection>"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:820
-#: ../../../source/drivers/vector/gml.rst:987
-#: ../../../source/drivers/vector/gml.rst:1055
+#: ../../../source/drivers/vector/gml.rst:834
+#: ../../../source/drivers/vector/gml.rst:1001
+#: ../../../source/drivers/vector/gml.rst:1069
 msgid "and the following associated .gfs file."
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:822
+#: ../../../source/drivers/vector/gml.rst:836
 msgid ""
 "<GMLFeatureClassList>\n"
 "  <GMLFeatureClass>\n"
@@ -821,7 +839,7 @@ msgid ""
 "</GMLFeatureClassList>"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:844
+#: ../../../source/drivers/vector/gml.rst:858
 msgid ""
 "Note the presence of the '|' character in the <ElementPath> and "
 "<GeometryElementPath> elements to specify the wished field/geometry element "
@@ -830,7 +848,7 @@ msgid ""
 "the GML driver will use the last recognized geometry element."
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:851
+#: ../../../source/drivers/vector/gml.rst:865
 msgid ""
 "The <GeometryType> element can be specified to force the geometry type. "
 "Accepted values are : 0 (any geometry type), 1 (point), 2 (linestring), 3 "
@@ -838,14 +856,14 @@ msgid ""
 "(geometrycollection)."
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:856
+#: ../../../source/drivers/vector/gml.rst:870
 msgid ""
 "The <GeometryElementPath> and <GeometryType> can be specified as many times "
 "as there are geometry fields in the GML file. Another possibility is to "
 "define a <GeomPropertyDefn>element as many times as necessary:"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:861
+#: ../../../source/drivers/vector/gml.rst:875
 msgid ""
 "<GMLFeatureClassList>\n"
 "  <GMLFeatureClass>\n"
@@ -866,12 +884,12 @@ msgid ""
 "</GMLFeatureClassList>"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:880
-#: ../../../source/drivers/vector/gml.rst:1009
+#: ../../../source/drivers/vector/gml.rst:894
+#: ../../../source/drivers/vector/gml.rst:1023
 msgid "The output of *ogrinfo test.gml -ro -al* is:"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:884
+#: ../../../source/drivers/vector/gml.rst:898
 msgid ""
 "Layer name: LAYER\n"
 "Geometry: Unknown (any)\n"
@@ -888,15 +906,15 @@ msgid ""
 "  POINT (3 50)"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:899
+#: ../../../source/drivers/vector/gml.rst:913
 msgid "Advanced .gfs syntax"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:902
+#: ../../../source/drivers/vector/gml.rst:916
 msgid "Specifying ElementPath to find objects embedded into top level objects"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:906
+#: ../../../source/drivers/vector/gml.rst:920
 msgid ""
 "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
 "<gml:FeatureCollection xmlns:xlink=\"http://www.w3.org/1999/xlink\"\n"
@@ -943,7 +961,7 @@ msgid ""
 "</gml:FeatureCollection>"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:946
+#: ../../../source/drivers/vector/gml.rst:960
 msgid ""
 "By default, only the TopLevelObject object would be reported and it would "
 "only use the second geometry. This is not the desired behavior in that "
@@ -952,7 +970,7 @@ msgid ""
 "omitted) :"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:952
+#: ../../../source/drivers/vector/gml.rst:966
 msgid ""
 "<GMLFeatureClassList>\n"
 "  <GMLFeatureClass>\n"
@@ -968,17 +986,17 @@ msgid ""
 "</GMLFeatureClassList>"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:968
+#: ../../../source/drivers/vector/gml.rst:982
 msgid "Getting XML attributes as OGR fields"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:970
+#: ../../../source/drivers/vector/gml.rst:984
 msgid ""
 "The element@attribute syntax can be used in the <ElementPath> to specify "
 "that the value of attribute 'attribute' of element 'element' must be fetched."
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:976
+#: ../../../source/drivers/vector/gml.rst:990
 msgid ""
 "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
 "<gml:FeatureCollection xmlns:gml=\"http://www.opengis.net/gml\">\n"
@@ -990,7 +1008,7 @@ msgid ""
 "</gml:FeatureCollection>"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:989
+#: ../../../source/drivers/vector/gml.rst:1003
 msgid ""
 "<GMLFeatureClassList>\n"
 "  <GMLFeatureClass>\n"
@@ -1011,7 +1029,7 @@ msgid ""
 "</GMLFeatureClassList>"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1013
+#: ../../../source/drivers/vector/gml.rst:1027
 msgid ""
 "Layer name: LAYER\n"
 "Geometry: None\n"
@@ -1027,11 +1045,11 @@ msgid ""
 "  length_unit (String) = m"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1027
+#: ../../../source/drivers/vector/gml.rst:1041
 msgid "Using conditions on XML attributes"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1029
+#: ../../../source/drivers/vector/gml.rst:1043
 msgid ""
 "A <Condition> element can be specified as a child element of a "
 "<PropertyDefn>. The content of the Condition follows a minimalistic XPath "
@@ -1040,17 +1058,17 @@ msgid ""
 "precedence is not taken into account)."
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1035
+#: ../../../source/drivers/vector/gml.rst:1049
 msgid ""
 "Several <PropertyDefn> can be defined with the same <ElementPath>, but with "
 "<Condition> that must be mutually exclusive."
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1038
+#: ../../../source/drivers/vector/gml.rst:1052
 msgid "Let's consider the following testcondition.gml file :"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1040
+#: ../../../source/drivers/vector/gml.rst:1054
 msgid ""
 "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n"
 "<ogr:FeatureCollection\n"
@@ -1066,7 +1084,7 @@ msgid ""
 "</ogr:FeatureCollection>"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1057
+#: ../../../source/drivers/vector/gml.rst:1071
 msgid ""
 "<GMLFeatureClassList>\n"
 "  <GMLFeatureClass>\n"
@@ -1101,11 +1119,11 @@ msgid ""
 "</GMLFeatureClassList>"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1091
+#: ../../../source/drivers/vector/gml.rst:1105
 msgid "The output of *ogrinfo testcondition.gml -ro -al* is:"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1095
+#: ../../../source/drivers/vector/gml.rst:1109
 msgid ""
 "Layer name: testcondition\n"
 "Geometry: None\n"
@@ -1125,11 +1143,11 @@ msgid ""
 "  name_others (StringList) = (1:Deutsche name)"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1113
+#: ../../../source/drivers/vector/gml.rst:1127
 msgid "Registry for GML application schemas"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1115
+#: ../../../source/drivers/vector/gml.rst:1129
 msgid ""
 "The \"data\" directory of the GDAL installation contains a \"gml_registry."
 "xml\" file that links feature types of GML application schemas to .xsd or ."
@@ -1137,17 +1155,17 @@ msgid ""
 "or .xsd file is found next to the GML file."
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1120
+#: ../../../source/drivers/vector/gml.rst:1134
 msgid ""
 "An alternate location for the registry file can be defined by setting its "
 "full pathname to the GML_REGISTRY configuration option."
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1123
+#: ../../../source/drivers/vector/gml.rst:1137
 msgid "An example of such a file is :"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1125
+#: ../../../source/drivers/vector/gml.rst:1139
 msgid ""
 "<gml_registry>\n"
 "    <!-- Finnish National Land Survey cadastral data -->\n"
@@ -1201,7 +1219,7 @@ msgid ""
 "</gml_registry>"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1165
+#: ../../../source/drivers/vector/gml.rst:1179
 msgid ""
 "XML schema definition (.xsd) files are pointed by the schemaLocation "
 "attribute, whereas OGR .gfs files are pointed by the gfsSchemaLocation "
@@ -1210,7 +1228,7 @@ msgid ""
 "gml_registry.xml)."
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1171
+#: ../../../source/drivers/vector/gml.rst:1185
 msgid ""
 "The schema is used if and only if the namespace prefix and URI are found in "
 "the first bytes of the GML file (e.g. *xmlns:ktjkiiwfs=\"http://xml.nls.fi/"
@@ -1221,11 +1239,11 @@ msgid ""
 "the first bytes of the GML file (e.g. *vf:TypSouboru>OB_UKSH*)."
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1181
+#: ../../../source/drivers/vector/gml.rst:1195
 msgid "Building junction tables"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1183
+#: ../../../source/drivers/vector/gml.rst:1197
 msgid ""
 "The :source_file:`swig/python/gdal-utils/osgeo_utils/samples/"
 "ogr_build_junction_table.py` script can be used to build a `junction table "
@@ -1234,7 +1252,7 @@ msgid ""
 "GML file with links to other features :"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1192
+#: ../../../source/drivers/vector/gml.rst:1206
 msgid ""
 "OGRFeature(myFeature):1\n"
 "  gml_id (String) = myFeature.1\n"
@@ -1247,72 +1265,72 @@ msgid ""
 "  otherFeature_href (StringList) = (2:#otherFeature.30,#otherFeature.10)"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1202
+#: ../../../source/drivers/vector/gml.rst:1216
 msgid "After running"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1206
+#: ../../../source/drivers/vector/gml.rst:1220
 msgid "ogr2ogr -f PG PG:dbname=mydb my.gml"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1208
+#: ../../../source/drivers/vector/gml.rst:1222
 msgid "to import it into PostGIS and"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1212
+#: ../../../source/drivers/vector/gml.rst:1226
 msgid "python3 ogr_build_junction_table.py PG:dbname=mydb"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1214
+#: ../../../source/drivers/vector/gml.rst:1228
 msgid ""
 ", a *myfeature_otherfeature* table will be created and will contain the "
 "following content :"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1218
+#: ../../../source/drivers/vector/gml.rst:1232
 msgid "myfeature_gml_id"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1218
+#: ../../../source/drivers/vector/gml.rst:1232
 msgid "otherfeature_gml_id"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1220
-#: ../../../source/drivers/vector/gml.rst:1221
+#: ../../../source/drivers/vector/gml.rst:1234
+#: ../../../source/drivers/vector/gml.rst:1235
 msgid "myFeature.1"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1220
-#: ../../../source/drivers/vector/gml.rst:1223
+#: ../../../source/drivers/vector/gml.rst:1234
+#: ../../../source/drivers/vector/gml.rst:1237
 msgid "otherFeature.10"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1221
+#: ../../../source/drivers/vector/gml.rst:1235
 msgid "otherFeature.20"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1222
-#: ../../../source/drivers/vector/gml.rst:1223
+#: ../../../source/drivers/vector/gml.rst:1236
+#: ../../../source/drivers/vector/gml.rst:1237
 msgid "myFeature.2"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1222
+#: ../../../source/drivers/vector/gml.rst:1236
 msgid "otherFeature.30"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1227
+#: ../../../source/drivers/vector/gml.rst:1241
 msgid "Reading datasets resulting from a WFS 2.0 join queries"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1229
+#: ../../../source/drivers/vector/gml.rst:1243
 msgid "The GML driver can read datasets resulting from a WFS 2.0 join queries."
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1231
+#: ../../../source/drivers/vector/gml.rst:1245
 msgid "Such datasets typically look like:"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1233
+#: ../../../source/drivers/vector/gml.rst:1247
 msgid ""
 "<wfs:FeatureCollection xmlns:xs=\"http://www.w3.org/2001/XMLSchema\"\n"
 "    xmlns:app=\"http://app.com\"\n"
@@ -1364,14 +1382,14 @@ msgid ""
 "</wfs:FeatureCollection>"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1279
+#: ../../../source/drivers/vector/gml.rst:1293
 msgid ""
 "OGR will group together the attributes from the layers participating to the "
 "join and will prefix them with the layer name. So the above example will be "
 "read as the following:"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1285
+#: ../../../source/drivers/vector/gml.rst:1299
 msgid ""
 "OGRFeature(join_table1_table2):0\n"
 "  table1.gml_id (String) = table1-1\n"
@@ -1393,15 +1411,15 @@ msgid ""
 "  table2.geometry = POINT (2 50)"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1305
+#: ../../../source/drivers/vector/gml.rst:1319
 msgid "Geometry coordinate precision"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1307
+#: ../../../source/drivers/vector/gml.rst:1321
 msgid "3.9"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1309
+#: ../../../source/drivers/vector/gml.rst:1323
 msgid ""
 "The GML driver supports reading and writing the geometry coordinate "
 "precision, using the :cpp:class:`OGRGeomCoordinatePrecision` settings of "
@@ -1410,7 +1428,7 @@ msgid ""
 "precision."
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1314
+#: ../../../source/drivers/vector/gml.rst:1328
 msgid ""
 "Implementation details: the coordinate precision is stored in the XML schema "
 "as ``xs:annotation/xs:appinfo[source=\"http://ogr.maptools.org/\"]/ogr:"
@@ -1420,11 +1438,11 @@ msgid ""
 "units of the SRS."
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1320
+#: ../../../source/drivers/vector/gml.rst:1334
 msgid "Example:"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1322
+#: ../../../source/drivers/vector/gml.rst:1336
 msgid ""
 "<xs:element name=\"my_geom\" type=\"gml:SurfacePropertyType\" "
 "nillable=\"true\" minOccurs=\"0\" maxOccurs=\"1\">\n"
@@ -1437,79 +1455,79 @@ msgid ""
 "</xs:element>"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1334
+#: ../../../source/drivers/vector/gml.rst:1348
 msgid "Examples"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1336
+#: ../../../source/drivers/vector/gml.rst:1350
 msgid ""
 "The ogr2ogr utility can be used to dump the results of a Oracle query to GML:"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1341
+#: ../../../source/drivers/vector/gml.rst:1355
 msgid "ogr2ogr -f GML output.gml OCI:usr/pwd@db my_feature -where \"id = 0\""
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1343
+#: ../../../source/drivers/vector/gml.rst:1357
 msgid ""
 "The ogr2ogr utility can be used to dump the results of a PostGIS query to "
 "GML:"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1348
+#: ../../../source/drivers/vector/gml.rst:1362
 msgid ""
 "ogr2ogr -f GML output.gml PG:'host=myserver dbname=warmerda' -sql \"SELECT "
 "pop_1994 from canada where province_name = 'Alberta'\""
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1351
+#: ../../../source/drivers/vector/gml.rst:1365
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1353
+#: ../../../source/drivers/vector/gml.rst:1367
 msgid "`GML Specifications <http://www.opengeospatial.org/standards/gml>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1354
+#: ../../../source/drivers/vector/gml.rst:1368
 msgid ""
 "`GML 3.1.1 simple features profile - OGC(R) 06-049r1 <http://portal."
 "opengeospatial.org/files/?artifact_id=15201>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1356
+#: ../../../source/drivers/vector/gml.rst:1370
 msgid ""
 "`Geography Markup Language (GML) simple features profile (with Corrigendum) "
 "(GML 3.2.1) - OGC(R) 10-100r3 <https://portal.opengeospatial.org/files/?"
 "artifact_id=42729>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1359
+#: ../../../source/drivers/vector/gml.rst:1373
 msgid "`Xerces <http://xml.apache.org/xerces2-j/index.html>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1360
+#: ../../../source/drivers/vector/gml.rst:1374
 msgid ""
 ":ref:`GMLAS - Geography Markup Language (GML) driven by application schemas "
 "<vector.gmlas>`"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1362
+#: ../../../source/drivers/vector/gml.rst:1376
 msgid ""
 ":ref:`NAS/ALKIS : specialized GML driver for cadastral data in Germany "
 "<vector.nas>`"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1366
+#: ../../../source/drivers/vector/gml.rst:1380
 msgid "Credits"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1368
+#: ../../../source/drivers/vector/gml.rst:1382
 msgid ""
 "Implementation for :config:`GML_SKIP_RESOLVE_ELEMS=HUGE` was contributed by "
 "A.Furieri, with funding from Regione Toscana"
 msgstr ""
 
-#: ../../../source/drivers/vector/gml.rst:1370
+#: ../../../source/drivers/vector/gml.rst:1384
 msgid ""
 "Support for cadastral data in Finnish National Land Survey GML and Inspire "
 "GML was funded by The Information Centre of the Ministry of Agriculture and "

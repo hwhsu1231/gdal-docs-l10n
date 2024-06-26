@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,30 +94,30 @@ msgid ""
 msgstr ""
 
 #: ../../../source/drivers/raster/basisu.rst:53
-msgid "The following creation options are available:"
+msgid "|about-creation-options| The following creation options are available:"
 msgstr ""
 
-#: ../../../source/drivers/raster/basisu.rst:110
+#: ../../../source/drivers/raster/basisu.rst:111
 msgid ""
 "Defaults to the maximum number of virtual CPUs available. Can also be "
 "controlled with the :config:`GDAL_NUM_THREADS` configuration option."
 msgstr ""
 
-#: ../../../source/drivers/raster/basisu.rst:118
+#: ../../../source/drivers/raster/basisu.rst:119
 msgid "Whether to enable MIPMAP generation."
 msgstr ""
 
-#: ../../../source/drivers/raster/basisu.rst:128
+#: ../../../source/drivers/raster/basisu.rst:129
 msgid "Build instructions"
 msgstr ""
 
-#: ../../../source/drivers/raster/basisu.rst:130
+#: ../../../source/drivers/raster/basisu.rst:131
 msgid ""
 "Building basisu as a library requires currently building the `cmake` branch "
 "of the https://github.com/rouault/basis_universal/tree/cmake fork."
 msgstr ""
 
-#: ../../../source/drivers/raster/basisu.rst:133
+#: ../../../source/drivers/raster/basisu.rst:134
 msgid ""
 "git clone -b cmake https://github.com/rouault/basis_universal\n"
 "cd basis_universal\n"
@@ -128,7 +128,7 @@ msgid ""
 "cmake --build . --config Release --target install"
 msgstr ""
 
-#: ../../../source/drivers/raster/basisu.rst:142
+#: ../../../source/drivers/raster/basisu.rst:143
 msgid ""
 "Once basisu is built, GDAL CMake options must be configured by pointing the "
 "basisu install prefix in the ``CMAKE_PREFIX_PATH`` variable or "

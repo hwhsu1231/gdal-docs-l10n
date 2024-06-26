@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../../source/programs/gdal2xyz.rst:5
-msgid "gdal2xyz.py"
+#: ../../../source/programs/gdal2xyz.rst:11
+msgid "gdal2xyz"
 msgstr ""
 
 #: ../../../source/programs/gdal2xyz.rst:9
@@ -64,6 +65,12 @@ msgstr ""
 msgid "Return the output as numpy arrays."
 msgstr ""
 
+#: ../../../source/programs/gdal2xyz.rst:39
+msgid ""
+"gdal2xyz is a Python utility, and is only available if GDAL Python bindings "
+"are available."
+msgstr ""
+
 #: ../../../source/programs/options/help.rst:3
 msgid "Show this help message and exit"
 msgstr ""
@@ -74,17 +81,17 @@ msgid ""
 "exit."
 msgstr ""
 
-#: ../../../source/programs/gdal2xyz.rst:43
+#: ../../../source/programs/gdal2xyz.rst:47
 msgid "How many rows/cols to skip in each iteration."
 msgstr ""
 
-#: ../../../source/programs/gdal2xyz.rst:47
+#: ../../../source/programs/gdal2xyz.rst:51
 msgid ""
 "Selects a subwindow from the source image for copying based on pixel/line "
 "location."
 msgstr ""
 
-#: ../../../source/programs/gdal2xyz.rst:51
+#: ../../../source/programs/gdal2xyz.rst:55
 msgid ""
 "Select band *band* from the input spectral bands for output. Bands are "
 "numbered from 1 in the order spectral bands are specified. Multiple **-b** "
@@ -92,26 +99,26 @@ msgid ""
 "used. In order to use all input bands set `-allbands` or `-b 0`."
 msgstr ""
 
-#: ../../../source/programs/gdal2xyz.rst:59
+#: ../../../source/programs/gdal2xyz.rst:63
 msgid "Select all input bands."
 msgstr ""
 
-#: ../../../source/programs/gdal2xyz.rst:63
+#: ../../../source/programs/gdal2xyz.rst:67
 msgid "Use comma instead of space as a delimiter."
 msgstr ""
 
-#: ../../../source/programs/gdal2xyz.rst:67
+#: ../../../source/programs/gdal2xyz.rst:71
 msgid "Exclude the output lines with nodata value (as determined by srcnodata)"
 msgstr ""
 
-#: ../../../source/programs/gdal2xyz.rst:71
+#: ../../../source/programs/gdal2xyz.rst:75
 msgid ""
 "The nodata value of the dataset (for skipping or replacing) Default (`None`) "
 "- Use the dataset nodata value; `Sequence`/`Number` - Use the given nodata "
 "value (per band or per dataset)."
 msgstr ""
 
-#: ../../../source/programs/gdal2xyz.rst:77
+#: ../../../source/programs/gdal2xyz.rst:81
 msgid ""
 "Replace source nodata with a given nodata. Has an effect only if not setting "
 "`-skipnodata`. Default(`None`) - Use `srcnodata`, no replacement; `Sequence`/"
@@ -119,29 +126,29 @@ msgid ""
 "per dataset)."
 msgstr ""
 
-#: ../../../source/programs/gdal2xyz.rst:83
+#: ../../../source/programs/gdal2xyz.rst:87
 msgid "Show help message and exit."
 msgstr ""
 
-#: ../../../source/programs/gdal2xyz.rst:87
+#: ../../../source/programs/gdal2xyz.rst:91
 msgid ""
 "The source dataset name. It can be either file name, URL of data source or "
 "subdataset name for multi-dataset files."
 msgstr ""
 
-#: ../../../source/programs/gdal2xyz.rst:92
+#: ../../../source/programs/gdal2xyz.rst:96
 msgid "The destination file name."
 msgstr ""
 
-#: ../../../source/programs/gdal2xyz.rst:96
+#: ../../../source/programs/gdal2xyz.rst:100
 msgid "Examples"
 msgstr ""
 
-#: ../../../source/programs/gdal2xyz.rst:100
+#: ../../../source/programs/gdal2xyz.rst:104
 msgid "gdal2xyz -b 1 -b 2 -dstnodata 0 input.tif output.txt"
 msgstr ""
 
-#: ../../../source/programs/gdal2xyz.rst:103
+#: ../../../source/programs/gdal2xyz.rst:107
 msgid ""
 "To create a text file in `xyz` format from the input file `input.tif`. The "
 "first columns, x and y, are the coordinates of the centers of each cell. The "
@@ -149,16 +156,12 @@ msgid ""
 "dataset nodata values with zeros."
 msgstr ""
 
-#: ../../../source/programs/gdal2xyz.rst:110
+#: ../../../source/programs/gdal2xyz.rst:114
 msgid "Caveats"
 msgstr ""
 
-#: ../../../source/programs/gdal2xyz.rst:112
+#: ../../../source/programs/gdal2xyz.rst:116
 msgid ""
 "gdal2xyz output values with a limited precision. Use ``gdal_translate -of "
 "XYZ`` if more precision is desired."
-msgstr ""
-
-#: ../../../source/programs/gdal2xyz.rst:11
-msgid "gdal2xyz"
 msgstr ""

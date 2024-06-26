@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -110,10 +111,6 @@ msgid ""
 msgstr ""
 
 #: ../../../source/drivers/raster/nitf.rst:104
-msgid "Creation Options:"
-msgstr ""
-
-#: ../../../source/drivers/raster/nitf.rst:106
 msgid ""
 "Most file header, imagery header metadata and security fields can be set "
 "with appropriate **creation options** (although they are reported as "
@@ -125,48 +122,52 @@ msgid ""
 "metadata list."
 msgstr ""
 
-#: ../../../source/drivers/raster/nitf.rst:122
-msgid "NC is the default value, and means no compression."
+#: ../../../source/drivers/raster/nitf.rst:114
+msgid "|about-creation-options| The following creation options are available:"
 msgstr ""
 
 #: ../../../source/drivers/raster/nitf.rst:123
+msgid "NC is the default value, and means no compression."
+msgstr ""
+
+#: ../../../source/drivers/raster/nitf.rst:124
 msgid ""
 "C3 means JPEG compression and is only available for the CreateCopy() method. "
 "The QUALITY and PROGRESSIVE JPEG-specific creation options can be used. See "
 "the :ref:`raster.jpeg` driver. Multi-block images can be written."
 msgstr ""
 
-#: ../../../source/drivers/raster/nitf.rst:127
+#: ../../../source/drivers/raster/nitf.rst:128
 msgid ""
 "M3 is a variation of C3. The only difference is that a block map is written, "
 "which allow for fast seeking to any block."
 msgstr ""
 
-#: ../../../source/drivers/raster/nitf.rst:129
+#: ../../../source/drivers/raster/nitf.rst:130
 msgid ""
 "C8 means JPEG2000 compression (one block) and is available for CreateCopy() "
 "and/or Create() methods. See below paragraph for specificities."
 msgstr ""
 
-#: ../../../source/drivers/raster/nitf.rst:302
+#: ../../../source/drivers/raster/nitf.rst:303
 msgid "JPEG2000 compression (write support)"
 msgstr ""
 
-#: ../../../source/drivers/raster/nitf.rst:304
+#: ../../../source/drivers/raster/nitf.rst:305
 msgid ""
 "JPEG2000 compression is available when using the IC=C8 creation option, if "
 "the JP2ECW (SDK 3.3, or for later versions assuming the user has the key to "
 "enable JPEG2000 writing), JP2KAK or JP2OpenJPEG driver are available."
 msgstr ""
 
-#: ../../../source/drivers/raster/nitf.rst:308
+#: ../../../source/drivers/raster/nitf.rst:309
 msgid ""
 "They are tried in that order when several ones are available, unless the "
 "JPEG2000_DRIVER creation option (added in GDAL 3.4) is set to explicitly "
 "specify the JPEG2000 capable driver to use."
 msgstr ""
 
-#: ../../../source/drivers/raster/nitf.rst:312
+#: ../../../source/drivers/raster/nitf.rst:313
 msgid ""
 ":ref:`JP2ECW <raster.jp2ecw>`: The :co:`drivers/raster/jp2ecw TARGET` "
 "(target size reduction as a percentage of the original) and :co:`drivers/"
@@ -176,7 +177,7 @@ msgid ""
 "implying BLOCKXSIZE=BLOCKYSIZE=1024)."
 msgstr ""
 
-#: ../../../source/drivers/raster/nitf.rst:318
+#: ../../../source/drivers/raster/nitf.rst:319
 msgid ""
 ":ref:`JP2KAK <raster.jp2kak>`: The :co:`drivers/raster/jp2kak QUALITY`, :co:"
 "`drivers/raster/jp2kak BLOCKXSIZE`, :co:`drivers/raster/jp2kak BLOCKYSIZE`, :"
@@ -184,7 +185,7 @@ msgid ""
 "specific creation options can be used. Only CreateCopy() method is available."
 msgstr ""
 
-#: ../../../source/drivers/raster/nitf.rst:326
+#: ../../../source/drivers/raster/nitf.rst:327
 msgid ""
 ":ref:`JP2OpenJPEG <raster.jp2openjpeg>`: (only in the CreateCopy() case). "
 "The :co:`drivers/raster/jp2openjpeg QUALITY`, :co:`drivers/raster/"
@@ -193,7 +194,7 @@ msgid ""
 "BLOCKXSIZE=BLOCKYSIZE=1024 will be used."
 msgstr ""
 
-#: ../../../source/drivers/raster/nitf.rst:334
+#: ../../../source/drivers/raster/nitf.rst:335
 msgid ""
 "Starting with GDAL 3.4.0 and OpenJPEG 2.5, the "
 "PROFILE=NPJE_VISUALLY_LOSSLESS/NPJE_NUMERICALLY_LOSSLESS creation option can "
@@ -206,52 +207,52 @@ msgid ""
 "unless the ``J2KLRA=NO`` creation option is specified."
 msgstr ""
 
-#: ../../../source/drivers/raster/nitf.rst:344
+#: ../../../source/drivers/raster/nitf.rst:345
 msgid "Links"
 msgstr ""
 
-#: ../../../source/drivers/raster/nitf.rst:346
+#: ../../../source/drivers/raster/nitf.rst:347
 msgid ":ref:`Advanced GDAL NITF Driver Information <raster.nitf_advanced>`"
 msgstr ""
 
-#: ../../../source/drivers/raster/nitf.rst:347
+#: ../../../source/drivers/raster/nitf.rst:348
 msgid "`NITFS Technical Board Public Page <http://www.gwg.nga.mil/ntb/>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/nitf.rst:348
+#: ../../../source/drivers/raster/nitf.rst:349
 msgid ""
 "`DIGEST Part 2 Annex D (describe encoding of NITF Spatial Data Extensions) "
 "<http://www.gwg.nga.mil/ntb/baseline/docs/digest/part2_annex_d.pdf>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/nitf.rst:350
+#: ../../../source/drivers/raster/nitf.rst:351
 msgid ""
 ":ref:`raster.rpftoc`: to read the Table Of  Contents of CIB and CADRG "
 "products."
 msgstr ""
 
-#: ../../../source/drivers/raster/nitf.rst:351
+#: ../../../source/drivers/raster/nitf.rst:352
 msgid ""
 "`MIL-PRF-89038 <http://www.everyspec.com/MIL-PRF/MIL-PRF+%28080000+-"
 "+99999%29/MIL-PRF-89038_25371/>`__ : specification of RPF, CADRG, CIB "
 "products"
 msgstr ""
 
-#: ../../../source/drivers/raster/nitf.rst:353
+#: ../../../source/drivers/raster/nitf.rst:354
 msgid ":ref:`raster.ecrgtoc`: to read the Table Of Contents of ECRG products."
 msgstr ""
 
-#: ../../../source/drivers/raster/nitf.rst:354
+#: ../../../source/drivers/raster/nitf.rst:355
 msgid ""
 "`MIL-PRF-32283 <http://www.everyspec.com/MIL-PRF/MIL-PRF+%28030000+-"
 "+79999%29/MIL-PRF-32283_26022/>`__ : specification of ECRG products"
 msgstr ""
 
-#: ../../../source/drivers/raster/nitf.rst:358
+#: ../../../source/drivers/raster/nitf.rst:359
 msgid "Credit"
 msgstr ""
 
-#: ../../../source/drivers/raster/nitf.rst:360
+#: ../../../source/drivers/raster/nitf.rst:361
 msgid ""
 "The author wishes to thank `AUG Signals <http://www.augsignals.com/>`__ and "
 "the `GeoConnections <http://geoconnections.org/>`__ program for supporting "

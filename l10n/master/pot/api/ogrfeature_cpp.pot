@@ -8,19 +8,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../../source/api/ogrfeature_cpp.rst:5
+#: ../../../source/api/ogrfeature_cpp.rst:10
 msgid "OGRFeature C++ API"
 msgstr ""
 
-#: ../../../source/api/ogrfeature_cpp.rst:8
+#: ../../../source/api/ogrfeature_cpp.rst:13
 msgid "OGRFeature class"
 msgstr ""
 
@@ -40,7 +41,7 @@ msgstr ""
 msgid "Public Static Functions"
 msgstr ""
 
-#: ../../../source/api/ogrfeature_cpp.rst:15
+#: ../../../source/api/ogrfeature_cpp.rst:20
 msgid "OGRFeatureDefn class"
 msgstr ""
 
@@ -60,26 +61,26 @@ msgid ""
 "}"
 msgstr ""
 
-#: ../../../source/api/ogrfeature_cpp.rst:22
+#: ../../../source/api/ogrfeature_cpp.rst:27
 msgid "OGRFieldDefn class"
 msgstr ""
 
-#: ../../../source/api/ogrfeature_cpp.rst:29
+#: ../../../source/api/ogrfeature_cpp.rst:34
 msgid "OGRGeomFieldDefn class"
 msgstr ""
 
-#: ../../../source/api/ogrfeature_cpp.rst:36
+#: ../../../source/api/ogrfeature_cpp.rst:41
 msgid "OGRFieldDomain class"
 msgstr ""
 
-#: ../../../source/api/ogrfeature_cpp.rst:43
+#: ../../../source/api/ogrfeature_cpp.rst:48
 msgid "OGRCodedFieldDomain class"
 msgstr ""
 
-#: ../../../source/api/ogrfeature_cpp.rst:50
+#: ../../../source/api/ogrfeature_cpp.rst:55
 msgid "OGRRangeFieldDomain class"
 msgstr ""
 
-#: ../../../source/api/ogrfeature_cpp.rst:57
+#: ../../../source/api/ogrfeature_cpp.rst:62
 msgid "OGRGlobFieldDomain class"
 msgstr ""

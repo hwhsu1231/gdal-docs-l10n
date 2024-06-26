@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -500,41 +500,42 @@ msgid "Open options"
 msgstr ""
 
 #: ../../../source/drivers/raster/sentinel2.rst:178
-msgid "The driver can be passed the following open options:"
+msgid ""
+"|about-open-options| The driver can be passed the following open options:"
 msgstr ""
 
-#: ../../../source/drivers/raster/sentinel2.rst:188
+#: ../../../source/drivers/raster/sentinel2.rst:189
 msgid ""
 "0 on areas with no tiles, or when the tile data is set to the NODATA or "
 "SATURATED special values,"
 msgstr ""
 
-#: ../../../source/drivers/raster/sentinel2.rst:190
+#: ../../../source/drivers/raster/sentinel2.rst:191
 msgid "4095 on areas with valid data."
 msgstr ""
 
-#: ../../../source/drivers/raster/sentinel2.rst:192
+#: ../../../source/drivers/raster/sentinel2.rst:193
 msgid ""
 "Note: above open options can also be specified as configuration options, by "
 "prefixing the open option name with SENTINEL2\\_ (e.g. SENTINEL2_ALPHA)."
 msgstr ""
 
-#: ../../../source/drivers/raster/sentinel2.rst:197
+#: ../../../source/drivers/raster/sentinel2.rst:198
 msgid "Examples"
 msgstr ""
 
-#: ../../../source/drivers/raster/sentinel2.rst:199
+#: ../../../source/drivers/raster/sentinel2.rst:200
 msgid "Opening the main metadata file of a Sentinel2 product:"
 msgstr ""
 
-#: ../../../source/drivers/raster/sentinel2.rst:203
+#: ../../../source/drivers/raster/sentinel2.rst:204
 msgid ""
 "$ gdalinfo "
 "S2A_OPER_MTD_SAFL1C_PDMC_20150818T101440_R022_V20150813T102406_20150813T102406."
 "xml"
 msgstr ""
 
-#: ../../../source/drivers/raster/sentinel2.rst:207
+#: ../../../source/drivers/raster/sentinel2.rst:208
 msgid ""
 "Driver: SENTINEL2/Sentinel 2\n"
 "Files: "
@@ -604,29 +605,29 @@ msgid ""
 "Center      (  256.0,  256.0)"
 msgstr ""
 
-#: ../../../source/drivers/raster/sentinel2.rst:256
+#: ../../../source/drivers/raster/sentinel2.rst:257
 msgid "Opening the .zip file directly:"
 msgstr ""
 
-#: ../../../source/drivers/raster/sentinel2.rst:260
+#: ../../../source/drivers/raster/sentinel2.rst:261
 msgid ""
 "$ gdalinfo "
 "S2A_OPER_PRD_MSIL1C_PDMC_20150818T101440_R022_V20150813T102406_20150813T102406."
 "zip"
 msgstr ""
 
-#: ../../../source/drivers/raster/sentinel2.rst:262
+#: ../../../source/drivers/raster/sentinel2.rst:263
 msgid "Opening the 10 meters resolution bands of a L1C subdataset:"
 msgstr ""
 
-#: ../../../source/drivers/raster/sentinel2.rst:266
+#: ../../../source/drivers/raster/sentinel2.rst:267
 msgid ""
 "$ gdalinfo SENTINEL2_L1C:"
 "S2A_OPER_MTD_SAFL1C_PDMC_20150818T101440_R022_V20150813T102406_20150813T102406."
 "xml:10m:EPSG_32632"
 msgstr ""
 
-#: ../../../source/drivers/raster/sentinel2.rst:270
+#: ../../../source/drivers/raster/sentinel2.rst:271
 msgid ""
 "Driver: SENTINEL2/Sentinel 2\n"
 "Files: "
@@ -707,11 +708,11 @@ msgid ""
 "[...]"
 msgstr ""
 
-#: ../../../source/drivers/raster/sentinel2.rst:336
+#: ../../../source/drivers/raster/sentinel2.rst:337
 msgid "Conversion of a L1C subdataset to tiled GeoTIFF"
 msgstr ""
 
-#: ../../../source/drivers/raster/sentinel2.rst:340
+#: ../../../source/drivers/raster/sentinel2.rst:341
 msgid ""
 "$ gdal_translate SENTINEL2_L1C:"
 "S2A_OPER_MTD_SAFL1C_PDMC_20150818T101440_R022_V20150813T102406_20150813T102406."
@@ -721,24 +722,24 @@ msgid ""
 "GDAL_NUM_THREADS 2"
 msgstr ""
 
-#: ../../../source/drivers/raster/sentinel2.rst:344
+#: ../../../source/drivers/raster/sentinel2.rst:345
 msgid "Generating blank overviews for a L1C subdataset:"
 msgstr ""
 
-#: ../../../source/drivers/raster/sentinel2.rst:348
+#: ../../../source/drivers/raster/sentinel2.rst:349
 msgid ""
 "$ gdaladdo -r NONE SENTINEL2_L1C:"
 "S2A_OPER_MTD_SAFL1C_PDMC_20150818T101440_R022_V20150813T102406_20150813T102406."
 "xml:10m:EPSG_32632 4"
 msgstr ""
 
-#: ../../../source/drivers/raster/sentinel2.rst:350
+#: ../../../source/drivers/raster/sentinel2.rst:351
 msgid ""
 "Creating a VRT file from the subdataset (can be convenient to have the "
 "subdatasets as files):"
 msgstr ""
 
-#: ../../../source/drivers/raster/sentinel2.rst:355
+#: ../../../source/drivers/raster/sentinel2.rst:356
 msgid ""
 "$ python3 -c \"import sys; from osgeo import gdal; ds = gdal.Open(sys."
 "argv[1]); open(sys.argv[2], 'wb').write(ds.GetMetadata('xml:VRT')[0]."
@@ -748,17 +749,17 @@ msgid ""
 "xml:10m:EPSG_32632 10m.vrt"
 msgstr ""
 
-#: ../../../source/drivers/raster/sentinel2.rst:358
+#: ../../../source/drivers/raster/sentinel2.rst:359
 msgid "Opening the 10 meters resolution bands of a L1B subdataset:"
 msgstr ""
 
-#: ../../../source/drivers/raster/sentinel2.rst:362
+#: ../../../source/drivers/raster/sentinel2.rst:363
 msgid ""
 "$ gdalinfo SENTINEL2_L1B:"
 "S2A_OPER_MTD_L1B_GR_SGS__20151024T023555_S20151024T011315_D02.xml:10m"
 msgstr ""
 
-#: ../../../source/drivers/raster/sentinel2.rst:366
+#: ../../../source/drivers/raster/sentinel2.rst:367
 msgid ""
 "Driver: SENTINEL2/Sentinel 2\n"
 "Files: S2A_OPER_MTD_L1B_GR_SGS__20151024T023555_S20151024T011315_D02.xml\n"
@@ -858,32 +859,32 @@ msgid ""
 "[...]"
 msgstr ""
 
-#: ../../../source/drivers/raster/sentinel2.rst:454
+#: ../../../source/drivers/raster/sentinel2.rst:455
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/raster/sentinel2.rst:456
+#: ../../../source/drivers/raster/sentinel2.rst:457
 msgid "`Sentinels Scientific Data Hub <https://scihub.esa.int/>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/sentinel2.rst:457
+#: ../../../source/drivers/raster/sentinel2.rst:458
 msgid ""
 "`Sentinel 2 User guide <https://sentinels.copernicus.eu/web/sentinel/user-"
 "guides/sentinel-2-msi>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/sentinel2.rst:459
+#: ../../../source/drivers/raster/sentinel2.rst:460
 msgid ""
 "`Sentinel 2 User Handbook <https://sentinels.copernicus.eu/web/sentinel/user-"
 "guides/document-library/-/asset_publisher/xlslt4309D5h/content/sentinel-2-"
 "user-handbook>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/sentinel2.rst:463
+#: ../../../source/drivers/raster/sentinel2.rst:464
 msgid "Credits"
 msgstr ""
 
-#: ../../../source/drivers/raster/sentinel2.rst:465
+#: ../../../source/drivers/raster/sentinel2.rst:466
 msgid ""
 "This driver has been developed by `Spatialys <http://spatialys.com>`__ with "
 "funding from `Centre National d'Etudes Spatiales (CNES) <https://cnes.fr>`__"

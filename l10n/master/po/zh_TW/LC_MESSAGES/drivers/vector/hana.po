@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -109,36 +109,46 @@ msgstr ""
 msgid "Dataset Open options"
 msgstr ""
 
-#: ../../../source/drivers/vector/hana.rst:171
+#: ../../../source/drivers/vector/hana.rst:63
+msgid "|about-open-options| The following open options are supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:174
 msgid "Dataset Creation Options"
 msgstr ""
 
-#: ../../../source/drivers/vector/hana.rst:173
+#: ../../../source/drivers/vector/hana.rst:176
 msgid "None"
 msgstr ""
 
-#: ../../../source/drivers/vector/hana.rst:176
+#: ../../../source/drivers/vector/hana.rst:179
 msgid "Layer Creation Options"
 msgstr ""
 
-#: ../../../source/drivers/vector/hana.rst:251
+#: ../../../source/drivers/vector/hana.rst:181
+msgid ""
+"|about-layer-creation-options| The following layer creation options are "
+"supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/hana.rst:257
 msgid "Multitenant Database Containers"
 msgstr ""
 
-#: ../../../source/drivers/vector/hana.rst:253
+#: ../../../source/drivers/vector/hana.rst:259
 msgid ""
 "In order to connect to a tenant database, you need to specify a port number "
 "assigned exactly to a desired instance. This port number can be determined "
 "by executing the following query from the tenant database."
 msgstr ""
 
-#: ../../../source/drivers/vector/hana.rst:259
+#: ../../../source/drivers/vector/hana.rst:265
 msgid ""
 "SELECT SQL_PORT FROM SYS.M_SERVICES WHERE ((SERVICE_NAME='indexserver' and "
 "COORDINATOR_TYPE= 'MASTER') or (SERVICE_NAME='xsengine'))"
 msgstr ""
 
-#: ../../../source/drivers/vector/hana.rst:261
+#: ../../../source/drivers/vector/hana.rst:267
 msgid ""
 "For more details, see **Section 2.9 Connections for Multitenant Database "
 "Containers** in `SAP HANA Multitenant Database Containers <https://help.sap."
@@ -146,45 +156,45 @@ msgid ""
 "sap_hana_multitenant_database_containers_en.pdf>`__."
 msgstr ""
 
-#: ../../../source/drivers/vector/hana.rst:266
+#: ../../../source/drivers/vector/hana.rst:272
 msgid "Examples"
 msgstr ""
 
-#: ../../../source/drivers/vector/hana.rst:268
+#: ../../../source/drivers/vector/hana.rst:274
 msgid ""
 "This example shows how to list HANA layers on a specified host using :ref:"
 "`ogrinfo` command."
 msgstr ""
 
-#: ../../../source/drivers/vector/hana.rst:273
+#: ../../../source/drivers/vector/hana.rst:279
 msgid ""
 "ogrinfo -ro HANA:\"DRIVER=HDBODBC;DATABASE=HAN;HOST=localhost;PORT=30015;"
 "USER=mylogin;PASSWORD=mypassword;SCHEMA=MYSCHEMA\""
 msgstr ""
 
-#: ../../../source/drivers/vector/hana.rst:275
 #: ../../../source/drivers/vector/hana.rst:281
+#: ../../../source/drivers/vector/hana.rst:287
 msgid "or"
 msgstr ""
 
-#: ../../../source/drivers/vector/hana.rst:279
+#: ../../../source/drivers/vector/hana.rst:285
 msgid ""
 "ogrinfo -ro HANA:\"DSN=MYHANADB;USER=mylogin;PASSWORD=mypassword;"
 "SCHEMA=MYSCHEMA\""
 msgstr ""
 
-#: ../../../source/drivers/vector/hana.rst:285
+#: ../../../source/drivers/vector/hana.rst:291
 msgid ""
 "ogrinfo -ro HANA:\"DRIVER=HDBODBC;USER_STORE_KEY=mykey;SCHEMA=MYSCHEMA\""
 msgstr ""
 
-#: ../../../source/drivers/vector/hana.rst:287
+#: ../../../source/drivers/vector/hana.rst:293
 msgid ""
 "This example shows how to print summary information about a given layer, i."
 "e. 'planet_osm_line', using :ref:`ogrinfo`."
 msgstr ""
 
-#: ../../../source/drivers/vector/hana.rst:292
+#: ../../../source/drivers/vector/hana.rst:298
 msgid ""
 "ogrinfo -ro HANA:\"DRIVER=HDBODBC;DATABASE=HAN;HOST=localhost;PORT=30015;"
 "USER=mylogin;PASSWORD=mypassword;SCHEMA=MYSCHEMA\" -so \"planet_osm_line\"\n"
@@ -224,36 +234,36 @@ msgid ""
 "aeroway: String (4000.0)"
 msgstr ""
 
-#: ../../../source/drivers/vector/hana.rst:326
+#: ../../../source/drivers/vector/hana.rst:332
 msgid ""
 "This example shows how to export data from the 'points' table to a shapefile "
 "called 'points_output.shp'."
 msgstr ""
 
-#: ../../../source/drivers/vector/hana.rst:330
+#: ../../../source/drivers/vector/hana.rst:336
 msgid ""
 "ogr2ogr -f \"ESRI Shapefile\" \"D:\\\\points_output.shp\" HANA:"
 "\"DRIVER=HDBODBC;DATABASE=HAN;HOST=localhost;PORT=30015;USER=mylogin;"
 "PASSWORD=mypassword;SCHEMA=GIS;TABLES=points\""
 msgstr ""
 
-#: ../../../source/drivers/vector/hana.rst:332
+#: ../../../source/drivers/vector/hana.rst:338
 msgid ""
 "This example shows how to create and populate a table with data taken from a "
 "shapefile."
 msgstr ""
 
-#: ../../../source/drivers/vector/hana.rst:336
+#: ../../../source/drivers/vector/hana.rst:342
 msgid ""
 "ogr2ogr -f HANA HANA:\"DRIVER=HDBODBC;DATABASE=HAN;HOST=localhost;PORT=30015;"
 "USER=mylogin;PASSWORD=mypassword;SCHEMA=MYSCHEMA\" myshapefile.shp"
 msgstr ""
 
-#: ../../../source/drivers/vector/hana.rst:340
+#: ../../../source/drivers/vector/hana.rst:346
 msgid "For developers"
 msgstr ""
 
-#: ../../../source/drivers/vector/hana.rst:342
+#: ../../../source/drivers/vector/hana.rst:348
 msgid ""
 "To compile the SAP HANA driver, `odbc-cpp-wrapper <https://github.com/SAP/"
 "odbc-cpp-wrapper/>`__ library needs to be linked or installed. For more "
@@ -261,22 +271,22 @@ msgid ""
 "for Windows or Linux/MacOS correspondingly."
 msgstr ""
 
-#: ../../../source/drivers/vector/hana.rst:346
+#: ../../../source/drivers/vector/hana.rst:352
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/vector/hana.rst:348
+#: ../../../source/drivers/vector/hana.rst:354
 msgid "`SAP HANA Home Page <https://www.sap.com/products/hana.html>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/hana.rst:349
+#: ../../../source/drivers/vector/hana.rst:355
 msgid ""
 "`SAP HANA Spatial Reference <https://help.sap.com/viewer/"
 "cbbbfc20871e4559abfd45a78ad58c02/2.0.03/en-US/"
 "e1c934157bd14021a3b43b5822b2cbe9.html>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/hana.rst:350
+#: ../../../source/drivers/vector/hana.rst:356
 msgid ""
 "`SAP HANA ODBC Connection Properties <https://help.sap.com/"
 "viewer/0eec0d68141541d1b07893a39944924e/2.0.02/en-"

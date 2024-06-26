@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,32 +21,32 @@ msgstr ""
 msgid "Development practices"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:10
+#: ../../../source/development/dev_practices.rst:8
 msgid "Making changes to GDAL"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:12
+#: ../../../source/development/dev_practices.rst:10
 msgid ""
 "Minor changes to GDAL, such as bug fixes, may be made by opening a GitHub "
 "pull request."
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:14
+#: ../../../source/development/dev_practices.rst:12
 msgid ""
 "Major changes should be discussed on the |gdal-dev| listserv and may require "
 "the drafting of a RFC (request for comment) document."
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:17
+#: ../../../source/development/dev_practices.rst:15
 msgid ""
 "GDAL's policy on substantial code additions is documented at :ref:`rfc-85`."
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:20
+#: ../../../source/development/dev_practices.rst:18
 msgid "Portability"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:22
+#: ../../../source/development/dev_practices.rst:20
 msgid ""
 "GDAL strives to be widely portable to 32 bit and 64 bit computing "
 "environments, as well as little-endian and big-endian ordered CPUs. CPL "
@@ -53,7 +54,7 @@ msgid ""
 "specific operations."
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:27
+#: ../../../source/development/dev_practices.rst:25
 msgid ""
 "Generally speaking, where available CPL functions should be used in "
 "preference to operating system functions for operations like memory "
@@ -61,21 +62,21 @@ msgid ""
 "VSIVirtualFile*), ODBC access, etc."
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:33
+#: ../../../source/development/dev_practices.rst:31
 msgid "C/C++ standards"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:35
+#: ../../../source/development/dev_practices.rst:33
 msgid ""
 "The current C and C++ standards adopted by GDAL/OGR are C99 and C++17 (last "
 "updated per :ref:`rfc-98`)`"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:39
+#: ../../../source/development/dev_practices.rst:37
 msgid "Variable naming"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:41
+#: ../../../source/development/dev_practices.rst:39
 msgid ""
 "Much of the existing GDAL/OGR code uses an adapted Hungarian naming "
 "convention. Use of this convention is not mandatory, but when maintaining "
@@ -84,121 +85,121 @@ msgid ""
 "be very confusing."
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:47
+#: ../../../source/development/dev_practices.rst:45
 msgid ""
 "In Hungarian prefixing the prefix tells something about about the type, and "
 "potentially semantics of a variable. The following are some prefixes used in "
 "GDAL/OGR."
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:51
+#: ../../../source/development/dev_practices.rst:49
 msgid "*a*: array"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:52
+#: ../../../source/development/dev_practices.rst:50
 msgid ""
 "*b*: C/C++ bool. In C code that pre-dates C99 adoption, it is also used for"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:53
+#: ../../../source/development/dev_practices.rst:51
 msgid "ints with only TRUE/FALSE values."
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:54
+#: ../../../source/development/dev_practices.rst:52
 msgid "*by*: byte (GByte / unsigned char)."
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:55
+#: ../../../source/development/dev_practices.rst:53
 msgid "*df*: floating point value (double precision)"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:56
+#: ../../../source/development/dev_practices.rst:54
 msgid "*e*: enumeration"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:57
+#: ../../../source/development/dev_practices.rst:55
 msgid "*i*: integer number used as a zero based array or loop index."
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:58
+#: ../../../source/development/dev_practices.rst:56
 msgid "*f*: floating point value (single precision)"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:59
+#: ../../../source/development/dev_practices.rst:57
 msgid "*h*: an opaque handle (such as GDALDatasetH)."
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:60
+#: ../../../source/development/dev_practices.rst:58
 msgid "*n*: integer number (size unspecified)"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:61
+#: ../../../source/development/dev_practices.rst:59
 msgid "*o*: C++ object"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:62
+#: ../../../source/development/dev_practices.rst:60
 msgid "*os*: CPLString or std::string"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:63
+#: ../../../source/development/dev_practices.rst:61
 msgid "*p*: pointer"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:64
+#: ../../../source/development/dev_practices.rst:62
 msgid "*psz*: pointer to a null-terminated string. (eg. \"char \\*pszName;\")"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:65
+#: ../../../source/development/dev_practices.rst:63
 msgid "*sz*: null-terminated string (eg.\" char szName[100];\")"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:66
+#: ../../../source/development/dev_practices.rst:64
 msgid "*k*: compile-time constant"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:68
+#: ../../../source/development/dev_practices.rst:66
 msgid ""
 "Prefixes can be stacked. The following are some examples of meaningful "
 "variables."
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:71
+#: ../../../source/development/dev_practices.rst:69
 msgid "\\*char !\\*\\ *papszTokens*: Pointer to an array of strings."
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:72
+#: ../../../source/development/dev_practices.rst:70
 msgid "\\*int *panBands*: Pointer to the first element of an array of numbers."
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:74
+#: ../../../source/development/dev_practices.rst:72
 msgid ""
 "\\*double *padfScanline*: Pointer to the first element of an array of "
 "doubles."
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:76
+#: ../../../source/development/dev_practices.rst:74
 msgid "\\*double *pdfMeanRet*: Pointer to a single double."
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:77
+#: ../../../source/development/dev_practices.rst:75
 msgid "\\*GDALRasterBand *poBand*: Pointer to a single object."
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:78
+#: ../../../source/development/dev_practices.rst:76
 msgid "\\*GByte *pabyHeader*: Pointer to an array of bytes."
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:80
+#: ../../../source/development/dev_practices.rst:78
 msgid ""
 "It may also be noted that the standard convention for variable names is to "
 "capitalize each word in a variable name."
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:84
+#: ../../../source/development/dev_practices.rst:82
 msgid "Memory allocation"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:86
+#: ../../../source/development/dev_practices.rst:84
 msgid ""
 "As per :ref:`rfc-19`, you can use VSIMalloc2(x, y) instead of doing "
 "CPLMalloc(x \\* y) or VSIMalloc(x \\* y). VSIMalloc2 will detect potential "
@@ -208,54 +209,54 @@ msgid ""
 "be used as a replacement for CPLMalloc(x \\* y \\* z)."
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:95
+#: ../../../source/development/dev_practices.rst:93
 msgid "File naming and code formatting"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:97
+#: ../../../source/development/dev_practices.rst:95
 msgid "Use lower case filenames."
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:98
+#: ../../../source/development/dev_practices.rst:96
 msgid "Use .cpp extension for C++ files (not .cc)."
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:99
+#: ../../../source/development/dev_practices.rst:97
 msgid ""
 "Code formatting rules are defined in :source_file:`.clang-format`. The pre-"
 "commit utility can be used to enforce them automatically."
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:104
+#: ../../../source/development/dev_practices.rst:102
 msgid "Git usage"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:106
+#: ../../../source/development/dev_practices.rst:104
 msgid ""
 "This section collects a few best practices for git usage for GDAL "
 "development."
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:109
+#: ../../../source/development/dev_practices.rst:107
 msgid "Initiating your work repository"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:111
+#: ../../../source/development/dev_practices.rst:109
 msgid "Fork |OSGeo/gdal| from the GitHub UI, and then run:"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:113
+#: ../../../source/development/dev_practices.rst:111
 msgid ""
 "git clone https://github.com/OSGeo/gdal\n"
 "cd gdal\n"
 "git remote add my_user_name git@github.com:my_user_name/gdal.git"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:120
+#: ../../../source/development/dev_practices.rst:118
 msgid "Working with a feature branch"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:122
+#: ../../../source/development/dev_practices.rst:120
 msgid ""
 "git checkout master\n"
 "# potentially update your local master against upstream, as described above\n"
@@ -289,11 +290,11 @@ msgid ""
 "git push my_user_name my_new_feature_branch"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:156
+#: ../../../source/development/dev_practices.rst:154
 msgid "From the GitHub UI, issue a pull request."
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:158
+#: ../../../source/development/dev_practices.rst:156
 msgid ""
 "If the pull request discussion or automated checks require changes, commit "
 "locally and push. To get a reasonable history, you may need to combine "
@@ -301,11 +302,11 @@ msgid ""
 "push your branch with ``git push -f my_user_name my_new_feature_branch``."
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:165
+#: ../../../source/development/dev_practices.rst:163
 msgid "Updating your local master against upstream master"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:167
+#: ../../../source/development/dev_practices.rst:165
 msgid ""
 "git checkout master\n"
 "git fetch origin\n"
@@ -314,52 +315,52 @@ msgid ""
 "git reset --hard origin/master"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:176
+#: ../../../source/development/dev_practices.rst:174
 msgid "Commit messages"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:178
+#: ../../../source/development/dev_practices.rst:176
 msgid ""
 "Commit messages should indicate a component name (eg a driver name), a short "
 "description, and when relevant, a reference to a issue (with 'fixes #' if it "
 "actually fixes it)"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:184
+#: ../../../source/development/dev_practices.rst:182
 msgid ""
 "COMPONENT_NAME: fix bla bla (fixes #1234)\n"
 "\n"
 "Details here..."
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:189
+#: ../../../source/development/dev_practices.rst:187
 msgid "Commit hooks"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:191
+#: ../../../source/development/dev_practices.rst:189
 msgid ""
 "GDAL provides pre-commit hooks to run code linters before a commit is made. "
 "The hooks are cloned with the repository and can be installed using `pre-"
 "commit <https://pre-commit.com>`_:"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:195
+#: ../../../source/development/dev_practices.rst:193
 msgid ""
 "python3 -m pip install pre-commit\n"
 "pre-commit install"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:201
+#: ../../../source/development/dev_practices.rst:199
 msgid ""
 "Once installed, the hooks can be run manually via ``pre-commit run --all-"
 "files``."
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:204
+#: ../../../source/development/dev_practices.rst:202
 msgid "Blame ignore file"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:206
+#: ../../../source/development/dev_practices.rst:204
 msgid ""
 "Due to whole-tree code reformatting done during GDAL 3.7 development, ``git "
 "blame`` information might be misleading. To avoid that, you need to modify "
@@ -367,15 +368,15 @@ msgid ""
 "reformatting:"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:211
+#: ../../../source/development/dev_practices.rst:209
 msgid "git config blame.ignoreRevsFile .git-blame-ignore-revs"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:217
+#: ../../../source/development/dev_practices.rst:215
 msgid "Backporting bugfixes from master to a stable branch"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:219
+#: ../../../source/development/dev_practices.rst:217
 msgid ""
 "git checkout master\n"
 "With git log, identify the sha1sum of the commit you want to backport\n"
@@ -387,21 +388,21 @@ msgid ""
 "git push ..."
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:229
+#: ../../../source/development/dev_practices.rst:227
 msgid "If changes are needed, do them and ``git commit -a --amend``"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:233
+#: ../../../source/development/dev_practices.rst:231
 msgid "Things you should NOT do"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:235
+#: ../../../source/development/dev_practices.rst:233
 msgid ""
 "(For anyone with push rights to |OSGeo/gdal|) Never modify a commit or the "
 "history of anything that has been committed to https://github.com/OSGeo/gdal"
 msgstr ""
 
-#: ../../../source/development/dev_practices.rst:239
+#: ../../../source/development/dev_practices.rst:237
 msgid ""
 "Committing symbolic links is allowed only under the .github directory in "
 "order to avoid potential problems on Windows."

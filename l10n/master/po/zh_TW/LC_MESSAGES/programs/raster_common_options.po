@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -91,10 +91,11 @@ msgstr ""
 msgid ""
 "Read the named file and substitute the contents into the command line "
 "options list. Lines beginning with # will be ignored. Multi-word arguments "
-"may be kept together with double quotes."
+"may be kept together with double quotes. Multiple --optfiles may be used: --"
+"optfile file1 --optfile file2..."
 msgstr ""
 
-#: ../../../source/programs/raster_common_options.rst:31
+#: ../../../source/programs/raster_common_options.rst:32
 msgid ""
 "Sets the named configuration keyword to the given value, as opposed to "
 "setting them as environment variables. Some common configuration keywords "
@@ -104,7 +105,7 @@ msgid ""
 "<list_config_options>`."
 msgstr ""
 
-#: ../../../source/programs/raster_common_options.rst:35
+#: ../../../source/programs/raster_common_options.rst:36
 msgid ""
 "Control what debugging messages are emitted. A value of ON will enable all "
 "debug messages. A value of OFF will disable all debug messages. Another "
@@ -112,17 +113,17 @@ msgid ""
 "prefix code."
 msgstr ""
 
-#: ../../../source/programs/raster_common_options.rst:39
+#: ../../../source/programs/raster_common_options.rst:40
 msgid ""
 "Gives a brief usage message for the generic GDAL command line options and "
 "exit."
 msgstr ""
 
-#: ../../../source/programs/raster_common_options.rst:42
+#: ../../../source/programs/raster_common_options.rst:43
 msgid "Creating new files"
 msgstr ""
 
-#: ../../../source/programs/raster_common_options.rst:44
+#: ../../../source/programs/raster_common_options.rst:45
 msgid ""
 "Access an existing file to read it is generally quite simple. Just indicate "
 "the name of the file or dataset on the command line. However, creating a "
@@ -132,7 +133,7 @@ msgid ""
 "handled similarly by different GDAL utilities, and are introduced here."
 msgstr ""
 
-#: ../../../source/programs/raster_common_options.rst:54
+#: ../../../source/programs/raster_common_options.rst:55
 msgid ""
 "Select the format to create the new file as. The formats are assigned short "
 "names such as GTiff (for GeoTIFF) or HFA (for Erdas Imagine). The list of "
@@ -140,7 +141,7 @@ msgid ""
 "formats list as ``(rw)`` (read-write) can be written."
 msgstr ""
 
-#: ../../../source/programs/raster_common_options.rst:61
+#: ../../../source/programs/raster_common_options.rst:62
 msgid ""
 "If not specified, the format is guessed from the extension. Previously, it "
 "was generally GTiff for raster, or ESRI Shapefile for vector."
@@ -165,7 +166,7 @@ msgid ""
 "creation options for each format."
 msgstr ""
 
-#: ../../../source/programs/raster_common_options.rst:70
+#: ../../../source/programs/raster_common_options.rst:71
 msgid ""
 "Several utilities (e.g. :command:`gdal_translate` and :command:`gdalwarp`) "
 "include the ability to specify coordinate systems with command line options "
@@ -175,21 +176,21 @@ msgid ""
 "formats."
 msgstr ""
 
-#: ../../../source/programs/raster_common_options.rst:76
+#: ../../../source/programs/raster_common_options.rst:77
 msgid "``NAD27|NAD83|WGS84|WGS72``"
 msgstr ""
 
-#: ../../../source/programs/raster_common_options.rst:78
+#: ../../../source/programs/raster_common_options.rst:79
 msgid ""
 "These common geographic (lat/long) coordinate systems can be used directly "
 "by these names."
 msgstr ""
 
-#: ../../../source/programs/raster_common_options.rst:81
+#: ../../../source/programs/raster_common_options.rst:82
 msgid "``EPSG:n``"
 msgstr ""
 
-#: ../../../source/programs/raster_common_options.rst:83
+#: ../../../source/programs/raster_common_options.rst:84
 msgid ""
 "Coordinate systems (projected or geographic) can be selected based on their "
 "EPSG codes. For instance, :samp:`EPSG:27700` is the British National Grid. A "
@@ -197,26 +198,26 @@ msgid ""
 "`gcs.csv` and :file:`pcs.csv`."
 msgstr ""
 
-#: ../../../source/programs/raster_common_options.rst:88
+#: ../../../source/programs/raster_common_options.rst:89
 msgid "``PROJ.4 definition``"
 msgstr ""
 
-#: ../../../source/programs/raster_common_options.rst:90
+#: ../../../source/programs/raster_common_options.rst:91
 msgid ""
 "A PROJ.4 definition string can be used as a coordinate system. Take care to "
 "keep the proj.4 string together as a single argument to the command (usually "
 "by double quoting)."
 msgstr ""
 
-#: ../../../source/programs/raster_common_options.rst:94
+#: ../../../source/programs/raster_common_options.rst:95
 msgid "For instance :samp:`+proj=utm +zone=11 +datum=WGS84`."
 msgstr ""
 
-#: ../../../source/programs/raster_common_options.rst:96
+#: ../../../source/programs/raster_common_options.rst:97
 msgid "``OpenGIS Well Known Text``"
 msgstr ""
 
-#: ../../../source/programs/raster_common_options.rst:98
+#: ../../../source/programs/raster_common_options.rst:99
 msgid ""
 "The Open GIS Consortium has defined a textual format for describing "
 "coordinate systems as part of the Simple Features specifications. This "
@@ -227,37 +228,37 @@ msgid ""
 "quite challenging)."
 msgstr ""
 
-#: ../../../source/programs/raster_common_options.rst:106
+#: ../../../source/programs/raster_common_options.rst:107
 msgid "``ESRI Well Known Text``"
 msgstr ""
 
-#: ../../../source/programs/raster_common_options.rst:108
+#: ../../../source/programs/raster_common_options.rst:109
 msgid ""
 "ESRI uses a slight variation on OGC WKT format in their ArcGIS product "
 "(ArcGIS :file:`.prj` files), and these may be used in a similar manner o WKT "
 "files, but the filename should be prefixed with ``ESRI::``."
 msgstr ""
 
-#: ../../../source/programs/raster_common_options.rst:112
+#: ../../../source/programs/raster_common_options.rst:113
 msgid ""
 "For example, `\"ESRI::NAD 1927 StatePlane Wyoming West FIPS 4904.prj\"`."
 msgstr ""
 
-#: ../../../source/programs/raster_common_options.rst:114
+#: ../../../source/programs/raster_common_options.rst:115
 msgid "``Spatial References from URLs``"
 msgstr ""
 
-#: ../../../source/programs/raster_common_options.rst:116
+#: ../../../source/programs/raster_common_options.rst:117
 msgid ""
 "For example http://spatialreference.org/ref/user/north-pacific-albers-conic-"
 "equal-area/."
 msgstr ""
 
-#: ../../../source/programs/raster_common_options.rst:118
+#: ../../../source/programs/raster_common_options.rst:119
 msgid ":file:`filename`"
 msgstr ""
 
-#: ../../../source/programs/raster_common_options.rst:120
+#: ../../../source/programs/raster_common_options.rst:121
 msgid ""
 "File containing WKT, PROJ.4 strings, or XML/GML coordinate system "
 "definitions can be provided."

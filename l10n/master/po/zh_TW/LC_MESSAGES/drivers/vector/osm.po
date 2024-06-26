@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -133,47 +133,47 @@ msgstr ""
 
 #: ../../../source/drivers/vector/osm.rst:67
 msgid ""
-"ogr2ogr -f PostgreSQL \"PG:dbname=osm\" test.pbf -lco "
-"COLUMN_TYPES=other_tags=hstore"
+"ogr2ogr -f PostgreSQL \"PG:dbname=osm\" test.pbf \\\n"
+"-lco COLUMN_TYPES=other_tags=hstore"
 msgstr ""
 
-#: ../../../source/drivers/vector/osm.rst:69
+#: ../../../source/drivers/vector/osm.rst:70
 msgid ""
 "Starting with GDAL 3.7, it is possible to ask the format of this field to be "
 "JSON encoded, by using the TAGS_FORMAT=JSON open option, or the "
 "``tags_format=json`` setting in the *osmconf.ini* file."
 msgstr ""
 
-#: ../../../source/drivers/vector/osm.rst:74
+#: ../../../source/drivers/vector/osm.rst:75
 msgid "\"all_tags\" field"
 msgstr ""
 
-#: ../../../source/drivers/vector/osm.rst:76
+#: ../../../source/drivers/vector/osm.rst:77
 msgid ""
 "Similar to \"other_tags\", except that it contains both keys specifically "
 "identified to be reported as dedicated fields, as well as other keys."
 msgstr ""
 
-#: ../../../source/drivers/vector/osm.rst:79
+#: ../../../source/drivers/vector/osm.rst:80
 msgid ""
 "\"all_tags\" is disabled by default, and when enabled, it is exclusive with "
 "\"other_tags\"."
 msgstr ""
 
-#: ../../../source/drivers/vector/osm.rst:84
+#: ../../../source/drivers/vector/osm.rst:85
 msgid "Configuration options"
 msgstr ""
 
-#: ../../../source/drivers/vector/osm.rst:86
+#: ../../../source/drivers/vector/osm.rst:87
 msgid ""
-"The following :ref:`configuration options <configoptions>` are available:"
+"|about-config-options| The following configuration options are available:"
 msgstr ""
 
-#: ../../../source/drivers/vector/osm.rst:137
+#: ../../../source/drivers/vector/osm.rst:138
 msgid "Interleaved reading"
 msgstr ""
 
-#: ../../../source/drivers/vector/osm.rst:139
+#: ../../../source/drivers/vector/osm.rst:140
 msgid ""
 "Due to the nature of OSM files and how the driver works internally, the "
 "default reading mode that works per-layer might not work correctly, because "
@@ -181,21 +181,21 @@ msgid ""
 "user application."
 msgstr ""
 
-#: ../../../source/drivers/vector/osm.rst:144
+#: ../../../source/drivers/vector/osm.rst:145
 msgid ""
 "Starting with GDAL 2.2, applications should use the ``GDALDataset::"
 "GetNextFeature()`` API to iterate over features in the order they are "
 "produced."
 msgstr ""
 
-#: ../../../source/drivers/vector/osm.rst:148
+#: ../../../source/drivers/vector/osm.rst:149
 msgid ""
 "For earlier versions, for large files, applications should set the :config:"
 "`OGR_INTERLEAVED_READING=YES` configuration option to turn on a special "
 "reading mode where the following reading pattern must be used:"
 msgstr ""
 
-#: ../../../source/drivers/vector/osm.rst:154
+#: ../../../source/drivers/vector/osm.rst:155
 msgid ""
 "bool bHasLayersNonEmpty;\n"
 "do\n"
@@ -217,17 +217,17 @@ msgid ""
 "while( bHasLayersNonEmpty );"
 msgstr ""
 
-#: ../../../source/drivers/vector/osm.rst:173
+#: ../../../source/drivers/vector/osm.rst:174
 msgid ""
 "Note : the ogr2ogr application has been modified to use that :config:"
 "`OGR_INTERLEAVED_READING` mode without any particular user action."
 msgstr ""
 
-#: ../../../source/drivers/vector/osm.rst:178
+#: ../../../source/drivers/vector/osm.rst:179
 msgid "Spatial filtering"
 msgstr ""
 
-#: ../../../source/drivers/vector/osm.rst:180
+#: ../../../source/drivers/vector/osm.rst:181
 msgid ""
 "Due to way .osm or .pbf files are structured and the parsing of the file is "
 "done, for efficiency reasons, a spatial filter applied on the points layer "
@@ -235,7 +235,7 @@ msgid ""
 "have missing vertices."
 msgstr ""
 
-#: ../../../source/drivers/vector/osm.rst:185
+#: ../../../source/drivers/vector/osm.rst:186
 msgid ""
 "To improve this, a possibility is using a larger spatial filter with some "
 "buffer for the points layer, and then post-process the output to apply the "
@@ -245,63 +245,67 @@ msgid ""
 "would be needed."
 msgstr ""
 
-#: ../../../source/drivers/vector/osm.rst:193
+#: ../../../source/drivers/vector/osm.rst:194
 msgid "Reading .osm.bz2 files and/or online files"
 msgstr ""
 
-#: ../../../source/drivers/vector/osm.rst:195
+#: ../../../source/drivers/vector/osm.rst:196
 msgid ""
 ".osm.bz2 are not natively recognized, however you can process them (on "
 "Unix), with the following command :"
 msgstr ""
 
-#: ../../../source/drivers/vector/osm.rst:200
+#: ../../../source/drivers/vector/osm.rst:201
 msgid "bzcat my.osm.bz2 | ogr2ogr -f SQLite my.sqlite /vsistdin/"
 msgstr ""
 
-#: ../../../source/drivers/vector/osm.rst:202
+#: ../../../source/drivers/vector/osm.rst:203
 msgid "You can convert a .osm or .pbf file without downloading it :"
 msgstr ""
 
-#: ../../../source/drivers/vector/osm.rst:206
+#: ../../../source/drivers/vector/osm.rst:207
 msgid ""
-"wget -O - http://www.example.com/some.pbf | ogr2ogr -f SQLite my.sqlite /"
-"vsistdin/\n"
+"wget -O - http://www.example.com/some.pbf |\n"
+"ogr2ogr -f SQLite my.sqlite /vsistdin/\n"
 "\n"
 "or\n"
 "\n"
-"ogr2ogr -f SQLite my.sqlite /vsicurl_streaming/http://www.example.com/some."
-"pbf -progress"
+"ogr2ogr -f SQLite my.sqlite \\\n"
+"/vsicurl_streaming/http://www.example.com/some.pbf -progress"
 msgstr ""
 
-#: ../../../source/drivers/vector/osm.rst:212
+#: ../../../source/drivers/vector/osm.rst:215
 msgid "And to combine the above steps :"
 msgstr ""
 
-#: ../../../source/drivers/vector/osm.rst:216
+#: ../../../source/drivers/vector/osm.rst:219
 msgid ""
-"wget -O - http://www.example.com/some.osm.bz2 | bzcat | ogr2ogr -f SQLite my."
-"sqlite /vsistdin/"
+"wget -O - http://www.example.com/some.osm.bz2 |\n"
+"bzcat | ogr2ogr -f SQLite my.sqlite /vsistdin/"
 msgstr ""
 
-#: ../../../source/drivers/vector/osm.rst:219
+#: ../../../source/drivers/vector/osm.rst:223
 msgid "Open options"
 msgstr ""
 
-#: ../../../source/drivers/vector/osm.rst:261
+#: ../../../source/drivers/vector/osm.rst:225
+msgid "|about-open-options| The following open options are supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/osm.rst:268
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/vector/osm.rst:263
+#: ../../../source/drivers/vector/osm.rst:270
 msgid "`OpenStreetMap home page <http://www.openstreetmap.org/>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/osm.rst:264
+#: ../../../source/drivers/vector/osm.rst:271
 msgid ""
 "`OSM XML Format description <http://wiki.openstreetmap.org/wiki/OSM_XML>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/osm.rst:266
+#: ../../../source/drivers/vector/osm.rst:273
 msgid ""
 "`OSM PBF Format description <http://wiki.openstreetmap.org/wiki/"
 "PBF_Format>`__"

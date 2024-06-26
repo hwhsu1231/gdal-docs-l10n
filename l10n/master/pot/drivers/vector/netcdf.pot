@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -630,38 +631,48 @@ msgstr ""
 msgid "Dataset creation options"
 msgstr ""
 
-#: ../../../source/drivers/vector/netcdf.rst:292
+#: ../../../source/drivers/vector/netcdf.rst:269
+msgid ""
+"|about-dataset-creation-options| The following dataset creation options are "
+"supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:295
 msgid "Whether to write GDAL specific information as netCDF attributes."
 msgstr ""
 
-#: ../../../source/drivers/vector/netcdf.rst:301
+#: ../../../source/drivers/vector/netcdf.rst:304
 msgid ""
 "The following option will only have effect when simultaneously specifying :"
 "dsco:`GEOMETRY_ENCODING=WKT`:"
 msgstr ""
 
-#: ../../../source/drivers/vector/netcdf.rst:316
+#: ../../../source/drivers/vector/netcdf.rst:319
 msgid "Layer creation options"
 msgstr ""
 
-#: ../../../source/drivers/vector/netcdf.rst:318
+#: ../../../source/drivers/vector/netcdf.rst:321
+msgid "|about-layer-creation-options|"
+msgstr ""
+
+#: ../../../source/drivers/vector/netcdf.rst:323
 msgid "The following option applies to both dataset types:"
 msgstr ""
 
-#: ../../../source/drivers/vector/netcdf.rst:327
+#: ../../../source/drivers/vector/netcdf.rst:332
 msgid ""
 "The following options require a dataset with :dsco:`GEOMETRY_ENCODING=WKT`:"
 msgstr ""
 
-#: ../../../source/drivers/vector/netcdf.rst:389
+#: ../../../source/drivers/vector/netcdf.rst:394
 msgid "The following option requires a dataset with GEOMETRY_ENCODING=CF_1.8:"
 msgstr ""
 
-#: ../../../source/drivers/vector/netcdf.rst:420
+#: ../../../source/drivers/vector/netcdf.rst:425
 msgid "XML configuration file"
 msgstr ""
 
-#: ../../../source/drivers/vector/netcdf.rst:422
+#: ../../../source/drivers/vector/netcdf.rst:427
 msgid ""
 "A XML configuration file conforming to the schema specified in :source_file:"
 "`frmts/netcdf/data/netcdf_config.xsd` can be used for very precise control "
@@ -670,41 +681,41 @@ msgid ""
 "cf-conventions/v1.6.0/cf-conventions.html>`__."
 msgstr ""
 
-#: ../../../source/drivers/vector/netcdf.rst:429
+#: ../../../source/drivers/vector/netcdf.rst:434
 msgid ""
 "It has been designed in particular, but not exclusively, to be usable in use "
 "cases involving the `MapServer OGR output <http://mapserver.org/output/"
 "ogr_output.html>`__."
 msgstr ""
 
-#: ../../../source/drivers/vector/netcdf.rst:433
+#: ../../../source/drivers/vector/netcdf.rst:438
 msgid "Such a file can be used to :"
 msgstr ""
 
-#: ../../../source/drivers/vector/netcdf.rst:435
+#: ../../../source/drivers/vector/netcdf.rst:440
 msgid "set dataset and layer creation options."
 msgstr ""
 
-#: ../../../source/drivers/vector/netcdf.rst:436
+#: ../../../source/drivers/vector/netcdf.rst:441
 msgid "set global netCDF attributes."
 msgstr ""
 
-#: ../../../source/drivers/vector/netcdf.rst:437
+#: ../../../source/drivers/vector/netcdf.rst:442
 msgid "map OGR field names to netCDF variable names."
 msgstr ""
 
-#: ../../../source/drivers/vector/netcdf.rst:438
+#: ../../../source/drivers/vector/netcdf.rst:443
 msgid "set netCDF attributes attached to netCDF variables."
 msgstr ""
 
-#: ../../../source/drivers/vector/netcdf.rst:440
+#: ../../../source/drivers/vector/netcdf.rst:445
 msgid ""
 "The scope of effect is either globally, when elements are defined as direct "
 "children of the root <Configuration> node, or specifically to a given layer, "
 "when defined as children of a <Layer> node."
 msgstr ""
 
-#: ../../../source/drivers/vector/netcdf.rst:444
+#: ../../../source/drivers/vector/netcdf.rst:449
 msgid ""
 "The filename is specified with the CONFIG_FILE dataset creation option. "
 "Alternatively, the content of the file can be specified inline as the value "
@@ -712,11 +723,11 @@ msgid ""
 "characters)"
 msgstr ""
 
-#: ../../../source/drivers/vector/netcdf.rst:449
+#: ../../../source/drivers/vector/netcdf.rst:454
 msgid "The following example shows all possibilities and precedence rules:"
 msgstr ""
 
-#: ../../../source/drivers/vector/netcdf.rst:453
+#: ../../../source/drivers/vector/netcdf.rst:458
 msgid ""
 "<Configuration>\n"
 "    <DatasetCreationOption name=\"FORMAT\" value=\"NC4\"/>\n"
@@ -760,47 +771,47 @@ msgid ""
 "</Configuration>"
 msgstr ""
 
-#: ../../../source/drivers/vector/netcdf.rst:484
+#: ../../../source/drivers/vector/netcdf.rst:489
 msgid ""
 "The effect on the output can be checked by running the **ncdump** utility"
 msgstr ""
 
-#: ../../../source/drivers/vector/netcdf.rst:488
+#: ../../../source/drivers/vector/netcdf.rst:493
 msgid "Further Reading"
 msgstr ""
 
-#: ../../../source/drivers/vector/netcdf.rst:490
+#: ../../../source/drivers/vector/netcdf.rst:495
 msgid ":ref:`Raster side of the netCDF driver. <raster.netcdf>`"
 msgstr ""
 
-#: ../../../source/drivers/vector/netcdf.rst:491
+#: ../../../source/drivers/vector/netcdf.rst:496
 msgid ""
 "`NetCDF CF-1.6 convention <http://cfconventions.org/cf-conventions/v1.6.0/cf-"
 "conventions.html>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/netcdf.rst:493
+#: ../../../source/drivers/vector/netcdf.rst:498
 msgid ""
 "`NetCDF CF-1.8 convention draft <https://github.com/cf-convention/cf-"
 "conventions/blob/master/ch07.adoc>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/netcdf.rst:495
+#: ../../../source/drivers/vector/netcdf.rst:500
 msgid ""
 "`NetCDF compiled libraries <http://www.unidata.ucar.edu/downloads/netcdf/"
 "index.jsp>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/netcdf.rst:497
+#: ../../../source/drivers/vector/netcdf.rst:502
 msgid ""
 "`NetCDF Documentation <http://www.unidata.ucar.edu/software/netcdf/docs/>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/netcdf.rst:501
+#: ../../../source/drivers/vector/netcdf.rst:506
 msgid "Credits"
 msgstr ""
 
-#: ../../../source/drivers/vector/netcdf.rst:503
+#: ../../../source/drivers/vector/netcdf.rst:508
 msgid ""
 "Development of the read/write vector capabilities for netCDF was funded by "
 "`Meteorological Service of Canada <https://www.ec.gc.ca/meteo-weather/>`__ , "

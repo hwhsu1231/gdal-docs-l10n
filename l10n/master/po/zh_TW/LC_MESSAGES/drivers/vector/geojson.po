@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -88,50 +88,54 @@ msgstr ""
 #: ../../../source/drivers/vector/geojson.rst:50
 msgid ""
 "Starting with GDAL 2.3, the URL/filename/text might be prefixed with "
-"GeoJSON: to avoid any ambiguity with other drivers."
+"GeoJSON: to avoid any ambiguity with other drivers. Alternatively, starting "
+"with GDAL 3.10, specifying the ``-if GeoJSON`` option to command line "
+"utilities accepting it, or ``GeoJSON`` as the only value of the "
+"``papszAllowedDrivers`` of :cpp:func:`GDALOpenEx`, also forces the driver to "
+"recognize the passed URL/filename/text."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:54
+#: ../../../source/drivers/vector/geojson.rst:58
 msgid "Layer"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:56
+#: ../../../source/drivers/vector/geojson.rst:60
 msgid ""
 "A GeoJSON datasource is translated to single OGRLayer object with pre-"
 "defined name *OGRGeoJSON*:"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:61
+#: ../../../source/drivers/vector/geojson.rst:65
 msgid "ogrinfo -ro http://featureserver/data/.geojson OGRGeoJSON"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:63
+#: ../../../source/drivers/vector/geojson.rst:67
 msgid ""
 "It is also valid to assume that OGRDataSource::GetLayerCount() for GeoJSON "
 "datasource always returns 1."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:66
+#: ../../../source/drivers/vector/geojson.rst:70
 msgid ""
 "Starting with GDAL 2.2, the layer name is built with the following logic:"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:69
+#: ../../../source/drivers/vector/geojson.rst:73
 msgid ""
 "If a \"name\" member is found at the FeatureCollection level, it is used."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:71
+#: ../../../source/drivers/vector/geojson.rst:75
 msgid ""
 "Otherwise if the filename is regular (ie not a URL with query parameters), "
 "then the filename without extension and path is used as the layer name."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:74
+#: ../../../source/drivers/vector/geojson.rst:78
 msgid "Otherwise OGRGeoJSON is used."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:76
+#: ../../../source/drivers/vector/geojson.rst:80
 msgid ""
 "Accessing Web Service as a datasource (i.e. FeatureServer), each request "
 "will produce new layer. This behavior conforms to stateless nature of HTTP "
@@ -139,33 +143,33 @@ msgid ""
 "single page."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:81
+#: ../../../source/drivers/vector/geojson.rst:85
 msgid ""
 "If a top-level member of GeoJSON data is of any other type than "
 "*FeatureCollection*, the driver will produce a layer with only one feature. "
 "Otherwise, a layer will consists of a set of features."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:85
+#: ../../../source/drivers/vector/geojson.rst:89
 msgid ""
 "If the :oo:`NATIVE_DATA` open option is set to YES, members at the level of "
-"the FeatureCollection will be stored as a serialized JSon object in the "
+"the FeatureCollection will be stored as a serialized JSON object in the "
 "NATIVE_DATA item of the NATIVE_DATA metadata domain of the layer object (and "
 "\"application/vnd.geo+json\" in the NATIVE_MEDIA_TYPE of the NATIVE_DATA "
 "metadata domain)."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:92
+#: ../../../source/drivers/vector/geojson.rst:96
 msgid "Feature"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:94
+#: ../../../source/drivers/vector/geojson.rst:98
 msgid ""
 "The OGR GeoJSON driver maps each object of following types to new "
 "*OGRFeature* object: Point, LineString, Polygon, GeometryCollection, Feature."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:98
+#: ../../../source/drivers/vector/geojson.rst:102
 msgid ""
 "According to the *GeoJSON Specification*, only the *Feature* object must "
 "have a member with name *properties*. Each and every member of *properties* "
@@ -173,7 +177,7 @@ msgid ""
 "OGRFeature object."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:103
+#: ../../../source/drivers/vector/geojson.rst:107
 msgid ""
 "The *GeoJSON Specification* does not require all *Feature* objects in a "
 "collection to have the same schema of properties. If *Feature* objects in a "
@@ -183,14 +187,14 @@ msgid ""
 "*Feature* properties."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:110
+#: ../../../source/drivers/vector/geojson.rst:114
 msgid ""
 "Schema detection will recognized fields of type String, Integer, Real, "
 "StringList, IntegerList and RealList, Integer(Boolean), Date, Time and "
 "DateTime."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:113
+#: ../../../source/drivers/vector/geojson.rst:117
 msgid ""
 "It is possible to tell the driver to not to process attributes by setting "
 "configuration option :config:`ATTRIBUTES_SKIP=YES`. Default behavior is to "
@@ -198,24 +202,24 @@ msgid ""
 "to setting :config:`ATTRIBUTES_SKIP=NO`."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:119
+#: ../../../source/drivers/vector/geojson.rst:123
 msgid ""
-"If the :oo:`NATIVE_DATA` open option is set to YES, the Feature JSon object "
-"will be stored as a serialized JSon object in the NativeData property of the "
+"If the :oo:`NATIVE_DATA` open option is set to YES, the Feature JSON object "
+"will be stored as a serialized JSON object in the NativeData property of the "
 "OGRFeature object (and \"application/vnd.geo+json\" in the NativeMediaType "
 "property). On write, if a OGRFeature to be written has its NativeMediaType "
 "property set to \"application/vnd.geo+json\" and its NativeData property set "
-"to a string that is a serialized JSon object, then extra members of this "
+"to a string that is a serialized JSON object, then extra members of this "
 "object (i.e. not the \"property\" dictionary, nor the first 3 dimensions of "
-"geometry coordinates) will be used to enhance the created JSon object from "
+"geometry coordinates) will be used to enhance the created JSON object from "
 "the OGRFeature. See :ref:`rfc-60` for more details."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:131
+#: ../../../source/drivers/vector/geojson.rst:135
 msgid "Geometry"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:133
+#: ../../../source/drivers/vector/geojson.rst:137
 msgid ""
 "Similarly to the issue with mixed-properties features, the *GeoJSON "
 "Specification* draft does not require all *Feature* objects in a collection "
@@ -225,7 +229,7 @@ msgid ""
 "geometries."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:140
+#: ../../../source/drivers/vector/geojson.rst:144
 msgid ""
 "However, sometimes there is a need to generate a homogeneous layer from a "
 "set of heterogeneous features. For this purpose, it is possible to tell the "
@@ -234,26 +238,30 @@ msgid ""
 "`GEOMETRY_AS_COLLECTION` configuration option to YES."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:147
+#: ../../../source/drivers/vector/geojson.rst:151
 msgid "Configuration options"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:149
+#: ../../../source/drivers/vector/geojson.rst:153
 msgid ""
-"The following :ref:`configuration options <configoptions>` are available:"
+"|about-config-options| The following configuration options are available:"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:181
+#: ../../../source/drivers/vector/geojson.rst:185
 msgid "Open options"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:235
+#: ../../../source/drivers/vector/geojson.rst:187
+msgid "|about-open-options| This driver supports the following open options:"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:242
 msgid ""
 "To explain :oo:`FLATTEN_NESTED_ATTRIBUTES`, consider the following GeoJSON "
 "fragment:"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:240
+#: ../../../source/drivers/vector/geojson.rst:247
 msgid ""
 "{\n"
 "  \"type\": \"FeatureCollection\",\n"
@@ -277,11 +285,11 @@ msgid ""
 "}"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:261
+#: ../../../source/drivers/vector/geojson.rst:268
 msgid "\"ogrinfo test.json -al -oo FLATTEN_NESTED_ATTRIBUTES=yes\" reports:"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:265
+#: ../../../source/drivers/vector/geojson.rst:272
 msgid ""
 "OGRFeature(OGRGeoJSON):0\n"
 "  a_property (String) = foo\n"
@@ -290,36 +298,42 @@ msgid ""
 "  POINT (2 49)"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:272
+#: ../../../source/drivers/vector/geojson.rst:279
 msgid "Layer creation options"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:405
+#: ../../../source/drivers/vector/geojson.rst:281
+msgid ""
+"|about-layer-creation-options| This driver supports the following layer "
+"creation options:"
+msgstr ""
+
+#: ../../../source/drivers/vector/geojson.rst:415
 msgid "VSI Virtual File System API support"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:407
+#: ../../../source/drivers/vector/geojson.rst:417
 msgid ""
 "The driver supports reading and writing to files managed by VSI Virtual File "
 "System API, which includes \"regular\" files, as well as files in the /"
 "vsizip/ (read-write), /vsigzip/ (read-write), /vsicurl/ (read-only) domains."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:412
+#: ../../../source/drivers/vector/geojson.rst:422
 msgid "Writing to /dev/stdout or /vsistdout/ is also supported."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:415
-msgid "Round-tripping of extra JSon members"
+#: ../../../source/drivers/vector/geojson.rst:425
+msgid "Round-tripping of extra JSON members"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:417
+#: ../../../source/drivers/vector/geojson.rst:427
 msgid "See :ref:`rfc-60` for more details."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:419
+#: ../../../source/drivers/vector/geojson.rst:429
 msgid ""
-"Starting with GDAL 2.1, extra JSon members at the FeatureCollection, Feature "
+"Starting with GDAL 2.1, extra JSON members at the FeatureCollection, Feature "
 "or geometry levels that are not normally reflected in the OGR abstraction, "
 "such as the ones called \"extra_XXXXX_member\" in the below snippet, are by "
 "default preserved when executing ogr2ogr with GeoJSON both at the source and "
@@ -329,7 +343,7 @@ msgid ""
 "is allowed, but not change in the number of coordinates)."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:431
+#: ../../../source/drivers/vector/geojson.rst:441
 msgid ""
 "{\n"
 "  \"type\": \"FeatureCollection\",\n"
@@ -352,69 +366,69 @@ msgid ""
 "}"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:451
+#: ../../../source/drivers/vector/geojson.rst:461
 msgid ""
 "This behavior can be turned off by specifying the **-noNativeData** switch "
 "of the ogr2ogr utility."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:455
+#: ../../../source/drivers/vector/geojson.rst:465
 msgid "RFC 7946 write support"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:457
+#: ../../../source/drivers/vector/geojson.rst:467
 msgid ""
 "By default, the driver will write GeoJSON files following GeoJSON 2008 "
 "specification. When specifying the :lco:`RFC7946=YES` creation option, the "
 "RFC 7946 standard will be used instead."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:461
+#: ../../../source/drivers/vector/geojson.rst:471
 msgid ""
 "The differences between the 2 versions are mentioned in `Appendix B of RFC "
 "7946 <https://tools.ietf.org/html/rfc7946#appendix-B>`__ and recalled here "
 "for what matters to the driver:"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:465
+#: ../../../source/drivers/vector/geojson.rst:475
 msgid ""
 "Coordinates must be geographic over the WGS 84 ellipsoid, hence if the "
 "spatial reference system specified at layer creation time is not EPSG:4326, "
 "on-the-fly reprojection will be done by the driver."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:469
+#: ../../../source/drivers/vector/geojson.rst:479
 msgid ""
 "Polygons will be written such as to follow the right-hand rule for "
 "orientation (counterclockwise external rings, clockwise internal rings)."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:472
+#: ../../../source/drivers/vector/geojson.rst:482
 msgid ""
 "The values of a \"bbox\" array are \"[west, south, east, north]\", not "
 "\"[minx, miny, maxx, maxy]\""
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:474
+#: ../../../source/drivers/vector/geojson.rst:484
 msgid ""
 "Some extension member names (see previous section about round/tripping) are "
 "forbidden in the FeatureCollection, Feature and Geometry objects."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:477
+#: ../../../source/drivers/vector/geojson.rst:487
 msgid ""
 "The default coordinate precision is 7 decimal digits after decimal separator."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:481
+#: ../../../source/drivers/vector/geojson.rst:491
 msgid "Geometry coordinate precision"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:483
+#: ../../../source/drivers/vector/geojson.rst:493
 msgid "3.9"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:485
+#: ../../../source/drivers/vector/geojson.rst:495
 msgid ""
 "The GeoJSON driver supports reading and writing the geometry coordinate "
 "precision, using the :cpp:class:`OGRGeomCoordinatePrecision` settings of "
@@ -423,13 +437,13 @@ msgid ""
 "precision."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:492
+#: ../../../source/drivers/vector/geojson.rst:502
 msgid ""
 "The :lco:`COORDINATE_PRECISION` layer creation option has precedence over "
 "the values set on the :cpp:class:`OGRGeomFieldDefn`."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:495
+#: ../../../source/drivers/vector/geojson.rst:505
 msgid ""
 "Implementation details: the coordinate precision is stored as "
 "``xy_coordinate_resolution`` and ``z_coordinate_resolution`` members at the "
@@ -437,11 +451,11 @@ msgid ""
 "the SRS."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:500
+#: ../../../source/drivers/vector/geojson.rst:510
 msgid "Example:"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:502
+#: ../../../source/drivers/vector/geojson.rst:512
 msgid ""
 "{\n"
 "    \"type\": \"FeatureCollection\",\n"
@@ -451,83 +465,83 @@ msgid ""
 "}"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:512
+#: ../../../source/drivers/vector/geojson.rst:522
 msgid "Examples"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:514
+#: ../../../source/drivers/vector/geojson.rst:524
 msgid "How to dump content of .geojson file:"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:518
+#: ../../../source/drivers/vector/geojson.rst:528
 msgid "ogrinfo -ro point.geojson"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:520
+#: ../../../source/drivers/vector/geojson.rst:530
 msgid "How to query features from remote service with filtering by attribute:"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:524
+#: ../../../source/drivers/vector/geojson.rst:534
 msgid ""
 "ogrinfo -ro http://featureserver/cities/.geojson OGRGeoJSON -where "
 "\"name=Warsaw\""
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:526
+#: ../../../source/drivers/vector/geojson.rst:536
 msgid ""
 "How to translate number of features queried from FeatureServer to ESRI "
 "Shapefile:"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:531
+#: ../../../source/drivers/vector/geojson.rst:541
 msgid ""
 "ogr2ogr -f \"ESRI Shapefile\" cities.shp http://featureserver/cities/."
 "geojson OGRGeoJSON"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:533
+#: ../../../source/drivers/vector/geojson.rst:543
 msgid "How to translate a ESRI Shapefile into a RFC 7946 GeoJSON file:"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:537
+#: ../../../source/drivers/vector/geojson.rst:547
 msgid "ogr2ogr -f GeoJSON cities.json cities.shp -lco RFC7946=YES"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:540
+#: ../../../source/drivers/vector/geojson.rst:550
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:542
+#: ../../../source/drivers/vector/geojson.rst:552
 msgid "`GeoJSON <http://geojson.org/>`__ - encoding geographic content in JSON"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:544
+#: ../../../source/drivers/vector/geojson.rst:554
 msgid "`RFC 7946 <https://tools.ietf.org/html/rfc7946>`__ standard."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:545
+#: ../../../source/drivers/vector/geojson.rst:555
 msgid ""
 "`GeoJSON 2008 <http://geojson.org/geojson-spec.html>`__ specification "
 "(obsoleted by RFC 7946)."
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:547
+#: ../../../source/drivers/vector/geojson.rst:557
 msgid "`JSON <http://json.org/>`__ - JavaScript Object Notation"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:548
+#: ../../../source/drivers/vector/geojson.rst:558
 msgid ":ref:`GeoJSON sequence driver <vector.geojsonseq>`"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:549
+#: ../../../source/drivers/vector/geojson.rst:559
 msgid ""
 ":ref:`OGC Features and Geometries JSON (JSON-FG) driver <vector.jsonfg>`"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:550
-msgid ":ref:`ESRI JSon / FeatureService driver <vector.esrijson>`"
+#: ../../../source/drivers/vector/geojson.rst:560
+msgid ":ref:`ESRI JSON / FeatureService driver <vector.esrijson>`"
 msgstr ""
 
-#: ../../../source/drivers/vector/geojson.rst:551
+#: ../../../source/drivers/vector/geojson.rst:561
 msgid ":ref:`TopoJSON driver <vector.topojson>`"
 msgstr ""

@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -304,11 +305,21 @@ msgid ""
 "    scale_factor=0.1"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:226
+#: ../../../source/drivers/raster/netcdf.rst:225
+msgid ""
+"Starting with GDAL 3.10, specifying the ``-if netCDF`` option to command "
+"line utilities accepting it, or ``netCDF`` as the only value of the "
+"``papszAllowedDrivers`` of :cpp:func:`GDALOpenEx`, also forces the driver to "
+"recognize the passed filename, when it is not using subdataset syntax (it "
+"can typically be used to force open a HDF5 file that would be nominally "
+"recognized by the HDF5 driver)."
+msgstr ""
+
+#: ../../../source/drivers/raster/netcdf.rst:232
 msgid "Dimension"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:228
+#: ../../../source/drivers/raster/netcdf.rst:234
 msgid ""
 "The NetCDF driver assume that data follows the CF-1 convention from `UNIDATA "
 "<http://www.unidata.ucar.edu/software/netcdf/docs/conventions.html>`__ The "
@@ -321,11 +332,11 @@ msgid ""
 "values."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:239
+#: ../../../source/drivers/raster/netcdf.rst:245
 msgid "Georeference"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:241
+#: ../../../source/drivers/raster/netcdf.rst:247
 msgid ""
 "There is no universal way of storing georeferencing in NetCDF files. The "
 "driver first tries to follow the CF-1 Convention from UNIDATA looking for "
@@ -334,108 +345,108 @@ msgid ""
 "NetCDF driver verifies that the Lat/Lon array is equally spaced."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:248
+#: ../../../source/drivers/raster/netcdf.rst:254
 msgid "crs_wkt attribute support"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:250
+#: ../../../source/drivers/raster/netcdf.rst:256
 msgid ""
 "If those 2 methods fail, NetCDF driver will try to read the following "
 "metadata directly and set up georeferencing."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:253
+#: ../../../source/drivers/raster/netcdf.rst:259
 msgid "spatial_ref (Well Known Text)"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:255
+#: ../../../source/drivers/raster/netcdf.rst:261
 msgid "GeoTransform (GeoTransform array)"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:257
+#: ../../../source/drivers/raster/netcdf.rst:263
 msgid "or,"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:259
+#: ../../../source/drivers/raster/netcdf.rst:265
 msgid "Northernmost_Northing"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:260
+#: ../../../source/drivers/raster/netcdf.rst:266
 msgid "Southernmost_Northing"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:261
+#: ../../../source/drivers/raster/netcdf.rst:267
 msgid "Easternmost_Easting"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:262
+#: ../../../source/drivers/raster/netcdf.rst:268
 msgid "Westernmost_Easting"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:264
+#: ../../../source/drivers/raster/netcdf.rst:270
 msgid ""
 "See also the configuration options **GDAL_NETCDF_VERIFY_DIMS** and "
 "**GDAL_NETCDF_IGNORE_XY_AXIS_NAME_CHECKS** which control this behavior."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:269
+#: ../../../source/drivers/raster/netcdf.rst:275
 msgid "Open options"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:271
-msgid "The following open options are available:"
+#: ../../../source/drivers/raster/netcdf.rst:277
+msgid "|about-open-options| The following open options are available:"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:323
+#: ../../../source/drivers/raster/netcdf.rst:330
 msgid "Creation Issues"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:325
+#: ../../../source/drivers/raster/netcdf.rst:332
 msgid ""
 "This driver supports creation of NetCDF file following the CF-1 convention. "
 "You may create set of 2D datasets. Each variable array is named Band1, "
 "Band2, ... BandN."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:329
+#: ../../../source/drivers/raster/netcdf.rst:336
 msgid ""
 "Each band will have metadata tied to it giving a short description of the "
 "data it contains."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:333
+#: ../../../source/drivers/raster/netcdf.rst:340
 msgid "GDAL NetCDF Metadata"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:335
+#: ../../../source/drivers/raster/netcdf.rst:342
 msgid "All NetCDF attributes are transparently translated as GDAL metadata."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:337
+#: ../../../source/drivers/raster/netcdf.rst:344
 msgid "The translation follow these directives:"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:339
+#: ../../../source/drivers/raster/netcdf.rst:346
 msgid "Global NetCDF metadata have a **NC_GLOBAL** tag prefixed."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:340
+#: ../../../source/drivers/raster/netcdf.rst:347
 msgid "Dataset metadata have their **variable name** prefixed."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:341
+#: ../../../source/drivers/raster/netcdf.rst:348
 msgid "Each prefix is followed by a **#** sign."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:342
+#: ../../../source/drivers/raster/netcdf.rst:349
 msgid "The NetCDF attribute follows the form: **name=value**."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:344
+#: ../../../source/drivers/raster/netcdf.rst:351
 msgid "Example:"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:348
+#: ../../../source/drivers/raster/netcdf.rst:355
 msgid ""
 "$ gdalinfo NETCDF:\"sst.nc\":tos\n"
 "Driver: netCDF/Network Common Data Format\n"
@@ -446,21 +457,21 @@ msgid ""
 "Metadata:"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:356
+#: ../../../source/drivers/raster/netcdf.rst:363
 msgid "NetCDF global attributes"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:360
+#: ../../../source/drivers/raster/netcdf.rst:367
 msgid ""
 "NC_GLOBAL#title=IPSL  model output prepared for IPCC Fourth Assessment SRES "
 "A2 experiment"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:362
+#: ../../../source/drivers/raster/netcdf.rst:369
 msgid "Variables attributes for: tos, lon, lat and time"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:366
+#: ../../../source/drivers/raster/netcdf.rst:373
 msgid ""
 "tos#standard_name=sea_surface_temperature\n"
 "tos#long_name=Sea Surface Temperature\n"
@@ -494,7 +505,7 @@ msgid ""
 "time#original_units=seconds since 2001-1-1"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:395
+#: ../../../source/drivers/raster/netcdf.rst:402
 msgid ""
 "On writing, when using the CreateCopy() interface or gdal_translate, dataset "
 "level metadata that follows the naming convention NC_GLOBAL#key=value will "
@@ -502,15 +513,15 @@ msgid ""
 "key=value will also be used to write variable attributes."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:401
+#: ../../../source/drivers/raster/netcdf.rst:408
 msgid "Product specific behavior"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:404
+#: ../../../source/drivers/raster/netcdf.rst:411
 msgid "Sentinel 5"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:408
+#: ../../../source/drivers/raster/netcdf.rst:415
 msgid ""
 "The most verbose metadata is reported in the ``json:ISO_METADATA``, ``json:"
 "ESA_METADATA``, ``json:EOP_METADATA``, ``json:QA_STATISTICS``, ``json:"
@@ -518,23 +529,27 @@ msgid ""
 "metadata domains."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:413
+#: ../../../source/drivers/raster/netcdf.rst:420
 msgid "Can be discovered for example with:"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:417
+#: ../../../source/drivers/raster/netcdf.rst:424
 msgid "gdalinfo -mdd all -json S5P.nc"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:421
+#: ../../../source/drivers/raster/netcdf.rst:428
 msgid "Creation Options"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:522
+#: ../../../source/drivers/raster/netcdf.rst:430
+msgid "|about-creation-options| The following creation options are available:"
+msgstr ""
+
+#: ../../../source/drivers/raster/netcdf.rst:532
 msgid "Creation of multidimensional files with CreateCopy() 2D raster API"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:524
+#: ../../../source/drivers/raster/netcdf.rst:534
 msgid ""
 "Starting with GDAL 3.1, the preferred way of creating > 2D files is to use "
 "the the :ref:`multidim_raster_data_model` API. However it is possible to "
@@ -542,14 +557,14 @@ msgid ""
 "that at time of writing, this is not supported using the Create() method)."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:529
+#: ../../../source/drivers/raster/netcdf.rst:539
 msgid ""
 "The ``NETCDF_DIM_EXTRA={dim1_name,...dimN_name}`` metadata item must be set "
 "on the source dataset, where dim1_name is the name of the slowest varying "
 "dimension and dimN_name the name of the fastest varying one."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:533
+#: ../../../source/drivers/raster/netcdf.rst:543
 msgid ""
 "For each extra dimension, the ``NETCDF_DIM_{dim_name}_DEF={dimension_size,"
 "netcdf_data_type}`` metadata item must be set where dimension_size is the "
@@ -558,39 +573,39 @@ msgid ""
 "corresponding indexing variable. Among the most useful data types:"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:539
+#: ../../../source/drivers/raster/netcdf.rst:549
 msgid "4 for Int"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:540
+#: ../../../source/drivers/raster/netcdf.rst:550
 msgid "5 for Float"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:541
+#: ../../../source/drivers/raster/netcdf.rst:551
 msgid "6 for Double"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:542
+#: ../../../source/drivers/raster/netcdf.rst:552
 msgid "10 for Int64"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:544
+#: ../../../source/drivers/raster/netcdf.rst:554
 msgid ""
 "The ``NETCDF_DIM_{dim_name}_VALUES={value1,...valueN}`` is set to define the "
 "values of the indexing variable corresponding to dimension."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:547
+#: ../../../source/drivers/raster/netcdf.rst:557
 msgid ""
 "``dim_name#attribute`` metadata items can also be set to define the "
 "attributes of the indexing variable of the dimension."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:550
+#: ../../../source/drivers/raster/netcdf.rst:560
 msgid "Example of creation of a Time,Z,Y,X 4D file in Python:"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:552
+#: ../../../source/drivers/raster/netcdf.rst:562
 msgid ""
 "# Create in-memory file with required metadata to define the extra >2D\n"
 "# dimensions\n"
@@ -611,15 +626,15 @@ msgid ""
 "gdal.GetDriverByName('netCDF').CreateCopy('out.nc', src_ds)"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:574
+#: ../../../source/drivers/raster/netcdf.rst:584
 msgid "Configuration Options"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:611
+#: ../../../source/drivers/raster/netcdf.rst:621
 msgid "VSI Virtual File System API support"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:613
+#: ../../../source/drivers/raster/netcdf.rst:623
 msgid ""
 "Since GDAL 2.4, and with Linux kernel >=4.3 and libnetcdf >=4.5, read "
 "operations on /vsi file systems are supported using the userfaultfd Linux "
@@ -628,7 +643,7 @@ msgid ""
 "seccomp=unconfined`` might be needed."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:618
+#: ../../../source/drivers/raster/netcdf.rst:628
 msgid ""
 "Corollary: operations on /vsi file systems are *not* supported on Windows or "
 "MacOSX. If the netCDF file is a NetCDF 4 / HDF5 file, and the HDF5 driver is "
@@ -638,28 +653,28 @@ msgid ""
 "conventions, will not be available."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:627
+#: ../../../source/drivers/raster/netcdf.rst:637
 msgid "NetCDF-4 groups support on reading (GDAL >= 3.0)"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:629
+#: ../../../source/drivers/raster/netcdf.rst:639
 msgid ""
 "The driver has undergone significant changes in GDAL 3.0 to support NetCDF-4 "
 "groups on reading:"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:632
+#: ../../../source/drivers/raster/netcdf.rst:642
 msgid "Explore recursively all nested groups to create the subdatasets list"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:634
+#: ../../../source/drivers/raster/netcdf.rst:644
 msgid ""
 "Subdatasets in nested groups use the /group1/group2/.../groupn/var standard "
 "NetCDF-4 convention, except for variables in the root group which do not "
 "have a leading slash for backward compatibility with the NetCDF-3 driver"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:639
+#: ../../../source/drivers/raster/netcdf.rst:649
 msgid ""
 "Global attributes of each nested group are also collected in the GDAL "
 "dataset metadata, using the same convention /group1/group2/.../groupn/"
@@ -667,7 +682,7 @@ msgid ""
 "slash for backward compatibility"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:644
+#: ../../../source/drivers/raster/netcdf.rst:654
 msgid ""
 "When searching for a variable containing auxiliary information on the "
 "selected subdataset, like coordinate variables or grid_mapping, we now also "
@@ -675,23 +690,23 @@ msgid ""
 "groups in CF <https://github.com/cf-convention/cf-conventions/issues/144>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:651
+#: ../../../source/drivers/raster/netcdf.rst:661
 msgid "Multidimensional API support"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:655
+#: ../../../source/drivers/raster/netcdf.rst:665
 msgid ""
 "The netCDF driver supports the :ref:`multidim_raster_data_model` for reading "
 "and creation operations."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:658
+#: ../../../source/drivers/raster/netcdf.rst:668
 msgid ""
 "The :cpp:func:`GDALGroup::GetGroupNames` method supports the following "
 "options:"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:660
+#: ../../../source/drivers/raster/netcdf.rst:670
 msgid ""
 "GROUP_BY=SAME_DIMENSION. If set, single-dimensional variables will be "
 "exposed as a \"virtual\" subgroup. This enables the user to get a clearer "
@@ -700,70 +715,70 @@ msgid ""
 "the same netCDF group."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:666
+#: ../../../source/drivers/raster/netcdf.rst:676
 msgid ""
 "The :cpp:func:`GDALGroup::OpenGroup` method supports the following options:"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:668
+#: ../../../source/drivers/raster/netcdf.rst:678
 msgid "GROUP_BY=SAME_DIMENSION. See above description"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:670
+#: ../../../source/drivers/raster/netcdf.rst:680
 msgid ""
 "The :cpp:func:`GDALGroup::GetMDArrayNames` method supports the following "
 "options:"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:672
+#: ../../../source/drivers/raster/netcdf.rst:682
 msgid ""
 "SHOW_ALL=YES/NO. Defaults to NO. If set to YES, all variables will be listed."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:673
+#: ../../../source/drivers/raster/netcdf.rst:683
 msgid ""
 "SHOW_ZERO_DIM=YES/NO. Defaults to NO. If set to NO, variables with 0-"
 "dimension will not be listed."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:675
+#: ../../../source/drivers/raster/netcdf.rst:685
 msgid ""
 "SHOW_COORDINATES=YES/NO. Defaults to YES. If set to NO, variables "
 "refererenced in the ``coordinates`` attribute of another variable will not "
 "be listed."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:677
+#: ../../../source/drivers/raster/netcdf.rst:687
 msgid ""
 "SHOW_BOUNDS=YES/NO. Defaults to YES. If set to NO, variables refererenced in "
 "the ``bounds`` attribute of another variable will not be listed."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:679
+#: ../../../source/drivers/raster/netcdf.rst:689
 msgid ""
 "SHOW_INDEXING=YES/NO. Defaults to YES. If set to NO, single-dimensional "
 "variables whose name is equal to the name of their indexing variable will "
 "not be listed."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:682
+#: ../../../source/drivers/raster/netcdf.rst:692
 msgid ""
 "SHOW_TIME=YES/NO. Defaults to YES. If set to NO, single-dimensional "
 "variables whose ``standard_name`` attribute is \"time\" will not be listed."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:685
+#: ../../../source/drivers/raster/netcdf.rst:695
 msgid ""
 "GROUP_BY=SAME_DIMENSION. If set, single-dimensional variables will not be "
 "listed"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:687
+#: ../../../source/drivers/raster/netcdf.rst:697
 msgid ""
 "The :cpp:func:`GDALGroup::OpenMDArray` method supports the following options:"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:689
+#: ../../../source/drivers/raster/netcdf.rst:699
 msgid ""
 "USE_DEFAULT_FILL_AS_NODATA=YES/NO. (GDAL >= 3.6) Defaults to NO. If set to "
 "YES, the default fill value will be used as nodata when there is no "
@@ -771,42 +786,42 @@ msgid ""
 "UByte, Char)"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:693
+#: ../../../source/drivers/raster/netcdf.rst:703
 msgid ""
 "The :cpp:func:`GDALGroup::CreateMDArray` method supports the following "
 "options:"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:695
+#: ../../../source/drivers/raster/netcdf.rst:705
 msgid ""
 "NC_TYPE=NC_CHAR/NC_BYTE/NC_INT64/NC_UINT64: to overload the netCDF data type "
 "normally deduced from the GDAL data type passed to CreateMDArray(). NC_CHAR "
 "can only be used for strings of a fixed size."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:698
+#: ../../../source/drivers/raster/netcdf.rst:708
 msgid ""
 "BLOCKSIZE=size_dim0,size_dim1,...,size_dimN: to set the netCDF chunk size, "
 "as set by nc_def_var_chunking(). There must be exactly as many values as the "
 "number of dimensions passed to CreateMDArray()"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:701
+#: ../../../source/drivers/raster/netcdf.rst:711
 msgid "COMPRESS=DEFLATE: to ask for deflate compression"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:702
+#: ../../../source/drivers/raster/netcdf.rst:712
 msgid "ZLEVEL=number: DEFLATE compression level (1-9)"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:703
+#: ../../../source/drivers/raster/netcdf.rst:713
 msgid ""
 "CHECKSUM=YES/NO: Whether to turn on Fletcher32 checksums. Checksum "
 "generation requires chunking, and if no explicit chunking has been asked "
 "with the BLOCKSIZE option, a default one will be used. Defaults to NO."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:706
+#: ../../../source/drivers/raster/netcdf.rst:716
 msgid ""
 "FILTER=filterid,param1,...,paramN: Define a filter (typically a compression "
 "method) used for writing. This should be a list of numeric values, separated "
@@ -817,47 +832,47 @@ msgid ""
 "md__Users_wfisher_Desktop_docs_netcdf-c_docs_filters.html"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:714
+#: ../../../source/drivers/raster/netcdf.rst:724
 msgid "Driver building"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:716
+#: ../../../source/drivers/raster/netcdf.rst:726
 msgid "This driver is compiled with the UNIDATA NetCDF library."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:718
+#: ../../../source/drivers/raster/netcdf.rst:728
 msgid ""
 "You need to download or compile the NetCDF library before configuring GDAL "
 "with NetCDF support."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:721
+#: ../../../source/drivers/raster/netcdf.rst:731
 msgid ""
 "See `NetCDF GDAL wiki <http://trac.osgeo.org/gdal/wiki/NetCDF>`__ for build "
 "instructions and information regarding HDF4, NetCDF-4 and HDF5."
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:725
+#: ../../../source/drivers/raster/netcdf.rst:735
 msgid "See Also:"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:727
+#: ../../../source/drivers/raster/netcdf.rst:737
 msgid ":ref:`Vector side of the netCDF driver. <vector.netcdf>`"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:728
+#: ../../../source/drivers/raster/netcdf.rst:738
 msgid ""
 "`NetCDF CF-1.5 convention <http://cf-pcmdi.llnl.gov/documents/cf-"
 "conventions/1.5/cf-conventions.html>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:730
+#: ../../../source/drivers/raster/netcdf.rst:740
 msgid ""
 "`NetCDF compiled libraries <http://www.unidata.ucar.edu/downloads/netcdf/"
 "index.jsp>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/netcdf.rst:732
+#: ../../../source/drivers/raster/netcdf.rst:742
 msgid ""
 "`NetCDF Documentation <http://www.unidata.ucar.edu/software/netcdf/docs/>`__"
 msgstr ""

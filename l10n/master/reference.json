@@ -26,9 +26,9 @@
       "branch" : "master",
       "commit" : 
       {
-        "date" : "2024-04-22 00:16:34 +0200",
-        "hash" : "735e1229556f0bacae52a482451dc928c4e51b6c",
-        "title" : "Miramon: avoid integer overflow (fixes https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=68205)"
+        "date" : "2024-06-26 00:02:01 +0200",
+        "hash" : "08cbb83d7b1b0424192323bb603805650951f14b",
+        "title" : "GeoJSON: avoid multiple debug messages about mixed-geometry type"
       }
     }
   },
@@ -37,9 +37,9 @@
     "branch" : "master",
     "commit" : 
     {
-      "date" : "2024-04-22 00:16:34 +0200",
-      "hash" : "735e1229556f0bacae52a482451dc928c4e51b6c",
-      "title" : "Miramon: avoid integer overflow (fixes https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=68205)"
+      "date" : "2024-06-26 00:02:01 +0200",
+      "hash" : "08cbb83d7b1b0424192323bb603805650951f14b",
+      "title" : "GeoJSON: avoid multiple debug messages about mixed-geometry type"
     }
   },
   "type" : "branch",

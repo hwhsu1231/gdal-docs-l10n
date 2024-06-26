@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -461,25 +462,27 @@ msgid "Layer creation options"
 msgstr ""
 
 #: ../../../source/drivers/raster/fits.rst:253
-msgid "The following layer creation options are available:"
+msgid ""
+"|about-layer-creation-options| The following layer creation options are "
+"available:"
 msgstr ""
 
-#: ../../../source/drivers/raster/fits.rst:276
+#: ../../../source/drivers/raster/fits.rst:277
 msgid ""
 "When using ogr2ogr or :cpp:func:`GDALVectorTranslate` with a FITS source, "
 "the FITS header will be taken into account, in particular to help to "
 "determine the FITS data type of target columns."
 msgstr ""
 
-#: ../../../source/drivers/raster/fits.rst:281
+#: ../../../source/drivers/raster/fits.rst:282
 msgid "Examples"
 msgstr ""
 
-#: ../../../source/drivers/raster/fits.rst:283
+#: ../../../source/drivers/raster/fits.rst:284
 msgid "Listing subdatasets in a MEF .fits:"
 msgstr ""
 
-#: ../../../source/drivers/raster/fits.rst:287
+#: ../../../source/drivers/raster/fits.rst:288
 msgid ""
 "$ gdalinfo ../autotest/gdrivers/data/fits/image_in_first_and_second_hdu."
 "fits\n"
@@ -504,11 +507,11 @@ msgid ""
 "Center      (  256.0,  256.0)"
 msgstr ""
 
-#: ../../../source/drivers/raster/fits.rst:306
+#: ../../../source/drivers/raster/fits.rst:307
 msgid "Opening a given raster HDU:"
 msgstr ""
 
-#: ../../../source/drivers/raster/fits.rst:310
+#: ../../../source/drivers/raster/fits.rst:311
 msgid ""
 "$ gdalinfo FITS:\"../autotest/gdrivers/data/fits/"
 "image_in_first_and_second_hdu.fits\":1\n"
@@ -527,70 +530,70 @@ msgid ""
 "Band 1 Block=1x1 Type=Byte, ColorInterp=Undefined"
 msgstr ""
 
-#: ../../../source/drivers/raster/fits.rst:325
+#: ../../../source/drivers/raster/fits.rst:326
 msgid "Listing potential binary tables in a FITS file:"
 msgstr ""
 
-#: ../../../source/drivers/raster/fits.rst:329
+#: ../../../source/drivers/raster/fits.rst:330
 msgid "$ ogrinfo my.fits"
 msgstr ""
 
-#: ../../../source/drivers/raster/fits.rst:332
+#: ../../../source/drivers/raster/fits.rst:333
 msgid "Converting a GeoPackage layer into a FITS binary table:"
 msgstr ""
 
-#: ../../../source/drivers/raster/fits.rst:337
+#: ../../../source/drivers/raster/fits.rst:338
 msgid "$ ogr2ogr out.fits my.gpkg my_table"
 msgstr ""
 
-#: ../../../source/drivers/raster/fits.rst:341
+#: ../../../source/drivers/raster/fits.rst:342
 msgid "Other"
 msgstr ""
 
-#: ../../../source/drivers/raster/fits.rst:343
+#: ../../../source/drivers/raster/fits.rst:344
 msgid "NOTE: Implemented as :source_file:`frmts/fits/fitsdataset.cpp`."
 msgstr ""
 
-#: ../../../source/drivers/raster/fits.rst:348
+#: ../../../source/drivers/raster/fits.rst:349
 msgid "Notes on CFITSIO linking in GDAL"
 msgstr ""
 
-#: ../../../source/drivers/raster/fits.rst:350
+#: ../../../source/drivers/raster/fits.rst:351
 msgid "Linux"
 msgstr ""
 
-#: ../../../source/drivers/raster/fits.rst:352
+#: ../../../source/drivers/raster/fits.rst:353
 msgid "From source"
 msgstr ""
 
-#: ../../../source/drivers/raster/fits.rst:353
+#: ../../../source/drivers/raster/fits.rst:354
 msgid ""
 "Install CFITSIO headers from your distro (eg, cfitsio-devel on Fedora; "
 "libcfitsio-dev on Debian-Ubuntu), then compile GDAL as usual. CFITSIO will "
 "be automatically detected and linked."
 msgstr ""
 
-#: ../../../source/drivers/raster/fits.rst:356
+#: ../../../source/drivers/raster/fits.rst:357
 msgid "From distros"
 msgstr ""
 
-#: ../../../source/drivers/raster/fits.rst:357
+#: ../../../source/drivers/raster/fits.rst:358
 msgid ""
 "On Fedora/CentOS install CFITSIO then GDAL with dnf (yum): cfitsio is "
 "automatically linked."
 msgstr ""
 
-#: ../../../source/drivers/raster/fits.rst:360
+#: ../../../source/drivers/raster/fits.rst:361
 msgid "MacOSX"
 msgstr ""
 
-#: ../../../source/drivers/raster/fits.rst:361
+#: ../../../source/drivers/raster/fits.rst:362
 msgid ""
 "The last versions of the MacOSX packages are not linked against CFITSIO. "
 "Install CFITSIO as described in the `official documentation <https://heasarc."
 "gsfc.nasa.gov/docs/software/fitsio/fitsio_macosx.html>`__."
 msgstr ""
 
-#: ../../../source/drivers/raster/fits.rst:365
+#: ../../../source/drivers/raster/fits.rst:366
 msgid "Driver capabilities"
 msgstr ""

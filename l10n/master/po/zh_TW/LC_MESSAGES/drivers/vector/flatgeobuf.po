@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,50 +67,53 @@ msgid "Open options"
 msgstr ""
 
 #: ../../../source/drivers/vector/flatgeobuf.rst:43
-msgid ""
-"**VERIFY_BUFFERS=**\\ *YES/NO*: Set to YES to verify buffers when reading. "
-"This can provide some protection for invalid/corrupt data with a performance "
-"trade off. Defaults to YES."
+msgid "|about-open-options| The following open options are supported:"
 msgstr ""
 
-#: ../../../source/drivers/vector/flatgeobuf.rst:48
+#: ../../../source/drivers/vector/flatgeobuf.rst:55
 msgid "Dataset Creation Options"
 msgstr ""
 
-#: ../../../source/drivers/vector/flatgeobuf.rst:50
+#: ../../../source/drivers/vector/flatgeobuf.rst:57
 msgid "None"
 msgstr ""
 
-#: ../../../source/drivers/vector/flatgeobuf.rst:53
+#: ../../../source/drivers/vector/flatgeobuf.rst:60
 msgid "Layer Creation Options"
 msgstr ""
 
-#: ../../../source/drivers/vector/flatgeobuf.rst:84
+#: ../../../source/drivers/vector/flatgeobuf.rst:62
+msgid ""
+"|about-layer-creation-options| The following layer creation options are "
+"supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/flatgeobuf.rst:94
 msgid "Creation Issues"
 msgstr ""
 
-#: ../../../source/drivers/vector/flatgeobuf.rst:86
+#: ../../../source/drivers/vector/flatgeobuf.rst:96
 msgid ""
 "Currently, NULL geometries are not supported with :lco:`SPATIAL_INDEX=YES`."
 msgstr ""
 
-#: ../../../source/drivers/vector/flatgeobuf.rst:88
+#: ../../../source/drivers/vector/flatgeobuf.rst:98
 msgid ""
 "`More background and dicussion on this issue at <https://github.com/"
 "flatgeobuf/flatgeobuf/discussions/260>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/flatgeobuf.rst:90
+#: ../../../source/drivers/vector/flatgeobuf.rst:100
 msgid ""
 "The creation of the packet Hilbert R-Tree requires an amount of RAM which is "
 "at least the number of features times 83 bytes."
 msgstr ""
 
-#: ../../../source/drivers/vector/flatgeobuf.rst:94
+#: ../../../source/drivers/vector/flatgeobuf.rst:104
 msgid "Examples"
 msgstr ""
 
-#: ../../../source/drivers/vector/flatgeobuf.rst:96
+#: ../../../source/drivers/vector/flatgeobuf.rst:106
 msgid ""
 "Simple translation of a single shapefile into a FlatGeobuf file. The file "
 "'filename.fgb' will be created with the features from abc.shp and attributes "
@@ -118,22 +121,22 @@ msgid ""
 "will be created."
 msgstr ""
 
-#: ../../../source/drivers/vector/flatgeobuf.rst:103
+#: ../../../source/drivers/vector/flatgeobuf.rst:113
 msgid "ogr2ogr -f FlatGeobuf filename.fgb abc.shp"
 msgstr ""
 
-#: ../../../source/drivers/vector/flatgeobuf.rst:105
+#: ../../../source/drivers/vector/flatgeobuf.rst:115
 msgid "Conversion of a Geopackage file with multiple layers:"
 msgstr ""
 
-#: ../../../source/drivers/vector/flatgeobuf.rst:109
+#: ../../../source/drivers/vector/flatgeobuf.rst:119
 msgid "ogr2ogr -f FlatGeobuf my_fgb_dataset input.gpkg"
 msgstr ""
 
-#: ../../../source/drivers/vector/flatgeobuf.rst:112
+#: ../../../source/drivers/vector/flatgeobuf.rst:122
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/vector/flatgeobuf.rst:114
+#: ../../../source/drivers/vector/flatgeobuf.rst:124
 msgid "`FlatGeobuf at GitHub <https://github.com/bjornharrtell/flatgeobuf>`__"
 msgstr ""

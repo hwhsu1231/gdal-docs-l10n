@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,39 +87,39 @@ msgid "Open options"
 msgstr ""
 
 #: ../../../source/drivers/vector/xlsx.rst:45
-msgid "The following open options are available:"
+msgid "|about-open-options| The following open options are available:"
 msgstr ""
 
-#: ../../../source/drivers/vector/xlsx.rst:70
+#: ../../../source/drivers/vector/xlsx.rst:71
 msgid "Configuration options"
 msgstr ""
 
-#: ../../../source/drivers/vector/xlsx.rst:72
+#: ../../../source/drivers/vector/xlsx.rst:73
 msgid ""
-"The following :ref:`configuration options <configoptions>` are available:"
+"|about-config-options| The following configuration options are available:"
 msgstr ""
 
-#: ../../../source/drivers/vector/xlsx.rst:95
+#: ../../../source/drivers/vector/xlsx.rst:96
 msgid "Examples"
 msgstr ""
 
-#: ../../../source/drivers/vector/xlsx.rst:97
+#: ../../../source/drivers/vector/xlsx.rst:98
 msgid ""
 "Transform CSV file input.csv to an Office Open XML file output.xlsx. The "
 "spreadsheet will contain one sheet with name \"input\"."
 msgstr ""
 
-#: ../../../source/drivers/vector/xlsx.rst:102
+#: ../../../source/drivers/vector/xlsx.rst:103
 msgid "ogr2ogr -f \"XLSX\" output.xlsx input.csv"
 msgstr ""
 
-#: ../../../source/drivers/vector/xlsx.rst:104
+#: ../../../source/drivers/vector/xlsx.rst:105
 msgid ""
 "Add the contents of CSV file input2.csv to the OOXML file output.xlsx "
 "created in the first example. The spreadsheet will now contain two sheets, "
 "\"input\" and \"input2\"."
 msgstr ""
 
-#: ../../../source/drivers/vector/xlsx.rst:110
+#: ../../../source/drivers/vector/xlsx.rst:111
 msgid "ogr2ogr -f \"XLSX\" output.xlsx -update input2.csv"
 msgstr ""

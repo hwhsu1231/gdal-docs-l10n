@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:33+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,20 +17,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../../source/api/python/general.rst:4
+#: ../../../source/api/python/general.rst:9
 msgid "Python General API"
 msgstr ""
 
-#: ../../../source/api/python/general.rst:7
+#: ../../../source/api/python/general.rst:12
 msgid "Configuration Management"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.config_option:1
 msgid "Temporarily define a configuration option."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GetConfigOption:0 osgeo.gdal.GetGlobalConfigOption:0
 #: osgeo.gdal.GetThreadLocalConfigOption:0 osgeo.gdal.SetCacheMax:0
 #: osgeo.gdal.SetConfigOption:0 osgeo.gdal.SetThreadLocalConfigOption:0
@@ -38,23 +38,23 @@ msgstr ""
 msgid "Parameters"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.config_option:3
 msgid "Name of the configuration option"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.config_option:5
 msgid "Value of the configuration option"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.config_option:7
 msgid ""
 "Whether the configuration option should be only set on the current thread."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GetCacheMax:0 osgeo.gdal.GetCacheUsed:0
 #: osgeo.gdal.GetConfigOption:0 osgeo.gdal.GetConfigOptions:0
 #: osgeo.gdal.GetGlobalConfigOption:0 osgeo.gdal.GetNumCPUs:0
@@ -63,176 +63,176 @@ msgstr ""
 msgid "Return type"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.config_option:14 osgeo.gdal.config_options:12
 #: osgeo.gdal.quiet_errors:6
 msgid "Example"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.config_options:1
 msgid "Temporarily define a set of configuration options."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.config_options:3
 msgid "Dictionary of configuration options passed as key, value"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.config_options:5
 msgid ""
 "Whether the configuration options should be only set on the current thread."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GetCacheMax:1
 msgid ""
 "Get the maximum size of the block cache. See :cpp:func:`GDALGetCacheMax`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GetCacheMax:0 osgeo.gdal.GetCacheUsed:0
 msgid "Returns"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GetCacheMax:4
 msgid "maximum cache size in bytes"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GetCacheUsed:1
 msgid ""
 "Get the number of bytes in used by the block cache. See :cpp:func:"
 "`GDALGetCacheUsed`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GetCacheUsed:4
 msgid "cache size in bytes"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GetConfigOption:1
 msgid ""
 "Return the value of a configuration option. See :cpp:func:"
 "`CPLGetConfigOption`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GetConfigOption:4 osgeo.gdal.GetGlobalConfigOption:4
 #: osgeo.gdal.GetThreadLocalConfigOption:4 osgeo.gdal.SetConfigOption:4
 #: osgeo.gdal.SetThreadLocalConfigOption:4
 msgid "name of the configuration option"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GetConfigOption:6 osgeo.gdal.GetGlobalConfigOption:6
 #: osgeo.gdal.GetThreadLocalConfigOption:6
 msgid "default value to return if the option has not been set"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GetConfigOption:11
 msgid ":py:func:`GetConfigOptions`, :py:func:`GetThreadLocalConfigOption`"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GetConfigOptions:1
 msgid ""
 "Return a dictionary of currently set configuration options. See :cpp:func:"
 "`CPLGetConfigOptions`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GetConfigOptions:7
 msgid "Examples"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GetConfigOptions:14
 msgid ":py:func:`GetConfigOption`, :py:func:`GetGlobalConfigOptions`"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GetGlobalConfigOption:1
 msgid ""
 "Return the value of a global (not thread-local) configuration option. See :"
 "cpp:func:`CPLGetGlobalConfigOption`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GetNumCPUs:1
 msgid "Return the number of processors detected by GDAL."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.GetThreadLocalConfigOption:1
 msgid ""
 "Return the value of a thread-local configuration option. See :cpp:func:"
 "`CPLGetThreadLocalConfigOption`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.SetCacheMax:1
 msgid ""
 "Set the maximum size of the block cache. See :cpp:func:`GDALSetCacheMax`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.SetCacheMax:4
 msgid "Cache size in bytes"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.SetCacheMax:7
 msgid ":config:`GDAL_CACHEMAX`"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.SetConfigOption:1
 msgid ""
 "Set the value of a configuration option for all threads. See :cpp:func:"
 "`CPLSetConfigOption`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.SetConfigOption:6 osgeo.gdal.SetThreadLocalConfigOption:6
 msgid "value of the configuration option"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.SetConfigOption:9
 msgid ""
 ":py:func:`SetThreadLocalConfigOption`, :py:func:`config_option`, :py:func:"
 "`config_options`"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.SetThreadLocalConfigOption:1
 msgid ""
 "Set the value of a configuration option for the current thread. See :cpp:"
 "func:`CPLSetThreadLocalConfigOption`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.SetThreadLocalConfigOption:9
 msgid ""
 ":py:func:`SetConfigOption`, :py:func:`config_option`, :py:func:"
 "`config_options`"
 msgstr ""
 
-#: ../../../source/api/python/general.rst:53
+#: ../../../source/api/python/general.rst:58
 msgid "Error Handling"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.ConfigurePythonLogging:1
 msgid "Configure GDAL to use Python's logging framework"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DontUseExceptions:1
 msgid ""
 "Disable exceptions in all GDAL related modules (osgeo.gdal, osgeo.ogr, osgeo."
@@ -240,12 +240,12 @@ msgid ""
 "module"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.ExceptionMgr:1
 msgid "Context manager to manage Python Exception state for GDAL/OGR/OSR/GNM."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.ExceptionMgr:4
 msgid ""
 "Separate exception state is maintained for each module (gdal, ogr, etc), and "
@@ -253,12 +253,12 @@ msgid ""
 "calls to the older UseExceptions()/DontUseExceptions() functions."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.ExceptionMgr:9
 msgid "Example::"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.ExceptionMgr:11
 msgid ""
 ">>> print(gdal.GetUseExceptions())\n"
@@ -273,13 +273,13 @@ msgid ""
 "0"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.quiet_errors:1
 msgid ""
 "Temporarily install an error handler that silents all warnings and errors."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.UseExceptions:1
 msgid ""
 "Enable exceptions in all GDAL related modules (osgeo.gdal, osgeo.ogr, osgeo."
@@ -287,21 +287,21 @@ msgid ""
 "module"
 msgstr ""
 
-#: ../../../source/api/python/general.rst:91
+#: ../../../source/api/python/general.rst:96
 msgid "File Management"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DirEntry:1
 msgid "Proxy of C++ DirEntry class."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DirEntry.extra:1
 msgid "p.p.char"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DirEntry.extra:0 osgeo.gdal.DirEntry.mode:0
 #: osgeo.gdal.DirEntry.modeKnown:0 osgeo.gdal.DirEntry.mtime:0
 #: osgeo.gdal.DirEntry.mtimeKnown:0 osgeo.gdal.DirEntry.name:0
@@ -309,68 +309,68 @@ msgstr ""
 msgid "type"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DirEntry.extra:3
 msgid "extra"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DirEntry.mode:1
 msgid "int"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DirEntry.mode:3
 msgid "mode"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DirEntry.modeKnown:1 osgeo.gdal.DirEntry.mtimeKnown:1
 #: osgeo.gdal.DirEntry.sizeKnown:1
 msgid "bool"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DirEntry.modeKnown:3
 msgid "modeKnown"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DirEntry.mtime:1 osgeo.gdal.DirEntry.size:1
 msgid "GIntBig"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DirEntry.mtime:3
 msgid "mtime"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DirEntry.mtimeKnown:3
 msgid "mtimeKnown"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DirEntry.name:1
 msgid "p.char"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DirEntry.name:3
 msgid "name"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DirEntry.size:3
 msgid "size"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DirEntry.sizeKnown:3
 msgid "sizeKnown"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.DirEntry.thisown:1
 msgid "The membership flag"
 msgstr ""

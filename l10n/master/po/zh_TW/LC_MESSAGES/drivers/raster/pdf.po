@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,7 +30,7 @@ msgid "PDF"
 msgstr ""
 
 #: ../../../source/drivers/raster/pdf.rst:-1
-#: ../../../source/drivers/raster/pdf.rst:665
+#: ../../../source/drivers/raster/pdf.rst:672
 msgid "Build dependencies"
 msgstr ""
 
@@ -105,19 +105,26 @@ msgstr ""
 msgid "Configuration options"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:118
+#: ../../../source/drivers/raster/pdf.rst:58
+msgid ""
+"|about-config-options| The following configuration options are supported:"
+msgstr ""
+
+#: ../../../source/drivers/raster/pdf.rst:121
 msgid "Open Options"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:120
-msgid "Above configuration options are also available as open options."
+#: ../../../source/drivers/raster/pdf.rst:123
+msgid ""
+"|about-open-options| Above configuration options are also available as open "
+"options."
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:157
+#: ../../../source/drivers/raster/pdf.rst:161
 msgid "LAYERS Metadata domain"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:159
+#: ../../../source/drivers/raster/pdf.rst:163
 msgid ""
 "When GDAL is compiled against Poppler or PDFium, the LAYERS metadata domain "
 "can be queried to retrieve layer names that can be turned ON or OFF. This is "
@@ -125,11 +132,11 @@ msgid ""
 "config:`GDAL_PDF_LAYERS_OFF` configuration options."
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:165
+#: ../../../source/drivers/raster/pdf.rst:169
 msgid "For example :"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:169
+#: ../../../source/drivers/raster/pdf.rst:173
 msgid ""
 "$ gdalinfo ../autotest/gdrivers/data/adobe_style_geospatial.pdf -mdd LAYERS\n"
 "\n"
@@ -148,156 +155,160 @@ msgid ""
 "tif --config GDAL_PDF_LAYERS_OFF \"New_Data_Frame\""
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:185
+#: ../../../source/drivers/raster/pdf.rst:189
 msgid "Restrictions"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:187
+#: ../../../source/drivers/raster/pdf.rst:191
 msgid ""
 "The opening of a PDF document (to get the georeferencing) is fast, but at "
 "the first access to a raster block, the whole page will be rasterized (with "
 "Poppler), which can be a slow operation."
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:191
+#: ../../../source/drivers/raster/pdf.rst:195
 msgid ""
 "Note: some raster-only PDF files (such as some USGS GeoPDF files), that are "
 "regularly tiled are exposed as tiled dataset by the GDAL PDF driver, and can "
 "be rendered with any backends."
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:195
+#: ../../../source/drivers/raster/pdf.rst:199
 msgid ""
 "Only a few of the possible Datums available in the OGC best practice spec "
 "have been currently mapped in the driver. Unrecognized datums will be "
 "considered as being based on the WGS84 ellipsoid."
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:199
+#: ../../../source/drivers/raster/pdf.rst:203
 msgid ""
 "For documents that contain several neatlines in a page (insets), the "
 "georeferencing will be extracted from the inset that has the largest area "
 "(in term of screen points)."
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:204
+#: ../../../source/drivers/raster/pdf.rst:208
 msgid "Creation Issues"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:206
+#: ../../../source/drivers/raster/pdf.rst:210
 msgid ""
 "PDF documents can be created from other GDAL raster datasets, that have 1 "
 "band (graylevel or with color table), 3 bands (RGB) or 4 bands (RGBA)."
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:209
+#: ../../../source/drivers/raster/pdf.rst:213
 msgid ""
 "Georeferencing information will be written by default according to the "
 "ISO32000 specification. It is also possible to write it according to the OGC "
 "Best Practice conventions (but limited to a few datum and projection types)."
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:214
+#: ../../../source/drivers/raster/pdf.rst:218
 msgid "Note: PDF write support does not require linking to any backend."
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:217
+#: ../../../source/drivers/raster/pdf.rst:221
 msgid "Creation Options"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:516
+#: ../../../source/drivers/raster/pdf.rst:223
+msgid "|about-creation-options| The following creation options are available:"
+msgstr ""
+
+#: ../../../source/drivers/raster/pdf.rst:523
 msgid "Update of existing files"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:518
+#: ../../../source/drivers/raster/pdf.rst:525
 msgid ""
 "Existing PDF files (created or not with GDAL) can be opened in update mode "
 "in order to set or update the following elements :"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:521
+#: ../../../source/drivers/raster/pdf.rst:528
 msgid ""
 "Geotransform and associated projection (with SetGeoTransform() and "
 "SetProjection())"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:523
+#: ../../../source/drivers/raster/pdf.rst:530
 msgid "GCPs (with SetGCPs())"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:524
+#: ../../../source/drivers/raster/pdf.rst:531
 msgid ""
 "Neatline (with SetMetadataItem(\"NEATLINE\", polygon_definition_in_wkt))"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:526
+#: ../../../source/drivers/raster/pdf.rst:533
 msgid ""
 "Content of Info object (with SetMetadataItem(key, value) where key is one of "
 "AUTHOR, CREATOR, CREATION_DATE, KEYWORDS, PRODUCER, SUBJECT and TITLE)"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:529
+#: ../../../source/drivers/raster/pdf.rst:536
 msgid "xml:XMP metadata (with SetMetadata(md, \"xml:XMP\"))"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:531
+#: ../../../source/drivers/raster/pdf.rst:538
 msgid ""
 "For geotransform or GCPs, the Geo encoding method used by default is "
 "ISO32000. OGC_BP can be selected by setting the GDAL_PDF_GEO_ENCODING "
 "configuration option to OGC_BP."
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:535
+#: ../../../source/drivers/raster/pdf.rst:542
 msgid ""
 "Updated elements are written at the end of the file, following the "
 "incremental update method described in the PDF specification."
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:539
+#: ../../../source/drivers/raster/pdf.rst:546
 msgid "Creation of PDF file from a XML composition file (GDAL >= 3.0)"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:541
+#: ../../../source/drivers/raster/pdf.rst:548
 msgid ""
 "A PDF file can be generate from a XML file that describes the composition of "
 "the PDF:"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:544
+#: ../../../source/drivers/raster/pdf.rst:551
 msgid "number of pages"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:545
+#: ../../../source/drivers/raster/pdf.rst:552
 msgid "layer tree, with visibility state, exclusion groups"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:546
+#: ../../../source/drivers/raster/pdf.rst:553
 msgid "definition or 0, 1 or several georeferenced areas per page"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:547
+#: ../../../source/drivers/raster/pdf.rst:554
 msgid "page content made of rasters, vectors or labels"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:549
+#: ../../../source/drivers/raster/pdf.rst:556
 msgid ""
 "The GDALCreate() API must be used with width = height = bands = 0 and "
 "datatype = GDT_Unknown and :co:`COMPOSITION_FILE` must be the single "
 "creation option."
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:553
+#: ../../../source/drivers/raster/pdf.rst:560
 msgid ""
 "The XML schema against which the composition file must validate is "
 "`pdfcomposition.xsd <https://raw.githubusercontent.com/OSGeo/gdal/master/"
 "data/pdfcomposition.xsd>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:556
+#: ../../../source/drivers/raster/pdf.rst:563
 msgid "Example on how to use the API:"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:558
+#: ../../../source/drivers/raster/pdf.rst:565
 msgid ""
 "char** papszOptions = CSLSetNameValue(nullptr, \"COMPOSITION_FILE\", \"the."
 "xml\");\n"
@@ -308,7 +319,7 @@ msgid ""
 "CSLDestroy(papszOptions);"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:566
+#: ../../../source/drivers/raster/pdf.rst:573
 msgid ""
 "A sample Python script `gdal_create_pdf.py <https://raw.githubusercontent."
 "com/OSGeo/gdal/master/swig/python/gdal-utils/osgeo_utils/samples/"
@@ -316,11 +327,11 @@ msgid ""
 "`gdal_create` utility can also be used."
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:571
+#: ../../../source/drivers/raster/pdf.rst:578
 msgid "Example of a composition XML file:"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:573
+#: ../../../source/drivers/raster/pdf.rst:580
 msgid ""
 "<PDFComposition>\n"
 "    <Metadata>\n"
@@ -428,53 +439,53 @@ msgid ""
 "</PDFComposition>"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:667
+#: ../../../source/drivers/raster/pdf.rst:674
 msgid ""
 "For read support, GDAL must be built against one of the following libraries :"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:670
+#: ../../../source/drivers/raster/pdf.rst:677
 msgid "`Poppler <http://poppler.freedesktop.org/>`__ (GPL-licensed)"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:671
+#: ../../../source/drivers/raster/pdf.rst:678
 msgid "`PoDoFo <http://podofo.sourceforge.net/>`__ (LGPL-licensed)"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:672
+#: ../../../source/drivers/raster/pdf.rst:679
 msgid ""
 "`PDFium <https://code.google.com/p/pdfium/>`__ (New BSD-licensed, supported "
 "since GDAL 2.1.0)"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:675
+#: ../../../source/drivers/raster/pdf.rst:682
 msgid ""
 "Note: it is also possible to build against a combination of several of the "
 "above libraries. PDFium will be used in priority over Poppler, itself used "
 "in priority over PoDoFo."
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:680
+#: ../../../source/drivers/raster/pdf.rst:687
 msgid "Unix build"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:682
+#: ../../../source/drivers/raster/pdf.rst:689
 msgid ""
 "The relevant configure options are --with-poppler, --with-podofo, --with-"
 "podofo-lib and --with-podofo-extra-lib-for-test."
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:685
+#: ../../../source/drivers/raster/pdf.rst:692
 msgid ""
 "Starting with GDAL 2.1.0, --with-pdfium, --with-pdfium-lib, --with-pdfium-"
 "extra-lib-for-test and --enable-pdf-plugin are also available."
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:690
+#: ../../../source/drivers/raster/pdf.rst:697
 msgid "Poppler"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:692
+#: ../../../source/drivers/raster/pdf.rst:699
 msgid ""
 "libpoppler itself must have been configured with -"
 "DENABLE_UNSTABLE_API_ABI_HEADERS=ON so that the xpdf C++ headers are "
@@ -482,11 +493,11 @@ msgid ""
 "may fail with too old or too recent poppler versions."
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:699
+#: ../../../source/drivers/raster/pdf.rst:706
 msgid "PoDoFo"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:701
+#: ../../../source/drivers/raster/pdf.rst:708
 msgid ""
 "As a partial alternative, the PDF driver can be compiled against libpodofo "
 "to avoid the libpoppler dependency. This is sufficient to get the "
@@ -500,105 +511,105 @@ msgid ""
 "as it could cause crashes in GDAL due to a bug in PoDoFo."
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:714
+#: ../../../source/drivers/raster/pdf.rst:721
 msgid "PDFium"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:716
+#: ../../../source/drivers/raster/pdf.rst:723
 msgid ""
 "Using PDFium as a backend allows access to raster, vector, georeferencing "
 "and other metadata. The PDFium backend has also support for arbitrary "
 "overviews, for fast zoom-out."
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:720
+#: ../../../source/drivers/raster/pdf.rst:727
 msgid ""
 "Only GDAL builds against static builds of PDFium have been tested. Building "
 "PDFium can be challenging, and particular builds must be used to work "
 "properly with GDAL."
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:725
+#: ../../../source/drivers/raster/pdf.rst:732
 msgid "With GDAL >= 3.9"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:727
+#: ../../../source/drivers/raster/pdf.rst:734
 msgid ""
 "The scripts in the `<https://github.com/rouault/pdfium_build_gdal_3_9>`__ "
 "repository must be used to build a patched version of PDFium."
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:731
+#: ../../../source/drivers/raster/pdf.rst:738
 msgid "With GDAL = 3.8"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:733
+#: ../../../source/drivers/raster/pdf.rst:740
 msgid ""
 "The scripts in the `<https://github.com/rouault/pdfium_build_gdal_3_8>`__ "
 "repository must be used to build a patched version of PDFium."
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:737
+#: ../../../source/drivers/raster/pdf.rst:744
 msgid "With GDAL 3.7"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:739
+#: ../../../source/drivers/raster/pdf.rst:746
 msgid ""
 "The scripts in the `<https://github.com/rouault/pdfium_build_gdal_3_7>`__ "
 "repository must be used to build a patched version of PDFium."
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:743
+#: ../../../source/drivers/raster/pdf.rst:750
 msgid "With GDAL 3.5 and 3.6"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:745
+#: ../../../source/drivers/raster/pdf.rst:752
 msgid ""
 "The scripts in the `<https://github.com/rouault/pdfium_build_gdal_3_5>`__ "
 "repository must be used to build a patched version of PDFium."
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:749
+#: ../../../source/drivers/raster/pdf.rst:756
 msgid "With GDAL 3.4"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:751
+#: ../../../source/drivers/raster/pdf.rst:758
 msgid ""
 "The scripts in the `<https://github.com/rouault/pdfium_build_gdal_3_4>`__ "
 "repository must be used to build a patched version of PDFium."
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:755
+#: ../../../source/drivers/raster/pdf.rst:762
 msgid "With GDAL 3.2 and 3.3"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:757
+#: ../../../source/drivers/raster/pdf.rst:764
 msgid ""
 "The scripts in the `<https://github.com/rouault/pdfium_build_gdal_3_2>`__ "
 "repository must be used to build a patched version of PDFium."
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:761
+#: ../../../source/drivers/raster/pdf.rst:768
 msgid "With GDAL 3.1.x"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:763
+#: ../../../source/drivers/raster/pdf.rst:770
 msgid ""
 "The scripts in the `<https://github.com/rouault/pdfium_build_gdal_3_1>`__ "
 "repository must be used to build a patched version of PDFium."
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:767
+#: ../../../source/drivers/raster/pdf.rst:774
 msgid "Examples"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:769
+#: ../../../source/drivers/raster/pdf.rst:776
 msgid ""
 "Create a PDF from 2 rasters (main_raster and another_raster), such that "
 "main_raster is initially displayed, and they are exclusively displayed :"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:775
+#: ../../../source/drivers/raster/pdf.rst:782
 msgid ""
 "gdal_translate -of PDF main_raster.tif my.pdf -co LAYER_NAME=main_raster\n"
 "               -co EXTRA_RASTERS=another_raster.tif -co "
@@ -607,94 +618,94 @@ msgid ""
 "EXCLUSIVE_LAYERS=main_raster,another_raster"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:779
+#: ../../../source/drivers/raster/pdf.rst:786
 msgid "Create of PDF with some JavaScript :"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:783
+#: ../../../source/drivers/raster/pdf.rst:790
 msgid "gdal_translate -of PDF my.tif my.pdf -co JAVASCRIPT_FILE=script.js"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:785
+#: ../../../source/drivers/raster/pdf.rst:792
 msgid "where script.js is :"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:789
+#: ../../../source/drivers/raster/pdf.rst:796
 msgid ""
 "button = app.alert({cMsg: 'This file was generated by GDAL. Do you want to "
 "visit its website ?', cTitle: 'Question', nIcon:2, nType:2});\n"
 "if (button == 4) app.launchURL('http://gdal.org/');"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:793
+#: ../../../source/drivers/raster/pdf.rst:800
 msgid "See also"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:795
+#: ../../../source/drivers/raster/pdf.rst:802
 msgid ":ref:`PDF vector <vector.pdf>` documentation page"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:797
+#: ../../../source/drivers/raster/pdf.rst:804
 msgid "Specifications :"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:799
+#: ../../../source/drivers/raster/pdf.rst:806
 msgid ""
 "`OGC GeoPDF Encoding Best Practice Version 2.2 (08-139r3) <http://portal."
 "opengeospatial.org/files/?artifact_id=40537>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:801
+#: ../../../source/drivers/raster/pdf.rst:808
 msgid ""
 "`Adobe Supplement to ISO 32000 <http://www.adobe.com/devnet/acrobat/pdfs/"
 "adobe_supplement_iso32000.pdf>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:803
+#: ../../../source/drivers/raster/pdf.rst:810
 msgid ""
 "`PDF Reference, version 1.7 <http://www.adobe.com/devnet/acrobat/pdfs/"
 "pdf_reference_1-7.pdf>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:805
+#: ../../../source/drivers/raster/pdf.rst:812
 msgid ""
 "`Acrobat(R) JavaScript Scripting Reference <http://partners.adobe.com/public/"
 "developer/en/acrobat/sdk/AcroJS.pdf>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:808
+#: ../../../source/drivers/raster/pdf.rst:815
 msgid "Libraries :"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:810
+#: ../../../source/drivers/raster/pdf.rst:817
 msgid "`Poppler homepage <http://poppler.freedesktop.org/>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:811
+#: ../../../source/drivers/raster/pdf.rst:818
 msgid "`PoDoFo homepage <http://podofo.sourceforge.net/>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:812
+#: ../../../source/drivers/raster/pdf.rst:819
 msgid "`PDFium homepage <https://code.google.com/p/pdfium/>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:813
+#: ../../../source/drivers/raster/pdf.rst:820
 msgid ""
 "`PDFium forked version for simpler builds <https://github.com/rouault/"
 "pdfium>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:816
+#: ../../../source/drivers/raster/pdf.rst:823
 msgid "Samples :"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:818
+#: ../../../source/drivers/raster/pdf.rst:825
 msgid ""
 "`A few Geospatial PDF samples <https://www.terragotech.com/learn-more/sample-"
 "geopdfs>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/pdf.rst:820
+#: ../../../source/drivers/raster/pdf.rst:827
 msgid ""
 "`Tutorial to generate Geospatial PDF maps from OSM data <http://latuviitta."
 "org/documents/Geospatial_PDF_maps_from_OSM_with_GDAL.pdf>`__"

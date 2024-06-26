@@ -8,16 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../../source/development/rfc/rfc36_open_by_drivername.rst:5
-msgid "RFC 36: Allow specification of intended driver on GDALOpen"
+msgid "RFC 36: Allow specification of intended driver on GDALOpen (withdrawn)"
 msgstr ""
 
 #: ../../../source/development/rfc/rfc36_open_by_drivername.rst:7
@@ -29,102 +30,107 @@ msgid "Contact: ivan.lucena@pmldnet.com"
 msgstr ""
 
 #: ../../../source/development/rfc/rfc36_open_by_drivername.rst:11
-msgid "Status: Proposed"
+msgid "Status: Withdrawn."
 msgstr ""
 
-#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:14
-msgid "Summary"
+#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:13
+msgid ""
+"Covered by `RFC 46: GDAL/OGR unification <./rfc46_gdal_ogr_unification>`__"
 msgstr ""
 
 #: ../../../source/development/rfc/rfc36_open_by_drivername.rst:16
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:18
 msgid ""
 "This document proposes a mechanism to explicitly tell GDAL what driver "
 "should open a particular dataset."
 msgstr ""
 
-#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:20
+#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:22
 msgid "Justification"
 msgstr ""
 
-#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:22
+#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:24
 msgid ""
 "By selecting the driver, users can optimize processing time and avoid "
 "incorrect or undesirable driver selection due to the driver probing "
 "mechanism."
 msgstr ""
 
-#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:27
+#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:29
 msgid "Concept"
 msgstr ""
 
-#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:29
+#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:31
 msgid ""
 "The idea is to pass to GDALOpen a string containing the token \"driver=\" "
 "followed by the driver name and a comma separating it from the file-name."
 msgstr ""
 
-#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:33
+#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:35
 msgid "[driver=driver-name,]file-name"
 msgstr ""
 
-#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:35
+#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:37
 msgid "Examples:"
 msgstr ""
 
-#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:37
+#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:39
 msgid "$ gdalinfo driver=nitf:imagefile01.ntf"
 msgstr ""
 
-#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:39
+#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:41
 msgid ""
 "In that case no probing is necessary, since the user has indicated to use "
 "the specific driver. If for some reason that process fails the function "
 "returns NULL and no other attempt is made to open the file by another driver."
 msgstr ""
 
-#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:45
+#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:47
 msgid "Implementation"
 msgstr ""
 
-#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:47
+#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:49
 msgid ""
 "The amount of code is minimal and there is already a proposed patch on "
 "ticket #3043."
 msgstr ""
 
-#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:51
+#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:53
 msgid "Utilization"
 msgstr ""
 
-#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:53
+#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:55
 msgid ""
 "Any application that uses GDAL API or any GDAL command line tool's user "
 "that, at one point, wants to force the use of a particular driver to open a "
 "datasets."
 msgstr ""
 
-#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:58
+#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:60
 msgid "Backward Compatibility Issues"
 msgstr ""
 
-#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:60
+#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:62
 msgid ""
 "That optional entry on GDALOpen process should not affect the current logic."
 msgstr ""
 
-#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:64
+#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:66
 msgid "Testing"
 msgstr ""
 
-#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:66
+#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:68
 msgid "Extra tests would be added to the test script"
 msgstr ""
 
-#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:69
+#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:71
 msgid "Issues"
 msgstr ""
 
-#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:71
+#: ../../../source/development/rfc/rfc36_open_by_drivername.rst:73
 msgid ""
 "For gdalbuildvrt and gdaltindex it will not be possible to use the driver "
 "selection with wildcard, as in \"driver=gtiff,*.tif\"."

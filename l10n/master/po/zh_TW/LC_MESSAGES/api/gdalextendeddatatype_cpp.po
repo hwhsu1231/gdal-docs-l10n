@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../../source/api/gdalextendeddatatype_cpp.rst:5
+#: ../../../source/api/gdalextendeddatatype_cpp.rst:10
 msgid "GDALExtendedDataType C++ API"
 msgstr ""
 
-#: ../../../source/api/gdalextendeddatatype_cpp.rst:8
+#: ../../../source/api/gdalextendeddatatype_cpp.rst:13
 msgid "GDALExtendedDataType class"
 msgstr ""
 
@@ -37,6 +37,6 @@ msgstr ""
 msgid "Public Static Functions"
 msgstr ""
 
-#: ../../../source/api/gdalextendeddatatype_cpp.rst:15
+#: ../../../source/api/gdalextendeddatatype_cpp.rst:20
 msgid "GDALEDTComponent class"
 msgstr ""

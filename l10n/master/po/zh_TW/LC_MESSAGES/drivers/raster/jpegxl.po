@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -96,14 +96,14 @@ msgid "Open Options"
 msgstr ""
 
 #: ../../../source/drivers/raster/jpegxl.rst:55
-msgid "The following open options are available:"
+msgid "|about-open-options| The following open options are available:"
 msgstr ""
 
-#: ../../../source/drivers/raster/jpegxl.rst:67
+#: ../../../source/drivers/raster/jpegxl.rst:68
 msgid "Creation Options"
 msgstr ""
 
-#: ../../../source/drivers/raster/jpegxl.rst:69
+#: ../../../source/drivers/raster/jpegxl.rst:70
 msgid ""
 "With libjxl 0.6.1, only 1 (greyscale), 2 band (greyscale + alpha), 3 band "
 "(RGB) or 4 band (RGBA) source images are supported. With later libjxl "
@@ -111,7 +111,7 @@ msgid ""
 "UInt16 and Float32."
 msgstr ""
 
-#: ../../../source/drivers/raster/jpegxl.rst:74
+#: ../../../source/drivers/raster/jpegxl.rst:75
 msgid ""
 "When copying from a (regular) JPEG file, and not specifying lossy "
 "compression options, its content is re-encoded in a lossless way, and with "
@@ -119,18 +119,18 @@ msgid ""
 "codestream."
 msgstr ""
 
-#: ../../../source/drivers/raster/jpegxl.rst:78
-msgid "The following creation options are available:"
-msgstr ""
-
-#: ../../../source/drivers/raster/jpegxl.rst:191
-msgid "See Also"
+#: ../../../source/drivers/raster/jpegxl.rst:79
+msgid "|about-creation-options| The following creation options are available:"
 msgstr ""
 
 #: ../../../source/drivers/raster/jpegxl.rst:193
+msgid "See Also"
+msgstr ""
+
+#: ../../../source/drivers/raster/jpegxl.rst:195
 msgid "`JPEG-XL home page <https://jpeg.org/jpegxl/>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/jpegxl.rst:194
+#: ../../../source/drivers/raster/jpegxl.rst:196
 msgid "`libjxl <https://github.com/libjxl/libjxl/>`__"
 msgstr ""

@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -54,6 +55,14 @@ msgstr ""
 
 #: ../../../source/drivers/vector/csv.rst:28
 msgid ""
+"Starting with GDAL 3.10, specifying the ``-if CSV`` option to command line "
+"utilities accepting it, or ``CSV`` as the only value of the "
+"``papszAllowedDrivers`` of :cpp:func:`GDALOpenEx`, also forces the driver to "
+"recognize the passed filename, without the ``CSV:`` prefix."
+msgstr ""
+
+#: ../../../source/drivers/vector/csv.rst:33
+msgid ""
 "The OGR CSV driver supports reading and writing. Because the CSV format has "
 "variable length text lines, reading is done sequentially. Reading features "
 "in random order will generally be very slow. OGR CSV layer might have a "
@@ -64,7 +73,7 @@ msgid ""
 "extension) is available."
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:37
+#: ../../../source/drivers/vector/csv.rst:42
 msgid ""
 "Limited type recognition can be done for Integer, Real, String, Date (YYYY-"
 "MM-DD), Time (HH:MM:SS+nn), DateTime (YYYY-MM-DD HH:MM:SS+nn) columns "
@@ -82,30 +91,30 @@ msgid ""
 "for geometries encoded in WKT"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:54
+#: ../../../source/drivers/vector/csv.rst:59
 msgid ""
 "Starting with GDAL 2.2, the \"JSonStringList\", \"JSonIntegerList\", "
 "\"JSonInteger64List\" and \"JSonRealList\" types can be used in .csvt to map "
 "to the corresponding OGR StringList, IntegerList, Integer64List and RealList "
-"types. The field values are then encoded as JSon arrays, with proper CSV "
+"types. The field values are then encoded as JSON arrays, with proper CSV "
 "escaping."
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:60
+#: ../../../source/drivers/vector/csv.rst:65
 msgid ""
 "Automatic field type guessing can also be done if specifying the open "
 "options described in the below \"Open options\" section."
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:65
+#: ../../../source/drivers/vector/csv.rst:70
 msgid "Driver capabilities"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:74
+#: ../../../source/drivers/vector/csv.rst:79
 msgid "Format"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:76
+#: ../../../source/drivers/vector/csv.rst:81
 msgid ""
 "CSV files have one line for each feature (record) in the layer (table). The "
 "attribute field values are separated by commas. At least two fields per line "
@@ -120,14 +129,14 @@ msgid ""
 "separators."
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:89
+#: ../../../source/drivers/vector/csv.rst:94
 msgid ""
 "Complex attribute values (such as those containing commas, quotes or "
 "newlines) may be placed in double quotes. Any occurrences of double quotes "
 "within the quoted string should be doubled up to \"escape\" them."
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:93
+#: ../../../source/drivers/vector/csv.rst:98
 msgid ""
 "By default, the driver attempts to treat the first line of the file as a "
 "list of field names for all the fields. However, if one or more of the names "
@@ -138,7 +147,7 @@ msgid ""
 "behavior can be modified via the HEADERS open option."
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:102
+#: ../../../source/drivers/vector/csv.rst:107
 msgid ""
 "All CSV files are treated as UTF-8 encoded. A Byte Order Mark (BOM) at the "
 "beginning of the file will be parsed correctly. The layer creation option :"
@@ -146,25 +155,25 @@ msgid ""
 "can improve compatibility with some software (particularly Excel)."
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:108
+#: ../../../source/drivers/vector/csv.rst:113
 msgid "Example (employee.csv):"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:112
+#: ../../../source/drivers/vector/csv.rst:117
 msgid ""
 "ID,Salary,Name,Comments\n"
 "132,55000.0,John Walker,\"The \"\"big\"\" cheese.\"\n"
 "133,11000.0,Jane Lake,Cleaning Staff"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:116
+#: ../../../source/drivers/vector/csv.rst:121
 msgid ""
 "Note that the Comments value for the first data record is placed in double "
 "quotes because the value contains quotes, and those quotes have to be "
 "doubled up so we know we haven't reached the end of the quoted string yet."
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:121
+#: ../../../source/drivers/vector/csv.rst:126
 msgid ""
 "Many variations of textual input are sometimes called Comma Separated Value "
 "files, including files without commas, but fixed column widths, those using "
@@ -175,20 +184,20 @@ msgid ""
 "form that is compatible with the OGR CSV driver."
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:131
+#: ../../../source/drivers/vector/csv.rst:136
 msgid "Reading CSV containing spatial information"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:134
+#: ../../../source/drivers/vector/csv.rst:139
 msgid "Building point geometries"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:136
-#: ../../../source/drivers/vector/csv.rst:222
+#: ../../../source/drivers/vector/csv.rst:141
+#: ../../../source/drivers/vector/csv.rst:227
 msgid "Consider the following CSV file (test.csv):"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:140
+#: ../../../source/drivers/vector/csv.rst:145
 msgid ""
 "Latitude,Longitude,Name\n"
 "48.1,0.25,\"First point\"\n"
@@ -196,20 +205,20 @@ msgid ""
 "47.5,0.75,\"Third point\""
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:145
+#: ../../../source/drivers/vector/csv.rst:150
 msgid ""
 "Starting with GDAL 2.1, it is possible to directly specify the potential "
 "names of the columns that can contain X/longitude and Y/latitude with the :"
 "oo:`X_POSSIBLE_NAMES` and :oo:`Y_POSSIBLE_NAMES` open option."
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:149
+#: ../../../source/drivers/vector/csv.rst:154
 msgid ""
 "*ogrinfo -ro -al test.csv -oo X_POSSIBLE_NAMES=Lon\\* -oo "
 "Y_POSSIBLE_NAMES=Lat\\* -oo KEEP_GEOM_COLUMNS=NO* will return :"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:154
+#: ../../../source/drivers/vector/csv.rst:159
 msgid ""
 "OGRFeature(test):1\n"
 "  Name (String) = First point\n"
@@ -224,20 +233,20 @@ msgid ""
 "  POINT (0.75 47.5)"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:166
+#: ../../../source/drivers/vector/csv.rst:171
 msgid ""
-"If CSV file does not have a header line, the dummy \"field_n\" names can be "
-"used as possible names for coordinate fields. For example plain XYZ point "
+"If the CSV file does not have a header line, the dummy \"field_n\" names can "
+"be used as possible names for coordinate fields. For example plain XYZ point "
 "data can be opened as"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:170
+#: ../../../source/drivers/vector/csv.rst:175
 msgid ""
 "*ogrinfo -ro -al elevation.xyz -oo X_POSSIBLE_NAMES=field_1 -oo "
 "Y_POSSIBLE_NAMES=field_2 -oo Z_POSSIBLE_NAMES=field_3*"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:173
+#: ../../../source/drivers/vector/csv.rst:178
 msgid ""
 "Otherwise, if one or several columns contain a geometry definition encoded "
 "as WKT, WKB (encoded in hexadecimal) or GeoJSON (in which case the GeoJSON "
@@ -247,18 +256,18 @@ msgid ""
 "from the :oo:`GEOM_POSSIBLE_NAMES` open option."
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:180
+#: ../../../source/drivers/vector/csv.rst:185
 msgid ""
 "For older versions, it is possible to extract spatial information (points) "
 "from a CSV file which has columns for the X and Y coordinates, through the "
 "use of the :ref:`VRT <vector.vrt>` driver."
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:184
+#: ../../../source/drivers/vector/csv.rst:189
 msgid "You can write the associated VRT file (test.vrt):"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:188
+#: ../../../source/drivers/vector/csv.rst:193
 msgid ""
 "<OGRVRTDataSource>\n"
 "    <OGRVRTLayer name=\"test\">\n"
@@ -271,11 +280,11 @@ msgid ""
 "</OGRVRTDataSource>"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:197
+#: ../../../source/drivers/vector/csv.rst:202
 msgid "and *ogrinfo -ro -al test.vrt* will return :"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:201
+#: ../../../source/drivers/vector/csv.rst:206
 msgid ""
 "OGRFeature(test):1\n"
 "  Latitude (String) = 48.1\n"
@@ -296,11 +305,11 @@ msgid ""
 "  POINT (0.75 47.5 0)"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:220
+#: ../../../source/drivers/vector/csv.rst:225
 msgid "Building line geometries"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:226
+#: ../../../source/drivers/vector/csv.rst:231
 msgid ""
 "way_id,pt_id,x,y\n"
 "1,1,2,49\n"
@@ -309,14 +318,14 @@ msgid ""
 "2,2,-3,50"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:232
+#: ../../../source/drivers/vector/csv.rst:237
 msgid ""
 "With a GDAL build with Spatialite enabled, *ogrinfo test.csv -dialect SQLite "
 "-sql \"SELECT way_id, MakeLine(MakePoint(CAST(x AS float),CAST(y AS float))) "
 "FROM test GROUP BY way_id\"* will return :"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:238
+#: ../../../source/drivers/vector/csv.rst:243
 msgid ""
 "OGRFeature(SELECT):0\n"
 "  way_id (String) = 1\n"
@@ -327,43 +336,41 @@ msgid ""
 "  LINESTRING (-2 49,-3 50)"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:247
+#: ../../../source/drivers/vector/csv.rst:252
 msgid "VSI Virtual File System API support"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:249
+#: ../../../source/drivers/vector/csv.rst:254
 msgid ""
 "The driver supports reading and writing to files managed by VSI Virtual File "
 "System API, which include \"regular\" files, as well as files in the /"
 "vsizip/ (read-write) , /vsigzip/ (read-only) , /vsicurl/ (read-only) domains."
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:254
+#: ../../../source/drivers/vector/csv.rst:259
 msgid "Writing to /dev/stdout or /vsistdout/ is also supported."
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:256
+#: ../../../source/drivers/vector/csv.rst:261
 msgid ""
 "Reading from /vsistdin/ is supported using the ``CSV:/vsistdin/`` connection "
 "string and provided that none of the open options whose name starts with "
 "``AUTODETECT_`` is used."
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:261
+#: ../../../source/drivers/vector/csv.rst:266
 msgid "Open options"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:263
-msgid ""
-"The following open options can be specified (typically with the -oo "
-"name=value parameters of ogrinfo or ogr2ogr):"
+#: ../../../source/drivers/vector/csv.rst:268
+msgid "|about-open-options| The following open options are supported:"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:412
+#: ../../../source/drivers/vector/csv.rst:417
 msgid "Creation Issues"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:414
+#: ../../../source/drivers/vector/csv.rst:419
 msgid ""
 "The driver supports creating new databases (as a directory of .csv files), "
 "adding new .csv files to an existing directory or .csv files or appending "
@@ -373,53 +380,59 @@ msgid ""
 "RAM temporarily before flushing to disk."
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:422
+#: ../../../source/drivers/vector/csv.rst:427
 msgid "Layer Creation options"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:485
+#: ../../../source/drivers/vector/csv.rst:429
+msgid ""
+"|about-layer-creation-options| The following layer creation options are "
+"supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/csv.rst:493
 msgid "Configuration options"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:487
+#: ../../../source/drivers/vector/csv.rst:495
 msgid ""
-"The following :ref:`configuration options <configoptions>` are available:"
+"|about-config-options| The following configuration options are available:"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:509
+#: ../../../source/drivers/vector/csv.rst:517
 msgid "Examples"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:511
+#: ../../../source/drivers/vector/csv.rst:519
 msgid ""
 "This example shows using ogr2ogr to transform a shapefile with point "
 "geometry into a .csv file with the X,Y,Z coordinates of the points as first "
 "columns in the .csv file"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:517
+#: ../../../source/drivers/vector/csv.rst:525
 msgid "ogr2ogr -f CSV output.csv input.shp -lco GEOMETRY=AS_XYZ"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:519
+#: ../../../source/drivers/vector/csv.rst:527
 msgid ""
 "This example shows using ogr2ogr to transform a shapefile into a .csv file "
-"with geography field formatted using GeoJSON format."
+"with geometry field formatted using GeoJSON format."
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:524
+#: ../../../source/drivers/vector/csv.rst:532
 msgid ""
-"ogr2ogr -f CSV -dialect sqlite -sql \"select AsGeoJSON(geometry) AS geom, * "
-"from input\" output.csv input.shp"
+"ogr2ogr -f CSV output.csv input.shp -dialect sqlite -sql \\\n"
+"    \"select AsGeoJSON(geometry) AS geom, * from input\""
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:526
+#: ../../../source/drivers/vector/csv.rst:535
 msgid ""
 "Convert a CSV into a GeoPackage. Specify the names of the coordinate columns "
 "and assign a coordinate reference system."
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:530
+#: ../../../source/drivers/vector/csv.rst:539
 msgid ""
 "ogr2ogr \\\n"
 "  -f GPKG output.gpkg \\\n"
@@ -429,56 +442,79 @@ msgid ""
 "  -a_srs 'EPSG:4326'"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:539
+#: ../../../source/drivers/vector/csv.rst:546
+msgid ""
+"Use `ogr2ogr -segmentize` to densify a input geometry being specified in the "
+"``WKT`` special field. Note that one needs to specify the GEOMETRY=AS_WKT "
+"layer creation option, otherwise the input geometry would be returned "
+"unmodified:"
+msgstr ""
+
+#: ../../../source/drivers/vector/csv.rst:550
+msgid ""
+"$ cat input.csv\n"
+"WKT,ID,Name\n"
+"\"LINESTRING (-900 -1450,-900 100)\",0,900W\n"
+"\n"
+"$ ogr2ogr -segmentize 400 -lco GEOMETRY=AS_WKT \\\n"
+"  -sql \"SELECT ID, Name FROM input\" output.csv input.csv\n"
+"\n"
+"$ cat output.csv\n"
+"WKT,ID,Name\n"
+"\"LINESTRING (-900 -1450,-900 -1062.5,-900 -675,-900 -287.5,-900 100)\","
+"\"0\",900W"
+msgstr ""
+
+#: ../../../source/drivers/vector/csv.rst:563
 msgid "Particular datasources"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:541
+#: ../../../source/drivers/vector/csv.rst:565
 msgid ""
 "The CSV driver can also read files whose structure is close to CSV files :"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:544
+#: ../../../source/drivers/vector/csv.rst:568
 msgid ""
 "Airport data files NfdcFacilities.xls, NfdcRunways.xls, NfdcRemarks.xls and "
 "NfdcSchedules.xls found on that `FAA website <http://www.faa.gov/airports/"
 "airport_safety/airportdata_5010/menu/index.cfm>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:548
+#: ../../../source/drivers/vector/csv.rst:572
 msgid ""
 "Files from the `USGS GNIS <http://geonames.usgs.gov/domestic/download_data."
 "htm>`__ (Geographic Names Information System)"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:552
+#: ../../../source/drivers/vector/csv.rst:576
 msgid "The allCountries file from `GeoNames <http://www.geonames.org>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:554
+#: ../../../source/drivers/vector/csv.rst:578
 msgid ""
 "`Eurostat .TSV files <http://epp.eurostat.ec.europa.eu/NavTree_prod/"
 "everybody/BulkDownloadListing?file=read_me.pdf>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:558
+#: ../../../source/drivers/vector/csv.rst:582
 msgid "Other Notes"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:560
+#: ../../../source/drivers/vector/csv.rst:584
 msgid ""
 "`GeoCSV specification <http://giswiki.hsr.ch/GeoCSV>`__ (supported by GDAL "
 ">= 2.1)"
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:562
+#: ../../../source/drivers/vector/csv.rst:586
 msgid ""
 "Initial development of the OGR CSV driver was supported by `DM Solutions "
 "Group <http://www.dmsolutions.ca/>`__ and `GoMOOS <http://www.gomoos.org/"
 ">`__."
 msgstr ""
 
-#: ../../../source/drivers/vector/csv.rst:565
+#: ../../../source/drivers/vector/csv.rst:589
 msgid ""
 "`Carto <https://carto.com/>`__ funded field type auto-detection and open "
 "options related to geometry columns."

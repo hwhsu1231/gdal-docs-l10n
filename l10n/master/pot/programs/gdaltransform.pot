@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -78,7 +79,7 @@ msgstr ""
 #: ../../../source/programs/gdaltransform.rst:53
 #: ../../../source/programs/gdaltransform.rst:72
 msgid ""
-"Before PROJ 9.4, :option:`-s_coord_epoch` and :option:`-t_coord_epoch` are "
+"Before PROJ 9.4, :option:`-s_coord_epoch` and :option:`-t_coord_epoch` were "
 "mutually exclusive, due to lack of support for transformations between two "
 "dynamic CRS."
 msgstr ""
@@ -138,7 +139,7 @@ msgstr ""
 #: ../../../source/programs/gdaltransform.rst:112
 msgid ""
 "Provide a GCP to be used for transformation (generally three or more are "
-"required)"
+"required). Pixel and line need not be integers."
 msgstr ""
 
 #: ../../../source/programs/gdaltransform.rst:116
@@ -300,16 +301,43 @@ msgstr ""
 
 #: ../../../source/programs/gdaltransform.rst:231
 msgid ""
-"Where is the address \"370 S. 300 E.\" in Salt Lake City, given we know some "
-"nearby corners' coordinates?"
+"Task: find one address and assign another. We pick Salt Lake City, where "
+"road names *are* their grid values. We first establish some ground control "
+"points at road intersections. We'll use :ref:`--optfile "
+"<raster_common_options_optfile>` for easy reuse of our GCPs."
 msgstr ""
 
-#: ../../../source/programs/gdaltransform.rst:234
+#: ../../../source/programs/gdaltransform.rst:236
 msgid ""
-"echo 300 -370 my address | gdaltransform \\\n"
-"-gcp 0   -500 -111.89114803 40.75846686 \\\n"
+"echo -output_xy \\\n"
 "-gcp 0   0    -111.89114717 40.76932606 \\\n"
-"-gcp 500 0    -111.87685039 40.76940631\n"
-"\n"
-"-111.8825697384 40.761338402 0 my address"
+"-gcp 0   -500 -111.89114803 40.75846686 \\\n"
+"-gcp 500 0    -111.87685039 40.76940631 > optfile.txt"
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:243
+msgid "Where is the address \"370 S. 300 E.\"?"
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:245
+msgid ""
+"echo 300 -370 370 S. 300 E. | gdaltransform --optfile optfile.txt\n"
+"-111.8825697384 40.761338402 370 S. 300 E."
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:250
+msgid ""
+"Nearby, a newly constructed building needs an address assigned. We use :"
+"option:`-i`:"
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:252
+msgid ""
+"echo -111.88705 40.76502 Building ABC123 | gdaltransform -i --optfile "
+"optfile.txt\n"
+"143.301947786644 -199.32683635161 Building ABC123"
+msgstr ""
+
+#: ../../../source/programs/gdaltransform.rst:257
+msgid "(i.e., 143 E. 200 S. Or 144 if across the street.)"
 msgstr ""

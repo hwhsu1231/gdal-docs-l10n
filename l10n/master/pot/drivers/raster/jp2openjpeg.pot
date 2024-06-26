@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -81,8 +82,8 @@ msgid ""
 "Georeferencing information can come from different sources : internal "
 "(GeoJP2 or GMLJP2 boxes), worldfile .j2w/.wld sidecar files, or PAM "
 "(Persistent Auxiliary metadata) .aux.xml sidecar files. By default, "
-"information is fetched in following order (first listed is the most "
-"prioritary): PAM, GeoJP2, GMLJP2, WORLDFILE."
+"information is fetched in following order (first listed is the highest "
+"priority): PAM, GeoJP2, GMLJP2, WORLDFILE."
 msgstr ""
 
 #: ../../../source/drivers/raster/jp2openjpeg.rst:48
@@ -91,14 +92,14 @@ msgid ""
 "changed with the :config:`GDAL_GEOREF_SOURCES` configuration option (or :oo:"
 "`GEOREF_SOURCES` open option) whose value is a comma-separated list of the "
 "following keywords : PAM, GEOJP2, GMLJP2, INTERNAL (shortcut for GEOJP2,"
-"GMLJP2), WORLDFILE, NONE. First mentioned sources are the most prioritary "
-"over the next ones. A non mentioned source will be ignored."
+"GMLJP2), WORLDFILE, NONE. Earlier mentioned sources take priority over later "
+"ones. A non mentioned source will be ignored."
 msgstr ""
 
 #: ../../../source/drivers/raster/jp2openjpeg.rst:55
 msgid ""
 "For example setting it to \"WORLDFILE,PAM,INTERNAL\" will make a "
-"geotransformation matrix from a potential worldfile prioritary over PAM or "
+"geotransformation matrix from a potential worldfile priority over PAM or "
 "internal JP2 boxes. Setting it to \"PAM,WORLDFILE,GEOJP2\" will use the "
 "mentioned sources and ignore GMLJP2 boxes."
 msgstr ""
@@ -139,63 +140,67 @@ msgid "Open Options"
 msgstr ""
 
 #: ../../../source/drivers/raster/jp2openjpeg.rst:86
-msgid "The following open options are available:"
+msgid "|about-open-options| The following open options are available:"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:122
+#: ../../../source/drivers/raster/jp2openjpeg.rst:123
 msgid "Creation Options"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:350
+#: ../../../source/drivers/raster/jp2openjpeg.rst:125
+msgid "|about-creation-options| The following creation options are available:"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2openjpeg.rst:354
 msgid ""
 "(OpenJPEG >= 2.3.0) Style of the code-block coding passes. The following 6 "
 "independent settings can be combined together (values should be comma "
 "separated):"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:354
+#: ../../../source/drivers/raster/jp2openjpeg.rst:358
 msgid ""
 "*BYPASS* (1): enable selective arithmetic coding bypass (can substantially "
 "improve coding/decoding speed, at the expense of larger file size)"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:357
+#: ../../../source/drivers/raster/jp2openjpeg.rst:361
 msgid "*RESET* (2): reset context probabilities on coding pass boundaries"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:358
+#: ../../../source/drivers/raster/jp2openjpeg.rst:362
 msgid "*TERMALL* (4): enable termination on each coding pass"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:359
+#: ../../../source/drivers/raster/jp2openjpeg.rst:363
 msgid "*VSC* (8): enable vertically causal context"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:360
+#: ../../../source/drivers/raster/jp2openjpeg.rst:364
 msgid ""
 "*PREDICTABLE* (16): enable predictable termination (helps for error "
 "detection)"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:362
+#: ../../../source/drivers/raster/jp2openjpeg.rst:366
 msgid "*SEGSYM* (32): enable segmentation symbols (helps for error detection)"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:365
+#: ../../../source/drivers/raster/jp2openjpeg.rst:369
 msgid ""
 "Instead of specifying them by text, it is also possible to give the "
 "corresponding numeric value of the global codeblock style, by adding the "
 "selected options (for example \"BYPASS,TERMALL\" is equivalent to \"5\"=1+4)"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:370
+#: ../../../source/drivers/raster/jp2openjpeg.rst:374
 msgid ""
 "By default, none of them are enabled. Enabling them will generally increase "
 "codestream size, but improve either coding/decoding speed or resilience/"
 "error detection."
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:400
+#: ../../../source/drivers/raster/jp2openjpeg.rst:404
 msgid ""
 "<GDALMultiDomainMetadata>\n"
 "  <Metadata>\n"
@@ -211,51 +216,51 @@ msgid ""
 "</GDALMultiDomainMetadata>"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:413
+#: ../../../source/drivers/raster/jp2openjpeg.rst:417
 msgid ""
 "If there are metadata domain whose name starts with \"xml:BOX\\_\", they "
 "will be written each as separate JP2 'xml ' box."
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:416
+#: ../../../source/drivers/raster/jp2openjpeg.rst:420
 msgid ""
 "If there is a metadata domain whose name is \"xml:XMP\", its content will be "
 "written as a JP2 'uuid' XMP box."
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:419
+#: ../../../source/drivers/raster/jp2openjpeg.rst:423
 msgid ""
 "If there is a metadata domain whose name is \"xml:IPR\", its content will be "
 "written as a JP2 'jp2i' box."
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:446
+#: ../../../source/drivers/raster/jp2openjpeg.rst:450
 msgid "Lossless compression"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:448
+#: ../../../source/drivers/raster/jp2openjpeg.rst:452
 msgid ""
 "Lossless compression can be achieved if ALL the following creation options "
 "are defined :"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:451
+#: ../../../source/drivers/raster/jp2openjpeg.rst:455
 msgid ":co:`QUALITY=100`"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:452
+#: ../../../source/drivers/raster/jp2openjpeg.rst:456
 msgid ":co:`REVERSIBLE=YES`"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:453
+#: ../../../source/drivers/raster/jp2openjpeg.rst:457
 msgid ":co:`YCBCR420=NO` (which is the default)"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:458
+#: ../../../source/drivers/raster/jp2openjpeg.rst:462
 msgid "GMLJP2v2 definition file"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:460
+#: ../../../source/drivers/raster/jp2openjpeg.rst:464
 msgid ""
 "A GMLJP2v2 box typically contains a GMLJP2RectifiedGridCoverage with the SRS "
 "information and geotransformation matrix. It is also possible to add "
@@ -266,7 +271,7 @@ msgid ""
 "documentation, and can be omitted):"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:468
+#: ../../../source/drivers/raster/jp2openjpeg.rst:472
 msgid ""
 "{\n"
 "    \"#doc\" : \"Unless otherwise specified, all elements are optional\",\n"
@@ -464,7 +469,7 @@ msgid ""
 "}"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:625
+#: ../../../source/drivers/raster/jp2openjpeg.rst:629
 msgid ""
 "Metadata can be dynamically generated from a template file (in that context, "
 "with a XML structure) and a XML source file. The template file is processed "
@@ -474,17 +479,17 @@ msgid ""
 "functions :"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:632
+#: ../../../source/drivers/raster/jp2openjpeg.rst:636
 msgid ""
 "**if(cond_expr,expr_if_true,expr_if_false)**: if cond_expr evaluates to "
 "true, returns expr_if_true. Otherwise returns expr_if_false"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:634
+#: ../../../source/drivers/raster/jp2openjpeg.rst:638
 msgid "**uuid()**: evaluates to a random UUID"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:636
+#: ../../../source/drivers/raster/jp2openjpeg.rst:640
 msgid ""
 "A template file to process XML metadata of Pleiades imagery can be found "
 "`here <eoptemplate_pleiades.xml>`__, and a template file to process XML "
@@ -492,18 +497,18 @@ msgid ""
 "<eoptemplate_worldviewgeoeye.xml>`__."
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:642
+#: ../../../source/drivers/raster/jp2openjpeg.rst:646
 msgid "Vector information"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:644
+#: ../../../source/drivers/raster/jp2openjpeg.rst:648
 msgid ""
 "A JPEG2000 file containing a GMLJP2 v2 box with GML feature collections and/"
 "or KML annotations embedded can be opened as a vector file with the OGR API. "
 "For example:"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:650
+#: ../../../source/drivers/raster/jp2openjpeg.rst:654
 msgid ""
 "ogrinfo -ro my.jp2\n"
 "\n"
@@ -514,63 +519,63 @@ msgid ""
 "3: Annotation_1_poly"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:658
+#: ../../../source/drivers/raster/jp2openjpeg.rst:662
 msgid ""
 "Feature collections can be linked from the GMLJP2 v2 box to a remote "
 "location. By default, the link is not followed. It will be followed if the "
 "open option OPEN_REMOTE_GML is set to YES."
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:663
+#: ../../../source/drivers/raster/jp2openjpeg.rst:667
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:665
+#: ../../../source/drivers/raster/jp2openjpeg.rst:669
 msgid "Implemented as :source_file:`frmts/openjpeg/openjpegdataset.cpp`."
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:667
+#: ../../../source/drivers/raster/jp2openjpeg.rst:671
 msgid "`Official JPEG-2000 page <http://www.jpeg.org/jpeg2000/index.html>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:669
+#: ../../../source/drivers/raster/jp2openjpeg.rst:673
 msgid ""
 "`The OpenJPEG library home page <https://github.com/uclouvain/openjpeg>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:672
+#: ../../../source/drivers/raster/jp2openjpeg.rst:676
 msgid ""
 "`OGC GML in JPEG2000, version 2.0 <http://docs.opengeospatial.org/"
 "is/08-085r4/08-085r4.html>`__ (GDAL 2.0 and 2.1)"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:676
+#: ../../../source/drivers/raster/jp2openjpeg.rst:680
 msgid ""
 "`OGC GML in JPEG2000, version 2.0.1 <http://docs.opengeospatial.org/"
 "is/08-085r5/08-085r5.html>`__ (GDAL 2.2 and above)"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:680
+#: ../../../source/drivers/raster/jp2openjpeg.rst:684
 msgid ""
 "`Inspire Data Specification on Orthoimagery - Technical Guidelines <http://"
 "inspire.ec.europa.eu/documents/Data_Specifications/"
 "INSPIRE_DataSpecification_OI_v3.0.pdf>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:683
+#: ../../../source/drivers/raster/jp2openjpeg.rst:687
 msgid "Other JPEG2000 GDAL drivers :"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:685
+#: ../../../source/drivers/raster/jp2openjpeg.rst:689
 msgid ":ref:`JP2ECW: based on Erdas ECW library (proprietary) <raster.jp2ecw>`"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:688
+#: ../../../source/drivers/raster/jp2openjpeg.rst:692
 msgid ""
 ":ref:`JP2MRSID: based on LizardTech MrSID library (proprietary) <raster."
 "jp2mrsid>`"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2openjpeg.rst:691
+#: ../../../source/drivers/raster/jp2openjpeg.rst:695
 msgid ":ref:`JP2KAK: based on Kakadu library (proprietary) <raster.jp2kak>`"
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -82,10 +82,10 @@ msgid "Opening options"
 msgstr ""
 
 #: ../../../source/drivers/vector/pmtiles.rst:50
-msgid "The following open options are available:"
+msgid "|about-open-options| The following open options are available:"
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:58
+#: ../../../source/drivers/vector/pmtiles.rst:59
 msgid ""
 "Vector tiles are generally produced with a buffer that provides overlaps "
 "between adjacent tiles, and can be used to display them properly. When using "
@@ -93,25 +93,25 @@ msgid ""
 "padding is undesirable, hence the default behavior of clipping."
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:86
+#: ../../../source/drivers/vector/pmtiles.rst:87
 msgid "Creation issues"
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:88
+#: ../../../source/drivers/vector/pmtiles.rst:89
 msgid ""
 "Tiles are generated with WebMercator (EPSG:3857) projection. Several layers "
 "can be written. It is possible to decide at which zoom level ranges a given "
 "layer is written."
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:92
+#: ../../../source/drivers/vector/pmtiles.rst:93
 msgid ""
 "Part of the conversion is multi-threaded by default, using as many threads "
 "as there are cores. The number of threads used can be controlled with the :"
 "config:`GDAL_NUM_THREADS` configuration option."
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:96
+#: ../../../source/drivers/vector/pmtiles.rst:97
 msgid ""
 "The driver implements also a direct translation mode when using :program:"
 "`ogr2ogr` with a MBTiles vector dataset as input and a PMTiles output "
@@ -121,27 +121,33 @@ msgid ""
 "geometry coordinates."
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:103
+#: ../../../source/drivers/vector/pmtiles.rst:104
 msgid "Dataset creation options"
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:129
+#: ../../../source/drivers/vector/pmtiles.rst:106
+msgid ""
+"|about-dataset-creation-options| The following dataset creation options are "
+"supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:133
 msgid ""
 "Maximum zoom level at which tiles are generated. Maximum supported value is "
 "22."
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:186
+#: ../../../source/drivers/vector/pmtiles.rst:190
 msgid "Layer configuration"
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:188
+#: ../../../source/drivers/vector/pmtiles.rst:192
 msgid ""
 "The above mentioned CONF dataset creation option can be set to a string "
-"whose value is a JSon serialized document such as the below one:"
+"whose value is a JSON serialized document such as the below one:"
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:191
+#: ../../../source/drivers/vector/pmtiles.rst:195
 msgid ""
 "{\n"
 "    \"boundaries_lod0\": {\n"
@@ -158,34 +164,40 @@ msgid ""
 "}"
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:207
+#: ../../../source/drivers/vector/pmtiles.rst:211
 msgid ""
 "*boundaries_lod0* and *boundaries_lod1* are the name of the OGR layers that "
 "are created into the target MVT dataset. They are mapped to the MVT target "
 "layer *boundaries*."
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:211
+#: ../../../source/drivers/vector/pmtiles.rst:215
 msgid ""
 "It is also possible to get the same behavior with the below layer creation "
 "options, although that is not convenient in the ogr2ogr use case."
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:216
+#: ../../../source/drivers/vector/pmtiles.rst:220
 msgid "Layer creation options"
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:243
+#: ../../../source/drivers/vector/pmtiles.rst:222
+msgid ""
+"|about-layer-creation-options| The following layer creation options are "
+"supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:250
 msgid "/vsipmtiles/ virtual file system"
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:245
+#: ../../../source/drivers/vector/pmtiles.rst:252
 msgid ""
 "The /vsipmtiles/ virtual file system offers a view of the content of a "
 "PMTiles dataset has a file hierarchy, with the following structure:"
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:250
+#: ../../../source/drivers/vector/pmtiles.rst:257
 msgid ""
 "/pmtiles_header.json: JSON view of the PMTiles header\n"
 "/metadata.json: JSON metadata document stored in the dataset\n"
@@ -194,7 +206,7 @@ msgid ""
 "/{z}/{x}/{y}.{ext}: Tile data"
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:256
+#: ../../../source/drivers/vector/pmtiles.rst:263
 msgid ""
 "The :source_file:`swig/python/gdal-utils/osgeo_utils/samples/gdal_ls.py` "
 "and :source_file:`swig/python/gdal-utils/osgeo_utils/samples/gdal_cp.py` "
@@ -202,22 +214,22 @@ msgid ""
 "dataset"
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:261
+#: ../../../source/drivers/vector/pmtiles.rst:268
 msgid "Listing the content of a dataset:"
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:263
+#: ../../../source/drivers/vector/pmtiles.rst:270
 msgid ""
 "python gdal_ls.py -lr \"/vsipmtiles//vsicurl/https://protomaps.github.io/"
 "PMTiles/protomaps(vector)ODbL_firenze.pmtiles\""
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:267
-#: ../../../source/drivers/vector/pmtiles.rst:289
+#: ../../../source/drivers/vector/pmtiles.rst:274
+#: ../../../source/drivers/vector/pmtiles.rst:296
 msgid "outputs:"
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:271
+#: ../../../source/drivers/vector/pmtiles.rst:278
 msgid ""
 "-r--r--r--  1 unknown unknown          809 2023-05-29 09:06 /vsipmtiles//"
 "vsicurl/https://protomaps.github.io/PMTiles/protomaps(vector)ODbL_firenze."
@@ -249,18 +261,18 @@ msgid ""
 "pmtiles/14/8707/5974.mvt"
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:283
+#: ../../../source/drivers/vector/pmtiles.rst:290
 msgid "Displaying the metadata JSON file:"
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:285
+#: ../../../source/drivers/vector/pmtiles.rst:292
 msgid ""
 "python swig/python/gdal-utils/osgeo_utils/samples/gdal_cp.py \"/vsipmtiles//"
 "vsicurl/https://protomaps.github.io/PMTiles/protomaps(vector)ODbL_firenze."
 "pmtiles/metadata.json\" /vsistdout/ | jq ."
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:291
+#: ../../../source/drivers/vector/pmtiles.rst:298
 msgid ""
 "{\n"
 "  \"attribution\": \"<a href=\\\"https://protomaps.com\\\" target=\\"
@@ -298,29 +310,59 @@ msgid ""
 "}"
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:327
+#: ../../../source/drivers/vector/pmtiles.rst:334
 msgid "Extracting all content in a local directory:"
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:329
+#: ../../../source/drivers/vector/pmtiles.rst:336
 msgid ""
 "python swig/python/gdal-utils/osgeo_utils/samples/gdal_cp.py -r \"/"
 "vsipmtiles//vsicurl/https://protomaps.github.io/PMTiles/"
 "protomaps(vector)ODbL_firenze.pmtiles\" out_pmtiles"
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:335
+#: ../../../source/drivers/vector/pmtiles.rst:341
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:342
+msgid ""
+"Simple translation of a single shapefile into PMTiles. Dataset creation "
+"options (dsco) MINZOOM and MAXZOOM specifies tile zoom levels. ::"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:345
+msgid ""
+"ogr2ogr -dsco MINZOOM=10 -dsco MAXZOOM=20 -f \"PMTiles\" filename.pmtiles "
+"my_shapes.shp"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:347
+msgid ""
+"Merge all PostgreSQL/PostGIS tables in a schema into a single PMTiles file. "
+"PostgreSQL table names are used as layer names. Dataset creation options "
+"(dsco) MINZOOM and MAXZOOM specifies tile zoom levels. ::"
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:350
+msgid ""
+"ogr2ogr -dsco MINZOOM=0 -dsco MAXZOOM=22 -f \"PMTiles\" filename.pmtiles "
+"\"PG:host=my_host port=my_port dbname=my_database user=my_user "
+"password=my_password schemas=my_schema\""
+msgstr ""
+
+#: ../../../source/drivers/vector/pmtiles.rst:354
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:337
+#: ../../../source/drivers/vector/pmtiles.rst:356
 msgid "`PMTiles specification <https://github.com/protomaps/PMTiles>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:338
+#: ../../../source/drivers/vector/pmtiles.rst:357
 msgid ":ref:`Mapbox Vector tiles driver <vector.mvt>`"
 msgstr ""
 
-#: ../../../source/drivers/vector/pmtiles.rst:339
+#: ../../../source/drivers/vector/pmtiles.rst:358
 msgid ":ref:`MBTiles driver <raster.mbtiles>`"
 msgstr ""

@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -151,7 +152,7 @@ msgstr ""
 
 #: ../../../source/drivers/vector/ngw.rst:67
 msgid ""
-"The following :ref:`configuration options <configoptions>` are available:"
+"|about-config-options| The following configuration options are available:"
 msgstr ""
 
 #: ../../../source/drivers/vector/ngw.rst:70
@@ -304,34 +305,38 @@ msgid "Open options"
 msgstr ""
 
 #: ../../../source/drivers/vector/ngw.rst:169
-msgid "The following open options are available:"
+msgid "|about-open-options| The following open options are available:"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:206
+#: ../../../source/drivers/vector/ngw.rst:207
 msgid "Dataset creation options"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:208
-msgid "The following dataset/datasource creation options are available:"
+#: ../../../source/drivers/vector/ngw.rst:209
+msgid ""
+"|about-dataset-creation-options| The following dataset creation options are "
+"available:"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:239
+#: ../../../source/drivers/vector/ngw.rst:241
 msgid "Whether to store the json *extensions* key in feature native data."
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:254
+#: ../../../source/drivers/vector/ngw.rst:256
 msgid "Layer creation options"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:256
-msgid "The following layer creation options are available:"
+#: ../../../source/drivers/vector/ngw.rst:258
+msgid ""
+"|about-layer-creation-options| The following layer creation options are "
+"available:"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:276
+#: ../../../source/drivers/vector/ngw.rst:279
 msgid "Metadata"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:278
+#: ../../../source/drivers/vector/ngw.rst:281
 msgid ""
 "NextGIS Web metadata are supported in datasource, vector, PostGIS, raster "
 "layers and styles. Metadata are stored at specific domain \"NGW\". NextGIS "
@@ -343,244 +348,244 @@ msgid ""
 "transform from string to number."
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:287
+#: ../../../source/drivers/vector/ngw.rst:290
 msgid ""
 "Resource description and key map to appropriate *description* and *keyname* "
 "metadata items in default domain. Changing those metadata items will cause "
 "an update of resource properties."
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:291
+#: ../../../source/drivers/vector/ngw.rst:294
 msgid ""
 "Resource creation date, type and parent identifier map to appropriate read-"
 "only metadata items *creation_date*, *resource_type* and *parent_id* in "
 "default domain."
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:295
+#: ../../../source/drivers/vector/ngw.rst:298
 msgid ""
 "Vector layer field properties (alias, identifier, label field, grid "
 "visibility) map to layer metadata the following way:"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:298
+#: ../../../source/drivers/vector/ngw.rst:301
 msgid "field alias -> FIELD_{field number}_ALIAS (for example FIELD_0_ALIAS)"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:299
+#: ../../../source/drivers/vector/ngw.rst:302
 msgid "identifier -> FIELD_{field number}_ID (for example FIELD_0_ID)"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:300
+#: ../../../source/drivers/vector/ngw.rst:303
 msgid ""
 "label field -> FIELD_{field number}_LABEL_FIELD (for example "
 "FIELD_0_LABEL_FIELD)"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:302
+#: ../../../source/drivers/vector/ngw.rst:305
 msgid ""
 "grid visibility -> FIELD_{field number}_GRID_VISIBILITY (for example "
 "FIELD_0_GRID_VISIBILITY)"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:305
+#: ../../../source/drivers/vector/ngw.rst:308
 msgid ""
 "Starting from GDAL 3.3 field alias can be set/get via `SetAlternativeName` "
 "and `GetAlternativeNameRef`."
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:309
+#: ../../../source/drivers/vector/ngw.rst:312
 msgid "Filters"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:311
+#: ../../../source/drivers/vector/ngw.rst:314
 msgid ""
 "Vector and PostGIS layers support SetIgnoredFields method. When this method "
 "executes any cached features will be freed."
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:314
+#: ../../../source/drivers/vector/ngw.rst:317
 msgid ""
 "Vector and PostGIS layers support SetAttributeFilter and SetSpatialFilter "
 "methods. The attribute filter will evaluate at server side if condition is "
 "one of following comparison operators:"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:318
+#: ../../../source/drivers/vector/ngw.rst:321
 msgid "greater (>)"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:319
+#: ../../../source/drivers/vector/ngw.rst:322
 msgid "lower (<)"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:320
+#: ../../../source/drivers/vector/ngw.rst:323
 msgid "greater or equal (>=)"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:321
+#: ../../../source/drivers/vector/ngw.rst:324
 msgid "lower or equal (<=)"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:322
+#: ../../../source/drivers/vector/ngw.rst:325
 msgid "equal (=)"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:323
+#: ../../../source/drivers/vector/ngw.rst:326
 msgid "not equal (!=)"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:324
+#: ../../../source/drivers/vector/ngw.rst:327
 msgid "LIKE SQL statement (for strings compare)"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:325
+#: ../../../source/drivers/vector/ngw.rst:328
 msgid "ILIKE SQL statement (for strings compare)"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:327
+#: ../../../source/drivers/vector/ngw.rst:330
 msgid ""
 "Also only AND operator without brackets supported between comparison. For "
 "example,"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:331
+#: ../../../source/drivers/vector/ngw.rst:334
 msgid "FIELD_1 = 'Value 1'"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:335
+#: ../../../source/drivers/vector/ngw.rst:338
 msgid "FIELD_1 = 'Value 1' AND FIELD_2 > Value 2"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:337
+#: ../../../source/drivers/vector/ngw.rst:340
 msgid "In other cases attribute filter will evaluate on client side."
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:339
+#: ../../../source/drivers/vector/ngw.rst:342
 msgid ""
 "You can set attribute filter using NextGIS Web native format. For example,"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:344
+#: ../../../source/drivers/vector/ngw.rst:347
 msgid "NGW:fld_FIELD_1=Value 1&fld_FIELD_2__gt=Value 2"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:346
+#: ../../../source/drivers/vector/ngw.rst:349
 msgid ""
 "Don't forget to add 'NGW:' perefix to where clause and 'fld\\_' prefix to "
 "field name."
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:349
+#: ../../../source/drivers/vector/ngw.rst:352
 msgid ""
 "Dataset supports ExecuteSQL method. Only the following queries are supported:"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:352
+#: ../../../source/drivers/vector/ngw.rst:355
 msgid "DELLAYER: layer_name; - delete layer with layer_name."
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:353
+#: ../../../source/drivers/vector/ngw.rst:356
 msgid ""
 "DELETE FROM layer_name; - delete any features from layer with layer_name."
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:355
+#: ../../../source/drivers/vector/ngw.rst:358
 msgid "DROP TABLE layer_name; - delete layer with layer_name."
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:356
+#: ../../../source/drivers/vector/ngw.rst:359
 msgid "ALTER TABLE src_layer RENAME TO dst_layer; - rename layer."
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:357
+#: ../../../source/drivers/vector/ngw.rst:360
 msgid ""
 "SELECT field_1,field_2 FROM src_layer WHERE field_1 = 'Value 1' AND field_2 "
 "= 'Value 2';"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:360
+#: ../../../source/drivers/vector/ngw.rst:363
 msgid ""
 "In SELECT statement field list or asterisk can be provided. The WHERE clause "
 "has same limitations as SetAttributeFilter method input."
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:364
+#: ../../../source/drivers/vector/ngw.rst:367
 msgid "Examples"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:366
+#: ../../../source/drivers/vector/ngw.rst:369
 msgid "Read datasource contents (1730 is resource group identifier):"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:370
+#: ../../../source/drivers/vector/ngw.rst:373
 msgid "ogrinfo -ro NGW:https://demo.nextgis.com/resource/1730"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:372
+#: ../../../source/drivers/vector/ngw.rst:375
 msgid ""
 "Read layer details (`1730` is resource group identifier, `Parks` is vecror "
 "layer name):"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:377
+#: ../../../source/drivers/vector/ngw.rst:380
 msgid "ogrinfo -ro -so NGW:https://demo.nextgis.com/resource/1730 Parks"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:379
+#: ../../../source/drivers/vector/ngw.rst:382
 msgid ""
 "Creating and populating a vector layer from a shapefile in existing resource "
 "group with identifier 1730. New vector layer name will be \"some new name\":"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:384
+#: ../../../source/drivers/vector/ngw.rst:387
 msgid ""
 "ogr2ogr -f NGW -nln \"some new name\" -update -doo \"BATCH_SIZE=100\" -t_srs "
 "EPSG:3857 \"NGW:https://demo.nextgis.com/resource/1730\" myshapefile.shp"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:387
+#: ../../../source/drivers/vector/ngw.rst:390
 msgid ""
 "The `-update` key is mandatory, otherwise the destination datasource will "
 "silently delete. The `-t_srs EPSG:3857` key is mandatory because vector "
 "layers spatial reference in NextGIS Web can be only in EPSG:3857."
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:392
+#: ../../../source/drivers/vector/ngw.rst:395
 msgid ""
 "The `-doo \"BATCH_SIZE=100\"` key is recommended for speed up feature "
 "transferring."
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:394
+#: ../../../source/drivers/vector/ngw.rst:397
 msgid ""
 "Creating and populating a vector layer from a shapefile in new resource "
 "group with name \"new group\" and parent identifier 1730. New vector layer "
 "name will be \"some new name\":"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:400
+#: ../../../source/drivers/vector/ngw.rst:403
 msgid ""
 "ogr2ogr -f NGW -nln \"Название на русском языке\" -dsco \"BATCH_SIZE=100\" -"
 "t_srs EPSG:3857 \"NGW:https://demo.nextgis.com/resource/1730/new group\" "
 "myshapefile.shp"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:403
+#: ../../../source/drivers/vector/ngw.rst:406
 msgid "See also"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:405
+#: ../../../source/drivers/vector/ngw.rst:408
 msgid ":ref:`Raster side of the driver <raster.ngw>`"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:406
+#: ../../../source/drivers/vector/ngw.rst:409
 msgid ""
 "`NextGIS Web documentation <https://docs.nextgis.com/docs_ngweb/source/toc."
 "html>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/ngw.rst:408
+#: ../../../source/drivers/vector/ngw.rst:411
 msgid ""
 "`NextGIS Web for developers <https://docs.nextgis.com/docs_ngweb_dev/doc/toc."
 "html>`__"

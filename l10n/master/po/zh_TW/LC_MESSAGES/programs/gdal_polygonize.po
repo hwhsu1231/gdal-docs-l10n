@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../../source/programs/gdal_polygonize.rst:5
-msgid "gdal_polygonize.py"
+#: ../../../source/programs/gdal_polygonize.rst:11
+msgid "gdal_polygonize"
 msgstr ""
 
 #: ../../../source/programs/gdal_polygonize.rst:9
@@ -31,7 +32,7 @@ msgstr ""
 
 #: ../../../source/programs/gdal_polygonize.rst:16
 msgid ""
-"gdal_polygonize.py [--help] [--help-general]\n"
+"gdal_polygonize [--help] [--help-general]\n"
 "                   [-8] [-o <name>=<value>]... [-nomask]\n"
 "                   [-mask <filename>] <raster_file> [-b <band>]\n"
 "                   [-q] [-f <ogr_format>] [-lco <name>=<value>]...\n"
@@ -62,6 +63,12 @@ msgid ""
 "additional details on the algorithm."
 msgstr ""
 
+#: ../../../source/programs/gdal_polygonize.rst:39
+msgid ""
+"gdal_polygonize is a Python utility, and is only available if GDAL Python "
+"bindings are available."
+msgstr ""
+
 #: ../../../source/programs/options/help.rst:3
 msgid "Show this help message and exit"
 msgstr ""
@@ -72,17 +79,17 @@ msgid ""
 "exit."
 msgstr ""
 
-#: ../../../source/programs/gdal_polygonize.rst:43
+#: ../../../source/programs/gdal_polygonize.rst:47
 msgid "Use 8 connectedness. Default is 4 connectedness."
 msgstr ""
 
-#: ../../../source/programs/gdal_polygonize.rst:47
+#: ../../../source/programs/gdal_polygonize.rst:51
 msgid ""
 "Do not use the default validity mask for the input band (such as nodata, or "
 "alpha masks)."
 msgstr ""
 
-#: ../../../source/programs/gdal_polygonize.rst:52
+#: ../../../source/programs/gdal_polygonize.rst:56
 msgid ""
 "Use the first band of the specified file as a validity mask (zero is "
 "invalid, non-zero is valid). If not specified, the default validity mask for "
@@ -90,11 +97,11 @@ msgid ""
 "is specified)"
 msgstr ""
 
-#: ../../../source/programs/gdal_polygonize.rst:58
+#: ../../../source/programs/gdal_polygonize.rst:62
 msgid "The source raster file from which polygons are derived."
 msgstr ""
 
-#: ../../../source/programs/gdal_polygonize.rst:62
+#: ../../../source/programs/gdal_polygonize.rst:66
 msgid ""
 "The band on <raster_file> to build the polygons from. Starting with GDAL "
 "2.2, the value can also be set to \"mask\", to indicate that the mask band "
@@ -102,43 +109,39 @@ msgid ""
 "specified band)"
 msgstr ""
 
-#: ../../../source/programs/gdal_polygonize.rst:69
+#: ../../../source/programs/gdal_polygonize.rst:73
 msgid ""
 "Select the output format. Starting with GDAL 2.3, if not specified, the "
 "format is guessed from the extension (previously was GML). Use the short "
 "format name"
 msgstr ""
 
-#: ../../../source/programs/gdal_polygonize.rst:77
+#: ../../../source/programs/gdal_polygonize.rst:81
 msgid "Polygonize option. See ::cpp:func:`GDALPolygonize` documentation."
 msgstr ""
 
-#: ../../../source/programs/gdal_polygonize.rst:83
+#: ../../../source/programs/gdal_polygonize.rst:87
 msgid "Layer creation option (format specific)"
 msgstr ""
 
-#: ../../../source/programs/gdal_polygonize.rst:89
+#: ../../../source/programs/gdal_polygonize.rst:93
 msgid "Overwrite the output layer if it already exists."
 msgstr ""
 
-#: ../../../source/programs/gdal_polygonize.rst:93
+#: ../../../source/programs/gdal_polygonize.rst:97
 msgid "The destination vector file to which the polygons will be written."
 msgstr ""
 
-#: ../../../source/programs/gdal_polygonize.rst:97
+#: ../../../source/programs/gdal_polygonize.rst:101
 msgid "The name of the layer created to hold the polygon features."
 msgstr ""
 
-#: ../../../source/programs/gdal_polygonize.rst:101
+#: ../../../source/programs/gdal_polygonize.rst:105
 msgid "The name of the field to create (defaults to \"DN\")."
 msgstr ""
 
-#: ../../../source/programs/gdal_polygonize.rst:105
+#: ../../../source/programs/gdal_polygonize.rst:109
 msgid ""
 "The script runs in quiet mode.  The progress monitor is suppressed and "
 "routine messages are not displayed."
-msgstr ""
-
-#: ../../../source/programs/gdal_polygonize.rst:11
-msgid "gdal_polygonize"
 msgstr ""

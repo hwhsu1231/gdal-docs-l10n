@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -128,22 +128,24 @@ msgid "Creation Issues"
 msgstr ""
 
 #: ../../../source/drivers/vector/jml.rst:70
-msgid "The JML writer supports the following *layer* creation options:"
+msgid ""
+"|about-layer-creation-options| The JML writer supports the following *layer* "
+"creation options:"
 msgstr ""
 
-#: ../../../source/drivers/vector/jml.rst:88
+#: ../../../source/drivers/vector/jml.rst:89
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/vector/jml.rst:90
+#: ../../../source/drivers/vector/jml.rst:91
 msgid ":ref:`ogr_feature_style`"
 msgstr ""
 
-#: ../../../source/drivers/vector/jml.rst:93
+#: ../../../source/drivers/vector/jml.rst:94
 msgid "Credits"
 msgstr ""
 
-#: ../../../source/drivers/vector/jml.rst:95
+#: ../../../source/drivers/vector/jml.rst:96
 msgid ""
 "The author wishes to thank Jukka Rahkonen for funding the development of "
 "this driver."

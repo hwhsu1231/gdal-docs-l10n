@@ -8,16 +8,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../../source/programs/gdal_sieve.rst:5
-msgid "gdal_sieve.py"
+#: ../../../source/programs/gdal_sieve.rst:11
+msgid "gdal_sieve"
 msgstr ""
 
 #: ../../../source/programs/gdal_sieve.rst:9
@@ -30,7 +32,7 @@ msgstr ""
 
 #: ../../../source/programs/gdal_sieve.rst:16
 msgid ""
-"gdal_sieve.py [--help] [--help-general]\n"
+"gdal_sieve [--help] [--help-general]\n"
 "              [-q] [-st threshold] [-4] [-8] [-o name=value]\n"
 "              <srcfile> [-nomask] [-mask filename] [-of format] [<dstfile>]"
 msgstr ""
@@ -41,10 +43,10 @@ msgstr ""
 
 #: ../../../source/programs/gdal_sieve.rst:25
 msgid ""
-":program:`gdal_sieve.py` script removes raster polygons smaller than a "
-"provided threshold size (in pixels) and replaces them with the pixel value "
-"of the largest neighbour polygon. The result can be written back to the "
-"existing raster band, or copied into a new file."
+":program:`gdal_sieve` removes raster polygons smaller than a provided "
+"threshold size (in pixels) and replaces them with the pixel value of the "
+"largest neighbour polygon. The result can be written back to the existing "
+"raster band, or copied into a new file."
 msgstr ""
 
 #: ../../../source/programs/gdal_sieve.rst:30
@@ -60,6 +62,8 @@ msgid ""
 "`GDALSieveFilter` docs."
 msgstr ""
 
-#: ../../../source/programs/gdal_sieve.rst:11
-msgid "gdal_sieve"
+#: ../../../source/programs/gdal_sieve.rst:39
+msgid ""
+"gdal_retile is a Python utility, and is only available if GDAL Python "
+"bindings are available."
 msgstr ""

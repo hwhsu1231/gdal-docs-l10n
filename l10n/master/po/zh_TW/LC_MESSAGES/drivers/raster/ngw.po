@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -188,33 +188,34 @@ msgid "Configuration options"
 msgstr ""
 
 #: ../../../source/drivers/raster/ngw.rst:85
-msgid "The following configuration options are available:"
+msgid ""
+"|about-config-options| The following configuration options are available:"
 msgstr ""
 
-#: ../../../source/drivers/raster/ngw.rst:114
+#: ../../../source/drivers/raster/ngw.rst:115
 msgid "Authentication"
 msgstr ""
 
-#: ../../../source/drivers/raster/ngw.rst:116
+#: ../../../source/drivers/raster/ngw.rst:117
 msgid ""
 "Any operations (read, write, get metadata, change properties, etc.) may "
 "require an authenticated access. Authenticated access is obtained by "
 "specifying user name and password in open, create or configuration options."
 msgstr ""
 
-#: ../../../source/drivers/raster/ngw.rst:122
+#: ../../../source/drivers/raster/ngw.rst:123
 msgid "Open options"
 msgstr ""
 
-#: ../../../source/drivers/raster/ngw.rst:124
-msgid "The following open options are available:"
-msgstr ""
-
-#: ../../../source/drivers/raster/ngw.rst:152
-msgid "Create copy options"
+#: ../../../source/drivers/raster/ngw.rst:125
+msgid "|about-open-options| The following open options are available:"
 msgstr ""
 
 #: ../../../source/drivers/raster/ngw.rst:154
+msgid "Create copy options"
+msgstr ""
+
+#: ../../../source/drivers/raster/ngw.rst:156
 msgid ""
 "NextGIS Web supports only GeoTIFF file format. Prior version 3.1 supported "
 "only 3 (RGB) or 4 (RGBA) bands rasters with datatype Byte. In CreateCopy "
@@ -223,36 +224,36 @@ msgid ""
 "execute."
 msgstr ""
 
-#: ../../../source/drivers/raster/ngw.rst:159
+#: ../../../source/drivers/raster/ngw.rst:161
 msgid "The following copy options are available:"
 msgstr ""
 
-#: ../../../source/drivers/raster/ngw.rst:161
+#: ../../../source/drivers/raster/ngw.rst:163
 msgid ""
 "KEY - Key value. Must be unique in whole NextGIS Web instance. Optional."
 msgstr ""
 
-#: ../../../source/drivers/raster/ngw.rst:162
+#: ../../../source/drivers/raster/ngw.rst:164
 msgid "DESCRIPTION - Resource description. Optional."
 msgstr ""
 
-#: ../../../source/drivers/raster/ngw.rst:163
+#: ../../../source/drivers/raster/ngw.rst:165
 msgid ""
 "RASTER_STYLE_NAME - Raster style name. Optional. Default is same as raster "
 "layer name."
 msgstr ""
 
-#: ../../../source/drivers/raster/ngw.rst:165
+#: ../../../source/drivers/raster/ngw.rst:167
 msgid ""
 "RASTER_QML_PATH - Path to QGIS QML raster style file. Optional for RGB/RGBA, "
 "for other bands count/pixel types is mandatory."
 msgstr ""
 
-#: ../../../source/drivers/raster/ngw.rst:167
+#: ../../../source/drivers/raster/ngw.rst:169
 msgid "USERPWD - Username and password, separated by colon."
 msgstr ""
 
-#: ../../../source/drivers/raster/ngw.rst:168
+#: ../../../source/drivers/raster/ngw.rst:170
 msgid ""
 "CACHE_EXPIRES=604800 - Time in seconds cached files will stay valid. If "
 "cached file expires it is deleted when maximum size of cache is reached. "
@@ -260,24 +261,24 @@ msgid ""
 "604800 (7 days)."
 msgstr ""
 
-#: ../../../source/drivers/raster/ngw.rst:172
+#: ../../../source/drivers/raster/ngw.rst:174
 msgid ""
 "CACHE_MAX_SIZE=67108864 - The cache maximum size in bytes. If cache reached "
 "maximum size, expired cached files will be deleted. Defaults to 67108864 "
 "(64Mb)."
 msgstr ""
 
-#: ../../../source/drivers/raster/ngw.rst:175
+#: ../../../source/drivers/raster/ngw.rst:177
 msgid ""
 "JSON_DEPTH=32 - The depth of json response that can be parsed. If depth is "
 "greater than this value, parse error occurs."
 msgstr ""
 
-#: ../../../source/drivers/raster/ngw.rst:179
+#: ../../../source/drivers/raster/ngw.rst:181
 msgid "Metadata"
 msgstr ""
 
-#: ../../../source/drivers/raster/ngw.rst:181
+#: ../../../source/drivers/raster/ngw.rst:183
 msgid ""
 "NextGIS Web metadata are supported in datasource, vector, PostGIS, raster "
 "layers and styles. Metadata are stored at specific domain \"NGW\". NextGIS "
@@ -289,55 +290,55 @@ msgid ""
 "transform from string to number."
 msgstr ""
 
-#: ../../../source/drivers/raster/ngw.rst:190
+#: ../../../source/drivers/raster/ngw.rst:192
 msgid ""
 "Resource description and key map to appropriate *description* and *keyname* "
 "metadata items in default domain. Changing those metadata items will cause "
 "an update of resource properties."
 msgstr ""
 
-#: ../../../source/drivers/raster/ngw.rst:194
+#: ../../../source/drivers/raster/ngw.rst:196
 msgid ""
 "Resource creation date, type and parent identifier map to appropriate read-"
 "only metadata items *creation_date*, *resource_type* and *parent_id* in "
 "default domain."
 msgstr ""
 
-#: ../../../source/drivers/raster/ngw.rst:199
+#: ../../../source/drivers/raster/ngw.rst:201
 msgid "Examples"
 msgstr ""
 
-#: ../../../source/drivers/raster/ngw.rst:201
+#: ../../../source/drivers/raster/ngw.rst:203
 msgid "Read datasource contensts (1730 is resource group identifier):"
 msgstr ""
 
-#: ../../../source/drivers/raster/ngw.rst:205
+#: ../../../source/drivers/raster/ngw.rst:207
 msgid "gdalinfo NGW:https://demo.nextgis.com/resource/1730"
 msgstr ""
 
-#: ../../../source/drivers/raster/ngw.rst:207
+#: ../../../source/drivers/raster/ngw.rst:209
 msgid "Read raster details (1734 is raster layer identifier):"
 msgstr ""
 
-#: ../../../source/drivers/raster/ngw.rst:211
+#: ../../../source/drivers/raster/ngw.rst:213
 msgid "gdalinfo NGW:https://demo.nextgis.com/resource/1734"
 msgstr ""
 
-#: ../../../source/drivers/raster/ngw.rst:214
+#: ../../../source/drivers/raster/ngw.rst:216
 msgid "See also"
 msgstr ""
 
-#: ../../../source/drivers/raster/ngw.rst:216
+#: ../../../source/drivers/raster/ngw.rst:218
 msgid ":ref:`Vector side of the driver <vector.ngw>`"
 msgstr ""
 
-#: ../../../source/drivers/raster/ngw.rst:217
+#: ../../../source/drivers/raster/ngw.rst:219
 msgid ""
 "`NextGIS Web documentation <http://docs.nextgis.com/docs_ngweb/source/toc."
 "html>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/ngw.rst:219
+#: ../../../source/drivers/raster/ngw.rst:221
 msgid ""
 "`NextGIS Web for developers <http://docs.nextgis.com/docs_ngweb_dev/doc/toc."
 "html>`__"

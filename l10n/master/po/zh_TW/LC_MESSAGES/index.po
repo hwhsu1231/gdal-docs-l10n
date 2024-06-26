@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: 2024-04-24 00:23+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -25,7 +25,7 @@ msgstr "使用者"
 msgid "GDAL"
 msgstr "GDAL"
 
-#: ../../../source/about_no_title.rst:3
+#: ../../../source/about_no_title.rst:1
 msgid ""
 "GDAL is a translator library for raster and vector geospatial data formats "
 "that is released under an MIT style Open Source :ref:`license` by the `Open "
@@ -33,19 +33,25 @@ msgid ""
 "abstract data model and single vector abstract data model to the calling "
 "application for all supported formats. It also comes with a variety of "
 "useful command line utilities for data translation and processing. The "
-"`NEWS`_ page describes the April 2024 GDAL/OGR 3.8.5 release."
+"`NEWS`_ page describes the May 2024 GDAL/OGR 3.9.0 release."
 msgstr ""
 
 #: ../../../source/about_no_title.rst:-1
 msgid "OSGeo project"
 msgstr "OSGeo 專案"
 
-#: ../../../source/about_no_title.rst:12
+#: ../../../source/about_no_title.rst:10
 msgid "See :ref:`software_using_gdal`"
 msgstr "請參見 :ref:`software_using_gdal`"
 
-#: ../../../source/about_no_title.rst:-1
+#: ../../../source/about_no_title.rst:0
 msgid "DOI 10.5281/zenodo.5884351"
+msgstr ""
+
+#: ../../../source/about_no_title.rst:16
+msgid ""
+"You may quote GDAL in publications by using the following Digital Object "
+"Identifier: |DOI|"
 msgstr ""
 
 #: ../../../source/index.rst:7
@@ -53,7 +59,8 @@ msgid ""
 "This documentation is also available as a `PDF file <gdal.pdf>`_, and `a ."
 "ZIP of individual HTML pages <https://github.com/OSGeo/gdal-docs/archive/"
 "refs/heads/master.zip>`_ for offline browsing. (The .ZIP also includes that ."
-"PDF.)"
+"PDF.) The documentation reflects the latest state of the development branch "
+"of the software."
 msgstr ""
 
 #: ../../../source/index.rst:30

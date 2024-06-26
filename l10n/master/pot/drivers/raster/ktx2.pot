@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -91,24 +92,24 @@ msgid ""
 msgstr ""
 
 #: ../../../source/drivers/raster/ktx2.rst:54
-msgid "The following creation options are available:"
+msgid "|about-creation-options| The following creation options are available:"
 msgstr ""
 
-#: ../../../source/drivers/raster/ktx2.rst:125
+#: ../../../source/drivers/raster/ktx2.rst:126
 msgid "Whether to enable MIPMAP generation."
 msgstr ""
 
-#: ../../../source/drivers/raster/ktx2.rst:135
+#: ../../../source/drivers/raster/ktx2.rst:136
 msgid "Build instructions"
 msgstr ""
 
-#: ../../../source/drivers/raster/ktx2.rst:137
+#: ../../../source/drivers/raster/ktx2.rst:138
 msgid ""
 "Building basisu as a library requires currently building the `cmake` branch "
 "of the https://github.com/rouault/basis_universal/tree/cmake fork."
 msgstr ""
 
-#: ../../../source/drivers/raster/ktx2.rst:140
+#: ../../../source/drivers/raster/ktx2.rst:141
 msgid ""
 "git clone -b cmake https://github.com/rouault/basis_universal\n"
 "cd basis_universal\n"
@@ -119,7 +120,7 @@ msgid ""
 "cmake --build . --config Release --target install"
 msgstr ""
 
-#: ../../../source/drivers/raster/ktx2.rst:149
+#: ../../../source/drivers/raster/ktx2.rst:150
 msgid ""
 "Once basisu is built, GDAL CMake options must be configured by pointing the "
 "basisu install prefix in the ``CMAKE_PREFIX_PATH`` variable or "

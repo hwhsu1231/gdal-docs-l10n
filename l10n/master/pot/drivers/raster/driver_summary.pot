@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,11 +26,11 @@ msgid "Long name"
 msgstr ""
 
 #: ../../../source/drivers/raster/driver_summary.rst:13
-msgid "Creation"
+msgid "Creation (1)"
 msgstr ""
 
 #: ../../../source/drivers/raster/driver_summary.rst:14
-msgid "Copy"
+msgid "Copy (2)"
 msgstr ""
 
 #: ../../../source/drivers/raster/driver_summary.rst:15
@@ -1314,12 +1315,11 @@ msgid ":ref:`JP2KAK <raster.jp2kak>`"
 msgstr ""
 
 #: ../../../source/drivers/raster/driver_summary.rst:456
-msgid "JPEG-2000 (based on Kakadu)"
+msgid "JPEG 2000 (based on Kakadu SDK)"
 msgstr ""
 
 #: ../../../source/drivers/raster/driver_summary.rst:460
-#: ../../../source/drivers/raster/driver_summary.rst:496
-msgid "Kakadu library"
+msgid "Kakadu SDK"
 msgstr ""
 
 #: ../../../source/drivers/raster/driver_summary.rst:461
@@ -1389,6 +1389,10 @@ msgstr ""
 
 #: ../../../source/drivers/raster/driver_summary.rst:492
 msgid "JPIP Streaming"
+msgstr ""
+
+#: ../../../source/drivers/raster/driver_summary.rst:496
+msgid "Kakadu library"
 msgstr ""
 
 #: ../../../source/drivers/raster/driver_summary.rst:497
@@ -2108,4 +2112,12 @@ msgstr ""
 
 #: ../../../source/drivers/raster/driver_summary.rst:996
 msgid "ZMap Plus Grid"
+msgstr ""
+
+#: ../../../source/drivers/raster/driver_summary.rst:1002
+msgid "(1): Creation refers to implementing :cpp:func:`GDALCreate`."
+msgstr ""
+
+#: ../../../source/drivers/raster/driver_summary.rst:1003
+msgid "(2): Copy refers to implementing :cpp:func:`GDALCreateCopy`."
 msgstr ""

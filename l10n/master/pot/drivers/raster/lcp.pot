@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -139,94 +140,93 @@ msgstr ""
 
 #: ../../../source/drivers/raster/lcp.rst:78
 msgid ""
-"The LCP driver supports CreateCopy() and metadata values can be set via "
-"creation options. Below is a list of options with default values listed "
-"first."
+"|about-creation-options| The LCP driver supports CreateCopy() and metadata "
+"values can be set via creation options. Below is a list of options with "
+"default values listed first."
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:159
+#: ../../../source/drivers/raster/lcp.rst:160
 msgid ""
 "Creation options that are units of linear measure are fairly lenient. "
 "METERS=METER and FOOT=FEET for the most part."
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:162
+#: ../../../source/drivers/raster/lcp.rst:163
 msgid ""
 "**Note:** CreateCopy does not scale or change any data. By setting the units "
 "for various bands, it is assumed that the values are in the specified units."
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:166
+#: ../../../source/drivers/raster/lcp.rst:167
 msgid "**LCP header format:**"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:169
+#: ../../../source/drivers/raster/lcp.rst:170
 msgid "**Start byte**"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:169
+#: ../../../source/drivers/raster/lcp.rst:170
 msgid "**No. of bytes**"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:169
+#: ../../../source/drivers/raster/lcp.rst:170
 msgid "**Format**"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:169
+#: ../../../source/drivers/raster/lcp.rst:170
 msgid "**Name**"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:169
+#: ../../../source/drivers/raster/lcp.rst:170
 msgid "**Description**"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:170
+#: ../../../source/drivers/raster/lcp.rst:171
 msgid "0"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:170
 #: ../../../source/drivers/raster/lcp.rst:171
 #: ../../../source/drivers/raster/lcp.rst:172
-#: ../../../source/drivers/raster/lcp.rst:177
+#: ../../../source/drivers/raster/lcp.rst:173
 #: ../../../source/drivers/raster/lcp.rst:178
 #: ../../../source/drivers/raster/lcp.rst:179
-#: ../../../source/drivers/raster/lcp.rst:181
+#: ../../../source/drivers/raster/lcp.rst:180
 #: ../../../source/drivers/raster/lcp.rst:182
 #: ../../../source/drivers/raster/lcp.rst:183
-#: ../../../source/drivers/raster/lcp.rst:185
+#: ../../../source/drivers/raster/lcp.rst:184
 #: ../../../source/drivers/raster/lcp.rst:186
 #: ../../../source/drivers/raster/lcp.rst:187
-#: ../../../source/drivers/raster/lcp.rst:189
+#: ../../../source/drivers/raster/lcp.rst:188
 #: ../../../source/drivers/raster/lcp.rst:190
 #: ../../../source/drivers/raster/lcp.rst:191
-#: ../../../source/drivers/raster/lcp.rst:193
+#: ../../../source/drivers/raster/lcp.rst:192
 #: ../../../source/drivers/raster/lcp.rst:194
 #: ../../../source/drivers/raster/lcp.rst:195
-#: ../../../source/drivers/raster/lcp.rst:197
+#: ../../../source/drivers/raster/lcp.rst:196
 #: ../../../source/drivers/raster/lcp.rst:198
 #: ../../../source/drivers/raster/lcp.rst:199
-#: ../../../source/drivers/raster/lcp.rst:201
+#: ../../../source/drivers/raster/lcp.rst:200
 #: ../../../source/drivers/raster/lcp.rst:202
 #: ../../../source/drivers/raster/lcp.rst:203
-#: ../../../source/drivers/raster/lcp.rst:205
+#: ../../../source/drivers/raster/lcp.rst:204
 #: ../../../source/drivers/raster/lcp.rst:206
 #: ../../../source/drivers/raster/lcp.rst:207
-#: ../../../source/drivers/raster/lcp.rst:209
+#: ../../../source/drivers/raster/lcp.rst:208
 #: ../../../source/drivers/raster/lcp.rst:210
 #: ../../../source/drivers/raster/lcp.rst:211
-#: ../../../source/drivers/raster/lcp.rst:213
+#: ../../../source/drivers/raster/lcp.rst:212
 #: ../../../source/drivers/raster/lcp.rst:214
 #: ../../../source/drivers/raster/lcp.rst:215
-#: ../../../source/drivers/raster/lcp.rst:217
+#: ../../../source/drivers/raster/lcp.rst:216
 #: ../../../source/drivers/raster/lcp.rst:218
-#: ../../../source/drivers/raster/lcp.rst:223
+#: ../../../source/drivers/raster/lcp.rst:219
+#: ../../../source/drivers/raster/lcp.rst:224
 msgid "4"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:170
 #: ../../../source/drivers/raster/lcp.rst:171
 #: ../../../source/drivers/raster/lcp.rst:172
-#: ../../../source/drivers/raster/lcp.rst:177
+#: ../../../source/drivers/raster/lcp.rst:173
 #: ../../../source/drivers/raster/lcp.rst:178
 #: ../../../source/drivers/raster/lcp.rst:179
 #: ../../../source/drivers/raster/lcp.rst:180
@@ -268,710 +268,710 @@ msgstr ""
 #: ../../../source/drivers/raster/lcp.rst:216
 #: ../../../source/drivers/raster/lcp.rst:217
 #: ../../../source/drivers/raster/lcp.rst:218
-#: ../../../source/drivers/raster/lcp.rst:223
+#: ../../../source/drivers/raster/lcp.rst:219
+#: ../../../source/drivers/raster/lcp.rst:224
 msgid "long"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:170
+#: ../../../source/drivers/raster/lcp.rst:171
 msgid "crown fuels"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:170
+#: ../../../source/drivers/raster/lcp.rst:171
 msgid ""
 "20 if no crown fuels, 21 if crown fuels exist (crown fuels = canopy height, "
 "canopy base height, canopy bulk density)"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:171
+#: ../../../source/drivers/raster/lcp.rst:172
 msgid "ground fuels"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:171
+#: ../../../source/drivers/raster/lcp.rst:172
 msgid ""
 "20 if no ground fuels, 21 if ground fuels exist (ground fuels = duff "
 "loading, coarse woody)"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:172
 #: ../../../source/drivers/raster/lcp.rst:173
 #: ../../../source/drivers/raster/lcp.rst:174
 #: ../../../source/drivers/raster/lcp.rst:175
 #: ../../../source/drivers/raster/lcp.rst:176
-#: ../../../source/drivers/raster/lcp.rst:219
+#: ../../../source/drivers/raster/lcp.rst:177
 #: ../../../source/drivers/raster/lcp.rst:220
 #: ../../../source/drivers/raster/lcp.rst:221
 #: ../../../source/drivers/raster/lcp.rst:222
-#: ../../../source/drivers/raster/lcp.rst:224
+#: ../../../source/drivers/raster/lcp.rst:223
 #: ../../../source/drivers/raster/lcp.rst:225
+#: ../../../source/drivers/raster/lcp.rst:226
 msgid "8"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:172
+#: ../../../source/drivers/raster/lcp.rst:173
 msgid "latitude"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:172
+#: ../../../source/drivers/raster/lcp.rst:173
 msgid "latitude (negative for southern hemisphere)"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:173
+#: ../../../source/drivers/raster/lcp.rst:174
 msgid "12"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:173
 #: ../../../source/drivers/raster/lcp.rst:174
 #: ../../../source/drivers/raster/lcp.rst:175
 #: ../../../source/drivers/raster/lcp.rst:176
-#: ../../../source/drivers/raster/lcp.rst:219
+#: ../../../source/drivers/raster/lcp.rst:177
 #: ../../../source/drivers/raster/lcp.rst:220
 #: ../../../source/drivers/raster/lcp.rst:221
 #: ../../../source/drivers/raster/lcp.rst:222
-#: ../../../source/drivers/raster/lcp.rst:224
+#: ../../../source/drivers/raster/lcp.rst:223
 #: ../../../source/drivers/raster/lcp.rst:225
+#: ../../../source/drivers/raster/lcp.rst:226
 msgid "double"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:173
+#: ../../../source/drivers/raster/lcp.rst:174
 msgid "loeast"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:173
 #: ../../../source/drivers/raster/lcp.rst:174
 #: ../../../source/drivers/raster/lcp.rst:175
 #: ../../../source/drivers/raster/lcp.rst:176
+#: ../../../source/drivers/raster/lcp.rst:177
 msgid "offset to preserve coordinate precision (legacy from 16-bit OS days)"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:174
+#: ../../../source/drivers/raster/lcp.rst:175
 msgid "20"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:174
+#: ../../../source/drivers/raster/lcp.rst:175
 msgid "hieast"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:175
+#: ../../../source/drivers/raster/lcp.rst:176
 msgid "28"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:175
+#: ../../../source/drivers/raster/lcp.rst:176
 msgid "lonorth"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:176
+#: ../../../source/drivers/raster/lcp.rst:177
 msgid "36"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:176
+#: ../../../source/drivers/raster/lcp.rst:177
 msgid "hinorth"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:177
+#: ../../../source/drivers/raster/lcp.rst:178
 msgid "44"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:177
+#: ../../../source/drivers/raster/lcp.rst:178
 msgid "loelev"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:177
+#: ../../../source/drivers/raster/lcp.rst:178
 msgid "minimum elevation"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:178
+#: ../../../source/drivers/raster/lcp.rst:179
 msgid "48"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:178
+#: ../../../source/drivers/raster/lcp.rst:179
 msgid "hielev"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:178
+#: ../../../source/drivers/raster/lcp.rst:179
 msgid "maximum elevation"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:179
+#: ../../../source/drivers/raster/lcp.rst:180
 msgid "52"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:179
+#: ../../../source/drivers/raster/lcp.rst:180
 msgid "numelev"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:179
+#: ../../../source/drivers/raster/lcp.rst:180
 msgid "number of elevation classes, -1 if > 100"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:180
+#: ../../../source/drivers/raster/lcp.rst:181
 msgid "56"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:180
-#: ../../../source/drivers/raster/lcp.rst:184
-#: ../../../source/drivers/raster/lcp.rst:188
-#: ../../../source/drivers/raster/lcp.rst:192
-#: ../../../source/drivers/raster/lcp.rst:196
-#: ../../../source/drivers/raster/lcp.rst:200
-#: ../../../source/drivers/raster/lcp.rst:204
-#: ../../../source/drivers/raster/lcp.rst:208
-#: ../../../source/drivers/raster/lcp.rst:212
-#: ../../../source/drivers/raster/lcp.rst:216
+#: ../../../source/drivers/raster/lcp.rst:181
+#: ../../../source/drivers/raster/lcp.rst:185
+#: ../../../source/drivers/raster/lcp.rst:189
+#: ../../../source/drivers/raster/lcp.rst:193
+#: ../../../source/drivers/raster/lcp.rst:197
+#: ../../../source/drivers/raster/lcp.rst:201
+#: ../../../source/drivers/raster/lcp.rst:205
+#: ../../../source/drivers/raster/lcp.rst:209
+#: ../../../source/drivers/raster/lcp.rst:213
+#: ../../../source/drivers/raster/lcp.rst:217
 msgid "400"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:180
+#: ../../../source/drivers/raster/lcp.rst:181
 msgid "elevation values"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:180
+#: ../../../source/drivers/raster/lcp.rst:181
 msgid "list of elevation values as longs"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:181
+#: ../../../source/drivers/raster/lcp.rst:182
 msgid "456"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:181
+#: ../../../source/drivers/raster/lcp.rst:182
 msgid "loslope"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:181
+#: ../../../source/drivers/raster/lcp.rst:182
 msgid "minimum slope"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:182
+#: ../../../source/drivers/raster/lcp.rst:183
 msgid "460"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:182
+#: ../../../source/drivers/raster/lcp.rst:183
 msgid "hislope"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:182
+#: ../../../source/drivers/raster/lcp.rst:183
 msgid "maximum slope"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:183
+#: ../../../source/drivers/raster/lcp.rst:184
 msgid "464"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:183
+#: ../../../source/drivers/raster/lcp.rst:184
 msgid "numslope"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:183
+#: ../../../source/drivers/raster/lcp.rst:184
 msgid "number of slope classes, -1 if > 100"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:184
+#: ../../../source/drivers/raster/lcp.rst:185
 msgid "468"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:184
+#: ../../../source/drivers/raster/lcp.rst:185
 msgid "slope values"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:184
+#: ../../../source/drivers/raster/lcp.rst:185
 msgid "list of slope values as longs"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:185
+#: ../../../source/drivers/raster/lcp.rst:186
 msgid "868"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:185
+#: ../../../source/drivers/raster/lcp.rst:186
 msgid "loaspect"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:185
+#: ../../../source/drivers/raster/lcp.rst:186
 msgid "minimum aspect"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:186
+#: ../../../source/drivers/raster/lcp.rst:187
 msgid "872"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:186
+#: ../../../source/drivers/raster/lcp.rst:187
 msgid "hiaspect"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:186
+#: ../../../source/drivers/raster/lcp.rst:187
 msgid "maximum aspect"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:187
+#: ../../../source/drivers/raster/lcp.rst:188
 msgid "876"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:187
+#: ../../../source/drivers/raster/lcp.rst:188
 msgid "numaspects"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:187
+#: ../../../source/drivers/raster/lcp.rst:188
 msgid "number of aspect classes, -1 if > 100"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:188
+#: ../../../source/drivers/raster/lcp.rst:189
 msgid "880"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:188
+#: ../../../source/drivers/raster/lcp.rst:189
 msgid "aspect values"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:188
+#: ../../../source/drivers/raster/lcp.rst:189
 msgid "list of aspect values as longs"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:189
+#: ../../../source/drivers/raster/lcp.rst:190
 msgid "1280"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:189
+#: ../../../source/drivers/raster/lcp.rst:190
 msgid "lofuel"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:189
+#: ../../../source/drivers/raster/lcp.rst:190
 msgid "minimum fuel model value"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:190
+#: ../../../source/drivers/raster/lcp.rst:191
 msgid "1284"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:190
+#: ../../../source/drivers/raster/lcp.rst:191
 msgid "hifuel"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:190
+#: ../../../source/drivers/raster/lcp.rst:191
 msgid "maximum fuel model value"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:191
+#: ../../../source/drivers/raster/lcp.rst:192
 msgid "1288"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:191
+#: ../../../source/drivers/raster/lcp.rst:192
 msgid "numfuel"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:191
+#: ../../../source/drivers/raster/lcp.rst:192
 msgid "number of fuel models -1 if > 100"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:192
+#: ../../../source/drivers/raster/lcp.rst:193
 msgid "1292"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:192
+#: ../../../source/drivers/raster/lcp.rst:193
 msgid "fuel values"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:192
+#: ../../../source/drivers/raster/lcp.rst:193
 msgid "list of fuel model values as longs"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:193
+#: ../../../source/drivers/raster/lcp.rst:194
 msgid "1692"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:193
+#: ../../../source/drivers/raster/lcp.rst:194
 msgid "locover"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:193
+#: ../../../source/drivers/raster/lcp.rst:194
 msgid "minimum canopy cover"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:194
+#: ../../../source/drivers/raster/lcp.rst:195
 msgid "1696"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:194
+#: ../../../source/drivers/raster/lcp.rst:195
 msgid "hicover"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:194
+#: ../../../source/drivers/raster/lcp.rst:195
 msgid "maximum canopy cover"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:195
+#: ../../../source/drivers/raster/lcp.rst:196
 msgid "1700"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:195
+#: ../../../source/drivers/raster/lcp.rst:196
 msgid "numcover"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:195
+#: ../../../source/drivers/raster/lcp.rst:196
 msgid "number of canopy cover classes, -1 if > 100"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:196
+#: ../../../source/drivers/raster/lcp.rst:197
 msgid "1704"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:196
+#: ../../../source/drivers/raster/lcp.rst:197
 msgid "cover values"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:196
+#: ../../../source/drivers/raster/lcp.rst:197
 msgid "list of canopy cover values as longs"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:197
+#: ../../../source/drivers/raster/lcp.rst:198
 msgid "2104"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:197
+#: ../../../source/drivers/raster/lcp.rst:198
 msgid "loheight"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:197
+#: ../../../source/drivers/raster/lcp.rst:198
 msgid "minimum canopy height"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:198
+#: ../../../source/drivers/raster/lcp.rst:199
 msgid "2108"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:198
+#: ../../../source/drivers/raster/lcp.rst:199
 msgid "hiheight"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:198
+#: ../../../source/drivers/raster/lcp.rst:199
 msgid "maximum canopy height"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:199
+#: ../../../source/drivers/raster/lcp.rst:200
 msgid "2112"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:199
+#: ../../../source/drivers/raster/lcp.rst:200
 msgid "numheight"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:199
+#: ../../../source/drivers/raster/lcp.rst:200
 msgid "number of canopy height classes, -1 if > 100"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:200
+#: ../../../source/drivers/raster/lcp.rst:201
 msgid "2116"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:200
+#: ../../../source/drivers/raster/lcp.rst:201
 msgid "height values"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:200
+#: ../../../source/drivers/raster/lcp.rst:201
 msgid "list of canopy height values as longs"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:201
+#: ../../../source/drivers/raster/lcp.rst:202
 msgid "2516"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:201
+#: ../../../source/drivers/raster/lcp.rst:202
 msgid "lobase"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:201
+#: ../../../source/drivers/raster/lcp.rst:202
 msgid "minimum canopy base height"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:202
+#: ../../../source/drivers/raster/lcp.rst:203
 msgid "2520"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:202
+#: ../../../source/drivers/raster/lcp.rst:203
 msgid "hibase"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:202
+#: ../../../source/drivers/raster/lcp.rst:203
 msgid "maximum canopy base height"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:203
+#: ../../../source/drivers/raster/lcp.rst:204
 msgid "2524"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:203
+#: ../../../source/drivers/raster/lcp.rst:204
 msgid "numbase"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:203
+#: ../../../source/drivers/raster/lcp.rst:204
 msgid "number of canopy base height classes, -1 if > 100"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:204
+#: ../../../source/drivers/raster/lcp.rst:205
 msgid "2528"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:204
+#: ../../../source/drivers/raster/lcp.rst:205
 msgid "base values"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:204
+#: ../../../source/drivers/raster/lcp.rst:205
 msgid "list of canopy base height values as longs"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:205
+#: ../../../source/drivers/raster/lcp.rst:206
 msgid "2928"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:205
+#: ../../../source/drivers/raster/lcp.rst:206
 msgid "lodensity"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:205
+#: ../../../source/drivers/raster/lcp.rst:206
 msgid "minimum canopy bulk density"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:206
+#: ../../../source/drivers/raster/lcp.rst:207
 msgid "2932"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:206
+#: ../../../source/drivers/raster/lcp.rst:207
 msgid "hidensity"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:206
+#: ../../../source/drivers/raster/lcp.rst:207
 msgid "maximum canopy bulk density"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:207
+#: ../../../source/drivers/raster/lcp.rst:208
 msgid "2936"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:207
+#: ../../../source/drivers/raster/lcp.rst:208
 msgid "numdensity"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:207
+#: ../../../source/drivers/raster/lcp.rst:208
 msgid "number of canopy bulk density classes, -1 if >100"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:208
+#: ../../../source/drivers/raster/lcp.rst:209
 msgid "2940"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:208
+#: ../../../source/drivers/raster/lcp.rst:209
 msgid "density values"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:208
+#: ../../../source/drivers/raster/lcp.rst:209
 msgid "list of canopy bulk density values as longs"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:209
+#: ../../../source/drivers/raster/lcp.rst:210
 msgid "3340"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:209
+#: ../../../source/drivers/raster/lcp.rst:210
 msgid "loduff"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:209
+#: ../../../source/drivers/raster/lcp.rst:210
 msgid "minimum duff"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:210
+#: ../../../source/drivers/raster/lcp.rst:211
 msgid "3344"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:210
+#: ../../../source/drivers/raster/lcp.rst:211
 msgid "hiduff"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:210
+#: ../../../source/drivers/raster/lcp.rst:211
 msgid "maximum duff"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:211
+#: ../../../source/drivers/raster/lcp.rst:212
 msgid "3348"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:211
+#: ../../../source/drivers/raster/lcp.rst:212
 msgid "numduff"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:211
+#: ../../../source/drivers/raster/lcp.rst:212
 msgid "number of duff classes, -1 if > 100"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:212
+#: ../../../source/drivers/raster/lcp.rst:213
 msgid "3352"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:212
+#: ../../../source/drivers/raster/lcp.rst:213
 msgid "duff values"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:212
+#: ../../../source/drivers/raster/lcp.rst:213
 msgid "list of duff values as longs"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:213
+#: ../../../source/drivers/raster/lcp.rst:214
 msgid "3752"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:213
+#: ../../../source/drivers/raster/lcp.rst:214
 msgid "lowoody"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:213
+#: ../../../source/drivers/raster/lcp.rst:214
 msgid "minimum coarse woody"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:214
+#: ../../../source/drivers/raster/lcp.rst:215
 msgid "3756"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:214
+#: ../../../source/drivers/raster/lcp.rst:215
 msgid "hiwoody"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:214
+#: ../../../source/drivers/raster/lcp.rst:215
 msgid "maximum coarse woody"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:215
+#: ../../../source/drivers/raster/lcp.rst:216
 msgid "3760"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:215
+#: ../../../source/drivers/raster/lcp.rst:216
 msgid "numwoodies"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:215
+#: ../../../source/drivers/raster/lcp.rst:216
 msgid "number of coarse woody classes, -1 if > 100"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:216
+#: ../../../source/drivers/raster/lcp.rst:217
 msgid "3764"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:216
+#: ../../../source/drivers/raster/lcp.rst:217
 msgid "woody values"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:216
+#: ../../../source/drivers/raster/lcp.rst:217
 msgid "list of coarse woody values as longs"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:217
+#: ../../../source/drivers/raster/lcp.rst:218
 msgid "4164"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:217
+#: ../../../source/drivers/raster/lcp.rst:218
 msgid "numeast"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:217
+#: ../../../source/drivers/raster/lcp.rst:218
 msgid "number of raster columns"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:218
+#: ../../../source/drivers/raster/lcp.rst:219
 msgid "4168"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:218
+#: ../../../source/drivers/raster/lcp.rst:219
 msgid "numnorth"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:218
+#: ../../../source/drivers/raster/lcp.rst:219
 msgid "number of raster rows"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:219
+#: ../../../source/drivers/raster/lcp.rst:220
 msgid "4172"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:219
+#: ../../../source/drivers/raster/lcp.rst:220
 msgid "EastUtm"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:219
+#: ../../../source/drivers/raster/lcp.rst:220
 msgid "max X"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:220
+#: ../../../source/drivers/raster/lcp.rst:221
 msgid "4180"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:220
+#: ../../../source/drivers/raster/lcp.rst:221
 msgid "WestUtm"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:220
+#: ../../../source/drivers/raster/lcp.rst:221
 msgid "min X"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:221
+#: ../../../source/drivers/raster/lcp.rst:222
 msgid "4188"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:221
+#: ../../../source/drivers/raster/lcp.rst:222
 msgid "NorthUtm"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:221
+#: ../../../source/drivers/raster/lcp.rst:222
 msgid "max Y"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:222
+#: ../../../source/drivers/raster/lcp.rst:223
 msgid "4196"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:222
+#: ../../../source/drivers/raster/lcp.rst:223
 msgid "SouthUtm"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:222
+#: ../../../source/drivers/raster/lcp.rst:223
 msgid "min Y"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:223
+#: ../../../source/drivers/raster/lcp.rst:224
 msgid "4204"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:223
+#: ../../../source/drivers/raster/lcp.rst:224
 msgid "GridUnits"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:223
+#: ../../../source/drivers/raster/lcp.rst:224
 msgid "linear unit: 0 = meters, 1 = feet, 2 = kilometers"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:224
+#: ../../../source/drivers/raster/lcp.rst:225
 msgid "4208"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:224
+#: ../../../source/drivers/raster/lcp.rst:225
 msgid "XResol"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:224
+#: ../../../source/drivers/raster/lcp.rst:225
 msgid "cell size width in GridUnits"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:225
+#: ../../../source/drivers/raster/lcp.rst:226
 msgid "4216"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:225
+#: ../../../source/drivers/raster/lcp.rst:226
 msgid "YResol"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:225
+#: ../../../source/drivers/raster/lcp.rst:226
 msgid "cell size height in GridUnits"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:226
+#: ../../../source/drivers/raster/lcp.rst:227
 msgid "4224"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:226
 #: ../../../source/drivers/raster/lcp.rst:227
 #: ../../../source/drivers/raster/lcp.rst:228
 #: ../../../source/drivers/raster/lcp.rst:229
@@ -981,10 +981,10 @@ msgstr ""
 #: ../../../source/drivers/raster/lcp.rst:233
 #: ../../../source/drivers/raster/lcp.rst:234
 #: ../../../source/drivers/raster/lcp.rst:235
+#: ../../../source/drivers/raster/lcp.rst:236
 msgid "2"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:226
 #: ../../../source/drivers/raster/lcp.rst:227
 #: ../../../source/drivers/raster/lcp.rst:228
 #: ../../../source/drivers/raster/lcp.rst:229
@@ -994,136 +994,136 @@ msgstr ""
 #: ../../../source/drivers/raster/lcp.rst:233
 #: ../../../source/drivers/raster/lcp.rst:234
 #: ../../../source/drivers/raster/lcp.rst:235
+#: ../../../source/drivers/raster/lcp.rst:236
 msgid "short"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:226
+#: ../../../source/drivers/raster/lcp.rst:227
 msgid "EUnits"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:226
+#: ../../../source/drivers/raster/lcp.rst:227
 msgid "elevation units: 0 = meters, 1 = feet"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:227
+#: ../../../source/drivers/raster/lcp.rst:228
 msgid "4226"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:227
+#: ../../../source/drivers/raster/lcp.rst:228
 msgid "SUnits"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:227
+#: ../../../source/drivers/raster/lcp.rst:228
 msgid "slope units: 0 = degrees, 1 = percent"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:228
+#: ../../../source/drivers/raster/lcp.rst:229
 msgid "4228"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:228
+#: ../../../source/drivers/raster/lcp.rst:229
 msgid "AUnits"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:228
+#: ../../../source/drivers/raster/lcp.rst:229
 msgid ""
 "aspect units: 0 = Grass categories, 1 = Grass degrees, 2 = azimuth degrees"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:229
+#: ../../../source/drivers/raster/lcp.rst:230
 msgid "4230"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:229
+#: ../../../source/drivers/raster/lcp.rst:230
 msgid "FOptions"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:229
+#: ../../../source/drivers/raster/lcp.rst:230
 msgid ""
 "fuel model options: 0 = no custom models AND no conversion file, 1 = custom "
 "models BUT no conversion file, 2 = no custom models BUT conversion file, 3 = "
 "custom models AND conversion file needed"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:230
+#: ../../../source/drivers/raster/lcp.rst:231
 msgid "4232"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:230
+#: ../../../source/drivers/raster/lcp.rst:231
 msgid "CUnits"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:230
+#: ../../../source/drivers/raster/lcp.rst:231
 msgid "canopy cover units: 0 = categories (0-4), 1 = percent"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:231
+#: ../../../source/drivers/raster/lcp.rst:232
 msgid "4234"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:231
+#: ../../../source/drivers/raster/lcp.rst:232
 msgid "HUnits"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:231
+#: ../../../source/drivers/raster/lcp.rst:232
 msgid "canopy height units: 1 = meters, 2 = feet, 3 = m x 10, 4 = ft x 10"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:232
+#: ../../../source/drivers/raster/lcp.rst:233
 msgid "4236"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:232
+#: ../../../source/drivers/raster/lcp.rst:233
 msgid "BUnits"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:232
+#: ../../../source/drivers/raster/lcp.rst:233
 msgid "canopy base height units: 1 = meters, 2 = feet, 3 = m x 10, 4 = ft x 10"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:233
+#: ../../../source/drivers/raster/lcp.rst:234
 msgid "4238"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:233
+#: ../../../source/drivers/raster/lcp.rst:234
 msgid "PUnits"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:233
+#: ../../../source/drivers/raster/lcp.rst:234
 msgid ""
 "canopy bulk density units: 1 = kg/m^3, 2 = lb/ft^3, 3 = kg/m^3 x 100, 4 = lb/"
 "ft^3 x 1000"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:234
+#: ../../../source/drivers/raster/lcp.rst:235
 msgid "4240"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:234
+#: ../../../source/drivers/raster/lcp.rst:235
 msgid "DUnits"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:234
+#: ../../../source/drivers/raster/lcp.rst:235
 msgid "duff units: 1 = Mg/ha x 10, 2 = t/ac x 10"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:235
+#: ../../../source/drivers/raster/lcp.rst:236
 msgid "4242"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:235
+#: ../../../source/drivers/raster/lcp.rst:236
 msgid "WOptions"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:235
+#: ../../../source/drivers/raster/lcp.rst:236
 msgid "coarse woody options (1 if coarse woody band is present)"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:236
+#: ../../../source/drivers/raster/lcp.rst:237
 msgid "4244"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:236
 #: ../../../source/drivers/raster/lcp.rst:237
 #: ../../../source/drivers/raster/lcp.rst:238
 #: ../../../source/drivers/raster/lcp.rst:239
@@ -1133,10 +1133,10 @@ msgstr ""
 #: ../../../source/drivers/raster/lcp.rst:243
 #: ../../../source/drivers/raster/lcp.rst:244
 #: ../../../source/drivers/raster/lcp.rst:245
+#: ../../../source/drivers/raster/lcp.rst:246
 msgid "256"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:236
 #: ../../../source/drivers/raster/lcp.rst:237
 #: ../../../source/drivers/raster/lcp.rst:238
 #: ../../../source/drivers/raster/lcp.rst:239
@@ -1147,141 +1147,142 @@ msgstr ""
 #: ../../../source/drivers/raster/lcp.rst:244
 #: ../../../source/drivers/raster/lcp.rst:245
 #: ../../../source/drivers/raster/lcp.rst:246
+#: ../../../source/drivers/raster/lcp.rst:247
 msgid "char[]"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:236
+#: ../../../source/drivers/raster/lcp.rst:237
 msgid "ElevFile"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:236
+#: ../../../source/drivers/raster/lcp.rst:237
 msgid "elevation file name"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:237
+#: ../../../source/drivers/raster/lcp.rst:238
 msgid "4500"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:237
+#: ../../../source/drivers/raster/lcp.rst:238
 msgid "SlopeFile"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:237
+#: ../../../source/drivers/raster/lcp.rst:238
 msgid "slope file name"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:238
+#: ../../../source/drivers/raster/lcp.rst:239
 msgid "4756"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:238
+#: ../../../source/drivers/raster/lcp.rst:239
 msgid "AspectFile"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:238
+#: ../../../source/drivers/raster/lcp.rst:239
 msgid "aspect file name"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:239
+#: ../../../source/drivers/raster/lcp.rst:240
 msgid "5012"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:239
+#: ../../../source/drivers/raster/lcp.rst:240
 msgid "FuelFile"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:239
+#: ../../../source/drivers/raster/lcp.rst:240
 msgid "fuel model file name"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:240
+#: ../../../source/drivers/raster/lcp.rst:241
 msgid "5268"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:240
+#: ../../../source/drivers/raster/lcp.rst:241
 msgid "CoverFile"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:240
+#: ../../../source/drivers/raster/lcp.rst:241
 msgid "canopy cover file name"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:241
+#: ../../../source/drivers/raster/lcp.rst:242
 msgid "5524"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:241
+#: ../../../source/drivers/raster/lcp.rst:242
 msgid "HeightFile"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:241
+#: ../../../source/drivers/raster/lcp.rst:242
 msgid "canopy height file name"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:242
+#: ../../../source/drivers/raster/lcp.rst:243
 msgid "5780"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:242
+#: ../../../source/drivers/raster/lcp.rst:243
 msgid "BaseFile"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:242
+#: ../../../source/drivers/raster/lcp.rst:243
 msgid "canopy base file name"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:243
+#: ../../../source/drivers/raster/lcp.rst:244
 msgid "6036"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:243
+#: ../../../source/drivers/raster/lcp.rst:244
 msgid "DensityFile"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:243
+#: ../../../source/drivers/raster/lcp.rst:244
 msgid "canopy bulk density file name"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:244
+#: ../../../source/drivers/raster/lcp.rst:245
 msgid "6292"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:244
+#: ../../../source/drivers/raster/lcp.rst:245
 msgid "DuffFile"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:244
+#: ../../../source/drivers/raster/lcp.rst:245
 msgid "duff file name"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:245
+#: ../../../source/drivers/raster/lcp.rst:246
 msgid "6548"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:245
+#: ../../../source/drivers/raster/lcp.rst:246
 msgid "WoodyFile"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:245
+#: ../../../source/drivers/raster/lcp.rst:246
 msgid "coarse woody file name"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:246
+#: ../../../source/drivers/raster/lcp.rst:247
 msgid "6804"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:246
+#: ../../../source/drivers/raster/lcp.rst:247
 msgid "512"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:246
+#: ../../../source/drivers/raster/lcp.rst:247
 msgid "Description"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:246
+#: ../../../source/drivers/raster/lcp.rst:247
 msgid "LCP file description"
 msgstr ""
 
-#: ../../../source/drivers/raster/lcp.rst:249
+#: ../../../source/drivers/raster/lcp.rst:250
 msgid "*Chris Toney, 2009-02-14*"
 msgstr ""

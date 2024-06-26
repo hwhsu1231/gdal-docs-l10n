@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -217,82 +217,84 @@ msgid "Open options"
 msgstr ""
 
 #: ../../../source/drivers/vector/carto.rst:120
-msgid "The following open options are available:"
+msgid "The following open options are available: |about-open-options|"
 msgstr ""
 
-#: ../../../source/drivers/vector/carto.rst:137
+#: ../../../source/drivers/vector/carto.rst:138
 msgid "Layer creation options"
 msgstr ""
 
-#: ../../../source/drivers/vector/carto.rst:139
-msgid "The following layer creation options are available:"
+#: ../../../source/drivers/vector/carto.rst:140
+msgid ""
+"|about-layer-creation-options| The following layer creation options are "
+"supported:"
 msgstr ""
 
-#: ../../../source/drivers/vector/carto.rst:162
+#: ../../../source/drivers/vector/carto.rst:164
 msgid ""
 "**SRS**: Output SRS must be EPSG:4326. You can use ``-a_srs`` or ``-t_srs`` "
 "to assign or transform to 4326 before importing."
 msgstr ""
 
-#: ../../../source/drivers/vector/carto.rst:164
+#: ../../../source/drivers/vector/carto.rst:166
 msgid ""
 "**Geometry type**: Must be different than NONE. You can set to something "
 "generic with ``-nlt GEOMETRY``."
 msgstr ""
 
-#: ../../../source/drivers/vector/carto.rst:178
+#: ../../../source/drivers/vector/carto.rst:180
 msgid "Configuration options"
 msgstr ""
 
-#: ../../../source/drivers/vector/carto.rst:180
+#: ../../../source/drivers/vector/carto.rst:182
 msgid ""
-"The following :ref:`configuration options <configoptions>` are available:"
-msgstr ""
-
-#: ../../../source/drivers/vector/carto.rst:207
-msgid "Examples"
+"|about-config-options| The following configuration options are available:"
 msgstr ""
 
 #: ../../../source/drivers/vector/carto.rst:209
-msgid "Accessing data from a public table:"
+msgid "Examples"
 msgstr ""
 
 #: ../../../source/drivers/vector/carto.rst:211
+msgid "Accessing data from a public table:"
+msgstr ""
+
+#: ../../../source/drivers/vector/carto.rst:213
 msgid "ogrinfo -ro \"Carto:gdalautotest2 tables=tm_world_borders_simpl_0_3\""
 msgstr ""
 
-#: ../../../source/drivers/vector/carto.rst:215
+#: ../../../source/drivers/vector/carto.rst:217
 msgid "Creating and populating a table from a shapefile:"
 msgstr ""
 
-#: ../../../source/drivers/vector/carto.rst:217
+#: ../../../source/drivers/vector/carto.rst:219
 msgid ""
 "ogr2ogr --config CARTO_API_KEY abcdefghijklmnopqrstuvw -f Carto \"Carto:"
 "myaccount\" myshapefile.shp"
 msgstr ""
 
-#: ../../../source/drivers/vector/carto.rst:221
+#: ../../../source/drivers/vector/carto.rst:223
 msgid ""
 "Creating and populating a table from a CSV containing geometries on "
 "EPSG:4326:"
 msgstr ""
 
-#: ../../../source/drivers/vector/carto.rst:223
+#: ../../../source/drivers/vector/carto.rst:225
 msgid ""
 "ogr2ogr --config CARTO_API_KEY abcdefghijklmnopqrstuvw -f Carto \"Carto:"
 "myaccount\" file.csv -a_srs 4326 -nlt GEOMETRY"
 msgstr ""
 
-#: ../../../source/drivers/vector/carto.rst:229
+#: ../../../source/drivers/vector/carto.rst:231
 msgid ""
 "The ``-a_srs`` and ``-nlt`` must be provided to CARTODBFY since the "
 "information isn't extracted from the CSV."
 msgstr ""
 
-#: ../../../source/drivers/vector/carto.rst:233
+#: ../../../source/drivers/vector/carto.rst:235
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/vector/carto.rst:235
+#: ../../../source/drivers/vector/carto.rst:237
 msgid "`Carto API overview <https://carto.com/docs/>`__"
 msgstr ""

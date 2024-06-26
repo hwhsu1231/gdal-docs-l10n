@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1268,59 +1269,67 @@ msgstr ""
 
 #: ../../../source/drivers/raster/wms.rst:478
 msgid ""
+"Starting with GDAL 3.10, specifying the ``-if WMS`` option to command line "
+"utilities accepting it, or ``WMS`` as the only value of the "
+"``papszAllowedDrivers`` of :cpp:func:`GDALOpenEx`, also forces the driver to "
+"recognize the passed URL,  without the ``WMS:`` prefix."
+msgstr ""
+
+#: ../../../source/drivers/raster/wms.rst:483
+msgid ""
 "a pseudo GetMap request, such as the subdataset name returned by the "
 "previous syntax :"
 msgstr ""
 
-#: ../../../source/drivers/raster/wms.rst:483
+#: ../../../source/drivers/raster/wms.rst:488
 msgid ""
 "gdalinfo \"WMS:http://wms.geobase.ca/wms-bin/cubeserv.cgi?"
 "SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=DNEC_250K%3AELEVATION%2FELEVATION&SRS=EPSG:42304&BBOX=-3000000,-1500000,6000000,4500000\""
 msgstr ""
 
-#: ../../../source/drivers/raster/wms.rst:485
+#: ../../../source/drivers/raster/wms.rst:490
 msgid ""
 "the base URL of a Tiled WMS service, prefixed with *WMS:* and with "
 "request=GetTileService as GET argument:"
 msgstr ""
 
-#: ../../../source/drivers/raster/wms.rst:490
+#: ../../../source/drivers/raster/wms.rst:495
 msgid ""
 "gdalinfo \"WMS:https://gibs.earthdata.nasa.gov/twms/epsg4326/best/twms.cgi?"
 "request=GetTileService\""
 msgstr ""
 
-#: ../../../source/drivers/raster/wms.rst:492
+#: ../../../source/drivers/raster/wms.rst:497
 msgid ""
 "A list of subdatasets will be returned, resulting from the parsing of the "
 "GetTileService request on that server."
 msgstr ""
 
-#: ../../../source/drivers/raster/wms.rst:495
+#: ../../../source/drivers/raster/wms.rst:500
 msgid "the URL of a REST definition for a ArcGIS MapServer:"
 msgstr ""
 
-#: ../../../source/drivers/raster/wms.rst:499
+#: ../../../source/drivers/raster/wms.rst:504
 msgid ""
 "gdalinfo \"http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/"
 "MapServer?f=json&pretty=true\""
 msgstr ""
 
-#: ../../../source/drivers/raster/wms.rst:501
+#: ../../../source/drivers/raster/wms.rst:506
 msgid "(GDAL >= 2.1.0) the URL of a IIP image:"
 msgstr ""
 
-#: ../../../source/drivers/raster/wms.rst:505
+#: ../../../source/drivers/raster/wms.rst:510
 msgid ""
 "gdalinfo \"IIP:http://merovingio.c2rmf.cnrs.fr/fcgi-bin/iipsrv.fcgi?"
 "FIF=globe.256x256.tif\""
 msgstr ""
 
-#: ../../../source/drivers/raster/wms.rst:508
+#: ../../../source/drivers/raster/wms.rst:513
 msgid "Generation of WMS service description XML file"
 msgstr ""
 
-#: ../../../source/drivers/raster/wms.rst:510
+#: ../../../source/drivers/raster/wms.rst:515
 msgid ""
 "The WMS service description XML file can be generated manually, or created "
 "as the output of the CreateCopy() operation of the WMS driver, only if the "
@@ -1329,53 +1338,53 @@ msgid ""
 "\"Open syntax\" and as output an XML file. For example:"
 msgstr ""
 
-#: ../../../source/drivers/raster/wms.rst:518
+#: ../../../source/drivers/raster/wms.rst:523
 msgid ""
 "gdal_translate \"http://server.arcgisonline.com/ArcGIS/rest/services/"
 "World_Imagery/MapServer?f=json\" wms.xml -of WMS"
 msgstr ""
 
-#: ../../../source/drivers/raster/wms.rst:520
+#: ../../../source/drivers/raster/wms.rst:525
 msgid ""
 "The generated file will come with default values that you may need to edit."
 msgstr ""
 
-#: ../../../source/drivers/raster/wms.rst:524
+#: ../../../source/drivers/raster/wms.rst:529
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/raster/wms.rst:526
+#: ../../../source/drivers/raster/wms.rst:531
 msgid "`OGC WMS Standards <http://www.opengeospatial.org/standards/wms>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/wms.rst:527
+#: ../../../source/drivers/raster/wms.rst:532
 msgid ""
 "`WMS Tiling Client Recommendation (WMS-C) <http://wiki.osgeo.org/index.php/"
 "WMS_Tiling_Client_Recommendation>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/wms.rst:529
+#: ../../../source/drivers/raster/wms.rst:534
 msgid ""
 "`WorldWind TileService <http://www.worldwindcentral.com/wiki/TileService>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/wms.rst:531
+#: ../../../source/drivers/raster/wms.rst:536
 msgid ""
 "`TMS Specification <http://wiki.osgeo.org/wiki/"
 "Tile_Map_Service_Specification>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/wms.rst:533
+#: ../../../source/drivers/raster/wms.rst:538
 msgid ""
 "`OnEarth Tiled WMS specification <http://web.archive.org/web/20130511182803/"
 "http://onearth.jpl.nasa.gov/tiled.html>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/wms.rst:535
+#: ../../../source/drivers/raster/wms.rst:540
 msgid ""
 "`ArcGIS Server REST API <http://resources.arcgis.com/en/help/rest/apiref/>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/wms.rst:537
+#: ../../../source/drivers/raster/wms.rst:542
 msgid ":ref:`raster.wmts` driver page."
 msgstr ""

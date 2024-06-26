@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -263,7 +263,13 @@ msgstr ""
 msgid "Dataset creation options"
 msgstr ""
 
-#: ../../../source/drivers/vector/georss.rst:228
+#: ../../../source/drivers/vector/georss.rst:149
+msgid ""
+"|about-dataset-creation-options| The following dataset creation options are "
+"supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/georss.rst:231
 msgid ""
 "When translating from a source dataset, it may be necessary to rename the "
 "field names from the source dataset to the expected RSS or ATOM attribute "
@@ -272,11 +278,11 @@ msgid ""
 "ogr2ogr utility (see :ref:`rfc-21`)"
 msgstr ""
 
-#: ../../../source/drivers/vector/georss.rst:235
+#: ../../../source/drivers/vector/georss.rst:238
 msgid "VSI Virtual File System API support"
 msgstr ""
 
-#: ../../../source/drivers/vector/georss.rst:237
+#: ../../../source/drivers/vector/georss.rst:240
 msgid ""
 "The driver supports reading and writing to files managed by VSI Virtual File "
 "System API, which include \"regular\" files, as well as files in the /"
@@ -284,48 +290,48 @@ msgid ""
 "domains."
 msgstr ""
 
-#: ../../../source/drivers/vector/georss.rst:242
+#: ../../../source/drivers/vector/georss.rst:245
 msgid "Writing to /dev/stdout or /vsistdout/ is also supported."
 msgstr ""
 
-#: ../../../source/drivers/vector/georss.rst:245
+#: ../../../source/drivers/vector/georss.rst:248
 msgid "Example"
 msgstr ""
 
-#: ../../../source/drivers/vector/georss.rst:247
+#: ../../../source/drivers/vector/georss.rst:250
 msgid ""
 "The ogrinfo utility can be used to dump the content of a GeoRSS datafile :"
 msgstr ""
 
-#: ../../../source/drivers/vector/georss.rst:252
+#: ../../../source/drivers/vector/georss.rst:255
 msgid "ogrinfo -ro -al input.xml"
 msgstr ""
 
-#: ../../../source/drivers/vector/georss.rst:256
+#: ../../../source/drivers/vector/georss.rst:259
 msgid ""
 "The ogr2ogr utility can be used to do GeoRSS to GeoRSS translation. For "
 "example, to translate a Atom document into a RSS document"
 msgstr ""
 
-#: ../../../source/drivers/vector/georss.rst:261
+#: ../../../source/drivers/vector/georss.rst:264
 msgid ""
 "ogr2ogr -f GeoRSS output.xml input.xml \"select link_href as link, title, "
 "content as description, author_name as author, id as guid from georss\""
 msgstr ""
 
-#: ../../../source/drivers/vector/georss.rst:265
+#: ../../../source/drivers/vector/georss.rst:268
 msgid ""
 "Note : in this example we map equivalent fields, from the source name to the "
 "expected name of the destination format."
 msgstr ""
 
-#: ../../../source/drivers/vector/georss.rst:269
+#: ../../../source/drivers/vector/georss.rst:272
 msgid ""
 "The following Python script shows how to read the content of a online GeoRSS "
 "feed"
 msgstr ""
 
-#: ../../../source/drivers/vector/georss.rst:274
+#: ../../../source/drivers/vector/georss.rst:277
 msgid ""
 "#!/usr/bin/python\n"
 "import gdal\n"
@@ -360,33 +366,33 @@ msgid ""
 "gdal.Unlink('/vsimem/temp')"
 msgstr ""
 
-#: ../../../source/drivers/vector/georss.rst:306
+#: ../../../source/drivers/vector/georss.rst:309
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/vector/georss.rst:308
+#: ../../../source/drivers/vector/georss.rst:311
 msgid "`Home page for GeoRSS format <http://georss.org/>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/georss.rst:309
+#: ../../../source/drivers/vector/georss.rst:312
 msgid ""
 "`Wikipedia page for GeoRSS format <http://en.wikipedia.org/wiki/GeoRSS>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/georss.rst:311
+#: ../../../source/drivers/vector/georss.rst:314
 msgid "`Wikipedia page for RSS format <http://en.wikipedia.org/wiki/RSS>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/georss.rst:312
+#: ../../../source/drivers/vector/georss.rst:315
 msgid "`RSS 2.0 specification <http://www.rssboard.org/rss-specification>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/georss.rst:313
+#: ../../../source/drivers/vector/georss.rst:316
 msgid ""
 "`Wikipedia page for Atom format <http://en.wikipedia.org/wiki/"
 "Atom_(standard)>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/georss.rst:315
+#: ../../../source/drivers/vector/georss.rst:318
 msgid "`Atom 1.0 specification <http://www.ietf.org/rfc/rfc4287.txt>`__"
 msgstr ""

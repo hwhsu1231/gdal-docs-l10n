@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,8 +62,8 @@ msgid ""
 "Georeferencing information can come from different sources : internal "
 "(GeoJP2 or GMLJP2 boxes), worldfile .j2w/.wld sidecar files, or PAM "
 "(Persistent Auxiliary metadata) .aux.xml sidecar files. By default, "
-"information is fetched in following order (first listed is the most "
-"prioritary): PAM, GeoJP2, GMLJP2, WORLDFILE."
+"information is fetched in following order (first listed is the highest "
+"priority): PAM, GeoJP2, GMLJP2, WORLDFILE."
 msgstr ""
 
 #: ../../../source/drivers/raster/jp2mrsid.rst:35
@@ -72,14 +72,14 @@ msgid ""
 "changed with the :config:`GDAL_GEOREF_SOURCES` configuration option (or :oo:"
 "`GEOREF_SOURCES` open option) whose value is a comma-separated list of the "
 "following keywords : PAM, GEOJP2, GMLJP2, INTERNAL (shortcut for GEOJP2,"
-"GMLJP2), WORLDFILE, NONE. First mentioned sources are the most prioritary "
-"over the next ones. A non mentioned source will be ignored."
+"GMLJP2), WORLDFILE, NONE. Earlier mentioned sources take priority over later "
+"ones. A non mentioned source will be ignored."
 msgstr ""
 
 #: ../../../source/drivers/raster/jp2mrsid.rst:42
 msgid ""
 "For example setting it to \"WORLDFILE,PAM,INTERNAL\" will make a "
-"geotransformation matrix from a potential worldfile prioritary over PAM or "
+"geotransformation matrix from a potential worldfile priority over PAM or "
 "internal JP2 boxes. Setting it to \"PAM,WORLDFILE,GEOJP2\" will use the "
 "mentioned sources and ignore GMLJP2 boxes."
 msgstr ""
@@ -88,17 +88,21 @@ msgstr ""
 msgid "Open Options"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2mrsid.rst:59
+#: ../../../source/drivers/raster/jp2mrsid.rst:50
+msgid "|about-open-options| The following open option is available:"
+msgstr ""
+
+#: ../../../source/drivers/raster/jp2mrsid.rst:62
 msgid "Creation Options"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2mrsid.rst:61
+#: ../../../source/drivers/raster/jp2mrsid.rst:64
 msgid ""
 "If you have the MrSID ESDK (5.x or newer), it can be used to write JPEG2000 "
-"files. The following creation options are supported."
+"files. |about-creation-options| The following creation options are supported."
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2mrsid.rst:87
+#: ../../../source/drivers/raster/jp2mrsid.rst:92
 msgid ""
 "<?xml version=\"1.0\"?>\n"
 "<Jp2Profile version=\"1.0\">\n"
@@ -135,14 +139,14 @@ msgid ""
 "</Jp2Profile>"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2mrsid.rst:122
+#: ../../../source/drivers/raster/jp2mrsid.rst:127
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2mrsid.rst:124
+#: ../../../source/drivers/raster/jp2mrsid.rst:129
 msgid "Implemented as :source_file:`frmts/mrsid/mrsiddataset.cpp`."
 msgstr ""
 
-#: ../../../source/drivers/raster/jp2mrsid.rst:125
+#: ../../../source/drivers/raster/jp2mrsid.rst:130
 msgid "`Extensis web site <http://www.extensis.com/support/developers>`__"
 msgstr ""

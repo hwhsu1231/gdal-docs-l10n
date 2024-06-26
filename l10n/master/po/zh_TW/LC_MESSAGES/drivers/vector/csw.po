@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -98,72 +98,76 @@ msgstr ""
 msgid "Open options"
 msgstr ""
 
-#: ../../../source/drivers/vector/csw.rst:86
+#: ../../../source/drivers/vector/csw.rst:52
+msgid "|about-open-options| The following open options are supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:89
 msgid "Configuration options"
 msgstr ""
 
-#: ../../../source/drivers/vector/csw.rst:88
-msgid ""
-"The following :ref:`configuration options <configoptions>` are available:"
-msgstr ""
-
 #: ../../../source/drivers/vector/csw.rst:91
-msgid ":copy-config:`GML_INVERT_AXIS_ORDER_IF_LAT_LONG`"
+msgid ""
+"|about-config-options| The following configuration options are available:"
 msgstr ""
 
 #: ../../../source/drivers/vector/csw.rst:94
+msgid ":copy-config:`GML_INVERT_AXIS_ORDER_IF_LAT_LONG`"
+msgstr ""
+
+#: ../../../source/drivers/vector/csw.rst:97
 msgid "Examples"
 msgstr ""
 
-#: ../../../source/drivers/vector/csw.rst:96
+#: ../../../source/drivers/vector/csw.rst:99
 msgid "Listing all the records of a CSW server:"
 msgstr ""
 
-#: ../../../source/drivers/vector/csw.rst:100
+#: ../../../source/drivers/vector/csw.rst:103
 msgid "ogrinfo -ro -al -noextent CSW:http://catalog.data.gov/csw"
 msgstr ""
 
-#: ../../../source/drivers/vector/csw.rst:102
+#: ../../../source/drivers/vector/csw.rst:105
 msgid ""
 "Listing all the records of a CSW server with spatial and an attribute filter "
 "on a give field:"
 msgstr ""
 
-#: ../../../source/drivers/vector/csw.rst:107
+#: ../../../source/drivers/vector/csw.rst:110
 msgid ""
 "ogrinfo -ro -al -noextent CSW:http://catalog.data.gov/csw -spat 2 49 2 49 -"
 "where \"subject LIKE '%mineralogy%'\""
 msgstr ""
 
-#: ../../../source/drivers/vector/csw.rst:109
+#: ../../../source/drivers/vector/csw.rst:112
 msgid ""
 "Listing all the records of a CSW server that matches a text on any text "
 "field:"
 msgstr ""
 
-#: ../../../source/drivers/vector/csw.rst:114
+#: ../../../source/drivers/vector/csw.rst:117
 msgid ""
 "ogrinfo -ro -al -q CSW:http://catalog.data.gov/csw -spat 2 49 2 49 -where "
 "\"anytext LIKE '%France%'\""
 msgstr ""
 
-#: ../../../source/drivers/vector/csw.rst:116
+#: ../../../source/drivers/vector/csw.rst:119
 msgid "Listing all the records of a CSW server as ISO 19115/19119:"
 msgstr ""
 
-#: ../../../source/drivers/vector/csw.rst:120
+#: ../../../source/drivers/vector/csw.rst:123
 msgid ""
 "ogrinfo -ro -al -q CSW:http://catalog.data.gov/csw -oo OUTPUT_SCHEMA=gmd"
 msgstr ""
 
-#: ../../../source/drivers/vector/csw.rst:123
+#: ../../../source/drivers/vector/csw.rst:126
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/vector/csw.rst:125
+#: ../../../source/drivers/vector/csw.rst:128
 msgid "`OGC CSW Standard <http://www.opengeospatial.org/standards/cat>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/csw.rst:126
+#: ../../../source/drivers/vector/csw.rst:129
 msgid ":ref:`GML driver documentation <vector.gml>`"
 msgstr ""

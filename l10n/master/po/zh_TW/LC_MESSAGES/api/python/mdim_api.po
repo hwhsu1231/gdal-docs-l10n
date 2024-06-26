@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:33+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,51 +17,51 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../../source/api/python/mdim_api.rst:4
+#: ../../../source/api/python/mdim_api.rst:9
 msgid "Python Multi-dimensional array API"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.Group:1
 msgid "Proxy of C++ GDALGroupHS class."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.Dimension:1
 msgid "Proxy of C++ GDALDimensionHS class."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.MDArray:1
 msgid "Proxy of C++ GDALMDArrayHS class."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.MDArray.GetShape:1
 msgid "Return the shape of the array"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.MDArray.ReadAsMaskedArray:1
 msgid "Return a numpy masked array of ReadAsArray() with GetMask()"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.MDArray.shape:1
 msgid "Returns the shape of the array."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.Attribute:1
 msgid "Proxy of C++ GDALAttributeHS class."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.Attribute.Read:1
 msgid "Read an attribute and return it with the most appropriate type"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gdal.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gdal.py:docstring
 #: of osgeo.gdal.ExtendedDataType:1
 msgid "Proxy of C++ GDALExtendedDataTypeHS class."
 msgstr ""

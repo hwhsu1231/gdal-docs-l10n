@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -225,14 +226,14 @@ msgid "Opening options"
 msgstr ""
 
 #: ../../../source/drivers/vector/mvt.rst:163
-msgid "The following open options are available:"
+msgid "|about-open-options| The following open options are available:"
 msgstr ""
 
-#: ../../../source/drivers/vector/mvt.rst:213
+#: ../../../source/drivers/vector/mvt.rst:214
 msgid "Creation issues"
 msgstr ""
 
-#: ../../../source/drivers/vector/mvt.rst:215
+#: ../../../source/drivers/vector/mvt.rst:216
 msgid ""
 "Tiles are generated with WebMercator (EPSG:3857) projection by default "
 "(custom tiling schemes can be defined with the TILING_SCHEME option). "
@@ -240,34 +241,40 @@ msgid ""
 "ranges a given layer is written."
 msgstr ""
 
-#: ../../../source/drivers/vector/mvt.rst:220
+#: ../../../source/drivers/vector/mvt.rst:221
 msgid ""
 "Part of the conversion is multi-threaded by default, using as many threads "
 "as there are cores. The number of threads used can be controlled with the :"
 "config:`GDAL_NUM_THREADS` configuration option."
 msgstr ""
 
-#: ../../../source/drivers/vector/mvt.rst:225
+#: ../../../source/drivers/vector/mvt.rst:226
 msgid "Dataset creation options"
 msgstr ""
 
-#: ../../../source/drivers/vector/mvt.rst:265
+#: ../../../source/drivers/vector/mvt.rst:228
+msgid ""
+"|about-dataset-creation-options| The following dataset creation options are "
+"supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/mvt.rst:269
 msgid ""
 "Maximum zoom level at which tiles are generated. Maximum supported value is "
 "22."
 msgstr ""
 
-#: ../../../source/drivers/vector/mvt.rst:366
+#: ../../../source/drivers/vector/mvt.rst:370
 msgid "Layer configuration"
 msgstr ""
 
-#: ../../../source/drivers/vector/mvt.rst:368
+#: ../../../source/drivers/vector/mvt.rst:372
 msgid ""
 "The above mentioned CONF dataset creation option can be set to a string "
-"whose value is a JSon serialized document such as the below one:"
+"whose value is a JSON serialized document such as the below one:"
 msgstr ""
 
-#: ../../../source/drivers/vector/mvt.rst:371
+#: ../../../source/drivers/vector/mvt.rst:375
 msgid ""
 "{\n"
 "    \"boundaries_lod0\": {\n"
@@ -284,60 +291,66 @@ msgid ""
 "}"
 msgstr ""
 
-#: ../../../source/drivers/vector/mvt.rst:387
+#: ../../../source/drivers/vector/mvt.rst:391
 msgid ""
 "*boundaries_lod0* and *boundaries_lod1* are the name of the OGR layers that "
 "are created into the target MVT dataset. They are mapped to the MVT target "
 "layer *boundaries*."
 msgstr ""
 
-#: ../../../source/drivers/vector/mvt.rst:391
+#: ../../../source/drivers/vector/mvt.rst:395
 msgid ""
 "It is also possible to get the same behavior with the below layer creation "
 "options, although that is not convenient in the ogr2ogr use case."
 msgstr ""
 
-#: ../../../source/drivers/vector/mvt.rst:396
+#: ../../../source/drivers/vector/mvt.rst:400
 msgid "Layer creation options"
 msgstr ""
 
-#: ../../../source/drivers/vector/mvt.rst:423
+#: ../../../source/drivers/vector/mvt.rst:402
+msgid ""
+"|about-layer-creation-options| The following layer creation options are "
+"supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/mvt.rst:430
 msgid "Examples"
 msgstr ""
 
-#: ../../../source/drivers/vector/mvt.rst:427
+#: ../../../source/drivers/vector/mvt.rst:434
 msgid ""
 "ogrinfo MVT:https://free.tilehosting.com/data/v3/1 -oo tile_extension=\"pbf."
 "pict?key=${YOUR_KEY}\" --debug on -oo metadata_file=\"https://free."
 "tilehosting.com/data/v3.json?key=${YOUR_KEY}\""
 msgstr ""
 
-#: ../../../source/drivers/vector/mvt.rst:431
+#: ../../../source/drivers/vector/mvt.rst:438
 msgid "ogr2ogr -f MVT mytileset source.gpkg -dsco MAXZOOM=10"
 msgstr ""
 
-#: ../../../source/drivers/vector/mvt.rst:433
+#: ../../../source/drivers/vector/mvt.rst:440
 msgid "See Also:"
 msgstr ""
 
-#: ../../../source/drivers/vector/mvt.rst:435
+#: ../../../source/drivers/vector/mvt.rst:442
 msgid ""
 "`Mapbox Vector Tile Specification <https://github.com/mapbox/vector-tile-"
 "spec>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/mvt.rst:437
+#: ../../../source/drivers/vector/mvt.rst:444
 msgid ":ref:`MBTiles <raster.mbtiles>` driver"
 msgstr ""
 
-#: ../../../source/drivers/vector/mvt.rst:438
+#: ../../../source/drivers/vector/mvt.rst:445
 msgid ""
 "`tippecanoe <https://github.com/mapbox/tippecanoe>`__: Builds vector "
 "tilesets from large (or small) collections of GeoJSON, Geobuf, or CSV "
 "features"
 msgstr ""
 
-#: ../../../source/drivers/vector/mvt.rst:441
+#: ../../../source/drivers/vector/mvt.rst:448
 msgid ""
 "`Links to tools dealing with Mapbox Vector Tiles <https://github.com/mapbox/"
 "awesome-vector-tiles>`__"

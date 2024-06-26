@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -200,7 +200,13 @@ msgstr ""
 msgid "Layer Creation Options"
 msgstr ""
 
-#: ../../../source/drivers/vector/filegdb.rst:164
+#: ../../../source/drivers/vector/filegdb.rst:126
+msgid ""
+"|about-layer-creation-options| The following layer creation options are "
+"supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/filegdb.rst:167
 msgid ""
 "ArcMap 10.0 and OGR defaults for XYTOLERANCE are 0.001m (or equivalent) for "
 "projected coordinate systems, and 0.000000008983153° for geographic "
@@ -208,7 +214,7 @@ msgid ""
 "MTOLERANCE are 0.0001."
 msgstr ""
 
-#: ../../../source/drivers/vector/filegdb.rst:176
+#: ../../../source/drivers/vector/filegdb.rst:179
 msgid ""
 "**XORIGIN, YORIGIN, ZORIGIN, MORIGIN, XYSCALE, ZSCALE, MSCALE**: These "
 "parameters control the `coordinate precision grid <http://help.arcgis.com/en/"
@@ -221,7 +227,7 @@ msgid ""
 "1000."
 msgstr ""
 
-#: ../../../source/drivers/vector/filegdb.rst:186
+#: ../../../source/drivers/vector/filegdb.rst:189
 msgid ""
 "*Important*: The domain specified by ``(xmin=XORIGIN, ymin=YORIGIN, "
 "xmax=(XORIGIN + 9E+15 / XYSCALE), ymax=(YORIGIN + 9E+15 / XYSCALE))`` needs "
@@ -231,17 +237,17 @@ msgid ""
 "data."
 msgstr ""
 
-#: ../../../source/drivers/vector/filegdb.rst:193
+#: ../../../source/drivers/vector/filegdb.rst:196
 msgid "ArcMap 10.0 and OGR defaults:"
 msgstr ""
 
-#: ../../../source/drivers/vector/filegdb.rst:195
+#: ../../../source/drivers/vector/filegdb.rst:198
 msgid ""
 "For geographic coordinate systems: XORIGIN=-400, YORIGIN=-400, "
 "XYSCALE=1000000000"
 msgstr ""
 
-#: ../../../source/drivers/vector/filegdb.rst:197
+#: ../../../source/drivers/vector/filegdb.rst:200
 msgid ""
 "For projected coordinate systems: XYSCALE=10000 for the default XYTOLERANCE "
 "of 0.001m. XORIGIN and YORIGIN change based on the coordinate system, but "
@@ -249,36 +255,36 @@ msgid ""
 "coordinate systems."
 msgstr ""
 
-#: ../../../source/drivers/vector/filegdb.rst:201
+#: ../../../source/drivers/vector/filegdb.rst:204
 msgid "ZORIGIN and MORIGIN: -100000"
 msgstr ""
 
-#: ../../../source/drivers/vector/filegdb.rst:202
+#: ../../../source/drivers/vector/filegdb.rst:205
 msgid "ZSCALE and MSCALE: 10000"
 msgstr ""
 
-#: ../../../source/drivers/vector/filegdb.rst:204
+#: ../../../source/drivers/vector/filegdb.rst:207
 msgid "MORIGIN and MSCALE added in GDAL 3.5.1"
 msgstr ""
 
-#: ../../../source/drivers/vector/filegdb.rst:241
+#: ../../../source/drivers/vector/filegdb.rst:244
 msgid "Configuration options"
 msgstr ""
 
-#: ../../../source/drivers/vector/filegdb.rst:243
+#: ../../../source/drivers/vector/filegdb.rst:246
 msgid ""
-"The following :ref:`configuration options <configoptions>` are available:"
+"|about-config-options| The following configuration options are available:"
 msgstr ""
 
-#: ../../../source/drivers/vector/filegdb.rst:258
+#: ../../../source/drivers/vector/filegdb.rst:261
 msgid "Geometry coordinate precision"
 msgstr ""
 
-#: ../../../source/drivers/vector/filegdb.rst:260
+#: ../../../source/drivers/vector/filegdb.rst:263
 msgid "3.9"
 msgstr ""
 
-#: ../../../source/drivers/vector/filegdb.rst:262
+#: ../../../source/drivers/vector/filegdb.rst:265
 msgid ""
 "The driver supports reading and writing the geometry coordinate precision, "
 "using the XYResolution, ZResolution and MResolution members of the :cpp:"
@@ -288,7 +294,7 @@ msgid ""
 "being one tenth of the resolution"
 msgstr ""
 
-#: ../../../source/drivers/vector/filegdb.rst:269
+#: ../../../source/drivers/vector/filegdb.rst:272
 msgid ""
 "On reading, the coordinate precision grid parameters are returned as format "
 "specific options of :cpp:class:`OGRGeomCoordinatePrecision` with the "
@@ -299,7 +305,7 @@ msgid ""
 "MResolution)."
 msgstr ""
 
-#: ../../../source/drivers/vector/filegdb.rst:277
+#: ../../../source/drivers/vector/filegdb.rst:280
 msgid ""
 "On layer creation, the XORIGIN, YORIGIN, ZORIGIN, MORIGIN, XYSCALE, ZSCALE, "
 "ZORIGIN, XYTOLERANCE, ZTOLERANCE, MTOLERANCE layer creation options will be "
@@ -307,11 +313,11 @@ msgid ""
 "`OGRGeomCoordinatePrecision`."
 msgstr ""
 
-#: ../../../source/drivers/vector/filegdb.rst:282
-msgid "Known Issues"
+#: ../../../source/drivers/vector/filegdb.rst:285
+msgid "Limitations"
 msgstr ""
 
-#: ../../../source/drivers/vector/filegdb.rst:284
+#: ../../../source/drivers/vector/filegdb.rst:287
 msgid ""
 "The SDK is known to be unable to open layers with particular spatial "
 "reference systems. This might be the case if messages \"FGDB: Error opening "
@@ -320,26 +326,26 @@ msgid ""
 "OpenFileGDB driver will generally solve that issue."
 msgstr ""
 
-#: ../../../source/drivers/vector/filegdb.rst:289
+#: ../../../source/drivers/vector/filegdb.rst:293
 msgid ""
 "FGDB coordinate snapping will cause geometries to be altered during writing. "
 "Use the origin and scale layer creation options to control the snapping "
 "behavior."
 msgstr ""
 
-#: ../../../source/drivers/vector/filegdb.rst:292
+#: ../../../source/drivers/vector/filegdb.rst:297
 msgid ""
-"Driver can't read data in SDC format (Smart Data Compression) because "
-"operation is not supported by the ESRI SDK."
+"Reading data compressed in SDC format (Smart Data Compression) is not "
+"support by the driver, because it is not supported by the ESRI SDK."
 msgstr ""
 
-#: ../../../source/drivers/vector/filegdb.rst:294
+#: ../../../source/drivers/vector/filegdb.rst:300
 msgid ""
 "Reading data compressed in CDF format (Compressed Data Format) requires ESRI "
 "SDK 1.4 or later."
 msgstr ""
 
-#: ../../../source/drivers/vector/filegdb.rst:296
+#: ../../../source/drivers/vector/filegdb.rst:303
 msgid ""
 "Some applications create FileGeodatabases with non-spatial tables which are "
 "not present in the GDB_Items metadata table. These tables cannot be opened "
@@ -348,25 +354,21 @@ msgid ""
 "limitations of the OpenFileGDB driver (for instance, they will be read only)."
 msgstr ""
 
-#: ../../../source/drivers/vector/filegdb.rst:305
-msgid "Other limitations"
-msgstr ""
-
-#: ../../../source/drivers/vector/filegdb.rst:307
+#: ../../../source/drivers/vector/filegdb.rst:310
 msgid "The driver does not support 64-bit integers."
 msgstr ""
 
-#: ../../../source/drivers/vector/filegdb.rst:310
+#: ../../../source/drivers/vector/filegdb.rst:313
 msgid "Links"
 msgstr ""
 
-#: ../../../source/drivers/vector/filegdb.rst:312
+#: ../../../source/drivers/vector/filegdb.rst:315
 msgid ""
 "`ESRI File Geodatabase API Page <https://github.com/Esri/file-geodatabase-"
 "api/>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/filegdb.rst:314
+#: ../../../source/drivers/vector/filegdb.rst:317
 msgid ""
 ":ref:`OpenFileGDB driver <vector.openfilegdb>`, not depending on a third-"
 "party library/SDK"

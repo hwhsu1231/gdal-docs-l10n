@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -123,56 +124,60 @@ msgstr ""
 msgid "Dataset open options"
 msgstr ""
 
-#: ../../../source/drivers/vector/odbc.rst:75
+#: ../../../source/drivers/vector/odbc.rst:64
+msgid "|about-open-options| The following open options are supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/odbc.rst:78
 msgid "Driver capabilities"
 msgstr ""
 
-#: ../../../source/drivers/vector/odbc.rst:80
+#: ../../../source/drivers/vector/odbc.rst:83
 msgid "Access Databases (.MDB) support"
 msgstr ""
 
-#: ../../../source/drivers/vector/odbc.rst:82
+#: ../../../source/drivers/vector/odbc.rst:85
 msgid ""
 "On Windows provided that the \"Microsoft Access Driver (\\*.mdb)\" ODBC "
 "driver is installed, non-spatial MS Access Databases (not Personal "
 "Geodabases or Geomedia databases) can be opened directly by their filenames."
 msgstr ""
 
-#: ../../../source/drivers/vector/odbc.rst:87
+#: ../../../source/drivers/vector/odbc.rst:90
 msgid ""
 "On Linux opening non-spatial MS Access Databases using the ODBC driver is "
 "possible via installation of unixODBC and mdbtools. See :ref:`MDB <vector."
 "pgeo>` for instructions on how to enable this."
 msgstr ""
 
-#: ../../../source/drivers/vector/odbc.rst:91
+#: ../../../source/drivers/vector/odbc.rst:94
 msgid ""
 "The driver supports either .mdb or .accdb extensions for Microsoft Access "
 "databases. Additionally, it also supports opening files with the ESRI .style "
 "database extension (which is just an alias for the .mdb file extension)."
 msgstr ""
 
-#: ../../../source/drivers/vector/odbc.rst:97
+#: ../../../source/drivers/vector/odbc.rst:100
 msgid "Creation Issues"
 msgstr ""
 
-#: ../../../source/drivers/vector/odbc.rst:99
+#: ../../../source/drivers/vector/odbc.rst:102
 msgid ""
 "Currently the ODBC OGR driver is read-only, so new features, tables and "
 "datasources cannot normally be created by OGR applications. This limitation "
 "may be removed in the future."
 msgstr ""
 
-#: ../../../source/drivers/vector/odbc.rst:104
+#: ../../../source/drivers/vector/odbc.rst:107
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/vector/odbc.rst:106
+#: ../../../source/drivers/vector/odbc.rst:109
 msgid ""
 "`MSDN ODBC API Reference <http://msdn.microsoft.com/en-us/library/"
 "ms714562(VS.85).aspx>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/odbc.rst:108
+#: ../../../source/drivers/vector/odbc.rst:111
 msgid ":ref:`PGeo driver <vector.pgeo>`"
 msgstr ""

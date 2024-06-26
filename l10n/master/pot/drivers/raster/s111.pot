@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -88,7 +89,11 @@ msgstr ""
 msgid "Open options"
 msgstr ""
 
-#: ../../../source/drivers/raster/s111.rst:49
+#: ../../../source/drivers/raster/s111.rst:43
+msgid "|about-open-options| The following open options are supported:"
+msgstr ""
+
+#: ../../../source/drivers/raster/s111.rst:52
 msgid ""
 "This is the default behavior of most GDAL formats, but the native "
 "organization of the data in S-111 products is to have the first line of the "
@@ -97,29 +102,29 @@ msgid ""
 "geotransform matrix will be positive)"
 msgstr ""
 
-#: ../../../source/drivers/raster/s111.rst:56
+#: ../../../source/drivers/raster/s111.rst:59
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/raster/s111.rst:58
+#: ../../../source/drivers/raster/s111.rst:61
 msgid "Implemented as :source_file:`frmts/hdf5/s111dataset.cpp`."
 msgstr ""
 
-#: ../../../source/drivers/raster/s111.rst:59
+#: ../../../source/drivers/raster/s111.rst:62
 msgid ""
 "`S-111 Bathymetric Surface Product Specification <https://registry.iho.int/"
 "productspec/view.do?"
 "idx=178&product_ID=S-111&statusS=5&domainS=20&category=product_ID&searchValue=S-111>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/s111.rst:60
+#: ../../../source/drivers/raster/s111.rst:63
 msgid ":ref:`BAG driver <raster.bag>`"
 msgstr ""
 
-#: ../../../source/drivers/raster/s111.rst:61
+#: ../../../source/drivers/raster/s111.rst:64
 msgid ":ref:`S-102 driver <raster.s102>`"
 msgstr ""
 
-#: ../../../source/drivers/raster/s111.rst:62
+#: ../../../source/drivers/raster/s111.rst:65
 msgid ":ref:`S-104 driver <raster.s104>`"
 msgstr ""

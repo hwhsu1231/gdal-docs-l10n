@@ -8,16 +8,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../../source/programs/gdal_edit.rst:5
-msgid "gdal_edit.py"
+#: ../../../source/programs/gdal_edit.rst:11
+msgid "gdal_edit"
 msgstr ""
 
 #: ../../../source/programs/gdal_edit.rst:9
@@ -51,9 +53,8 @@ msgstr ""
 
 #: ../../../source/programs/gdal_edit.rst:33
 msgid ""
-"The :program:`gdal_edit.py` script can be used to edit in place various "
-"information of an existing GDAL dataset (projection, geotransform, nodata, "
-"metadata)."
+":program:`gdal_edit` can be used to edit in place various information of an "
+"existing GDAL dataset (projection, geotransform, nodata, metadata)."
 msgstr ""
 
 #: ../../../source/programs/gdal_edit.rst:37
@@ -70,6 +71,12 @@ msgid ""
 "gtiff` format (this is not a exhaustive list)."
 msgstr ""
 
+#: ../../../source/programs/gdal_edit.rst:48
+msgid ""
+"gdal_edit is a Python utility, and is only available if GDAL Python bindings "
+"are available."
+msgstr ""
+
 #: ../../../source/programs/options/help.rst:3
 msgid "Show this help message and exit"
 msgstr ""
@@ -80,14 +87,14 @@ msgid ""
 "exit."
 msgstr ""
 
-#: ../../../source/programs/gdal_edit.rst:50
+#: ../../../source/programs/gdal_edit.rst:54
 msgid ""
 "Open the dataset in read-only. Might be useful for drivers refusing to use "
 "the dataset in update-mode. In which case, updated information will go into "
 "PAM :file:`.aux.xml` files."
 msgstr ""
 
-#: ../../../source/programs/gdal_edit.rst:56
+#: ../../../source/programs/gdal_edit.rst:60
 msgid ""
 "Defines the target coordinate system. This coordinate system will be written "
 "to the dataset. If the empty string or None is specified, then the existing "
@@ -95,50 +102,50 @@ msgid ""
 "supported besides that)."
 msgstr ""
 
-#: ../../../source/programs/gdal_edit.rst:64
+#: ../../../source/programs/gdal_edit.rst:68
 msgid ""
 "Assign/override the coordinate epoch of the dataset, as a decimal year (e."
 "g., 2021.3)."
 msgstr ""
 
-#: ../../../source/programs/gdal_edit.rst:70
+#: ../../../source/programs/gdal_edit.rst:74
 msgid "Remove the coordinate epoch of the dataset."
 msgstr ""
 
-#: ../../../source/programs/gdal_edit.rst:76
+#: ../../../source/programs/gdal_edit.rst:80
 msgid "Assign/override the georeferenced bounds of the dataset."
 msgstr ""
 
-#: ../../../source/programs/gdal_edit.rst:80
+#: ../../../source/programs/gdal_edit.rst:84
 msgid ""
 "Assign/override the georeferenced bounds of the dataset from three points: "
 "upper-left, upper-right and lower-left. Unlike :option:`-a_ullr`, this also "
 "supports rotated datasets (edges not parallel to coordinate system axes)."
 msgstr ""
 
-#: ../../../source/programs/gdal_edit.rst:88
+#: ../../../source/programs/gdal_edit.rst:92
 msgid ""
 "Set target resolution. The values must be expressed in georeferenced units. "
 "Both must be positive values."
 msgstr ""
 
-#: ../../../source/programs/gdal_edit.rst:93
+#: ../../../source/programs/gdal_edit.rst:97
 msgid "Remove the georeference information."
 msgstr ""
 
-#: ../../../source/programs/gdal_edit.rst:97
+#: ../../../source/programs/gdal_edit.rst:101
 msgid "Remove RPC information."
 msgstr ""
 
-#: ../../../source/programs/gdal_edit.rst:103
+#: ../../../source/programs/gdal_edit.rst:107
 msgid "Remove band statistics information."
 msgstr ""
 
-#: ../../../source/programs/gdal_edit.rst:109
+#: ../../../source/programs/gdal_edit.rst:113
 msgid "Calculate and store band statistics."
 msgstr ""
 
-#: ../../../source/programs/gdal_edit.rst:115
+#: ../../../source/programs/gdal_edit.rst:119
 msgid ""
 "Store user-defined values for band statistics (minimum, maximum, mean and "
 "standard deviation). If any of the values is set to None, the real "
@@ -146,19 +153,19 @@ msgid ""
 "from the real statistics."
 msgstr ""
 
-#: ../../../source/programs/gdal_edit.rst:124
+#: ../../../source/programs/gdal_edit.rst:128
 msgid "Calculate and store approximate band statistics."
 msgstr ""
 
-#: ../../../source/programs/gdal_edit.rst:130
+#: ../../../source/programs/gdal_edit.rst:134
 msgid "Assign a specified nodata value to output bands."
 msgstr ""
 
-#: ../../../source/programs/gdal_edit.rst:134
+#: ../../../source/programs/gdal_edit.rst:138
 msgid "Remove existing nodata values."
 msgstr ""
 
-#: ../../../source/programs/gdal_edit.rst:140
+#: ../../../source/programs/gdal_edit.rst:144
 msgid ""
 "Assign a specified scale value to output bands. If a single scale value is "
 "provided it will be set for all bands. Alternatively one scale value per "
@@ -170,13 +177,13 @@ msgid ""
 "calculated as: true_value = (pixel_value * scale) + offset"
 msgstr ""
 
-#: ../../../source/programs/gdal_edit.rst:150
+#: ../../../source/programs/gdal_edit.rst:154
 msgid ""
 "These values can be applied using -unscale during a :program:"
 "`gdal_translate` run."
 msgstr ""
 
-#: ../../../source/programs/gdal_edit.rst:156
+#: ../../../source/programs/gdal_edit.rst:160
 msgid ""
 "Assign a specified offset value to output bands. If a single offset value is "
 "provided it will be set for all bands. Alternatively one offset value per "
@@ -185,63 +192,59 @@ msgid ""
 "to 0. For more see scale."
 msgstr ""
 
-#: ../../../source/programs/gdal_edit.rst:167
+#: ../../../source/programs/gdal_edit.rst:171
 msgid "Assign a unit to output band(s)."
 msgstr ""
 
-#: ../../../source/programs/gdal_edit.rst:173
+#: ../../../source/programs/gdal_edit.rst:177
 msgid ""
 "Change the color interpretation of band X (where X is a valid band number, "
 "starting at 1)."
 msgstr ""
 
-#: ../../../source/programs/gdal_edit.rst:180
+#: ../../../source/programs/gdal_edit.rst:184
 msgid ""
 "Add the indicated ground control point to the dataset. This option may be "
 "provided multiple times to provide a set of GCPs."
 msgstr ""
 
-#: ../../../source/programs/gdal_edit.rst:185
+#: ../../../source/programs/gdal_edit.rst:189
 msgid ""
 "Remove existing metadata (in the default metadata domain). Can be combined "
 "with :option:`-mo`."
 msgstr ""
 
-#: ../../../source/programs/gdal_edit.rst:192
+#: ../../../source/programs/gdal_edit.rst:196
 msgid ""
 "Passes a metadata key and value to set on the output dataset if possible. "
 "This metadata is added to the existing metadata items, unless :option:`-"
 "unsetmd` is also specified."
 msgstr ""
 
-#: ../../../source/programs/gdal_edit.rst:198
+#: ../../../source/programs/gdal_edit.rst:202
 msgid "Open option (format specific)."
 msgstr ""
 
-#: ../../../source/programs/gdal_edit.rst:202
+#: ../../../source/programs/gdal_edit.rst:206
 msgid ""
 "The :option:`-a_ullr`, :option:`-a_ulurll`, :option:`-tr` and :option:`-"
 "unsetgt` options are exclusive."
 msgstr ""
 
-#: ../../../source/programs/gdal_edit.rst:204
+#: ../../../source/programs/gdal_edit.rst:208
 msgid ""
 "The :option:`-unsetstats` and either :option:`-stats` or :option:`-"
 "approx_stats` options are exclusive."
 msgstr ""
 
-#: ../../../source/programs/gdal_edit.rst:207
+#: ../../../source/programs/gdal_edit.rst:211
 msgid "Example"
 msgstr ""
 
-#: ../../../source/programs/gdal_edit.rst:209
+#: ../../../source/programs/gdal_edit.rst:213
 msgid "gdal_edit -mo DATUM=WGS84 -mo PROJ=GEODETIC -a_ullr 7 47 8 46 test.ecw"
 msgstr ""
 
-#: ../../../source/programs/gdal_edit.rst:213
+#: ../../../source/programs/gdal_edit.rst:217
 msgid "gdal_edit -scale 1e3 1e4 -offset 0 10 twoBand.tif"
-msgstr ""
-
-#: ../../../source/programs/gdal_edit.rst:11
-msgid "gdal_edit"
 msgstr ""

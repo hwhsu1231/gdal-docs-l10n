@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,21 +67,30 @@ msgstr ""
 
 #: ../../../source/drivers/vector/gmlas.rst:36
 msgid ""
-"The connection string is GMLAS:/path/to/the.gml. Note the GMLAS: prefix. If "
-"this prefix it is omitted, then the GML driver is likely to be used."
+"The connection string is GMLAS:/path/to/the.gml. Note the ``GMLAS:`` prefix. "
+"If this prefix it is omitted, then the GML driver is likely to be used."
 msgstr ""
 
 #: ../../../source/drivers/vector/gmlas.rst:39
 msgid ""
-"It is also possible to only used \"GMLAS:\" as the connection string, but in "
-"that case the schemas must be explicitly provided with the XSD open option."
+"Alternatively, starting with GDAL 3.10, specifying the ``-if GMLAS`` option "
+"to command line utilities accepting it, or ``GMLAS`` as the only value of "
+"the ``papszAllowedDrivers`` of :cpp:func:`GDALOpenEx`, also forces the "
+"driver to recognize the passed filename."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:44
+#: ../../../source/drivers/vector/gmlas.rst:43
+msgid ""
+"It is also possible to only used ``GMLAS:`` as the connection string, but in "
+"that case the schemas must be explicitly provided with the ``XSD`` open "
+"option."
+msgstr ""
+
+#: ../../../source/drivers/vector/gmlas.rst:48
 msgid "Mapping of XML structure to OGR layers and fields"
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:46
+#: ../../../source/drivers/vector/gmlas.rst:50
 msgid ""
 "The driver scans the XML schemas referenced by the XML/GML to build the OGR "
 "layers and fields. It is strictly required that the schemas, directly or "
@@ -89,7 +98,7 @@ msgid ""
 "marginally used, mostly to determine the SRS of geometry columns."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:52
+#: ../../../source/drivers/vector/gmlas.rst:56
 msgid ""
 "XML elements declared at the top level of a schema will generally be exposed "
 "as OGR layers. Their attributes and sub-elements of simple XML types "
@@ -102,20 +111,20 @@ msgid ""
 "element is shared by several parents."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:63
+#: ../../../source/drivers/vector/gmlas.rst:67
 msgid ""
 "By default the driver is robust to documents non strictly conforming to the "
 "schemas. Unexpected content in the document will be silently ignored, as "
 "well as content required by the schema and absent from the document."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:68
+#: ../../../source/drivers/vector/gmlas.rst:72
 msgid ""
 "Consult the :ref:`GMLAS mapping examples <gmlas_mapping_examples>` page for "
 "more details."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:71
+#: ../../../source/drivers/vector/gmlas.rst:75
 msgid ""
 "By default in the configuration, swe:DataRecord and swe:DataArray elements "
 "from the Sensor Web Enablement (SWE) Common Data Model namespace will "
@@ -127,11 +136,11 @@ msgid ""
 "content of the general mapping mechanisms will be used."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:82
+#: ../../../source/drivers/vector/gmlas.rst:86
 msgid "Metadata layers"
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:84
+#: ../../../source/drivers/vector/gmlas.rst:88
 msgid ""
 "Three special layers \"_ogr_fields_metadata\", \"_ogr_layers_metadata\", "
 "\"_ogr_layer_relationships\" and \"_ogr_other_metadata\" add extra "
@@ -139,7 +148,7 @@ msgid ""
 "layers and fields."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:89
+#: ../../../source/drivers/vector/gmlas.rst:93
 msgid ""
 "Those layers are exposed if the :oo:`EXPOSE_METADATA_LAYERS` open option is "
 "set to YES (or if enabled in the configuration). They can also be "
@@ -147,17 +156,17 @@ msgid ""
 "GetLayerByName(), or on as layer names with the ogrinfo and ogr2ogr utility."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:95
+#: ../../../source/drivers/vector/gmlas.rst:99
 msgid ""
 "Consult the :ref:`GMLAS metadata layers <gmlas_metadata_layers>` page for "
 "more details."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:99
+#: ../../../source/drivers/vector/gmlas.rst:103
 msgid "Configuration file"
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:101
+#: ../../../source/drivers/vector/gmlas.rst:105
 msgid ""
 "A default configuration file :source_file:`ogr/ogrsf_frmts/gmlas/data/"
 "gmlasconf.xml` file is provided in the data directory of the GDAL "
@@ -165,42 +174,42 @@ msgid ""
 "ogrsf_frmts/gmlas/data/gmlasconf.xsd` schema."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:108
+#: ../../../source/drivers/vector/gmlas.rst:112
 msgid ""
 "This configuration file enables the user to modify the following settings:"
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:111
+#: ../../../source/drivers/vector/gmlas.rst:115
 msgid "whether remote schemas should be downloaded. Enabled by default."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:112
+#: ../../../source/drivers/vector/gmlas.rst:116
 msgid "whether the local cache of schemas is enabled. Enabled by default."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:113
+#: ../../../source/drivers/vector/gmlas.rst:117
 msgid "the path of the local cache. By default, $HOME/.gdal/gmlas_xsd_cache"
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:114
+#: ../../../source/drivers/vector/gmlas.rst:118
 msgid ""
 "whether validation of the document against the schemas should be enabled. "
 "Disabled by default."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:116
+#: ../../../source/drivers/vector/gmlas.rst:120
 msgid ""
 "whether validation error should cause dataset opening to fail. Disabled by "
 "default."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:118
+#: ../../../source/drivers/vector/gmlas.rst:122
 msgid ""
 "whether the metadata layers should be exposed by default. Disabled by "
 "default."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:120
+#: ../../../source/drivers/vector/gmlas.rst:124
 msgid ""
 "whether a 'ogr_pkid' field should always be generated. Disabled by default. "
 "Turning that on can be useful on layers that have a ID attribute whose "
@@ -208,23 +217,23 @@ msgid ""
 "issues when appending several documents into a target database table."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:125
+#: ../../../source/drivers/vector/gmlas.rst:129
 msgid ""
 "whether layers and fields that are not used in the XML document should be "
 "removed. Disable by default."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:127
+#: ../../../source/drivers/vector/gmlas.rst:131
 msgid "whether OGR array data types can be used. Enabled by default."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:128
+#: ../../../source/drivers/vector/gmlas.rst:132
 msgid ""
 "whether the XML definition of the GML geometry should be reported as a OGR "
 "string field. Disabled by default."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:130
+#: ../../../source/drivers/vector/gmlas.rst:134
 msgid ""
 "whether only XML elements that derive from gml:_Feature or gml:"
 "AbstractFeature should be considered in the initial pass of the schema "
@@ -232,17 +241,17 @@ msgid ""
 "by default."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:134
+#: ../../../source/drivers/vector/gmlas.rst:138
 msgid "several rules to configure if and how xlink:href should be resolved."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:135
+#: ../../../source/drivers/vector/gmlas.rst:139
 msgid ""
 "a definition of XPaths of elements and attributes that must be ignored, so "
 "as to lighten the number of OGR layers and fields."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:138
+#: ../../../source/drivers/vector/gmlas.rst:142
 msgid ""
 "This file can be adapted and modified versions can be provided to the driver "
 "with the :oo:`CONFIG_FILE` open option. None of the elements of the "
@@ -250,7 +259,7 @@ msgid ""
 "indicated in the schema documentation is used."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:143
+#: ../../../source/drivers/vector/gmlas.rst:147
 msgid ""
 "Configuration can also be provided through other open options. Note that "
 "some open options have identical names to settings present in the "
@@ -259,11 +268,11 @@ msgid ""
 "one provided through the :oo:`CONFIG_FILE` open option)."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:150
+#: ../../../source/drivers/vector/gmlas.rst:154
 msgid "Geometry support"
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:152
+#: ../../../source/drivers/vector/gmlas.rst:156
 msgid ""
 "XML schemas only indicate the geometry type but do not constraint the "
 "spatial reference systems (SRS), so it is theoretically possible to have "
@@ -275,7 +284,7 @@ msgid ""
 "same field would have different SRS, they will be reprojected."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:162
+#: ../../../source/drivers/vector/gmlas.rst:166
 msgid ""
 "By default, only the OGR geometry built from the GML geometry is exposed in "
 "the OGR feature. It is possible to change the IncludeGeometryXML setting of "
@@ -283,11 +292,11 @@ msgid ""
 "XML definition of the GML geometry."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:168
+#: ../../../source/drivers/vector/gmlas.rst:172
 msgid "Performance issues with large multi-layer GML files."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:170
+#: ../../../source/drivers/vector/gmlas.rst:174
 msgid ""
 "Traditionnaly to read a OGR datasource, one iterate over layers with "
 "GDALDataset::GetLayer(), and for each layer one iterate over features with "
@@ -296,7 +305,7 @@ msgid ""
 "using complex schemas that are translated in many OGR layers."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:176
+#: ../../../source/drivers/vector/gmlas.rst:180
 msgid ""
 "It is thus recommended to use GDALDataset::GetNextFeature() to iterate over "
 "features as soon as they appear in the .gml/.xml file. This may return "
@@ -304,19 +313,23 @@ msgid ""
 "elements."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:182
+#: ../../../source/drivers/vector/gmlas.rst:186
 msgid "Open options"
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:253
+#: ../../../source/drivers/vector/gmlas.rst:188
+msgid "|about-open-options| The following open options are supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/gmlas.rst:260
 msgid "Whether unused layers should be removed from the reported layers."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:279
+#: ../../../source/drivers/vector/gmlas.rst:286
 msgid "Creation support"
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:281
+#: ../../../source/drivers/vector/gmlas.rst:288
 msgid ""
 "The GMLAS driver can write XML documents in a schema-driven way by "
 "converting a source dataset (contrary to most other drivers that have read "
@@ -326,7 +339,7 @@ msgid ""
 "imported and re-export this database as a new XML document."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:289
+#: ../../../source/drivers/vector/gmlas.rst:296
 msgid ""
 "The driver will identify in the source dataset \"top-level\" layers, and in "
 "those layers will find which features are not referenced by other top-level "
@@ -334,20 +347,20 @@ msgid ""
 "to be available. There are two possible ways:"
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:294
+#: ../../../source/drivers/vector/gmlas.rst:301
 msgid ""
 "either the result of the processing of the schemas was stored as the 4 "
 "\\_ogr_\\* metadata tables in the source dataset by using the :oo:"
 "`EXPOSE_METADATA_LAYERS=YES` open option when converting the source .xml),"
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:298
+#: ../../../source/drivers/vector/gmlas.rst:305
 msgid ""
 "or the schemas can be specified at creation time with the :dsco:`INPUT_XSD` "
 "creation option."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:301
+#: ../../../source/drivers/vector/gmlas.rst:308
 msgid ""
 "By default, the driver will \"wrap\" the features inside a WFS 2.0 wfs:"
 "FeatureCollection / wfs:member element. It is also possible to ask the "
@@ -355,7 +368,7 @@ msgid ""
 "ogr_gmlas:FeatureCollection / ogr_gmlas:featureMember XML elements."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:306
+#: ../../../source/drivers/vector/gmlas.rst:313
 msgid ""
 "Note that while the file resulting from the export should be XML valid, "
 "there is no strong guarantee that it will validate against the additional "
@@ -365,7 +378,7 @@ msgid ""
 "validating)"
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:313
+#: ../../../source/drivers/vector/gmlas.rst:320
 msgid ""
 "If the input layers have geometries stored as GML content in a \\_xml "
 "suffixed field, then the driver will compare the OGR geometry built from "
@@ -376,116 +389,117 @@ msgid ""
 "geometry."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:321
+#: ../../../source/drivers/vector/gmlas.rst:328
 msgid ""
 "To increase export performance on very large databases, creating attribute "
 "indexes on the fields pointed by the 'layer_pkid_name' attribute in "
 "'_ogr_layers_metadata' might help."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:326
+#: ../../../source/drivers/vector/gmlas.rst:333
 msgid "ogr2ogr behavior"
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:328
+#: ../../../source/drivers/vector/gmlas.rst:335
 msgid ""
 "When using ogr2ogr / GDALVectorTranslate() to convert to XML/GML from a "
 "source database, there are restrictions to the options that can be used. "
 "Only the following options of ogr2ogr are supported:"
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:332
+#: ../../../source/drivers/vector/gmlas.rst:339
 msgid "dataset creation options (see below)"
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:333
+#: ../../../source/drivers/vector/gmlas.rst:340
 msgid "layer names"
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:334
+#: ../../../source/drivers/vector/gmlas.rst:341
 msgid "spatial filter through -spat option."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:335
+#: ../../../source/drivers/vector/gmlas.rst:342
 msgid "attribute filter through -where option"
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:337
+#: ../../../source/drivers/vector/gmlas.rst:344
 msgid ""
 "The effect of spatial and attribute filtering will only apply on top-levels "
 "layers. Sub-features selected through joins will not be affected by those "
 "filters."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:342
+#: ../../../source/drivers/vector/gmlas.rst:349
 msgid "Dataset creation options"
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:344
-msgid "The supported dataset creation options are:"
-msgstr ""
-
-#: ../../../source/drivers/vector/gmlas.rst:441
-msgid "Examples"
-msgstr ""
-
-#: ../../../source/drivers/vector/gmlas.rst:443
-msgid "Listing content of a data file:"
-msgstr ""
-
-#: ../../../source/drivers/vector/gmlas.rst:447
-msgid "ogrinfo -ro GMLAS:my.gml"
+#: ../../../source/drivers/vector/gmlas.rst:351
+msgid ""
+"|about-dataset-creation-options| The supported dataset creation options are:"
 msgstr ""
 
 #: ../../../source/drivers/vector/gmlas.rst:449
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/drivers/vector/gmlas.rst:451
+msgid "Listing content of a data file:"
+msgstr ""
+
+#: ../../../source/drivers/vector/gmlas.rst:455
+msgid "ogrinfo -ro GMLAS:my.gml"
+msgstr ""
+
+#: ../../../source/drivers/vector/gmlas.rst:457
 msgid "Converting to PostGIS:"
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:453
+#: ../../../source/drivers/vector/gmlas.rst:461
 msgid ""
 "ogr2ogr -f PostgreSQL PG:'host=myserver dbname=warmerda' GMLAS:my.gml -nlt "
 "CONVERT_TO_LINEAR"
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:455
+#: ../../../source/drivers/vector/gmlas.rst:463
 msgid "Converting to Spatialite and back to GML"
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:459
+#: ../../../source/drivers/vector/gmlas.rst:467
 msgid ""
 "ogr2ogr -f SQLite tmp.sqlite GMLAS:in.gml -dsco SPATIALITE=YES -nlt "
 "CONVERT_TO_LINEAR -oo EXPOSE_METADATA_LAYERS=YES\n"
 "ogr2ogr -f GMLAS out.gml tmp.sqlite"
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:463
+#: ../../../source/drivers/vector/gmlas.rst:471
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:465
+#: ../../../source/drivers/vector/gmlas.rst:473
 msgid ""
 ":ref:`GML <vector.gml>`: general purpose driver not requiring the presence "
 "of schemas, but with limited support for complex features"
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:467
+#: ../../../source/drivers/vector/gmlas.rst:475
 msgid ""
 ":ref:`NAS/ALKIS <vector.nas>`: specialized GML driver for cadastral data in "
 "Germany"
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:471
+#: ../../../source/drivers/vector/gmlas.rst:479
 msgid "Credits"
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:473
+#: ../../../source/drivers/vector/gmlas.rst:481
 msgid ""
 "Initial implementation has been funded by the European Union's Earth "
 "observation programme Copernicus, as part of the tasks delegated to the "
 "European Environment Agency."
 msgstr ""
 
-#: ../../../source/drivers/vector/gmlas.rst:477
+#: ../../../source/drivers/vector/gmlas.rst:485
 msgid ""
 "Development of special processing of some Sensor Web Enablement (SWE) Common "
 "Data Model swe:DataRecord and swe:DataArray constructs has been funded by "

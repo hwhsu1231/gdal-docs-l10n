@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -121,60 +122,63 @@ msgstr ""
 msgid "Creation Options:"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:128
+#: ../../../source/drivers/raster/ecw.rst:73
+msgid "|about-creation-options| The following creation options are supported:"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:131
 msgid "Configuration Options"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:130
+#: ../../../source/drivers/raster/ecw.rst:133
 msgid ""
-"The ERDAS ECW SDK supports a variety of `runtime configuration options "
-"<http://trac.osgeo.org/gdal/wiki/ConfigOptions>`__ to control various "
-"features. Most of these are exposed as GDAL configuration options. See the "
-"ECW SDK documentation for full details on the meaning of these options."
+"|about-config-options| The ERDAS ECW SDK supports a variety of configuration "
+"options to control various features. See the ECW SDK documentation for full "
+"details on the meaning of these options."
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:202
+#: ../../../source/drivers/raster/ecw.rst:203
 msgid "The GDAL-specific options:"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:217
+#: ../../../source/drivers/raster/ecw.rst:218
 msgid "ECW Version 3 Files"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:219
+#: ../../../source/drivers/raster/ecw.rst:220
 msgid "ECW 5.x SDK introduces a new file format version which,"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:221
+#: ../../../source/drivers/raster/ecw.rst:222
 msgid ""
 "Storage of data statistics, histograms, metadata, RPC information within the "
 "file header"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:223
+#: ../../../source/drivers/raster/ecw.rst:224
 msgid "Support for UInt16 data type"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:224
+#: ../../../source/drivers/raster/ecw.rst:225
 msgid "Ability to update regions within an existing ECW v3 file"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:225
+#: ../../../source/drivers/raster/ecw.rst:226
 msgid "Introduces other space saving optimizations"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:227
+#: ../../../source/drivers/raster/ecw.rst:228
 msgid ""
 "Note: This version is not backward compatible and will fail to decode in v3."
 "x or v4.x ECW/JP2 SDK's. The File VERSION Metadata will advertise whether "
 "the file is ECW v2 or ECW v3."
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:232
+#: ../../../source/drivers/raster/ecw.rst:233
 msgid "ECWP"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:234
+#: ../../../source/drivers/raster/ecw.rst:235
 msgid ""
 "In addition to local files, this driver also supports access to streaming "
 "network imagery services using the proprietary \"ECWP\" protocol from the "
@@ -184,11 +188,11 @@ msgid ""
 "to ECWP services."
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:242
+#: ../../../source/drivers/raster/ecw.rst:243
 msgid "Metadata / Georeferencing"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:244
+#: ../../../source/drivers/raster/ecw.rst:245
 msgid ""
 "The PROJ, DATUM and UNITS found in the ECW header are reported in the ECW "
 "metadata domain. They can also be set with the SetMetadataItem() method, in "
@@ -196,7 +200,7 @@ msgid ""
 "update mode, without modifying the imagery."
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:249
+#: ../../../source/drivers/raster/ecw.rst:250
 msgid ""
 "The geotransform and projection can also be modified with the "
 "SetGeoTransform() and SetProjection() methods. If the projection is set with "
@@ -204,84 +208,84 @@ msgid ""
 "later values will override the values built from the projection string."
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:255
+#: ../../../source/drivers/raster/ecw.rst:256
 msgid ""
 "All those can for example be modified with the -a_ullr, -a_srs or -mo "
 "switches of the :ref:`gdal_edit` utility."
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:258
+#: ../../../source/drivers/raster/ecw.rst:259
 msgid "For example:"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:262
+#: ../../../source/drivers/raster/ecw.rst:263
 msgid ""
 "gdal_edit.py -mo DATUM=WGS84 -mo PROJ=GEODETIC -a_ullr 7 47 8 46 test.ecw\n"
 "\n"
 "gdal_edit.py -a_srs EPSG:3068 -a_ullr 20800 22000 24000 19600 test.ecw"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:267
+#: ../../../source/drivers/raster/ecw.rst:268
 msgid "File Metadata Keys:"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:269
+#: ../../../source/drivers/raster/ecw.rst:270
 msgid "FILE_METADATA_ACQUISITION_DATE"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:270
+#: ../../../source/drivers/raster/ecw.rst:271
 msgid "FILE_METADATA_ACQUISITION_SENSOR_NAME"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:271
+#: ../../../source/drivers/raster/ecw.rst:272
 msgid "FILE_METADATA_ADDRESS"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:272
+#: ../../../source/drivers/raster/ecw.rst:273
 msgid "FILE_METADATA_AUTHOR"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:273
+#: ../../../source/drivers/raster/ecw.rst:274
 msgid "FILE_METADATA_CLASSIFICATION"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:274
+#: ../../../source/drivers/raster/ecw.rst:275
 msgid "FILE_METADATA_COMPANY - should be set to ECW_ENCODE_COMPANY"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:275
+#: ../../../source/drivers/raster/ecw.rst:276
 msgid "FILE_METADATA_COMPRESSION_SOFTWARE - updated during recompression"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:276
+#: ../../../source/drivers/raster/ecw.rst:277
 msgid "FILE_METADATA_COPYRIGHT"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:277
+#: ../../../source/drivers/raster/ecw.rst:278
 msgid "FILE_METADATA_EMAIL"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:278
+#: ../../../source/drivers/raster/ecw.rst:279
 msgid "FILE_METADATA_TELEPHONE"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:279
+#: ../../../source/drivers/raster/ecw.rst:280
 msgid "CLOCKWISE_ROTATION_DEG"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:280
+#: ../../../source/drivers/raster/ecw.rst:281
 msgid "COLORSPACE"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:281
+#: ../../../source/drivers/raster/ecw.rst:282
 msgid "COMPRESSION_DATE"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:282
+#: ../../../source/drivers/raster/ecw.rst:283
 msgid "COMPRESSION_RATE_ACTUAL"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:283
+#: ../../../source/drivers/raster/ecw.rst:284
 msgid ""
 "COMPRESSION_RATE_TARGET. This is the percentage of the target compressed "
 "file size divided by the uncompressed file size. This is equal to 100 / (100 "
@@ -291,39 +295,45 @@ msgid ""
 "(ie dividing uncompressed file size by 5), etc..."
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:290
+#: ../../../source/drivers/raster/ecw.rst:291
 msgid "VERSION"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:293
+#: ../../../source/drivers/raster/ecw.rst:294
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:295
+#: ../../../source/drivers/raster/ecw.rst:296
 msgid "Implemented as :source_file:`frmts/ecw/ecwdataset.cpp`."
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:296
+#: ../../../source/drivers/raster/ecw.rst:297
 msgid ""
 "ERDAS ECW/JP2 SDK Read-Only Redistributable available at `www."
 "hexagongeospatial.com <https://supportsi.hexagon.com/help/s/article/ERDAS-"
 "ECW-JP2-SDK-Read-Only-Redistributable-download>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:298
+#: ../../../source/drivers/raster/ecw.rst:299
 msgid ""
 "Further product information available in the `User Guide <https://bynder."
 "hexagon.com/m/5af86a8895f6696f/original/"
 "Hexagon_GSP_ERDAS_ECW_JP2_SDK_5_5_User_Guide.pdf>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:300
+#: ../../../source/drivers/raster/ecw.rst:301
 msgid ""
 "Support for non-GDAL specific issues should be directed to the `Hexagon "
 "Geospatial public forum <https://supportsi.hexagon.com/help/s/erdas-"
 "apollo>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/ecw.rst:303
+#: ../../../source/drivers/raster/ecw.rst:304
+msgid ""
+"Community contributed `patches <https://github.com/rouault/libecwj2-3.3-"
+"builds/blob/main/libecwj2-3.3.patch>`__ to apply to ECW SDK 3.3 sources"
+msgstr ""
+
+#: ../../../source/drivers/raster/ecw.rst:305
 msgid "`GDAL ECW Build Hints <http://trac.osgeo.org/gdal/wiki/ECW>`__"
 msgstr ""

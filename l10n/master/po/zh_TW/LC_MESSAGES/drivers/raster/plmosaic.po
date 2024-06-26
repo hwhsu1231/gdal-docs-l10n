@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -129,9 +129,9 @@ msgstr ""
 
 #: ../../../source/drivers/raster/plmosaic.rst:64
 msgid ""
-"The following open options are available : API_KEY, MOSAIC, CACHE_PATH, "
-"TRUST_CACHE and USE_TILES. They have the same semantics as the above "
-"describe parameters of same name."
+"|about-open-options| The following open options are available : API_KEY, "
+"MOSAIC, CACHE_PATH, TRUST_CACHE and USE_TILES. They have the same semantics "
+"as the above-described parameters of same name."
 msgstr ""
 
 #: ../../../source/drivers/raster/plmosaic.rst:69
@@ -139,18 +139,19 @@ msgid "Configuration options"
 msgstr ""
 
 #: ../../../source/drivers/raster/plmosaic.rst:71
-msgid "The following configuration options are available :"
+msgid ""
+"|about-config-options| The following configuration options are available :"
 msgstr ""
 
 #: ../../../source/drivers/raster/plmosaic.rst:-1
 msgid "PL_API_KEY=value: To specify the Planet API key."
 msgstr ""
 
-#: ../../../source/drivers/raster/plmosaic.rst:78
+#: ../../../source/drivers/raster/plmosaic.rst:79
 msgid "Location information"
 msgstr ""
 
-#: ../../../source/drivers/raster/plmosaic.rst:80
+#: ../../../source/drivers/raster/plmosaic.rst:81
 msgid ""
 "The special *Pixel_{x}_{y}* metadata item of the *LocationInfo* metadata "
 "domain, where x is the column and y is the line in the mosaic, can be "
@@ -159,11 +160,11 @@ msgid ""
 "`rfc-32`)"
 msgstr ""
 
-#: ../../../source/drivers/raster/plmosaic.rst:85
+#: ../../../source/drivers/raster/plmosaic.rst:86
 msgid "Below an example of the return :"
 msgstr ""
 
-#: ../../../source/drivers/raster/plmosaic.rst:89
+#: ../../../source/drivers/raster/plmosaic.rst:90
 msgid ""
 "<LocationInfo>\n"
 "  <Scenes>\n"
@@ -187,36 +188,36 @@ msgid ""
 "</LocationInfo>"
 msgstr ""
 
-#: ../../../source/drivers/raster/plmosaic.rst:107
+#: ../../../source/drivers/raster/plmosaic.rst:108
 msgid "Examples"
 msgstr ""
 
-#: ../../../source/drivers/raster/plmosaic.rst:109
+#: ../../../source/drivers/raster/plmosaic.rst:110
 msgid "Listing all mosaics available (with the rights of the account) :"
 msgstr ""
 
-#: ../../../source/drivers/raster/plmosaic.rst:113
+#: ../../../source/drivers/raster/plmosaic.rst:114
 msgid "gdalinfo \"PLMosaic:\" -oo API_KEY=some_value"
 msgstr ""
 
-#: ../../../source/drivers/raster/plmosaic.rst:115
-#: ../../../source/drivers/raster/plmosaic.rst:121
+#: ../../../source/drivers/raster/plmosaic.rst:116
+#: ../../../source/drivers/raster/plmosaic.rst:122
 msgid "or"
 msgstr ""
 
-#: ../../../source/drivers/raster/plmosaic.rst:119
+#: ../../../source/drivers/raster/plmosaic.rst:120
 msgid "gdalinfo \"PLMosaic:api_key=some_value\""
 msgstr ""
 
-#: ../../../source/drivers/raster/plmosaic.rst:125
+#: ../../../source/drivers/raster/plmosaic.rst:126
 msgid "gdalinfo \"PLMosaic:\" --config PL_API_KEY some_value"
 msgstr ""
 
-#: ../../../source/drivers/raster/plmosaic.rst:127
+#: ../../../source/drivers/raster/plmosaic.rst:128
 msgid "returns (in case of multiple mosaics):"
 msgstr ""
 
-#: ../../../source/drivers/raster/plmosaic.rst:131
+#: ../../../source/drivers/raster/plmosaic.rst:132
 msgid ""
 "Driver: PLMOSAIC/Planet Labs Mosaics API\n"
 "Files: none associated\n"
@@ -236,21 +237,21 @@ msgid ""
 "Center      (  256.0,  256.0)"
 msgstr ""
 
-#: ../../../source/drivers/raster/plmosaic.rst:148
+#: ../../../source/drivers/raster/plmosaic.rst:149
 msgid "Open a particular mosaic :"
 msgstr ""
 
-#: ../../../source/drivers/raster/plmosaic.rst:152
+#: ../../../source/drivers/raster/plmosaic.rst:153
 msgid ""
 "gdalinfo \"PLMosaic:mosaic=global_quarterly_2017q1_mosaic\" -oo "
 "API_KEY=some_value"
 msgstr ""
 
-#: ../../../source/drivers/raster/plmosaic.rst:154
+#: ../../../source/drivers/raster/plmosaic.rst:155
 msgid "returns:"
 msgstr ""
 
-#: ../../../source/drivers/raster/plmosaic.rst:158
+#: ../../../source/drivers/raster/plmosaic.rst:159
 msgid ""
 "Driver: PLMOSAIC/Planet Labs Mosaics API\n"
 "Files: none associated\n"
@@ -310,22 +311,22 @@ msgid ""
 "  Overviews: 4194304x4194304, ..., 256x256"
 msgstr ""
 
-#: ../../../source/drivers/raster/plmosaic.rst:214
+#: ../../../source/drivers/raster/plmosaic.rst:215
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/raster/plmosaic.rst:216
+#: ../../../source/drivers/raster/plmosaic.rst:217
 msgid ""
 "`Documentation of Planet Mosaics API <https://docs.planet.com/"
 "reference#basemaps-and-mosaics>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/plmosaic.rst:218
+#: ../../../source/drivers/raster/plmosaic.rst:219
 msgid ""
 "`API Authentication <https://docs.planet.com/docs/api-mechanics#section-"
 "authentication>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/plmosaic.rst:220
+#: ../../../source/drivers/raster/plmosaic.rst:221
 msgid ":ref:`Vector PLScenes / Planet Scenes API driver <vector.plscenes>`"
 msgstr ""

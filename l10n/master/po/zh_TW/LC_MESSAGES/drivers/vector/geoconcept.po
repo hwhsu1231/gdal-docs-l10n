@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -133,27 +133,33 @@ msgstr ""
 msgid "Dataset Creation Options"
 msgstr ""
 
-#: ../../../source/drivers/vector/geoconcept.rst:98
+#: ../../../source/drivers/vector/geoconcept.rst:84
+msgid ""
+"|about-dataset-creation-options| The following dataset creation options are "
+"supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/geoconcept.rst:101
 msgid ""
 "It is important to note that a GeoConcept export file can hold different "
 "types and associated sub-types."
 msgstr ""
 
-#: ../../../source/drivers/vector/geoconcept.rst:101
+#: ../../../source/drivers/vector/geoconcept.rst:104
 msgid ""
 "configuration section : the GCT file starts with ``//#SECTION CONFIG`` and "
 "ends with ``//#ENDSECTION CONFIG``. All the configuration is enclosed within "
 "these marks."
 msgstr ""
 
-#: ../../../source/drivers/vector/geoconcept.rst:104
+#: ../../../source/drivers/vector/geoconcept.rst:107
 msgid ""
 "map section : purely for documentation at the time of writing this document. "
 "This section starts with ``//#SECTION MAP`` and ends with ``//#ENDSECTION "
 "MAP``."
 msgstr ""
 
-#: ../../../source/drivers/vector/geoconcept.rst:107
+#: ../../../source/drivers/vector/geoconcept.rst:110
 msgid ""
 "type section : this section defines a class of features. A type has a name "
 "(keyword ``Name``) and an ID (keyword ``ID``). A type holds sub-types and "
@@ -161,7 +167,7 @@ msgid ""
 "#ENDSECTION TYPE``."
 msgstr ""
 
-#: ../../../source/drivers/vector/geoconcept.rst:112
+#: ../../../source/drivers/vector/geoconcept.rst:115
 msgid ""
 "sub-type section : this sub-section defines a kind og features within a "
 "class. A sub-type has a name (keyword ``Name``), an ID (keyword ``ID``), a "
@@ -172,7 +178,7 @@ msgid ""
 "and ends with ``//#ENDSECTION SUBTYPE``."
 msgstr ""
 
-#: ../../../source/drivers/vector/geoconcept.rst:121
+#: ../../../source/drivers/vector/geoconcept.rst:124
 msgid ""
 "fields section : defines user fields. A field has a name (keyword ``Name``), "
 "an ID (keyword ``ID``), a type (keyword ``Kind``). The following types of "
@@ -181,73 +187,79 @@ msgid ""
 "FIELD``."
 msgstr ""
 
-#: ../../../source/drivers/vector/geoconcept.rst:128
+#: ../../../source/drivers/vector/geoconcept.rst:131
 msgid "field section : defines type fields. See above."
 msgstr ""
 
-#: ../../../source/drivers/vector/geoconcept.rst:130
+#: ../../../source/drivers/vector/geoconcept.rst:133
 msgid ""
 "field section : defines general fields. Out of these, the following rules "
 "apply :"
 msgstr ""
 
-#: ../../../source/drivers/vector/geoconcept.rst:133
+#: ../../../source/drivers/vector/geoconcept.rst:136
 msgid ""
 "private field names start with a '@' : the private fields are "
 "``Identifier``, ``Class``, ``Subclass``, ``Name``, ``NbFields``, ``X``, "
 "``Y``, ``XP``, ``YP``, ``Graphics``, ``Angle``."
 msgstr ""
 
-#: ../../../source/drivers/vector/geoconcept.rst:136
+#: ../../../source/drivers/vector/geoconcept.rst:139
 msgid ""
 "some private field are mandatory (they must appear in the configuration) : "
 "``Identifier``, ``Class``, ``Subclass``, ``Name``, ``X``, ``Y``."
 msgstr ""
 
-#: ../../../source/drivers/vector/geoconcept.rst:139
+#: ../../../source/drivers/vector/geoconcept.rst:142
 msgid ""
 "If the sub-type is linear (LINE), then the following fields must be declared "
 "``XP``, ``YP``."
 msgstr ""
 
-#: ../../../source/drivers/vector/geoconcept.rst:141
+#: ../../../source/drivers/vector/geoconcept.rst:144
 msgid ""
 "If the sub-type is linear or polygonal (LINE, POLY), then ``Graphics`` must "
 "be declared."
 msgstr ""
 
-#: ../../../source/drivers/vector/geoconcept.rst:143
+#: ../../../source/drivers/vector/geoconcept.rst:146
 msgid ""
 "If the sub-type is ponctual or textual (POINT, TEXT), the ``Angle`` may be "
 "declared."
 msgstr ""
 
-#: ../../../source/drivers/vector/geoconcept.rst:146
+#: ../../../source/drivers/vector/geoconcept.rst:149
 msgid ""
 "When this option is not used, the driver manage types and sub-types name "
 "based on either the layer name or on the use of ``-nln`` option."
 msgstr ""
 
-#: ../../../source/drivers/vector/geoconcept.rst:150
+#: ../../../source/drivers/vector/geoconcept.rst:153
 msgid "Layer Creation Options"
 msgstr ""
 
-#: ../../../source/drivers/vector/geoconcept.rst:160
+#: ../../../source/drivers/vector/geoconcept.rst:155
+msgid ""
+"|about-layer-creation-options| The following layer creation options are "
+"supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/geoconcept.rst:166
 msgid ""
 "At the present moment, coordinates are written with 2 decimals for Cartesian "
 "spatial reference systems (including height) or with 9 decimals for "
 "geographical spatial reference systems."
 msgstr ""
 
-#: ../../../source/drivers/vector/geoconcept.rst:165
+#: ../../../source/drivers/vector/geoconcept.rst:171
 msgid "Examples"
 msgstr ""
 
-#: ../../../source/drivers/vector/geoconcept.rst:168
+#: ../../../source/drivers/vector/geoconcept.rst:174
 msgid "Example of a .gct file :"
 msgstr ""
 
-#: ../../../source/drivers/vector/geoconcept.rst:172
+#: ../../../source/drivers/vector/geoconcept.rst:178
 msgid ""
 "//#SECTION CONFIG\n"
 "//#SECTION MAP\n"
@@ -318,11 +330,11 @@ msgid ""
 "//#ENDSECTION CONFIG"
 msgstr ""
 
-#: ../../../source/drivers/vector/geoconcept.rst:241
+#: ../../../source/drivers/vector/geoconcept.rst:247
 msgid "Example of a GeoConcept text export :"
 msgstr ""
 
-#: ../../../source/drivers/vector/geoconcept.rst:245
+#: ../../../source/drivers/vector/geoconcept.rst:251
 msgid ""
 "//$DELIMITER \"    \"\n"
 "//$QUOTED-TEXT \"no\"\n"
@@ -350,42 +362,42 @@ msgid ""
 "6035000.00    50000.00     6035000.00    50000.00     6585000.00"
 msgstr ""
 
-#: ../../../source/drivers/vector/geoconcept.rst:259
+#: ../../../source/drivers/vector/geoconcept.rst:265
 msgid "Example of use :"
 msgstr ""
 
-#: ../../../source/drivers/vector/geoconcept.rst:261
+#: ../../../source/drivers/vector/geoconcept.rst:267
 msgid "Creating a GeoConcept export file :"
 msgstr ""
 
-#: ../../../source/drivers/vector/geoconcept.rst:265
+#: ../../../source/drivers/vector/geoconcept.rst:271
 msgid ""
 "ogr2ogr -f \"Geoconcept\" -a_srs \"+init=IGNF:LAMB93\" -dsco EXTENSION=txt -"
 "dsco CONFIG=tile_schema.gct tile.gxt tile.shp -lco FEATURETYPE=TILE.TILE"
 msgstr ""
 
-#: ../../../source/drivers/vector/geoconcept.rst:267
-msgid "Appending new features to an existing GeoConcept export file :"
-msgstr ""
-
-#: ../../../source/drivers/vector/geoconcept.rst:271
-msgid ""
-"ogr2ogr -f \"Geoconcept\" -update -append tile.gxt tile.shp -nln TILE.TILE"
-msgstr ""
-
 #: ../../../source/drivers/vector/geoconcept.rst:273
-msgid "Translating a GeoConcept export file layer into MapInfo file :"
+msgid "Appending new features to an existing GeoConcept export file :"
 msgstr ""
 
 #: ../../../source/drivers/vector/geoconcept.rst:277
 msgid ""
+"ogr2ogr -f \"Geoconcept\" -update -append tile.gxt tile.shp -nln TILE.TILE"
+msgstr ""
+
+#: ../../../source/drivers/vector/geoconcept.rst:279
+msgid "Translating a GeoConcept export file layer into MapInfo file :"
+msgstr ""
+
+#: ../../../source/drivers/vector/geoconcept.rst:283
+msgid ""
 "ogr2ogr -f \"MapInfo File\" -dsco FORMAT=MIF tile.mif tile.gxt TILE.TILE"
 msgstr ""
 
-#: ../../../source/drivers/vector/geoconcept.rst:280
+#: ../../../source/drivers/vector/geoconcept.rst:286
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/vector/geoconcept.rst:282
+#: ../../../source/drivers/vector/geoconcept.rst:288
 msgid "`GeoConcept web site <http://www.geoconcept.com/>`__"
 msgstr ""

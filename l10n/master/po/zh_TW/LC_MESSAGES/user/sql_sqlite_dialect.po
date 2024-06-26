@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -129,18 +129,19 @@ msgstr ""
 
 #: ../../../source/user/sql_sqlite_dialect.rst:69
 msgid ""
-"ogrinfo jointest.gpkg -dialect INDIRECT_SQLITE -sql \"SELECT a.ID,b.ID FROM "
-"jointest a JOIN \\\"jointest2.shp\\\".\\\"jointest2\\\" b ON a.ID=b.ID\""
+"ogrinfo jointest.gpkg -dialect INDIRECT_SQLITE -sql \\\n"
+"\"SELECT a.ID,b.ID FROM jointest a JOIN \\\"jointest2.shp\\\".\\\"jointest2\\"
+"\" b ON a.ID=b.ID\""
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:73
+#: ../../../source/user/sql_sqlite_dialect.rst:74
 msgid ""
 "The column names that can be used in the result column list, in WHERE, "
 "JOIN, ... clauses are the field names of the layers. Expressions, SQLite "
 "functions, spatial functions, etc... can also be used."
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:78
+#: ../../../source/user/sql_sqlite_dialect.rst:79
 msgid ""
 "The conditions on fields expressed in WHERE clauses, or in JOINs are "
 "translated, as far as possible, as attribute filters that are applied on the "
@@ -148,17 +149,17 @@ msgid ""
 "secondary table is not indexed on the key field being used."
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:84
+#: ../../../source/user/sql_sqlite_dialect.rst:85
 msgid "LIKE operator"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:86
+#: ../../../source/user/sql_sqlite_dialect.rst:87
 msgid ""
 "In SQLite, the LIKE operator is case insensitive, unless ``PRAGMA "
 "case_sensitive_like = 1`` has been issued."
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:89
+#: ../../../source/user/sql_sqlite_dialect.rst:90
 msgid ""
 "Starting with GDAL 3.9, GDAL installs a custom LIKE comparison, such that "
 "UTF-8 characters are taken into account by ``LIKE`` and ``ILIKE`` operators. "
@@ -172,11 +173,11 @@ msgid ""
 "org/wiki/Greek_and_Coptic>`__ Unicode categories."
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:100
+#: ../../../source/user/sql_sqlite_dialect.rst:101
 msgid "Delimited identifiers"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:102
+#: ../../../source/user/sql_sqlite_dialect.rst:103
 msgid ""
 "If names of layers or attributes are reserved keywords in SQL like 'FROM' or "
 "they begin with a number or underscore they must be handled as \"delimited "
@@ -184,26 +185,26 @@ msgid ""
 "quotes can be used even when they are not strictly needed."
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:107
+#: ../../../source/user/sql_sqlite_dialect.rst:108
 msgid "SELECT \"p\".\"geometry\", \"p\".\"FROM\", \"p\".\"3D\" FROM \"poly\" p"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:111
+#: ../../../source/user/sql_sqlite_dialect.rst:112
 msgid ""
 "When SQL statements are used in the command shell and the statement itself "
 "is put between double quotes, the internal double quotes must be escaped "
 "with \\\\"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:114
+#: ../../../source/user/sql_sqlite_dialect.rst:115
 msgid "ogrinfo p.shp -sql \"SELECT geometry \\\"FROM\\\", \\\"3D\\\" FROM p\""
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:119
+#: ../../../source/user/sql_sqlite_dialect.rst:120
 msgid "Geometry field"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:121
+#: ../../../source/user/sql_sqlite_dialect.rst:122
 msgid ""
 "The ``GEOMETRY`` special field represents the geometry of the feature "
 "returned by OGRFeature::GetGeometryRef(). It can be explicitly specified in "
@@ -211,29 +212,30 @@ msgid ""
 "wildcard is used."
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:126
+#: ../../../source/user/sql_sqlite_dialect.rst:127
 msgid ""
 "For OGR layers that have a non-empty geometry column name (generally for "
 "RDBMS datasources), as returned by OGRLayer::GetGeometryColumn(), the name "
 "of the geometry special field in the SQL statement will be the name of the "
 "geometry column of the underlying OGR layer. If the name of the geometry "
 "column in the source layer is empty, like with shapefiles etc., the name to "
-"use in the SQL statement is always \"geometry\"."
+"use in the SQL statement is always \"geometry\". Here we'll use it case-"
+"insensitively (as all field names are in a SELECT statement):"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:132
+#: ../../../source/user/sql_sqlite_dialect.rst:134
 msgid "SELECT EAS_ID, GEOMETRY FROM poly"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:136
-#: ../../../source/user/sql_sqlite_dialect.rst:148
-#: ../../../source/user/sql_sqlite_dialect.rst:214
-#: ../../../source/user/sql_sqlite_dialect.rst:341
-#: ../../../source/user/sql_sqlite_dialect.rst:352
+#: ../../../source/user/sql_sqlite_dialect.rst:138
+#: ../../../source/user/sql_sqlite_dialect.rst:150
+#: ../../../source/user/sql_sqlite_dialect.rst:216
+#: ../../../source/user/sql_sqlite_dialect.rst:343
+#: ../../../source/user/sql_sqlite_dialect.rst:354
 msgid "returns:"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:140
+#: ../../../source/user/sql_sqlite_dialect.rst:142
 msgid ""
 "OGRFeature(SELECT):0\n"
 "EAS_ID (Real) = 168\n"
@@ -241,11 +243,11 @@ msgid ""
 "4765180.5))"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:144
+#: ../../../source/user/sql_sqlite_dialect.rst:146
 msgid "SELECT * FROM poly"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:152
+#: ../../../source/user/sql_sqlite_dialect.rst:154
 msgid ""
 "OGRFeature(SELECT):0\n"
 "AREA (Real) = 215229.266\n"
@@ -255,11 +257,11 @@ msgid ""
 "4765180.5))"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:159
+#: ../../../source/user/sql_sqlite_dialect.rst:161
 msgid "Feature id (FID)"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:161
+#: ../../../source/user/sql_sqlite_dialect.rst:163
 msgid ""
 "The feature id is a special property of a feature and not treated as an "
 "attribute of the feature.  In some cases it is convenient to be able to "
@@ -267,40 +269,40 @@ msgid ""
 "so use the name ``rowid``."
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:166
+#: ../../../source/user/sql_sqlite_dialect.rst:168
 msgid ""
 "Starting with GDAL 3.8, if the layer has a named FID column (:cpp:func:"
 "`OGRLayer::GetFIDColumn` != \"\"), this name may also be used."
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:169
-#: ../../../source/user/sql_sqlite_dialect.rst:177
+#: ../../../source/user/sql_sqlite_dialect.rst:171
+#: ../../../source/user/sql_sqlite_dialect.rst:179
 msgid ""
 "The field wildcard expansions will not include the feature id, but it may be "
 "explicitly included using a syntax like:"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:172
+#: ../../../source/user/sql_sqlite_dialect.rst:174
 msgid "SELECT ROWID, * FROM nation"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:180
+#: ../../../source/user/sql_sqlite_dialect.rst:182
 msgid "SELECT rowid, * FROM nation"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:184
+#: ../../../source/user/sql_sqlite_dialect.rst:186
 msgid "It is of course possible to rename it:"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:186
+#: ../../../source/user/sql_sqlite_dialect.rst:188
 msgid "SELECT rowid AS fid, * FROM nation"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:191
+#: ../../../source/user/sql_sqlite_dialect.rst:193
 msgid "OGR_STYLE special field"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:193
+#: ../../../source/user/sql_sqlite_dialect.rst:195
 msgid ""
 "The ``OGR_STYLE`` special field represents the style string of the feature "
 "returned by OGRFeature::GetStyleString(). By using this field and the "
@@ -308,15 +310,15 @@ msgid ""
 "example we can select the annotation features as:"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:198
+#: ../../../source/user/sql_sqlite_dialect.rst:200
 msgid "SELECT * FROM nation WHERE OGR_STYLE LIKE 'LABEL%'"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:203
+#: ../../../source/user/sql_sqlite_dialect.rst:205
 msgid "Spatialite SQL functions"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:205
+#: ../../../source/user/sql_sqlite_dialect.rst:207
 msgid ""
 "When GDAL/OGR is build with support for the `Spatialite <https://www.gaia-"
 "gis.it/fossil/libspatialite/index>`_ library, a lot of `extra SQL functions "
@@ -325,13 +327,13 @@ msgid ""
 "clauses, etc...."
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:209
+#: ../../../source/user/sql_sqlite_dialect.rst:211
 msgid ""
 "SELECT EAS_ID, ST_Area(GEOMETRY) AS area FROM poly WHERE\n"
 "    ST_Intersects(GEOMETRY, BuildCircleMbr(479750.6875,4764702.0,100))"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:218
+#: ../../../source/user/sql_sqlite_dialect.rst:220
 msgid ""
 "OGRFeature(SELECT):0\n"
 "EAS_ID (Real) = 169\n"
@@ -346,7 +348,7 @@ msgid ""
 "area (Real) = 5268.8125"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:230
+#: ../../../source/user/sql_sqlite_dialect.rst:232
 msgid ""
 "Note that due to the loose typing mechanism of SQLite, if a geometry "
 "expression returns a NULL value for the first row, this will generally cause "
@@ -355,24 +357,24 @@ msgid ""
 "returned first:"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:237
+#: ../../../source/user/sql_sqlite_dialect.rst:239
 msgid ""
 "ogrinfo test.shp -sql \"SELECT * FROM (SELECT ST_Buffer(geometry,5) AS "
 "geometry FROM test) ORDER BY geometry IS NULL ASC\" -dialect sqlite"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:240
+#: ../../../source/user/sql_sqlite_dialect.rst:242
 msgid "OGR datasource SQL functions"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:242
+#: ../../../source/user/sql_sqlite_dialect.rst:244
 msgid ""
 "The ``ogr_datasource_load_layers(datasource_name[, update_mode[, prefix]])`` "
 "function can be used to automatically load all the layers of a datasource "
 "as :ref:`VirtualOGR tables <vector.sqlite>`."
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:248
+#: ../../../source/user/sql_sqlite_dialect.rst:250
 msgid ""
 "sqlite> SELECT load_extension('libgdal.so');\n"
 "\n"
@@ -385,25 +387,25 @@ msgid ""
 "0, 'poly')"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:258
+#: ../../../source/user/sql_sqlite_dialect.rst:260
 msgid "OGR layer SQL functions"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:260
+#: ../../../source/user/sql_sqlite_dialect.rst:262
 msgid ""
 "The following SQL functions are available and operate on a layer name : "
 "``ogr_layer_Extent()``, ``ogr_layer_SRID()``, ``ogr_layer_GeometryType()`` "
 "and ``ogr_layer_FeatureCount()``"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:264
+#: ../../../source/user/sql_sqlite_dialect.rst:266
 msgid ""
 "SELECT ogr_layer_Extent('poly'), ogr_layer_SRID('poly') AS srid,\n"
 "    ogr_layer_GeometryType('poly') AS geomtype, "
 "ogr_layer_FeatureCount('poly') AS count"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:271
+#: ../../../source/user/sql_sqlite_dialect.rst:273
 msgid ""
 "OGRFeature(SELECT):0\n"
 "srid (Integer) = 40004\n"
@@ -413,17 +415,17 @@ msgid ""
 "4765610.5,478315.53125 4765610.5,478315.53125 4762880.5))"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:278
+#: ../../../source/user/sql_sqlite_dialect.rst:280
 msgid "OGR compression functions"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:280
+#: ../../../source/user/sql_sqlite_dialect.rst:282
 msgid ""
 "``ogr_deflate(text_or_blob[, compression_level])`` returns a binary blob "
 "compressed with the ZLib deflate algorithm. See :cpp:func:`CPLZLibDeflate`"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:283
+#: ../../../source/user/sql_sqlite_dialect.rst:285
 msgid ""
 "``ogr_inflate(compressed_blob)`` returns the decompressed binary blob, from "
 "a blob compressed with the ZLib deflate algorithm. If the decompressed "
@@ -431,28 +433,28 @@ msgid ""
 "CPLZLibInflate()."
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:289
+#: ../../../source/user/sql_sqlite_dialect.rst:291
 msgid "Other functions"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:291
+#: ../../../source/user/sql_sqlite_dialect.rst:293
 msgid ""
 "The ``hstore_get_value()`` function can be used to extract a value associate "
 "to a key from a HSTORE string, formatted like \"key=>value,"
 "other_key=>other_value,...\""
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:294
+#: ../../../source/user/sql_sqlite_dialect.rst:296
 msgid ""
 "SELECT hstore_get_value('a => b, \"key with space\"=> \"value with space\"', "
 "'key with space') --> 'value with space'"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:301
+#: ../../../source/user/sql_sqlite_dialect.rst:303
 msgid "Raster related functions"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:303
+#: ../../../source/user/sql_sqlite_dialect.rst:305
 msgid ""
 "The ``gdal_get_pixel_value()`` function (added in GDAL 3.7) can be used to "
 "extract the value of a pixel in a GDAL dataset. It requires the "
@@ -460,51 +462,51 @@ msgid ""
 "security reasons)."
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:307
+#: ../../../source/user/sql_sqlite_dialect.rst:309
 msgid "It takes 5 arguments:"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:309
+#: ../../../source/user/sql_sqlite_dialect.rst:311
 msgid "a string with the dataset name"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:310
+#: ../../../source/user/sql_sqlite_dialect.rst:312
 msgid "a band number (numbering starting at 1)"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:311
+#: ../../../source/user/sql_sqlite_dialect.rst:313
 msgid ""
 "a string being \"georef\" to indicate that subsequent values will be "
 "georeferenced coordinates, or \"pixel\" to indicate that subsequent values "
 "will be in column, line pixel space"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:314
+#: ../../../source/user/sql_sqlite_dialect.rst:316
 msgid "georeferenced X value or column number"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:315
+#: ../../../source/user/sql_sqlite_dialect.rst:317
 msgid "georeferenced Y value or line number"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:317
+#: ../../../source/user/sql_sqlite_dialect.rst:319
 msgid ""
 "SELECT gdal_get_pixel_value('../gcore/data/byte.tif', 1, 'georef', 440720, "
 "3751320)\n"
 "SELECT gdal_get_pixel_value('../gcore/data/byte.tif', 1, 'pixel', 0, 0)"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:324
+#: ../../../source/user/sql_sqlite_dialect.rst:326
 msgid "OGR geocoding functions"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:326
+#: ../../../source/user/sql_sqlite_dialect.rst:328
 msgid ""
 "The following SQL functions are available : ``ogr_geocode(...)`` and "
 "``ogr_geocode_reverse(...)``."
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:328
+#: ../../../source/user/sql_sqlite_dialect.rst:330
 msgid ""
 "``ogr_geocode(name_to_geocode [, field_to_return [, option1 [, "
 "option2, ...]]])`` where name_to_geocode is a literal or a column name that "
@@ -516,29 +518,29 @@ msgid ""
 "`OGRGeocodeCreateSession` or OGRGeocode()."
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:335
+#: ../../../source/user/sql_sqlite_dialect.rst:337
 msgid ""
 "This function internally uses the OGRGeocode() API. Refer to it for more "
 "details."
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:337
+#: ../../../source/user/sql_sqlite_dialect.rst:339
 msgid "SELECT ST_Centroid(ogr_geocode('Paris'))"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:345
+#: ../../../source/user/sql_sqlite_dialect.rst:347
 msgid ""
 "OGRFeature(SELECT):0\n"
 "POINT (2.34287687375113 48.856622357411)"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:348
+#: ../../../source/user/sql_sqlite_dialect.rst:350
 msgid ""
 "ogrinfo cities.csv -dialect sqlite -sql \"SELECT *, ogr_geocode(city, "
 "'country_code') AS country_code, ST_Centroid(ogr_geocode(city)) FROM cities\""
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:359
+#: ../../../source/user/sql_sqlite_dialect.rst:361
 msgid ""
 "OGRFeature(SELECT):0\n"
 "  city (String) = Paris\n"
@@ -566,7 +568,7 @@ msgid ""
 "  POINT (116.3912972 39.9057136)"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:387
+#: ../../../source/user/sql_sqlite_dialect.rst:389
 msgid ""
 "``ogr_geocode_reverse(longitude, latitude, field_to_return [, option1 [, "
 "option2, ...]])`` where longitude, latitude is the coordinate to query. "
@@ -577,24 +579,24 @@ msgid ""
 "options understood by OGRGeocodeCreateSession() or OGRGeocodeReverse()."
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:394
+#: ../../../source/user/sql_sqlite_dialect.rst:396
 msgid ""
 "``ogr_geocode_reverse(geometry, field_to_return [, option1 [, "
 "option2, ...]])`` is also accepted as an alternate syntax where geometry is "
 "a (Spatialite) point geometry."
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:397
+#: ../../../source/user/sql_sqlite_dialect.rst:399
 msgid ""
 "This function internally uses the :cpp:func:`OGRGeocodeReverse` API. Refer "
 "to it for more details."
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:400
+#: ../../../source/user/sql_sqlite_dialect.rst:402
 msgid "Spatialite spatial index"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:402
+#: ../../../source/user/sql_sqlite_dialect.rst:404
 msgid ""
 "Spatialite spatial index mechanism can be triggered by making sure a spatial "
 "index virtual table is mentioned in the SQL (of the form "
@@ -603,14 +605,14 @@ msgid ""
 "built to be used to speed up the spatial queries."
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:407
+#: ../../../source/user/sql_sqlite_dialect.rst:409
 msgid ""
 "For example, a spatial intersection between 2 layers, by using a spatial "
 "index on one of the layers to limit the number of actual geometry "
 "intersection computations :"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:410
+#: ../../../source/user/sql_sqlite_dialect.rst:412
 msgid ""
 "SELECT city_name, region_name FROM cities, regions WHERE\n"
 "    ST_Area(ST_Intersection(cities.geometry, regions.geometry)) > 0 AND\n"
@@ -622,11 +624,11 @@ msgid ""
 "geometry))"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:419
+#: ../../../source/user/sql_sqlite_dialect.rst:421
 msgid "or more elegantly :"
 msgstr ""
 
-#: ../../../source/user/sql_sqlite_dialect.rst:421
+#: ../../../source/user/sql_sqlite_dialect.rst:423
 msgid ""
 "SELECT city_name, region_name FROM cities, regions WHERE\n"
 "    ST_Area(ST_Intersection(cities.geometry, regions.geometry)) > 0 AND\n"

@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -273,29 +274,34 @@ msgid ""
 ":program:`gdalwarp` and :program:`ogr2ogr` have a ``-s_coord_epoch`` option "
 "to be used together with ``-s_srs`` (resp. ``-t_coord_epoch`` option to be "
 "used together with ``-t_srs``) to override/set the coordinate epoch of the "
-"source (resp. target) CRS. ``-s_coord_epoch`` and ``-t_coord_epoch`` are "
-"currently mutually exclusive, due to lack of support for transformations "
-"between two dynamic CRS."
+"source (resp. target) CRS."
 msgstr ""
 
-#: ../../../source/user/coordinate_epoch.rst:176
+#: ../../../source/user/coordinate_epoch.rst:174
+msgid ""
+"Before PROJ 9.4, ``-s_coord_epoch`` and ``-t_coord_epoch`` were mutually "
+"exclusive, due to lack of support for transformations between two dynamic "
+"CRS."
+msgstr ""
+
+#: ../../../source/user/coordinate_epoch.rst:177
 msgid ""
 ":program:`gdalwarp` preserves the coordinate epoch in the output SRS when "
 "appropriate."
 msgstr ""
 
-#: ../../../source/user/coordinate_epoch.rst:180
+#: ../../../source/user/coordinate_epoch.rst:181
 msgid "Support in coordinate transformation"
 msgstr ""
 
-#: ../../../source/user/coordinate_epoch.rst:182
+#: ../../../source/user/coordinate_epoch.rst:183
 msgid ""
 "The :cpp:class:`OGRCoordinateTransformation` class can perform time-"
 "dependent transformations between a static and dynamic CRS based on the "
 "coordinate epoch passed per vertex."
 msgstr ""
 
-#: ../../../source/user/coordinate_epoch.rst:186
+#: ../../../source/user/coordinate_epoch.rst:187
 msgid ""
 "It can also take into account the coordinate epoch associated with a dynamic "
 "CRS, when doing time-dependent transformations between a static and dynamic "
@@ -304,7 +310,7 @@ msgid ""
 "source or target CRS."
 msgstr ""
 
-#: ../../../source/user/coordinate_epoch.rst:192
+#: ../../../source/user/coordinate_epoch.rst:193
 msgid ""
 "If a per-vertex time is specified, it overrides the one associated with the "
 "CRS."

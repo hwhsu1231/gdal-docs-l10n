@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -105,25 +105,29 @@ msgstr ""
 msgid "Open options"
 msgstr ""
 
-#: ../../../source/drivers/raster/openfilegdb.rst:59
+#: ../../../source/drivers/raster/openfilegdb.rst:54
+msgid "|about-open-options| The following open options are available:"
+msgstr ""
+
+#: ../../../source/drivers/raster/openfilegdb.rst:62
 msgid ""
 "In AUTO mode, the driver will expose a dataset nodata mask band, unless the "
 "band data type is Float32 or Float64, in which case a nodata value is used."
 msgstr ""
 
-#: ../../../source/drivers/raster/openfilegdb.rst:62
+#: ../../../source/drivers/raster/openfilegdb.rst:65
 msgid ""
 "In MASK mode, the driver will expose a dataset nodata mask band for all data "
 "types."
 msgstr ""
 
-#: ../../../source/drivers/raster/openfilegdb.rst:65
+#: ../../../source/drivers/raster/openfilegdb.rst:68
 msgid ""
 "In NONE mode, the driver will not expose a nodata mask band or a nodata "
 "value."
 msgstr ""
 
-#: ../../../source/drivers/raster/openfilegdb.rst:68
+#: ../../../source/drivers/raster/openfilegdb.rst:71
 msgid ""
 "When specifying a numeric nodata value (``nan`` accepted for Float32 or "
 "Float64), it is used as the band nodata value. The nodata value should be "
@@ -131,49 +135,49 @@ msgid ""
 "type)."
 msgstr ""
 
-#: ../../../source/drivers/raster/openfilegdb.rst:74
+#: ../../../source/drivers/raster/openfilegdb.rst:77
 msgid "Metadata"
 msgstr ""
 
-#: ../../../source/drivers/raster/openfilegdb.rst:76
+#: ../../../source/drivers/raster/openfilegdb.rst:79
 msgid ""
 "The ``xml:documentation`` and ``xml:definition`` metadata domains contain "
 "the XML content from the ``GDB_Items`` table related to the raster layer."
 msgstr ""
 
-#: ../../../source/drivers/raster/openfilegdb.rst:80
+#: ../../../source/drivers/raster/openfilegdb.rst:83
 msgid "Examples"
 msgstr ""
 
-#: ../../../source/drivers/raster/openfilegdb.rst:82
+#: ../../../source/drivers/raster/openfilegdb.rst:85
 msgid "List raster layers from a FileGDB"
 msgstr ""
 
-#: ../../../source/drivers/raster/openfilegdb.rst:86
+#: ../../../source/drivers/raster/openfilegdb.rst:89
 msgid "gdalinfo /path/to/my.gdb"
 msgstr ""
 
-#: ../../../source/drivers/raster/openfilegdb.rst:88
+#: ../../../source/drivers/raster/openfilegdb.rst:91
 msgid "Open a given subdataset:"
 msgstr ""
 
-#: ../../../source/drivers/raster/openfilegdb.rst:92
+#: ../../../source/drivers/raster/openfilegdb.rst:95
 msgid "gdalinfo OpenFileGDB:\"/path/to/my.gdb\":name_of_raster_layer"
 msgstr ""
 
-#: ../../../source/drivers/raster/openfilegdb.rst:96
+#: ../../../source/drivers/raster/openfilegdb.rst:99
 msgid "Links"
 msgstr ""
 
-#: ../../../source/drivers/raster/openfilegdb.rst:98
+#: ../../../source/drivers/raster/openfilegdb.rst:101
 msgid ":ref:`OpenFileGDB vector <vector.openfilegdb>` documentation page"
 msgstr ""
 
-#: ../../../source/drivers/raster/openfilegdb.rst:102
+#: ../../../source/drivers/raster/openfilegdb.rst:105
 msgid "Credits"
 msgstr ""
 
-#: ../../../source/drivers/raster/openfilegdb.rst:104
+#: ../../../source/drivers/raster/openfilegdb.rst:107
 msgid ""
 "Thanks to Richard Barnes and his ArcRescue tool for the deciphering of the "
 "band_types field which indicates the compression method and the data type."

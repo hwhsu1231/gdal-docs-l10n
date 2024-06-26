@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -174,28 +175,40 @@ msgstr ""
 msgid "Dataset Creation Options"
 msgstr ""
 
-#: ../../../source/drivers/vector/mitab.rst:132
+#: ../../../source/drivers/vector/mitab.rst:108
+msgid ""
+"|about-dataset-creation-options| The following dataset creation options are "
+"supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/mitab.rst:135
 msgid "Layer Creation Options"
 msgstr ""
 
-#: ../../../source/drivers/vector/mitab.rst:158
+#: ../../../source/drivers/vector/mitab.rst:137
+msgid ""
+"|about-layer-creation-options| The following layer creation options are "
+"supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/mitab.rst:164
 msgid "Configuration options"
 msgstr ""
 
-#: ../../../source/drivers/vector/mitab.rst:160
+#: ../../../source/drivers/vector/mitab.rst:166
 msgid ""
-"The following :ref:`configuration options <configoptions>` are available:"
+"|about-config-options| The following configuration options are available:"
 msgstr ""
 
-#: ../../../source/drivers/vector/mitab.rst:176
+#: ../../../source/drivers/vector/mitab.rst:182
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/vector/mitab.rst:178
+#: ../../../source/drivers/vector/mitab.rst:184
 msgid "`MITAB Page <http://mitab.maptools.org/>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/mitab.rst:179
+#: ../../../source/drivers/vector/mitab.rst:185
 msgid ""
 "`About friendly layer names <https://support.pitneybowes.com/SearchArticles/"
 "VFP05_KnowledgeWithSidebarHowTo?"

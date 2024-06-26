@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -443,31 +444,37 @@ msgid "Open options"
 msgstr ""
 
 #: ../../../source/drivers/vector/shapefile.rst:279
-msgid "The following open options are available."
+msgid "|about-open-options| The following open options are supported:"
 msgstr ""
 
-#: ../../../source/drivers/vector/shapefile.rst:340
+#: ../../../source/drivers/vector/shapefile.rst:341
 msgid "Dataset creation options"
 msgstr ""
 
-#: ../../../source/drivers/vector/shapefile.rst:342
+#: ../../../source/drivers/vector/shapefile.rst:343
 msgid "None"
 msgstr ""
 
-#: ../../../source/drivers/vector/shapefile.rst:345
+#: ../../../source/drivers/vector/shapefile.rst:346
 msgid "Layer creation options"
 msgstr ""
 
-#: ../../../source/drivers/vector/shapefile.rst:408
+#: ../../../source/drivers/vector/shapefile.rst:348
+msgid ""
+"|about-layer-creation-options| The following layer creation options are "
+"supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/shapefile.rst:412
 msgid "Configuration options"
 msgstr ""
 
-#: ../../../source/drivers/vector/shapefile.rst:410
+#: ../../../source/drivers/vector/shapefile.rst:414
 msgid ""
-"The following :ref:`configuration options <configoptions>` are available:"
+"|about-config-options| The following configuration options are available:"
 msgstr ""
 
-#: ../../../source/drivers/vector/shapefile.rst:423
+#: ../../../source/drivers/vector/shapefile.rst:427
 msgid ""
 "Starting with GDAL 3.7, for Polygon/MultiPolygon, the default value is NO, "
 "with the effect that the winding order of rings will be determined from the "
@@ -476,57 +483,57 @@ msgid ""
 "could cause troubles for non-planar 3D geometries."
 msgstr ""
 
-#: ../../../source/drivers/vector/shapefile.rst:451
+#: ../../../source/drivers/vector/shapefile.rst:455
 msgid "Examples"
 msgstr ""
 
-#: ../../../source/drivers/vector/shapefile.rst:453
+#: ../../../source/drivers/vector/shapefile.rst:457
 msgid ""
 "A merge of two shapefiles 'file1.shp' and 'file2.shp' into a new file "
 "'file_merged.shp' is performed like this:"
 msgstr ""
 
-#: ../../../source/drivers/vector/shapefile.rst:458
+#: ../../../source/drivers/vector/shapefile.rst:462
 msgid ""
 "ogr2ogr file_merged.shp file1.shp\n"
 "ogr2ogr -update -append file_merged.shp file2.shp -nln file_merged"
 msgstr ""
 
-#: ../../../source/drivers/vector/shapefile.rst:461
+#: ../../../source/drivers/vector/shapefile.rst:465
 msgid ""
 "The second command is opening file_merged.shp in update mode, and trying to "
 "find existing layers and append the features being copied."
 msgstr ""
 
-#: ../../../source/drivers/vector/shapefile.rst:464
+#: ../../../source/drivers/vector/shapefile.rst:468
 msgid "The -nln option sets the name of the layer to be copied to."
 msgstr ""
 
-#: ../../../source/drivers/vector/shapefile.rst:466
+#: ../../../source/drivers/vector/shapefile.rst:470
 msgid "Building a spatial index :"
 msgstr ""
 
-#: ../../../source/drivers/vector/shapefile.rst:470
+#: ../../../source/drivers/vector/shapefile.rst:474
 msgid "ogrinfo file1.shp -sql \"CREATE SPATIAL INDEX ON file1\""
 msgstr ""
 
-#: ../../../source/drivers/vector/shapefile.rst:472
+#: ../../../source/drivers/vector/shapefile.rst:476
 msgid "Resizing columns of a DBF file to their optimal size :"
 msgstr ""
 
-#: ../../../source/drivers/vector/shapefile.rst:477
+#: ../../../source/drivers/vector/shapefile.rst:481
 msgid "ogrinfo file1.dbf -sql \"RESIZE file1\""
 msgstr ""
 
-#: ../../../source/drivers/vector/shapefile.rst:480
+#: ../../../source/drivers/vector/shapefile.rst:484
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/vector/shapefile.rst:482
+#: ../../../source/drivers/vector/shapefile.rst:486
 msgid "`Shapelib Page <http://shapelib.maptools.org/>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/shapefile.rst:483
+#: ../../../source/drivers/vector/shapefile.rst:487
 msgid ""
 "`User Notes on OGR Shapefile Driver <http://trac.osgeo.org/gdal/wiki/"
 "UserDocs/Shapefiles>`__"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,44 +72,44 @@ msgid ""
 msgstr ""
 
 #: ../../../source/drivers/raster/hfa.rst:50
-msgid "Creation Options:"
+msgid "|about-creation-options| The following creation options are supported:"
 msgstr ""
 
-#: ../../../source/drivers/raster/hfa.rst:127
+#: ../../../source/drivers/raster/hfa.rst:128
 msgid ""
 "Erdas Imagine supports external creation of overviews (with gdaladdo for "
 "instance). To force them to be created in an .rrd file (rather than inside "
 "the original .img) set the global config option HFA_USE_RRD=YES)."
 msgstr ""
 
-#: ../../../source/drivers/raster/hfa.rst:131
+#: ../../../source/drivers/raster/hfa.rst:132
 msgid ""
 "Layer names can be set and retrieved with the GDALSetDescription/"
 "GDALGetDescription calls on the Raster Band objects."
 msgstr ""
 
-#: ../../../source/drivers/raster/hfa.rst:134
+#: ../../../source/drivers/raster/hfa.rst:135
 msgid "Some HFA band metadata exported to GDAL metadata:"
 msgstr ""
 
-#: ../../../source/drivers/raster/hfa.rst:136
+#: ../../../source/drivers/raster/hfa.rst:137
 msgid "LAYER_TYPE - layer type (athematic, ... )"
 msgstr ""
 
-#: ../../../source/drivers/raster/hfa.rst:137
+#: ../../../source/drivers/raster/hfa.rst:138
 msgid ""
 "OVERVIEWS_ALGORITHM - layer overviews algorithm ('IMAGINE 2X2 Resampling', "
 "'IMAGINE 4X4 Resampling', and others)"
 msgstr ""
 
-#: ../../../source/drivers/raster/hfa.rst:141
+#: ../../../source/drivers/raster/hfa.rst:142
 msgid "Configuration Options"
 msgstr ""
 
-#: ../../../source/drivers/raster/hfa.rst:143
+#: ../../../source/drivers/raster/hfa.rst:144
 msgid ""
-"Currently three `runtime configuration options <http://trac.osgeo.org/gdal/"
-"wiki/ConfigOptions>`__ are supported by the HFA driver:"
+"|about-config-options| Currently the following configuration options are "
+"supported by the HFA driver:"
 msgstr ""
 
 #: ../../../source/drivers/raster/hfa.rst:162

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -85,18 +85,19 @@ msgstr ""
 
 #: ../../../source/drivers/raster/bag.rst:50
 msgid ""
-"For open options specific to variable resolution, see following chapter."
+"|about-open-options| For open options specific to variable resolution, see "
+"following chapter."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:52
+#: ../../../source/drivers/raster/bag.rst:53
 msgid "Other open options are:"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:64
+#: ../../../source/drivers/raster/bag.rst:65
 msgid "Variable resolution (VR) grid support"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:66
+#: ../../../source/drivers/raster/bag.rst:67
 msgid ""
 "Starting with GDAL 2.4, GDAL can handle BAG files with `variable resolution "
 "grids <https://bitbucket.org/ccomjhc/openns/raw/master/docs/"
@@ -107,13 +108,13 @@ msgid ""
 "\"supergrids\" in GDAL."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:74
+#: ../../../source/drivers/raster/bag.rst:75
 msgid ""
 "The driver has different modes of working which can be controlled by the "
 "MODE open option:"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:83
+#: ../../../source/drivers/raster/bag.rst:84
 msgid ""
 "MODE=LOW_RES_GRID: this is the default mode (unless opening a supergrid). "
 "The driver will expose the low resolution grid, and indicate in the dataset "
@@ -121,50 +122,50 @@ msgid ""
 "minimum and maximum resolution of those grids."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:88
+#: ../../../source/drivers/raster/bag.rst:89
 msgid ""
 "MODE=LIST_SUPERGRIDS: in this mode, the driver will report the various "
 "supergrids in the subdataset list. It is possible to apply in this mode "
 "additional open options to restrict the search"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:99
+#: ../../../source/drivers/raster/bag.rst:100
 msgid ""
 "MINX=value: Minimum georeferenced X value to use as a filter for the "
 "supergrids to list."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:101
+#: ../../../source/drivers/raster/bag.rst:102
 msgid ""
 "MINY=value: Minimum georeferenced Y value to use as a filter for the "
 "supergrids to list."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:103
+#: ../../../source/drivers/raster/bag.rst:104
 msgid ""
 "MAXX=value: Maximum georeferenced X value to use as a filter for the "
 "supergrids to list."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:105
+#: ../../../source/drivers/raster/bag.rst:106
 msgid ""
 "MAXY=value: Maximum georeferenced Y value to use as a filter for the "
 "supergrids to list."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:107
+#: ../../../source/drivers/raster/bag.rst:108
 msgid ""
 "RES_FILTER_MIN=value: Minimum resolution of supergrids to take into account "
 "(excluded bound)"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:109
+#: ../../../source/drivers/raster/bag.rst:110
 msgid ""
 "RES_FILTER_MAX=value: Maximum resolution of supergrids to take into account "
 "(included bound)"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:112
+#: ../../../source/drivers/raster/bag.rst:113
 msgid ""
 "Opening a supergrid. This mode is triggered by using as a dataset name a "
 "string formatted like BAG:my.bag:supergrid:{y}:{x}, which is the value of "
@@ -174,7 +175,7 @@ msgid ""
 "open."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:119
+#: ../../../source/drivers/raster/bag.rst:120
 msgid ""
 "MODE=RESAMPLED_GRID: in this mode, the user specify the extent and "
 "resolution of a target grid, and for each cell of this target grid, the "
@@ -189,48 +190,48 @@ msgid ""
 "SUPERGRIDS_MASK=NO)"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:132
+#: ../../../source/drivers/raster/bag.rst:133
 msgid "The available open options in this mode are:"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:134
+#: ../../../source/drivers/raster/bag.rst:135
 msgid ""
 "MINX=value: Minimum georeferenced X value for the resampled grid. By "
 "default, the corresponding value of the low resolution grid."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:136
+#: ../../../source/drivers/raster/bag.rst:137
 msgid ""
 "MINY=value: Minimum georeferenced Y value for the resampled grid. By "
 "default, the corresponding value of the low resolution grid."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:138
+#: ../../../source/drivers/raster/bag.rst:139
 msgid ""
 "MAXX=value: Maximum georeferenced X value for the resampled grid. By "
 "default, the corresponding value of the low resolution grid."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:140
+#: ../../../source/drivers/raster/bag.rst:141
 msgid ""
 "MAXY=value: Maximum georeferenced Y value for the resampled grid. By "
 "default, the corresponding value of the low resolution grid."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:142
+#: ../../../source/drivers/raster/bag.rst:143
 msgid ""
 "RESX=value: Horizontal resolution. By default, and if RES_STRATEGY is set to "
 "AUTO, this will be the minimum resolution among all the supergrids."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:145
+#: ../../../source/drivers/raster/bag.rst:146
 msgid ""
 "RESY=value: Vertical resolution (positive value). By default, and if "
 "RES_STRATEGY is set to AUTO, this will be the minimum resolution among all "
 "the supergrids."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:148
+#: ../../../source/drivers/raster/bag.rst:149
 msgid ""
 "RES_STRATEGY=AUTO/MIN/MAX/MEAN: Which strategy to apply to set the resampled "
 "grid resolution. By default, if none of RESX, RESY, RES_FILTER_MIN and "
@@ -242,7 +243,7 @@ msgid ""
 "RES_STRATEGY."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:157
+#: ../../../source/drivers/raster/bag.rst:158
 msgid ""
 "RES_FILTER_MIN=value: Minimum resolution of supergrids to take into account "
 "(excluded bound, except if it is the minimum resolution of supergrids). By "
@@ -252,7 +253,7 @@ msgid ""
 "the resolution for the resampled grid."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:164
+#: ../../../source/drivers/raster/bag.rst:165
 msgid ""
 "RES_FILTER_MAX=value: Maximum resolution of supergrids to take into account "
 "(included bound). By default, the maximum resolution of supergrids "
@@ -261,7 +262,7 @@ msgid ""
 "grid."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:169
+#: ../../../source/drivers/raster/bag.rst:170
 msgid ""
 "VALUE_POPULATION=MIN/MAX/MEAN/COUNT: Which value population strategy to "
 "apply to compute the resampled cell values. This default to MAX: the "
@@ -277,7 +278,7 @@ msgid ""
 "target cell contains the count of supergrid nodes that fall into it."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:183
+#: ../../../source/drivers/raster/bag.rst:184
 msgid ""
 "SUPERGRIDS_MASK=YES/NO. Default to NO. If set to YES, instead of the "
 "elevation and uncertainty band, the dataset contains a single Byte band "
@@ -289,12 +290,12 @@ msgid ""
 "themselves at the nodata value."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:192
+#: ../../../source/drivers/raster/bag.rst:193
 msgid ""
 "NODATA_VALUE=value. Override the default value, which is usually 1000000."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:195
+#: ../../../source/drivers/raster/bag.rst:196
 msgid ""
 "MODE=INTERPOLATED: (GDAL >= 3.8) in this mode, the user specify the extent "
 "and resolution of a target grid, and for each cell of this target grid, the "
@@ -306,7 +307,7 @@ msgid ""
 "situations."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:204
+#: ../../../source/drivers/raster/bag.rst:205
 msgid ""
 "Overviews are reported. Note that those overviews correspond to resampled "
 "grids computed with different values of the RESX and RESY parameters, but "
@@ -316,24 +317,24 @@ msgid ""
 "The last overview level is the low-resolution grid."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:211
+#: ../../../source/drivers/raster/bag.rst:212
 msgid ""
 "The available open options in this mode are MINX, MINY, MAXX, MAXY, RESX, "
 "RESY, RES_STRATEGY, RES_FILTER_MIN, RES_FILTER_MAX and NODATA_VALUE (cf "
 "their above description for the MODE=RESAMPLED_GRID)"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:216
+#: ../../../source/drivers/raster/bag.rst:217
 msgid "Spatial metadata support"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:218
+#: ../../../source/drivers/raster/bag.rst:219
 msgid ""
 "Starting with GDAL 3.2, GDAL can expose BAG files with `spatial metadata "
 "<https://github.com/OpenNavigationSurface/BAG/issues/2>`__."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:221
+#: ../../../source/drivers/raster/bag.rst:222
 msgid ""
 "When such spatial metadata is present, the subdataset list will include "
 "names of the form 'BAG:\"{filename}\":georef_metadata:{name_of_layer}' where "
@@ -341,7 +342,7 @@ msgid ""
 "Georef_metadata``"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:225
+#: ../../../source/drivers/raster/bag.rst:226
 msgid ""
 "The values of the ``keys`` dataset under each metadata layer are used as the "
 "GDAL raster value. And the corresponding ``values`` dataset is exposed as a "
@@ -350,7 +351,7 @@ msgid ""
 "point that does not match the nodata value of the elevation band."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:231
+#: ../../../source/drivers/raster/bag.rst:232
 msgid ""
 "When variable resolution grids are present, the MODE=LIST_SUPERGRIDS open "
 "option will cause subdatasets of names of the form 'BAG:\"{filename}\":"
@@ -361,21 +362,21 @@ msgid ""
 "value of the variable resolution elevation band."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:240
+#: ../../../source/drivers/raster/bag.rst:241
 msgid "Tracking list support"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:242
+#: ../../../source/drivers/raster/bag.rst:243
 msgid ""
 "When the dataset is opened in vector mode (ogrinfo, ogr2ogr, etc.), the "
 "tracking_list dataset will be reported as a OGR vector layer"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:246
+#: ../../../source/drivers/raster/bag.rst:247
 msgid "Creation support"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:248
+#: ../../../source/drivers/raster/bag.rst:249
 msgid ""
 "Starting with GDAL 2.4, the driver can create a BAG dataset (without "
 "variable resolution extension) with the elevation and uncertainty bands from "
@@ -385,7 +386,7 @@ msgid ""
 "uncertainty will be set to nodata."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:255
+#: ../../../source/drivers/raster/bag.rst:256
 msgid ""
 "The driver will instantiate the BAG XML metadata by using a template file, "
 "which is by default, `bag_template.xml <https://raw.githubusercontent.com/"
@@ -393,29 +394,33 @@ msgid ""
 "definition files. This template contains variables, present as ${KEYNAME} or "
 "${KEYNAME:default_value} in the XML file, that can be substituted by "
 "providing a creation option whose name is the VAR\\_ string prefixed to the "
-"key name. Currently those creation options are:"
+"key name."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:334
+#: ../../../source/drivers/raster/bag.rst:264
+msgid "|about-creation-options| The following creation options are supported:"
+msgstr ""
+
+#: ../../../source/drivers/raster/bag.rst:337
 msgid ""
 "Other required variables found in the template, such as RES, RESX, RESY, "
 "RES_UNIT, HEIGHT, WIDTH, CORNER_POINTS and HORIZ_WKT will be automatically "
 "filled from the input dataset metadata."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:338
+#: ../../../source/drivers/raster/bag.rst:341
 msgid "The other following creation options are available:"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:377
+#: ../../../source/drivers/raster/bag.rst:380
 msgid "Usage examples"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:379
+#: ../../../source/drivers/raster/bag.rst:382
 msgid "Opening in low resolution mode:"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:383
+#: ../../../source/drivers/raster/bag.rst:386
 msgid ""
 "$ gdalinfo data/test_vr.bag\n"
 "\n"
@@ -430,11 +435,11 @@ msgid ""
 "[...]"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:395
+#: ../../../source/drivers/raster/bag.rst:398
 msgid "Displaying available supergrids:"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:399
+#: ../../../source/drivers/raster/bag.rst:402
 msgid ""
 "$ gdalinfo data/test_vr.bag -oo MODE=LIST_SUPERGRIDS\n"
 "\n"
@@ -454,117 +459,117 @@ msgid ""
 "[...]"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:412
+#: ../../../source/drivers/raster/bag.rst:415
 msgid "Opening a particular supergrid:"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:416
+#: ../../../source/drivers/raster/bag.rst:419
 msgid "$ gdalinfo BAG:\"data/test_vr.bag\":supergrid:3:5"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:418
+#: ../../../source/drivers/raster/bag.rst:421
 msgid ""
 "Converting a BAG in resampling mode with default parameters (use of minimum "
 "resolution of supergrids, MAX value population rule):"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:423
+#: ../../../source/drivers/raster/bag.rst:426
 msgid "$ gdal_translate data/test_vr.bag -oo MODE=RESAMPLED_GRID out.tif"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:425
+#: ../../../source/drivers/raster/bag.rst:428
 msgid ""
 "Converting a BAG in resampling mode with a particular grid origin and "
 "resolution"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:430
+#: ../../../source/drivers/raster/bag.rst:433
 msgid ""
 "$ gdal_translate data/test_vr.bag -oo MODE=RESAMPLED_GRID -oo MINX=80 -oo "
 "MINY=500000 -oo RESX=16 -oo RESY=16 out.tif"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:432
+#: ../../../source/drivers/raster/bag.rst:435
 msgid ""
 "Converting a BAG in resampling mode, with a mask indicating where supergrids "
 "nodes intersect the cell of the resampled dataset."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:437
+#: ../../../source/drivers/raster/bag.rst:440
 msgid ""
 "$ gdal_translate data/test_vr.bag -oo MODE=RESAMPLED_GRID -oo "
 "SUPERGRIDS_MASK=YES out.tif"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:439
+#: ../../../source/drivers/raster/bag.rst:442
 msgid ""
 "Converting a BAG in resampling mode, by filtering on supergrid resolutions "
 "(and the resampled grid will use 4 meter resolution by default)"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:445
+#: ../../../source/drivers/raster/bag.rst:448
 msgid ""
 "$ gdal_translate data/test_vr.bag -oo MODE=RESAMPLED_GRID -oo "
 "RES_FILTER_MIN=4 -oo RES_FILTER_MAX=8 out.tif"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:447
+#: ../../../source/drivers/raster/bag.rst:450
 msgid ""
 "Converting a GeoTIFF file to a BAG dataset, and provide a custom value for "
 "the ABSTRACT substituable variable."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:452
+#: ../../../source/drivers/raster/bag.rst:455
 msgid "$ gdal_translate in.tif out.bag -co \"VAR_ABSTRACT=My abstract\""
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:454
+#: ../../../source/drivers/raster/bag.rst:457
 msgid ""
 "Converting a (VR) BAG in resampling mode with a particular grid resolution "
 "(5m) to a BAG dataset (without variable resolution extension), and provide a "
 "custom value for the ABSTRACT metadata:"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:460
+#: ../../../source/drivers/raster/bag.rst:463
 msgid ""
 "$ gdal_translate data/test_vr.bag -oo MODE=RESAMPLED_GRID -oo RESX=5 -oo "
 "RESY=5 out.bag -co \"VAR_ABSTRACT=My abstract\""
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:462
+#: ../../../source/drivers/raster/bag.rst:465
 msgid "Displaying the tracking list:"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:466
+#: ../../../source/drivers/raster/bag.rst:469
 msgid "$ ogrinfo -al data/my.bal"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:469
+#: ../../../source/drivers/raster/bag.rst:472
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:471
+#: ../../../source/drivers/raster/bag.rst:474
 msgid "Implemented as :source_file:`frmts/hdf5/bagdataset.cpp`."
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:472
+#: ../../../source/drivers/raster/bag.rst:475
 msgid "`The Open Navigation Surface Project <http://www.opennavsurf.org>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:473
+#: ../../../source/drivers/raster/bag.rst:476
 msgid ""
 "`Description of Bathymetric Attributed Grid Object (BAG) Version 1.6 "
 "<https://github.com/OpenNavigationSurface/BAG/raw/master/docs/"
 "BAG_FSD_Release_1.6.3.doc>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:475
+#: ../../../source/drivers/raster/bag.rst:478
 msgid ""
 "`Variable resolution grid extension for BAG files <https://github.com/"
 "OpenNavigationSurface/BAG/raw/master/docs/"
 "VariableResolution/2017-08-10_VariableResolution.docx>`__"
 msgstr ""
 
-#: ../../../source/drivers/raster/bag.rst:477
+#: ../../../source/drivers/raster/bag.rst:480
 msgid ":ref:`S-102 driver <raster.s102>`"
 msgstr ""

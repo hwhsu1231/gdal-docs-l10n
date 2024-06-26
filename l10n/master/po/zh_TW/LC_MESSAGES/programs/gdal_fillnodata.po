@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../../source/programs/gdal_fillnodata.rst:5
-msgid "gdal_fillnodata.py"
+#: ../../../source/programs/gdal_fillnodata.rst:11
+msgid "gdal_fillnodata"
 msgstr ""
 
 #: ../../../source/programs/gdal_fillnodata.rst:9
@@ -31,12 +32,12 @@ msgstr ""
 
 #: ../../../source/programs/gdal_fillnodata.rst:16
 msgid ""
-"gdal_fillnodata.py [-q] [-md <max_distance>] [-si <smooth_iterations>]\n"
-"                [-o <name>=<value>] [-b <band>]\n"
-"                [-nomask] [-mask <filename>]\n"
-"                [-interp {inv_dist,nearest}]\n"
-"                [-of <format>]\n"
-"                <srcfile> [<dstfile>]"
+"gdal_fillnodata [--help] [--help-general] [-q] [-md <max_distance>]\n"
+"           [-si <smoothing_iterations>] [-o <name>=<value> "
+"[<name>=<value> ...]]\n"
+"           [-mask <filename>] [-interp {inv_dist,nearest}] [-b <band>]\n"
+"           [-of <gdal_format>] [-co <name>=<value>]\n"
+"           <src_file> <dst_file>"
 msgstr ""
 
 #: ../../../source/programs/gdal_fillnodata.rst:26
@@ -45,14 +46,20 @@ msgstr ""
 
 #: ../../../source/programs/gdal_fillnodata.rst:28
 msgid ""
-":program:`gdal_fillnodata.py` script fills selection regions (usually nodata "
-"areas) by interpolating from valid pixels around the edges of the area."
+":program:`gdal_fillnodata` fills selection regions (usually nodata areas) by "
+"interpolating from valid pixels around the edges of the area."
 msgstr ""
 
 #: ../../../source/programs/gdal_fillnodata.rst:31
 msgid ""
 "Additional details on the algorithm are available in the :cpp:func:"
 "`GDALFillNodata` docs."
+msgstr ""
+
+#: ../../../source/programs/gdal_fillnodata.rst:36
+msgid ""
+"gdal_fillnodata is a Python utility, and is only available if GDAL Python "
+"bindings are available."
 msgstr ""
 
 #: ../../../source/programs/options/help.rst:3
@@ -65,63 +72,57 @@ msgid ""
 "exit."
 msgstr ""
 
-#: ../../../source/programs/gdal_fillnodata.rst:38
+#: ../../../source/programs/gdal_fillnodata.rst:42
 msgid ""
 "The script runs in quiet mode. The progress monitor is suppressed and "
 "routine messages are not displayed."
 msgstr ""
 
-#: ../../../source/programs/gdal_fillnodata.rst:43
+#: ../../../source/programs/gdal_fillnodata.rst:47
 msgid ""
 "The maximum distance (in pixels) that the algorithm will search out for "
 "values to interpolate. The default is 100 pixels."
 msgstr ""
 
-#: ../../../source/programs/gdal_fillnodata.rst:48
+#: ../../../source/programs/gdal_fillnodata.rst:52
 msgid ""
 "The number of 3x3 average filter smoothing iterations to run after the "
 "interpolation to dampen artifacts. The default is zero smoothing iterations."
 msgstr ""
 
-#: ../../../source/programs/gdal_fillnodata.rst:53
+#: ../../../source/programs/gdal_fillnodata.rst:57
 msgid ""
 "Specify a special argument to the algorithm. Currently none are supported."
 msgstr ""
 
-#: ../../../source/programs/gdal_fillnodata.rst:57
+#: ../../../source/programs/gdal_fillnodata.rst:61
 msgid "The band to operate on, by default the first band is operated on."
 msgstr ""
 
-#: ../../../source/programs/gdal_fillnodata.rst:61
+#: ../../../source/programs/gdal_fillnodata.rst:65
 msgid ""
 "Use the first band of the specified file as a validity mask (zero is "
 "invalid, non-zero is valid)."
 msgstr ""
 
-#: ../../../source/programs/gdal_fillnodata.rst:66
+#: ../../../source/programs/gdal_fillnodata.rst:70
 msgid ""
 "Select the output format. The default is :ref:`raster.gtiff`. Use the short "
 "format name."
 msgstr ""
 
-#: ../../../source/programs/gdal_fillnodata.rst:73
+#: ../../../source/programs/gdal_fillnodata.rst:77
 msgid ""
 "By default, pixels are interpolated using an inverse distance weighting "
 "(``inv_dist``). It is also possible to choose a nearest neighbour "
 "(``nearest``) strategy."
 msgstr ""
 
-#: ../../../source/programs/gdal_fillnodata.rst:79
+#: ../../../source/programs/gdal_fillnodata.rst:83
 msgid ""
 "The source raster file used to identify target pixels. Only one band is used."
 msgstr ""
 
-#: ../../../source/programs/gdal_fillnodata.rst:84
-msgid ""
-"The new file to create with the interpolated result. If not provided, the "
-"source band is updated in place."
-msgstr ""
-
-#: ../../../source/programs/gdal_fillnodata.rst:11
-msgid "gdal_fillnodata"
+#: ../../../source/programs/gdal_fillnodata.rst:88
+msgid "The new file to create with the interpolated result."
 msgstr ""

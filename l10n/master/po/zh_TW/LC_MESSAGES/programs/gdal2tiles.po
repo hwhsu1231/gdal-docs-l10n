@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../../source/programs/gdal2tiles.rst:5
-msgid "gdal2tiles.py"
+#: ../../../source/programs/gdal2tiles.rst:11
+msgid "gdal2tiles"
 msgstr ""
 
 #: ../../../source/programs/gdal2tiles.rst:9
@@ -31,23 +32,25 @@ msgstr ""
 
 #: ../../../source/programs/gdal2tiles.rst:16
 msgid ""
-"gdal2tiles.py [--help] [--help-general]\n"
+"gdal2tiles [--help] [--help-general]\n"
 "              [-p <profile>] [-r resampling] [-s <srs>] [-z <zoom>]\n"
 "              [-e] [-a nodata] [-v] [-q] [-h] [-k] [-n] [-u <url>]\n"
 "              [-w <webviewer>] [-t <title>] [-c <copyright>]\n"
 "              [--processes=<NB_PROCESSES>] [--mpi] [--xyz]\n"
 "              [--tilesize=<PIXELS>] --tiledriver=<DRIVER> [--tmscompatible]\n"
-"              [--excluded-values=<EXCLUDED_VALUES>] [--excluded-values-pct-"
+"              [--excluded-values=<EXCLUDED_VALUES>]\n"
+"              [--excluded-values-pct-"
 "threshold=<EXCLUDED_VALUES_PCT_THRESHOLD>]\n"
+"              [--nodata-values-pct-threshold=<NODATA_VALUES_PCT_THRESHOLD>]\n"
 "              [-g <googlekey] [-b <bingkey>] <input_file> [<output_dir>] "
 "[<COMMON_OPTIONS>]"
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:29
+#: ../../../source/programs/gdal2tiles.rst:31
 msgid "Description"
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:31
+#: ../../../source/programs/gdal2tiles.rst:33
 msgid ""
 "This utility generates a directory with small tiles and metadata, following "
 "the OSGeo Tile Map Service Specification. Simple web pages with viewers "
@@ -58,19 +61,19 @@ msgid ""
 "directory onto a web server."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:38
+#: ../../../source/programs/gdal2tiles.rst:40
 msgid ""
 "GDAL2Tiles also creates the necessary metadata for Google Earth (KML "
 "SuperOverlay), in case the supplied map uses EPSG:4326 projection."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:41
+#: ../../../source/programs/gdal2tiles.rst:43
 msgid ""
 "World files and embedded georeferencing is used during tile generation, but "
 "you can publish a picture without proper georeferencing too."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:46
+#: ../../../source/programs/gdal2tiles.rst:48
 msgid ""
 "Inputs with non-Byte data type (i.e. ``Int16``, ``UInt16``,...) will be "
 "clamped to the ``Byte`` data type, causing wrong results. To avoid this it "
@@ -78,11 +81,17 @@ msgid ""
 "`gdal_translate` utility."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:52
+#: ../../../source/programs/gdal2tiles.rst:54
 msgid ""
 "Config options of the input drivers may have an effect on the output of "
 "gdal2tiles. An example driver config option is GDAL_PDF_DPI, which can be "
 "found at :ref:`configoptions`"
+msgstr ""
+
+#: ../../../source/programs/gdal2tiles.rst:58
+msgid ""
+"gdal2tiles is a Python utility, and is only available if GDAL Python "
+"bindings are available."
 msgstr ""
 
 #: ../../../source/programs/options/help.rst:3
@@ -95,13 +104,13 @@ msgid ""
 "exit."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:61
+#: ../../../source/programs/gdal2tiles.rst:67
 msgid ""
 "Tile cutting profile (mercator, geodetic, raster) - default "
 "'mercator' (Google Maps compatible)."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:63
+#: ../../../source/programs/gdal2tiles.rst:69
 msgid ""
 "Starting with GDAL 3.2, additional profiles are available from tms_XXXX.json "
 "files placed in GDAL data directory (provided all zoom levels use same "
@@ -109,68 +118,68 @@ msgid ""
 "by a factor of two)."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:69
+#: ../../../source/programs/gdal2tiles.rst:75
 msgid ""
 "Resampling method (average, near, bilinear, cubic, cubicspline, lanczos, "
 "antialias, mode, max, min, med, q1, q3) - default 'average'."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:73
+#: ../../../source/programs/gdal2tiles.rst:79
 msgid "The spatial reference system used for the source input data."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:77
+#: ../../../source/programs/gdal2tiles.rst:83
 msgid ""
 "Generate XYZ tiles (OSM Slippy Map standard) instead of TMS. In the default "
 "mode (TMS), tiles at y=0 are the southern-most tiles, whereas in XYZ mode "
 "(used by OGC WMTS too), tiles at y=0 are the northern-most tiles."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:85
+#: ../../../source/programs/gdal2tiles.rst:91
 msgid ""
 "When using the geodetic profile, specifies the base resolution as 0.703125 "
 "or 2 tiles at zoom level 0."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:90
+#: ../../../source/programs/gdal2tiles.rst:96
 msgid "Zoom levels to render (format:'2-5', '10-' or '10')."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:94
+#: ../../../source/programs/gdal2tiles.rst:100
 msgid "Resume mode. Generate only missing files."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:98
+#: ../../../source/programs/gdal2tiles.rst:104
 msgid ""
 "Value in the input dataset considered as transparent. If the input dataset "
 "had already an associate nodata value, it is overridden by the specified "
 "value."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:103
+#: ../../../source/programs/gdal2tiles.rst:109
 msgid "Generate verbose output of tile generation."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:105
+#: ../../../source/programs/gdal2tiles.rst:111
 msgid ""
 "Starting with GDAL 3.7, that verbose output is emitted through the ``logging."
 "getLogger(\"gdal2tiles\")`` object."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:110
+#: ../../../source/programs/gdal2tiles.rst:116
 msgid "Exclude transparent tiles from result tileset."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:114
+#: ../../../source/programs/gdal2tiles.rst:120
 msgid "Disable messages and status to stdout"
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:120
+#: ../../../source/programs/gdal2tiles.rst:126
 msgid ""
 "Number of parallel processes to use for tiling, to speed-up the computation."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:126
+#: ../../../source/programs/gdal2tiles.rst:132
 msgid ""
 "Assume launched by mpiexec, enable MPI parallelism and ignore --processes. "
 "Requires working MPI environment and the MPI for Python (mpi4py) package. "
@@ -178,11 +187,11 @@ msgid ""
 "on memory per node and the number of processes launched per node."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:135
+#: ../../../source/programs/gdal2tiles.rst:141
 msgid "Width and height in pixel of a tile. Default is 256."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:141
+#: ../../../source/programs/gdal2tiles.rst:147
 msgid ""
 "Which output driver to use for the tiles, determines the file format of the "
 "tiles. Currently PNG, WEBP and JPEG (JPEG added in GDAL 3.9) are supported. "
@@ -190,7 +199,7 @@ msgid ""
 "documented below."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:149
+#: ../../../source/programs/gdal2tiles.rst:155
 msgid ""
 "Comma-separated tuple of values (thus typically \"R,G,B\"), that are ignored "
 "as contributing source * pixels during resampling. The number of values in "
@@ -202,204 +211,208 @@ msgid ""
 "valid, when determining the target pixel validity/density."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:160
+#: ../../../source/programs/gdal2tiles.rst:168
 msgid ""
 "Minimum percentage of source pixels that must be set at one of the --"
 "excluded-values to cause the excluded value, that is in majority among "
 "source pixels, to be used as the target pixel value. Default value is 50(%)"
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:167
+#: ../../../source/programs/gdal2tiles.rst:175
+msgid ""
+"Minimum percentage of source pixels that must be at nodata (or alpha=0 or "
+"any other way to express transparent pixel) to cause the target pixel value "
+"to be transparent. Default value is 100 (%), which means that a target pixel "
+"is transparent only if all contributing source pixels are transparent. Only "
+"taken into account for average resampling."
+msgstr ""
+
+#: ../../../source/programs/gdal2tiles.rst:185
 msgid "Show help message and exit."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:171
+#: ../../../source/programs/gdal2tiles.rst:189
 msgid "Show program's version number and exit."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:175
+#: ../../../source/programs/gdal2tiles.rst:193
 msgid "KML (Google Earth) options"
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:177
+#: ../../../source/programs/gdal2tiles.rst:195
 msgid "Options for generated Google Earth SuperOverlay metadata"
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:181
+#: ../../../source/programs/gdal2tiles.rst:199
 msgid ""
 "Generate KML for Google Earth - default for 'geodetic' profile and 'raster' "
 "in EPSG:4326. For a dataset with different projection use with caution!"
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:185
+#: ../../../source/programs/gdal2tiles.rst:203
 msgid "Avoid automatic generation of KML files for EPSG:4326."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:189
+#: ../../../source/programs/gdal2tiles.rst:207
 msgid "URL address where the generated tiles are going to be published."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:193
+#: ../../../source/programs/gdal2tiles.rst:211
 msgid "Web viewer options"
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:195
+#: ../../../source/programs/gdal2tiles.rst:213
 msgid "Options for generated HTML viewers a la Google Maps"
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:199
+#: ../../../source/programs/gdal2tiles.rst:217
 msgid ""
 "Web viewer to generate (all, google, openlayers, leaflet, mapml, none) - "
 "default 'all'."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:203
+#: ../../../source/programs/gdal2tiles.rst:221
 msgid "Title of the map."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:207
+#: ../../../source/programs/gdal2tiles.rst:225
 msgid "Copyright for the map."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:211
+#: ../../../source/programs/gdal2tiles.rst:229
 msgid "Google Maps API key from http://code.google.com/apis/maps/signup.html."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:215
+#: ../../../source/programs/gdal2tiles.rst:233
 msgid "Bing Maps API key from https://www.bingmapsportal.com/"
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:220
-msgid ""
-"gdal2tiles.py is a Python script that needs to be run against Python GDAL "
-"binding."
-msgstr ""
-
-#: ../../../source/programs/gdal2tiles.rst:223
+#: ../../../source/programs/gdal2tiles.rst:237
 msgid "MapML options"
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:225
+#: ../../../source/programs/gdal2tiles.rst:239
 msgid ""
 "MapML support is new to GDAL 3.2. When --webviewer=mapml is specified, --xyz "
 "is implied, as well as --tmscompatible if --profile=geodetic."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:228
+#: ../../../source/programs/gdal2tiles.rst:242
 msgid "The following profiles are supported:"
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:230
+#: ../../../source/programs/gdal2tiles.rst:244
 msgid "mercator: mapped to OSMTILE MapML tiling scheme"
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:231
+#: ../../../source/programs/gdal2tiles.rst:245
 msgid "geodetic: mapped to WGS84 MapML tiling scheme"
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:232
+#: ../../../source/programs/gdal2tiles.rst:246
 msgid "APSTILE: from the tms_MapML_APSTILE.json data file"
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:234
+#: ../../../source/programs/gdal2tiles.rst:248
 msgid "The generated MapML file in the output directory is ``mapml.mapl``"
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:236
+#: ../../../source/programs/gdal2tiles.rst:250
 msgid "Available options are:"
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:240
+#: ../../../source/programs/gdal2tiles.rst:254
 msgid ""
 "Filename of a template mapml file where variables will be substituted. If "
 "not specified, the generic template_tiles.mapml file from GDAL data "
 "resources will be used"
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:245
+#: ../../../source/programs/gdal2tiles.rst:259
 msgid ""
 "The --url option is also used to substitute ``${URL}`` in the template MapML "
 "file."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:248
+#: ../../../source/programs/gdal2tiles.rst:262
 msgid "WEBP options"
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:250
+#: ../../../source/programs/gdal2tiles.rst:264
 msgid ""
 "WEBP tiledriver support is new to GDAL 3.6. It is enabled by using --"
 "tiledriver=WEBP."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:253
-#: ../../../source/programs/gdal2tiles.rst:277
+#: ../../../source/programs/gdal2tiles.rst:267
 msgid ""
 "The following configuration options are available to further customize the "
-"webp output:"
+"WebP output:"
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:257
-#: ../../../source/programs/gdal2tiles.rst:281
+#: ../../../source/programs/gdal2tiles.rst:271
+#: ../../../source/programs/gdal2tiles.rst:295
 msgid "QUALITY is a integer between 1-100. Default is 75."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:261
+#: ../../../source/programs/gdal2tiles.rst:275
 msgid "Use WEBP lossless compression, default is lossy"
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:266
+#: ../../../source/programs/gdal2tiles.rst:280
 msgid "GDAL :ref:`WEBP driver <raster.webp>` documentation can be consulted"
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:270
+#: ../../../source/programs/gdal2tiles.rst:284
 msgid "JPEG options"
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:272
+#: ../../../source/programs/gdal2tiles.rst:286
 msgid ""
 "JPEG tiledriver support is new to GDAL 3.9. It is enabled by using --"
 "tiledriver=JPEG."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:274
+#: ../../../source/programs/gdal2tiles.rst:288
 msgid ""
 "Note that JPEG does not support transparency, hence edge tiles will display "
 "black pixels in areas not covered by the source raster."
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:285
+#: ../../../source/programs/gdal2tiles.rst:291
+msgid ""
+"The following configuration options are available to further customize the "
+"JPEG output:"
+msgstr ""
+
+#: ../../../source/programs/gdal2tiles.rst:299
 msgid "Examples"
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:287
+#: ../../../source/programs/gdal2tiles.rst:301
 msgid "Basic example:"
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:289
-msgid "gdal2tiles.py --zoom=2-5 input.tif output_folder"
+#: ../../../source/programs/gdal2tiles.rst:303
+msgid "gdal2tiles --zoom=2-5 input.tif output_folder"
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:294
+#: ../../../source/programs/gdal2tiles.rst:308
 msgid "MapML generation:"
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:296
+#: ../../../source/programs/gdal2tiles.rst:310
 msgid ""
-"gdal2tiles.py --zoom=16-18 -w mapml -p APSTILE --url \"https://example.com\" "
+"gdal2tiles --zoom=16-18 -w mapml -p APSTILE --url \"https://example.com\" "
 "input.tif output_folder"
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:301
+#: ../../../source/programs/gdal2tiles.rst:315
 msgid "MPI example:"
 msgstr ""
 
-#: ../../../source/programs/gdal2tiles.rst:303
+#: ../../../source/programs/gdal2tiles.rst:317
 msgid ""
-"mpiexec -n $NB_PROCESSES gdal2tiles.py --mpi --config GDAL_CACHEMAX 500 --"
+"mpiexec -n $NB_PROCESSES gdal2tiles --mpi --config GDAL_CACHEMAX 500 --"
 "zoom=2-5 input.tif output_folder"
-msgstr ""
-
-#: ../../../source/programs/gdal2tiles.rst:11
-msgid "gdal2tiles"
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -92,19 +92,25 @@ msgstr ""
 msgid "Dataset creation options"
 msgstr ""
 
-#: ../../../source/drivers/vector/mapml.rst:147
-msgid "Links"
-msgstr ""
-
-#: ../../../source/drivers/vector/mapml.rst:149
-msgid "`MapML specification <https://maps4html.org/MapML/spec>`_"
+#: ../../../source/drivers/vector/mapml.rst:61
+msgid ""
+"|about-dataset-creation-options| The following dataset creation options are "
+"supported:"
 msgstr ""
 
 #: ../../../source/drivers/vector/mapml.rst:150
+msgid "Links"
+msgstr ""
+
+#: ../../../source/drivers/vector/mapml.rst:152
+msgid "`MapML specification <https://maps4html.org/MapML/spec>`_"
+msgstr ""
+
+#: ../../../source/drivers/vector/mapml.rst:153
 msgid ""
 "`MapML schemas <https://github.com/Maps4HTML/MapML/tree/gh-pages/schema>`_"
 msgstr ""
 
-#: ../../../source/drivers/vector/mapml.rst:151
+#: ../../../source/drivers/vector/mapml.rst:154
 msgid ":ref:`gdal2tiles` mapml output"
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:33+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,46 +17,46 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../../source/api/python/spatial_ref_api.rst:4
+#: ../../../source/api/python/spatial_ref_api.rst:9
 msgid "Python Spatial Reference System API"
 msgstr ""
 
-#: ../../../source/api/python/spatial_ref_api.rst:6
+#: ../../../source/api/python/spatial_ref_api.rst:11
 msgid ""
 "This page contains classes, methods and functions that relate to spatial "
 "reference systems:"
 msgstr ""
 
-#: ../../../source/api/python/spatial_ref_api.rst:8
+#: ../../../source/api/python/spatial_ref_api.rst:13
 msgid "`SpatialReference`_"
 msgstr ""
 
-#: ../../../source/api/python/spatial_ref_api.rst:9
+#: ../../../source/api/python/spatial_ref_api.rst:14
 msgid "`CoordinateTransformation`_"
 msgstr ""
 
-#: ../../../source/api/python/spatial_ref_api.rst:12
+#: ../../../source/api/python/spatial_ref_api.rst:17
 msgid "SpatialReference"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference:1
 msgid "Python proxy of an :cpp:class:`OGRSpatialReference`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.AutoIdentifyEPSG:1
 msgid ""
 "Add an EPSG authority code to the CRS where an aspect of the coordinate "
 "system can be easily and safely corresponded with an EPSG identifier."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.AutoIdentifyEPSG:5
 msgid "See :cpp:func:`OGRSpatialReference::AutoIdentifyEPSG`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.CoordinateTransformation.TransformBounds:0
 #: osgeo.osr.CoordinateTransformation.TransformPoint:0
 #: osgeo.osr.CoordinateTransformation.TransformPointWithErrorCode:0
@@ -85,12 +85,12 @@ msgstr ""
 msgid "Returns"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.AutoIdentifyEPSG:7
 msgid ":py:const:`OGRERR_NONE` or :py:const:`OGRERR_UNSUPPORTED_SRS`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.CoordinateTransformation.TransformBounds:0
 #: osgeo.osr.CoordinateTransformation.TransformPoint:0
 #: osgeo.osr.CoordinateTransformation.TransformPointWithErrorCode:0
@@ -144,12 +144,12 @@ msgstr ""
 msgid "Return type"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ExportToCF1:1
 msgid "Export a CRS to netCDF CF-1 definitions."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ExportToCF1:3
 #: osgeo.osr.SpatialReference.ImportFromCF1:3
 msgid ""
@@ -157,19 +157,19 @@ msgid ""
 "mappings"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ExportToPROJJSON:1
 msgid ""
 "Export this SRS in `PROJJSON <https://proj.org/en/latest/specifications/"
 "projjson.html>`_ format."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ExportToPROJJSON:3
 msgid "See :cpp:func:`OGRSpatialReference::exportToPROJJSON`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.CoordinateTransformation.TransformBounds:0
 #: osgeo.osr.CoordinateTransformation.TransformPointWithErrorCode:0
 #: osgeo.osr.CoordinateTransformation.TransformPoints:0
@@ -195,71 +195,71 @@ msgstr ""
 msgid "Parameters"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ExportToPROJJSON:5
 msgid ""
 "Options to control the format of the output. See :cpp:func:"
 "`OGRSpatialReference::ExportToPROJJSON`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ExportToPrettyWkt:1
 msgid ""
 "Convert this SRS into a nicely formatted WKT 1 string for display to a "
 "person."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ExportToPrettyWkt:4
 msgid "See :cpp:func:`OGRSpatialReference::exportToPrettyWkt`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ExportToProj4:1
 msgid "Export this SRS to PROJ.4 legacy format."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ExportToProj4:5
 msgid ""
 "Use of this function is discouraged. See :cpp:func:`OGRSpatialReference::"
 "exportToProj4`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ExportToWkt:1
 msgid "Export  this SRS into WKT 1 format."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ExportToWkt:3
 msgid "See :cpp:func:`OGRSpatialReference::exportToWkt`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ExportToWkt:7
 msgid ":py:meth:`ExportToPrettyWkt`"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAngularUnits:1
 msgid ""
 "Fetch conversion between angular geographic coordinate system units and "
 "radians."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAngularUnits:3
 #: osgeo.osr.SpatialReference.GetAngularUnitsName:3
 msgid "See :cpp:func:`OGRSpatialReference::GetAngularUnits`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAngularUnits:5
 msgid "Value to multiply angular distances by to transform them to radians."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.CoordinateTransformation.TransformBounds:22
 #: osgeo.osr.CoordinateTransformation.TransformPoint:9
 #: osgeo.osr.CoordinateTransformation.TransformPoints:11
@@ -282,103 +282,103 @@ msgstr ""
 msgid "Examples"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAngularUnitsName:1
 msgid "Fetch angular geographic coordinate system units."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAreaOfUse:1
 msgid "Return the area of use of the SRS."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAreaOfUse:3
 msgid "See :cpp:func:`OGRSpatialReference::GetAreaOfUse`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAreaOfUse:5
 msgid ""
 "object providing a description of the area of use as well as bounding "
 "parallels / meridians"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAttrValue:1
 msgid "Fetch indicated attribute of named node."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAttrValue:3
 msgid "See :cpp:func:`OGRSpatialReference::GetAttrValue`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAttrValue:5
 msgid "tree node to look for (case insensitive)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAttrValue:7
 msgid "0-indexed child of the node"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAuthorityCode:1
 msgid "Get the authority code for a node."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAuthorityCode:3
 msgid "See :cpp:func:`OGRSpatialReference::GetAuthorityCode`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAuthorityCode:5
 msgid ""
 "the partial or complete path to the node to get an authority from (e.g., "
 "'PROJCS', 'GEOGCS' or ``None`` to get an authority code on the root element)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAuthorityCode:10
 msgid "str or ``None`` on failure"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAuthorityName:1
 msgid "Get the authority name for a node."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAuthorityName:3
 msgid "See :cpp:func:`OGRSpatialReference::GetAuthorityName`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAuthorityName:5
 msgid ""
 "the partial or complete path to the node to get an authority from (e.g., "
 "'PROJCS', 'GEOGCS' or ``None`` to get an authority name on the root element)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAxesCount:1
 msgid "Return the number of axes of the coordinate system of the CRS."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAxesCount:3
 msgid "See :cpp:func:`OGRSpatialReference::GetAxesCount`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAxisMappingStrategy:1
 msgid "Return the data axis to CRS axis mapping strategy:"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAxisMappingStrategy:3
 msgid ""
 ":py:const:`OAMS_TRADITIONAL_GIS_ORDER` means that for geographic CRS with "
@@ -387,120 +387,120 @@ msgid ""
 "northing ordered."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAxisMappingStrategy:7
 msgid ""
 ":py:const:`OAMS_AUTHORITY_COMPLIANT` means that the data axis will be "
 "identical to the CRS axis."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAxisMappingStrategy:9
 msgid ""
 ":py:const:`OAMS_CUSTOM` means that the ordering is defined with :py:meth:"
 "`SetDataAxisToSRSAxisMapping`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAxisMappingStrategy:12
 msgid "See :cpp:func:`OGRSpatialReference::GetAxisMappingStrategy`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAxisName:1
 msgid "Fetch an axis description."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAxisName:3
 #: osgeo.osr.SpatialReference.GetAxisOrientation:3
 msgid "See :cpp:func:`OGRSpatialReference::GetAxis`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAxisName:5
 #: osgeo.osr.SpatialReference.GetAxisOrientation:5
 msgid "The portion of the coordinate system, either 'GEOGCS' or 'PROJCS'"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAxisName:7
 #: osgeo.osr.SpatialReference.GetAxisOrientation:7
 msgid "The 0-based index of the axis to fetch"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetAxisOrientation:1
 msgid "Fetch an axis orientation."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetCoordinateEpoch:1
 msgid "Return the coordinate epoch as a decimal year."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetCoordinateEpoch:3
 msgid "See :cpp:func:`OGRSpatialReference::GetCoordinateEpoch`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetCoordinateEpoch:5
 msgid "coordinate epoch as a decimal year, or 0 if not set/relevant"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetDataAxisToSRSAxisMapping:1
 msgid "Return the data axis to SRS axis mapping."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetDataAxisToSRSAxisMapping:3
 msgid "See :cpp:func:`OGRSpatialReference::GetDataAxisToSRSAxisMapping`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetInvFlattening:1
 msgid "Get the spheroid inverse flattening."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetInvFlattening:3
 msgid "See :cpp:func:`OGRSpatialReference::GetInvFlattening`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetLinearUnits:1
 msgid "Fetch the conversion between linear projection units and meters."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetLinearUnits:3
 #: osgeo.osr.SpatialReference.GetLinearUnitsName:3
 msgid "See :cpp:func:`OGRSpatialReference::GetLinearUnits`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetLinearUnitsName:1
 msgid "Fetch the name of the linear projection units."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetName:1
 msgid "Return the CRS name."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetName:3
 msgid "See :cpp:func:`OGRSpatialReference::GetName`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetNormProjParm:1
 msgid "Fetch a normalized projection parameter value."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetNormProjParm:3
 msgid ""
 "This method is the same as :py:meth:`GetProjParm` except that the value of "
@@ -508,518 +508,518 @@ msgid ""
 "is linear or angular."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetNormProjParm:7
 msgid "See :cpp:func:`OGRSpatialReference::GetNormProjParm`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetNormProjParm:9
 #: osgeo.osr.SpatialReference.GetProjParm:5
 msgid "parameter name, available as constants prefixed with `SRS_PP`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetNormProjParm:11
 #: osgeo.osr.SpatialReference.GetProjParm:7
 msgid "value to return if this parameter doesn't exist"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetProjParm:1
 msgid "Fetch a projection parameter value."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetProjParm:3
 msgid "See :cpp:func:`OGRSpatialReference::GetProjParm`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetSemiMajor:1
 msgid "Get spheroid semi major axis (in meters starting with GDAL 3.0)"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetSemiMajor:3
 msgid "See :cpp:func:`OGRSpatialReference::GetSemiMajor`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetSemiMajor:5
 msgid ""
 "semi-major axis, or :py:const:`SRS_WGS84_SEMIMAJOR` if it cannot be found."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetSemiMinor:1
 msgid "Get spheroid semi minor axis."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetSemiMinor:3
 msgid "See :cpp:func:`OGRSpatialReference::GetSemiMinor`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetSemiMinor:5
 msgid ""
 "semi-minor axis, or :py:const:`SRS_WGS84_SEMIMINOR` if it cannot be found."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetTOWGS84:1
 msgid "Fetch TOWGS84 parameter, if available."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetTOWGS84:3
 #: osgeo.osr.SpatialReference.HasTOWGS84:3
 msgid "See :cpp:func:`OGRSpatialReference::GetTOWGS84`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetTargetLinearUnits:1
 msgid "Fetch linear units for a target."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetTargetLinearUnits:3
 msgid "See :cpp:func:`OGRSpatialReference::GetTargetLinearUnits`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetTargetLinearUnits:5
 msgid "key to look un, such as 'PROJCS' or 'VERT_CS'"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetUTMZone:1
 msgid "Get UTM zone."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetUTMZone:3
 msgid "See :cpp:func:`OGRSpatialReference::GetUTMZone`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.GetUTMZone:5
 msgid ""
 "UTM zone number. Negative in the southern hemisphere and positive in the "
 "northern hemisphere. If the SRS is not UTM, zero will be returned."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.HasPointMotionOperation:1
 msgid "Check if a CRS has an associated point motion operation."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.HasPointMotionOperation:3
 msgid "See :cpp:func:`OGRSpatialReference::HasPointMotionOperation`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.HasTOWGS84:1
 msgid "Return whether the SRS has a TOWGS84 parameter."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ImportFromCF1:1
 msgid "Import a CRS from netCDF CF-1 definitions."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ImportFromEPSG:1
 #: osgeo.osr.SpatialReference.ImportFromEPSGA:1
 msgid ""
 "Initialize SRS based on EPSG geographic, projected or vertical CRS code."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ImportFromEPSG:3
 msgid "Since GDAL 3.0, this method is identical to :py:meth:`ImportFromEPSGA`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ImportFromEPSG:5
 msgid "See :cpp:func:`OGRSpatialReference::importFromEPSG`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ImportFromEPSG:7
 #: osgeo.osr.SpatialReference.ImportFromEPSGA:7
 msgid "EPSG code to search in PROJ database"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ImportFromEPSG:10
 #: osgeo.osr.SpatialReference.ImportFromEPSGA:10
 #: osgeo.osr.SpatialReference.ImportFromUrl:11
 msgid ":py:const:`OGRERR_NONE` on success, or an error code on failure"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ImportFromEPSGA:3
 msgid "Since GDAL 3.0, this method is identical to :py:meth:`ImportFromEPSG`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ImportFromEPSGA:5
 msgid "See :cpp:func:`OGRSpatialReference::importFromEPSGA`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ImportFromProj4:1
 msgid "Initialize SRS based on PROJ coordinate string."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ImportFromProj4:3
 msgid "See :cpp:func:`OGRSpatialReference::importFromProj4`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ImportFromProj4:5
 msgid "PROJ coordinate string"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ImportFromProj4:8
 msgid ""
 ":py:const:`OGRERR_NONE` on success, or :py:const:`OGRERR_CORRUPT_DATA` on "
 "failure"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ImportFromUrl:1
 msgid "Initialize SRS based on a URL."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ImportFromUrl:3
 msgid ""
 "This method will download the spatial reference at a given URL and feed it "
 "into :py:meth:`SetFromUserInput` for you."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ImportFromUrl:6
 msgid "See :cpp:func:`OGRSpatialReference::importFromUrl`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ImportFromWkt:1
 msgid "Import from WKT string."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ImportFromWkt:3
 msgid "See :cpp:func:`OGRSpatialReference::importFromWkt`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ImportFromWkt:5
 msgid "WKT string"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.ImportFromWkt:8
 msgid ""
 ":py:const:`OGRERR_NONE` if import succeeds, or :py:const:"
 "`OGRERR_CORRUPT_DATA` if it fails for any reason."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsCompound:1
 msgid "Check if this CRS is a compound CRS."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsCompound:3
 msgid "See :cpp:func:`OGRSpatialReference::IsCompound`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsCompound:5
 msgid "1 if the CRS is compound, 0 otherwise"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsDerivedGeographic:1
 msgid ""
 "Check if this CRS is a derived geographic CRS, such as a rotated long/lat "
 "grid."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsDerivedGeographic:3
 msgid "See :cpp:func:`OGRSpatialReference::IsDerivedGeographic`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsDerivedGeographic:5
 msgid "1 if the CRS is derived geographic, 0 otherwise"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsDynamic:1
 msgid "Check if this CRS is a dynamic coordinate CRS."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsDynamic:3
 msgid "See :cpp:func:`OGRSpatialReference::IsDynamic`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsGeocentric:1
 msgid "Check if this SRS is a geocentric coordinate system."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsGeocentric:3
 msgid "See :cpp:func:`OGRSpatialReference::IsGeocentric`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsGeocentric:5
 msgid "1 if the SRS is geocentric, 0 otherwise"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsGeographic:1
 msgid "Check if this SRS is a geographic coordinate system."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsGeographic:3
 msgid "See :cpp:func:`OGRSpatialReference::IsGeographic`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsGeographic:5
 msgid "1 if the SRS is geographic, 0 otherwise"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsLocal:1
 msgid "Check if this CRS is a local CRS."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsLocal:3
 msgid "See :cpp:func:`OGRSpatialReference::IsLocal`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsLocal:5
 msgid "1 if the SRS is local, 0 otherwise"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsProjected:1
 msgid "Check if this SRS is a projected coordinate system."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsProjected:3
 msgid "See :cpp:func:`OGRSpatialReference::IsProjected`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsProjected:5
 msgid "1 if the SRS is projected, 0 otherwise"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsSame:1
 msgid "Determine if two spatial references describe the same system."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsSame:3
 msgid "See :cpp:func:`OGRSpatialReference::IsSame`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsSame:10
 msgid "1 if the spatial references describe the same system, 0 otherwise"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsSameGeogCS:1
 msgid ""
 "Determine if two spatial references share the same geographic coordinate "
 "system."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsSameGeogCS:3
 msgid "See :cpp:func:`OGRSpatialReference::IsSameGeogCS`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsSameGeogCS:10
 msgid "1 if the spatial references have the same GeogCS, 0 otherwise"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsSameVertCS:1
 msgid ""
 "Determine if two spatial references share the same vertical coordinate "
 "system."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsSameVertCS:3
 msgid "See :cpp:func:`OGRSpatialReference::IsSameVertCS`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsSameVertCS:10
 msgid "1 if the spatial references have the same VertCS, 0 otherwise"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsVertical:1
 msgid "Check if this is a vertical coordinate system."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsVertical:3
 msgid "See :cpp:func:`OGRSpatialReference::IsVertical`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.SpatialReference.IsVertical:5
 msgid "1 if the CRS is vertical, 0 otherwise"
 msgstr ""
 
-#: ../../../source/api/python/spatial_ref_api.rst:20
+#: ../../../source/api/python/spatial_ref_api.rst:25
 msgid "CoordinateTransformation"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.CoordinateTransformation:1
 msgid "Python proxy of an :cpp:class:`OGRCoordinateTransformation`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.CoordinateTransformation.TransformBounds:1
 msgid ""
 "Transform a boundary, densifying the edges to account for nonlinear "
 "transformations along these edges."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.CoordinateTransformation.TransformBounds:4
 msgid "See :cpp:func:`OCTTransformBounds`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.CoordinateTransformation.TransformBounds:6
 msgid "Minimum bounding coordinate of the first axis in source CRS"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.CoordinateTransformation.TransformBounds:8
 msgid "Minimum bounding coordinate of the second axis in source CRS"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.CoordinateTransformation.TransformBounds:10
 msgid "Maximum bounding coordinate of the first axis in source CRS"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.CoordinateTransformation.TransformBounds:12
 msgid "Maximum bounding coordinate of the second axis in source CRS"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.CoordinateTransformation.TransformBounds:14
 msgid ""
 "The number of points to use to densify the bounding polygon. Recommended to "
 "use 21."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.CoordinateTransformation.TransformBounds:18
 msgid "Transformed values of xmin, ymin, xmax, ymax"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.CoordinateTransformation.TransformPoint:1
 msgid "Transform a single point."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.CoordinateTransformation.TransformPoint:3
 #: osgeo.osr.CoordinateTransformation.TransformPoints:3
 msgid "See :cpp:func:`OCTTransform`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.CoordinateTransformation.TransformPoint:5
 msgid "A tuple of (x, y, z) or (x, y, z, t) values, depending on the input."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.CoordinateTransformation.TransformPointWithErrorCode:1
 msgid "Variant of :py:meth:`TransformPoint` that provides an error code."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.CoordinateTransformation.TransformPointWithErrorCode:3
 msgid "See :cpp:func:`OCTTransformEx`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.CoordinateTransformation.TransformPointWithErrorCode:14
 msgid "tuple of (x, y, z, t, error) values"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.CoordinateTransformation.TransformPoints:1
 msgid "Transform multiple points."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.CoordinateTransformation.TransformPoints:5
 msgid "A list of tuples, or a 2xN, 3xN, or 4xN numpy array"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.CoordinateTransformation.TransformPoints:7
 msgid ""
 "A list of tuples of (x, y, z) or (x, y, z, t) values, depending on the input."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.CoordinateTransformationOptions:1
 msgid "Proxy of C++ OGRCoordinateTransformationOptions class."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.CreateCoordinateTransformation:1
 msgid ""
 "Create a :py:class:`CoordinateTransformation` using a set of :py:class:"
 "`CoordinateTransformationOptions`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.CreateCoordinateTransformation:3
 msgid "See :cpp:func:`OCTNewCoordinateTransformationEx`."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.CreateCoordinateTransformation:5
 msgid "source spatial reference system"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/osr.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/osr.py:docstring
 #: of osgeo.osr.CreateCoordinateTransformation:7
 msgid "target spatial reference ystem"
 msgstr ""

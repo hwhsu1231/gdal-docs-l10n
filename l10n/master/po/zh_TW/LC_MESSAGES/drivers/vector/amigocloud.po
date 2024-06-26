@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -190,27 +190,29 @@ msgid "Layer creation options"
 msgstr ""
 
 #: ../../../source/drivers/vector/amigocloud.rst:108
-msgid "The following layer creation options are available:"
+msgid ""
+"|about-layer-creation-options| The following layer creation options are "
+"available:"
 msgstr ""
 
-#: ../../../source/drivers/vector/amigocloud.rst:124
+#: ../../../source/drivers/vector/amigocloud.rst:125
 msgid "Configuration options"
 msgstr ""
 
-#: ../../../source/drivers/vector/amigocloud.rst:126
+#: ../../../source/drivers/vector/amigocloud.rst:127
 msgid ""
-"The following :ref:`configuration options <configoptions>` are available:"
+"|about-config-options| The following configuration options are available:"
 msgstr ""
 
-#: ../../../source/drivers/vector/amigocloud.rst:139
+#: ../../../source/drivers/vector/amigocloud.rst:140
 msgid "Examples"
 msgstr ""
 
-#: ../../../source/drivers/vector/amigocloud.rst:141
+#: ../../../source/drivers/vector/amigocloud.rst:142
 msgid "Different ways to provide AmigoCloud API token:"
 msgstr ""
 
-#: ../../../source/drivers/vector/amigocloud.rst:143
+#: ../../../source/drivers/vector/amigocloud.rst:144
 msgid ""
 "ogrinfo --config AMIGOCLOUD_API_KEY abcdefghijklmnopqrstuvw -al "
 "\"AmigoCloud:1234 datasets=987\"\n"
@@ -220,17 +222,17 @@ msgid ""
 "datasets=987\""
 msgstr ""
 
-#: ../../../source/drivers/vector/amigocloud.rst:149
+#: ../../../source/drivers/vector/amigocloud.rst:150
 msgid ""
 "export AMIGOCLOUD_API_KEY=abcdefghijklmnopqrstuvw\n"
 "ogrinfo -al \"AmigoCloud:1234 datasets=987\""
 msgstr ""
 
-#: ../../../source/drivers/vector/amigocloud.rst:154
+#: ../../../source/drivers/vector/amigocloud.rst:155
 msgid "Show list of datasets."
 msgstr ""
 
-#: ../../../source/drivers/vector/amigocloud.rst:156
+#: ../../../source/drivers/vector/amigocloud.rst:157
 msgid ""
 "$ ogrinfo -ro \"AmigoCloud:1234 datasets\"\n"
 "List of available datasets for project id: 1234\n"
@@ -240,89 +242,89 @@ msgid ""
 "| 5552      | lines"
 msgstr ""
 
-#: ../../../source/drivers/vector/amigocloud.rst:165
+#: ../../../source/drivers/vector/amigocloud.rst:166
 msgid "Accessing data from a list of datasets:"
 msgstr ""
 
-#: ../../../source/drivers/vector/amigocloud.rst:167
+#: ../../../source/drivers/vector/amigocloud.rst:168
 msgid "ogrinfo -ro \"AmigoCloud:1234 datasets=1234,1235\""
 msgstr ""
 
-#: ../../../source/drivers/vector/amigocloud.rst:171
+#: ../../../source/drivers/vector/amigocloud.rst:172
 msgid "Creating and populating a table from a shapefile:"
 msgstr ""
 
-#: ../../../source/drivers/vector/amigocloud.rst:173
+#: ../../../source/drivers/vector/amigocloud.rst:174
 msgid "ogr2ogr -f AmigoCloud \"AmigoCloud:1234\" myshapefile.shp"
 msgstr ""
 
-#: ../../../source/drivers/vector/amigocloud.rst:177
+#: ../../../source/drivers/vector/amigocloud.rst:178
 msgid ""
 "Append the data to an existing table (dataset id: 12345) from a shapefile:"
 msgstr ""
 
-#: ../../../source/drivers/vector/amigocloud.rst:179
+#: ../../../source/drivers/vector/amigocloud.rst:180
 msgid ""
 "ogr2ogr -f AmigoCloud \"AmigoCloud:1234 datasets=12345\" myshapefile.shp"
 msgstr ""
 
-#: ../../../source/drivers/vector/amigocloud.rst:183
+#: ../../../source/drivers/vector/amigocloud.rst:184
 msgid "or"
 msgstr ""
 
-#: ../../../source/drivers/vector/amigocloud.rst:185
+#: ../../../source/drivers/vector/amigocloud.rst:186
 msgid ""
 "ogr2ogr -append -f AmigoCloud \"AmigoCloud:1234 datasets=12345\" myshapefile."
 "shp"
 msgstr ""
 
-#: ../../../source/drivers/vector/amigocloud.rst:189
+#: ../../../source/drivers/vector/amigocloud.rst:190
 msgid ""
 "Overwriting the data of an existing table (dataset id: 12345) with data from "
 "a shapefile:"
 msgstr ""
 
-#: ../../../source/drivers/vector/amigocloud.rst:192
+#: ../../../source/drivers/vector/amigocloud.rst:193
 msgid ""
 "ogr2ogr -append -doo OVERWRITE=YES -f AmigoCloud \"AmigoCloud:1234 "
 "datasets=12345\" myshapefile.shp"
 msgstr ""
 
-#: ../../../source/drivers/vector/amigocloud.rst:196
+#: ../../../source/drivers/vector/amigocloud.rst:197
 msgid ""
 "Delete existing dataset (dataset id: 12345) and create a new one with data "
 "from a shapefile:"
 msgstr ""
 
-#: ../../../source/drivers/vector/amigocloud.rst:199
+#: ../../../source/drivers/vector/amigocloud.rst:200
 msgid ""
 "ogr2ogr -overwrite -f AmigoCloud \"AmigoCloud:1234 datasets=12345\" "
 "myshapefile.shp"
 msgstr ""
 
-#: ../../../source/drivers/vector/amigocloud.rst:203
+#: ../../../source/drivers/vector/amigocloud.rst:204
 msgid ""
 "Overwriting the data of an existing table (dataset id: 12345) with data from "
 "a shapefile. Filter the only the records with values of the field "
 "\"visited_on\" after 2017-08-20"
 msgstr ""
 
-#: ../../../source/drivers/vector/amigocloud.rst:207
+#: ../../../source/drivers/vector/amigocloud.rst:208
 msgid ""
 "ogr2ogr -append -doo OVERWRITE=YES -f AmigoCloud \"AmigoCloud:1234 "
 "datasets=12345\" -where \"visited_on > '2017-08-20'\" myshapefile.shp"
 msgstr ""
 
-#: ../../../source/drivers/vector/amigocloud.rst:212
+#: ../../../source/drivers/vector/amigocloud.rst:213
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/vector/amigocloud.rst:214
+#: ../../../source/drivers/vector/amigocloud.rst:215
 msgid ""
 "`AmigoCloud API Token management <https://www.amigocloud.com/accounts/"
 "tokens>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/amigocloud.rst:215
+#: ../../../source/drivers/vector/amigocloud.rst:216
 msgid "`AmigoCloud API Browser <https://www.amigocloud.com/api/v1/>`__"
 msgstr ""

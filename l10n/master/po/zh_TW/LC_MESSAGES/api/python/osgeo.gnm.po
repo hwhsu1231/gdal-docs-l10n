@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:33+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../../source/api/python/osgeo.gnm.rst:2
+#: ../../../source/api/python/osgeo.gnm.rst:7
 msgid "osgeo.gnm module"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gnm.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gnm.py:docstring
 #: of osgeo.gnm.DontUseExceptions:1
 msgid ""
 "Disable exceptions in all GDAL related modules (osgeo.gdal, osgeo.ogr, osgeo."
@@ -29,17 +29,17 @@ msgid ""
 "module"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gnm.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gnm.py:docstring
 #: of osgeo.gnm.ExceptionMgr:1
 msgid "Bases: :py:class:`object`"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gnm.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gnm.py:docstring
 #: of osgeo.gnm.ExceptionMgr:1
 msgid "Context manager to manage Python Exception state for GDAL/OGR/OSR/GNM."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gnm.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gnm.py:docstring
 #: of osgeo.gnm.ExceptionMgr:4
 msgid ""
 "Separate exception state is maintained for each module (gdal, ogr, etc), and "
@@ -47,12 +47,12 @@ msgid ""
 "calls to the older UseExceptions()/DontUseExceptions() functions."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gnm.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gnm.py:docstring
 #: of osgeo.gnm.ExceptionMgr:9
 msgid "Example::"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gnm.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gnm.py:docstring
 #: of osgeo.gnm.ExceptionMgr:11
 msgid ""
 ">>> print(gdal.GetUseExceptions())\n"
@@ -67,32 +67,32 @@ msgid ""
 "0"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gnm.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gnm.py:docstring
 #: of osgeo.gnm.GenericNetwork:1
 msgid "Bases: :py:class:`~osgeo.gnm.Network`"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gnm.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gnm.py:docstring
 #: of osgeo.gnm.GenericNetwork:1
 msgid "Proxy of C++ GNMGenericNetworkShadow class."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gnm.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gnm.py:docstring
 #: of osgeo.gnm.GenericNetwork.thisown:1 osgeo.gnm.Network.thisown:1
 msgid "The membership flag"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gnm.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gnm.py:docstring
 #: of osgeo.gnm.Network:1
 msgid "Bases: :py:class:`~osgeo.ogr.MajorObject`"
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gnm.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gnm.py:docstring
 #: of osgeo.gnm.Network:1
 msgid "Proxy of C++ GNMNetworkShadow class."
 msgstr ""
 
-#: ../../../../../../.venv/lib/python3.10/site-packages/osgeo/gnm.py:docstring
+#: ../../../../../../.venv/lib/python3.8/site-packages/osgeo/gnm.py:docstring
 #: of osgeo.gnm.UseExceptions:1
 msgid ""
 "Enable exceptions in all GDAL related modules (osgeo.gdal, osgeo.ogr, osgeo."

@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GDAL master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 19:28+0800\n"
+"POT-Creation-Date: 2024-06-26 10:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -101,31 +102,35 @@ msgstr ""
 #: ../../../source/drivers/vector/jsonfg.rst:52
 msgid ""
 "The URL/filename/text might be prefixed with ``JSONFG:`` to avoid any "
-"ambiguity with other drivers."
-msgstr ""
-
-#: ../../../source/drivers/vector/jsonfg.rst:56
-msgid "Time support"
-msgstr ""
-
-#: ../../../source/drivers/vector/jsonfg.rst:58
-msgid "On reading:"
+"ambiguity with other drivers. Alternatively, starting with GDAL 3.10, "
+"specifying the ``-if JSONFG`` option to command line utilities accepting it, "
+"or ``JSONFG`` as the only value of the ``papszAllowedDrivers`` of :cpp:func:"
+"`GDALOpenEx`, also forces the driver to recognize the passed URL/filename/"
+"text."
 msgstr ""
 
 #: ../../../source/drivers/vector/jsonfg.rst:60
+msgid "Time support"
+msgstr ""
+
+#: ../../../source/drivers/vector/jsonfg.rst:62
+msgid "On reading:"
+msgstr ""
+
+#: ../../../source/drivers/vector/jsonfg.rst:64
 msgid ""
 "Feature.time.date elements are mapped to a OGR ``time`` field of type Date. "
 "If there is a property also called ``time``, the OGR field for Feature.time "
 "is called ``jsonfg_time``"
 msgstr ""
 
-#: ../../../source/drivers/vector/jsonfg.rst:64
+#: ../../../source/drivers/vector/jsonfg.rst:68
 msgid ""
 "Feature.time.timestamp elements are mapped to a OGR ``time`` field of type "
 "DateTime"
 msgstr ""
 
-#: ../../../source/drivers/vector/jsonfg.rst:67
+#: ../../../source/drivers/vector/jsonfg.rst:71
 msgid ""
 "Feature.time.interval elements are mapped to a OGR ``time_start`` and "
 "``time_end`` fields of type Date or DateTime. If there are properties with "
@@ -133,7 +138,7 @@ msgid ""
 "Unbounded intervals (``..``) are mapped to a unset OGR feature field."
 msgstr ""
 
-#: ../../../source/drivers/vector/jsonfg.rst:72
+#: ../../../source/drivers/vector/jsonfg.rst:76
 msgid ""
 "On writing, if fields called ``time``, ``time_start``,  ``time_end`` of type "
 "Date or DateTime are created, their content is used to set the Feature.time "
@@ -143,51 +148,67 @@ msgid ""
 "Feature.properties"
 msgstr ""
 
-#: ../../../source/drivers/vector/jsonfg.rst:80
+#: ../../../source/drivers/vector/jsonfg.rst:84
 msgid "Configuration options"
 msgstr ""
 
-#: ../../../source/drivers/vector/jsonfg.rst:82
+#: ../../../source/drivers/vector/jsonfg.rst:86
 msgid ""
-"The following :ref:`configuration options <configoptions>` are available:"
+"|about-config-options| The following configuration options are available:"
 msgstr ""
 
-#: ../../../source/drivers/vector/jsonfg.rst:93
+#: ../../../source/drivers/vector/jsonfg.rst:97
 msgid "Open options"
 msgstr ""
 
-#: ../../../source/drivers/vector/jsonfg.rst:109
+#: ../../../source/drivers/vector/jsonfg.rst:99
+msgid "|about-open-options| The following open options are supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/jsonfg.rst:116
 msgid "Dataset creation options"
 msgstr ""
 
-#: ../../../source/drivers/vector/jsonfg.rst:120
+#: ../../../source/drivers/vector/jsonfg.rst:118
+msgid ""
+"|about-dataset-creation-options| The following dataset creation options are "
+"supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/jsonfg.rst:130
 msgid "Layer creation options"
 msgstr ""
 
-#: ../../../source/drivers/vector/jsonfg.rst:173
+#: ../../../source/drivers/vector/jsonfg.rst:132
+msgid ""
+"|about-layer-creation-options| The following layer creation options are "
+"supported:"
+msgstr ""
+
+#: ../../../source/drivers/vector/jsonfg.rst:186
 msgid "VSI Virtual File System API support"
 msgstr ""
 
-#: ../../../source/drivers/vector/jsonfg.rst:175
+#: ../../../source/drivers/vector/jsonfg.rst:188
 msgid ""
 "The driver supports reading and writing to files managed by VSI Virtual File "
 "System API, which includes \"regular\" files, as well as files in the /"
 "vsizip/ (read-write), /vsigzip/ (read-write), /vsicurl/ (read-only) domains."
 msgstr ""
 
-#: ../../../source/drivers/vector/jsonfg.rst:180
+#: ../../../source/drivers/vector/jsonfg.rst:193
 msgid "Writing to /dev/stdout or /vsistdout/ is also supported."
 msgstr ""
 
-#: ../../../source/drivers/vector/jsonfg.rst:183
+#: ../../../source/drivers/vector/jsonfg.rst:196
 msgid "Geometry coordinate precision"
 msgstr ""
 
-#: ../../../source/drivers/vector/jsonfg.rst:185
+#: ../../../source/drivers/vector/jsonfg.rst:198
 msgid "3.9"
 msgstr ""
 
-#: ../../../source/drivers/vector/jsonfg.rst:187
+#: ../../../source/drivers/vector/jsonfg.rst:200
 msgid ""
 "The GeoJSON driver supports reading and writing the geometry coordinate "
 "precision, using the :cpp:class:`OGRGeomCoordinatePrecision` settings of "
@@ -196,14 +217,14 @@ msgid ""
 "precision."
 msgstr ""
 
-#: ../../../source/drivers/vector/jsonfg.rst:194
+#: ../../../source/drivers/vector/jsonfg.rst:207
 msgid ""
 "The :lco:`COORDINATE_PRECISION_GEOMETRY` or :lco:"
 "`COORDINATE_PRECISION_PLACE` layer creation option has precedence over the "
 "values set on the :cpp:class:`OGRGeomFieldDefn`."
 msgstr ""
 
-#: ../../../source/drivers/vector/jsonfg.rst:197
+#: ../../../source/drivers/vector/jsonfg.rst:210
 msgid ""
 "Implementation details: the coordinate precision is stored as "
 "``xy_coordinate_resolution_place`` and ``z_coordinate_resolution_place`` "
@@ -211,7 +232,7 @@ msgid ""
 "``place`` element. Their numeric value is expressed in the units of the SRS."
 msgstr ""
 
-#: ../../../source/drivers/vector/jsonfg.rst:202
+#: ../../../source/drivers/vector/jsonfg.rst:215
 msgid ""
 "For the ``geometry`` standard GeoJSON element, the coordinate precision is "
 "stored as ``xy_coordinate_resolution`` and ``z_coordinate_resolution`` "
@@ -219,11 +240,11 @@ msgid ""
 "SRS (hence decimal degrees for ``xy_coordinate_resolution``)"
 msgstr ""
 
-#: ../../../source/drivers/vector/jsonfg.rst:207
+#: ../../../source/drivers/vector/jsonfg.rst:220
 msgid "Example:"
 msgstr ""
 
-#: ../../../source/drivers/vector/jsonfg.rst:209
+#: ../../../source/drivers/vector/jsonfg.rst:222
 msgid ""
 "{\n"
 "    \"type\": \"FeatureCollection\",\n"
@@ -235,16 +256,16 @@ msgid ""
 "}"
 msgstr ""
 
-#: ../../../source/drivers/vector/jsonfg.rst:221
+#: ../../../source/drivers/vector/jsonfg.rst:234
 msgid "See Also"
 msgstr ""
 
-#: ../../../source/drivers/vector/jsonfg.rst:223
+#: ../../../source/drivers/vector/jsonfg.rst:236
 msgid ""
 "`OGC Features and Geometries JSON - Part 1: Core <https://docs.ogc.org/"
 "DRAFTS/21-045.html>`__"
 msgstr ""
 
-#: ../../../source/drivers/vector/jsonfg.rst:224
+#: ../../../source/drivers/vector/jsonfg.rst:237
 msgid ":ref:`GeoJSON driver <vector.geojson>`"
 msgstr ""
