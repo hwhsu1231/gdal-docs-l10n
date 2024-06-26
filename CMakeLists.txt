@@ -48,7 +48,7 @@ set(BASEURL_HREF "https://hwhsu1231.github.io/gdal-docs-l10n"
 set(GIT_EXACT_VERSION ""
     CACHE STRING "Exact version for calling find_package(Git).")
 
-set(PYTHON_EXACT_VERSION "3.8"
+set(PYTHON_EXACT_VERSION "3.10"
     CACHE STRING "Exact version for calling find_package(Python).")
 
 set(GETTEXT_EXACT_VERSION ""
