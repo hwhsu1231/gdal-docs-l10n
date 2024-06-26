@@ -85,12 +85,12 @@ jobs:
             echo "${KEY}: $VALUE"
           done
 
-      - name: Install CMake 3.23
+      - name: Install CMake
         uses: jwlawson/actions-setup-cmake@v2.0
         with:
-          cmake-version: '3.23'
+          cmake-version: '3.25'
 
-      - name: Install Python 3.10
+      - name: Install Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.8'
@@ -110,6 +110,9 @@ jobs:
         shell: bash
         run: |
           sudo apt-get install doxygen && doxygen --version
+
+      - name: Install Doxygen
+        uses: ssciwr/doxygen-install@v1
 
       - name: Configure with '${{ inputs.LANGUAGE }}' preset for '${{ inputs.VERSION }}' version
         shell: bash
