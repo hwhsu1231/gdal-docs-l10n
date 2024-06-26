@@ -208,22 +208,21 @@ message("")
 restore_cmake_message_indent()
 
 
-message(STATUS "Running 'build_driver_summary.py raster' command to generate .rst files...")
+message(STATUS "Running 'build_driver_summary.py' command to generate 'driver_summary.rst' files...")
 remove_cmake_message_indent()
 message("")
+message("Running 'build_driver_summary.py raster' command to generate 'drivers/raster/driver_summary.rst' files...")
 execute_process(
-    COMMAND
-        ${Python_EXECUTABLE} 
-        ${PROJ_OUT_REPO_DOCS_SOURCE_DIR}/build_driver_summary.py
-        ${PROJ_OUT_REPO_DOCS_SOURCE_DIR}/drivers/raster 
-        raster_driver_summary 
-        ${PROJ_OUT_REPO_DOCS_SOURCE_DIR}/drivers/raster/driver_summary.rst
+    COMMAND ${Python_EXECUTABLE} 
+            ${PROJ_OUT_REPO_DOCS_SOURCE_DIR}/build_driver_summary.py
+            ${PROJ_OUT_REPO_DOCS_SOURCE_DIR}/drivers/raster
+            raster_driver_summary 
+            ${PROJ_OUT_REPO_DOCS_SOURCE_DIR}/drivers/raster/driver_summary.rst
     ECHO_OUTPUT_VARIABLE
+    ECHO_ERROR_VARIABLE
     RESULT_VARIABLE RES_VAR
-    OUTPUT_VARIABLE OUT_VAR
-    ERROR_VARIABLE  ERR_VAR
-    OUTPUT_STRIP_TRAILING_WHITESPACE
-    ERROR_STRIP_TRAILING_WHITESPACE)
+    OUTPUT_VARIABLE OUT_VAR OUTPUT_STRIP_TRAILING_WHITESPACE
+    ERROR_VARIABLE  ERR_VAR ERROR_STRIP_TRAILING_WHITESPACE)
 if(RES_VAR EQUAL 0)
     if(ERR_VAR)
         # Success, but there may be some warnings.
@@ -252,26 +251,18 @@ else()
     message("")
     message(FATAL_ERROR "Fatal error occurred.")
 endif()
-message("")
-restore_cmake_message_indent()
-
-
-message(STATUS "Running 'build_driver_summary.py vector' command to generate .rst files...")
-remove_cmake_message_indent()
-message("")
+message("Running 'build_driver_summary.py vector' command to generate 'drivers/vector/driver_summary.rst' files...")
 execute_process(
-    COMMAND
-        ${Python_EXECUTABLE} 
-        ${PROJ_OUT_REPO_DOCS_SOURCE_DIR}/build_driver_summary.py
-        ${PROJ_OUT_REPO_DOCS_SOURCE_DIR}/drivers/vector 
-        vector_driver_summary 
-        ${PROJ_OUT_REPO_DOCS_SOURCE_DIR}/drivers/vector/driver_summary.rst
+    COMMAND ${Python_EXECUTABLE} 
+            ${PROJ_OUT_REPO_DOCS_SOURCE_DIR}/build_driver_summary.py
+            ${PROJ_OUT_REPO_DOCS_SOURCE_DIR}/drivers/vector 
+            vector_driver_summary 
+            ${PROJ_OUT_REPO_DOCS_SOURCE_DIR}/drivers/vector/driver_summary.rst
     ECHO_OUTPUT_VARIABLE
+    ECHO_ERROR_VARIABLE
     RESULT_VARIABLE RES_VAR
-    OUTPUT_VARIABLE OUT_VAR
-    ERROR_VARIABLE  ERR_VAR
-    OUTPUT_STRIP_TRAILING_WHITESPACE
-    ERROR_STRIP_TRAILING_WHITESPACE)
+    OUTPUT_VARIABLE OUT_VAR OUTPUT_STRIP_TRAILING_WHITESPACE
+    ERROR_VARIABLE  ERR_VAR ERROR_STRIP_TRAILING_WHITESPACE)
 if(RES_VAR EQUAL 0)
     if(ERR_VAR)
         # Success, but there may be some warnings.
@@ -313,6 +304,11 @@ endif()
 message(STATUS "Running 'sphinx-build' command with 'gettext' builder to generate .pot files...")
 remove_cmake_message_indent()
 message("")
+if(CMAKE_HOST_UNIX)
+    set(ENV{PATH}             "${PROJ_SOURCE_DIR}/.conda/bin:$ENV{PATH}")
+    set(ENV{LD_LIBRARY_PATH}  "${PROJ_SOURCE_DIR}/.conda/lib:$ENV{LD_LIBRARY_PATH}")
+    set(ENV{PYTHONPATH}       "${PROJ_SOURCE_DIR}/.conda/lib:$ENV{PYTHONPATH}")
+endif()
 execute_process(
     COMMAND
         ${Sphinx_BUILD_EXECUTABLE}

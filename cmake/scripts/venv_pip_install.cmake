@@ -415,26 +415,24 @@ message("")
 if(CMAKE_HOST_UNIX)
     set(ENV{PATH}             "${PROJ_SOURCE_DIR}/.conda/bin:$ENV{PATH}")
     set(ENV{LD_LIBRARY_PATH}  "${PROJ_SOURCE_DIR}/.conda/lib:$ENV{LD_LIBRARY_PATH}")
+    set(ENV{PYTHONPATH}       "${PROJ_SOURCE_DIR}/.conda/lib:$ENV{PYTHONPATH}")
 endif()
 execute_process(
     COMMAND
-        conda run 
-        --prefix ${PROJ_SOURCE_DIR}/.conda 
-        --verbose 
-        --no-capture-output
+        # conda run 
+        # --prefix ${PROJ_SOURCE_DIR}/.conda 
+        # --verbose 
+        # --no-capture-output
         ${CMAKE_COMMAND} 
         -S ${PROJ_OUT_REPO_DIR}
         -B ${PROJ_OUT_REPO_DIR}/build
         -D Python_ROOT_DIR=${PROJ_VENV_DIR}
         -D CMAKE_BUILD_TYPE=Release
         -D BUILD_SHARED_LIBS=ON
-        # -D BUILD_SHARED_LIBS=OFF
         -D BUILD_APPS=OFF
-        # -D BUILD_PYTHON_BINDINGS=ON
         -D GDAL_BUILD_OPTIONAL_DRIVERS=OFF
         -D OGR_BUILD_OPTIONAL_DRIVERS=OFF
         -D CMAKE_PREFIX_PATH=${PROJ_SOURCE_DIR}/.conda  # Working for Linux!!
-        # -D CMAKE_BUILD_RPATH=${PROJ_SOURCE_DIR}/.conda/lib
         -D CMAKE_INSTALL_PREFIX=${PROJ_VENV_DIR}
     ECHO_OUTPUT_VARIABLE
     ECHO_ERROR_VARIABLE
