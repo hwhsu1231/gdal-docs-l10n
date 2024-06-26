@@ -169,7 +169,7 @@ jobs:
         if: inputs.DEPLOY_HTML
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          token: ${{ steps.ggat.outputs.token }}
+          # token: ${{ steps.ggat.outputs.token }}
           branch: gh-pages
           folder: ./out/html
           single-commit: true
