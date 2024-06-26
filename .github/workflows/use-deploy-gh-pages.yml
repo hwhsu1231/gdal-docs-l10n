@@ -165,13 +165,13 @@ jobs:
       #     branch: mutex/gh-pages
       #     repo-token: ${{ steps.ggat.outputs.token }}
 
-      # - name: Deploy to 'gh-pages' branch
-      #   if: inputs.DEPLOY_HTML
-      #   uses: JamesIves/github-pages-deploy-action@v4
-      #   with:
-      #     token: ${{ steps.ggat.outputs.token }}
-      #     branch: gh-pages
-      #     folder: ./out/html
-      #     single-commit: true
-      #     target-folder: .
-      #     clean: false
+      - name: Deploy to 'gh-pages' branch
+        if: inputs.DEPLOY_HTML
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ steps.ggat.outputs.token }}
+          branch: gh-pages
+          folder: ./out/html
+          single-commit: true
+          target-folder: .
+          clean: false
