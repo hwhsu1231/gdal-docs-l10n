@@ -396,12 +396,16 @@ message(STATUS "Running 'conda' command to install proj package...")
 remove_cmake_message_indent()
 message("")
 execute_process(
-    COMMAND conda create --prefix ${PROJ_SOURCE_DIR}/.conda 
+    COMMAND conda.bat create --prefix ${PROJ_SOURCE_DIR}/.conda 
     ECHO_OUTPUT_VARIABLE
     ECHO_ERROR_VARIABLE
     COMMAND_ERROR_IS_FATAL ANY)
 execute_process(
-    COMMAND conda install --prefix ${PROJ_SOURCE_DIR}/.conda --channel conda-forge proj -y
+    COMMAND conda.bat install
+            conda-forge::proj 
+            conda-forge::swig
+            --prefix ${PROJ_SOURCE_DIR}/.conda
+            -y
     ECHO_OUTPUT_VARIABLE
     ECHO_ERROR_VARIABLE
     COMMAND_ERROR_IS_FATAL ANY)
@@ -412,28 +416,35 @@ restore_cmake_message_indent()
 message(STATUS "Running 'cmake' command to configure GDAL project...")
 remove_cmake_message_indent()
 message("")
-if(CMAKE_HOST_UNIX)
-    set(ENV{PATH}             "${PROJ_SOURCE_DIR}/.conda/bin:$ENV{PATH}")
-    set(ENV{LD_LIBRARY_PATH}  "${PROJ_SOURCE_DIR}/.conda/lib:$ENV{LD_LIBRARY_PATH}")
-    set(ENV{PYTHONPATH}       "${PROJ_SOURCE_DIR}/.conda/lib:$ENV{PYTHONPATH}")
+if(CMAKE_HOST_WIN32)
+    set(ENV{PATH}               "${PROJ_SOURCE_DIR}/.conda/Library/bin;$ENV{PATH}")
+    set(ENV{PYTHONPATH}         "${PROJ_SOURCE_DIR}/.venv/Lib;$ENV{PYTHONPATH}")
+    set(ENV{CMAKE_PREFIX_PATH}  "${PROJ_SOURCE_DIR}/.conda/Library;$ENV{CMAKE_PREFIX_PATH}")
+elseif(CMAKE_HOST_UNIX)
+    set(ENV{PATH}               "${PROJ_SOURCE_DIR}/.conda/bin:$ENV{PATH}")
+    set(ENV{LD_LIBRARY_PATH}    "${PROJ_SOURCE_DIR}/.conda/lib:$ENV{LD_LIBRARY_PATH}")
+    set(ENV{PYTHONPATH}         "${PROJ_SOURCE_DIR}/.venv/lib:$ENV{PYTHONPATH}")
+    set(ENV{CMAKE_PREFIX_PATH}  "${PROJ_SOURCE_DIR}/.conda:$ENV{CMAKE_PREFIX_PATH}")
 endif()
 execute_process(
     COMMAND
-        # conda run 
-        # --prefix ${PROJ_SOURCE_DIR}/.conda 
-        # --verbose 
-        # --no-capture-output
-        ${CMAKE_COMMAND} 
-        -S ${PROJ_OUT_REPO_DIR}
-        -B ${PROJ_OUT_REPO_DIR}/build
-        -D Python_ROOT_DIR=${PROJ_VENV_DIR}
-        -D CMAKE_BUILD_TYPE=Release
-        -D BUILD_SHARED_LIBS=ON
-        -D BUILD_APPS=OFF
-        -D GDAL_BUILD_OPTIONAL_DRIVERS=OFF
-        -D OGR_BUILD_OPTIONAL_DRIVERS=OFF
-        -D CMAKE_PREFIX_PATH=${PROJ_SOURCE_DIR}/.conda  # Working for Linux!!
-        -D CMAKE_INSTALL_PREFIX=${PROJ_VENV_DIR}
+            # conda run
+            # --prefix ${PROJ_SOURCE_DIR}/.conda
+            # --verbose
+            # --no-capture-output
+            ${CMAKE_COMMAND}
+            -S ${PROJ_OUT_REPO_DIR}
+            -B ${PROJ_OUT_REPO_DIR}/build
+            -G Ninja
+            -D Python_ROOT_DIR=${PROJ_VENV_DIR}
+            -D CMAKE_BUILD_TYPE=Release
+            -D BUILD_SHARED_LIBS=ON
+            -D BUILD_APPS=OFF
+            -D GDAL_BUILD_OPTIONAL_DRIVERS=OFF
+            -D OGR_BUILD_OPTIONAL_DRIVERS=OFF
+            # -D CMAKE_PREFIX_PATH=${PROJ_SOURCE_DIR}/.conda  # Working for Linux!!
+            -D CMAKE_INSTALL_PREFIX=${PROJ_VENV_DIR}
+    ENCODING UTF-8
     ECHO_OUTPUT_VARIABLE
     ECHO_ERROR_VARIABLE
     COMMAND_ERROR_IS_FATAL ANY)
@@ -446,9 +457,11 @@ message(STATUS "Running 'cmake --build' command to build GDAL project...")
 remove_cmake_message_indent()
 message("")
 execute_process(
-    COMMAND
-        ${CMAKE_COMMAND}
-        --build ${PROJ_OUT_REPO_DIR}/build
+    COMMAND ${CMAKE_COMMAND}
+            --build ${PROJ_OUT_REPO_DIR}/build
+            --config Release
+            --parallel 4
+    ENCODING UTF-8
     ECHO_OUTPUT_VARIABLE
     ECHO_ERROR_VARIABLE
     COMMAND_ERROR_IS_FATAL ANY)
@@ -458,9 +471,10 @@ message(STATUS "Running 'cmake --install' command to install GDAL project...")
 remove_cmake_message_indent()
 message("")
 execute_process(
-    COMMAND
-        ${CMAKE_COMMAND}
-        --install ${PROJ_OUT_REPO_DIR}/build
+    COMMAND ${CMAKE_COMMAND}
+            --install ${PROJ_OUT_REPO_DIR}/build
+            --config Release
+    ENCODING UTF-8
     ECHO_OUTPUT_VARIABLE
     ECHO_ERROR_VARIABLE
     COMMAND_ERROR_IS_FATAL ANY)

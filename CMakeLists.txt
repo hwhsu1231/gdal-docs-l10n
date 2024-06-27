@@ -401,7 +401,6 @@ add_custom_target(gettext_update_po
     VERBATIM)
 
 add_custom_target(sphinx_build_docs
-    COMMAND export LD_LIBRARY_PATH=$LD_LIBRARY_PATH
     COMMAND
         ${CMAKE_COMMAND}
         ${SCRIPT_MODE_CACHE} 
@@ -492,14 +491,35 @@ find_package(Doxygen MODULE REQUIRED)
 # message(STATUS "------------------------")
 
 
-unset(Python_EXECUTABLE)
-set(Python_ROOT_DIR "${PROJ_VENV_DIR}")
-find_package(Python MODULE REQUIRED)
-set(ENV{LD_LIBRARY_PATH}  "${PROJ_VENV_DIR}/lib")
-set(ENV{PYTHONPATH}       "${PROJ_VENV_DIR}/lib")
-execute_process(
-    COMMAND conda
-)
+if(CMAKE_HOST_WIN32)
+    set(ENV{PATH}               "${PROJ_SOURCE_DIR}/.conda/Library/bin;$ENV{PATH}")
+    set(ENV{CMAKE_PREFIX_PATH}  "${PROJ_SOURCE_DIR}/.conda/Library/lib;$ENV{CMAKE_PREFIX_PATH}")
+    # set(ENV{PKG_CONFIG_PATH}    "${PROJ_SOURCE_DIR}/.conda/Library/lib/pkgconfig;$ENV{PKG_CONFIG_PATH}")
+    # set(ENV{CMAKE_INCLUDE_PATH} "${PROJ_SOURCE_DIR}/.conda/Library")
+    set(ENV{CMAKE_PREFIX_PATH}  "${PROJ_SOURCE_DIR}/.conda/Library")
+elseif(CMAKE_HOST_UNIX)
+    set(ENV{PATH}               "${PROJ_SOURCE_DIR}/.conda/bin:$ENV{PATH}")
+    set(ENV{LD_LIBRARY_PATH}    "${PROJ_SOURCE_DIR}/.conda/lib:$ENV{LD_LIBRARY_PATH}")
+    set(ENV{PYTHONPATH}         "${PROJ_SOURCE_DIR}/.conda/lib:$ENV{PYTHONPATH}")
+    set(ENV{CMAKE_PREFIX_PATH}  "${PROJ_SOURCE_DIR}/.conda/lib:$ENV{CMAKE_PREFIX_PATH}")
+endif()
+find_package(PkgConfig)
+message(STATUS "PKG_CONFIG_EXECUTABLE = ${PKG_CONFIG_EXECUTABLE}")
+# pkg_check_modules(PC_SQLite3 sqlite3)
+# find_path(SQLite3_INCLUDE_DIR NAMES sqlite3.h)
+# message(STATUS "SQLite3_INCLUDE_DIR = ${SQLite3_INCLUDE_DIR}")
+# find_library(SQLite3_LIBRARY NAMES sqlite3 sqlite)
+# message(STATUS "SQLite3_LIBRARY = ${SQLite3_LIBRARY}")
+find_package(SQLite3)
+
+# unset(Python_EXECUTABLE)
+# set(Python_ROOT_DIR "${PROJ_VENV_DIR}")
+# find_package(Python MODULE REQUIRED)
+# set(ENV{LD_LIBRARY_PATH}  "${PROJ_VENV_DIR}/lib")
+# set(ENV{PYTHONPATH}       "${PROJ_VENV_DIR}/lib")
+# execute_process(
+#     COMMAND conda
+# )
 # execute_process(
 #     COMMAND 
 #         # env

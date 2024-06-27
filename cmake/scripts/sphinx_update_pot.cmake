@@ -10,8 +10,10 @@ message(STATUS "-------------------- ${SCRIPT_NAME} --------------------")
 set(CMAKE_MODULE_PATH 
     "${PROJ_CMAKE_MODULES_DIR}"
     "${PROJ_CMAKE_MODULES_DIR}/common")
+set(Python_ROOT_DIR "${PROJ_VENV_DIR}")
 set(Sphinx_ROOT_DIR "${PROJ_VENV_DIR}")
 find_package(Git      MODULE ${FIND_PACKAGE_GIT_ARGS}     REQUIRED)
+find_package(Python   MODULE ${FIND_PACKAGE_PYTHON_ARGS}  REQUIRED)
 find_package(Gettext  MODULE ${FIND_PACKAGE_GETTEXT_ARGS} REQUIRED)
 find_package(Sphinx   MODULE REQUIRED)
 include(GitUtils)
