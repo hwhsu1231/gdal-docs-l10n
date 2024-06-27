@@ -61,7 +61,30 @@ What did I miss? Is this a bug?
 
 On Kubuntu 22.04, run the following commands in order:
 
-```
+```bash
+# Prepare Git Repository
+git clone --depth=1 --branch=v3.9.1 https://github.com/OSGeo/gdal.git
+cd gdal
+
+# Install 'proj' and 'swig' in Conda Environment
+conda create --prefix $(pwd)/.conda -y
+conda activate $(pwd)/.conda
+conda install conda-forge::proj conda-forge::swig -y
+
+# Install 'numpy' in Python Virtual Environment
+python -m venv $(pwd)/.venv
+source $(pwd)/.venv/bin/activate
+python -m pip install pip --upgrade
+python -m pip install numpy --upgrade
+
+# Configure/Build/Install the GDAL project (which will be install to $(pwd)/.venv)
+cmake -S . -B build -D Python_ROOT_DIR=$(pwd)/.venv -D CMAKE_BUILD_TYPE=Release -D BUILD_SHARED_LIBS=ON -D BUILD_APPS=OFF -D GDAL_BUILD_OPTIONAL_DRIVERS=OFF -D OGR_BUILD_OPTIONAL_DRIVERS=OFF -D CMAKE_INSTALL_PREFIX=$(pwd)/.venv -D CMAKE_PREFIX_PATH=$(pwd)/.conda
+cmake --build build --config Release
+cmake --install build --config Release
+
+# Test whether it can find the 'osgeo.gdal' package
+export LD_LIBRARY_PATH=$(pwd)/.conda/lib:$(pwd)/.venv/lib:$LD_LIBRARY_PATH
+python -c "from osgeo import gdal"
 ```
 
 On Windows 11, run the following commands in order:
